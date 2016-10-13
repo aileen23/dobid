@@ -5,10 +5,6 @@ public class Test {
 		String choifeel = "¹Ùº¸";
 		System.out.println(choifeel);
 		String parkjihye = "ºéµü";
-		System.out.println("parkjihyeôÈ¤»¤»¤»");
-		while (true) {
-			System.out.println(parkjihye);
-		}
 
 	}
 }
