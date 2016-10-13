@@ -5,6 +5,6 @@ public class Test {
 		String choifeel = "ΉΩΊΈ";
 		System.out.println(choifeel);
 		String parkjihye = "Ίιµό";
-
+		System.out.println(parkjihye+"Β¥Αυ³ª");
 	}
 }
