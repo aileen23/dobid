@@ -123,7 +123,7 @@ basic_board_num			number			primary key,
 member_id 				varchar2(30)	not null,
 title					varchar2(100)	not null,
 contents				varchar2(3000)	not null,
-picture_path			varchar2(500)	not null,
+image_path				varchar2(500)	not null,
 cilck_count				number			not null,
 upload_date				date			not null
 
@@ -156,7 +156,7 @@ member_id 				varchar2(30)	foreign key,
 title					varchar2(100)	not null,
 categori				varchar2(30)	not null,
 contents				varchar2(3000)	not null,
-picture_path			varchar2(500)	not null,
+image_path				varchar2(500)	not null,
 upload_date				date			not null
 
 );
