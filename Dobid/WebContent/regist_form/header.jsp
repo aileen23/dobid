@@ -42,7 +42,7 @@
             </li>
          </ul>
          
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
       </div>
