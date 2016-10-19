@@ -21,6 +21,7 @@
           "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <!--
+
      This is a blank Struts configuration file with an example
      welcome action/page and other commented sample elements.
 
