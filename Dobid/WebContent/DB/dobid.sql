@@ -57,7 +57,8 @@ end_date				date			not null,
 regist_date				date			not null,
 highest_price			number			not null,
 highest_price_id 		varchar2(30)	not null,
-hot_check				char			not null
+hot_check				char			not null,
+used_check				char			not null
 
 );
 
