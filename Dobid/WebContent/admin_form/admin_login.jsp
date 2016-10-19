@@ -15,7 +15,6 @@
 
 </head>
 
-
 <body>
 <header><%@include file="../regist_form/header.jsp"%></header>
 <!-- 헤더 -->
