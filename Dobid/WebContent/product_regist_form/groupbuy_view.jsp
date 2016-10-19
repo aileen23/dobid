@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="css/auction_view.css" rel="stylesheet">
-<title>경매뷰</title>
+<title>공대구매뷰</title>
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
@@ -25,7 +25,7 @@
 					</div>
 				</div>
 				<div class="sen_box">
-					<p class="now_bid">현재입찰가</p>
+					<p class="now_bid">현재 구매가</p>
 					<p class="now_bid_text">5,000,000원</p>
 					<hr>
 					<div class="Rem_aining_time">
@@ -61,7 +61,7 @@
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item a">
-                                    <i class="fa fa-tasks fa-fw"></i> 입찰 시작가
+                                    <i class="fa fa-tasks fa-fw"></i> 처음 구매가
                                     <span class="pull-right text-muted small"><em>100,000원</em>
                                     </span>
                                 </a>
@@ -76,14 +76,15 @@
   				</div>
   				</div>
   				<div class="sen_box">
-  					<div class="warning_box">
+  					<div class="warning_box2">
   						<p>경고사항</p>
-  						<p>1. 해당 금액 이상의 충전금액이 있어야합니다.</p>
-  						<p>2. 참가 이후 취소 불가능합니다.</p>
-  						<p>3. 종료 5분 전 입찰시 종료시간이 증가합니다.</p>
+  					<p>1. 해당 금액 이상의 충전금액이 있어야합니다.</p>
+  					<p>2. 신청 후 취소 불가능합니다.</p>
+  					<p>3. 신중히 생각하세요.</p>
   					</div>
-  					<input type="text" class="form-control2" id="inputId" placeholder="금액">
-  					<button type="button" class="btn btn-default" style="margin-right: 5%">경매참가하기</button>
+  					<p class="now_bid">현재 참여자 수</p>
+  					<p class="now_bid_text2">1000명</p>
+  					<button type="button" class="btn btn-default" style="margin-right: 5%">공동구매참가하기</button>
   				</div>
   			</div>
   			<textarea class="text_area" rows="20" cols="110" style="resize: none;"></textarea>

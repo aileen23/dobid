@@ -1,6 +1,6 @@
-body {
+.wap {
 	width: 1200px;
-	height: 1700px;
+	height: 1900px;
 	margin: 0 auto;
     padding-top: 70px;
 }
@@ -8,8 +8,8 @@ body {
 	width: 1200px;
 	height: 1600px;
 	background-color: #F2F2F2;
-	border: 2px solid black;
-	margin: 0 auto;
+	border: 2px solid #D8D8D8;
+	margin-top: 100px;
 }
 .title{
 	width: 800px;
@@ -47,13 +47,14 @@ body {
 .now_bid{
 	width: 300px;
 	height: 50px;
-	background-color: white;
+	background-color: #424242;
 	text-align: center;
 	border: 1px solid black;
 	font-size:xx-large;
 	font-weight:bold;
 	line-height:30xp;
 	margin-left: 50px;
+	color: white;
 }
 .now_bid_text{
 	width: 200px;
@@ -76,21 +77,19 @@ body {
 }
 .info_name, .info{
 	display: inline-block;
-	height : 250px;
-	margin-top: 20px;
+	height : 300px;
 	overflow: hidden; 
 }
 .info{
-	width: 340px;
+	width: 360px;
 	margin-left: -6px;
 }
 .info_name{
 	width: 140px;
-	margin-left: 12px;
 }
 .info > p{
 	text-align: center;
-	height:48px;
+	height:60px;
 	border: 1px solid black;
 	line-height:50px;
 	margin: 0;
@@ -98,7 +97,7 @@ body {
 
 .info_name > p{
 	text-align: center;
-	height:48px;
+	height:60px;
 	border: 1px solid black;
 	line-height:50px;
 	background-color: #585858;
@@ -108,7 +107,22 @@ body {
 .warning_box{
 	width: 350px;
 	height: 150px;
-	background-color: #848484;
+	background-color: #E6E6E6;
+	margin-top: 10px;
+	margin-left: 15px;
+	border: 2px solid #6E6E6E;
+}
+.warning_box > p{
+	font-weight: bold;
+	text-align: center;
+}
+.warning_box > p:nth-child(1){
+	text-align: center;
+}
+.warning_box2{
+	width: 350px;
+	height: 130px;
+	background-color: #E6E6E6;
 	margin-top: 10px;
 	margin-left: 15px;
 }
@@ -192,9 +206,9 @@ div#slider figure {
 	font-size: large;
 	line-height:45px;
 }
-.form-control {
+.form-control2 {
     display: block;
-    width: 300px;
+    width: 100%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -209,14 +223,13 @@ div#slider figure {
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    margin-left: 30px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .btn-default {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 .btn {
     display: inline-block;
@@ -245,4 +258,15 @@ div#slider figure {
 	font-size: medium;
 	font-weight: bold;
 	margin-left: 100px;
+}
+.now_bid_text2{
+	width: 200px;
+	height: 5px;
+	font-size: large;
+	font-weight:bold;
+	text-align: center;
+	margin-left: 100px;
+}
+.a{
+	height: 61px;
 }

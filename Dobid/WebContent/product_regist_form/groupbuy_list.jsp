@@ -22,9 +22,9 @@ $(document).ready(function(){
 </script>
 <title>dobid경매목록</title>
 </head>
-<header></header>
+<header><%@include file="/regist_form/header.jsp"%></header>
 <body>
- <div class="row">
+ <div class="row2">
  			<div class="search_box">
  				<div class='green_window'>
 					<input type='text' class='input_text' />
@@ -208,10 +208,11 @@ $(document).ready(function(){
                     
                     
                    
-                    	<div class="more_btn col-lg-4"><div style="margin-top:5px;">더보기</div></div></div>
+                    	<button class="btn btn-default btn-lg btn-block">더 보기</button>
          
                     
          </div><!-- row 끝태그입니다. -->
 </body>
-
+<footer> <%@include file="/regist_form/footer.jsp"%>
+		</footer>
 </html> 
