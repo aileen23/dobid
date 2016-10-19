@@ -57,7 +57,8 @@ end_date				date			not null,
 regist_date				date			not null,
 highest_price			number			not null,
 highest_price_id 		varchar2(30)	not null,
-hot_check				char			not null
+hot_check				char			not null,
+used_check				char			not null
 
 );
 
@@ -115,9 +116,9 @@ buy_check				char			not null
 
 );
 
---basicboard 게시글(기본) 테이블 / 자유, 질답, 공지, 
-drop table basicboard;
-create table basicboard(
+--freeboard 게시글(기본) 테이블 / 자유, 질답, 공지
+drop table freeboard;
+create table freeboard(
 
 basic_board_num			number			primary key,
 member_id 				varchar2(30)	not null,
@@ -129,9 +130,27 @@ upload_date				date			not null
 
 );
 
---basicboard_seq  (일반 게시판 번호) 시퀀스
-drop sequence basicboard_seq
-create sequence basicboard_seq   start with 1   increment by 1   nocycle   nocache;
+--freeboard_seq  (일반 게시판 번호) 시퀀스
+drop sequence freeboard_seq
+create sequence freeboard_seq   start with 1   increment by 1   nocycle   nocache;
+
+--noticeboard 게시글(기본) 테이블 / 자유, 질답, 공지
+drop table noticeboard;
+create table noticeboard(
+
+basic_board_num			number			primary key,
+member_id 				varchar2(30)	not null,
+title					varchar2(100)	not null,
+contents				varchar2(3000)	not null,
+image_path				varchar2(500)	not null,
+cilck_count				number			not null,
+upload_date				date			not null
+
+);
+
+--noticeboard_seq  (일반 게시판 번호) 시퀀스
+drop sequence noticeboard_seq
+create sequence noticeboard_seq   start with 1   increment by 1   nocycle   nocache;
 
 --comment 댓글 테이블
 drop table comment;
@@ -159,4 +178,27 @@ contents				varchar2(3000)	not null,
 image_path				varchar2(500)	not null,
 upload_date				date			not null
 
+);
+
+--service_answer 고객센터 1대1 문의 답변 테이블
+drop table service_answer;
+create table service_answer(
+
+member_id 				varchar2(30)	foreign key,
+title					varchar2(100)	not null,
+categori				varchar2(30)	not null,
+contents				varchar2(3000)	not null,
+image_path				varchar2(500)	not null,
+upload_date				date			not null,
+answer_contents			varchar2(3000)	not null,
+answer_date				date			not null
+
+);
+
+--basket 장바구니 테이블
+drop table basket;
+create table basket(
+
+check 					char			not null,
+board_num				number			foreign key,
 );
