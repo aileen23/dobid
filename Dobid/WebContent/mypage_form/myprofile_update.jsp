@@ -11,7 +11,7 @@
 <link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
 
 <!-- Custom CSS -->
-<link href="../css/shop-homepage.css" rel="stylesheet">
+<link href="./css/shop-homepage.css" rel="stylesheet">
 <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <!-- Script -->
 
@@ -129,8 +129,7 @@
 		<hr>
 
 		<!-- Footer -->
-		<footer> <%@include file="/regist_form/footer.jsp"%>
-		</footer>
+		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 
 	</div>
 <!-- Script -->
