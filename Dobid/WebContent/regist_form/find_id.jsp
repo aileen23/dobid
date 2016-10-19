@@ -21,8 +21,8 @@
 <!-- 헤더 -->
 <br><br><br><br><br><br>
 
-<center><font size="80" color="black">Login</font><br></center>
-<center><font size="3" color="black">welcome Do Bid</font></center>
+<center><font size="80" color="black">Find</font><br></center>
+<center><font size="3" color="black">Your ID</font></center>
 <br>
 <form class="form-horizontal" style="margin-left: 25%">
   <div class="form-group">
@@ -32,18 +32,23 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <label for="inputEmail3" class="col-sm-2 control-label">Birthday</label>
     <div class="col-sm-4">
-      <input type="password" class="form-control" id="inputPwd" placeholder="Password">
+      <input type="text" class="form-control" id="inputId" placeholder="Birthday">
     </div>
   </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputId" placeholder="Phone">
+    </div>
+  </div>
+
   
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
-      <button type="submit" class="btn btn-default" style="margin-right: 10%">Sign in</button> 
-        <button type="button" class="btn btn-default" style="margin-right: 1%">Sign up</button>
-        <button type="button" class="btn btn-default" style="margin-right: 1%">Find ID</button>
+      <button type="submit" class="btn btn-default" style="margin-right: 10%">Find ID</button> 
     </div>
   </div>
   
