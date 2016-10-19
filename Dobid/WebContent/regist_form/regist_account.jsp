@@ -45,6 +45,12 @@
       <input type="password" class="form-control" id="inputPwd" placeholder="CheckPassword">
     </div>
   </div>
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="inputId" placeholder="Name">
+    </div>
+  </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
     <div class="col-sm-4">

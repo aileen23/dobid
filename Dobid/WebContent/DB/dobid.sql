@@ -66,6 +66,21 @@ used_check				char			not null
 drop sequence auction_seq;
 create sequence auction_seq   start with 1   increment by 1   nocycle   nocache;
 
+--auction_review 경매 리뷰 테이블
+drop table auction_review;
+create table auction_review(
+
+review_num 				number			primary key,
+auction_board_num		number			foreign key,
+title					varchar2(100)	not null,
+contents				varchar2(3000)	not null,
+
+);
+
+--auction_review_seq (경매리뷰 테이블 게시글 번호) 시퀀스
+drop sequence auction_review_seq;
+create sequence auction_review_seq   start with 1   increment by 1   nocycle   nocache;
+
 --auction_participant 경매 참가자 테이블
 drop table auction_participant;
 create table auction_participant(
@@ -104,6 +119,21 @@ now_step				number			not null
 drop sequence groupbuy_seq;
 create sequence groupbuy_seq   start with 1   increment by 1   nocycle   nocache;
 
+--groupbuy_review 공구 리뷰 테이블
+drop table groupbuy_review_seq;
+create table groupbuy_review_seq(
+
+review_num 				number			primary key,
+group_board_num			number			foreign key,
+title					varchar2(100)	not null,
+contents				varchar2(3000)	not null,
+
+);
+
+--groupbuy_review_seq (공구리뷰 테이블 게시글 번호) 시퀀스
+drop sequence groupbuy_review_seq;
+create sequence groupbuy_review_seq   start with 1   increment by 1   nocycle   nocache;
+
 --groupbuy_participant 공동구매 참가자 테이블
 drop table groupbuy_participant;
 create table groupbuy_participant(
@@ -115,6 +145,8 @@ buy_date				date			not null,
 buy_check				char			not null
 
 );
+
+
 
 --freeboard 게시글(기본) 테이블 / 자유, 질답, 공지
 drop table freeboard;

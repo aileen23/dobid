@@ -15,7 +15,6 @@
 
 </head>
 
-
 <body>
 <header><%@include file="header.jsp"%></header>
 <!-- 헤더 -->
