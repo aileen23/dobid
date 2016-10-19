@@ -231,6 +231,7 @@ answer_date				date			not null
 drop table basket;
 create table basket(
 
-check 					char			not null,
-board_num				number			foreign key,
+kind_check 				char			not null,
+board_num				number			foreign key
 );
+
