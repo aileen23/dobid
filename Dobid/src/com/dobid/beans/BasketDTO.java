@@ -1,13 +1,13 @@
 package com.dobid.beans;
 
-public class basketDTO {
+public class BasketDTO {
 	private char check;
 	private int board_num;
 
-	public basketDTO() {
+	public BasketDTO() {
 	}
 
-	public basketDTO(char check, int board_num) {
+	public BasketDTO(char check, int board_num) {
 		super();
 		this.check = check;
 		this.board_num = board_num;

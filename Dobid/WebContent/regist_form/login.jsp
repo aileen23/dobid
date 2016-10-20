@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="./regist_form/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
 
 
 </head>
@@ -27,13 +27,13 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="ID">
+      <input type="text" class="form-control" id="id" placeholder="ID">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-4">
-      <input type="password" class="form-control" id="inputPwd" placeholder="Password">
+      <input type="password" class="form-control" id="pass" placeholder="Password">
     </div>
   </div>
   
@@ -41,7 +41,7 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
       <button type="submit" class="btn btn-default" style="margin-right: 10%">Sign in</button> 
-        <button type="button" class="btn btn-default" style="margin-right: 1%">Sign up</button>
+        <a href="regist_account.do"><button type="button" class="btn btn-default" style="margin-right: 1%">Sign up</button></a>
         <button type="button" class="btn btn-default" style="margin-right: 1%">Find ID</button>
     </div>
   </div>

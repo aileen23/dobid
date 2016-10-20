@@ -15,7 +15,7 @@
    
 </style>
    <ul style="margin-left: 15%">
-   <li><img alt="Do!Bid" src="../image/dobid.png" width="150" height="70" align="top"></li>
+   <li><img alt="Do!Bid" src="image/dobid.png" width="150" height="70" align="top"></li>
    </ul>
    <ul style="margin-bottom: 40px;">
      <li>Do!Bid Acution 대표이사 로이조</li>

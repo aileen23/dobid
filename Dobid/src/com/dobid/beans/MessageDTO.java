@@ -1,16 +1,16 @@
 package com.dobid.beans;
 
-public class messageDTO {
+public class MessageDTO {
 	private String member_id;
 	private String send_id;
 	private String title;
 	private String contents;
 	private char reception_check;
 
-	public messageDTO() {
+	public MessageDTO() {
 	}
 
-	public messageDTO(String member_id, String send_id, String title, String contents, char reception_check) {
+	public MessageDTO(String member_id, String send_id, String title, String contents, char reception_check) {
 		super();
 		this.member_id = member_id;
 		this.send_id = send_id;
