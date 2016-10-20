@@ -2,17 +2,17 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class groupbuy_participantDTO {
+public class Groupbuy_participantDTO {
 	private int groupbuy_board_num;
 	private int buy_price_amount;
 	private String buyer_id;
 	private Date buy_date;
 	private char buy_check;
 
-	public groupbuy_participantDTO() {
+	public Groupbuy_participantDTO() {
 	}
 
-	public groupbuy_participantDTO(int groupbuy_board_num, int buy_price_amount, String buyer_id, Date buy_date,
+	public Groupbuy_participantDTO(int groupbuy_board_num, int buy_price_amount, String buyer_id, Date buy_date,
 			char buy_check) {
 		super();
 		this.groupbuy_board_num = groupbuy_board_num;

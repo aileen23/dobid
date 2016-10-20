@@ -2,26 +2,36 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class serviceDTO {
+public class NoticeboardDTO {
+	private int basic_board_num;
 	private String member_id;
 	private String title;
-	private String categori;
 	private String contents;
 	private String image_path;
-	private Date upload_date;
+	private int cilck_count;
+	private String upload_date;
 
-	public serviceDTO() {
+	public NoticeboardDTO() {
 	}
 
-	public serviceDTO(String member_id, String title, String categori, String contents, String image_path,
-			Date upload_date) {
+	public NoticeboardDTO(int basic_board_num, String member_id, String title, String contents, String image_path,
+			int cilck_count, String upload_date) {
 		super();
+		this.basic_board_num = basic_board_num;
 		this.member_id = member_id;
 		this.title = title;
-		this.categori = categori;
 		this.contents = contents;
 		this.image_path = image_path;
+		this.cilck_count = cilck_count;
 		this.upload_date = upload_date;
+	}
+
+	public int getBasic_board_num() {
+		return basic_board_num;
+	}
+
+	public void setBasic_board_num(int basic_board_num) {
+		this.basic_board_num = basic_board_num;
 	}
 
 	public String getMember_id() {
@@ -40,14 +50,6 @@ public class serviceDTO {
 		this.title = title;
 	}
 
-	public String getCategori() {
-		return categori;
-	}
-
-	public void setCategori(String categori) {
-		this.categori = categori;
-	}
-
 	public String getContents() {
 		return contents;
 	}
@@ -64,11 +66,19 @@ public class serviceDTO {
 		this.image_path = image_path;
 	}
 
-	public Date getUpload_date() {
+	public int getCilck_count() {
+		return cilck_count;
+	}
+
+	public void setCilck_count(int cilck_count) {
+		this.cilck_count = cilck_count;
+	}
+
+	public String getUpload_date() {
 		return upload_date;
 	}
 
-	public void setUpload_date(Date upload_date) {
+	public void setUpload_date(String upload_date) {
 		this.upload_date = upload_date;
 	}
 

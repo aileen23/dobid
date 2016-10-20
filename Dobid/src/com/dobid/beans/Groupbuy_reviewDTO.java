@@ -1,15 +1,15 @@
 package com.dobid.beans;
 
-public class groupbuy_reviewDTO {
+public class Groupbuy_reviewDTO {
 	private int review_num;
 	private int group_board_num;
 	private String title;
 	private String contents;
 
-	public groupbuy_reviewDTO() {
+	public Groupbuy_reviewDTO() {
 	}
 
-	public groupbuy_reviewDTO(int review_num, int group_board_num, String title, String contents) {
+	public Groupbuy_reviewDTO(int review_num, int group_board_num, String title, String contents) {
 		super();
 		this.review_num = review_num;
 		this.group_board_num = group_board_num;

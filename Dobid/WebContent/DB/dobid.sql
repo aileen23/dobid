@@ -235,3 +235,4 @@ kind_check 				char			not null,
 board_num				number			foreign key
 );
 
+

@@ -189,5 +189,6 @@ public class AuctionDTO {
 	public void setHot_check(String hot_check) {
 		this.hot_check = hot_check;
 	}
+	
 
 }

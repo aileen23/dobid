@@ -11,19 +11,19 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/customerservice.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/customerservice.css">
-<link rel="stylesheet"
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="./css/service.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
+<header><%@include file="../regist_form/header.jsp"%></header>
 <body>
 
 <p class="col-sm-offset-2">
-<button class="button button5 btn-default">자주하는 질문</button>
-<button class="button button5 btn-default">1 : 1 문의</button>
-<button class="button button5 btn-default">신고하기</button>
+<a href="service_qna.do"><button class="button button5 btn-default active">자주하는 질문</button></a>
+<a href="service_ono.do"><button class="button button5 btn-default">1 : 1 문의</button></a>
+<a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
 <p class="col-sm-offset-2">

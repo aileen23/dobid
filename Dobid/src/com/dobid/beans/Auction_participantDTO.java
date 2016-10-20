@@ -2,17 +2,17 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class auction_participantDTO {
+public class Auction_participantDTO {
 	private int auction_board_num;
 	private int bid_price_amount;
 	private String buyer_id;
 	private Date bid_date;
 	private char bid_check;
 
-	public auction_participantDTO() {
+	public Auction_participantDTO() {
 	}
 
-	public auction_participantDTO(int auction_board_num, int bid_price_amount, String buyer_id, Date bid_date,
+	public Auction_participantDTO(int auction_board_num, int bid_price_amount, String buyer_id, Date bid_date,
 			char bid_check) {
 		super();
 		this.auction_board_num = auction_board_num;
