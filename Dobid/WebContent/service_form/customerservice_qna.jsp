@@ -12,8 +12,14 @@
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!-- *.do 에 대한 CSS, 파일 경로 -->
+<link rel="stylesheet" type="text/css" href="service_form/css/service.css">
 
-<link rel="stylesheet" type="text/css" href="./css/service.css">
+
+<!-- JSP파일에 대한 CSS, JS 파일 경로 -->
+<link rel="stylesheet" type="text/css" href="css/service.css">
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>

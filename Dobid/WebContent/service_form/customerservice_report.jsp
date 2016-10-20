@@ -10,9 +10,15 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
-<script src="./js/customerservice_ono.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/service.css">
+
+
+<!-- *.do 에 대한 CSS, JS 파일 경로 -->
+<script src="service_form/js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="service_form/css/service.css">
+
+<!-- JSP파일에 대한 CSS, JS 파일 경로 -->
+<script src="js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="css/service.css">
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
