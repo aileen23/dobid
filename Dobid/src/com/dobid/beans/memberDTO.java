@@ -1,7 +1,5 @@
 package com.dobid.beans;
 
-import java.sql.Date;
-
 public class memberDTO {
 	private String member_id;
 	private String name;
@@ -11,14 +9,14 @@ public class memberDTO {
 	private String address;
 	private String nickname;
 	private String introduction;
-	private Date birthday;
+	private String birthday;
 	private int charging_amount;
 
 	public memberDTO() {
 	}
 
 	public memberDTO(String member_id, String name, String pass, String phone, String email, String address,
-			String nickname, String introduction, Date birthday, int charging_amount) {
+			String nickname, String introduction, String birthday, int charging_amount) {
 		super();
 		this.member_id = member_id;
 		this.name = name;
@@ -96,11 +94,11 @@ public class memberDTO {
 		this.introduction = introduction;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 

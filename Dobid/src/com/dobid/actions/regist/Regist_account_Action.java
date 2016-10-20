@@ -1,7 +1,5 @@
 package com.dobid.actions.regist;
 
-import java.sql.Timestamp;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,8 +9,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.memberDTO;
-
-import oracle.sql.DATE;
 
 public class Regist_account_Action extends Action {
 	@Override
