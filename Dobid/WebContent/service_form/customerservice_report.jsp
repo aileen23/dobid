@@ -11,8 +11,8 @@
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    
-<script src="./service_form/js/customerservice_report.js"></script>
-<link rel="stylesheet" type="text/css" href="./service_form/css/service.css">
+<script src="./js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/service.css">
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -53,7 +53,7 @@
 
 
     <div class="filebox col-sm-5">
-        <label  for="cma_file">첨부파일</label>
+        <label  for="cma_file" class="text-center">첨부파일</label>
         <input type="file" name="cma_file" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" />
         <br><br>
         <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>

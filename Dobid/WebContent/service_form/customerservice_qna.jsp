@@ -13,7 +13,7 @@
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-<link rel="stylesheet" type="text/css" href="./service_form/css/service.css">
+<link rel="stylesheet" type="text/css" href="./css/service.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>

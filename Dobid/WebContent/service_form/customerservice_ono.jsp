@@ -8,8 +8,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-<script src="./service_form/js/customerservice_ono.js"></script>
-<link rel="stylesheet" type="text/css" href="./service_form/css/service.css">
+<script src="./js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/service.css">
 
 
 <link rel="stylesheet"
@@ -47,6 +47,7 @@
     <label for="inputWriter" class="col-sm-3 control-label">분류</label>
     <div class="col-sm-5">
       <select class="form-control">
+      	<option>선택해주세요</option>
       	<option>구매관련</option>
       	<option>판매관련</option>
       	<option>이용안내</option>
@@ -66,7 +67,7 @@
 
 
     <div class="filebox col-sm-5">
-        <label  for="cma_file">첨부파일</label>
+        <label  for="cma_file text-center">첨부파일</label>
         <input type="file" name="cma_file" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" />
         <br><br>
         <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>
