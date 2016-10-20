@@ -20,7 +20,7 @@
 <header><%@include file="../regist_form/header.jsp"%></header>
 <body>
 
-<p class="col-sm-offset-2">
+<p class="col-sm-offset-2" style="margin-top: 70px">
 <a href="service_qna.do"><button class="button button5 btn-default active">자주하는 질문</button></a>
 <a href="service_ono.do"><button class="button button5 btn-default">1 : 1 문의</button></a>
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
