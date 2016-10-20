@@ -11,10 +11,9 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="./customerservice_form/js/customerservice.js"></script>
 
-<link rel="stylesheet" type="text/css" href="./customerservice_form/css/customerservice.css">
-<link rel="stylesheet" type="text/css" href="./customerservice_form/css/shop-homepage.css">
+
+<link rel="stylesheet" type="text/css" href="./service_form/css/service.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>

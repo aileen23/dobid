@@ -7,11 +7,11 @@
 <title>1:1 문의</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="./customerservice_form/js/customerservice.js"></script>
+
+<script src="./service_form/js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="./service_form/css/service.css">
 
 
-<link rel="stylesheet" type="text/css" href="./customerservice_form/css/customerservice.css">
-<link rel="stylesheet" type="text/css" href="./customerservice_form/css/shop-homepage.css">
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
