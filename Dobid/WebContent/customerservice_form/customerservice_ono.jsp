@@ -23,7 +23,7 @@
 <body>
 
 
-<p class="col-sm-offset-2">
+<p class="col-sm-offset-2" style="margin-top: 70px">
 <a href="customerservice_qna.jsp"><button class="button button5 btn-default">자주하는 질문</button></a>
 <a href="customerservice_ono.jsp"><button class="button button5 btn-default active">1 : 1 문의</button></a>
 <a href="customerservice_report.jsp"><button class="button button5 btn-default">신고하기</button></a>
