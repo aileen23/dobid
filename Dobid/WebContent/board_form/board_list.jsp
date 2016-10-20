@@ -8,11 +8,11 @@
 <link href="./css/jongmin.css" rel="stylesheet">
 
 <link rel="stylesheet"
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
-   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 <title>Insert title here</title>
@@ -24,10 +24,10 @@
 
 	<div class="container">
 
-			<input type="button" class="button button5 btn-default" value="공지사항"
-				onclick="notice_board()"> <input type="button"
-				class="button button5 btn-default" value="자유게시판"
-				onclick="free_board()">
+		<input type="button" class="button button5 btn-default" value="공지사항"
+			onclick="notice_board()"> <input type="button"
+			class="button button5 btn-default" value="자유게시판"
+			onclick="free_board()">
 
 		<table class="table table-bordered">
 
@@ -50,13 +50,14 @@
 
 		</table>
 
+		<div class="col-sm-offset-8 col-sm-5">
 		<input type="button" value="글쓰기" onclick="freeWrite()"
-		class="button button5 btn-default"> <input
-			type="button" value="목록" onclick="boardSelectAll()"
-			class="button button5 btn-default"> <input
-			type="text" id="select"> <input type="button"
-			onclick="boardSelect()" value="검색"
 			class="button button5 btn-default">
+			<input type="button" value="목록" onclick="boardSelectAll()"
+				class="button button5 btn-default"> <input type="text"
+				id="select"> <input type="button" onclick="boardSelect()"
+				value="검색" class="button button5 btn-default">
+		</div>
 	</div>
 </body>
 </html>
