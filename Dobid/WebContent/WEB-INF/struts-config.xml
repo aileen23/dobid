@@ -76,17 +76,17 @@
 		
 		<!-- customservice -->
 		<!-- customservice_qna -->
-		<action path="/customservice_qna" forward="../customservice_form/customservice_qna.jsp">
+		<action path="/customerservice_qna" forward="../customerservice_form/customerservice_qna.jsp">
 		
 		</action>
 	
 		<!-- customservice_ono -->
-		<action path="/customservice_ono" forward="../customservice_form/customservice_ono.jsp">
+		<action path="/customerservice_ono" forward="../customerservice_form/customerservice_ono.jsp">
 		
 		</action>
 	
 		<!-- customservice_report -->
-		<action path="/customservice_report" forward="../customservice_form/customservice_report.jsp">
+		<action path="/customerservice_report" forward="../customerservice_form/customerservice_report.jsp">
 		
 		</action>
 	
