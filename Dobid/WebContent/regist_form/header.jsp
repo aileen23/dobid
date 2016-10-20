@@ -34,9 +34,9 @@
             
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">고객센터 <span class="caret"></span></a>
                <ul class="dropdown-menu">
-                  <li><a href="#"> 자주하는질문 </a></li>
-                  <li><a href="#">1:1문의</a></li>
-                  <li><a href="#">신고하기</a></li>
+                  <li><a href="customerservice_qna.do"> 자주하는질문 </a></li>
+                  <li><a href="customerservice_ono.do">1:1문의</a></li>
+                  <li><a href="customerservice_report.do">신고하기</a></li>
                </ul>
             </li>
          </ul>
