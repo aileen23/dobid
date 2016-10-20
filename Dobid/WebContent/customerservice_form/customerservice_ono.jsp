@@ -5,82 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>1:1 문의</title>
-<style>
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    
-}
 
-
-
-.button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-}
-
-.button5:hover {
-    background-color: #555555;
-    color: white;
-}
-
-
-
-
-.filebox label {
-    display: inline-block;
-    padding: .5em .75em;
-    color: #999;
-    font-size: inherit;
-    line-height: normal;
-    vertical-align: middle;
-    background-color: #fdfdfd;
-    cursor: pointer;
-    border: 1px solid #ebebeb;
-    border-bottom-color: #e2e2e2;
-    border-radius: .25em;
-    width:100%;
-    max-width:100%;
-}
- 
-.filebox input[type="file"] {  /* 파일 필드 숨기기 */
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0,0,0,0);
-    border: 0;
-}
-
-</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-function getThumbnailPrivew(html, $target) {
-    if (html.files && html.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $target.css('display', '');
-            //$target.css('background-image', 'url(\"' + e.target.result + '\")'); // 배경으로 지정시
-            $target.html('<img src="' + e.target.result + '" border="0" alt="" width="50%" />');
-        }
-        reader.readAsDataURL(html.files[0]);
-    }
-}
-</script>
+<script src="js/customerservice.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/customerservice.css">
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script

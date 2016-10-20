@@ -6,55 +6,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자주하는 질문</title>
 <!-- customerservice_qna.jsp -->
-<style>
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    
-}
 
-
-
-.button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-}
-
-.button5:hover {
-    background-color: #555555;
-    color: white;
-}
-</style>
-
-
-<link rel="stylesheet"
-   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/customerservice.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/customerservice.css">
+<link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 <body>
-<center>
-<p style="margin-left: -30%">
+
+<p class="col-sm-offset-2">
 <button class="button button5 btn-default">자주하는 질문</button>
 <button class="button button5 btn-default">1 : 1 문의</button>
 <button class="button button5 btn-default">신고하기</button>
 </p>
 <hr>
-<p style="margin-left: -25%">
+<p class="col-sm-offset-2">
 <button class="button button5 btn-default">전체</button>
 <button class="button button5 btn-default">구매관련</button>
 <button class="button button5 btn-default">판매관련</button>
@@ -62,8 +34,8 @@
 <button class="button button5 btn-default">사기</button>
 <button class="button button5 btn-default">기타</button>
 </p>
-
-<div class="panel-group col-sm-8" id="accordion" role="tablist" aria-multiselectable="true" style="margin-left: 20%">
+<br>
+<div class="panel-group col-sm-8 col-sm-offset-2 text-center" id="accordion" role="tablist" aria-multiselectable="true">
 
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -136,7 +108,7 @@
   </div>
 </div>
 
-</center>
+
 
 </body>
 </html>
