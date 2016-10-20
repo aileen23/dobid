@@ -67,7 +67,7 @@
 
 
     <div class="filebox col-sm-5">
-        <label  for="cma_file text-center">첨부파일</label>
+        <label  for="cma_file"class="text-center">첨부파일</label>
         <input type="file" name="cma_file" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" />
         <br><br>
         <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>
