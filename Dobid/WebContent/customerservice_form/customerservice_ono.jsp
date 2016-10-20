@@ -20,9 +20,9 @@
 
 </head>
 <body>
-<center>
 
-<p style="margin-left: -30%">
+
+<p class="col-sm-offset-2">
 <button class="button button5 btn-default">자주하는 질문</button>
 <button class="button button5 btn-default">1 : 1 문의</button>
 <button class="button button5 btn-default">신고하기</button>
@@ -30,37 +30,37 @@
 <hr>
   <form name="form" id="form" action="" method="post" enctype="multipart/form-data" autocomplete="off" class="form-horizontal">
   <div class="form-group">
-    <label for="inputTitle" class="col-sm-4 control-label">제목</label>
+    <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
       <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputWriter" class="col-sm-4 control-label">작성자</label>
+    <label for="inputWriter" class="col-sm-3 control-label">작성자</label>
     <div class="col-sm-5">
       <input type="text" class="form-control" id="inputWriter" placeholder="작성자">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputWriter" class="col-sm-4 control-label">분류</label>
+    <label for="inputWriter" class="col-sm-3 control-label">분류</label>
     <div class="col-sm-5">
-      <select style="width: 100%" class="form-control">
-      	<option>선택해 주세요</option>
-      	<option>선택해라</option>
-      	<option>나좀 선택해줘</option>
-      	<option>선택 받고 싶어요</option>
-      	<option>아이 선택</option>
+      <select class="form-control">
+      	<option>구매관련</option>
+      	<option>판매관련</option>
+      	<option>이용안내</option>
+      	<option>사기</option>
+      	<option>기타</option>
       </select>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputTextarea" class="col-sm-4 control-label" >내용</label>
+    <label for="inputTextarea" class="col-sm-3 control-label" >내용</label>
     <div class="col-sm-5">
       <textarea class="form-control " id="inputTextarea" placeholder="내용을 입력하세요" style="height: 200px"></textarea>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputFile" class="col-sm-4 control-label" >첨부파일</label>
+    <label for="inputFile" class="col-sm-3 control-label" >첨부파일</label>
 
 
     <div class="filebox col-sm-5">
@@ -76,11 +76,11 @@
 
 </form>
 
-<button class="button button5 btn-default">확인</button>
+<button class="button button5 btn-default col-sm-offset-5">확인</button>
 <button class="button button5 btn-default">취소</button>
 
 
-</center>
+
 
 </body>
 </html>
