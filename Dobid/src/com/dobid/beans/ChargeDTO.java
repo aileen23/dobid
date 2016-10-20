@@ -2,7 +2,7 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class chargeDTO {
+public class ChargeDTO {
 	private String member_id;
 	private int charge_will_amount;
 	private Date charge_date;
@@ -10,10 +10,10 @@ public class chargeDTO {
 	private char charge_check;
 	private int charge_before_amount;
 
-	public chargeDTO() {
+	public ChargeDTO() {
 	}
 
-	public chargeDTO(String member_id, int charge_will_amount, Date charge_date, String charge_type, char charge_check,
+	public ChargeDTO(String member_id, int charge_will_amount, Date charge_date, String charge_type, char charge_check,
 			int charge_before_amount) {
 		super();
 		this.member_id = member_id;

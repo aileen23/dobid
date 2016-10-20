@@ -2,7 +2,7 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class service_answerDTO {
+public class Service_answerDTO {
 	private String member_id;
 	private String title;
 	private String categori;
@@ -12,10 +12,10 @@ public class service_answerDTO {
 	private String answer_contents;
 	private Date answer_date;
 
-	public service_answerDTO() {
+	public Service_answerDTO() {
 	}
 
-	public service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
+	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
 			Date upload_date, String answer_contents, Date answer_date) {
 		super();
 		this.member_id = member_id;

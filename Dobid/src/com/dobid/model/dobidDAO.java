@@ -2,7 +2,7 @@ package com.dobid.model;
 
 import java.sql.SQLException;
 
-import com.dobid.beans.memberDTO;
+import com.dobid.beans.MemberDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
@@ -14,7 +14,7 @@ public class dobidDAO {
 		smc = SqlMapConfig.getSqlMapInstance();
 	}
 
-	public boolean insert(memberDTO member) {
+	public boolean insert(MemberDTO member) {
 		try {
 			smc.insert("dobid.registAccount", member);
 			return true;
@@ -22,5 +22,16 @@ public class dobidDAO {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public String login(MemberDTO member){
+		String id = "";
+		try {
+			id = (String) smc.queryForObject("dobid.login", member);
+			return id;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

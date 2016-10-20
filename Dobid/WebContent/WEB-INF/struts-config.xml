@@ -64,9 +64,18 @@
 		<action path="/Welcome" forward="/pages/Welcome.jsp" />
 
 		<!-- register account -->
-		<action path="/dobid/regist_account" type="com.dobid.actions.Regist_account_Action">
-			<forward name="success" path="/dobid/regist_form/main.jsp"></forward>
+		<action path="/main" forward="/regist_form/main.jsp"></action>
+
+		<action path="/login" forward="/regist_form/login.jsp"><!-- type="com.dobid.actions.regist.Login_Action" -->
+
 		</action>
+
+		<action path="/regist_account" forward="/regist_form/regist_account.jsp"><!-- 
+				type="com.dobid.actions.regist.Regist_account_Action" -->
+		</action>
+
+
+
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 

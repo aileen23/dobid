@@ -1,6 +1,6 @@
 package com.dobid.beans;
 
-public class memberDTO {
+public class MemberDTO {
 	private String member_id;
 	private String name;
 	private String pass;
@@ -12,10 +12,10 @@ public class memberDTO {
 	private String birthday;
 	private int charging_amount;
 
-	public memberDTO() {
+	public MemberDTO() {
 	}
 
-	public memberDTO(String member_id, String name, String pass, String phone, String email, String address,
+	public MemberDTO(String member_id, String name, String pass, String phone, String email, String address,
 			String nickname, String introduction, String birthday, int charging_amount) {
 		super();
 		this.member_id = member_id;

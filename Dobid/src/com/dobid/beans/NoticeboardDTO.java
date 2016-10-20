@@ -2,7 +2,7 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class noticeboardDTO {
+public class NoticeboardDTO {
 	private int basic_board_num;
 	private String member_id;
 	private String title;
@@ -11,10 +11,10 @@ public class noticeboardDTO {
 	private int cilck_count;
 	private Date upload_date;
 
-	public noticeboardDTO() {
+	public NoticeboardDTO() {
 	}
 
-	public noticeboardDTO(int basic_board_num, String member_id, String title, String contents, String image_path,
+	public NoticeboardDTO(int basic_board_num, String member_id, String title, String contents, String image_path,
 			int cilck_count, Date upload_date) {
 		super();
 		this.basic_board_num = basic_board_num;

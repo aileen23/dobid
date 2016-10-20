@@ -1,12 +1,12 @@
 package com.dobid.beans;
 
-public class auction_reviewDTO {
+public class Auction_reviewDTO {
 	private int review_num;
 	private int auction_board_num;
 	private String title;
 	private String contents;
 
-	public auction_reviewDTO() {
+	public Auction_reviewDTO() {
 	}
 
 	public int getReview_num() {
@@ -41,7 +41,7 @@ public class auction_reviewDTO {
 		this.contents = contents;
 	}
 
-	public auction_reviewDTO(int review_num, int auction_board_num, String title, String contents) {
+	public Auction_reviewDTO(int review_num, int auction_board_num, String title, String contents) {
 		super();
 		this.review_num = review_num;
 		this.auction_board_num = auction_board_num;

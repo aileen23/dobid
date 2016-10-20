@@ -2,16 +2,16 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class commentDTO {
+public class CommentDTO {
 	private int comment_num;
 	private String member_id;
 	private String contents;
 	private Date upload_date;
 
-	public commentDTO() {
+	public CommentDTO() {
 	}
 
-	public commentDTO(int comment_num, String member_id, String contents, Date upload_date) {
+	public CommentDTO(int comment_num, String member_id, String contents, Date upload_date) {
 		super();
 		this.comment_num = comment_num;
 		this.member_id = member_id;

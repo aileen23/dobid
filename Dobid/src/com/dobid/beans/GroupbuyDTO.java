@@ -2,7 +2,7 @@ package com.dobid.beans;
 
 import java.sql.Date;
 
-public class groupbuyDTO {
+public class GroupbuyDTO {
 	private int groupbuy_board_num;
 	private String title;
 	private String contents;
@@ -19,10 +19,10 @@ public class groupbuyDTO {
 	private int discount_price;
 	private int now_step;
 
-	public groupbuyDTO() {
+	public GroupbuyDTO() {
 	}
 
-	public groupbuyDTO(int groupbuy_board_num, String title, String contents, String main_image_path,
+	public GroupbuyDTO(int groupbuy_board_num, String title, String contents, String main_image_path,
 			String explain_image_path, int participant_num, String categori, int amount, Date end_date,
 			Date regist_date, int step_participant, int step_discount, int first_price, int discount_price,
 			int now_step) {
