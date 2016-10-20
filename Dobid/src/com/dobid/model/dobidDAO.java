@@ -2,6 +2,7 @@ package com.dobid.model;
 
 import java.sql.SQLException;
 
+import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.MemberDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -33,5 +34,18 @@ public class dobidDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public boolean FreeBoardWrite(FreeboardDTO freeboard){
+		
+		try {
+			smc.insert("dobid.FreeBoardWrite", freeboard);
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+		return false;
+		
 	}
 }

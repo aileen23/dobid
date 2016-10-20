@@ -20,11 +20,25 @@
 
 	<!-- 회원가입 -->
 	<insert id="registAccount" parameterClass="memberDTO">
-		insert into reply values (#member_id#, #name#, #pass#, #phone#, #email#,
+		insert into member values (#member_id#, #name#, #pass#, #phone#, #email#,
 		#address#, #nickname#, #introduction#, #birthday#, #charging_amount#)
 	</insert>
 	<!-- 로그인 -->
 	<select id="login" parameterClass="memberDTO" resultClass="String">
 		select id from member where id = #id# and pass = #pass#
 	</select>
+	
+	<!-- 자유게시판 글쓰기 -->
+	<select id="FreeBoardWrite" parameterClass="FreeboardDTO">
+		insert into reply values (#member_id#, #name#, #pass#, #phone#, #email#,
+		#address#, #nickname#, #introduction#, #birthday#, #charging_amount#)
+	</select>
 </sqlMap>
+
+
+
+
+
+
+
+
