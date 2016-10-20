@@ -73,7 +73,23 @@
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
 		<!-- type="com.dobid.actions.regist.Regist_account_Action" -->
 		</action>
-
+		
+		<!-- customservice -->
+		<!-- customservice_qna -->
+		<action path="/customservice_qna" forward="customservice_form/customservice_qna.jsp">
+		
+		</action>
+	
+		<!-- customservice_ono -->
+		<action path="/customservice_ono" forward="customservice_form/customservice_ono.jsp">
+		
+		</action>
+	
+		<!-- customservice_report -->
+		<action path="/customservice_report" forward="customservice_form/customservice_report.jsp">
+		
+		</action>
+	
 
 
 
