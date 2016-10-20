@@ -6,7 +6,7 @@
 <head>
 
 <!-- CSS -->
-<link href="./css/jongmin.css" rel="stylesheet">
+<link href="./board_form/css/jongmin.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판 쓰기 뷰</title>
 
