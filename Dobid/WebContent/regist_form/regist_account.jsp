@@ -29,63 +29,63 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="ID">
+      <input type="text" class="form-control" id="ID" placeholder="ID">
     </div>
     <button type="button" class="btn btn-default" style="margin-right: 5%">Check</button> 
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-4">
-      <input type="password" class="form-control" id="inputPwd" placeholder="Password">
+      <input type="password" class="form-control" id="Password" placeholder="Password">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">CheckPassword</label>
     <div class="col-sm-4">
-      <input type="password" class="form-control" id="inputPwd" placeholder="CheckPassword">
+      <input type="password" class="form-control" id="CheckPassword" placeholder="CheckPassword">
     </div>
   </div>
    <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Name">
+      <input type="text" class="form-control" id="Name" placeholder="Name">
     </div>
   </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Phone">
+      <input type="text" class="form-control" id="Phone" placeholder="Phone">
     </div>
   </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="E-mail">
+      <input type="text" class="form-control" id="E-mail" placeholder="E-mail">
     </div>
   </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Address">
+      <input type="text" class="form-control" id="Address" placeholder="Address">
     </div>
   </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">NickName</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="NickName">
+      <input type="text" class="form-control" id="NickName" placeholder="NickName">
     </div>
     <button type="button" class="btn btn-default" style="margin-right: 5%">Check</button> 
   </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Introduction</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Introduction">
+      <input type="text" class="form-control" id="Introduction" placeholder="Introduction">
     </div>
   </div>
     <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Birthday</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Birthday">
+      <input type="text" class="form-control" id="Birthday" placeholder="Birthday">
     </div>
   </div>
 

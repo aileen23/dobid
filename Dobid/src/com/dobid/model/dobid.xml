@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap namespace="dobid">
+<typeAlias alias="auction_participantDTO" type="com.dobid.beans.auction_participantDTO"/>
+<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.auction_reviewDTO"/>
+<typeAlias alias="auctionDTO" type="com.dobid.beans.auctionDTO"/>
+<typeAlias alias="basketDTO" type="com.dobid.beans.basketDTO"/>
+<typeAlias alias="chargeDTO" type="com.dobid.beans.chargeDTO"/>
+<typeAlias alias="commentDTO" type="com.dobid.beans.commentDTO"/>
+<typeAlias alias="freeboardDTO" type="com.dobid.beans.freeboardDTO"/>
+<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.groupbuy_participantDTO"/>
+<typeAlias alias="groupbuy_reviewDTO" type="com.dobid.beans.groupbuy_reviewDTO"/>
+<typeAlias alias="groupbuyDTO" type="com.dobid.beans.groupbuyDTO"/>
+<typeAlias alias="memberDTO" type="com.dobid.beans.memberDTO"/>
+<typeAlias alias="messageDTO" type="com.dobid.beans.messageDTO"/>
+<typeAlias alias="noticeboardDTO" type="com.dobid.beans.noticeboardDTO"/>
+<typeAlias alias="service_answerDTO" type="com.dobid.service_answerDTO"/>
+<typeAlias alias="serviceDTO" type="com.dobid.beans.serviceDTO"/>
+
+
+<insert id="registAccount" parameterClass="memberDTO">
+insert into reply values (##, ##, ##, ##, ##, ##, ##, ##, ##, ##) 
+</insert>
+</sqlMap>
