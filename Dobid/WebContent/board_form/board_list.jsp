@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<header><%@include file="../regist_form/header.jsp"%></header>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- CSS -->
@@ -21,7 +22,10 @@
 </head>
 <!-- board_list.jsp 자유게시판과 공지사항을 탭으로구분하여 보여줌 -->
 <body>
-
+<!-- 헤더 -->
+	<br>
+	<br>
+	<br>
 	<div class="container">
 
 		<input type="button" class="button button5 btn-default" value="공지사항"
@@ -58,6 +62,16 @@
 				id="select"> <input type="button" onclick="boardSelect()"
 				value="검색" class="button button5 btn-default">
 		</div>
+	</div>
+	
+	
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
+		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+
 	</div>
 </body>
 </html>

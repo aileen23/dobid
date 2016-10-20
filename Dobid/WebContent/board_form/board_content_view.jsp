@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<header><%@include file="../regist_form/header.jsp"%></header>
 <head>
 
 <!-- CSS -->
@@ -33,7 +34,10 @@
 
 </head>
 <body>
-
+<!-- 헤더 -->
+	<br>
+	<br>
+	<br>
 	<center>
 		<p style="margin-left: -30%">
 			<button class="button button5 btn-default" onclick="notice_board()">공지사항</button>
@@ -82,5 +86,14 @@
 		</div>
 
 	</center>
+	
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
+		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+
+	</div>
 </body>
 </html>
