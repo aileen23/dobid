@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
@@ -41,6 +41,7 @@
 <!-- ================================================ Form Bean Definitions -->
 
     <form-beans>
+    <form-bean type="com.dobid.product_regist.action.form.Product_regist_form" name="regist_actionForm"/>
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
@@ -93,6 +94,13 @@
         <action
             path="/Welcome"
             forward="/pages/Welcome.jsp"/>
+            
+        <!-- product_regist 관련 액션. -->    
+        <action path="/product_regist_form/regist" forward="/product_regist_form/auction_regist.jsp"></action>
+        <action path="/product_regist_form/auction_regist" type="com.dobid.product_regist.action.Product_regist" name="regist_actionForm">
+        	<forward path="/product_regist/regist_view.do" name="success" redirect="true"></forward>
+			<forward path="/product_regist/regist.do" name="fail"></forward>
+        </action>
 
     <!-- sample input and input submit actions
 
