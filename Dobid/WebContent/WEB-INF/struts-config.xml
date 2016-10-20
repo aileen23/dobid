@@ -66,12 +66,12 @@
 		<!-- register account -->
 		<action path="/main" forward="/regist_form/main.jsp"></action>
 
-		<action path="/login" forward="/regist_form/login.jsp"><!-- type="com.dobid.actions.regist.Login_Action" -->
-
+		<action path="/login" forward="/regist_form/login.jsp">
+		<!-- type="com.dobid.actions.regist.Login_Action" -->
 		</action>
 
-		<action path="/regist_account" forward="/regist_form/regist_account.jsp"><!-- 
-				type="com.dobid.actions.regist.Regist_account_Action" -->
+		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
+		<!-- type="com.dobid.actions.regist.Regist_account_Action" -->
 		</action>
 
 
