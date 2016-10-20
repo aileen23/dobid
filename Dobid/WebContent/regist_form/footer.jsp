@@ -14,7 +14,6 @@
    }
    
 </style>
-<title>footer</title>
    <ul style="margin-left: 15%">
    <li><img alt="Do!Bid" src="../image/dobid.png" width="150" height="70" align="top"></li>
    </ul>
