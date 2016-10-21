@@ -20,39 +20,53 @@
 
 	<!-- 회원가입 -->
 	<insert id="registAccount" parameterClass="memberDTO">
-		insert into member values (#member_id#, #name#, #pass#, #phone#, #email#,
-		#address#, #nickname#, #introduction#, #birthday#, #charging_amount#)
+		insert into member
+		values (#member_id#, #name#, #pass#, #phone#, #email#,
+		#address#,
+		#nickname#, #introduction#, #birthday#, #charging_amount#)
 	</insert>
 	<!-- 로그인 -->
 	<select id="login" parameterClass="memberDTO" resultClass="String">
 		select id from member where id = #id# and pass = #pass#
 	</select>
-	
+
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" parameterClass="NoticeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from
+		noticeboard
 	</select>
-	
+
 	<!-- 게시판 리스트보기(자유) -->
 	<select id="FreeSelectAll" parameterClass="FreeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
 	</select>
-	
+
 	<!-- 게시판 상세보기(공지) -->
-	<select id="NoticeSelect" parameterClass="NoticeboardDTO" resultClass="String">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
+	<select id="NoticeSelect" parameterClass="NoticeboardDTO"
+		resultClass="String">
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from
+		noticeboard where basic_board_num=#basic_board_num#
 	</select>
-	
+
 	<!-- 게시판 상세보기(자유) -->
-	<select id="FreeSelect" parameterClass="FreeboardDTO" resultClass="String">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
+	<select id="FreeSelect" parameterClass="FreeboardDTO"
+		resultClass="String">
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+		where basic_board_num=#basic_board_num#
 	</select>
-	
-	
+
+
 	<!-- 자유게시판 글쓰기 -->
 	<insert id="FreeBoardWrite" parameterClass="FreeboardDTO">
-		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
-	</insert>>
+		insert into freeboard
+		values
+		(freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
+	</insert>
+
 </sqlMap>
 
 
