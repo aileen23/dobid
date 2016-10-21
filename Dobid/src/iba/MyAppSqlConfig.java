@@ -8,9 +8,9 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 public class MyAppSqlConfig {
   /*
-      sqlMapConfig.xml(sql¹®À» Æ÷ÇÔÇÑ XML)¹®¼­¸¦ °´Ã¼È­ ½ÃÄÑÁÖ´Â Å¬·¡½º
+      sqlMapConfig.xml(sqlï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ XML)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼È­ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
       
-      SqlMapClientÅ¬·¡½º : XML¿¡ ÀÛ¼ºÇÑ sql¹®À» È£Ãâ
+      SqlMapClientÅ¬ï¿½ï¿½ï¿½ï¿½ : XMLï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½ sqlï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
    */
 	
 	
@@ -23,7 +23,7 @@ public class MyAppSqlConfig {
 	  sqlMap = SqlMapClientBuilder.buildSqlMapClient(reader);
 	 }catch(Exception e){
 		 e.printStackTrace();
-		 throw new RuntimeException("MyAppSqlConfigÃÊ±âÈ­ Áß ¿¡·¯: "+ e);
+		 throw new RuntimeException("MyAppSqlConfig ì´ˆê¸°í™”ë¬¸ì œ: "+ e);
 	 }
    }
    
