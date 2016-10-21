@@ -1,38 +1,28 @@
 @charset "utf-8";
-.navbar.navbar-inverse {
-	background-color: #000000;
-	border-radius: 0px;
-	-webkit-box-shadow: 0px 0px #FFFFFF;
-	box-shadow: 0px 0px #FFFFFF;
-
-}
-
-.navbar.navbar-inverse>li>a:hover { 
-	background-color: #F000000;
-	}
-
-
-.container-fluid .navbar-header .navbar-brand {
+.navbar.navbar-inverse.navbar-fixed-top .navbar-header .navbar-brand {
 	color: #FFFFFF;
 	font-size: xx-large;
-	font-style: normal;
 }
-.nav.navbar-nav .dropdown .dropdown-toggle {
+.nav.navbar-nav .dropdown #Auction {
+	color: #FFFFFF;
+	width: 90px;
+	text-align: center;
+}
+.nav.navbar-nav #navbar_gong #gongdong {
+	width: 100px;
+	text-align: center;
 	color: #FFFFFF;
 }
-#navbar_gong {
+.nav.navbar-nav .dropdown #Board {
 	color: #FFFFFF;
-
+	width: 100px;
 }
-#navright {
+.nav.navbar-nav .dropdown #Service {
+	text-align: center;
 	color: #FFFFFF;
-}
-.nav.navbar-nav #navbar_gong a {
-	color: #FFFFFF;
+	width: 100px;
 }
 #navright li #nav_login {
 	color: #FFFFFF;
-}
-
-#nav_login {
+	margin-right: 80px;
 }
