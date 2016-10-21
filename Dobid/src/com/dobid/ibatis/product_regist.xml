@@ -13,10 +13,16 @@
    		values (AUCTION_SEQ.NEXTVAL,#seller_id#,#title#,#contents#,#main_image_path#,#explain_image_path#,#start_amount#,#categori#,#amount#,to_date(#end_date#,'YYYY-MM-DD:HH24:MI:SS'),to_date(#regist_date#,'YYYY-MM-DD:HH24:MI:SS'),#hot_check#)
    </insert>
    <select id="search_list" parameterClass="paramiter" resultClass="auction_list">
-   		select * from (select rownum rnum, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
+   		select * from (select rownum rnum,a.AUCTION_BOARD_NUM, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
 	
    </select>
    <select id="group_search_list" parameterClass="paramiter" resultClass="groupbuy_list">
    		select * from (select rownum rnum,TITLE, MAIN_IMAGE_PATH, PARTICIPANT_NUM, CATEGORI,END_DATE,REGIST_DATE,DISCOUNT_PRICE from GROUPBUY where TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
+   </select>
+   <select id="auction_object_select" parameterClass="Int" resultClass="auction_reviewDTO">
+   		select AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,END_DATE,REGIST_DATE,HIGHEST_PRICE from auction where AUCTION_BOARD_NUM=#Int#
+   </select>
+   <select id="user_id_select" parameterClass="String" resultClass="String">
+   		select NAME from MEMBER where MEMBER_ID = #string#
    </select>
 </sqlMap>

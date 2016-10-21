@@ -100,6 +100,24 @@ public class AuctionDTO {
 		this.hot_check = hot_check;
 	}
 
+	
+	
+	public AuctionDTO(int auction_board_num, String seller_id, String title,
+			String contents, String explain_image_path, int start_amount,String categori,
+			String end_date, String regist_date, int highest_price) {
+		super();
+		this.auction_board_num = auction_board_num;
+		this.seller_id = seller_id;
+		this.title = title;
+		this.contents = contents;
+		this.explain_image_path = explain_image_path;
+		this.start_amount = start_amount;
+		this.categori = categori;
+		this.end_date = end_date;
+		this.regist_date = regist_date;
+		this.highest_price = highest_price;
+	}
+
 	public int getAuction_board_num() {
 		return auction_board_num;
 	}

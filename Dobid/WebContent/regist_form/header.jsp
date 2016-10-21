@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" 
-   href="/regist_form/css/bootstrap.min.css">
-<link href="./css/mystyle.css" rel="stylesheet" type="text/css">
+   href="/Dobid/regist_form/css/bootstrap.min.css">
+<link href="/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <script
    src="/Dobid/regist_form/js/jquery-1.8.3.min.js"></script>
 <script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script
-   src="./regist_form/js/bootstrap.min.js"></script>
+   src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script> 
 
 $(document).ready(function(){
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$(this).css("background-color", "black"); 
 		$(this).css("color", "white"); 
     });
-    $("#Auction").mouseclick(function(){
+    $("#Auction").click(function(){
     	$("#dropAuction").show();
     });
 	$("#dropAuction").mouseout(function(){
@@ -49,7 +49,7 @@ $(document).ready(function(){
 		$(this).css("color", "white"); 
     });
 
-    $("#Service").mouseclick(function(){
+    $("#Service").click(function(){
     	$("#dropService").show();
     });
 	$("#dropService").mouseout(function(){
@@ -65,7 +65,7 @@ $(document).ready(function(){
 		$(this).css("background-color", "black"); 
 		$(this).css("color", "white"); 
     });
-    $("#Board").mouseclick(function(){
+    $("#Board").click(function(){
     	$("#dropBoard").show();
     });
 	$("#dropBoard").mouseout(function(){
