@@ -22,6 +22,8 @@ public class Mypage_Action extends Action {
 		MemberDTO member = (MemberDTO) sqlMap.queryForObject("myprofile.select","1"); 
         request.setAttribute("member", member);
 		
+        
+        
 		return mapping.findForward("success");
 	}
 }
