@@ -11,19 +11,22 @@ import org.apache.struts.action.ActionMapping;
 import com.dobid.beans.MemberDTO;
 import com.dobid.model.dobidDAO;
 
-public class Login_Action extends Action{
-@Override
-public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-		HttpServletResponse response) throws Exception {
-	
-	MemberDTO dto = new MemberDTO();
-	dto.setMember_id(request.getParameter("id"));
-	dto.setPass(request.getParameter("pass"));
-	
-	dobidDAO dao = new dobidDAO();
-	dao.login(dto);
-	request.getSession().setAttribute("logincheck", request.getParameter("id"));
-	
-	return super.execute(mapping, form, request, response);
-}
+public class Login_Action extends Action {
+	@Override
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		MemberDTO dto = new MemberDTO();
+		dto.setMember_id(request.getParameter("id"));
+		dto.setPass(request.getParameter("pass"));
+
+		dobidDAO dao = new dobidDAO();
+		if (dao.login(dto) == null || dao.login(dto).equals("")) {
+			request.getSession().setAttribute("logincheck", "");
+		} else {
+			request.getSession().setAttribute("logincheck", request.getParameter("id"));
+		}
+
+		return mapping.findForward("success");
+	}
 }
