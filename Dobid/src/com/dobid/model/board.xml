@@ -39,7 +39,6 @@
 		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
 	</select>
 	
-	
 	<!-- 자유게시판 글쓰기 -->
 	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
 		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)

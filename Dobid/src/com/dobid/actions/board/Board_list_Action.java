@@ -25,10 +25,10 @@ public class Board_list_Action extends Action {
 			HttpServletResponse response) throws Exception {
 		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
 	
-			List<NoticeboardDTO> noticelist = sqlMap.queryForList("dobid.NoticeSelectAll"); 
+			List<NoticeboardDTO> noticelist = sqlMap.queryForList("board.NoticeSelectAll"); 
 	        request.setAttribute("noticelist", noticelist);
 		
-			List<FreeboardDTO> freelist = sqlMap.queryForList("dobid.FreeSelectAll");  
+			List<FreeboardDTO> freelist = sqlMap.queryForList("board.FreeSelectAll");  
 	        request.setAttribute("freelist", freelist);
 	
 
