@@ -5,6 +5,8 @@
 	<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.AuctionDTO" />
 	<typeAlias alias="auction_list" type="com.dobid.beans.Auction_listDTO"/>
 	<typeAlias alias="paramiter" type="com.dobid.beans.Auction_list_paramiterDTO"/>
+	<typeAlias alias="paramiter" type="com.dobid.beans.GroupbuyDTO"/>
+	
 	<!-- 경매등록. -->
    <insert id="auction_regist" parameterClass="auction_reviewDTO">
    		insert into auction (AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,MAIN_IMAGE_PATH,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,AMOUNT,END_DATE,REGIST_DATE,HOT_CHECK) 
@@ -12,8 +14,9 @@
    </insert>
    <select id="search_list" parameterClass="paramiter" resultClass="auction_list">
    		select * from (select rownum rnum, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
-
-
-   		
+	
+   </select>
+   <select id="group_search_list" parameterClass="paramiter" resultClass="auction_list">
+   		select * from (select rownum rnum,TITLE, MAIN_IMAGE_PATH, PARTICIPANT_NUM, CATEGORI,END_DATE,REGIST_DATE,DISCOUNT_PRICE from GROUPBUY TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
    </select>
 </sqlMap>
