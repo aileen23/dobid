@@ -29,11 +29,11 @@ $(document).ready(function(){
 		$(this).hide();
 	});
 	
-	$("#navbar_gong").mouseover(function(){
+	$("#gongdong").mouseover(function(){
 		$(this).css("background-color", "black"); 
 		$(this).css("color", "white"); 
     });
-    $("#navbar_gong").mouseout(function(){
+    $("#gongdong").mouseout(function(){
 		$(this).css("background-color", "black"); 
 		$(this).css("color", "white"); 
     });
@@ -89,7 +89,7 @@ $(document).ready(function(){
 					</ul>
 				</li>
 							
-				<li id="navbar_gong"><a href="#">공동구매</a></li>
+				<li id="navbar_gong"><a href="#" id="gongdong">공동구매</a></li>
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="Board">커뮤니티 <span class="caret"></span></a>
 					<ul class="dropdown-menu" id="dropBoard">
 						<li><a href="#">공지사항</a></li>
