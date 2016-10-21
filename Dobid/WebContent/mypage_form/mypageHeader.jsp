@@ -20,7 +20,7 @@
     <script> 
 	$(document).ready(function(){
 		$(".navtab").mouseover(function(){
-				$(".navtab").css("background-color", "black"); 
+				$(".navtab").css("background-color", "black") 
 		}
 	}
     </script>
@@ -43,9 +43,9 @@
       </ul>
 </div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../../Downloads/make-style-web-page/js/jquery-1.11.3.min.js"></script>
+	<script src="./js/jquery-1.11.3.min.js"></script>
 
 	<!-- Include all compiled plugins (below), or include individual files as needed --> 
-	<script src="../../../../../Downloads/make-style-web-page/js/bootstrap.js"></script>
+	<script src="./js/bootstrap.js"></script>
   </body>
 </html>
