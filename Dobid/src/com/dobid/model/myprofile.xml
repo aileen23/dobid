@@ -18,7 +18,7 @@
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 
-	<select id="select" parameterClass="memberDTO" resultClass="memberDTO">
+	<select id="select" parameterClass="String" resultClass="memberDTO">
 		select name,nickname,email,phone
 		from member
 		where id=#id#
