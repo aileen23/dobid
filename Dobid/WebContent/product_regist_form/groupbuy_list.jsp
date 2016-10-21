@@ -1,3 +1,4 @@
+<%@page import="com.dobid.beans.GroupbuyDTO"%>
 <%@page import="com.dobid.model.Product_registDAO"%>
 <%@page import="com.dobid.beans.Auction_list_paramiterDTO"%>
 <%@page import="com.dobid.beans.Auction_listDTO"%>
@@ -26,7 +27,7 @@ $(document).ready(function(){
 		var text = $(".input_text").val();
 		var lastNum = $("#more_Btn").attr("name");
 		$.ajax({
-            url:'search_more.do',	
+            url:'group_search_more.do',	
             type:'POST',
             data:{"text" : text,"lastNum" : lastNum},
             success:function(result){
@@ -46,12 +47,12 @@ $(document).ready(function(){
 	$(".sch_smit").click(function(){
 		var text = $(".input_text").val();
 		$.ajax({
-            url:'search.do',	
+            url:'group_search.do',	
             type:'POST',
             data:{"text" : text},
             success:function(result){
             	$("#more_Btn").attr("name",0);
-            		$(".box").empty();
+            		$("#box").empty();
             		$("#box").append(result);
 
            	},
@@ -85,7 +86,7 @@ String search = request.getParameter("search_text");
 
 Product_registDAO dao = new Product_registDAO();
 
-List<Auction_listDTO> list = dao.search_list(auction_list_paramiterDTO);
+List<GroupbuyDTO> list = dao.group_search_list(auction_list_paramiterDTO);
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -96,15 +97,15 @@ for(int i = 0; i <list.size(); i++ ){ %>
                             		<div><%= list.get(i).getTitle() %></div>  
                             	</div>
                             	<div class="caption_div">
-                                	<div class="caption_div_bold">입찰시작금액</div>                              
-                                	<div class="caption_div_bold">현재최고금액</div>
+                                	<div class="caption_div_bold">시작 금액</div>                              
+                                	<div class="caption_div_bold">현재 금액</div>
                                 </div>
                                 <div class="caption_div">
-                                	<div><%= list.get(i).getStart_amount()%>원</div>
-                                	<div><%= list.get(i).getHighest_price()%>원</div>
+                                	<div><%= list.get(i).getDiscount_price()%>원</div>
+                                	<div>예비원</div>
                                 </div>
                                 <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 등록 시간</div>
+                                	<div class="caption_div_bold">등록 시간</div>
                                 	<div class="caption_div_bold">종료 시간</div>
                                 </div>
                                 <div class="caption_div">
@@ -112,7 +113,7 @@ for(int i = 0; i <list.size(); i++ ){ %>
                                 	<div><%= list.get(i).getEnd_date()%></div>
                                 </div>
                                 <div class="caption_div">
-                                	<%= list.get(i).getEmail()%>(<%=list.get(i).getName() %>)
+                                	<%= list.get(i).getParticipant_num() %>)
                                 </div>                       
                             </div>
                             <div class="ratings">                             

@@ -8,6 +8,7 @@ import com.dobid.beans.Auction_listDTO;
 import com.dobid.beans.Auction_list_paramiterDTO;
 import com.dobid.beans.Auction_participantDTO;
 import com.dobid.beans.FreeboardDTO;
+import com.dobid.beans.GroupbuyDTO;
 import com.dobid.product_regist.action.SqlMapconfig;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -35,6 +36,18 @@ public class Product_registDAO {
 		List<Auction_listDTO> list = null;
 		try {
 			list = smc.queryForList("product_regist.search_list",search_text);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public List<GroupbuyDTO> group_search_list(Auction_list_paramiterDTO search_text){
+		List<GroupbuyDTO> list = null;
+		try {
+			list = smc.queryForList("product_regist.group_search_list",search_text);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

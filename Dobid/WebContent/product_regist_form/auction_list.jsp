@@ -53,7 +53,7 @@ $(document).ready(function(){
             data:{"text" : text},
             success:function(result){
             	$("#more_Btn").attr("name",0);
-            		$(".box").empty();
+            		$("#box").empty();
             		$("#box").append(result);
 
            	},

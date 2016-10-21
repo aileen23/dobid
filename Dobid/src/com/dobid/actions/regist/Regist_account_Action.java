@@ -16,10 +16,18 @@ public class Regist_account_Action extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		MemberDTO dto = new MemberDTO(request.getParameter("id"), request.getParameter("name"),
-				request.getParameter("pass"), request.getParameter("phone"), request.getParameter("e-mail"),
-				request.getParameter("address"), request.getParameter("nickname"), request.getParameter("introduction"),
-				request.getParameter("birthday"), 0);
+		
+		MemberDTO dto = new MemberDTO();
+		dto.setMember_id(request.getParameter("id"));
+		dto.setName(request.getParameter("name"));
+		dto.setPass(request.getParameter("pass"));
+		dto.setPhone(request.getParameter("phone"));
+		dto.setEmail(request.getParameter("email"));
+		dto.setAddress(request.getParameter("address"));
+		dto.setNickname(request.getParameter("nickname"));
+		dto.setIntroduction(request.getParameter("introduction"));
+		dto.setBirthday(request.getParameter("birthday"));
+		dto.setCharging_amount(0);
 		dobidDAO dao = new dobidDAO();
 		dao.insert(dto);
 		return mapping.findForward("success");

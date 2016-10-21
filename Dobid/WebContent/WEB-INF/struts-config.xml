@@ -88,6 +88,8 @@
         <action path="/product_regist_form/search_more" forward="/product_regist_form/search_more.jsp"></action>
         <action path="/product_regist_form/search" forward="/product_regist_form/search.jsp"></action>
         <action path="/product_regist_form/group_list" forward="/product_regist_form/groupbuy_list.jsp"></action>
+        <action path="/product_regist_form/group_search" forward="/product_regist_form/group_search.jsp"></action>
+        <action path="/product_regist_form/group_search_more" forward="/product_regist_form/group_search_more.jsp"></action>
 
 		<!-- register account -->
 		<action path="/main" forward="/regist_form/main.jsp"></action>

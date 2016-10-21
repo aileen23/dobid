@@ -20,13 +20,15 @@
 <script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 </head>
 
-
 <body>
 	<!-- 헤더 -->
 	<br>
 	<br>
 	<br>
-
+	<div class="container-fluid">
+		<header><%@include file="mypageHeader.html"%></header>
+	</div>
+	<div class="container-fluid">
 	<center>
 		<font size="80" color="black">My Page</font><br>
 	</center>
@@ -117,6 +119,7 @@
 					style="margin-right: 5%">Sign up</button>
 			</div>
 		</div>
+	</div>
 
 
 		<br>
