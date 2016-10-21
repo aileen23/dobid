@@ -1,5 +1,11 @@
+<%@page import="com.dobid.product_regist.action.SqlMapconfig"%>
+<%@page import="com.ibatis.sqlmap.client.SqlMapClient"%>
+<%@page import="com.dobid.model.Product_registDAO"%>
+<%@page import="com.dobid.beans.AuctionDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,37 +37,12 @@ $(document).ready(function(){
 				</div>
 				<button type='submit' class='sch_smit'>검색</button>
 			</div>
+			
 			<div class="top_title">경매 중인 물품</div>
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                            	<div class="caption_div">
-                                	<div class="caption_div_bold">입찰시작금액</div>                              
-                                	<div class="caption_div_bold">현재최고금액</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>1,000,000원</div>
-                                	<div>2,000,000원</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 한 시간</div>
-                                	<div class="caption_div_bold">남은 입찰 시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>2016-10-18 6:01</div>
-                                	<div>4시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	lgh3680(이길학)
-                                </div>                       
-                            </div>
-                            <div class="ratings">                             
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+<% List<AuctionDTO> list = (List<AuctionDTO>)request.getAttribute("list");
+for(int i = 0; i <list.size(); i++ ){ %>
+				<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
@@ -70,144 +51,26 @@ $(document).ready(function(){
                                 	<div class="caption_div_bold">현재최고금액</div>
                                 </div>
                                 <div class="caption_div">
-                                	<div>1,000,000원</div>
-                                	<div>2,000,000원</div>
+                                	<div><%= list.get(i).getStart_amount()%>원</div>
+                                	<div><%= list.get(i).getHighest_price()%>원</div>
                                 </div>
                                 <div class="caption_div">
                                 	<div class="caption_div_bold">입찰 한 시간</div>
                                 	<div class="caption_div_bold">남은 입찰 시간</div>
                                 </div>
                                 <div class="caption_div">
-                                	<div>2016-10-18 6:01</div>
+                                	<div><%= list.get(i).getRegist_date()%></div>
                                 	<div>4시간</div>
                                 </div>
                                 <div class="caption_div">
-                                	lgh3680(이길학)
+                                	<%= list.get(i).getSeller_id()%>(이길학)
                                 </div>                       
                             </div>
                             <div class="ratings">                             
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                            	<div class="caption_div">
-                                	<div class="caption_div_bold">입찰시작금액</div>                              
-                                	<div class="caption_div_bold">현재최고금액</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>1,000,000원</div>
-                                	<div>2,000,000원</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 한 시간</div>
-                                	<div class="caption_div_bold">남은 입찰 시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>2016-10-18 6:01</div>
-                                	<div>4시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	lgh3680(이길학)
-                                </div>                       
-                            </div>
-                            <div class="ratings">                             
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                            	<div class="caption_div">
-                                	<div class="caption_div_bold">입찰시작금액</div>                              
-                                	<div class="caption_div_bold">현재최고금액</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>1,000,000원</div>
-                                	<div>2,000,000원</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 한 시간</div>
-                                	<div class="caption_div_bold">남은 입찰 시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>2016-10-18 6:01</div>
-                                	<div>4시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	lgh3680(이길학)
-                                </div>                       
-                            </div>
-                            <div class="ratings">                             
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                            	<div class="caption_div">
-                                	<div class="caption_div_bold">입찰시작금액</div>                              
-                                	<div class="caption_div_bold">현재최고금액</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>1,000,000원</div>
-                                	<div>2,000,000원</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 한 시간</div>
-                                	<div class="caption_div_bold">남은 입찰 시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>2016-10-18 6:01</div>
-                                	<div>4시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	lgh3680(이길학)
-                                </div>                       
-                            </div>
-                            <div class="ratings">                             
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
-                            <div class="caption">
-                            	<div class="caption_div">
-                                	<div class="caption_div_bold">입찰시작금액</div>                              
-                                	<div class="caption_div_bold">현재최고금액</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>1,000,000원</div>
-                                	<div>2,000,000원</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 한 시간</div>
-                                	<div class="caption_div_bold">남은 입찰 시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	<div>2016-10-18 6:01</div>
-                                	<div>4시간</div>
-                                </div>
-                                <div class="caption_div">
-                                	lgh3680(이길학)
-                                </div>                       
-                            </div>
-                            <div class="ratings">                             
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                   
+<% } %>
                     	<button class="btn btn-default btn-lg btn-block">더 보기</button>
                     </div>
                  </div>               

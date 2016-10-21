@@ -102,7 +102,7 @@
   		<div class="textarea_bot">
   			<textarea rows="20" cols="140" id="text_a" name="form-control" style="resize: none;"></textarea>
   		</div>
-  		<input id="submitBtn" class="btn btn-default btn-lg btn-block sub_btn" type="submit" value="올리기" onClick="return input_check();">
+  		<input id="submitBtn" name="form_control" class="btn btn-default btn-lg btn-block sub_btn" type="submit" value="올리기" onClick="return input_check();">
   		</form>
   	</div>
   </div>

@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" 
-   href="/regist_form/css/bootstrap.min.css">
+   href="/Dobid/regist_form/css/bootstrap.min.css">
 <script
-   src="/regist_form/js/jquery-1.8.3.min.js"></script>
+   src="/Dobid/regist_form/js/jquery-1.8.3.min.js"></script>
 <script
-   src="/regist_form/js/bootstrap.min.js"></script>
+   src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 </head>
    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
