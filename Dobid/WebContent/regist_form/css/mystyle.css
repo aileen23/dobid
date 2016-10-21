@@ -1,0 +1,38 @@
+@charset "utf-8";
+.navbar.navbar-inverse {
+	background-color: #000000;
+	border-radius: 0px;
+	-webkit-box-shadow: 0px 0px #FFFFFF;
+	box-shadow: 0px 0px #FFFFFF;
+
+}
+
+.navbar.navbar-inverse>li>a:hover { 
+	background-color: #F000000;
+	}
+
+
+.container-fluid .navbar-header .navbar-brand {
+	color: #FFFFFF;
+	font-size: xx-large;
+	font-style: normal;
+}
+.nav.navbar-nav .dropdown .dropdown-toggle {
+	color: #FFFFFF;
+}
+#navbar_gong {
+	color: #FFFFFF;
+
+}
+#navright {
+	color: #FFFFFF;
+}
+.nav.navbar-nav #navbar_gong a {
+	color: #FFFFFF;
+}
+#navright li #nav_login {
+	color: #FFFFFF;
+}
+
+#nav_login {
+}
