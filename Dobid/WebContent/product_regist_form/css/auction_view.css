@@ -205,6 +205,12 @@ div#slider figure {
 .sr-only{
 	font-size: large;
 	line-height:45px;
+	color: white;
+}
+.only{
+	font-size: large;
+	line-height:45px;
+	color: white;
 }
 .form-control2 {
     display: block;

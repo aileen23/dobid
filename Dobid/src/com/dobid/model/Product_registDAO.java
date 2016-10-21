@@ -56,6 +56,29 @@ public class Product_registDAO {
 		return list;
 	}
 	
+	public AuctionDTO auction_object_select(String id){
+		AuctionDTO auctionDTO = null;
+		try {
+			auctionDTO = (AuctionDTO) smc.queryForObject("product_regist.auction_object_select",Integer.parseInt(id));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return auctionDTO;
+	}
+	
+	public String user_name_select(String member_id) {
+		
+		String a = null;
+		try {
+			a = (String)smc.queryForObject("product_regist.user_id_select",member_id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return a;
+	}
+	
 	public boolean FreeBoardWrite(FreeboardDTO freeboard){
 		
 		try {

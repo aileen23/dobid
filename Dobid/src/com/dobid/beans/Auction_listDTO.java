@@ -3,6 +3,7 @@ package com.dobid.beans;
 public class Auction_listDTO {
 
 	private String num;
+	private String auction_board_num;
 	private String email;
 	private String name;
 	private String start_amount;
@@ -17,11 +18,12 @@ public class Auction_listDTO {
 	public Auction_listDTO() {
 		super();
 	}
-	public Auction_listDTO(String num,String email, String name, String start_amount,
+	public Auction_listDTO(String num,String auction_board_num,String email, String name, String start_amount,
 			String highest_price, String regist_date, String end_date,
 			String main_image_path, String title) {
 		super();
 		this.num = num;
+		this.auction_board_num = auction_board_num;
 		this.email = email;
 		this.name = name;
 		this.start_amount = start_amount;
@@ -32,7 +34,14 @@ public class Auction_listDTO {
 		this.title = title;
 	}
 	
-	
+
+
+	public String getAuction_board_num() {
+		return auction_board_num;
+	}
+	public void setAuction_board_num(String auction_board_num) {
+		this.auction_board_num = auction_board_num;
+	}
 	public String getTitle() {
 		return title;
 	}
