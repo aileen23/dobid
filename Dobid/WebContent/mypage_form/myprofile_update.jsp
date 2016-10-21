@@ -18,6 +18,7 @@
 <script type="text/javascript" src="./js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+
 </head>
 
 <body>
@@ -25,17 +26,17 @@
 	<br>
 	<br>
 	<br>
+		<div class="titleText">
+		<font size="80" color="black">My Page</font><br>
+		<font size="3" color="black">your Account</font>
+		</div>
+
 	<div class="container-fluid">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
 	<div class="container-fluid">
-	<center>
-		<font size="80" color="black">My Page</font><br>
-	</center>
-	<center>
-		<font size="3" color="black">your Account</font>
-	</center>
 	<br>
+		<br>	<br>
 	<form class="form-horizontal" style="margin-left: 25%" role="form">
 
 		<div class="form-group" >
