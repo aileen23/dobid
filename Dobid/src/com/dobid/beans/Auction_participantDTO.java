@@ -42,7 +42,7 @@ public class Auction_participantDTO {
 		return buyer_id;
 	}
 
-	public void setBuyer_id(String buyer_id) {
+	public void setBuyer_id(String buyer_id) {  
 		this.buyer_id = buyer_id;
 	}
 
