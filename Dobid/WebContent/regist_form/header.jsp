@@ -12,39 +12,77 @@
 <script
    src="./regist_form/js/bootstrap.min.js"></script>
 <script> 
+
 $(document).ready(function(){
     $("#Auction").mouseover(function(){
-        $("#dropAuction").slideDown("slow");
+		$(this).css("background-color", "white"); 
+		$(this).css("color", "black"); 
     });
     $("#Auction").mouseout(function(){
-        $("#dropAuction").slideUp("slow");
+		$(this).css("background-color", "black"); 
+		$(this).css("color", "white"); 
     });
+    $("#Auction").mouseclick(function(){
+    	$("#dropAuction").show();
+    });
+	$("#dropAuction").mouseout(function(){
+		$(this).hide();
+	});
 	
-	$("#Board").mouseover(function(){
-        $("#dropBoard").slideDown("slow");
+	$("#navbar_gong").mouseover(function(){
+		$(this).css("background-color", "black"); 
+		$(this).css("color", "white"); 
     });
-    $("#Board").mouseout(function(){
-        $("#dropBoard").slideUp("slow");
+    $("#navbar_gong").mouseout(function(){
+		$(this).css("background-color", "black"); 
+		$(this).css("color", "white"); 
     });
-
-	$("#Service").mouseover(function(){
-        $("#dropService").slideDown("slow");
+    
+    $("#Service").mouseover(function(){
+		$(this).css("background-color", "white"); 
+		$(this).css("color", "black"); 
     });
     $("#Service").mouseout(function(){
-        $("#dropService").slideUp("slow");
+		$(this).css("background-color", "black"); 
+		$(this).css("color", "white"); 
     });
+    $("#Service").mouseclick(function(){
+    	$("#dropService").show();
+    });
+	$("#dropService").mouseout(function(){
+		$(this).hide();
+	});
 	
+	
+    $("#Board").mouseover(function(){
+		$(this).css("background-color", "white"); 
+		$(this).css("color", "black"); 
+    });
+    $("#Board").mouseout(function(){
+		$(this).css("background-color", "black"); 
+		$(this).css("color", "white"); 
+    });
+    $("#Board").mouseclick(function(){
+    	$("#dropBoard").show();
+    });
+	$("#dropBoard").mouseout(function(){
+		$(this).hide();
+	});
+	
+
+    
 });
+ 
+
 </script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Do!bid</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="Auction">경매 <span class="caret"></span></a>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="Auction">경매<span class="caret"></span></a>
 					<ul class="dropdown-menu" id="dropAuction">
 						<li><a href="#">새제품</a></li>
 						<li><a href="#">중고상품</a></li>
@@ -69,7 +107,6 @@ $(document).ready(function(){
 			</ul>
 			
 			 <ul class="nav navbar-nav navbar-right" id="navright">
-      	 <li><a href="#" id="nav_login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	 <li><a href="login.do" id="nav_login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
-		</div>
 	</nav>
