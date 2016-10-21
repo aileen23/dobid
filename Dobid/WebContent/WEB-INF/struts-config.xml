@@ -101,6 +101,10 @@
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
 		<!-- type="com.dobid.actions.regist.Regist_account_Action" -->
 		</action>
+		<!-- Mypage -->
+		<action path="/myprofile" type="com.dobid.actions.mypage.Mypage_Action">
+			<forward name="success" path="/mypage_form/myprofile_main.jsp"/>		
+		</action>
 		
 		<!-- customservice -->
 		<!-- customservice_qna -->

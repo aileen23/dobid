@@ -20,7 +20,7 @@
     <script> 
 	$(document).ready(function(){
 		$(".navtab").mouseover(function(){
-				$(".navtab").css("background-color", "black");
+				$(".navtab").css("background-color", "black")
 		}
 	}
     </script>
