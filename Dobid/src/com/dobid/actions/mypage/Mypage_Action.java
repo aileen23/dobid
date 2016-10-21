@@ -8,13 +8,19 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.ibatis.sqlmap.client.SqlMapClient;
+
+import iba.SqlMapConfig;
+
 public class Mypage_Action extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
+		
+		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
 		
 		
-		return super.execute(mapping, form, request, response);
+		
+		return mapping.findForward("success");
 	}
 }
