@@ -16,6 +16,7 @@ public class Regist_account_Action extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
+		
 		MemberDTO dto = new MemberDTO();
 		dto.setMember_id(request.getParameter("id"));
 		dto.setName(request.getParameter("name"));

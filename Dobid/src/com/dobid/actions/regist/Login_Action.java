@@ -26,7 +26,6 @@ public class Login_Action extends Action {
 		} else {
 			request.getSession().setAttribute("logincheck", request.getParameter("id"));
 		}
-
 		return mapping.findForward("success");
 	}
 }
