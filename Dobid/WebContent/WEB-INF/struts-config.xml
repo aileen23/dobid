@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
-	license agreements. See the NOTICE file distributed with this work for additional 
-	information regarding copyright ownership. The ASF licenses this file to 
-	You under the Apache License, Version 2.0 (the "License"); you may not use 
-	this file except in compliance with the License. You may obtain a copy of 
-	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
-	by applicable law or agreed to in writing, software distributed under the 
-	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
-	OF ANY KIND, either express or implied. See the License for the specific 
-	language governing permissions and limitations under the License. -->
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+   
+         http://www.apache.org/licenses/LICENSE-2.0
+   
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
 
 <!DOCTYPE struts-config PUBLIC
           "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
@@ -28,9 +34,13 @@
 
 	<!-- ================================================ Form Bean Definitions -->
 
-	<form-beans>
-		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
-			type="app.InputForm"/> end sample -->
+    <form-beans>
+    <form-bean type="com.dobid.product_regist.action.form.Product_regist_form" name="regist_actionForm"/>
+    <!-- sample form bean descriptor for an ActionForm
+        <form-bean
+            name="inputForm"
+            type="app.InputForm"/>
+    end sample -->
 
 		<!-- sample form bean descriptor for a DynaActionForm <form-bean name="logonForm" 
 			type="org.apache.struts.action.DynaActionForm"> <form-property name="username" 
@@ -58,10 +68,19 @@
 
 	<!-- =========================================== Action Mapping Definitions -->
 
-	<action-mappings>
-		<!-- Default "Welcome" action -->
-		<!-- Forwards to Welcome.jsp -->
-		<action path="/Welcome" forward="/pages/Welcome.jsp" />
+    <action-mappings>
+            <!-- Default "Welcome" action -->
+            <!-- Forwards to Welcome.jsp -->
+        <action
+            path="/Welcome"
+            forward="/pages/Welcome.jsp"/>
+            
+        <!-- product_regist 관련 액션. -->    
+        <action path="/product_regist_form/regist" forward="/product_regist_form/auction_regist.jsp"></action>
+        <action path="/product_regist_form/auction_regist" type="com.dobid.product_regist.action.Product_regist" name="regist_actionForm">
+        	<forward path="/product_regist/regist_view.do" name="success" redirect="true"></forward>
+			<forward path="/product_regist/regist.do" name="fail"></forward>
+        </action>
 
 		<!-- register account -->
 		<action path="/main" forward="/regist_form/main.jsp"></action>
@@ -81,7 +100,7 @@
 		</action>
 	
 		<!-- customservice_ono -->
-		<action path="/ervice_ono" forward="/service_form/customerservice_ono.jsp">
+		<action path="/service_ono" forward="/service_form/customerservice_ono.jsp">
 		
 		</action>
 	

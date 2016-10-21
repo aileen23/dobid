@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<!-- s1011/emp.xml -->
+<sqlMap namespace="product_regist"> 
+	<!-- 경매등록. -->
+   <insert id="auction_regist" parameterClass="com/dobid/beans/AuctionDTO">
+   		insert into auction (AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,MAIN_IMAGE_PATH,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,AMOUNT,END_DATE,REGIST_DATE,HOT_CHECK) 
+   		values (AUCTION_SEQ.NEXTVAL,#seller_id#,#title#,#contents#,#main_image_path#,#explain_image_path#,#start_amount#,#categori#,#amount#,to_date(#end_date#,'YYYY-MM-DD:HH24:MI:SS'),to_date(#regist_date#,'YYYY-MM-DD:HH24:MI:SS'),#hot_check#)
+   </insert>
+</sqlMap>

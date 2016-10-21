@@ -12,21 +12,39 @@ public class AuctionDTO {
 	private int start_amount;
 	private String categori;
 	private int amount;
-	private Date end_date;
-	private Date regist_date;
+	private String end_date;
+	private String regist_date;
 	private int highest_price;
 	private String highest_price_id;
-	private char hot_check;
-	private char used_check;
+	private String hot_check;
 
 	public AuctionDTO() {
 	}
 
 	public AuctionDTO(int auction_board_num, String seller_id, String title, String contents, String main_image_path,
-			String explain_image_path, int start_amount, String categori, int amount, Date end_date, Date regist_date,
-			int highest_price, String highest_price_id, char hot_check, char used_check) {
+			String explain_image_path, int start_amount, String categori, int amount, String end_date, String regist_date,
+			String hot_check) {
 		super();
 		this.auction_board_num = auction_board_num;
+		this.seller_id = seller_id;
+		this.title = title;
+		this.contents = contents;
+		this.main_image_path = main_image_path;
+		this.explain_image_path = explain_image_path;
+		this.start_amount = start_amount;
+		this.categori = categori;
+		this.amount = amount;
+		this.end_date = end_date;
+		this.regist_date = regist_date;
+		this.hot_check = hot_check;
+	}
+
+	public AuctionDTO(String seller_id, String title, String contents,
+			String main_image_path, String explain_image_path,
+			int start_amount, String categori, int amount, String end_date,
+			String regist_date, int highest_price, String highest_price_id,
+			String hot_check, char used_check) {
+		super();
 		this.seller_id = seller_id;
 		this.title = title;
 		this.contents = contents;
@@ -40,7 +58,24 @@ public class AuctionDTO {
 		this.highest_price = highest_price;
 		this.highest_price_id = highest_price_id;
 		this.hot_check = hot_check;
-		this.used_check = used_check;
+	}
+
+	public AuctionDTO(String seller_id, String title, String contents,
+			String main_image_path, String explain_image_path,
+			int start_amount, String categori, int amount, String end_date,
+			String regist_date, String hot_check) {
+		super();
+		this.seller_id = seller_id;
+		this.title = title;
+		this.contents = contents;
+		this.main_image_path = main_image_path;
+		this.explain_image_path = explain_image_path;
+		this.start_amount = start_amount;
+		this.categori = categori;
+		this.amount = amount;
+		this.end_date = end_date;
+		this.regist_date = regist_date;
+		this.hot_check = hot_check;
 	}
 
 	public int getAuction_board_num() {
@@ -115,19 +150,19 @@ public class AuctionDTO {
 		this.amount = amount;
 	}
 
-	public Date getEnd_date() {
+	public String getEnd_date() {
 		return end_date;
 	}
 
-	public void setEnd_date(Date end_date) {
+	public void setEnd_date(String end_date) {
 		this.end_date = end_date;
 	}
 
-	public Date getRegist_date() {
+	public String getRegist_date() {
 		return regist_date;
 	}
 
-	public void setRegist_date(Date regist_date) {
+	public void setRegist_date(String regist_date) {
 		this.regist_date = regist_date;
 	}
 
@@ -147,20 +182,13 @@ public class AuctionDTO {
 		this.highest_price_id = highest_price_id;
 	}
 
-	public char getHot_check() {
+	public String getHot_check() {
 		return hot_check;
 	}
 
-	public void setHot_check(char hot_check) {
+	public void setHot_check(String hot_check) {
 		this.hot_check = hot_check;
 	}
-
-	public char getUsed_check() {
-		return used_check;
-	}
-
-	public void setUsed_check(char used_check) {
-		this.used_check = used_check;
-	}
+	
 
 }

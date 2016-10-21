@@ -10,9 +10,15 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
-<script src="./js/customerservice_ono.js"></script>
-<link rel="stylesheet" type="text/css" href="./css/service.css">
+
+
+<!-- *.do 에 대한 CSS, JS 파일 경로 -->
+<script src="service_form/js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="service_form/css/service.css">
+
+<!-- JSP파일에 대한 CSS, JS 파일 경로 -->
+<script src="js/customerservice_ono.js"></script>
+<link rel="stylesheet" type="text/css" href="css/service.css">
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,7 +29,7 @@
 <body>
 
 
-<p class="col-sm-offset-2">
+<p class="col-sm-offset-2" style="margin-top: 70px">
 <a href="service_qna.do"><button class="button button5 btn-default">자주하는 질문</button></a>
 <a href="service_ono.do"><button class="button button5 btn-default">1 : 1 문의</button></a>
 <a href="service_report.do"><button class="button button5 btn-default active">신고하기</button></a>

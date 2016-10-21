@@ -12,15 +12,21 @@
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<!-- *.do 에 대한 CSS, 파일 경로 -->
+<link rel="stylesheet" type="text/css" href="service_form/css/service.css">
 
-<link rel="stylesheet" type="text/css" href="./css/service.css">
+
+<!-- JSP파일에 대한 CSS, JS 파일 경로 -->
+<link rel="stylesheet" type="text/css" href="css/service.css">
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 <header><%@include file="../regist_form/header.jsp"%></header>
 <body>
 
-<p class="col-sm-offset-2">
+<p class="col-sm-offset-2" style="margin-top: 70px">
 <a href="service_qna.do"><button class="button button5 btn-default active">자주하는 질문</button></a>
 <a href="service_ono.do"><button class="button button5 btn-default">1 : 1 문의</button></a>
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
