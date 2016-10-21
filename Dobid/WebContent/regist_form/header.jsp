@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" 
    href="/regist_form/css/bootstrap.min.css">
+<link href="./css/mystyle.css" rel="stylesheet" type="text/css">
 <script
    src="/regist_form/js/jquery-1.8.3.min.js"></script>
 <script
