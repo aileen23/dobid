@@ -2,6 +2,7 @@ package com.dobid.actions.board;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +13,6 @@ import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.NoticeboardDTO;
-import com.dobid.model.dobidDAO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
