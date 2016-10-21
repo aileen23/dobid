@@ -13,9 +13,10 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Service_onoDTO;
+import com.dobid.beans.Service_reportDTO;
 import com.dobid.model.dobidDAO;
 
-public class Customerservice_ono_Action extends Action{
+public class Customerservice_report_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -24,16 +25,15 @@ public class Customerservice_ono_Action extends Action{
 		Date date = new Date();
 		String service_date = df.format(date);
 		
-		Service_onoDTO dto = new Service_onoDTO();
+		Service_reportDTO dto = new Service_reportDTO();
 			dto.setMember_id(request.getParameter("member_id"));
 			dto.setTitle(request.getParameter("title"));
-			dto.setCategori(request.getParameter("categori"));
 			dto.setContents(request.getParameter("contents"));
 			dto.setImage_path(request.getParameter("image_path"));
 			dto.setUpload_date(service_date);
 			
 			dobidDAO dao = new dobidDAO();
-			dao.ServiceOno(dto);	
+			dao.ServiceReport(dto);	
 				
 			
 												

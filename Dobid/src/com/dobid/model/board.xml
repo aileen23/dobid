@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
-<sqlMap namespace="dobid">
+<sqlMap namespace="board">
 
 	<typeAlias alias="auction_participantDTO" type="com.dobid.beans.Auction_participantDTO" />
 	<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.Auction_reviewDTO" />
@@ -18,55 +18,31 @@
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 
-	<insert id="registAccount" parameterClass="memberDTO">
-		insert into member
-		values (#member_id#, #name#, #pass#, #phone#, #email#,
-		#address#,
-		#nickname#, #introduction#, #birthday#, #charging_amount#)
-	</insert>
-	<select id="login" parameterClass="memberDTO" resultClass="String">
-		select id from member where id = #id# and pass = #pass#
-	</select>
 
+	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from
-		noticeboard
+		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard
 	</select>
-
-	<select id="FreeSelectAll" resultClass="freeboardDTO">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
-	</select>
-
-	<select id="NoticeSelect" resultClass="noticeboardDTO"
-		parameterClass="int">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from
-		noticeboard where basic_board_num=#basic_board_num#
-	</select>
-
-	<select id="FreeSelect" resultClass="freeboardDTO"
-		parameterClass="int">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
-		where basic_board_num=#basic_board_num#
-	</select>
-
-
-	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
-		insert into freeboard
-		values
-		(freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
-	</insert>
 	
-
+	<!-- 게시판 리스트보기(자유) -->
+	<select id="FreeSelectAll" resultClass="freeboardDTO">
+		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+	</select>
+	
+	<!-- 게시판 상세보기(공지) -->
+	<select id="NoticeSelect" resultClass="noticeboardDTO" parameterClass="int">
+		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
+	</select>
+	
+	<!-- 게시판 상세보기(자유) -->
+	<select id="FreeSelect" resultClass="freeboardDTO" parameterClass="int">
+		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
+	</select>
 	
 	<!-- 자유게시판 글쓰기 -->
-	<insert id="FreeBoardWrite" parameterClass="FreeboardDTO">
+	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
 		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
 	</insert>
-
 </sqlMap>
 
 

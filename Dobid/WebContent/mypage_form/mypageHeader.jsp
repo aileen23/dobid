@@ -20,7 +20,7 @@
     <script> 
 	$(document).ready(function(){
 		$(".navtab").mouseover(function(){
-				$(".navtab").css("background-color", "black") 
+				$(".navtab").css("background-color", "black")
 		}
 	}
     </script>
@@ -30,8 +30,8 @@
 	
 	<div class="container-fluid">
 	  <ul class="nav nav-tabs" id="mynav">
-	    <li role="presentation"><a href="#" id="nav1" class="navtab">내정보</a></li>
-	    <li role="presentation"><a href="#" id="nav2" class="navtab">정보수정</a></li>
+	    <li role="presentation"><a href="myprofile_main.jsp" id="nav1" class="navtab">내정보</a></li>
+	    <li role="presentation"><a href="myprofile_update.jsp" id="nav2" class="navtab">정보수정</a></li>
 	    <li role="presentation"><a href="#" id="nav3" class="navtab">찜목록</a></li>
         <li role="presentation"><a href="#" id="nav4" class="navtab">경매내역</a></li>
         <li role="presentation"><a href="#" id="nav5" class="navtab">쪽지함</a></li>

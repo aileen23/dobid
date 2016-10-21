@@ -1,7 +1,4 @@
-package com.dobid.actions.board;
-
-import java.util.List;
-
+package com.dobid.actions.mypage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,42 +8,21 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.FreeboardDTO;
-import com.dobid.beans.NoticeboardDTO;
+import com.dobid.beans.MemberDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
+import com.ibatis.sqlmap.engine.mapping.sql.Sql;
 
 import iba.SqlMapConfig;
 
-
-public class Board_list_Action extends Action {
-
+public class Mypage_Action extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		
 		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
-	
-			List<NoticeboardDTO> noticelist = sqlMap.queryForList("board.NoticeSelectAll"); 
-	        request.setAttribute("noticelist", noticelist);
+		MemberDTO member = (MemberDTO) sqlMap.queryForObject("myprofile.select","lgh3680@naver.com"); 
+        request.setAttribute("member", member);
 		
-			List<FreeboardDTO> freelist = sqlMap.queryForList("board.FreeSelectAll");  
-	        request.setAttribute("freelist", freelist);
-	
-
-		
-
 		return mapping.findForward("success");
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

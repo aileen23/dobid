@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap namespace="myprofile">
+
+	<typeAlias alias="auction_participantDTO" type="com.dobid.beans.Auction_participantDTO" />
+	<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.Auction_reviewDTO" />
+	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
+	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
+	<typeAlias alias="chargeDTO" type="com.dobid.beans.ChargeDTO" />
+	<typeAlias alias="commentDTO" type="com.dobid.beans.CommentDTO" />
+	<typeAlias alias="freeboardDTO" type="com.dobid.beans.FreeboardDTO" />
+	<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.Groupbuy_participantDTO" />
+	<typeAlias alias="groupbuy_reviewDTO" type="com.dobid.beans.Groupbuy_reviewDTO" />
+	<typeAlias alias="groupbuyDTO" type="com.dobid.beans.GroupbuyDTO" />
+	<typeAlias alias="memberDTO" type="com.dobid.beans.MemberDTO" />
+	<typeAlias alias="messageDTO" type="com.dobid.beans.MessageDTO" />
+	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
+	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
+	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
+
+	<select id="select" parameterClass="memberDTO" resultClass="memberDTO">
+		select name,nickname,email,phone
+		from member
+		where id=#id#
+	</select>
+
+</sqlMap>
+
+
+
+
+
+
+
+

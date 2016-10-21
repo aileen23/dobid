@@ -1,4 +1,4 @@
---member ¸â¹ö Å×ÀÌºí
+--member ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table member;
 create table member(
 
@@ -15,7 +15,7 @@ charging_amount 		number		    not null
 
 );
 
---message ÂÊÁöÇÔ Å×ÀÌºí
+--message ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table message;
 create table message(
 
@@ -27,7 +27,7 @@ reception_check 		char			not null
 
 );
 
---charge ÃæÀüÅ×ÀÌºí
+--charge ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½
 drop table charge;
 create table charge(
 
@@ -40,7 +40,7 @@ charge_before_amount	number			not null
 
 );
 
---auction °æ¸Å Å×ÀÌºí
+--auction ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table auction;
 create table auction(
 
@@ -62,11 +62,11 @@ used_check				char			not null
 
 );
 
---auction_seq (°æ¸Å Å×ÀÌºí °Ô½Ã±Û ¹øÈ£) ½ÃÄö½º
+--auction_seq (ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence auction_seq;
 create sequence auction_seq   start with 1   increment by 1   nocycle   nocache;
 
---auction_review °æ¸Å ¸®ºä Å×ÀÌºí
+--auction_review ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table auction_review;
 create table auction_review(
 
@@ -77,11 +77,11 @@ contents				varchar2(3000)	not null,
 
 );
 
---auction_review_seq (°æ¸Å¸®ºä Å×ÀÌºí °Ô½Ã±Û ¹øÈ£) ½ÃÄö½º
+--auction_review_seq (ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence auction_review_seq;
 create sequence auction_review_seq   start with 1   increment by 1   nocycle   nocache;
 
---auction_participant °æ¸Å Âü°¡ÀÚ Å×ÀÌºí
+--auction_participant ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table auction_participant;
 create table auction_participant(
 
@@ -93,7 +93,7 @@ bid_check				char			not null
 
 );
 
---groupbuy °øµ¿±¸¸Å Å×ÀÌºí
+--groupbuy ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table groupbuy;
 create table groupbuy(
 
@@ -115,11 +115,11 @@ now_step				number			not null
 
 );
 
---groupbuy_seq  (°øµ¿ ±¸¸Å Å×ÀÌºí °Ô½Ã±Û ¹øÈ£) ½ÃÄö½º
+--groupbuy_seq  (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence groupbuy_seq;
 create sequence groupbuy_seq   start with 1   increment by 1   nocycle   nocache;
 
---groupbuy_review °ø±¸ ¸®ºä Å×ÀÌºí
+--groupbuy_review ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table groupbuy_review_seq;
 create table groupbuy_review_seq(
 
@@ -130,11 +130,11 @@ contents				varchar2(3000)	not null,
 
 );
 
---groupbuy_review_seq (°ø±¸¸®ºä Å×ÀÌºí °Ô½Ã±Û ¹øÈ£) ½ÃÄö½º
+--groupbuy_review_seq (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence groupbuy_review_seq;
 create sequence groupbuy_review_seq   start with 1   increment by 1   nocycle   nocache;
 
---groupbuy_participant °øµ¿±¸¸Å Âü°¡ÀÚ Å×ÀÌºí
+--groupbuy_participant ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table groupbuy_participant;
 create table groupbuy_participant(
 
@@ -148,7 +148,7 @@ buy_check				char			not null
 
 
 
---freeboard °Ô½Ã±Û(±âº») Å×ÀÌºí / ÀÚÀ¯, Áú´ä, °øÁö
+--freeboard ï¿½Ô½Ã±ï¿½(ï¿½âº») ï¿½ï¿½ï¿½Ìºï¿½ / ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½
 drop table freeboard;
 create table freeboard(
 
@@ -162,11 +162,11 @@ upload_date				date			not null
 
 );
 
---freeboard_seq  (ÀÏ¹Ý °Ô½ÃÆÇ ¹øÈ£) ½ÃÄö½º
+--freeboard_seq  (ï¿½Ï¹ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence freeboard_seq
 create sequence freeboard_seq   start with 1   increment by 1   nocycle   nocache;
 
---noticeboard °Ô½Ã±Û(±âº») Å×ÀÌºí / ÀÚÀ¯, Áú´ä, °øÁö
+--noticeboard ï¿½Ô½Ã±ï¿½(ï¿½âº») ï¿½ï¿½ï¿½Ìºï¿½ / ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½
 drop table noticeboard;
 create table noticeboard(
 
@@ -180,11 +180,11 @@ upload_date				date			not null
 
 );
 
---noticeboard_seq  (ÀÏ¹Ý °Ô½ÃÆÇ ¹øÈ£) ½ÃÄö½º
+--noticeboard_seq  (ï¿½Ï¹ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence noticeboard_seq
 create sequence noticeboard_seq   start with 1   increment by 1   nocycle   nocache;
 
---comment ´ñ±Û Å×ÀÌºí
+--comment ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table comment;
 create table comment(
 
@@ -195,24 +195,35 @@ upload_date				date			not null
 
 );
 
---comment_seq  (´ñ±Û ¹øÈ£) ½ÃÄö½º
+--comment_seq  (ï¿½ï¿½ï¿½ ï¿½ï¿½È£) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 drop sequence comment_seq
 create sequence comment_seq   start with 1   increment by 1   nocycle   nocache;
 
---service °í°´¼¾ÅÍ 1´ë1 ¹®ÀÇ Å×ÀÌºí
-drop table service;
-create table service(
+--service_ono ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
+drop table service_ono;
+create table service_ono(
 
 member_id 				varchar2(30)	foreign key,
 title					varchar2(100)	not null,
 categori				varchar2(30)	not null,
-contents				varchar2(3000)	not null,
+contents				varchar2(3000)  not null,
 image_path				varchar2(500)	not null,
 upload_date				date			not null
 
 );
 
---service_answer °í°´¼¾ÅÍ 1´ë1 ¹®ÀÇ ´äº¯ Å×ÀÌºí
+--service_report ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
+drop table service_report;
+
+create table service_report(
+member_id 				varchar2(30)	foreign key,
+title					varchar2(100)	not null,
+contents				varchar2(3000)  not null,
+image_path				varchar2(500)	not null,
+upload_date				date			not null
+);
+
+--service_answer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½1 ï¿½ï¿½ï¿½ï¿½ ï¿½äº¯ ï¿½ï¿½ï¿½Ìºï¿½
 drop table service_answer;
 create table service_answer(
 
@@ -227,7 +238,7 @@ answer_date				date			not null
 
 );
 
---basket Àå¹Ù±¸´Ï Å×ÀÌºí
+--basket ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 drop table basket;
 create table basket(
 

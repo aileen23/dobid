@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+<sqlMap namespace="service">
+	
+	<typeAlias alias="service_onoDTO" type="com.dobid.beans.ServiceDTO" />
+	<typeAlias alias="service_reportDTO" type="com.dobid.beans.ServiceDTO" />
+
+	<insert id="serviceOno" parameterClass="service_onoDTO">
+		insert into service_ono values
+			(#member_id#, #tilte#, #categori#, #contents#, #image_path#, #upload_date#)
+	</insert>
+	
+	<insert id="serviceReport" parameterClass="service_reportDTO">
+		insert into service_ono values
+			(#member_id#, #tilte#, #contents#, #image_path#, #upload_date#)
+	</insert>
+
+</sqlMap>
