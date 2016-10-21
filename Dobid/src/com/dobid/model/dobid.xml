@@ -50,9 +50,9 @@
 	
 	
 	<!-- 자유게시판 글쓰기 -->
-	<select id="FreeBoardWrite" parameterClass="FreeboardDTO">
+	<insert id="FreeBoardWrite" parameterClass="FreeboardDTO">
 		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
-	</select>
+	</insert>>
 </sqlMap>
 
 
