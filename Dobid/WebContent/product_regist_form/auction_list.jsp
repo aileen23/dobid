@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.dobid.product_regist.action.SqlMapconfig"%>
 <%@page import="com.ibatis.sqlmap.client.SqlMapClient"%>
 <%@page import="com.dobid.model.Product_registDAO"%>
@@ -41,10 +42,12 @@ $(document).ready(function(){
 			<div class="top_title">경매 중인 물품</div>
 
 <% List<AuctionDTO> list = (List<AuctionDTO>)request.getAttribute("list");
+SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
+                            <!-- <img src="<%= list.get(i).getMain_image_path()%>" alt=""> -->
                             <div class="caption">
                             	<div class="caption_div">
                                 	<div class="caption_div_bold">입찰시작금액</div>                              
@@ -55,12 +58,12 @@ for(int i = 0; i <list.size(); i++ ){ %>
                                 	<div><%= list.get(i).getHighest_price()%>원</div>
                                 </div>
                                 <div class="caption_div">
-                                	<div class="caption_div_bold">입찰 한 시간</div>
-                                	<div class="caption_div_bold">남은 입찰 시간</div>
+                                	<div class="caption_div_bold">입찰 등록 시간</div>
+                                	<div class="caption_div_bold">종료 시간</div>
                                 </div>
                                 <div class="caption_div">
                                 	<div><%= list.get(i).getRegist_date()%></div>
-                                	<div>4시간</div>
+                                	<div><%= list.get(i).getEnd_date()%></div>
                                 </div>
                                 <div class="caption_div">
                                 	<%= list.get(i).getSeller_id()%>(이길학)

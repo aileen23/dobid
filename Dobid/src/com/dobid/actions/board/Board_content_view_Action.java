@@ -28,11 +28,11 @@ public class Board_content_view_Action extends Action{
 		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
 		
 		
-			if (request.getParameter("°øÁö»çÇ×").equals(null)) {
+			if (request.getParameter("ê³µì§€ì‚¬í•­").equals(null)) {
 		
 				 NoticeboardDTO noticedto = (NoticeboardDTO) sqlMap.queryForObject("dobid.NoticeSelect",request.getParameter("num"));	      
 			        request.setAttribute("noticeobject", noticedto); 
-			} else if (request.getParameter("ÀÚÀ¯°Ô½ÃÆÇ").equals(null)) {
+			} else if (request.getParameter("ììœ ê²Œì‹œíŒ").equals(null)) {
 		
 				 FreeboardDTO freedto = (FreeboardDTO) sqlMap.queryForObject("dobid.FreeSelect",request.getParameter("num"));      
 			        request.setAttribute("freeobject", freedto); 

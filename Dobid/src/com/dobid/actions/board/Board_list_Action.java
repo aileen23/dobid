@@ -25,11 +25,11 @@ public class Board_list_Action extends Action {
 			HttpServletResponse response) throws Exception {
 		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
 		
-		if (request.getParameter("°øÁö»çÇ×").equals(null)) {
+		if (request.getParameter("ê³µì§€ì‚¬í•­").equals(null)) {
 	
 			List<NoticeboardDTO> list = sqlMap.queryForList("dobid.NoticeSelectAll"); 
 	        request.setAttribute("noticelist", list);
-		} else if (request.getParameter("ÀÚÀ¯°Ô½ÃÆÇ").equals(null)) {
+		} else if (request.getParameter("ììœ ê²Œì‹œíŒ").equals(null)) {
 	
 			List<FreeboardDTO> list = sqlMap.queryForList("dobid.FreeSelectAll");  
 	        request.setAttribute("freelist", list);
