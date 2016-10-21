@@ -72,7 +72,7 @@ $(document).ready(function(){
 					<td>${noticelist.member_id }</td>
 					<td>${noticelist.title }</td>
 					<td>${noticelist.cilck_count }</td>
-					<td>${noticelist.upload_date }</td>
+					<td>${noticelist.upload_date}</td>
 				</tr>
 			</c:forEach>
 
