@@ -24,16 +24,13 @@ public class Board_list_Action extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
+	
+			List<NoticeboardDTO> noticelist = sqlMap.queryForList("dobid.NoticeSelectAll"); 
+	        request.setAttribute("noticelist", noticelist);
 		
-		if (request.getParameter("공지사항").equals(null)) {
+			List<FreeboardDTO> freelist = sqlMap.queryForList("dobid.FreeSelectAll");  
+	        request.setAttribute("freelist", freelist);
 	
-			List<NoticeboardDTO> list = sqlMap.queryForList("dobid.NoticeSelectAll"); 
-	        request.setAttribute("noticelist", list);
-		} else if (request.getParameter("자유게시판").equals(null)) {
-	
-			List<FreeboardDTO> list = sqlMap.queryForList("dobid.FreeSelectAll");  
-	        request.setAttribute("freelist", list);
-		}
 
 		
 
