@@ -8,13 +8,13 @@ public class ServiceDTO {
 	private String categori;
 	private String contents;
 	private String image_path;
-	private Date upload_date;
+	private String upload_date;
 
 	public ServiceDTO() {
 	}
 
 	public ServiceDTO(String member_id, String title, String categori, String contents, String image_path,
-			Date upload_date) {
+			String upload_date) {
 		super();
 		this.member_id = member_id;
 		this.title = title;
@@ -64,12 +64,13 @@ public class ServiceDTO {
 		this.image_path = image_path;
 	}
 
-	public Date getUpload_date() {
+	public String getUpload_date() {
 		return upload_date;
 	}
 
-	public void setUpload_date(Date upload_date) {
+	public void setUpload_date(String upload_date) {
 		this.upload_date = upload_date;
 	}
 
+	
 }
