@@ -20,6 +20,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
 import com.dobid.beans.AuctionDTO;
+import com.dobid.model.Product_registDAO;
 import com.dobid.product_regist.action.form.Product_regist_form;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.oreilly.servlet.MultipartRequest;
@@ -69,11 +70,12 @@ public class Product_regist extends Action{
 		AuctionDTO auctionDTO = new AuctionDTO("1", title_text, text, main_path,sub_path, 
 				Integer.parseInt(start_cach), cate, Integer.parseInt(count_text),end_date+day+hour+minute, regist_date, auction_check);
 		
-		SqlMapClient client = SqlMapconfig.getSqlMapInstance();
-		
+		//SqlMapClient client = SqlMapconfig.getSqlMapInstance();
+		Product_registDAO dao = new Product_registDAO();
 		
 		//성공시 리스티 페이지로 이동. 실패지 따로 처리.
-		if(client.insert("product_regist.auction_regist",auctionDTO) != null ){
+		if(dao.insert(auctionDTO) == true ){
+		//if(client.insert("product_regist.auction_regist",auctionDTO) != null ){
 			
 			forward = mapping.findForward("success");
 			

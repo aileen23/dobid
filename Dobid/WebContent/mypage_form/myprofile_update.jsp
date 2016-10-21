@@ -26,7 +26,7 @@
 	<br>
 	<br>
 	<div class="container-fluid">
-		<header><%@include file="mypageHeader.html"%></header>
+		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
 	<div class="container-fluid">
 	<center>

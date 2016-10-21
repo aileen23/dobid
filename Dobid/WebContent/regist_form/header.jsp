@@ -4,11 +4,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" 
-   href="./regist_form/css/bootstrap.min.css">
-<link href="./regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
+   href="/regist_form/css/bootstrap.min.css">
+<link href="./css/mystyle.css" rel="stylesheet" type="text/css">
 <script
-   src="./regist_form/js/jquery-1.8.3.min.js"></script>
+   src="/Dobid/regist_form/js/jquery-1.8.3.min.js"></script>
+<script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script
    src="./regist_form/js/bootstrap.min.js"></script>
 <script> 
@@ -46,6 +48,7 @@ $(document).ready(function(){
 		$(this).css("background-color", "black"); 
 		$(this).css("color", "white"); 
     });
+
     $("#Service").mouseclick(function(){
     	$("#dropService").show();
     });
@@ -70,10 +73,7 @@ $(document).ready(function(){
 	});
 	
 
-    
 });
- 
-
 </script>
 </head>
 <body>

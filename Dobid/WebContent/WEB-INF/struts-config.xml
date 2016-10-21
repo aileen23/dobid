@@ -36,6 +36,7 @@
 
     <form-beans>
     <form-bean type="com.dobid.product_regist.action.form.Product_regist_form" name="regist_actionForm"/>
+    <form-bean name="listForm" type="com.dobid.product_regist.action.form.List_form"></form-bean>
     <!-- sample form bean descriptor for an ActionForm
         <form-bean
             name="inputForm"
@@ -78,9 +79,17 @@
         <!-- product_regist 관련 액션. -->    
         <action path="/product_regist_form/regist" forward="/product_regist_form/auction_regist.jsp"></action>
         <action path="/product_regist_form/auction_regist" type="com.dobid.product_regist.action.Product_regist" name="regist_actionForm">
-        	<forward path="/product_regist/regist_view.do" name="success" redirect="true"></forward>
+        	<forward path="/product_regist_form/list.do" name="success" redirect="true"></forward>
 			<forward path="/product_regist/regist.do" name="fail"></forward>
         </action>
+        <action path="/product_regist_form/list" type="com.dobid.product_regist.action.Auction_list" name="listForm">
+        	<forward name="suecc" path="/product_regist_form/auction_list.jsp"></forward>
+        </action>
+        <action path="/product_regist_form/search_more" forward="/product_regist_form/search_more.jsp"></action>
+        <action path="/product_regist_form/search" forward="/product_regist_form/search.jsp"></action>
+        <action path="/product_regist_form/group_list" forward="/product_regist_form/groupbuy_list.jsp"></action>
+        <action path="/product_regist_form/group_search" forward="/product_regist_form/group_search.jsp"></action>
+        <action path="/product_regist_form/group_search_more" forward="/product_regist_form/group_search_more.jsp"></action>
 
 		<!-- register account -->
 		<action path="/main" forward="/regist_form/main.jsp"></action>

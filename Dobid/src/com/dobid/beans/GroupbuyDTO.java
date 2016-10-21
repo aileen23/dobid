@@ -3,6 +3,8 @@ package com.dobid.beans;
 import java.sql.Date;
 
 public class GroupbuyDTO {
+	
+	private int num;
 	private int groupbuy_board_num;
 	private String title;
 	private String contents;
@@ -11,8 +13,8 @@ public class GroupbuyDTO {
 	private int participant_num;
 	private String categori;
 	private int amount;
-	private Date end_date;
-	private Date regist_date;
+	private String end_date;
+	private String regist_date;
 	private int step_participant;
 	private int step_discount;
 	private int first_price;
@@ -22,9 +24,27 @@ public class GroupbuyDTO {
 	public GroupbuyDTO() {
 	}
 
+	
+	
+	public GroupbuyDTO(int num, String title, 
+			String main_image_path, int participant_num,String categori, String end_date,
+			String regist_date, int discount_price) {
+		super();
+		this.num = num;
+		this.title = title;
+		this.participant_num = participant_num;
+		this.main_image_path = main_image_path;
+		this.categori = categori;
+		this.end_date = end_date;
+		this.regist_date = regist_date;
+		this.discount_price = discount_price;
+	}
+
+
+
 	public GroupbuyDTO(int groupbuy_board_num, String title, String contents, String main_image_path,
-			String explain_image_path, int participant_num, String categori, int amount, Date end_date,
-			Date regist_date, int step_participant, int step_discount, int first_price, int discount_price,
+			String explain_image_path, int participant_num, String categori, int amount, String end_date,
+			String regist_date, int step_participant, int step_discount, int first_price, int discount_price,
 			int now_step) {
 		super();
 		this.groupbuy_board_num = groupbuy_board_num;
@@ -43,6 +63,20 @@ public class GroupbuyDTO {
 		this.discount_price = discount_price;
 		this.now_step = now_step;
 	}
+
+	
+	
+	public int getNum() {
+		return num;
+	}
+
+
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+
+
 
 	public int getGroupbuy_board_num() {
 		return groupbuy_board_num;
@@ -108,19 +142,19 @@ public class GroupbuyDTO {
 		this.amount = amount;
 	}
 
-	public Date getEnd_date() {
+	public String getEnd_date() {
 		return end_date;
 	}
 
-	public void setEnd_date(Date end_date) {
+	public void setEnd_date(String end_date) {
 		this.end_date = end_date;
 	}
 
-	public Date getRegist_date() {
+	public String getRegist_date() {
 		return regist_date;
 	}
 
-	public void setRegist_date(Date regist_date) {
+	public void setRegist_date(String regist_date) {
 		this.regist_date = regist_date;
 	}
 
