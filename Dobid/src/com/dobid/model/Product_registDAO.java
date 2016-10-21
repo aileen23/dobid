@@ -4,6 +4,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.dobid.beans.AuctionDTO;
+import com.dobid.beans.Auction_listDTO;
+import com.dobid.beans.Auction_list_paramiterDTO;
+import com.dobid.beans.Auction_participantDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.product_regist.action.SqlMapconfig;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -28,8 +31,8 @@ public class Product_registDAO {
 		return true;
 	}
 	
-	public List<AuctionDTO> search_list(String search_text){
-		List<AuctionDTO> list = null;
+	public List<Auction_listDTO> search_list(Auction_list_paramiterDTO search_text){
+		List<Auction_listDTO> list = null;
 		try {
 			list = smc.queryForList("product_regist.search_list",search_text);
 		} catch (SQLException e) {

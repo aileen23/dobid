@@ -3,12 +3,17 @@
 <!-- s1011/emp.xml -->
 <sqlMap namespace="product_regist"> 
 	<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.AuctionDTO" />
+	<typeAlias alias="auction_list" type="com.dobid.beans.Auction_listDTO"/>
+	<typeAlias alias="paramiter" type="com.dobid.beans.Auction_list_paramiterDTO"/>
 	<!-- 경매등록. -->
    <insert id="auction_regist" parameterClass="auction_reviewDTO">
    		insert into auction (AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,MAIN_IMAGE_PATH,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,AMOUNT,END_DATE,REGIST_DATE,HOT_CHECK) 
    		values (AUCTION_SEQ.NEXTVAL,#seller_id#,#title#,#contents#,#main_image_path#,#explain_image_path#,#start_amount#,#categori#,#amount#,to_date(#end_date#,'YYYY-MM-DD:HH24:MI:SS'),to_date(#regist_date#,'YYYY-MM-DD:HH24:MI:SS'),#hot_check#)
    </insert>
-   <select id="search_list" parameterClass="String" resultClass="auction_reviewDTO">
-   		select * from auction where TITLE LIKE '%'||#search_text#||'%' 
+   <select id="search_list" parameterClass="paramiter" resultClass="auction_list">
+   		select * from (select rownum rnum, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
+
+
+   		
    </select>
 </sqlMap>

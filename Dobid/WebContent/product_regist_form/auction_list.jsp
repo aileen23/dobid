@@ -1,8 +1,8 @@
+<%@page import="com.dobid.beans.Auction_listDTO"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.dobid.product_regist.action.SqlMapconfig"%>
 <%@page import="com.ibatis.sqlmap.client.SqlMapClient"%>
 <%@page import="com.dobid.model.Product_registDAO"%>
-<%@page import="com.dobid.beans.AuctionDTO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -23,8 +23,47 @@ $(document).ready(function(){
 	$( ".more_btn" ).mouseleave(function() {
 		$(this).css("background-color","#BDBDBD");
 	});
+	//더보기.
+	$("#more_Btn").click(function(){
+		var text = $(".input_text").val();
+		var lastNum = $("#more_Btn").attr("name");
+		$.ajax({
+            url:'search_more.do',	
+            type:'POST',
+            data:{"text" : text,"lastNum" : lastNum},
+            success:function(result){
+            	//$("#more_Btn").attr("name",nextNum);
+            	$("#more_Btn").remove();
+  				$("#box").append(result);
 
+           	},
+           	error: function(xhr,status,error){ 
 
+           	          alert("code:"+xhr.status); 
+           	      } 
+
+        });
+	});
+	//검색.
+	$(".sch_smit").click(function(){
+		var text = $(".input_text").val();
+		$.ajax({
+            url:'search.do',	
+            type:'POST',
+            data:{"text" : text},
+            success:function(result){
+            	$("#more_Btn").attr("name",0);
+            		$(".box").empty();
+            		$("#box").append(result);
+
+           	},
+           	error: function(xhr,status,error){ 
+
+           	          alert("code:"+xhr.status); 
+           	      } 
+
+        });
+	});
 });
 </script>
 <title>dobid경매목록</title>
@@ -40,15 +79,17 @@ $(document).ready(function(){
 			</div>
 			
 			<div class="top_title">경매 중인 물품</div>
-
-<% List<AuctionDTO> list = (List<AuctionDTO>)request.getAttribute("list");
-SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				<div id="box">
+<% List<Auction_listDTO> list = (List<Auction_listDTO>)request.getAttribute("list");
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <!-- <img src="<%= list.get(i).getMain_image_path()%>" alt=""> -->
                             <div class="caption">
+                            	<div class="center_title">
+                            		<div><%= list.get(i).getTitle() %></div>  
+                            	</div>
                             	<div class="caption_div">
                                 	<div class="caption_div_bold">입찰시작금액</div>                              
                                 	<div class="caption_div_bold">현재최고금액</div>
@@ -66,7 +107,7 @@ for(int i = 0; i <list.size(); i++ ){ %>
                                 	<div><%= list.get(i).getEnd_date()%></div>
                                 </div>
                                 <div class="caption_div">
-                                	<%= list.get(i).getSeller_id()%>(이길학)
+                                	<%= list.get(i).getEmail()%>(<%=list.get(i).getName() %>)
                                 </div>                       
                             </div>
                             <div class="ratings">                             
@@ -74,8 +115,8 @@ for(int i = 0; i <list.size(); i++ ){ %>
                         </div>
                     </div>
 <% } %>
-                    	<button class="btn btn-default btn-lg btn-block">더 보기</button>
-                    </div>
+                    	<button id="more_Btn" class="btn btn-default btn-lg btn-block" name="6">더 보기</button>
+					</div>
                  </div>               
          </div><!-- row 끝태그입니다. -->
 </body>

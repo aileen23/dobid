@@ -85,6 +85,8 @@
         <action path="/product_regist_form/list" type="com.dobid.product_regist.action.Auction_list" name="listForm">
         	<forward name="suecc" path="/product_regist_form/auction_list.jsp"></forward>
         </action>
+        <action path="/product_regist_form/search_more" forward="/product_regist_form/search_more.jsp"></action>
+        <action path="/product_regist_form/search" forward="/product_regist_form/search.jsp"></action>
 
 		<!-- register account -->
 		<action path="/main" forward="/regist_form/main.jsp"></action>
