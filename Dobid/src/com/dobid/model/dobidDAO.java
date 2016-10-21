@@ -24,8 +24,8 @@ public class dobidDAO {
 		}
 		return false;
 	}
-	
-	public String login(MemberDTO member){
+
+	public String login(MemberDTO member) {
 		String id = "";
 		try {
 			id = (String) smc.queryForObject("dobid.login", member);
@@ -35,17 +35,27 @@ public class dobidDAO {
 		}
 		return null;
 	}
-	
-	public boolean FreeBoardWrite(FreeboardDTO freeboard){
-		
+
+	public boolean removeAccount(String id) {
+		try {
+			smc.delete("dobid.removeAccount", id);
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean FreeBoardWrite(FreeboardDTO freeboard) {
+
 		try {
 			smc.insert("dobid.FreeBoardWrite", freeboard);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	
+
 		return false;
-		
+
 	}
 }
