@@ -42,14 +42,14 @@
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td> 신유동 님</td>
-        <td> 기본이메일주소 : </td>
-        <td> exam@gmail.com</td>
+        <td> ${member.name } 님</td>
+        <td> 이메일주소 : </td>
+        <td> ${member.email }</td>
       </tr>
       <tr>
-        <td> 별명: Sin </td>
+        <td> 별명 : ${member.nickname }</td>
         <td> 휴대전화 : </td>
-        <td> 010-1253-8253 </td>
+        <td> ${member.phone }</td>
       </tr>
     </tbody>
   </table>

@@ -20,8 +20,8 @@ public class Mypage_Action extends Action {
 			HttpServletResponse response) throws Exception {
 		
 		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
-		MemberDTO memberlist = (MemberDTO) sqlMap.queryForObject("myprofile.select"); 
-		
+		MemberDTO member = (MemberDTO) sqlMap.queryForObject("myprofile.select","lgh3680@naver.com"); 
+        request.setAttribute("member", member);
 		
 		return mapping.findForward("success");
 	}
