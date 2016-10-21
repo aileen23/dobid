@@ -4,7 +4,8 @@ import java.sql.SQLException;
 
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.MemberDTO;
-import com.dobid.beans.ServiceDTO;
+import com.dobid.beans.Service_onoDTO;
+import com.dobid.beans.Service_reportDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
@@ -60,16 +61,29 @@ public class dobidDAO {
 
 	}
 
-	public boolean ServiceOno(ServiceDTO serverOno) {
+	public boolean ServiceOno(Service_onoDTO serverOno) {
 
 		try {
-			smc.insert("dobid.ServiceOno", serverOno);
+			smc.insert("service.ServiceOno", serverOno);
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	public boolean ServiceReport(Service_reportDTO report) {
+
+
+		try {
+			smc.insert("service.serviceReport", report);
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
 	}
 }
 
