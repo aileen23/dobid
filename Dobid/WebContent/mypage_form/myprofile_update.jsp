@@ -26,12 +26,11 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText">
+		<div class="titleText" style="margin-left: 20px">
 		<font size="80" color="black">My Page</font><br>
-		<font size="3" color="black">your Account</font>
 		</div>
 
-	<div class="container-fluid">
+	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
 	<div class="container-fluid">
