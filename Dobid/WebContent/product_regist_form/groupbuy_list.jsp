@@ -5,6 +5,11 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    /*2016-10-23
+	작성자 : 신유동
+*/	
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,7 +83,7 @@ $(document).ready(function(){
 			</div>
 			<div class="top_title">공동구매 중인 물품</div>
  <div id="box">
-<% //List<Auction_listDTO> list = (List<Auction_listDTO>)request.getAttribute("list");
+<% 
 Auction_list_paramiterDTO auction_list_paramiterDTO;
 String search = request.getParameter("search_text");
 

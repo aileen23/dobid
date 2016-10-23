@@ -79,13 +79,9 @@ function showKeyCode(event) {
 	//끝나는 시간 - 등록 시간
 	int re_hour_char = Integer.parseInt(end_hMs[0]) - Integer.parseInt(regist_hMs[0]);
 	int re_mi_char = Integer.parseInt(end_hMs[1]) - Integer.parseInt(regist_hMs[1]);
-	/*if(re_mi_char < 0){
-		re_mi_char = re_mi_char +60;
-	}*/
+
 	int re_ss_char = Integer.parseInt(end_hMs[2]) - Integer.parseInt(regist_hMs[2]);
-	/*if(re_ss_char < 0){
-		re_ss_char = re_ss_char +60;
-	}*/
+
 	//끝난 - 현재 차이만큼의 초.
 	int nowtal_int = 3600*hour_char+60*mi_char+ss_char;
 	//끝난 - 등록 차이만큼의 초.

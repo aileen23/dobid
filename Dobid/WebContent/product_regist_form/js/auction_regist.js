@@ -1,4 +1,8 @@
-  function input_check(){
+/*2016-10-23
+		작성자 : 신유동
+	*/	 
+
+function input_check(){
 	  
 	  var title = $('#title_text').val();
 	  var count = $('#count_text').val();

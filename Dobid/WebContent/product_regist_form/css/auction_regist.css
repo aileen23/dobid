@@ -264,7 +264,7 @@ select{
   border-radius: .25em;
 }
 
-.filebox input[type="file"] {  /* ÆÄÀÏ ÇÊµå ¼û±â±â */
+.filebox input[type="file"] {  /* ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ */
   position: absolute;
   width: 1px;
   height: 1px;

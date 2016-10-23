@@ -7,6 +7,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+/*2016-10-23
+작성자 : 신유동
+*/	
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +37,6 @@ $(document).ready(function(){
             type:'POST',
             data:{"text" : text,"lastNum" : lastNum},
             success:function(result){
-            	//$("#more_Btn").attr("name",nextNum);
             	$("#more_Btn").remove();
   				$("#box").append(result);
 

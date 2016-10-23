@@ -6,10 +6,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	//Auction_list_paramiterDTO auction_list_paramiterDTO = (Auction_list_paramiterDTO)request.getAttribute("DTO");
-	/*Auction_list_paramiterDTO auction_list_paramiterDTO = (Auction_list_paramiterDTO)request.getAttribute("serach_para");
-	auction_list_paramiterDTO.setEndCount(auction_list_paramiterDTO.getStartCount());
-	auction_list_paramiterDTO.setStartCount(auction_list_paramiterDTO.getStartCount()+6);*/
+/*2016-10-23
+작성자 : 신유동
+*/	
 	
 	String text = request.getParameter("text");
 	int count = Integer.parseInt(request.getParameter("lastNum"));

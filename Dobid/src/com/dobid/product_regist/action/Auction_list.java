@@ -1,3 +1,7 @@
+/*2016-10-23
+		작성자 : 신유동
+	*/	
+
 package com.dobid.product_regist.action;
 
 import java.util.List;

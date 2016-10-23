@@ -7,6 +7,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%	
+
+/*2016-10-23
+작성자 : 신유동
+*/	
 	String text = request.getParameter("text");
 	
 	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,0,6);
