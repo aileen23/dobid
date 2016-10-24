@@ -122,19 +122,19 @@
 		</action>
 
 		<!-- board_list -->
-		<action path="/board_list" forward="com.dobid.actions.board.Board_list_Action">
-		<forward name="success" path="/board_list.do"></forward>
+		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
+		<forward name="success" path="/board_form/board_list.jsp"></forward>
 		</action>
 		
 		
 		<!-- board_content_view -->
-		<action path="/board_content_view" forward="com.dobid.actions.board.Board_content_view_Action">
-		<forward name="success" path="/board_content_view.do"></forward>
+		<action path="/board_content_view" type="com.dobid.actions.board.Board_content_view_Action">
+		<forward name="success" path="/board_form/board_content_view.jsp"></forward>
 		</action>
 		
 		<!-- board_freedom_write -->
-		<action path="/board_freedom_write" forward="com.dobid.actions.board.Board_freedom_write_Action">
-		<forward name="success" path="/board_list.do"></forward>
+		<action path="/board_freedom_write" type="com.dobid.actions.board.Board_freedom_write_Action">
+		<forward name="success" path="/board_form/board_freedom_write.jsp"></forward>
 		</action>
 	
 	
