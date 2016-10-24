@@ -15,15 +15,17 @@ import org.apache.struts.action.ActionMapping;
 import com.dobid.beans.Service_onoDTO;
 import com.dobid.model.ServiceDAO;
 
+
 public class Customerservice_ono_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
 		
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String service_date = df.format(date);
-		
+		System.out.println(request.getParameter("title"));
 		Service_onoDTO dto = new Service_onoDTO();
 			dto.setMember_id(request.getParameter("member_id"));
 			dto.setTitle(request.getParameter("title"));
@@ -33,7 +35,8 @@ public class Customerservice_ono_Action extends Action{
 			dto.setUpload_date(service_date);
 			
 			ServiceDAO dao = new ServiceDAO();
-			dao.ServiceOno(dto);	
+			dao.ServiceOno(dto);
+			System.out.println(dao.ServiceOno(dto));
 				
 			
 												

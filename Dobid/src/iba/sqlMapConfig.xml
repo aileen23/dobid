@@ -29,6 +29,7 @@
   <sqlMap resource="./com/dobid/model/product_regist.xml"/>
   <sqlMap resource="./com/dobid/model/myprofile.xml"/>
   <sqlMap resource="./com/dobid/model/board.xml"/>
+  <sqlMap resource="./com/dobid/model/service.xml"/>
   
 </sqlMapConfig>
 

@@ -18,12 +18,14 @@ public class ServiceDAO {
 	public boolean ServiceOno(Service_onoDTO serverOno) {
 
 		try {
-			smc.insert("service.ServiceOno", serverOno);
+			smc.insert("service.serviceOno", serverOno);
+			System.out.println("입력성공");
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("입력실패");
 		return false;
 	}
 
@@ -32,12 +34,14 @@ public class ServiceDAO {
 
 		try {
 			smc.insert("service.serviceReport", serverReport);
+			System.out.println("입력성공");
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return true;
+		System.out.println("입력실패");
+		return false;
 	}
 }
 

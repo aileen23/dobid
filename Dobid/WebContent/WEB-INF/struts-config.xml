@@ -122,13 +122,15 @@
 		</action>
 
 		<!-- customservice_ono -->
-		<action path="/service_ono" forward="/service_form/customerservice_ono.jsp">
-
+		<action path="/service_ono" forward="/service_form/customerservice_ono.jsp"></action>
+		<action path="/service_ono_write" type="com.dobid.actions.service.Customerservice_ono_Action">
+			<forward name="success" path="/service_ono.do"></forward>
 		</action>
 
 		<!-- customservice_report -->
-		<action path="/service_report" forward="/service_form/customerservice_report.jsp">
-
+		<action path="/service_report" forward="/service_form/customerservice_report.jsp"></action>
+		<action path="/service_report_write" type="com.dobid.actions.service.Customerservice_report_Action">
+			<forward name="success" path="/service_report.do"></forward>
 		</action>
 
 		<!-- board_list -->

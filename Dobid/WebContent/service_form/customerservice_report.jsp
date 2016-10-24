@@ -35,7 +35,7 @@
 <a href="service_report.do"><button class="button button5 btn-default active">신고하기</button></a>
 </p>
 <hr>
-<form class="form-horizontal">
+<form class="form-horizontal" action="service_report_write.do">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
@@ -66,12 +66,16 @@
     </div>
 </div>
 
-
-</form>
-
 <button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
 <button type="reset" class="button button5 btn-default">취소</button>
 
+</form>
 
+
+<!-- Footer -->
+		<hr>
+		
+		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+		
 </body>
 </html>
