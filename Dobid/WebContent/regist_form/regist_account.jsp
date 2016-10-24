@@ -29,7 +29,7 @@
 		<font size="3" color="black">your Account</font>
 	</center>
 	<br>
-	<form class="form-horizontal" style="margin-left: 25%" method="post">
+	<form class="form-horizontal" style="margin-left: 25%" method="post" action="do_regist_account.do">
 
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
