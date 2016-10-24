@@ -13,7 +13,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Service_onoDTO;
-import com.dobid.model.dobidDAO;
+import com.dobid.model.ServiceDAO;
 
 public class Customerservice_ono_Action extends Action{
 	@Override
@@ -32,7 +32,7 @@ public class Customerservice_ono_Action extends Action{
 			dto.setImage_path(request.getParameter("image_path"));
 			dto.setUpload_date(service_date);
 			
-			dobidDAO dao = new dobidDAO();
+			ServiceDAO dao = new ServiceDAO();
 			dao.ServiceOno(dto);	
 				
 			

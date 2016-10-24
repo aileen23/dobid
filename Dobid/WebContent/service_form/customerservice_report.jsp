@@ -69,8 +69,8 @@
 
 </form>
 
-<button class="button button5 btn-default col-sm-offset-5">확인</button>
-<button class="button button5 btn-default">취소</button>
+<button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
+<button type="reset" class="button button5 btn-default">취소</button>
 
 
 </body>
