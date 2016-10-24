@@ -2,12 +2,31 @@
 	pageEncoding="UTF-8"%>
 	 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
+
+
 $(document).ready(function(){
-	 $("#freeboard").hide();
+
+    $("freeboard").hide();
+    $("noticeboard").show();
+
+    var id = getQuerystring(id);
+    if(id == 1){
+    	$("freeboard").show();
+	    $("noticeboard").hide();
+    }else if(id == 2){
+    	 $("freeboard").hide();
+    	    $("noticeboard").show();
+    }else {
+    	 $("freeboard").hide();
+ 	    $("noticeboard").show();
+    	
+    }
+    
     $("#noticebtn").click(function(){
         $("freeboard").hide();
         $("noticeboard").show();
@@ -16,9 +35,32 @@ $(document).ready(function(){
     	  $("noticeboard").hide();
           $("freeboard").show();
     });
-});
-</script>
+    
+    $('#noticeboardSelectAll').on('click', function() { //공지사항 목록버튼
+    	$(location).attr('href', '../board_form/board_list.jsp?id=1');
+	});
+    
+    $('#freeboardSelectAll').on('click', function() {  //자유게시판 목록버튼
+    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
 
+	});
+    $('#freeWrite').on('click', function() { //글쓰기 버튼
+    	$(location).attr('href', '../board_form/board_freedom_write.jsp');
+
+	});
+
+});
+
+</script>
+<script type="text/javascript">
+function getQuerystring(paramName){
+
+	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
+	//var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
+	console.log(_tempUrl);
+	return _tempUrl.split("=")[1];
+}
+</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- CSS -->
@@ -50,11 +92,13 @@ $(document).ready(function(){
 <br>
 		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		<input type="button" class="button button5 btn-default active" value="자유게시판" id="freebtn">
+		<hr>
 <Br><br>
 <Br>
-<noticeboard>
+<noticeboard id="noticeboard">
 <h3>공지사항</h3>
 <br>
+
 
 		<table class="table table-bordered">
 
@@ -72,12 +116,19 @@ $(document).ready(function(){
 					<td>${noticelist.member_id }</td>
 					<td>${noticelist.title }</td>
 					<td>${noticelist.cilck_count }</td>
-					<td>${noticelist.upload_date}</td>
+					<td>${noticelist.upload_date }</td>
 				</tr>
 			</c:forEach>
 
 
 		</table>
+		<div class="col-sm-offset-6 col-sm-6">
+		<div class="col-sm-7">
+			<input type="text" id="noticeselect" class="form-control"> 
+			</div>
+			<input type="button" id="noticeboardSelect" value="검색" class="button button5 btn-default">
+			<input type="button" value="목록" id="noticeboardSelectAll" class="button button5 btn-default"> 
+		</div>
 		</noticeboard>
 		
 	<freeboard id="freeboard">
@@ -106,13 +157,15 @@ $(document).ready(function(){
 
 
 		</table>
-</freeboard>
-		<div class="col-sm-offset-8 col-sm-5">
-		<input type="button" value="글쓰기" onclick="freeWrite()"class="button button5 btn-default">
-			<input type="button" value="목록" onclick="boardSelectAll()" class="button button5 btn-default"> 
-			<input type="text" id="select"> 
-			<input type="button" onclick="boardSelect()" value="검색" class="button button5 btn-default">
+		<div class="col-sm-offset-6 col-sm-6">
+		<div class="col-sm-7">
+			<input type="text" id="freeselect" class="form-control"> 
+			</div>
+			<input type="button" id="freeboardSelect" value="검색" class="button button5 btn-default">
+			<input type="button" value="목록" id="freeboardSelectAll" class="button button5 btn-default"> 
+		<input type="button" value="글쓰기" id="freeWrite" class="button button5 btn-default">
 		</div>
+</freeboard>
 	</div>
 	
 	<Br><br><Br>

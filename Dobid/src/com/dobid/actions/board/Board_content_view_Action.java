@@ -31,11 +31,11 @@ public class Board_content_view_Action extends Action{
 			if (request.getParameter("공지사항").equals(null)) {
 		
 				 NoticeboardDTO noticedto = (NoticeboardDTO) sqlMap.queryForObject("dobid.NoticeSelect",request.getParameter("num"));	      
-			        request.setAttribute("noticeobject", noticedto); 
+			        request.setAttribute("viewobject", noticedto); 
 			} else if (request.getParameter("자유게시판").equals(null)) {
 		
 				 FreeboardDTO freedto = (FreeboardDTO) sqlMap.queryForObject("dobid.FreeSelect",request.getParameter("num"));      
-			        request.setAttribute("freeobject", freedto); 
+			        request.setAttribute("viewobject", freedto); 
 			}
 
 		
