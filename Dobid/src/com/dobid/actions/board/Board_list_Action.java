@@ -2,7 +2,6 @@ package com.dobid.actions.board;
 
 import java.util.List;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,9 +12,8 @@ import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.NoticeboardDTO;
-import com.ibatis.sqlmap.client.SqlMapClient;
+import com.dobid.model.boardDAO;
 
-import iba.SqlMapConfig;
 
 
 public class Board_list_Action extends Action {
@@ -23,30 +21,18 @@ public class Board_list_Action extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
-	
-			List<NoticeboardDTO> noticelist = sqlMap.queryForList("board.NoticeSelectAll"); 
-	        request.setAttribute("noticelist", noticelist);
-		
-			List<FreeboardDTO> freelist = sqlMap.queryForList("board.FreeSelectAll");  
-	        request.setAttribute("freelist", freelist);
-	
 
-		
+		boardDAO dao = new boardDAO();
+
+		List<NoticeboardDTO> noticelist = null;
+
+		noticelist = dao.NoticeSelectAll();
+		request.setAttribute("noticelist", noticelist);
+
+		List<FreeboardDTO> freelist = null;
+		freelist = dao.FreeSelectAll();
+		request.setAttribute("freelist", freelist);
 
 		return mapping.findForward("success");
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

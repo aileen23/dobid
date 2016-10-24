@@ -9,21 +9,19 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.MemberDTO;
-import com.ibatis.sqlmap.client.SqlMapClient;
-
-import iba.SqlMapConfig;
+import com.dobid.model.Mypage_DAO;
 
 public class Mypage_Action extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		System.out.println("asdadsasdasd");
-		SqlMapClient sqlMap = SqlMapConfig.getSqlMapInstance();
-		MemberDTO member = (MemberDTO) sqlMap.queryForObject("myprofile.select","1"); 
-        request.setAttribute("member", member);
+		Mypage_DAO dao = new Mypage_DAO();
 		
-        
-        
+		MemberDTO dto = new MemberDTO();
+		dto = dao.select("1");
+		request.setAttribute("member", dto);
+		
+		
 		return mapping.findForward("success");
 	}
 }

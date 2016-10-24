@@ -3,7 +3,7 @@
 <sqlMap namespace="board">
 
 	<typeAlias alias="auction_participantDTO" type="com.dobid.beans.Auction_participantDTO" />
-	<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.Auction_reviewDTO" />
+	<typeAlias alias="auction_review2DTO" type="com.dobid.beans.Auction_reviewDTO" />
 	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
 	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
 	<typeAlias alias="chargeDTO" type="com.dobid.beans.ChargeDTO" />
@@ -34,10 +34,20 @@
 		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
 	</select>
 	
+	<!-- 게시판 조회수 증가(공지) -->
+	<update id="NoticeSelectCnt" parameterClass="int">
+	update noticeboard set cilck_count=cilck_count+1 where basic_board_num=#basic_board_num#
+	</update>
+	
 	<!-- 게시판 상세보기(자유) -->
 	<select id="FreeSelect" resultClass="freeboardDTO" parameterClass="int">
 		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
 	</select>
+	
+	<!-- 게시판 조회수 증가(자유) -->
+	<update id="FreeSelectCnt" parameterClass="int">
+	update freeboard set cilck_count=cilck_count+1 where basic_board_num=#basic_board_num#
+	</update>
 	
 	<!-- 자유게시판 글쓰기 -->
 	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">

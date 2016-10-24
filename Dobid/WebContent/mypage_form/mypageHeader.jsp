@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Untitled Document</title>
     <!-- Bootstrap -->
-	<link href="./css/bootstrap.css" rel="stylesheet">
-	<link href="./css/mypage_header.css" rel="stylesheet" type="text/css">
-	<link href="./css/shop-homepage.css" rel="stylesheet">
+	<link href="/Dobid/mypage_form/css/bootstrap.css" rel="stylesheet">
+	<link href="/Dobid/mypage_form/css/mypage_header.css" rel="stylesheet" type="text/css">
+	<link href="/Dobid/mypage_form/css/shop-homepage.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -33,8 +33,8 @@
 	
 	<div class="container-fluid">
 	  <ul class="nav nav-tabs" id="mynav">
-	    <li role="presentation"><a href="myprofile_main.jsp" id="nav1" class="navtab">내정보</a></li>
-	    <li role="presentation"><a href="myprofile_update.jsp" id="nav2" class="navtab">정보수정</a></li>
+	    <li role="presentation"><a href="myprofile.do" id="nav1" class="navtab">내정보</a></li>
+	    <li role="presentation"><a href="myprofile_update.do" id="nav2" class="navtab">정보수정</a></li>
 	    <li role="presentation"><a href="#" id="nav3" class="navtab">찜목록</a></li>
         <li role="presentation"><a href="#" id="nav4" class="navtab">경매내역</a></li>
         <li role="presentation"><a href="#" id="nav5" class="navtab">쪽지함</a></li>

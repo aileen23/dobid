@@ -3,7 +3,7 @@
 <sqlMap namespace="myprofile">
 
 	<typeAlias alias="auction_participantDTO" type="com.dobid.beans.Auction_participantDTO" />
-	<typeAlias alias="auction_reviewDTO" type="com.dobid.beans.Auction_reviewDTO" />
+	<typeAlias alias="auction_review2DTO" type="com.dobid.beans.Auction_reviewDTO" />
 	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
 	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
 	<typeAlias alias="chargeDTO" type="com.dobid.beans.ChargeDTO" />
@@ -19,9 +19,9 @@
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 
 	<select id="select" parameterClass="String" resultClass="memberDTO">
-		select name,nickname,email,phone
+		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
 		from member
-		where id=#id#
+		where member_id=#member_id#
 	</select>
 
 </sqlMap>

@@ -4,6 +4,50 @@
 <html>
 <head>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){ 
+	var id = getQuerystring(id);
+
+	
+	$('#freebtn').on('click', function() {  //자유게시판
+    	$(location).attr('href', '/Dobid/board_list.do?id=2');
+
+	});
+	
+	$('#boardSelectAll').on('click', function() {  //자유게시판
+    	$(location).attr('href', '/Dobid/board_list.do?id=2');
+
+	});
+	
+    $('#noticebtn').on('click', function() {  //공지사항
+    	$(location).attr('href', '/Dobid/board_list.do?id=1');
+	});
+
+	$("#pageback").click(function(){ //돌아가기
+
+		window.history.back();
+
+	});
+	
+
+
+
+});
+
+</script>
+
+<script type="text/javascript">
+function getQuerystring(paramName){
+
+	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
+	//var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
+	console.log(_tempUrl);
+	return _tempUrl.split("=")[1];
+}
+</script>
+
 <!-- CSS -->
 <link href="./css/jongmin.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,6 +59,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
 
 <script>
 	function getThumbnailPrivew(html, $target) {
@@ -29,29 +77,37 @@
 			reader.readAsDataURL(html.files[0]);
 		}
 	}
+	
 </script>
 
 </head>
-<body>
+<header><%@include file="/regist_form/header.jsp"%></header>
+<body><br>
+<br>
+<br>
+<br>
+
 
 	<center>
+
 		<p style="margin-left: -30%">
-			<button class="button button5 btn-default active" onclick="notice_board()">공지사항</button>
-			<button class="button button5 btn-default active" onclick="free_board()">자유게시판</button>
+		<input type="button" class="button button5 btn-default active" value="자유게시판" id="freebtn">
+		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		</p>
 		<hr>
-		<form class="form-horizontal">
+		<form class="form-horizontal" action="../board_form/board_list.jsp" method="get">
+		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="free_title" placeholder="제목">
+					<input type="text" class="form-control" id="free_title" placeholder="제목" name="free_title">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="free_whiter_user"
-						placeholder="작성자">
+						placeholder="작성자" name="free_whiter_user">
 				</div>
 			</div>
 			<div class="form-group">
@@ -75,15 +131,27 @@
 
 
 
-		</form>
-		<div class="col-sm-offset-7 col-sm-2">
-			<button class="button button5 btn-default" onclick="FreeBoardWrite()">글쓰기</button>
-			<button class="button button5 btn-default" onclick="pageback()">취소</button>
-			<button class="button button5 btn-default" onclick="boardSelectAll()">목록</button>
+
+		<div class="col-sm-offset-4 col-sm-1">
+			<input type="submit" class="button button5 btn-default" id="FreeBoardWrite" value="글쓰기">
 		</div>
+	</form>
+		
+			<button class="button button5 btn-default" id="pageback">취소</button>
+			<button class="button button5 btn-default" id="boardSelectAll">목록</button>
 		
 		
 
 	</center>
+	
+	
+		
+	<Br><br><Br>
+	<Br><br><Br>
+	
+  	<footer> <%@include file="/regist_form/footer.jsp"%>
+		</footer>
 </body>
+
+
 </html>

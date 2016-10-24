@@ -2,6 +2,7 @@ package com.dobid.actions.board;
 
 
 import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.FreeboardDTO;
-import com.dobid.model.dobidDAO;
+import com.dobid.model.boardDAO;
+
 
 public class Board_freedom_write_Action extends Action{
 
@@ -29,7 +31,7 @@ public class Board_freedom_write_Action extends Action{
 	    		request.getParameter("free_title"),request.getParameter("free_contents"),
 	    		request.getParameter("free_file"),0,board_date);
 		
-		dobidDAO dao = new dobidDAO();
+		boardDAO dao = new boardDAO();
 		dao.FreeBoardWrite(dto);
 		
 		return mapping.findForward("success");

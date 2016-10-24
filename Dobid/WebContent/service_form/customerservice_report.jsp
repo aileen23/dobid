@@ -25,7 +25,7 @@
 
 
 </head>
-<header><%@include file="../regist_form/header.jsp"%></header>
+<header><%@include file="/regist_form/header.jsp"%></header>
 <body>
 
 

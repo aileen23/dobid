@@ -61,6 +61,7 @@
 
 	<!-- =========================================== Action Mapping Definitions -->
 
+
     <action-mappings>
             <!-- Default "Welcome" action -->
             <!-- Forwards to Welcome.jsp -->
@@ -90,7 +91,6 @@
         <action path="/product_regist_form/auction_buy" type="com.dobid.product_regist.action.Auction_buy">
         	<forward name="sueccess" path="/product_regist_form/list.do"></forward>
         </action>
-        
 
 		<!-- register account -->
 		<action path="/main" forward="/regist_form/main.jsp"></action>
