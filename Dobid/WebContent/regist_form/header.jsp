@@ -68,15 +68,8 @@
 		$("#dropBoard").mouseout(function() {
 			$(this).hide();
 		});
-
 	});
 </script>
-<%
-	String logincheck = (String) request.getSession().getAttribute("logincheck");
-	if (logincheck == null || logincheck.equals("")) {
-		logincheck = "Login";
-	}
-%>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -111,7 +104,15 @@
 				</ul></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right" id="navright">
+		<% %>
+<%
+	String logincheck = (String)request.getSession().getAttribute("logincheck");
+	if (logincheck == null || logincheck.equals("")) {
+%>
 			<li><a href="login.do" id="loginid"><span
-					class="glyphicon glyphicon-log-in"></span> <%=logincheck%> </a></li>
+					class="glyphicon glyphicon-log-in"></span> Login </a></li>
+	<% }else{%>
+			<li><a href="#" id="loginid2"><%=logincheck%></a></li>
+			<%} %>
 		</ul>
 	</nav>

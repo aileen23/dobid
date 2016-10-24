@@ -22,16 +22,18 @@ public class Login_Action extends Action {
 		 * dto.setMember_id(request.getParameter("id"));
 		 * dto.setPass(request.getParameter("pass"));
 		 */
-
+		System.out.println(request.getParameter("id"));
+		System.out.println(request.getParameter("pass"));
 		LoginDTO dto = new LoginDTO();
 		dto.setmember_id(request.getParameter("id"));
 		dto.setPass(request.getParameter("pass"));
 
 		dobidDAO dao = new dobidDAO();
+		System.out.println(dao.login(dto));
 		if (dao.login(dto) == null || dao.login(dto).equals("")) {
 			request.getSession().setAttribute("logincheck", "");
 		} else {
-			request.getSession().setAttribute("logincheck", request.getParameter("id"));
+			request.getSession().setAttribute("logincheck", dao.login(dto));
 		}
 		return mapping.findForward("success");
 	}
