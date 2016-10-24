@@ -3,6 +3,7 @@ package com.dobid.model;
 import java.sql.SQLException;
 
 import com.dobid.beans.FreeboardDTO;
+import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
 import com.dobid.beans.Service_onoDTO;
 import com.dobid.beans.Service_reportDTO;
@@ -28,10 +29,10 @@ public class dobidDAO {
 		return false;
 	}
 
-	public String login(String id, String pass) {
+	public String login(LoginDTO login) {
 		String loginid = "";
 		try {
-			loginid = (String) smc.queryForObject("dobid.login", id, pass);
+			loginid = (String) smc.queryForObject("dobid.login", login);
 			return loginid;
 		} catch (SQLException e) {
 			e.printStackTrace();

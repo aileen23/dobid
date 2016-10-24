@@ -68,8 +68,15 @@
 		$("#dropBoard").mouseout(function() {
 			$(this).hide();
 		});
+
 	});
 </script>
+<%
+	String logincheck = (String) request.getSession().getAttribute("logincheck");
+	if (logincheck == null || logincheck.equals("")) {
+		logincheck = "Login";
+	}
+%>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -103,9 +110,8 @@
 					<li><a href="service_report.do">신고하기</a></li>
 				</ul></li>
 		</ul>
-
 		<ul class="nav navbar-nav navbar-right" id="navright">
 			<li><a href="login.do" id="loginid"><span
-					class="glyphicon glyphicon-log-in"></span> Login </a></li>
+					class="glyphicon glyphicon-log-in"></span> <%=logincheck%> </a></li>
 		</ul>
 	</nav>
