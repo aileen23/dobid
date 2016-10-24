@@ -28,7 +28,11 @@ public class Board_freedom_write_Action extends Action{
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 	    Date date = new Date();
 	    String board_date = df.format(date);
-	    FreeboardDTO dto = new FreeboardDTO(0,request.getParameter("free_whiter_user"),
+	    //request.getParameter("free_whiter_user")
+	    System.out.println(request.getParameter("free_title"));
+	    System.out.println(request.getParameter("free_contents"));
+	    System.out.println(request.getParameter("free_file"));
+	    FreeboardDTO dto = new FreeboardDTO(0,"아이디입니다.",
 	    		request.getParameter("free_title"),request.getParameter("free_contents"),
 	    		request.getParameter("free_file"),0,board_date);
 		

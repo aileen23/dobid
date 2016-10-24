@@ -51,7 +51,7 @@
 	
 	<!-- 자유게시판 글쓰기 -->
 	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
-		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
+		insert into freeboard values (freeboard_seq.NEXTVAL,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 </sqlMap>
 

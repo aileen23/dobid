@@ -95,7 +95,7 @@ function getQuerystring(paramName){
 		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		</p>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/board_list.do" method="post">
+		<form class="form-horizontal" action="/Dobid/board_list.do" method="POST">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
@@ -114,7 +114,7 @@ function getQuerystring(paramName){
 				<label for="inputTextarea" class="col-sm-4 control-label">내용</label>
 				<div class="col-sm-5">
 					<textarea class="form-control " id="free_contents"
-						placeholder="내용을 입력하세요" style="height: 200px"></textarea>
+						placeholder="내용을 입력하세요" style="height: 200px" name="free_contents"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
