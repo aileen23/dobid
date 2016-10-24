@@ -91,7 +91,7 @@
 
 			<li id="navbar_gong"><a href="#" id="gongdong">공동구매</a></li>
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#" id="Board">커뮤니티 <span
+				data-toggle="dropdown" href="board_content_view.do" id="Board">커뮤니티 <span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" id="dropBoard">
 					<li><a href="#">공지사항</a></li>

@@ -156,7 +156,7 @@ ul#navright.nav.navbar-nav.navbar-right{
 	}
 	.navbar-right {
 		float: right !important;
-		margin-right: 30px
+		margin-right: 40px
 	}
 	.navbar-right ~.navbar-right {
 		margin-right: 0
