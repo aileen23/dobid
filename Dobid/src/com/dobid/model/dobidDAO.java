@@ -48,18 +48,6 @@ public class dobidDAO {
 		return false;
 	}
 
-	public boolean FreeBoardWrite(FreeboardDTO freeboard) {
-
-		try {
-			smc.insert("dobid.FreeBoardWrite", freeboard);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		return false;
-
-	}
 
 	public boolean ServiceOno(Service_onoDTO serverOno) {
 
