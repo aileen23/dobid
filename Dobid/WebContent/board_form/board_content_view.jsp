@@ -97,7 +97,7 @@ function getQuerystring(paramName){
 			<div class="form-group">
 				<label for="inputTextarea" class="col-sm-4 control-label" disabled>내용</label>
 				<div class="col-sm-5">
-					<textarea class="form-control " id="view_contents"
+					<textarea class="form-control " id="view_contents" 
 						placeholder="${viewobject.contents }" style="height: 200px" disabled></textarea>
 				</div>
 			</div>

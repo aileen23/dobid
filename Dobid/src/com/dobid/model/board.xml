@@ -31,7 +31,7 @@
 	
 	<!-- 게시판 상세보기(공지) -->
 	<select id="NoticeSelect" resultClass="noticeboardDTO" parameterClass="int">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
 	</select>
 	
 	<!-- 게시판 조회수 증가(공지) -->
@@ -41,7 +41,7 @@
 	
 	<!-- 게시판 상세보기(자유) -->
 	<select id="FreeSelect" resultClass="freeboardDTO" parameterClass="int">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
 	</select>
 	
 	<!-- 게시판 조회수 증가(자유) -->
