@@ -107,7 +107,7 @@ function getQuerystring(paramName){
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="free_whiter_user"
-						placeholder="작성자" name="free_whiter_user">
+						placeholder="<%=request.getSession().getAttribute("logincheck") %>" name="free_whiter_user" disabled>
 				</div>
 			</div>
 			<div class="form-group">

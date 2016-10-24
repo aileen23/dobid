@@ -32,7 +32,7 @@ public class Board_freedom_write_Action extends Action{
 	    System.out.println(request.getParameter("free_title"));
 	    System.out.println(request.getParameter("free_contents"));
 	    System.out.println(request.getParameter("free_file"));
-	    FreeboardDTO dto = new FreeboardDTO(0,"아이디입니다.",
+	    FreeboardDTO dto = new FreeboardDTO(0,(String)request.getSession().getAttribute("logincheck"),
 	    		request.getParameter("free_title"),request.getParameter("free_contents"),
 	    		request.getParameter("free_file"),0,board_date);
 		
