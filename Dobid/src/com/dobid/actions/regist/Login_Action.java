@@ -8,6 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
 import com.dobid.model.dobidDAO;
 
@@ -21,11 +22,13 @@ public class Login_Action extends Action {
 		 * dto.setMember_id(request.getParameter("id"));
 		 * dto.setPass(request.getParameter("pass"));
 		 */
-		String id = request.getParameter("id");
-		String pass = request.getParameter("pass");
+
+		LoginDTO dto = new LoginDTO();
+		dto.setmember_id(request.getParameter("id"));
+		dto.setPass(request.getParameter("pass"));
 
 		dobidDAO dao = new dobidDAO();
-		if (dao.login(id, pass) == null || dao.login(id, pass).equals("")) {
+		if (dao.login(dto) == null || dao.login(dto).equals("")) {
 			request.getSession().setAttribute("logincheck", "");
 		} else {
 			request.getSession().setAttribute("logincheck", request.getParameter("id"));
