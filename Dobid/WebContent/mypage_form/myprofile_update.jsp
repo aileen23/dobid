@@ -42,14 +42,14 @@
 			<label for="inputId" class="col-sm-2 control-label">ID</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputId"
-					placeholder="ID" disabled>
+					placeholder="${member.member_id }" disabled>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputName" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputName"
-					placeholder="Name" disabled>
+					placeholder="${member.name }" disabled>
 			</div>
 		</div>
 		<div class="form-group">
@@ -70,42 +70,42 @@
 			<label for="inputPhone" class="col-sm-2 control-label">Phone</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputPhone"
-					placeholder="Phone">
+					placeholder="${member.phone } ">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputEmail"
-					placeholder="E-mail">
+					placeholder="${member.email }">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputAddress" class="col-sm-2 control-label">Address</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputAddress"
-					placeholder="Address">
+					placeholder="${member.address }">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputNickName" class="col-sm-2 control-label">NickName</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputNickName"
-					placeholder="NickName" disabled>
+					placeholder="${member.nickname }" disabled>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputIntro" class="col-sm-2 control-label">Introduction</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputIntro"
-					placeholder="Introduction">
+					placeholder="${member.introduction }">
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label class="col-sm-2 control-label"" >Birthday</label>
 			<div class="input-group date form_date col-sm-4"" data-date="" data-date-format="yyyy/mm/dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-				<input class="form-control" size="5" type="text" name="Birthday" value="" readonly> 
+				<input class="form-control" size="5" type="text" name="Birthday" value="${member.birthday }" readonly> 
  					<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			</div>
@@ -116,7 +116,7 @@
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
 				<button type="submit" class="btn btn-default"
-					style="margin-right: 5%">Sign up</button>
+					style="margin-right: 5%">Update</button>
 			</div>
 		</div>
 	</div>
