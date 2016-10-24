@@ -121,7 +121,23 @@
 
 		</action>
 
-
+		<!-- board_list -->
+		<action path="/board_list" forward="com.dobid.actions.board.Board_list_Action">
+		<forward name="success" path="/board_list.do"></forward>
+		</action>
+		
+		
+		<!-- board_content_view -->
+		<action path="/board_content_view" forward="com.dobid.actions.board.Board_content_view_Action">
+		<forward name="success" path="/board_content_view.do"></forward>
+		</action>
+		
+		<!-- board_freedom_write -->
+		<action path="/board_freedom_write" forward="com.dobid.actions.board.Board_freedom_write_Action">
+		<forward name="success" path="/board_list.do"></forward>
+		</action>
+	
+	
 
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
