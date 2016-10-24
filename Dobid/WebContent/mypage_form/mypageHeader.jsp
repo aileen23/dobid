@@ -20,8 +20,11 @@
     <script> 
 	$(document).ready(function(){
 		$(".navtab").mouseover(function(){
-				$(".navtab").css("background-color", "black");
+				$(this).css("background-color", "black");
 		});
+		$(".navtab").mouseout(function(){
+			$(this).css("background-color", "white");
+		})
 	});
     </script>
        
