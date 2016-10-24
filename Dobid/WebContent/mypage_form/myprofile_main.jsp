@@ -8,16 +8,16 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="/Dobid/mypage_form/css/bootstrap.css" rel="stylesheet" media="screen">
 
 <!-- Custom CSS -->
-<link href="./css/shop-homepage.css" rel="stylesheet">
-<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="/Dobid/mypage_form/css/shop-homepage.css" rel="stylesheet">
+<link href="/Dobid/mypage_form/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <!-- Script -->
 
-<script type="text/javascript" src="./js/jquery-1.8.3.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.12.4.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
 </head>
 
