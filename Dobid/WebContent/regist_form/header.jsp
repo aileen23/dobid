@@ -9,7 +9,7 @@
    href="/Dobid/regist_form/css/bootstrap.min.css">
 <link href="/Dobid/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <script
-   src="/Dobid/regist_form/js/jquery-1.8.3.min.js"></script>
+   src="/Dobid/regist_form/js/jquery-1.12.4.min.js"></script>
 <script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script
    src="/Dobid/regist_form/js/bootstrap.min.js"></script>
