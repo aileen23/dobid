@@ -37,15 +37,15 @@ $(document).ready(function(){
     });
     
     $('#noticeboardSelectAll').on('click', function() { //공지사항 목록버튼
-    	$(location).attr('href', '../board_list.do?id=1');
+    	$(location).attr('href', '/Dobid/board_list.do?id=1');
 	});
     
     $('#freeboardSelectAll').on('click', function() {  //자유게시판 목록버튼
-    	$(location).attr('href', '../board_list.do?id=2');
+    	$(location).attr('href', '/Dobid/board_list.do?id=2');
 
 	});
     $('#freeWrite').on('click', function() { //글쓰기 버튼
-    	$(location).attr('href', '../board_freedom_write.do');
+    	$(location).attr('href', '/Dobid/board_freedom_write.do');
 
 	});
 

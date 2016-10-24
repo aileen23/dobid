@@ -12,17 +12,17 @@ $(document).ready(function(){
 
 	
 	$('#freebtn').on('click', function() {  //자유게시판
-    	$(location).attr('href', '../board_list.do?id=2');
+    	$(location).attr('href', '/Dobid/board_list.do?id=2');
 
 	});
 	
 	$('#boardSelectAll').on('click', function() {  //자유게시판
-    	$(location).attr('href', '../board_list.do?id=2');
+    	$(location).attr('href', '/Dobid/board_list.do?id=2');
 
 	});
 	
     $('#noticebtn').on('click', function() {  //공지사항
-    	$(location).attr('href', '../board_list.do?id=1');
+    	$(location).attr('href', '/Dobid/board_list.do?id=1');
 	});
 
 	$("#pageback").click(function(){ //돌아가기
