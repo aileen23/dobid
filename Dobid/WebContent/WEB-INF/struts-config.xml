@@ -143,8 +143,12 @@
 		</action>
 		
 		<!-- board_freedom_write -->
-		<action path="/board_freedom_write" type="com.dobid.actions.board.Board_freedom_write_Action">
-		<forward name="success" path="/board_form/board_list.jsp"></forward>
+		<action path="/board_freedom_write" forward="/board_form/board_freedom_write.jsp">		
+		</action>
+		
+		<!-- board_freedom_write -->
+		<action path="/board_freedom_write_input" type="com.dobid.actions.board.Board_freedom_write_Action">
+		<forward name="success" path="/board_list.do"></forward>
 		</action>
 	
 	

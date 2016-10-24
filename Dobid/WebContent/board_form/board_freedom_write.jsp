@@ -95,7 +95,7 @@ function getQuerystring(paramName){
 		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		</p>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/board_list.do" method="POST">
+		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
