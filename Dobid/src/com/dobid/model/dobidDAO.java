@@ -36,7 +36,7 @@ public class dobidDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return id;
 	}
 
 	public boolean removeAccount(String id) {

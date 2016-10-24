@@ -23,7 +23,7 @@
 <center><font size="80" color="black">Login</font><br></center>
 <center><font size="3" color="black">welcome Do Bid</font></center>
 <br>
-<form class="form-horizontal" style="margin-left: 25%">
+<form class="form-horizontal" style="margin-left: 25%" action="do_login.do">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">

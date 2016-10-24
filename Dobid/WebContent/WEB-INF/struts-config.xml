@@ -91,6 +91,7 @@
 		</action>
 		<action path="/do_login" type="com.dobid.actions.regist.Login_Action">
 			<forward name="success" path="/main.do"></forward>
+			<forward name="fail" path="/login.do"></forward>
 		</action>
 
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
