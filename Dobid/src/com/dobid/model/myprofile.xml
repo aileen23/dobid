@@ -19,9 +19,9 @@
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 
 	<select id="select" parameterClass="String" resultClass="memberDTO">
-		select name,nickname,email,phone
+		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
 		from member
-		where id=#id#
+		where member_id=#member_id#
 	</select>
 
 </sqlMap>
