@@ -114,7 +114,7 @@ function getQuerystring(paramName){
 				<tr>
 					<td>${noticelist.basic_board_num }</td>
 					<td>${noticelist.member_id }</td>
-					<td>${noticelist.title }</td>
+					<td><a href="board_content_view.do?id=${1 }&num=${noticelist.basic_board_num }">${noticelist.title }</a></td>
 					<td>${noticelist.cilck_count }</td>
 					<td>${noticelist.upload_date }</td>
 				</tr>
@@ -149,7 +149,7 @@ function getQuerystring(paramName){
 				<tr>
 					<td>${freelist.basic_board_num }</td>
 					<td>${freelist.member_id }</td>
-					<td>${freelist.title }</td>
+					<td><a href="board_content_view.do?id=${2 }&num=${freelist.basic_board_num }">${freelist.title }</a></td>
 					<td>${freelist.cilck_count }</td>
 					<td>${freelist.upload_date }</td>
 				</tr>
