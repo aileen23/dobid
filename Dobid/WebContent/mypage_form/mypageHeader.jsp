@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Untitled Document</title>
     <!-- Bootstrap -->
-	<link href="./css/bootstrap.css" rel="stylesheet">
-	<link href="./css/mypage_header.css" rel="stylesheet" type="text/css">
-	<link href="./css/shop-homepage.css" rel="stylesheet">
+	<link href="/Dobid/mypage_form/css/bootstrap.css" rel="stylesheet">
+	<link href="/Dobid/mypage_form/css/mypage_header.css" rel="stylesheet" type="text/css">
+	<link href="/Dobid/mypage_form/css/shop-homepage.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
