@@ -29,10 +29,8 @@ public class Regist_account_Action extends Action {
 		dto.setCharging_amount(0);
 		System.out.println(dto.getBirthday());
 		dobidDAO dao = new dobidDAO();
-		if (dao.insert(dto)) {
-			return mapping.findForward("success");
-		}
-		return mapping.findForward("fail");
+		dao.insert(dto);
+		return mapping.findForward("success");
 
 	}
 }
