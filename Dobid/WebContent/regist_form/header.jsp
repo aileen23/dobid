@@ -13,7 +13,10 @@
 <script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script>
-	$(document).ready(function() {
+		
+	$(document).ready(function(){
+		
+		
 		$("#Auction").mouseover(function() {
 			$(this).css("background-color", "#FFF");
 			$(this).css("color", "black");
@@ -69,6 +72,7 @@
 			$(this).hide();
 		});
 	});
+
 </script>
 </head>
 <body>
@@ -95,7 +99,7 @@
 				</ul></li>
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#" id="Service">고객센터 <span
+				data-toggle="dropdown" href="service_qna.do" id="Service">고객센터 <span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" id="dropService">
 					<li><a href="service_qna.do"> 자주하는질문 </a></li>
@@ -112,7 +116,8 @@
 			<li><a href="login.do" id="loginid"><span
 					class="glyphicon glyphicon-log-in"></span> Login </a></li>
 	<% }else{%>
-			<li><a href="#" id="loginid2"><%=logincheck%></a></li>
+			<li><a href="myprofile.do" id="loginid2"><span class="glyphicon glyphicon-user"></span><%=logincheck%></a></li>
+			<li><a href="/Dobid/regist_form/logout.jsp"><span class="glyphicon glyphicon-log-out"  id="logout" ></span></a></li>
 			<%} %>
 		</ul>
 	</nav>

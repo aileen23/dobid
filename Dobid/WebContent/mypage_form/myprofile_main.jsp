@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<header><%@include file="../regist_form/header.jsp"%></header>
+<header><%@include file="/regist_form/header.jsp"%></header>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -13,6 +13,7 @@
 <!-- Custom CSS -->
 <link href="/Dobid/mypage_form/css/shop-homepage.css" rel="stylesheet">
 <link href="/Dobid/mypage_form/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="/Dobid/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <!-- Script -->
 
 <script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.12.4.min.js" charset="UTF-8"></script>
