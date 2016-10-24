@@ -20,6 +20,8 @@ public class Mypage_Action extends Action {
 		MemberDTO dto = new MemberDTO();
 		dto = dao.select("1");
 		request.setAttribute("member", dto);
+		
+		
 		return mapping.findForward("success");
 	}
 }
