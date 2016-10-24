@@ -24,7 +24,7 @@ public class Board_freedom_write_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		request.getParameter("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 	    Date date = new Date();
 	    String board_date = df.format(date);

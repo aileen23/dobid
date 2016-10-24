@@ -21,12 +21,12 @@
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard
+		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard order by basic_board_num desc
 	</select>
 	
 	<!-- 게시판 리스트보기(자유) -->
 	<select id="FreeSelectAll" resultClass="freeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard order by basic_board_num desc
 	</select>
 	
 	<!-- 게시판 상세보기(공지) -->
