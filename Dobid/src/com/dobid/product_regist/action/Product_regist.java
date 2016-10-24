@@ -38,7 +38,8 @@ public class Product_regist extends Action{
 		//액션 폼.
 		Product_regist_form forms = (Product_regist_form)form;
 		
-		
+		//유저 아이디
+		String user_id = (String) request.getSession().getAttribute("logincheck");
 		//데이터 가져오기.
 		String cate = forms.getCate();
 		String title_text  = forms.getTitle_text();
@@ -67,7 +68,7 @@ public class Product_regist extends Action{
 		ActionForward forward;
 		
 		//추후 등록자 아이디로 변경해야됨.
-		AuctionDTO auctionDTO = new AuctionDTO("1", title_text, text, main_path,sub_path, 
+		AuctionDTO auctionDTO = new AuctionDTO(user_id, title_text, text, main_path,sub_path, 
 				Integer.parseInt(start_cach), cate, Integer.parseInt(count_text),end_date+day+hour+minute, regist_date, auction_check);
 		
 		//SqlMapClient client = SqlMapconfig.getSqlMapInstance();

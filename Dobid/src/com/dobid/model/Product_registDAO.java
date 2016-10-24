@@ -11,15 +11,16 @@ import com.dobid.beans.Auction_updateDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.GroupbuyDTO;
 import com.dobid.beans.Groupbuy_participantDTO;
-import com.dobid.product_regist.action.SqlMapconfig;
 import com.ibatis.sqlmap.client.SqlMapClient;
+
+import iba.SqlMapConfig;
 
 
 public class Product_registDAO {
 	SqlMapClient smc;
 
 	public Product_registDAO() {
-		smc = SqlMapconfig.getSqlMapInstance();
+		smc = SqlMapConfig.getSqlMapInstance();
 	}
 	
 	public boolean insert(AuctionDTO inputdate) {

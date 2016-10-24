@@ -29,16 +29,13 @@ public class Auction_buy extends Action{
 		
 		//추후 세션값으로 받기위함.
 				//MemberDTO dto = (MemberDTO) request.getSession().getAttribute("member");
-		System.out.println(Integer.parseInt(request.getParameter("id"))+"asdadsadsad");
-		Auction_participantDTO dto = new Auction_participantDTO(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("price")), "lgh3680@naver.com", regist_date, "no");
-		System.out.println(dto.getAuction_board_num());
-		System.out.println(dto.getBid_price_amount());
-		System.out.println(dto.getBuyer_id());
-		System.out.println(dto.getBid_date());
-		System.out.println(dto.getBid_check());
+		String user_id = (String) request.getSession().getAttribute("logincheck");
+
+		Auction_participantDTO dto = new Auction_participantDTO(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("price")), user_id, regist_date, "no");
+
 		Product_registDAO dao = new Product_registDAO();
 		boolean check = dao.auction_buy(dto);
-		boolean update_check = dao.auction_update(new Auction_updateDTO(Integer.parseInt(request.getParameter("price")), "lgh3680@naver.com", Integer.parseInt(request.getParameter("id"))));
+		boolean update_check = dao.auction_update(new Auction_updateDTO(Integer.parseInt(request.getParameter("price")), user_id, Integer.parseInt(request.getParameter("id"))));
 		ActionForward actionMapping = null;
 		
 		if(check == true && update_check == true){
