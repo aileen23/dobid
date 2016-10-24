@@ -12,17 +12,17 @@ $(document).ready(function(){
 
     $('#freebtn').on('click', function() {  //자유게시판
     	var free=$('input[name=free]').val();
-    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
+    	$(location).attr('href', '../board_list.do?id=2');
 
 	});
     $('#noticebtn').on('click', function() {  //공지사항
     	var notice=$('input[name=notice]').val();
-    	$(location).attr('href', '../board_form/board_list.jsp?id=1');
+    	$(location).attr('href', '../board_list.do?id=1');
 	});
 
 
     $('#boardSelectAll').on('click', function() {  //전체목록보기버튼
-    	$(location).attr('href', '../board_form/board_list.jsp?id='${id});
+    	$(location).attr('href', '../board_list.do?id='${id});
 	});
 
 
