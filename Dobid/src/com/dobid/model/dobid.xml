@@ -28,45 +28,6 @@
 		select member_id from member where member_id = #member_id# and pass = #pass#
 	</select>
 
-	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from
-		noticeboard
-	</select>
-
-	<select id="FreeSelectAll" resultClass="freeboardDTO">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
-	</select>
-
-	<select id="NoticeSelect" resultClass="noticeboardDTO"
-		parameterClass="int">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from
-		noticeboard where basic_board_num=#basic_board_num#
-	</select>
-
-	<select id="FreeSelect" resultClass="freeboardDTO"
-		parameterClass="int">
-		select
-		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
-		where basic_board_num=#basic_board_num#
-	</select>
-
-
-	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
-		insert into freeboard
-		values
-		(freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
-	</insert>
-	
-
-	
-	<!-- 자유게시판 글쓰기 -->
-	<insert id="FreeBoardWrite" parameterClass="FreeboardDTO">
-		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
-	</insert>
-
 </sqlMap>
 
 
