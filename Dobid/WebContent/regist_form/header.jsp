@@ -16,7 +16,7 @@
 		
 	$(document).ready(function(){
 		
-		
+		/* 
 		$("#Auction").mouseover(function() {
 			$(this).css("background-color", "#FFF");
 			$(this).css("color", "black");
@@ -70,7 +70,7 @@
 		});
 		$("#dropBoard").mouseout(function() {
 			$(this).hide();
-		});
+		}); */
 	});
 
 </script>
@@ -91,15 +91,15 @@
 
 			<li id="navbar_gong"><a href="#" id="gongdong">공동구매</a></li>
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="board_content_view.do" id="Board">커뮤니티 <span
+				data-toggle="dropdown" href="board_list.do" id="Board">커뮤니티<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" id="dropBoard">
-					<li><a href="#">공지사항</a></li>
-					<li><a href="#">자유게시판</a></li>
+					<li><a href="/Dobid/board_list.do?id=1">공지사항</a></li>
+					<li><a href="/Dobid/board_list.do?id=2">자유게시판</a></li>
 				</ul></li>
 
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="service_qna.do" id="Service">고객센터 <span
+				data-toggle="dropdown" href="service_qna.do" id="Service">고객센터<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" id="dropService">
 					<li><a href="service_qna.do"> 자주하는질문 </a></li>

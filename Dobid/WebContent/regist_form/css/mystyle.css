@@ -7,27 +7,6 @@
 	color: #FFFFFF;
 	font-size: xx-large;
 }
-.nav.navbar-nav .dropdown #Auction {
-	color: #FFFFFF;
-	width: 100px;
-	text-align: center;
-}
-
-.nav.navbar-nav #navbar_gong #gongdong {
-	width: 100px;
-	text-align: center;
-	color: #FFFFFF;
-}
-.nav.navbar-nav .dropdown #Board {
-	color: #FFFFFF;
-	width: 100px;
-	text-align: center;
-}
-.nav.navbar-nav .dropdown #Service {
-	text-align: center;
-	color: #FFFFFF;
-	width: 100px;
-}
 
 .navbar-inverse {
 	background-color: #000000;
@@ -162,3 +141,14 @@ ul#navright.nav.navbar-nav.navbar-right{
 		margin-right: 0
 	}
 }
+.dropdown:hover .dropdown{
+	color:#000;
+	background-color:#888;
+}
+.dropdown:hover .dropdown-menu {
+display: block;
+margin-top: 0;
+
+}
+
+
