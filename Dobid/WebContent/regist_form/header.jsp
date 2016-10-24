@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" 
    href="/Dobid/regist_form/css/bootstrap.min.css">
-<link href="/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
+<link href="/Dobid/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <script
    src="/Dobid/regist_form/js/jquery-1.8.3.min.js"></script>
 <script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
@@ -17,7 +17,7 @@
 
 $(document).ready(function(){
     $("#Auction").mouseover(function(){
-		$(this).css("background-color", "white"); 
+		$(this).css("background-color", "#FFF"); 
 		$(this).css("color", "black"); 
     });
     $("#Auction").mouseout(function(){
@@ -32,8 +32,8 @@ $(document).ready(function(){
 	});
 	
 	$("#gongdong").mouseover(function(){
-		$(this).css("background-color", "black"); 
-		$(this).css("color", "white"); 
+		$(this).css("background-color", "#FFF"); 
+		$(this).css("color", "black"); 
     });
     $("#gongdong").mouseout(function(){
 		$(this).css("background-color", "black"); 
