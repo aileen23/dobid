@@ -46,7 +46,7 @@
 	
 	<!-- 게시판 조회수 증가(자유) -->
 	<update id="FreeSelectCnt" parameterClass="int">
-	update freeboard set cilck_count=cilck_count+1 basic_board_num=#basic_board_num#
+	update freeboard set cilck_count=cilck_count+1 where basic_board_num=#basic_board_num#
 	</update>
 	
 	<!-- 자유게시판 글쓰기 -->
