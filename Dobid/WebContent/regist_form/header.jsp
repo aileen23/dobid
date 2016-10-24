@@ -79,7 +79,7 @@ $(document).ready(function(){
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Do!bid</a>
+				<a class="navbar-brand" href="main.do">Do!bid</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="Auction">경매<span class="caret"></span></a>
