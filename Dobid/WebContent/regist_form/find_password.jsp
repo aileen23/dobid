@@ -16,7 +16,7 @@
 
 
 <body>
-<header><%@include file="header.jsp"%></header>
+	<header><%@include file="header.jsp"%></header>
 <!-- 헤더 -->
 <br><br><br><br><br><br>
 

@@ -68,7 +68,6 @@
 		$("#dropBoard").mouseout(function() {
 			$(this).hide();
 		});
-
 	});
 </script>
 </head>
@@ -106,14 +105,7 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right" id="navright">
-			<%-- <%
-				String loginid = (String) request.getSession().getAttribute("logincheck");
-				if (loginid.equals("") || loginid == null) {
-					loginid = "Login";
-				}
-			%> --%>
-			<li><a href="login.do" id="nav_login"><span
-					class="glyphicon glyphicon-log-in"></span> <%-- <%=loginid%> --%>
-					${logincheck }</a></li>
+			<li><a href="login.do" id="loginid"><span
+					class="glyphicon glyphicon-log-in"></span> Login </a></li>
 		</ul>
 	</nav>
