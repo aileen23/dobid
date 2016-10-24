@@ -8,18 +8,21 @@
 <script>
 
 $(document).ready(function(){ 
-	
+	var id = getQuerystring(id);
 
 	
-	
-	
 	$('#freebtn').on('click', function() {  //자유게시판
-    	$(location).attr('href', '../board_form/board_list.jsp?id=1');
+    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
+
+	});
+	
+	$('#boardSelectAll').on('click', function() {  //자유게시판
+    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
 
 	});
 	
     $('#noticebtn').on('click', function() {  //공지사항
-    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
+    	$(location).attr('href', '../board_form/board_list.jsp?id=1');
 	});
 
 	$("#pageback").click(function(){ //돌아가기
@@ -28,17 +31,22 @@ $(document).ready(function(){
 
 	});
 	
-    $('#boardSelectAll').on('click', function() { //목록버튼
-    	$(location).attr('href', '../board_form/board_list.jsp');
 
-	});
 
 
 });
 
 </script>
 
+<script type="text/javascript">
+function getQuerystring(paramName){
 
+	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
+	//var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
+	console.log(_tempUrl);
+	return _tempUrl.split("=")[1];
+}
+</script>
 
 <!-- CSS -->
 <link href="./css/jongmin.css" rel="stylesheet">
@@ -83,8 +91,8 @@ $(document).ready(function(){
 	<center>
 
 		<p style="margin-left: -30%">
-		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		<input type="button" class="button button5 btn-default active" value="자유게시판" id="freebtn">
+		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		</p>
 		<hr>
 		<form class="form-horizontal" action="../board_form/board_list.jsp" method="get">
@@ -124,12 +132,13 @@ $(document).ready(function(){
 
 
 
-		<div class="col-sm-offset-7 col-sm-2">
+		<div class="col-sm-offset-4 col-sm-1">
 			<input type="submit" class="button button5 btn-default" id="FreeBoardWrite" value="글쓰기">
-			</form>
+		</div>
+	</form>
+		
 			<button class="button button5 btn-default" id="pageback">취소</button>
 			<button class="button button5 btn-default" id="boardSelectAll">목록</button>
-		</div>
 		
 		
 

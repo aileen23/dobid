@@ -11,19 +11,19 @@
 
 $(document).ready(function(){
 
-    $("freeboard").hide();
-    $("noticeboard").show();
+    $("noticeboard").hide();
+    $("freeboard").show();
 
     var id = getQuerystring(id);
     if(id == 1){
-    	$("freeboard").show();
-	    $("noticeboard").hide();
-    }else if(id == 2){
     	 $("freeboard").hide();
     	    $("noticeboard").show();
+    }else if(id == 2){
+    	$("freeboard").show();
+	    $("noticeboard").hide();
     }else {
-    	 $("freeboard").hide();
- 	    $("noticeboard").show();
+    	 $("freeboard").show();
+ 	    $("noticeboard").hide();
     	
     }
     
@@ -90,8 +90,8 @@ function getQuerystring(paramName){
 <br>
 <br>
 <br>
-		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		<input type="button" class="button button5 btn-default active" value="자유게시판" id="freebtn">
+		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		<hr>
 <Br><br>
 <Br>

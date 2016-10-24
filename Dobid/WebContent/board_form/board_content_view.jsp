@@ -12,12 +12,12 @@ $(document).ready(function(){
 
     $('#freebtn').on('click', function() {  //자유게시판
     	var free=$('input[name=free]').val();
-    	$(location).attr('href', '../board_form/board_list.jsp?id=1');
+    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
 
 	});
     $('#noticebtn').on('click', function() {  //공지사항
     	var notice=$('input[name=notice]').val();
-    	$(location).attr('href', '../board_form/board_list.jsp?id=2');
+    	$(location).attr('href', '../board_form/board_list.jsp?id=1');
 	});
 
 
@@ -68,8 +68,8 @@ function getQuerystring(paramName){
 
 	<center>
 		<p style="margin-left: -30%">
-		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn" name="notice">
 		<input type="button" class="button button5 btn-default active" value="자유게시판" id="freebtn" name="free">
+		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn" name="notice">
 		</p>
 		<hr>
 		<form class="form-horizontal">
