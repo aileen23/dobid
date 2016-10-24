@@ -24,7 +24,7 @@
 		#address#,
 		#nickname#, #introduction#, #birthday#, #charging_amount#)
 	</insert>
-	<select id="login" parameterClass="memberDTO" resultClass="String">
+	<select id="login" parameterClass="String" resultClass="String">
 		select member_id from member where member_id = #member_id# and pass = #pass#
 	</select>
 

@@ -28,15 +28,15 @@ public class dobidDAO {
 		return false;
 	}
 
-	public String login(MemberDTO member) {
-		String id = "";
+	public String login(String id, String pass) {
+		String loginid = "";
 		try {
-			id = (String) smc.queryForObject("dobid.login", member);
-			return id;
+			loginid = (String) smc.queryForObject("dobid.login", id, pass);
+			return loginid;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return id;
+		return loginid;
 	}
 
 	public boolean removeAccount(String id) {

@@ -106,13 +106,14 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right" id="navright">
-			<%
+			<%-- <%
 				String loginid = (String) request.getSession().getAttribute("logincheck");
 				if (loginid.equals("") || loginid == null) {
 					loginid = "Login";
 				}
-			%>
+			%> --%>
 			<li><a href="login.do" id="nav_login"><span
-					class="glyphicon glyphicon-log-in"></span> <%=loginid%></a></li>
+					class="glyphicon glyphicon-log-in"></span> <%-- <%=loginid%> --%>
+					${logincheck }</a></li>
 		</ul>
 	</nav>
