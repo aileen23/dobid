@@ -26,11 +26,12 @@ public class GroupbuyDTO {
 
 	
 	
-	public GroupbuyDTO(int num, String title, 
+	public GroupbuyDTO(int num,int groupbuy_board_num, String title, 
 			String main_image_path, int participant_num,String categori, String end_date,
 			String regist_date, int discount_price) {
 		super();
 		this.num = num;
+		this.groupbuy_board_num = groupbuy_board_num;
 		this.title = title;
 		this.participant_num = participant_num;
 		this.main_image_path = main_image_path;

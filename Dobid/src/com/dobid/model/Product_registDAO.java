@@ -7,8 +7,10 @@ import com.dobid.beans.AuctionDTO;
 import com.dobid.beans.Auction_listDTO;
 import com.dobid.beans.Auction_list_paramiterDTO;
 import com.dobid.beans.Auction_participantDTO;
+import com.dobid.beans.Auction_updateDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.GroupbuyDTO;
+import com.dobid.beans.Groupbuy_participantDTO;
 import com.dobid.product_regist.action.SqlMapconfig;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -77,6 +79,61 @@ public class Product_registDAO {
 			e.printStackTrace();
 		}
 		return a;
+	}
+	public GroupbuyDTO groupbuy_view(int id) {
+		GroupbuyDTO dto = null;
+		try {
+			dto = (GroupbuyDTO)smc.queryForObject("product_regist.groupbuy_view",id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
+	public boolean groupbuy_regist(Groupbuy_participantDTO dto) {
+		
+		try {
+			smc.insert("product_regist.groupbuy_regist",dto);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean groupbuy_count(int number) {
+		try {
+			smc.update("product_regist.groupbuy_count_update",number);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean auction_buy(Auction_participantDTO dto) {
+		try {
+			smc.insert("product_regist.auction_buy_d",dto);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean auction_update(Auction_updateDTO dto) {
+		try {
+			smc.update("product_regist.auction_buy_update",dto);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	
 	public boolean FreeBoardWrite(FreeboardDTO freeboard){

@@ -37,6 +37,17 @@ $(document).ready(function(){
 		var input_time = hour+"시간"+mi+"분"+ss+"초";
 		$(".only").text(input_time);
 	};
+	
+	$("#buyBtn").click(function(){
+		var id = $('.wap').attr("name");
+		var price = $('.now_bid_text').text();
+		var input_price = $('#inputId').val();
+		if(input_price < Number(price)){
+			alert("현재 임찰금액보다 낮습니다.\n금액을 확인해주세요.")
+		}else {
+		location.replace("auction_buy.do?id="+id+"&price="+input_price);
+		}
+	});
 });
 function showKeyCode(event) {
 	event = event || window.event;
@@ -91,7 +102,7 @@ function showKeyCode(event) {
 	int view_mi = (nowtal_int-(view_hour*3600))/60;
 	int view_ss = ((nowtal_int-(view_hour*3600))-view_mi*60);
 %>
-	<div class="wap">
+	<div class="wap" name="<%=id%>">
   		<div class="content">
   			<span class="title"><%=auctionDTO.getTitle() %></span>
   			<div class="box">
@@ -166,7 +177,7 @@ function showKeyCode(event) {
   						<p>3. 종료 5분 전 입찰시 종료시간이 증가합니다.</p>
   					</div>
   					<input type="text" class="form-control2" id="inputId" placeholder="금액" onkeydown="return showKeyCode(event)">
-  					<button type="button" class="btn btn-default" style="margin-right: 5%">경매참가하기</button>
+  					<button id="buyBtn" type="button" class="btn btn-default" style="margin-right: 5%">경매참가하기</button>
   				</div>
   			</div>
   			<textarea class="text_area" rows="20" cols="110" style="resize: none;" readonly="readonly"><%= auctionDTO.getContents() %></textarea>

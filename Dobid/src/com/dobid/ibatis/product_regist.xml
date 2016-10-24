@@ -9,6 +9,9 @@
 	<typeAlias alias="auction_list" type="com.dobid.beans.Auction_listDTO"/>
 	<typeAlias alias="paramiter" type="com.dobid.beans.Auction_list_paramiterDTO"/>
 	<typeAlias alias="groupbuy_list" type="com.dobid.beans.GroupbuyDTO"/>
+	<typeAlias alias="groupbuy_regist" type="com.dobid.beans.Groupbuy_participantDTO"/>
+	<typeAlias alias="auction_buy_aaa" type="com.dobid.beans.Auction_participantDTO"/>
+	<typeAlias alias="auction_update" type="com.dobid.beans.Auction_updateDTO"/>
 	
 	<!-- 경매등록. -->
    <insert id="auction_regist" parameterClass="auction_reviewDTO">
@@ -21,7 +24,7 @@
    </select>
     <!-- 공동구매목록  -->
    <select id="group_search_list" parameterClass="paramiter" resultClass="groupbuy_list">
-   		select * from (select rownum rnum,TITLE, MAIN_IMAGE_PATH, PARTICIPANT_NUM, CATEGORI,END_DATE,REGIST_DATE,DISCOUNT_PRICE from GROUPBUY where TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
+   		select * from (select rownum rnum,groupbuy_board_num,TITLE, MAIN_IMAGE_PATH, PARTICIPANT_NUM, CATEGORI,END_DATE,REGIST_DATE,DISCOUNT_PRICE from GROUPBUY where TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
    </select>
     <!-- 경매뷰   -->
    <select id="auction_object_select" parameterClass="Int" resultClass="auction_reviewDTO">
@@ -31,4 +34,26 @@
    <select id="user_id_select" parameterClass="String" resultClass="String">
    		select NAME from MEMBER where MEMBER_ID = #string#
    </select>
+   <!-- 공동구매 뷰 -->
+    <select id="groupbuy_view" parameterClass="Int" resultClass="groupbuy_list">
+   		select * from GROUPBUY where GROUPBUY_BOARD_NUM = #int#
+   </select>
+   <!-- 공동구매 참가 -->
+   <insert id="groupbuy_regist" parameterClass="groupbuy_regist">
+   		INSERT INTO "DOBID"."GROUPBUY_PARTICIPANT" (GROUPBUY_BOARD_NUM, BUY_PRICE_AMOUNT, BUYER_ID, BUY_DATE, BUY_CHECK) VALUES (#groupbuy_board_num#, #buy_price_amount#, #buyer_id#, TO_DATE(#buy_date#, 'YYYY-MM-DD HH24:MI:SS'),#buy_check#)
+   		
+   </insert>
+   <!-- 공대구매 참가자수 업데이트. -->
+   <update id="groupbuy_count_update" parameterClass="Int">
+   		UPDATE "DOBID"."GROUPBUY" SET PARTICIPANT_NUM = PARTICIPANT_NUM+1 where GROUPBUY_BOARD_NUM = #int#
+   </update>
+	<!-- 경매 참가자 갱신 -->
+	<update id="auction_buy_update" parameterClass="auction_update">
+		UPDATE "DOBID"."AUCTION" SET HIGHEST_PRICE = #price#, HIGHEST_PRICE_ID = #user_id# WHERE AUCTION_BOARD_NUM = #number#
+	</update>
+	<!-- 경매 참가 -->
+	<insert id="auction_buy_d" parameterClass="auction_buy_aaa">
+		INSERT INTO "DOBID"."AUCTION_PARTICIPANT" (AUCTION_BOARD_NUM, BID_PRICE_AMOUNT, BUYER_ID, BID_DATE, BID_CHECK) VALUES (#auction_board_num#, #bid_price_amount#, #buyer_id#, TO_DATE(#bid_date#, 'YYYY-MM-DD HH24:MI:SS'),#bid_check#)		
+	</insert>
+
 </sqlMap>

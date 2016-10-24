@@ -94,8 +94,9 @@ Product_registDAO dao = new Product_registDAO();
 List<GroupbuyDTO> list = dao.group_search_list(auction_list_paramiterDTO);
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
+                        <div class="thumbnail"><a href="groupbuy_view.do?id=<%= list.get(i).getGroupbuy_board_num()%>">
                             <img src="http://placehold.it/320x150" alt="">
+                            </a>
                             <!-- <img src="<%= list.get(i).getMain_image_path()%>" alt=""> -->
                             <div class="caption">
                             	<div class="center_title">

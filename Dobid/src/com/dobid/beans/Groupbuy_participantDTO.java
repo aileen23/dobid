@@ -1,19 +1,19 @@
 package com.dobid.beans;
 
-import java.sql.Date;
+
 
 public class Groupbuy_participantDTO {
 	private int groupbuy_board_num;
 	private int buy_price_amount;
 	private String buyer_id;
-	private Date buy_date;
-	private char buy_check;
+	private String buy_date;
+	private String buy_check;
 
 	public Groupbuy_participantDTO() {
 	}
 
-	public Groupbuy_participantDTO(int groupbuy_board_num, int buy_price_amount, String buyer_id, Date buy_date,
-			char buy_check) {
+	public Groupbuy_participantDTO(int groupbuy_board_num, int buy_price_amount, String buyer_id, String buy_date,
+			String buy_check) {
 		super();
 		this.groupbuy_board_num = groupbuy_board_num;
 		this.buy_price_amount = buy_price_amount;
@@ -46,19 +46,19 @@ public class Groupbuy_participantDTO {
 		this.buyer_id = buyer_id;
 	}
 
-	public Date getBuy_date() {
+	public String getBuy_date() {
 		return buy_date;
 	}
 
-	public void setBuy_date(Date buy_date) {
+	public void setBuy_date(String buy_date) {
 		this.buy_date = buy_date;
 	}
 
-	public char getBuy_check() {
+	public String getBuy_check() {
 		return buy_check;
 	}
 
-	public void setBuy_check(char buy_check) {
+	public void setBuy_check(String buy_check) {
 		this.buy_check = buy_check;
 	}
 

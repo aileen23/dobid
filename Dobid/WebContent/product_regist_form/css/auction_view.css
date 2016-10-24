@@ -185,9 +185,15 @@ div#slider figure {
 	-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
 	box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
 }
+.progress-small_group{
+	overflow:hidden;
+	background-color:#000000;
+	-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
+	box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
+}
 .progress-bar-small {
 	float:left;
-	width:0;height:100%;
+	width:0;height:90%;
 	font-size:6px;line-height:7px;
 	color:#fff;
 	text-align:center;
