@@ -81,7 +81,9 @@
         <label  for="cma_file"class="text-center">첨부파일</label>
         <input type="file" name="image_path" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))"/>
         <br><br>
-        <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>
+        <div align="center" style="text-decoration: underline">* 최대 300MB 용량까지 업로드 가능</div><br>
+        <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div><br>
+        
     </div>
 </div>
 <button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
