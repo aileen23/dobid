@@ -30,12 +30,7 @@ public class Admin_board_Action extends Action{
 		
 		boardDAO dao = new boardDAO();
 		
-		
-
 	
-		List<Admin_noticeDTO> adminnoticelist=null;
-		adminnoticelist = dao.adminNoticeSelectAll();
-		request.setAttribute("adminboardlist", adminnoticelist);
 
 		String admin_boardselecttext = request.getParameter("admin_boardselecttext");
 		String catalogue = request.getParameter("catalogue");
@@ -43,9 +38,13 @@ public class Admin_board_Action extends Action{
 		System.out.println(request.getParameter("admin_boardselecttext"));
 		System.out.println(request.getParameter("catalogue"));
 
-		
-		if(admin_boardselecttext==null && catalogue.equals("notice")){
-			
+		if(admin_boardselecttext==null && catalogue==null){
+			List<Admin_noticeDTO> adminnoticelist=null;
+			adminnoticelist = dao.adminNoticeSelectAll();
+			request.setAttribute("adminboardlist", adminnoticelist);
+		}
+		else if(admin_boardselecttext==null && catalogue.equals("notice")){
+			List<Admin_noticeDTO> adminnoticelist=null;
 			adminnoticelist = dao.adminNoticeSelectAll();
 			request.setAttribute("adminboardlist", adminnoticelist);
 			
@@ -68,6 +67,7 @@ public class Admin_board_Action extends Action{
 			
 			
 		} 
+
 
 		
 		

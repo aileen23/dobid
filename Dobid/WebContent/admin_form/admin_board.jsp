@@ -69,15 +69,15 @@ $(document).ready(function(){
 				<th>내용</th>
 				<th>등록일자</th>
 			</tr>
-		<c:forEach items="${adminboardlist }" var="boardlist">
+		<c:forEach items="${adminboardlist }" var="adminboardlist">
 			<tr>
-				<td>boardlist_seq</td>
-				<td>boardlist_id</td>
-				<td>boardlist_name</td>
-				<td>boardlist_nickname</td>
-				<td>boardlist_email</td>
-				<td>boardlist_content</td>
-				<td>boardlist_date</td>
+				<td>adminboardlist_seq</td>
+				<td>adminboardlist_id</td>
+				<td>adminboardlist_name</td>
+				<td>adminboardlist_nickname</td>
+				<td>adminboardlist_email</td>
+				<td>adminboardlist_content</td>
+				<td>adminboardlist_date</td>
 			</tr>
 </c:forEach>
 
