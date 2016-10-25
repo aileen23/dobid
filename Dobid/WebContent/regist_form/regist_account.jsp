@@ -71,7 +71,7 @@
 			});
 		});//checknickname버튼 클릭시
 		
-		
+		$("input").keydown
 		
 	});//ready
 </script>
@@ -100,7 +100,7 @@
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" name="id" placeholder="ID"
+					<input type="text" class="form-control" name="id" placeholder="ID (6-20)"
 						id="id">
 				</div>
 				<button type="button" class="btn btn-default" id="checkid"
@@ -110,35 +110,35 @@
 				<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-4">
 					<input type="password" class="form-control" name="pass"
-						placeholder="Password">
+						placeholder="Password (6-20)" id="password">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">CheckPassword</label>
 				<div class="col-sm-4">
 					<input type="password" class="form-control" name="checkpass"
-						placeholder="CheckPassword">
+						placeholder="CheckPassword" id="checkpassword">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="name"
-						placeholder="Name">
+						placeholder="Name" id="name">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="phone"
-						placeholder="Phone">
+						placeholder="Phone (' - ' except)" id="phone">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="email"
-						placeholder="E-mail">
+						placeholder="E-mail" id="email">
 				</div>
 			</div>
 			<div class="form-group">
@@ -154,7 +154,7 @@
 				<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="address"
-						style="height: 100px;" placeholder="Address">
+						style="height: 100px;" placeholder="Address" id="address">
 				</div>
 			</div>
 
@@ -162,7 +162,7 @@
 				<label for="inputEmail3" class="col-sm-2 control-label">Introduction</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="introduction"
-						style="height: 100px;" placeholder="Introduction">
+						style="height: 100px;" placeholder="Introduction" id="introduction">
 				</div>
 			</div>
 			<div class="form-group">
@@ -183,7 +183,7 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
 					<button type="submit" class="btn btn-default"
-						style="margin-right: 5%" id="account">Sign up</button>
+						style="margin-right: 5%" id="account" disabled="false">Sign up</button>
 				</div>
 			</div>
 
