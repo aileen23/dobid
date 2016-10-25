@@ -16,9 +16,10 @@
 <link href="/Dobid/mypage_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <!-- Script -->
 
-<script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.12.4.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
 
 </head>
 
