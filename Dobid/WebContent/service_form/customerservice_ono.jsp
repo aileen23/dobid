@@ -29,6 +29,7 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
  
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
@@ -41,7 +42,7 @@
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
- <form action="service_ono_write.do" method="get" enctype="multipart/form-data" class="form-horizontal">
+ <form action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
@@ -86,7 +87,7 @@
         
     </div>
 </div>
-<button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
+<button type="submit" class="button button5 btn-default col-sm-offset-5" id="submit">확인</button>
 <button type="reset" class="button button5 btn-default">취소</button>
 </form>
 

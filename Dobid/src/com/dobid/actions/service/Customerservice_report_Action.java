@@ -46,10 +46,14 @@ public class Customerservice_report_Action extends Action{
 			ServiceDAO dao = new ServiceDAO();
 			dao.ServiceReport(dto);	
 				
-			
-												
-		
-		return mapping.findForward("success");
+			if (dao.ServiceReport(dto)) {
+				
+				return mapping.findForward("success");
+			} else {
+				
+				return mapping.findForward("fail");
+											
+			}
 	}
 
 }

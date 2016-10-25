@@ -47,10 +47,15 @@ public class Customerservice_ono_Action extends Action{
 			dao.ServiceOno(dto);
 			System.out.println(dao.ServiceOno(dto));
 				
-			
+			if (dao.ServiceOno(dto)) {
+				
+				return mapping.findForward("success");
+			} else {
+				
+				return mapping.findForward("fail");
 											
+			}
 		
-		return mapping.findForward("success");
 	}
 
 }
