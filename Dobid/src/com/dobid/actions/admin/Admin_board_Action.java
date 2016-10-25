@@ -65,7 +65,6 @@ public class Admin_board_Action extends Action{
 			adminfreeselectlist=dao.adminFreetitle(admin_boardselecttext);
 			request.setAttribute("adminboardlist", adminfreeselectlist);
 			
-			
 		} 
 
 
