@@ -8,12 +8,12 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="/Dobid/mypage_form/css/bootstrap.css" rel="stylesheet" media="screen">
+<link href="/Dobid/mypage_form/css/bootstrap.css" rel="stylesheet" media="screen" type="text/css">
 
 <!-- Custom CSS -->
-<link href="/Dobid/mypage_form/css/shop-homepage.css" rel="stylesheet">
+<link href="/Dobid/mypage_form/css/shop-homepage.css" rel="stylesheet" type="text/css">
 <link href="/Dobid/mypage_form/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-<link href="/Dobid/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
+<link href="/Dobid/mypage_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <!-- Script -->
 
 <script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.12.4.min.js" charset="UTF-8"></script>
