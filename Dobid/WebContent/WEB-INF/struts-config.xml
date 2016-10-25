@@ -177,7 +177,7 @@
 		<!-- 관리자 (박종민) -->
 
 		<!-- admin_board.jsp -->
-		<action path="/admin_board" type="com.dobid.actions.board.Admin_board_Action">
+		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
 			<forward name="success" path="/admin_form/admin_board.jsp"></forward>
 		</action>
 	
