@@ -33,7 +33,7 @@
 				data : params,
 				success : function(args) {
 					/* $("#result").html(args); */
-					if (args == 1) {
+					if (args == 1 && $("#id").val().length >= 6) {
 						alert("사용할수 있는 아이디입니다.");
 						$("#id").attr("readonly", true);
 					} else {
@@ -46,6 +46,7 @@
 			});
 
 		});//checkid버튼 클릭시
+		
 		$("#checknickname").click(function() {
 
 			var url = "checknickname.do";
@@ -57,7 +58,7 @@
 				data : params,
 				success : function(args) {
 					/* $("#result").html(args); */
-					if (args == 1) {
+					if (args == 1 && $("#nickname").val().length >= 6) {
 						alert("사용할수 있는 닉네임입니다.");
 						$("#nickname").attr("readonly", true);
 					} else {
@@ -68,8 +69,10 @@
 					alert(e.responseText);
 				}
 			});
-
-		});//checkid버튼 클릭시
+		});//checknickname버튼 클릭시
+		
+		
+		
 	});//ready
 </script>
 
@@ -180,7 +183,7 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
 					<button type="submit" class="btn btn-default"
-						style="margin-right: 5%">Sign up</button>
+						style="margin-right: 5%" id="account">Sign up</button>
 				</div>
 			</div>
 
