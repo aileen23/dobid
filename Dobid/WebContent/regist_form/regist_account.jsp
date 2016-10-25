@@ -15,16 +15,17 @@
 <link href="/Dobid/mypage_form/css/bootstrap-datetimepicker.min.css"
 	rel="stylesheet" media="screen">
 
+
 <script type="text/javascript"
 	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript"
 	src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function name() {
+	$(document).ready(function() {
 		$("#checkid").click(function() {
 
 			var url = "checkid.do";
-			var params = "id="+$("#id").val();
+			var params = "id=" + $("#id").val();
 
 			$.ajax({
 				type : "POST",
@@ -33,19 +34,42 @@
 				success : function(args) {
 					/* $("#result").html(args); */
 					if (args == 1) {
-					alert("사용할수 있는 아이디입니다.");
-					$("#id").attr("readonly", true);
-					}else {
+						alert("사용할수 있는 아이디입니다.");
+						$("#id").attr("readonly", true);
+					} else {
 						alert("사용할수 없는 아이디입니다.");
 					}
 				},
-				beforeSend : showRequest,
 				error : function(e) {
 					alert(e.responseText);
 				}
 			});
 
-		});
+		});//checkid버튼 클릭시
+		$("#checknickname").click(function() {
+
+			var url = "checknickname.do";
+			var params = "nickname=" + $("#nickname").val();
+
+			$.ajax({
+				type : "POST",
+				url : url,
+				data : params,
+				success : function(args) {
+					/* $("#result").html(args); */
+					if (args == 1) {
+						alert("사용할수 있는 닉네임입니다.");
+						$("#nickname").attr("readonly", true);
+					} else {
+						alert("사용할수 없는 닉네임입니다.");
+					}
+				},
+				error : function(e) {
+					alert(e.responseText);
+				}
+			});
+
+		});//checkid버튼 클릭시
 	});//ready
 </script>
 
@@ -118,10 +142,10 @@
 				<label for="inputEmail3" class="col-sm-2 control-label">NickName</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="nickname"
-						placeholder="NickName">
+						placeholder="NickName" id="nickname">
 				</div>
 				<button type="button" class="btn btn-default"
-					style="margin-right: 5%">Check</button>
+					style="margin-right: 5%" id="checknickname">Check</button>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Address</label>

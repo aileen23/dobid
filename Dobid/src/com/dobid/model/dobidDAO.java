@@ -38,7 +38,7 @@ public class dobidDAO {
 		}
 		return loginid;
 	}
-	
+
 	public String findid(Find_idDTO findid) {
 		String id = "";
 		try {
@@ -59,8 +59,8 @@ public class dobidDAO {
 		}
 		return false;
 	}
-	
-	public int checkid(String id){
+
+	public int checkid(String id) {
 		try {
 			if (smc.queryForObject("dobid.check_id", id) == null) {
 				return 1;
@@ -68,10 +68,20 @@ public class dobidDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
+
+		return 0;
+	}
+
+	public int checknickname(String nickname) {
+		try {
+			if (smc.queryForObject("dobid.check_nickname", nickname) == null) {
+				return 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return 0;
 	}
 
 }
-
