@@ -34,6 +34,9 @@
 		select member_id from member where name=#name# and birthday=#birthday#
 		and phone=#phone#
 	</select>
+	<select id="check_id" parameterClass="String" resultClass="String">
+		select member_id from member where member_id = #member_id#
+	</select>
 
 </sqlMap>
 

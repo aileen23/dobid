@@ -23,7 +23,7 @@ public class Find_id_Action extends Action{
 		
 		dobidDAO dao = new dobidDAO();
 		if (dao.findid(dto)==null|| dao.findid(dto).equals("")) {
-			request.setAttribute("id", "회원님이 입력하신 정보와 <br>일치하는 아이디가 없습니다.");
+			request.setAttribute("id", "입력하신 정보와 <br>일치하는 아이디가 없습니다.");
 		}
 		else {
 			request.setAttribute("id", "회원님의 아이디는<br><font color='3366cc'>"+dao.findid(dto).substring(0, dao.findid(dto).length()-3)+"***</font><br> 입니다.");

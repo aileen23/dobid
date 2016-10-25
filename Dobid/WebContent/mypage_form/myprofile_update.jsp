@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC >
 <html>
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
@@ -37,7 +37,6 @@
 	<br>
 		<br>	<br>
 	<form class="form-horizontal" style="margin-left: 25%" role="form">
-
 		<div class="form-group" >
 			<label for="inputId" class="col-sm-2 control-label">ID</label>
 			<div class="col-sm-4">

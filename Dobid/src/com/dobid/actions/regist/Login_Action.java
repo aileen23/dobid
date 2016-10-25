@@ -33,9 +33,10 @@ public class Login_Action extends Action {
 		System.out.println(dao.login(dto));
 		if (dao.login(dto) == null || dao.login(dto).equals("")) {
 			request.getSession().setAttribute("logincheck", "");
+			return mapping.findForward("fail");
 		} else {
 			request.getSession().setAttribute("logincheck", dao.login(dto));
+			return mapping.findForward("success");
 		}
-		return mapping.findForward("success");
 	}
 }

@@ -7,12 +7,12 @@
 
 	<insert id="serviceOno" parameterClass="service_onoDTO">
 		insert into service_ono values
-			(#member_id#, #title#, #categori#, #contents#, #image_path#, #upload_date#)
+			(#member_id#, #title#, #categori#, #contents#, #image_path#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 	
 	<insert id="serviceReport" parameterClass="service_reportDTO">
 		insert into service_report values
-			(#member_id#, #title#, #contents#, #image_path#, #upload_date#)
+			(#member_id#, #title#, #contents#, #image_path#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 
 </sqlMap>

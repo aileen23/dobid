@@ -48,8 +48,10 @@ $(document).ready(function(){
     	$(location).attr('href', '/Dobid/board_freedom_write.do');
 
 	});
+    
 
 });
+
 
 </script>
 <script type="text/javascript">
@@ -64,7 +66,7 @@ function getQuerystring(paramName){
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- CSS -->
-<link href="./css/jongmin.css" rel="stylesheet">
+<!-- <link href="./css/jongmin.css" rel="stylesheet"> -->
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -95,10 +97,10 @@ function getQuerystring(paramName){
 		<hr>
 <Br><br>
 <Br>
+<form action="/Dobid/board_list.do?id=1" method="POST">
 <noticeboard id="noticeboard">
 <h3>공지사항</h3>
 <br>
-
 
 		<table class="table table-bordered">
 
@@ -124,13 +126,15 @@ function getQuerystring(paramName){
 		</table>
 		<div class="col-sm-offset-6 col-sm-6">
 		<div class="col-sm-7">
-			<input type="text" id="noticeselect" class="form-control"> 
+			<input type="text" id="noticeselecttext"  name="noticeselecttext" class="form-control"> 
 			</div>
-			<input type="button" id="noticeboardSelect" value="검색" class="button button5 btn-default">
+			<input type="submit" id="noticeboardSelectbtn" value="검색" class="button button5 btn-default">
+			</form>
 			<input type="button" value="목록" id="noticeboardSelectAll" class="button button5 btn-default"> 
 		</div>
-		</noticeboard>
+		</noticeboard>	
 		
+	<form action="/Dobid/board_list.do?id=2" method="POST">
 	<freeboard id="freeboard">
 	<h3>자유게시판</h3>
 	<br>
@@ -159,9 +163,10 @@ function getQuerystring(paramName){
 		</table>
 		<div class="col-sm-offset-6 col-sm-6">
 		<div class="col-sm-7">
-			<input type="text" id="freeselect" class="form-control"> 
+			<input type="text" id="freeselecttext" name="freeselecttext" class="form-control"> 
 			</div>
-			<input type="button" id="freeboardSelect" value="검색" class="button button5 btn-default">
+			<input type="submit" id="freeboardSelectbtn" value="검색" class="button button5 btn-default">
+			</form>
 			<input type="button" value="목록" id="freeboardSelectAll" class="button button5 btn-default"> 
 		<input type="button" value="글쓰기" id="freeWrite" class="button button5 btn-default">
 		</div>

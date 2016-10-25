@@ -3,12 +3,10 @@ package com.dobid.model;
 import java.sql.SQLException;
 
 import com.dobid.beans.Find_idDTO;
-import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
-import com.dobid.beans.Service_onoDTO;
-import com.dobid.beans.Service_reportDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
+import com.sun.org.apache.regexp.internal.recompile;
 
 import iba.SqlMapConfig;
 
@@ -60,6 +58,19 @@ public class dobidDAO {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public int checkid(String id){
+		try {
+			if (smc.queryForObject("dobid.check_id", id) == null) {
+				return 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return 0;
 	}
 
 }
