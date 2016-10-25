@@ -6,6 +6,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <% request.setCharacterEncoding("UTF-8");%>
+     <%
+   
+    if(session.getAttribute("logincheck") == null){
+       out.print("<script type='text/javascript'>"+
+                               "alert('로그인을 하셔야합니다.');"+
+                               "location.replace('/Dobid/login.do');"+
+                            "</script>");
+    }
+        %>
 <script>
 $(document).ready(function(){ 
 	var id = getQuerystring(id);

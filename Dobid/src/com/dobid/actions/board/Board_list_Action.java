@@ -20,6 +20,8 @@ public class Board_list_Action extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
+		request.setCharacterEncoding("UTF-8");
+		
 		boardDAO dao = new boardDAO();
 		
 		
