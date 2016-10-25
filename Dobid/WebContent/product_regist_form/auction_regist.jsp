@@ -19,6 +19,8 @@ if(session.getAttribute("logincheck") == null){
 <script src="js/jquery-3.0.0.js"></script>
 <script src="js/auction_regist.js"></script>
 <title>경매등록</title>
+<script type="text/javascript">
+</script>
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
   <div class="wap">

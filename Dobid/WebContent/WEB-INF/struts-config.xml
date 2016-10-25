@@ -105,6 +105,8 @@
 
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
 		</action>
+		
+		<action path="/checkid.do" forward="/regist_form/checkid.jsp"></action>
 
 		<action path="/do_regist_account" type="com.dobid.actions.regist.Regist_account_Action">
 			<forward name="success" path="/login.do"></forward>
