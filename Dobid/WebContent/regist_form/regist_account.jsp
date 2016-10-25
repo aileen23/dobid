@@ -104,7 +104,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Birthday</label>
 			<div class="input-group date form_date col-sm-4" data-date="" data-date-format="yyyymmdd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-				<input class="form-control" size="16" type="text" name="Birthday" value=">>" readonly>
+				<input class="form-control" size="16" type="text" name="Birthday" value="" readonly>
  					<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			</div>
