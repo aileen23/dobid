@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+        <%
+	
+    if(session.getAttribute("logincheck") == null){
+    	out.print("<script type='text/javascript'>"+
+    									"alert('로그인을 하셔야합니다.');"+
+    									"location.replace('/Dobid/login.do');"+
+    								"</script>");
+    }
+        %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,17 +46,17 @@
 <a href="service_report.do"><button class="button button5 btn-default active">신고하기</button></a>
 </p>
 <hr>
-<form class="form-horizontal" action="service_report_write.do">
+<form class="form-horizontal" action="service_report_write.do" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요" name="title">
+      <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요"  name="title">
     </div>
   </div>
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">작성자</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputWriter" placeholder="작성자" name="member_id">
+      <input type="text" class="form-control" id="inputWriter" placeholder=${logincheck } name="member_id" readonly="readonly">
     </div>
   </div>
   <div class="form-group">

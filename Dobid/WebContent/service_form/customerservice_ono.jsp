@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%
+	
+    if(session.getAttribute("logincheck") == null){
+    	out.print("<script type='text/javascript'>"+
+    									"alert('로그인을 하셔야합니다.');"+
+    									"location.replace('/Dobid/login.do');"+
+    								"</script>");
+    }
+        %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +29,7 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+ 
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
@@ -41,7 +51,7 @@
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">작성자</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputWriter" placeholder="작성자" name="member_id">
+      <input type="text" class="form-control" id="inputWriter" placeholder=${logincheck } name="member_id" readonly="readonly">
     </div>
   </div>
   <div class="form-group">
