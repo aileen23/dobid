@@ -27,11 +27,6 @@ public class Admin_board_Action extends Action{
 
 		request.setCharacterEncoding("UTF-8");
 		
-		String admin_boardselecttext = request.getParameter("admin_boardselecttext");
-		String catalogue = request.getParameter("catalogue");
-		
-		System.out.println(request.getParameter("admin_boardselecttext"));
-		System.out.println(request.getParameter("catalogue"));
 		
 		boardDAO dao = new boardDAO();
 		
@@ -42,9 +37,14 @@ public class Admin_board_Action extends Action{
 		adminnoticelist = dao.adminNoticeSelectAll();
 		request.setAttribute("adminboardlist", adminnoticelist);
 
+		String admin_boardselecttext = request.getParameter("admin_boardselecttext");
+		String catalogue = request.getParameter("catalogue");
+		
+		System.out.println(request.getParameter("admin_boardselecttext"));
+		System.out.println(request.getParameter("catalogue"));
 
 		
-		if(admin_boardselecttext!=null && catalogue.equals("notice")){
+		if(admin_boardselecttext==null && catalogue.equals("notice")){
 			
 			adminnoticelist = dao.adminNoticeSelectAll();
 			request.setAttribute("adminboardlist", adminnoticelist);
