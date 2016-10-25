@@ -17,7 +17,8 @@
 	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
-
+	 <typeAlias alias="adminnoticeDTO" type="com.dobid.beans.Admin_noticeDTO" />
+	<typeAlias alias="adminfreeDTO" type="com.dobid.beans.Admin_freeDTO" />
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
@@ -62,6 +63,39 @@
 	<!-- 검색 게시판 리스트보기(자유) 글제목으로만 -->
 	<select id="FreeSelectTitle" resultClass="freeboardDTO" parameterClass="String">
 		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where title like '%'||#title#||'%'
+	</select>
+	
+	
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--위로는 완벽  -->
+
+
+		<!-- 관리자 게시판 전체조회(공지사항) -->
+	<select id="adminnoticelist" resultClass="adminnoticeDTO">
+	select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
+	from noticeboard NATURAL JOIN member
+	</select>
+	
+	<!-- 관리자 게시판 전체조회(자유게시판) -->
+	<select id="adminfreelist" resultClass="adminfreeDTO" >
+	select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
+	from freeboard NATURAL JOIN member
+	</select>
+	
+	<!-- 관리자 제목으로 상세보기 팝업(공지) -->
+	<select id="adminnoticetitle" resultClass="adminnoticeDTO" parameterClass="String">
+	select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
+	from noticeboard NATURAL JOIN member where member_id like '%'||#member_id#||'%'
+	</select>
+	
+	<!-- 관리자 제목으로 상세보기 팝업(자유) -->
+	<select id="adminfreetitle" resultClass="adminfreeDTO" parameterClass="String">
+	select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
+	from freeboard NATURAL JOIN member where member_id like '%'||#member_id#||'%'
+	
 	</select>
 	
 </sqlMap>
