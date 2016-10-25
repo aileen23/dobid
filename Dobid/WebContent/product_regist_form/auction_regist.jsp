@@ -19,6 +19,8 @@ if(session.getAttribute("logincheck") == null){
 <script src="js/jquery-3.0.0.js"></script>
 <script src="js/auction_regist.js"></script>
 <title>경매등록</title>
+<script type="text/javascript">
+</script>
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
   <div class="wap">
@@ -30,10 +32,11 @@ if(session.getAttribute("logincheck") == null){
   		<form action="auction_regist.do" method="POST" enctype="multipart/form-data">
   		<div class="first_input">
   			<select class="form-control3" name="cate">
-  				<option value="골동품">골동품</option>
-  				<option value="미술">미술</option>
-  				<option value="기념품">기념품</option>
- 				<option value="가전">가전</option>
+  				<option value="골동품">새제품</option>
+  				<option value="미술">중고제품</option>
+  				<option value="기념품">미술</option>
+ 				<option value="가전">골동품</option>
+ 				<option value="의류">의류</option>
  				<option value="기타">기타</option>
 			</select>
   			<input id="title_text" type="text" class="form-control4" name="title_text" placeholder="제목을 입력해주세요.">

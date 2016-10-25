@@ -87,7 +87,7 @@ $(document).ready(function(){
 Auction_list_paramiterDTO auction_list_paramiterDTO;
 String search = request.getParameter("search_text");
 
-	auction_list_paramiterDTO = new Auction_list_paramiterDTO("", 0, 6);
+	auction_list_paramiterDTO = new Auction_list_paramiterDTO("","asd", 0, 6);
 
 Product_registDAO dao = new Product_registDAO();
 

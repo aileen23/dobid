@@ -72,7 +72,7 @@ $(document).ready(function(){
 						<DIV class="progress-box progress-box-default">  
      						<DIV class=progress-heading>남은시간</DIV>
      	 						<DIV class=progress-small>
-     	 							<img src="/Dobid/product_regist_form/progras.png" height="10" width="398" class="progress-small_group"></img>
+     	 							<img src="/Dobid/product_regist_form/prograsbar.png" height="20" width="398" class="progress-small_group"></img>
             						<DIV role=progressbar aria-valuenow=10 aria-valuemin=0 class="progress-bar-small progress-bar-s-info" style="WIDTH: <%=now_progras %>0%" aria-valuemax=100>
                    					<span class="only"><%= now_number+"/"+max_nunmber %></span>
              					</DIV>

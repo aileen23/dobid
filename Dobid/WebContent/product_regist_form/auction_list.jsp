@@ -31,11 +31,16 @@ $(document).ready(function(){
 	//더보기.
 	$("#more_Btn").click(function(){
 		var text = $(".input_text").val();
+		var nowAddress = unescape(encodeURIComponent(location.href));
+
+        nowAddress = decodeURIComponent(nowAddress)
+
+		var categori = nowAddress.substring(1).split("?")[1].split("=")[1];
 		var lastNum = $("#more_Btn").attr("name");
 		$.ajax({
             url:'search_more.do',	
             type:'POST',
-            data:{"text" : text,"lastNum" : lastNum},
+            data:{"text" : text,"lastNum" : lastNum,"categori":categori},
             success:function(result){
             	$("#more_Btn").remove();
   				$("#box").append(result);
@@ -51,10 +56,15 @@ $(document).ready(function(){
 	//검색.
 	$(".sch_smit").click(function(){
 		var text = $(".input_text").val();
+		var nowAddress = unescape(encodeURIComponent(location.href));
+
+        nowAddress = decodeURIComponent(nowAddress)
+
+		var categori = nowAddress.substring(1).split("?")[1].split("=")[1];
 		$.ajax({
             url:'search.do',	
             type:'POST',
-            data:{"text" : text},
+            data:{"text" : text,"categori" :categori},
             success:function(result){
             	$("#more_Btn").attr("name",0);
             		$("#box").empty();
@@ -82,7 +92,7 @@ $(document).ready(function(){
 				<button type='submit' class='sch_smit'>검색</button>
 			</div>
 			
-			<div class="top_title">경매 중인 물품</div>
+			<div class="top_title">경매 중인 물품</div><a href="group_list.do" class="btn btn-default" style="margin-left:92%;">경매등록</a>
 				<div id="box">
 <% List<Auction_listDTO> list = (List<Auction_listDTO>)request.getAttribute("list");
 for(int i = 0; i <list.size(); i++ ){ %>

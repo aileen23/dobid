@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%
+	
+    if(session.getAttribute("logincheck") == null){
+    	out.print("<script type='text/javascript'>"+
+    									"alert('로그인을 하셔야합니다.');"+
+    									"location.replace('/Dobid/login.do');"+
+    								"</script>");
+    }
+        %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +29,7 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+ 
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
@@ -31,17 +41,17 @@
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
-  <form name="form" id="form" action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal" >
+ <form action="service_ono_write.do" method="get" enctype="multipart/form-data" class="form-horizontal">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요" name="title">
+      <input type="text" class="form-control" id="inputTitle" name="title" placeholder="신고할 제목을 입력하세요">
     </div>
   </div>
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">작성자</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputWriter" placeholder="작성자" name="member_id">
+      <input type="text" class="form-control" id="inputWriter" placeholder=${logincheck } name="member_id" readonly="readonly">
     </div>
   </div>
   <div class="form-group">
@@ -60,7 +70,7 @@
   <div class="form-group">
     <label for="inputTextarea" class="col-sm-3 control-label" >내용</label>
     <div class="col-sm-5">
-      <textarea class="form-control " id="inputTextarea" placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
+      <textarea class="form-control " id="inputTextarea" name="contents" placeholder="내용을 입력하세요." style="height: 200px"></textarea>
     </div>
   </div>
   <div class="form-group">
@@ -71,11 +81,13 @@
         <label  for="cma_file"class="text-center">첨부파일</label>
         <input type="file" name="image_path" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))"/>
         <br><br>
-        <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>
+        <div align="center" style="text-decoration: underline">* 최대 300MB 용량까지 업로드 가능</div><br>
+        <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div><br>
+        
     </div>
 </div>
 <button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
-<button type="re" class="button button5 btn-default">취소</button>
+<button type="reset" class="button button5 btn-default">취소</button>
 </form>
 
 

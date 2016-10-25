@@ -16,7 +16,7 @@
 	String text = request.getParameter("text");
 	int count = Integer.parseInt(request.getParameter("lastNum"));
 	
-	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,count,count+6);
+	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,"",count,count+6);
 	Product_registDAO dao = new Product_registDAO();
 
 	List<GroupbuyDTO> list = dao.group_search_list(auction_list_paramiterDTO);
