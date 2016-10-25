@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,6 +15,7 @@
 
 <script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
+
 </head>
 
 
@@ -104,7 +105,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Birthday</label>
 			<div class="input-group date form_date col-sm-4" data-date="" data-date-format="yyyymmdd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-				<input class="form-control" size="16" type="text" name="Birthday" value="" readonly>
+				<input class="form-control" size="16" type="text" name="birthday" value="" readonly>
  					<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			</div>
