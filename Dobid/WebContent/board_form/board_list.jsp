@@ -97,7 +97,7 @@ function getQuerystring(paramName){
 		<hr>
 <Br><br>
 <Br>
-<form action="/Dobid/board_list_noticeselect.do" method="POST">
+<form action="/Dobid/board_list.do?id=1" method="POST">
 <noticeboard id="noticeboard">
 <h3>공지사항</h3>
 <br>
@@ -134,7 +134,7 @@ function getQuerystring(paramName){
 		</div>
 		</noticeboard>	
 		
-	<form action="/Dobid/board_list_freeselect.do" method="POST">
+	<form action="/Dobid/board_list.do?id=2" method="POST">
 	<freeboard id="freeboard">
 	<h3>자유게시판</h3>
 	<br>

@@ -168,12 +168,12 @@
 		</action>
 		
 			<!-- board_selectnoticelist -->
-		<action path="/board_list" type="com.dobid.actions.board.Board_list_select_Action">
+		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
 			<forward name="success" path="/board_form/board_list.jsp"></forward>
 		</action>
 		
 			<!-- board_selectfreelist -->
-		<action path="/board_list" type="com.dobid.actions.board.Board_list_select_Action">
+		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
 			<forward name="success" path="/board_form/board_list.jsp"></forward>
 		</action>
 		

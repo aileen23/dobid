@@ -24,7 +24,22 @@ public class Board_list_select_Action extends Action{
 		
 		request.setCharacterEncoding("UTF-8");
 		boardDAO dao = new boardDAO();
-		  
+
+		
+
+		List<NoticeboardDTO> noticelist = null;
+
+		noticelist = dao.NoticeSelectAll();
+		request.setAttribute("noticelist", noticelist);
+
+		List<FreeboardDTO> freelist = null;
+		freelist = dao.FreeSelectAll();
+		request.setAttribute("freelist", freelist);
+
+	
+		
+		
+		
 		String notselect = request.getParameter("noticeselecttext");
 		String freeselect = request.getParameter("freeselecttext");
 		
