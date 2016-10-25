@@ -148,6 +148,9 @@
 			<forward name="success" path="/main.do"></forward>
 			<forward name="fail" path="/service_report.do"></forward>
 		</action>
+		
+		
+		<!-- 게시판(박종민) -->
 
 		<!-- board_list -->
 		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
@@ -170,9 +173,14 @@
 			type="com.dobid.actions.board.Board_freedom_write_Action">
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
+		
+		<!-- 관리자 (박종민) -->
 
-
-
+		<!-- admin_board.jsp -->
+		<action path="/admin_board" type="com.dobid.actions.board.Admin_board_Action">
+			<forward name="success" path="/admin_form/admin_board.jsp"></forward>
+		</action>
+	
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 

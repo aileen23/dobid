@@ -13,8 +13,7 @@ import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Admin_freeDTO;
 import com.dobid.beans.Admin_noticeDTO;
-import com.dobid.beans.FreeboardDTO;
-import com.dobid.beans.NoticeboardDTO;
+
 import com.dobid.model.boardDAO;
 
 public class Admin_board_Action extends Action{
