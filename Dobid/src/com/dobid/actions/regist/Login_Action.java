@@ -16,6 +16,7 @@ public class Login_Action extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
 
 		/*
 		 * MemberDTO dto = new MemberDTO();

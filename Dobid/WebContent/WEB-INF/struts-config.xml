@@ -111,6 +111,12 @@
 		</action>
 
 		<action path="/findid" forward="/regist_form/find_id.jsp"></action>
+		<action path="/findid_result" forward="/regist_form/find_id_result.jsp"></action>
+		
+		<action path="/do_find_id" type="com.dobid.actions.regist.Find_id_Action">
+			<forward name="success" path="/findid_result.do"></forward>
+		</action>
+		
 		<action path="/findpassword" forward="/regist_form/find_password.jsp"></action>
 		<!-- Mypage -->
 		<action path="/myprofile" type="com.dobid.actions.mypage.Mypage_Action">

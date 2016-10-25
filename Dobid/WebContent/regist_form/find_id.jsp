@@ -33,25 +33,25 @@
 		<font size="3" color="black">Your ID</font>
 	</center>
 	<br>
-	<form class="form-horizontal" style="margin-left: 25%">
+	<form class="form-horizontal" style="margin-left: 25%" method="post" action="do_find_id.do">
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
+			<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="inputId"
-					placeholder="ID">
+				<input type="text" class="form-control" name="name"
+					placeholder="Name">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Birthday</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="inputId"
+				<input type="text" class="form-control" name="birthday"
 					placeholder="Birthday">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="inputId"
+				<input type="text" class="form-control" name="phone"
 					placeholder="Phone">
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
 				<button type="submit" class="btn btn-default"
-					style="margin-right: 10%">Find ID</button>
+					style="margin-right: 10%" >Find ID</button>
 				<a href="findpassword.do"><button type="button"
 						class="btn btn-default" style="margin-right: 10%">Find
 						Password</button></a>

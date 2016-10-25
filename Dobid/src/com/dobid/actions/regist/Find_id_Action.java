@@ -8,30 +8,28 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.MemberDTO;
+import com.dobid.beans.Find_idDTO;
 import com.dobid.model.dobidDAO;
 
-public class Regist_account_Action extends Action {
+public class Find_id_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
-
-		MemberDTO dto = new MemberDTO();
-		dto.setMember_id(request.getParameter("id"));
+		Find_idDTO dto = new Find_idDTO();
 		dto.setName(request.getParameter("name"));
-		dto.setPass(request.getParameter("pass"));
 		dto.setPhone(request.getParameter("phone"));
-		dto.setEmail(request.getParameter("email"));
-		dto.setAddress(request.getParameter("address"));
-		dto.setNickname(request.getParameter("nickname"));
-		dto.setIntroduction(request.getParameter("introduction"));
 		dto.setBirthday(request.getParameter("birthday"));
-		dto.setCharging_amount(0);
-		System.out.println(dto.getBirthday());
+		
 		dobidDAO dao = new dobidDAO();
-		dao.insert(dto);
+		if (dao.findid(dto)==null|| dao.findid(dto).equals("")) {
+			request.setAttribute("id", "회원님이 입력하신 정보와 <br>일치하는 아이디가 없습니다.");
+		}
+		else {
+			request.setAttribute("id", "회원님의 아이디는<br><font color='3366cc'>"+dao.findid(dto).substring(0, dao.findid(dto).length()-3)+"***</font><br> 입니다.");
+		}
+		
+		
 		return mapping.findForward("success");
-
 	}
 }

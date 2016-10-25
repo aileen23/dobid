@@ -2,6 +2,7 @@ package com.dobid.model;
 
 import java.sql.SQLException;
 
+import com.dobid.beans.Find_idDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
@@ -38,6 +39,17 @@ public class dobidDAO {
 			e.printStackTrace();
 		}
 		return loginid;
+	}
+	
+	public String findid(Find_idDTO findid) {
+		String id = "";
+		try {
+			id = (String) smc.queryForObject("dobid.find_id", findid);
+			return id;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return id;
 	}
 
 	public boolean removeAccount(String id) {
