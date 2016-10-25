@@ -159,11 +159,12 @@ public class boardDAO {
 	}
 	
 	
-	public List<Admin_noticeDTO> adminNoticeSelect(String member_id){ //관리자 공지사항리스트 검색
+	public List<Admin_noticeDTO> adminNoticetitle(String title){ //관리자 공지사항리스트 검색
 		List<Admin_noticeDTO> list = null;
+	
 		try {
 			
-			list=smc.queryForList("board.adminnoticetitle", member_id);
+			list=smc.queryForList("board.adminnoticetitle", title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -172,10 +173,11 @@ public class boardDAO {
 			
 		
 	}
-	public List<Admin_freeDTO> adminFreeSelect(String member_id){ //괸리자 공지사항 리스트 검색
+	public List<Admin_freeDTO> adminFreetitle(String title){ //괸리자 공지사항 리스트 검색
 		List<Admin_freeDTO> list = null;
+	
 		try {
-			list= smc.queryForList("board.adminfreetitle", member_id);
+			list= smc.queryForList("board.adminfreetitle", title);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -184,11 +186,31 @@ public class boardDAO {
 	}
 	
 
-	
-	
-	
-	
-	
+	//상세보기 
+	public Admin_noticeDTO adminNoticeSelect(String id){ //관리자 공지사항 상세보기
+		Admin_noticeDTO adminnoticeboardDTO = null;
+		try {
+			
+			adminnoticeboardDTO=(Admin_noticeDTO)smc.queryForObject("board.adminnoticeselect", id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return adminnoticeboardDTO;
+			
+		
+	}
+	public Admin_freeDTO adminFreeSelect(String id){ //관리자 자유게시판 상세보기
+		Admin_freeDTO adminfreeboardDTO = null;
+		try {
+		
+			adminfreeboardDTO= (Admin_freeDTO)smc.queryForObject("board.adminfreeselect", id);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return adminfreeboardDTO;	
+	}
 	
 	
 }

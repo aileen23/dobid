@@ -86,16 +86,28 @@
 	</select>
 	
 	<!-- 관리자 제목으로 상세보기 팝업(공지) -->
-	<select id="adminnoticetitle" resultClass="adminnoticeDTO" parameterClass="String">
+	<select id="adminnoticeselect" resultClass="adminnoticeDTO" parameterClass="String">
 	select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
 	from noticeboard NATURAL JOIN member where member_id like '%'||#member_id#||'%'
 	</select>
 	
 	<!-- 관리자 제목으로 상세보기 팝업(자유) -->
-	<select id="adminfreetitle" resultClass="adminfreeDTO" parameterClass="String">
+	<select id="adminfreeselect" resultClass="adminfreeDTO" parameterClass="String">
 	select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
 	from freeboard NATURAL JOIN member where member_id like '%'||#member_id#||'%'
 	
+	</select>
+	
+	<!-- 검색 관리자 게시판(공지) 글제목으로만 -->
+	<select id="adminnoticetitle" resultClass="noticeboardDTO" parameterClass="String">
+		select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path 
+		from noticeboard NATURAL JOIN member where title like '%'||#title#||'%'
+	</select>
+	
+	<!-- 검색 관리자 게시판(자유) 글제목으로만 -->
+	<select id="adminfreetitle" resultClass="freeboardDTO" parameterClass="String">
+		select basic_board_num,member_id,name,nickname,email,contents,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'),image_path
+		from freeboard NATURAL JOIN member where title like '%'||#title#||'%'
 	</select>
 	
 </sqlMap>
