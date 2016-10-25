@@ -94,6 +94,8 @@
 		</action>
 
 		<!-- main, login, register account, find -->
+		<action path="/checkid" forward="/regist_form/checkid.jsp"></action>
+		<action path="/checknickname" forward="/regist_form/checknickname.jsp"></action>
 		<action path="/main" forward="/regist_form/main.jsp"></action>
 
 		<action path="/login" forward="/regist_form/login.jsp">
@@ -112,11 +114,11 @@
 
 		<action path="/findid" forward="/regist_form/find_id.jsp"></action>
 		<action path="/findid_result" forward="/regist_form/find_id_result.jsp"></action>
-		
+
 		<action path="/do_find_id" type="com.dobid.actions.regist.Find_id_Action">
 			<forward name="success" path="/findid_result.do"></forward>
 		</action>
-		
+
 		<action path="/findpassword" forward="/regist_form/find_password.jsp"></action>
 		<!-- Mypage -->
 		<action path="/myprofile" type="com.dobid.actions.mypage.Mypage_Action">
