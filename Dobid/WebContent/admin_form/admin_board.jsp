@@ -43,7 +43,7 @@ $(document).ready(function(){
 		<hr>
 		
 		<div class="form-group">
-
+	<form action="/Dobid/admin_board.do" method="POST">
 			<button class="button button5 btn-default" id="admin_boardselect" name="admin_boardselect">검색</button>
 			<div class="col-sm-5">
 				<input type="text" class="form-control" name="admin_boardselecttext"
@@ -56,6 +56,7 @@ $(document).ready(function(){
 					<option value="free">자유게시판</option>
 				</select>
 			</div>
+			</form>
 		</div>
 
 		<table class="table table-bordered">
