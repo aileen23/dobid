@@ -55,8 +55,8 @@
 					style="margin-right: 10%">Sign in</button>
 				<a href="regist_account.do"><button type="button"
 						class="btn btn-default" style="margin-right: 1%">Sign up</button></a>
-				<button type="button" class="btn btn-default"
-					style="margin-right: 1%">Find ID</button>
+				<a href="findid.do"><button type="button" class="btn btn-default"
+					style="margin-right: 1%">Find ID</button></a>
 			</div>
 		</div>
 

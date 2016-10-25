@@ -5,8 +5,8 @@
 <head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<% request.setCharacterEncoding("UTF-8");%>
 <script>
-
 $(document).ready(function(){ 
 	var id = getQuerystring(id);
 
@@ -95,7 +95,7 @@ function getQuerystring(paramName){
 		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
 		</p>
 		<hr>
-		<form class="form-horizontal" action="../board_form/board_list.jsp" method="get">
+		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
@@ -107,14 +107,14 @@ function getQuerystring(paramName){
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="free_whiter_user"
-						placeholder="작성자" name="free_whiter_user">
+						placeholder="<%=request.getSession().getAttribute("logincheck") %>" name="free_whiter_user" disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputTextarea" class="col-sm-4 control-label">내용</label>
 				<div class="col-sm-5">
 					<textarea class="form-control " id="free_contents"
-						placeholder="내용을 입력하세요" style="height: 200px"></textarea>
+						placeholder="내용을 입력하세요" style="height: 200px" name="free_contents"></textarea>
 				</div>
 			</div>
 			<div class="form-group">

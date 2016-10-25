@@ -18,7 +18,6 @@ public class Mypage_DAO {
 	}
 
 	public MemberDTO select(String id) {
-		id="1";
 		MemberDTO member = null;
 
 		try {

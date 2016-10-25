@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>자주하는 질문</title>
+<title>고객센터 - 자주하는 질문</title>
 <!-- customerservice_qna.jsp -->
 
 <script
@@ -38,7 +38,7 @@
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
-<p class="col-sm-offset-2" id="serviceBtn">
+<p class="col-sm-offset-2">
 <button class="service button button5 btn-default active" id="all">전체</button>
 <button class="service button button5 btn-default" id="buy">구매관련</button>
 <button class="service button button5 btn-default" id="sell">판매관련</button>
@@ -47,7 +47,8 @@
 <button class="service button button5 btn-default" id="ect">기타</button>
 </p>
 <br>
-<div class="panel-group col-sm-8 col-sm-offset-2" id="accordion" role="tablist" aria-multiselectable="true">
+<form class="form-horizontal" style="height: 750px">
+<div class="panel-group col-sm-8 col-sm-offset-2" id="accordion" role="tablist" aria-multiselectable="true" style="height: 100%" >
 
   <div class="panel panel-default" id="buy">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -75,7 +76,7 @@
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
 			경매의 경우, 입찰 된 금액보다 높은 금액을 입력한 후에 입찰하기를 누르시면 입찰을 하실 수 있습니다.<br>
- 공동구매의 경우, 달성된 구매자의 인원만큼 낮아진 금액의 값으로 물건을 구매하실 수 있습니다.
+			 공동구매의 경우, 달성된 구매자의 인원만큼 낮아진 금액의 값으로 물건을 구매하실 수 있습니다.
       </div>
     </div>
   </div>
@@ -120,7 +121,7 @@
 			아이디와 비밀번호는 아래의 경로를 통해 찾을 수 있습니다.<br>
 			*홈페이지 > 아이디/비밀번호 찾기 <a>바로가기</a><br>
 			아이디 찾기 : 회원가입 시 등록하셨던 정보를 통해 아이디를 찾으실 수 있습니다.<br>
-비밀번호 찾기 : 회원가입 시 등록하셨던 이메일로 발송된 새로운 비밀번호 입력하시여 로그인 후에 비밀번호를 재설정해주시기 바랍니다.
+			비밀번호 찾기 : 회원가입 시 등록하셨던 이메일로 발송된 새로운 비밀번호 입력하시여 로그인 후에 비밀번호를 재설정해주시기 바랍니다.
 			
       </div>
     </div>
@@ -251,8 +252,14 @@
     </div>
   </div>
 </div>
-
-
+</form>
+<!-- Footer -->
+		
+		<hr>
+		<div style="margin-bottom: -10%; height: 10%" >
+		<footer> <%@ include file="/regist_form/footer.jsp"%>
+		</footer>
+		</div>
 
 </body>
 </html>

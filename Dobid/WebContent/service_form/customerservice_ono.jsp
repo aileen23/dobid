@@ -35,7 +35,7 @@
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
-  <form name="form" id="form" action="" method="post" enctype="multipart/form-data" autocomplete="off" class="form-horizontal">
+  <form name="form" id="form" action="service_ono_write.do" method="post" enctype="multipart/form-data" autocomplete="off" class="form-horizontal" style="h">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
@@ -78,16 +78,16 @@
         <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>
     </div>
 </div>
- 
-  
- 
-
+<button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
+<button type="button" class="button button5 btn-default">취소</button>
 </form>
 
-<button class="button button5 btn-default col-sm-offset-5">확인</button>
-<button class="button button5 btn-default">취소</button>
 
-
+<!-- Footer -->
+		<hr>
+		
+		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+		
 
 
 </body>

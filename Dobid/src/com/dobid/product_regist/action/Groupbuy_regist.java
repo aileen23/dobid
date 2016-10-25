@@ -24,11 +24,13 @@ public class Groupbuy_regist extends Action{
 		//추후 세션값으로 받기위함.
 		//MemberDTO dto = (MemberDTO) request.getSession().getAttribute("member");
 		
+		String user_id = (String) request.getSession().getAttribute("logincheck");
+		
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String regist_date = df.format(date);
 		
-		Groupbuy_participantDTO dto = new Groupbuy_participantDTO(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("price")), "lgh3680@naver.com", regist_date, "N");
+		Groupbuy_participantDTO dto = new Groupbuy_participantDTO(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("price")), user_id, regist_date, "N");
 		Product_registDAO dao = new Product_registDAO();
 		boolean check = dao.groupbuy_regist(dto);
 		boolean count_check = dao.groupbuy_count(dto.getGroupbuy_board_num());

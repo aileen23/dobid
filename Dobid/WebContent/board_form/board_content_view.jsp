@@ -20,10 +20,10 @@ $(document).ready(function(){
     	$(location).attr('href', '/Dobid/board_list.do?id=1');
 	});
 
-
     $('#boardSelectAll').on('click', function() {  //전체목록보기버튼
     	$(location).attr('href', '/Dobid/board_list.do?id='${id});
 	});
+ 
 
 
 
@@ -77,14 +77,14 @@ function getQuerystring(paramName){
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="view_title"
-						placeholder="${viewobject.title }제목" disabled>
+						placeholder="${viewobject.title }" disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="view_write_user"
-						placeholder="${viewobject.member_id }작성자" disabled>
+						placeholder="${viewobject.member_id }" disabled>
 				</div>
 			</div>
 			
@@ -97,8 +97,8 @@ function getQuerystring(paramName){
 			<div class="form-group">
 				<label for="inputTextarea" class="col-sm-4 control-label" disabled>내용</label>
 				<div class="col-sm-5">
-					<textarea class="form-control " id="view_contents"
-						placeholder="${viewobject.contents }입력된 내용" style="height: 200px" disabled></textarea>
+					<textarea class="form-control " id="view_contents" 
+						placeholder="${viewobject.contents }" style="height: 200px" disabled></textarea>
 				</div>
 			</div>
 

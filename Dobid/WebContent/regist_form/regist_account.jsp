@@ -7,11 +7,15 @@
 <title>Insert title here</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="./regist_form/css/bootstrap.min.css" rel="stylesheet">
+<link href="/Dobid/regist_form/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
+<link href="/Dobid/regist_form/css/shop-homepage.css" rel="stylesheet">
+<link href="/Dobid/mypage_form/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
+<script type="text/javascript" src="/Dobid/mypage_form/js/jquery-1.12.4.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Dobid/mypage_form/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 </head>
 
 
@@ -98,11 +102,13 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Birthday</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="birthday"
-					placeholder="Birthday">
+			<label class="col-sm-2 control-label"" >Birthday</label>
+			<div class="input-group date form_date col-sm-4"" data-date="" data-date-format="yyyymmdd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+				<input class="form-control" size="4" type="text" name="Birthday" value="" readonly> 
+ 					<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			</div>
+			<input type="hidden" id="dtp_input2" value="" /><br />
 		</div>
 
 
@@ -128,5 +134,39 @@
 		</footer>
 
 	</div>
+	<!-- Script -->
+	<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 1
+    });
+	$('.form_date').datetimepicker({
+        language:  'uk',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'uk',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
 </body>
 </html>

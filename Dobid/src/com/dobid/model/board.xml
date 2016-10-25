@@ -21,17 +21,17 @@
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard
+		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard order by basic_board_num desc
 	</select>
 	
 	<!-- 게시판 리스트보기(자유) -->
 	<select id="FreeSelectAll" resultClass="freeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard order by basic_board_num desc
 	</select>
 	
 	<!-- 게시판 상세보기(공지) -->
 	<select id="NoticeSelect" resultClass="noticeboardDTO" parameterClass="int">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
 	</select>
 	
 	<!-- 게시판 조회수 증가(공지) -->
@@ -41,7 +41,7 @@
 	
 	<!-- 게시판 상세보기(자유) -->
 	<select id="FreeSelect" resultClass="freeboardDTO" parameterClass="int">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
 	</select>
 	
 	<!-- 게시판 조회수 증가(자유) -->
@@ -51,10 +51,9 @@
 	
 	<!-- 자유게시판 글쓰기 -->
 	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
-		insert into freeboard values (freeboard_seq,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,#upload_date#)
+		insert into freeboard values (freeboard_seq.NEXTVAL,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 </sqlMap>
-
 
 
 

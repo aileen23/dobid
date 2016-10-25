@@ -4,6 +4,12 @@
     /*2016-10-23
 	작성자 : 신유동
 */	
+if(session.getAttribute("logincheck") == null){
+	out.print("<script type='text/javascript'>"+
+									"alert('로그인을 하셔야합니다.');"+
+									"location.replace('/Dobid/login.do');"+
+								"</script>");
+}
     %>
 <!DOCTYPE html>
 <html>

@@ -26,9 +26,10 @@
   
   <!-- <sqlMap resource="./s1010/empInfo.xml"/> -->
   <sqlMap resource="./com/dobid/model/dobid.xml"/>
-  <sqlMap resource="./com/dobid/ibatis/product_regist.xml"/>
+  <sqlMap resource="./com/dobid/model/product_regist.xml"/>
   <sqlMap resource="./com/dobid/model/myprofile.xml"/>
   <sqlMap resource="./com/dobid/model/board.xml"/>
+  <sqlMap resource="./com/dobid/model/service.xml"/>
   
 </sqlMapConfig>
 

@@ -50,30 +50,5 @@ public class dobidDAO {
 		return false;
 	}
 
-
-	public boolean ServiceOno(Service_onoDTO serverOno) {
-
-		try {
-			smc.insert("service.ServiceOno", serverOno);
-			return true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	public boolean ServiceReport(Service_reportDTO report) {
-
-
-		try {
-			smc.insert("service.serviceReport", report);
-			return true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return true;
-	}
 }
 
