@@ -159,34 +159,31 @@ public class boardDAO {
 	}
 	
 	
-	public Admin_noticeDTO adminNoticeSelect(String member_id){ //관리자 공지사항 상세보기
-		Admin_noticeDTO admin_noticeDTO = null;
+	public List<Admin_noticeDTO> adminNoticeSelect(String member_id){ //관리자 공지사항리스트 검색
+		List<Admin_noticeDTO> list = null;
 		try {
 			
-			admin_noticeDTO=(Admin_noticeDTO)smc.queryForObject("board.adminnoticetitle", member_id);
+			list=smc.queryForList("board.adminnoticetitle", member_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return admin_noticeDTO;
+		return list;
 			
 		
 	}
-	public Admin_freeDTO adminFreeSelect(String member_id){ //괸리자 자유게시판 상세보기
-		Admin_freeDTO admin_freeDTO = null;
+	public List<Admin_freeDTO> adminFreeSelect(String member_id){ //괸리자 공지사항 리스트 검색
+		List<Admin_freeDTO> list = null;
 		try {
-			admin_freeDTO= (Admin_freeDTO)smc.queryForObject("board.adminfreetitle", member_id);
+			list= smc.queryForList("board.adminfreetitle", member_id);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return admin_freeDTO;	
+		return list;	
 	}
 	
-	
-	
-	
-	
+
 	
 	
 	
