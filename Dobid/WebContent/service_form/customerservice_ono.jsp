@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
     
     <%
 	
@@ -9,7 +10,8 @@
     									"location.replace('/Dobid/login.do');"+
     								"</script>");
     }
-        %>
+    
+    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +31,19 @@
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
 
+	$(document).ready(function(){
+		$('#submit').click(function(){
+			if(request.getSession().setAttribute("serviceono", "success")){
+				alert("aaaaaaaaaaa");
+			}else{
+				alert("bbbbbbbbbbbbbbbbbbbb");
+			}
+		});
+	});
+
+</script>
  
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
