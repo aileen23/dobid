@@ -2453,7 +2453,7 @@ input[type="button"].btn-block {
 }
 
 .glyphicon-user:before {
-  content: "\e008";
+	content: "\e008"
 }
 
 .glyphicon-film:before {

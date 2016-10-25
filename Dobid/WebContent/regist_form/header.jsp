@@ -6,11 +6,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="/Dobid/regist_form/css/bootstrap.min.css">
-<link href="/Dobid/regist_form/css/mystyle.css" rel="stylesheet"
-	type="text/css">
+<link href="/Dobid/regist_form/css/bootstrap.min.css"  rel="stylesheet"> 
+<%-- <link href="/Dobid/mypage_form/css/bootstrap.css"  rel="stylesheet"> --%> 
+<link href="/Dobid/regist_form/css/mystyle.css" rel="stylesheet" type="text/css">
 <script src="/Dobid/regist_form/js/jquery-1.12.4.min.js"></script>
-<script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script src="/Dobid/regist_form/js/bootstrap.min.js"></script>
 <script>
 		
