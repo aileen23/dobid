@@ -18,6 +18,7 @@
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	<typeAlias alias="loginDTO" type="com.dobid.beans.LoginDTO" />
+	<typeAlias alias="findidDTO" type="com.dobid.beans.Find_idDTO" />
 
 	<insert id="registAccount" parameterClass="memberDTO">
 		insert into member
@@ -26,7 +27,12 @@
 		#nickname#, #introduction#, #birthday#, #charging_amount#)
 	</insert>
 	<select id="login" parameterClass="loginDTO" resultClass="String">
-		select member_id from member where member_id = #member_id# and pass = #pass#
+		select
+		member_id from member where member_id = #member_id# and pass = #pass#
+	</select>
+	<select id="find_id" parameterClass="findidDTO" resultClass="String">
+		select member_id from member where name=#name# and birthday=#birthday#
+		and phone=#phone#
 	</select>
 
 </sqlMap>

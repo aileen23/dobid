@@ -23,14 +23,14 @@ public class Customerservice_report_Action extends Action{
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String service_date = df.format(date);
+		System.out.println("member_id");
+		Service_reportDTO dto = new Service_reportDTO(
+														request.getParameter("member_id"),
+														request.getParameter("title"),
+														request.getParameter("contents"),
+														request.getParameter("image_path"),
+														service_date);
 		
-		Service_reportDTO dto = new Service_reportDTO();
-			dto.setMember_id(request.getParameter("member_id"));
-			dto.setTitle(request.getParameter("title"));
-			dto.setContents(request.getParameter("contents"));
-			dto.setImage_path(request.getParameter("image_path"));
-			dto.setUpload_date(service_date);
-			
 			ServiceDAO dao = new ServiceDAO();
 			dao.ServiceReport(dto);	
 				

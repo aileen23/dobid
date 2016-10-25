@@ -108,7 +108,6 @@
 				</ul></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right" id="navright">
-		<% %>
 <%
 	String logincheck = (String)request.getSession().getAttribute("logincheck");
 	if (logincheck == null || logincheck.equals("")) {

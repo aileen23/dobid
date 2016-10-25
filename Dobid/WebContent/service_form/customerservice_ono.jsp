@@ -12,10 +12,6 @@
 <script src="service_form/js/customerservice_ono.js"></script>
 <link rel="stylesheet" type="text/css" href="service_form/css/service.css">
 
-<!-- JSP파일에 대한 CSS, JS 파일 경로 -->
-<script src="js/customerservice_ono.js"></script>
-<link rel="stylesheet" type="text/css" href="css/service.css">
-
 
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,23 +31,23 @@
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
-  <form name="form" id="form" action="service_ono_write.do" method="post" enctype="multipart/form-data" autocomplete="off" class="form-horizontal" style="h">
+  <form name="form" id="form" action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal" >
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요">
+      <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요" name="title">
     </div>
   </div>
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">작성자</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputWriter" placeholder="작성자">
+      <input type="text" class="form-control" id="inputWriter" placeholder="작성자" name="member_id">
     </div>
   </div>
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">분류</label>
     <div class="col-sm-5">
-      <select class="form-control">
+      <select class="form-control" name="categori">
       	<option>선택해주세요</option>
       	<option>구매관련</option>
       	<option>판매관련</option>
@@ -64,7 +60,7 @@
   <div class="form-group">
     <label for="inputTextarea" class="col-sm-3 control-label" >내용</label>
     <div class="col-sm-5">
-      <textarea class="form-control " id="inputTextarea" placeholder="내용을 입력하세요" style="height: 200px"></textarea>
+      <textarea class="form-control " id="inputTextarea" placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
     </div>
   </div>
   <div class="form-group">
@@ -73,13 +69,13 @@
 
     <div class="filebox col-sm-5">
         <label  for="cma_file"class="text-center">첨부파일</label>
-        <input type="file" name="cma_file" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" />
+        <input type="file" name="image_path" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))"/>
         <br><br>
         <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div>
     </div>
 </div>
 <button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
-<button type="button" class="button button5 btn-default">취소</button>
+<button type="re" class="button button5 btn-default">취소</button>
 </form>
 
 

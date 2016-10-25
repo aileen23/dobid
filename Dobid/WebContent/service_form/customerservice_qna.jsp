@@ -21,11 +21,6 @@
 <script src="service_form/js/customerservice_qna.js"></script>
 
 
-<!-- JSP파일에 대한 CSS, JS 파일 경로 -->
-<link rel="stylesheet" type="text/css" href="css/service.css">
-<script src="js/customerservice_qna.js"></script>
-
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
