@@ -120,6 +120,7 @@ public class boardDAO {
 	
 	public List<FreeboardDTO> FreeSelectAllTitle(String title){
 		List<FreeboardDTO> list=null;
+		System.out.println(title);
 		try {
 			list = smc.queryForList("board.FreeSelectTitle",title);
 		} catch (SQLException e) {

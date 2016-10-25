@@ -20,7 +20,7 @@
    </insert>
    <!-- 경매목록 -->
    <select id="search_list" parameterClass="paramiter" resultClass="auction_list">
-   		select * from (select rownum rnum,a.AUCTION_BOARD_NUM, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%') where rnum BETWEEN #startCount# and #endCount#
+   		select * from (select rownum rnum,a.AUCTION_BOARD_NUM, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%' AND a.CATEGORI = #categori#) where rnum BETWEEN #startCount# and #endCount#
    </select>
     <!-- 공동구매목록  -->
    <select id="group_search_list" parameterClass="paramiter" resultClass="groupbuy_list">

@@ -13,7 +13,7 @@
 */	
 	String text = request.getParameter("text");
 	
-	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,0,6);
+	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,"",0,6);
 	Product_registDAO dao = new Product_registDAO();
 
 	List<GroupbuyDTO> list = dao.group_search_list(auction_list_paramiterDTO);

@@ -56,12 +56,12 @@
 	
 	<!-- 검색 게시판 리스트보기(공지) 글제목으로만 -->
 	<select id="NoticeSelectTitle" resultClass="noticeboardDTO" parameterClass="String">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where title=#title#
+		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where title like '%'||#title#||'%'
 	</select>
 	
 	<!-- 검색 게시판 리스트보기(자유) 글제목으로만 -->
 	<select id="FreeSelectTitle" resultClass="freeboardDTO" parameterClass="String">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where title=#title#
+		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where title like '%'||#title#||'%'
 	</select>
 	
 </sqlMap>

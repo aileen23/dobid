@@ -22,21 +22,17 @@ public class Customerservice_ono_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		
-		
+
+			
 		String savePath="image\\upload_ono";
 		MultipartRequest mrequest = new MultipartRequest(request, request.getServletContext().getRealPath("")+savePath,
 				                          300*1024*1024 ,"UTF-8", new DefaultFileRenamePolicy());
-		
 		
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String service_date = df.format(date);
 		
-		System.out.println(mrequest.getParameter("member_id"));
-		System.out.println("title: "+mrequest.getParameter("title"));
-		System.out.println("image_path: "+mrequest.getParameter("image_path"));
-		System.out.println("업로드 파일명: "+mrequest.getFilesystemName("image_path"));
+
 		
 		Service_onoDTO dto = new Service_onoDTO(
 												mrequest.getParameter("member_id"),
@@ -52,7 +48,7 @@ public class Customerservice_ono_Action extends Action{
 			System.out.println(dao.ServiceOno(dto));
 				
 			
-												
+											
 		
 		return mapping.findForward("success");
 	}
