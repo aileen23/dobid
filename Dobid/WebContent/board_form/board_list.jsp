@@ -126,13 +126,13 @@ function getQuerystring(paramName){
 		</table>
 		<div class="col-sm-offset-6 col-sm-6">
 		<div class="col-sm-7">
-			<input type="text" id="noticeselecttext" class="form-control"> 
+			<input type="text" id="noticeselecttext"  name="noticeselecttext" class="form-control"> 
 			</div>
 			<input type="submit" id="noticeboardSelectbtn" value="검색" class="button button5 btn-default">
 			</form>
 			<input type="button" value="목록" id="noticeboardSelectAll" class="button button5 btn-default"> 
 		</div>
-		</noticeboard>
+		</noticeboard>	
 		
 	<form action="/Dobid/board_list_freeselect.do" method="POST">
 	<freeboard id="freeboard">
@@ -163,7 +163,7 @@ function getQuerystring(paramName){
 		</table>
 		<div class="col-sm-offset-6 col-sm-6">
 		<div class="col-sm-7">
-			<input type="text" id="freeselecttext" class="form-control"> 
+			<input type="text" id="freeselecttext" name="freeselecttext" class="form-control"> 
 			</div>
 			<input type="submit" id="freeboardSelectbtn" value="검색" class="button button5 btn-default">
 			</form>

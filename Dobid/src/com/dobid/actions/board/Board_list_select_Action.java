@@ -31,12 +31,12 @@ public class Board_list_select_Action extends Action{
 		System.out.println(request.getParameter("noticeselecttext"));
 		System.out.println(request.getParameter("freeselecttext"));
 		
-		if (!(notselect.equals(null))) {
+		if (notselect!=null) {
 			List<NoticeboardDTO> noticeselectlist = null;
 			noticeselectlist=dao.NoticeSelectTitle(notselect);
 			request.setAttribute("noticelist", noticeselectlist);
 	
-		} else if (!(freeselect.equals(null))) {
+		} else if (freeselect!=null) {
 			List<FreeboardDTO> freeselectlist = null;
 			freeselectlist=dao.FreeSelectAllTitle(freeselect);
 			request.setAttribute("freelist", freeselectlist);
