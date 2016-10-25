@@ -14,8 +14,6 @@ import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.NoticeboardDTO;
 import com.dobid.model.boardDAO;
 
-
-
 public class Board_list_Action extends Action {
 
 	@Override
@@ -24,14 +22,32 @@ public class Board_list_Action extends Action {
 
 		boardDAO dao = new boardDAO();
 
-		List<NoticeboardDTO> noticelist = null;
+		String notselect = request.getParameter("noticeselecttext");
+		String freeselect = request.getParameter("freeselecttext");
+		
+		if (notselect.equals("")) {
+			List<NoticeboardDTO> noticeselectlist = null;
+			noticeselectlist=dao.NoticeSelectTitle(notselect);
+			request.setAttribute("noticelist", noticeselectlist);
+	
+		} else if (freeselect.equals("")) {
+			List<FreeboardDTO> freeselectlist = null;
+			freeselectlist=dao.FreeSelectAllTitle(freeselect);
+			request.setAttribute("freelist", freeselectlist);
+			
+			
+		} else {
 
-		noticelist = dao.NoticeSelectAll();
-		request.setAttribute("noticelist", noticelist);
+			List<NoticeboardDTO> noticelist = null;
 
-		List<FreeboardDTO> freelist = null;
-		freelist = dao.FreeSelectAll();
-		request.setAttribute("freelist", freelist);
+			noticelist = dao.NoticeSelectAll();
+			request.setAttribute("noticelist", noticelist);
+
+			List<FreeboardDTO> freelist = null;
+			freelist = dao.FreeSelectAll();
+			request.setAttribute("freelist", freelist);
+
+		}
 
 		return mapping.findForward("success");
 	}

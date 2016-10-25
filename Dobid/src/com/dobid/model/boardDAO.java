@@ -107,6 +107,28 @@ public class boardDAO {
 	}
 	
 	
+	public List<NoticeboardDTO> NoticeSelectTitle(String title){
+		List<NoticeboardDTO> list=null;
+		try {
+			list = smc.queryForList("board.NoticeSelectTitle",title);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public List<FreeboardDTO> FreeSelectAllTitle(String title){
+		List<FreeboardDTO> list=null;
+		try {
+			list = smc.queryForList("board.FreeSelectTitle",title);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	
 	
 	

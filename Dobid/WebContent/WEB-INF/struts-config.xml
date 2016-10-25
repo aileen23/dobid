@@ -166,8 +166,18 @@
 			type="com.dobid.actions.board.Board_freedom_write_Action">
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
-
-
+		
+			<!-- board_selectnoticelist -->
+		<action path="/board_list_noticeselect.do" type="com.dobid.actions.board.Board_list_Action">
+			<forward name="success" path="/board_form/board_list.jsp"></forward>
+		</action>
+		
+			<!-- board_selectfreelist -->
+		<action path="/board_list_freeselect.do" type="com.dobid.actions.board.Board_list_Action">
+			<forward name="success" path="/board_form/board_list.jsp"></forward>
+		</action>
+		
+		
 
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
