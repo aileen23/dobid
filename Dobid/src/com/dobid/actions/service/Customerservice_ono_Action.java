@@ -20,12 +20,11 @@ public class Customerservice_ono_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("UTF-8");
-		
+		//request.setCharacterEncoding("UTF-8");
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String service_date = df.format(date);
-		System.out.println(request);
+		
 		System.out.println(request.getParameter("member_id"));
 		System.out.println(request.getParameter("title"));
 		
@@ -42,7 +41,7 @@ public class Customerservice_ono_Action extends Action{
 			System.out.println(dao.ServiceOno(dto));
 				
 			
-												
+											
 		
 		return mapping.findForward("success");
 	}

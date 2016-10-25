@@ -34,7 +34,7 @@ public class Auction_list extends Action{
 		Auction_list_paramiterDTO auction_list_paramiterDTO;
 		
 		if(request.getAttribute("list_par") == null){
-			auction_list_paramiterDTO = new Auction_list_paramiterDTO(form2.getSearch_text(), 0, 6);
+			auction_list_paramiterDTO = new Auction_list_paramiterDTO(form2.getSearch_text(),form2.getCategori(), 0, 6);
 		}else{
 			auction_list_paramiterDTO = (Auction_list_paramiterDTO) request.getAttribute("list_par");
 		}

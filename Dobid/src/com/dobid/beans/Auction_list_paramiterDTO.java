@@ -3,6 +3,7 @@ package com.dobid.beans;
 public class Auction_list_paramiterDTO {
 
 	private String search;
+	private String categori;
 	private int startCount;
 	private int endCount;
 	
@@ -11,18 +12,31 @@ public class Auction_list_paramiterDTO {
 	public Auction_list_paramiterDTO() {
 		super();
 	}
-	public Auction_list_paramiterDTO(String search, int startCount, int endCount) {
+	
+	public Auction_list_paramiterDTO(String search, String categori,
+			int startCount, int endCount) {
 		super();
 		this.search = search;
+		this.categori = categori;
 		this.startCount = startCount;
 		this.endCount = endCount;
 	}
+
 	public String getSearch() {
 		return search;
 	}
 	public void setSearch(String search) {
 		this.search = search;
 	}
+	
+	public String getCategori() {
+		return categori;
+	}
+
+	public void setCategori(String categori) {
+		this.categori = categori;
+	}
+
 	public int getStartCount() {
 		return startCount;
 	}
