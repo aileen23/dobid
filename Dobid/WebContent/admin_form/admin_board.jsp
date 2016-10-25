@@ -72,19 +72,20 @@ $(document).ready(function(){
 			</tr>
 		<c:forEach items="${adminboardlist }" var="adminboardlist">
 			<tr>
-				<td>adminboardlist_seq</td>
-				<td>adminboardlist_id</td>
-				<td>adminboardlist_name</td>
-				<td>adminboardlist_nickname</td>
-				<td>adminboardlist_email</td>
-				<td>adminboardlist_content</td>
-				<td>adminboardlist_date</td>
+				<td>${ adminboardlist.basic_board_num}</td>
+				<td>${ adminboardlist.member_id}</td>
+				<td>${ adminboardlist.name}</td>
+				<td>${ adminboardlist.nickname}</td>
+				<td>${ adminboardlist.email}</td>
+				<td>${ adminboardlist.contents}</td>
+				<td>${ adminboardlist.upload_date}</td>
 			</tr>
 </c:forEach>
 
 		</table>
 
 	</div>
+
 	
 
 
