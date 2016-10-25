@@ -15,10 +15,11 @@ public class Mypage_Action extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		Mypage_DAO dao = new Mypage_DAO();
 		
+		String id= (String) request.getSession().getAttribute("logincheck");
+		Mypage_DAO dao = new Mypage_DAO();
 		MemberDTO dto = new MemberDTO();
-		dto = dao.select("1");
+		dto = dao.select(id);
 		request.setAttribute("member", dto);
 		
 		
