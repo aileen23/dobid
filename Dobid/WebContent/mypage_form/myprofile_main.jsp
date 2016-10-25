@@ -38,13 +38,15 @@
 <div>
   <table width="400" height="130" align="center" cellpadding="20" cellspacing="0">
     <tbody align="center">
+    
       <tr>
+      	<td rowspan="3"><img src="/Dobid/image/people.png"></td>
+        <td>${member.member_id } 님</td>
         <td>&nbsp;</td>
-        <td> 연락처 </td>
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td> ${member.name } 님</td>
+        <td> 이름 : ${member.name }</td>
         <td> 이메일주소 : </td>
         <td> ${member.email }</td>
       </tr>
