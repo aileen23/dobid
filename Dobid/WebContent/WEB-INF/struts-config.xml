@@ -105,10 +105,6 @@
 
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
 		</action>
-		
-		<action path="/checkid" forward="/regist_form/checkid.jsp"></action>
-		
-		<action path="/checknickname" forward="/regist_form/checknickname.jsp"></action>
 
 		<action path="/do_regist_account" type="com.dobid.actions.regist.Regist_account_Action">
 			<forward name="success" path="/login.do"></forward>
@@ -170,15 +166,8 @@
 			type="com.dobid.actions.board.Board_freedom_write_Action">
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
-		
-			<!-- board_selectlist -->
-		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
-			<forward name="success" path="/board_form/board_list.jsp"></forward>
-		</action>
-		
 
-		
-		
+
 
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
