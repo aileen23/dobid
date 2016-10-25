@@ -80,13 +80,6 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="address"
-					placeholder="Address">
-			</div>
-		</div>
-		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">NickName</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" name="nickname"
@@ -96,9 +89,17 @@
 				style="margin-right: 5%">Check</button>
 		</div>
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Introduction</label>
+			<label for="inputEmail3" class="col-sm-2 control-label" >Address</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" name="introduction"
+				<input type="text" class="form-control" name="address" style="height: 100px;"
+					placeholder="Address">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label" >Introduction</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="introduction" style="height: 100px;"
 					placeholder="Introduction">
 			</div>
 		</div>
