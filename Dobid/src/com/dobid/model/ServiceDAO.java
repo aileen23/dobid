@@ -21,9 +21,7 @@ public class ServiceDAO {
 			smc.insert("service.serviceOno", serverOno);
 			System.out.println("입력성공");
 			return true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (SQLException e) {e.printStackTrace();
 		}
 		System.out.println("입력실패");
 		return false;
@@ -37,7 +35,6 @@ public class ServiceDAO {
 			System.out.println("입력성공");
 			return true;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("입력실패");

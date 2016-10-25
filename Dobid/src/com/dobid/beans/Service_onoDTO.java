@@ -1,6 +1,5 @@
 package com.dobid.beans;
 
-import java.sql.Date;
 
 public class Service_onoDTO {
 	private String member_id;

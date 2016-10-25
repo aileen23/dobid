@@ -5,7 +5,7 @@
 	<typeAlias alias="service_onoDTO" type="com.dobid.beans.Service_onoDTO" />
 	<typeAlias alias="service_reportDTO" type="com.dobid.beans.Service_reportDTO" />
 
-	<insert id="serviceOno" parameterClass="Service_onoDTO">
+	<insert id="serviceOno" parameterClass="service_onoDTO">
 		insert into service_ono values
 			(#member_id#, #title#, #categori#, #contents#, #image_path#, #upload_date#)
 	</insert>

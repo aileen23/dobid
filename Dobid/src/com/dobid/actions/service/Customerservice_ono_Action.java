@@ -25,14 +25,17 @@ public class Customerservice_ono_Action extends Action{
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String service_date = df.format(date);
+		System.out.println(request);
+		System.out.println(request.getParameter("member_id"));
 		System.out.println(request.getParameter("title"));
-		Service_onoDTO dto = new Service_onoDTO();
-			dto.setMember_id(request.getParameter("member_id"));
-			dto.setTitle(request.getParameter("title"));
-			dto.setCategori(request.getParameter("categori"));
-			dto.setContents(request.getParameter("contents"));
-			dto.setImage_path(request.getParameter("image_path"));
-			dto.setUpload_date(service_date);
+		
+		Service_onoDTO dto = new Service_onoDTO(
+												request.getParameter("member_id"),
+												request.getParameter("title"),
+												request.getParameter("categori"),
+												request.getParameter("contents"),
+												request.getParameter("image_path"),
+												service_date);
 			
 			ServiceDAO dao = new ServiceDAO();
 			dao.ServiceOno(dto);
