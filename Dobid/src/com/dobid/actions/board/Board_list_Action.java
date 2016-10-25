@@ -33,25 +33,6 @@ public class Board_list_Action extends Action {
 		freelist = dao.FreeSelectAll();
 		request.setAttribute("freelist", freelist);
 
-		  System.out.println(request.getParameter("noticeselecttext"));
-		  System.out.println(request.getParameter("freeselecttext"));
-		  
-		String notselect = request.getParameter("noticeselecttext");
-		String freeselect = request.getParameter("freeselecttext");
-		
-		if (!(notselect.equals(null))) {
-			List<NoticeboardDTO> noticeselectlist = null;
-			noticeselectlist=dao.NoticeSelectTitle(notselect);
-			request.setAttribute("noticelist", noticeselectlist);
-	
-		} else if (!(freeselect.equals(null))) {
-			List<FreeboardDTO> freeselectlist = null;
-			freeselectlist=dao.FreeSelectAllTitle(freeselect);
-			request.setAttribute("freelist", freeselectlist);
-			
-			
-		} 
-
 	
 
 		return mapping.findForward("success");
