@@ -141,13 +141,13 @@ function getQuerystring(paramName){
 
 
 
-		<div class="col-sm-offset-4 col-sm-1">
+		<div class="col-sm-offset-4 ">
 			<input type="submit" class="button button5 btn-default" id="FreeBoardWrite" value="글쓰기">
+			<button class="button button5 btn-default" id="pageback">취소</button>
+			<button class="button button5 btn-default" id="boardSelectAll">목록</button>
 		</div>
 	</form>
 		
-			<button class="button button5 btn-default" id="pageback">취소</button>
-			<button class="button button5 btn-default" id="boardSelectAll">목록</button>
 		
 		
 
