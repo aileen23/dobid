@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>신고하기</title>
+<title>고객센터 신고하기</title>
 
 <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -24,10 +24,11 @@
 
 
 <!-- *.do 에 대한 CSS, JS 파일 경로 -->
-<script src="service_form/js/customerservice_ono.js"></script>
+<script src="service_form/js/customerservice_report.js"></script> <!-- 유효성 검사 -->
+<script src="service_form/js/customerservice_report_upload.js"></script> <!-- 첨부파일 업로드 -->
 <link rel="stylesheet" type="text/css" href="service_form/css/service.css">
 
-<!-- <!-- JSP파일에 대한 CSS, JS 파일 경로 -->
+<!-- <!-- JSP파일에 대한 CSS, JS 파일 경로 
 <script src="js/customerservice_ono.js"></script>
 <link rel="stylesheet" type="text/css" href="css/service.css"> -->
 
@@ -35,38 +36,7 @@
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$("#submit").click(function(){
-		
-		var fileNm = sfr.cma_file.value;		
-		
-		if(sfr.inputTitle.value == ""){
-			alert("타이들을 작성해주세요");
-			sfr.inputTitle.focus();
-			return false;
-		}else if(sfr.inputTextarea.value == ""){
-			alert("내용을 입력하세요");
-			sfr.inputTextarea.focus();
-			return false;
-		}else if(!sfr.cma_file.value){
-			alert("첨부할 파일이 없습니다");
-			$("#cma_file").click();
-			return false;	
-		}else if (fileNm != "") {
-			 
-		    var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
-		 
-		    if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
-		        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
-		        $("#cma_file").click();
-		        return false;
-		    }
-		 
-		}else{
-			return true;
-		}
-	});
-	});
+
 </script>
 
 </head>

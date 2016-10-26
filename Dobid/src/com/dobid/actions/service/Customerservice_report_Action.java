@@ -47,9 +47,9 @@ public class Customerservice_report_Action extends Action{
 			boolean flag = dao.ServiceReport(dto);	
 				
 			if (flag == false) {
-				return mapping.findForward("success");
-			} else {
 				return mapping.findForward("fail");
+			} else {
+				return mapping.findForward("success");
 											
 			}
 	}
