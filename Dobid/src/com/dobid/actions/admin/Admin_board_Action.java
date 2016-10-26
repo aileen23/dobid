@@ -29,13 +29,13 @@ public class Admin_board_Action extends Action {
 		String admin_boardselecttext = request.getParameter("admin_boardselecttext");
 		String catalogue = request.getParameter("catalogue");
 		String del = request.getParameter("del");
-		String admin_board_view_titles = request.getParameter("admin_board_view_title");
+		String admin_board_view_num = request.getParameter("admin_board_view_num");
 		String admin_board_view_userid = request.getParameter("admin_board_view_userid");
 		
 		System.out.println("admin_boardselecttext : "+request.getParameter("admin_boardselecttext"));
 		System.out.println("catalogue : "+request.getParameter("catalogue"));
 		System.out.println("del : "+request.getParameter("del"));
-		System.out.println("admin_board_view_title : "+request.getParameter("admin_board_view_title"));
+		System.out.println("admin_board_view_num : "+request.getParameter("admin_board_view_num"));
 		System.out.println("admin_board_view_userid : "+request.getParameter("admin_board_view_userid"));
 		
 		
@@ -68,6 +68,11 @@ public class Admin_board_Action extends Action {
 				request.setAttribute("adminboardlist", adminfreeselectlist);
 
 			}else if(del!=null){
+				if(admin_board_view_userid.equals("admin")){
+					dao.adminNoticeBoardDel(admin_board_view_num);
+				}else{
+					dao.adminFreeBoardDel(admin_board_view_num);
+				}
 				
 				
 			}
