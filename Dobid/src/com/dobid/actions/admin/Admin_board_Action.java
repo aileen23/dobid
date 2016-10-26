@@ -25,22 +25,26 @@ public class Admin_board_Action extends Action {
 
 		boardDAO dao = new boardDAO();
 
-
 		String admin_boardselecttext = request.getParameter("admin_boardselecttext");
 		String catalogue = request.getParameter("catalogue");
 		String del = request.getParameter("del");
 		String admin_board_view_num = request.getParameter("admin_board_view_num");
 		String admin_board_view_userid = request.getParameter("admin_board_view_userid");
-		
-		System.out.println("admin_boardselecttext : "+request.getParameter("admin_boardselecttext"));
-		System.out.println("catalogue : "+request.getParameter("catalogue"));
-		System.out.println("del : "+request.getParameter("del"));
-		System.out.println("admin_board_view_num : "+request.getParameter("admin_board_view_num"));
-		System.out.println("admin_board_view_userid : "+request.getParameter("admin_board_view_userid"));
-		
-		
-		
-		
+
+		System.out.println("admin_boardselecttext : " + request.getParameter("admin_boardselecttext"));
+		System.out.println("catalogue : " + request.getParameter("catalogue"));
+		System.out.println("del : " + request.getParameter("del"));
+		System.out.println("admin_board_view_num : " + request.getParameter("admin_board_view_num"));
+		System.out.println("admin_board_view_userid : " + request.getParameter("admin_board_view_userid"));
+
+		if (del.equals("del")) {
+			if (admin_board_view_userid.equals("admin")) {
+				dao.adminNoticeBoardDel(admin_board_view_num);
+			} else {
+				dao.adminFreeBoardDel(admin_board_view_num);
+			}
+		} else {
+
 			if (admin_boardselecttext == null && catalogue == null) {
 				List<Admin_noticeDTO> adminnoticelist = null;
 				adminnoticelist = dao.adminNoticeSelectAll();
@@ -67,16 +71,8 @@ public class Admin_board_Action extends Action {
 				adminfreeselectlist = dao.adminFreetitle(admin_boardselecttext);
 				request.setAttribute("adminboardlist", adminfreeselectlist);
 
-			}else if(del!=null){
-				if(admin_board_view_userid.equals("admin")){
-					dao.adminNoticeBoardDel(admin_board_view_num);
-				}else{
-					dao.adminFreeBoardDel(admin_board_view_num);
-				}
-				
-
 			}
-
+		}
 
 		return mapping.findForward("success");
 	}

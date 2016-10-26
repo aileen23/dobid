@@ -154,7 +154,7 @@
 				<button class="button button5 btn-default">삭제</button>
 			
 				<input type="hidden" name="del" value="del">
-				<input type="hidden" name="admin_board_view_num">
+				<input type="hidden" id="admin_board_view_num" name="admin_board_view_num">
 				
 			
 			
