@@ -6,7 +6,8 @@ public class Auction_ChargeDTO {
 	private Date end_date;
 	private int highest_price;
 	private String title;
-	
+	public Auction_ChargeDTO() {
+	}
 	public Auction_ChargeDTO(Date end_date, int highest_price, String title) {
 		super();
 		this.end_date = end_date;

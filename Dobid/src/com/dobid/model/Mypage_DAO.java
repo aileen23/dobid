@@ -2,6 +2,7 @@ package com.dobid.model;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -90,7 +91,8 @@ public class Mypage_DAO {
 	public List<ChargelistDTO> chargeSelect(String id) {
 		List<Auction_ChargeDTO> list = null;
 		List<ChargeDTO> list2 = null;
-		List<ChargelistDTO> result = null;
+		List<ChargelistDTO> result = new ArrayList<ChargelistDTO>();
+		
 		try {
 			list = smc.queryForList("myprofile.usecharge", id);
 			list2 = smc.queryForList("myprofile.chargeSelect", id);
