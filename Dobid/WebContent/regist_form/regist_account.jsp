@@ -38,9 +38,13 @@
 						alert("이미 사용중인 아이디입니다.");
 					} else if ($("#id").val().length < 6 || $("#id").val().length > 20) {
 						alert("6 - 20 자리의 아이디를 입력해주세요.");
-					}else {
+					}else if ($("#id").val().replace(" ", "").length != $("#id").val().length) {
+						alert("아이디에 공백을 사용할수 없습니다.")
+					}
+					else {
 						alert("사용 가능한 아이디입니다.");
 						$("#id").attr("readonly", true);
+						$("#checkid").fadeOut(500);
 					}
 				},
 				error : function(e) {
@@ -65,9 +69,13 @@
 						alert("이미 사용중인 닉네임입니다.");
 					} else if ($("#nickname").val().length < 2 || $("#nickname").val().length > 10) {
 						alert("2 - 10 자리의 닉네임을 입력해주세요.");
-					}else {
+					}else if ($("#nickname").val().replace(" ", "").length != $("#nickname").val().length) {
+						alert("닉네임에 공백을 사용할수 없습니다.");
+					}
+					else {
 						alert("사용 가능한 닉네임 입니다.");
 						$("#nickname").attr("readonly", true);
+						$("#checknickname").fadeOut(500);
 					}
 				},
 				error : function(e) {
@@ -77,6 +85,49 @@
 
 		});//checknickname버튼 클릭시
 
+		$(":password").keyup(function() {
+			if ($("#password").val() == $("#checkpassword").val() && $("#password").val().length > 5 && $("#password").val().length < 21 && $("#password").val().replace(" ","").length == $("#password").val().length) {
+				$("#passcheck").html("<font color = 'blue'>o</font>");
+			}else {
+				$("#passcheck").html("<font color = 'red'>x</font>");
+			}
+			
+		});//패스워드 체크
+		
+		$("#account").click(function () {
+			if ($("#id").attr("readonly") != "readonly") {
+				alert("아이디 중복체크를 해주세요.");
+				return false;
+			}else if($("#password").val() != $("#checkpassword").val() || $("#password").val().length < 6|| $("#password").val().length > 20 || $("#password").val().replace(" ","").length != $("#password").val().length){
+				alert("비밀번호를 확인해주세요.");
+				return false;
+			}else if ($("#name").val().length < 2 || $("#name").val().length > 13 || $("#name").val().replace(" ","") != $("#name").val()) {
+				alert("이름을 확인해주세요.");
+				return false;
+			}else if ($("#phone").val().length < 1 || $("#phone").val().length > 15 || isNaN($("#phone").val())) {
+				alert("전화번호를 확인해주세요.");
+				return false;
+			}else if ($("#email").val().length < 1 || ($("#email").val().length > 30)){
+				alert("전화번호를 확인해주세요.");
+				return false;
+			}else if ($("#nickname").attr("readonly") != "readonly") {
+				alert("닉네임 중복체크를 해주세요.");
+				return false;
+			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100)) {
+				alert("전화번호를 확인해주세요.");
+				return false;
+			}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
+				alert("자기소개를 확인해주세요.");
+				return false;
+			}else if ($("#birthday").val().length < 1) {
+				alert("생일을 확인해주세요.");
+				return false;
+			}else {
+				alert("Do!bid 회원가입을 환영합니다.");
+			}
+			
+		});//유효성 검사
+		
 	});//ready
 </script>
 
@@ -123,12 +174,13 @@
 					<input type="password" class="form-control" name="checkpass"
 						placeholder="CheckPassword" id="checkpassword">
 				</div>
+				<div id="passcheck" ></div>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" name="name"
-						placeholder="Name" id="name">
+						placeholder="Name (2-13)" id="name">
 				</div>
 			</div>
 			<div class="form-group">
@@ -141,7 +193,7 @@
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" name="email"
+					<input type="email" class="form-control" name="email"
 						placeholder="E-mail" id="email">
 				</div>
 			</div>
