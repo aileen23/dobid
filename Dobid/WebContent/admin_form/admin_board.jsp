@@ -18,9 +18,9 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#popup").hide();
-	//$(".button").click(function(){
-	//	$("#popup").show();
-	//});
+	$(".href").click(function(){
+		$("#popup").show();
+	});
 	$("#close").click(function(){
 		$("#popup").hide();
 	});
@@ -73,7 +73,7 @@ $(document).ready(function(){
 		<c:forEach items="${adminboardlist }" var="adminboardlist">
 			<tr>
 				<td>${ adminboardlist.basic_board_num}</td>
-				<td>${ adminboardlist.member_id}</td>
+				<td><a href="admin_board.do?num=${adminboardlist.member_id }">${ adminboardlist.member_id}</a></td>
 				<td>${ adminboardlist.name}</td>
 				<td>${ adminboardlist.nickname}</td>
 				<td>${ adminboardlist.email}</td>
@@ -102,27 +102,27 @@ $(document).ready(function(){
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-5">
 					<input type="text" class="form-control" id="admin_board_view_title" style="margin-top: 20px;"
-						placeholder="제목" disabled name="admin_board_view_title">
+						placeholder="${adminviewobject.title }" disabled name="admin_board_view_title">
 				</div>
 			</div>
 			<div class="form-group">
 
 				<div class="col-sm-offset-3 col-sm-5">
 					<input type="text" class="form-control" id="admin_board_view_userid" name="admin_board_view_userid"
-						placeholder="아이디" disabled>
+						placeholder="${adminviewobject.member_id }" disabled>
 				</div>
 			</div>
 
 			<div class="form-group">
 			<div class="col-sm-offset-3 col-sm-5">
 					<input type="image" src="../image/dobid.png"  id="admin_board_view_img" name="admin_board_view_img"
-						placeholder="이미지"  disabled>
+						placeholder="${adminviewobject.image_path }"  disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-5">
 					<textarea class="form-control " id="admin_board_view_content" name="admin_board_view_content"
-						placeholder="입력된 내용" style="height: 200px" disabled></textarea>
+						placeholder="${adminviewobject.contents }" style="height: 200px" disabled></textarea>
 				</div>
 			</div>
 

@@ -9,13 +9,14 @@ public class Admin_freeDTO {
 	private String contents;
 	private String upload_date;
 	private String image_path;
+	private String title;
+	
 	
 	public Admin_freeDTO() {
 		
 	}
-	
 	public Admin_freeDTO(int basic_board_num, String member_id, String name, String nickname, String email,
-			String contents, String upload_date, String image_path) {
+			String contents, String upload_date, String image_path, String title) {
 		super();
 		this.basic_board_num = basic_board_num;
 		this.member_id = member_id;
@@ -25,9 +26,8 @@ public class Admin_freeDTO {
 		this.contents = contents;
 		this.upload_date = upload_date;
 		this.image_path = image_path;
+		this.title = title;
 	}
-	
-
 	public int getBasic_board_num() {
 		return basic_board_num;
 	}
@@ -76,4 +76,13 @@ public class Admin_freeDTO {
 	public void setImage_path(String image_path) {
 		this.image_path = image_path;
 	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	
+	
 }
