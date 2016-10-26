@@ -42,6 +42,7 @@ public class Product_regist extends Action{
 		String user_id = (String) request.getSession().getAttribute("logincheck");
 		//데이터 가져오기.
 		String cate = forms.getCate();
+		System.out.println(cate);
 		String title_text  = forms.getTitle_text();
 		String count_text  = forms.getCount_text();
 		FormFile main_file = forms.getMain_file();
@@ -51,7 +52,7 @@ public class Product_regist extends Action{
 		String day = forms.getDay();
 		String hour = forms.getHour(); 
 		String minute = forms.getMinute();
-		String text = forms.getForm_control();
+		String text = forms.getTextarea();
 		
 		//현재 시간과 종료시간 셋팅.
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");

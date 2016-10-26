@@ -21,7 +21,7 @@ public class Product_regist_form extends ActionForm{
 	private String day;
 	private String hour;  
 	private String minute;
-	private String form_control;
+	private String textarea;
 	
 	
 	
@@ -187,16 +187,16 @@ public class Product_regist_form extends ActionForm{
 
 
 
-	public String getForm_control() {
-		return form_control;
+	public String getTextarea() {
+		return textarea;
 	}
 
 
 
 
 
-	public void setForm_control(String form_control) {
-		this.form_control = form_control;
+	public void setTextarea(String textarea) {
+		this.textarea = textarea;
 	}
 
 

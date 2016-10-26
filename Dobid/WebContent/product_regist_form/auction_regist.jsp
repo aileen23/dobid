@@ -32,10 +32,10 @@ if(session.getAttribute("logincheck") == null){
   		<form action="auction_regist.do" method="POST" enctype="multipart/form-data">
   		<div class="first_input">
   			<select class="form-control3" name="cate">
-  				<option value="골동품">새제품</option>
-  				<option value="미술">중고제품</option>
-  				<option value="기념품">미술</option>
- 				<option value="가전">골동품</option>
+  				<option value="새제품">새제품</option>
+  				<option value="중고제품">중고제품</option>
+  				<option value="미술">미술</option>
+ 				<option value="골동품">골동품</option>
  				<option value="의류">의류</option>
  				<option value="기타">기타</option>
 			</select>
@@ -114,7 +114,7 @@ if(session.getAttribute("logincheck") == null){
 			</div>
   		</div>
   		<div class="textarea_bot">
-  			<textarea rows="20" cols="140" id="text_a" name="form-control" style="resize: none;"></textarea>
+  			<textarea rows="20" cols="140" id="text_a" name="textarea" style="resize: none;"></textarea>
   		</div>
   		<input id="submitBtn" name="form_control" class="btn btn-default btn-lg btn-block sub_btn" type="submit" value="올리기" onClick="return input_check();">
   		</form>
