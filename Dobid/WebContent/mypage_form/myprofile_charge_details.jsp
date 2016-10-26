@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
@@ -8,21 +9,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap Core CSS -->
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="./css/shop-homepage.css" rel="stylesheet">
-
-<!-- Script -->
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 </head>
 <body>
+	<!-- 헤더 -->
+	<br>
+	<br>
+	<br>
+		<div class="titleText" style="margin-left: 20px">
+		<font size="80" color="black">충전내역</font><br>
+		</div>
 
+	<div class="container-fluid"	style="margin-bottom: 100px">
+		<header><%@include file="mypageHeader.jsp"%></header>
+	</div>
 <div class="container">
-  <h2>충전내역</h2>
-	<br><br>        
+     	<b>현재 사용가능금액 :</b> 100,000원
+</div>
+<br>
+<div class="container">
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -33,37 +37,18 @@
       </tr>
     </thead>
     <tbody>
+    <c:forEach items="${list }" var="chargelist">
       <tr>
-     	<th>충전</th>
-        <th>2016.6.6</th>
-        <th>무통장입금</th>
-        <th>+30000원</th>
+     	<th>${chargelist.charge_type}</th>
+     	<th>${chargelist.charge_time}</th>
+     	<th>${chargelist.charge_title}</th>
+     	<th>${chargelist.charge_price}</th>
       </tr>
-       <tr>
-     	<th>사용</th>
-        <th>2016.6.6</th>
-        <th>아침 배고픔을..</th>
-        <th>-30100원</th>
-      </tr>      
-      <tr>
-     	<th>사용</th>
-        <th>2016.6.6</th>
-        <th>아침 배고픔을..</th>
-        <th>-22000원</th>
-      </tr>    
+      </c:forEach>
     </tbody>
   </table>
 </div>
-<div class="container">
-  <table class="table table-bordered">
-    <thead>
-       <tr>
-     	<th>현재금액</th>
-        <th>100,000원</th>
-      </tr>
-    </thead>
-  </table>
-</div>
+
 
 </body>
 		<footer> <%@include file="/regist_form/footer.jsp"%></footer>

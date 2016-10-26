@@ -7,8 +7,6 @@
 	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
 	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
 	<typeAlias alias="chargeDTO" type="com.dobid.beans.ChargeDTO" />
-	<typeAlias alias="commentDTO" type="com.dobid.beans.CommentDTO" />
-	<typeAlias alias="freeboardDTO" type="com.dobid.beans.FreeboardDTO" />
 	<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.Groupbuy_participantDTO" />
 	<typeAlias alias="groupbuy_reviewDTO" type="com.dobid.beans.Groupbuy_reviewDTO" />
 	<typeAlias alias="groupbuyDTO" type="com.dobid.beans.GroupbuyDTO" />
@@ -18,6 +16,8 @@
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	<typeAlias alias="auction_myAuctionDTO" type="com.dobid.beans.Auction_myAuctionDTO"/>
+	<typeAlias alias="chargelistDTO" type="com.dobid.beans.ChargelistDTO"/>
+	<typeAlias alias="auction_ChargeDTO" type="com.dobid.beans.Auction_ChargeDTO"/>
 
 	<select id="select" parameterClass="String" resultClass="memberDTO">
 		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
@@ -46,6 +46,17 @@
 		select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
 		from auction
 		where seller_id=#seller_id#
+	</select>
+	
+	<select id="chargeSelect" parameterClass="String" resultClass="chargeDTO">
+		select charge_date,charge_will_amount,charge_type
+		from charge
+		where member_id=#member_id#
+	</select> 
+	<select id="usecharge" parameterClass="String" resultClass="auction_ChargeDTO">
+		select end_date,highest_price,title
+		from auction
+		where sysdate>end_date and highest_price_id=#highest_price_id# 
 	</select>
 </sqlMap>
 
