@@ -151,6 +151,8 @@ public class boardDAO {
 		List<Admin_freeDTO> list=null;
 		try {
 			list = smc.queryForList("board.adminfreelist");
+
+		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

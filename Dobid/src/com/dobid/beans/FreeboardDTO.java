@@ -1,6 +1,6 @@
 package com.dobid.beans;
 
-import java.sql.Date;
+
 
 public class FreeboardDTO {
 	private int basic_board_num;
