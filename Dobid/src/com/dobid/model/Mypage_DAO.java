@@ -67,4 +67,16 @@ public class Mypage_DAO {
 		return null;
 		
 	}
+	
+	public List<AuctionDTO> salesSelect(String id){
+		List<AuctionDTO> list = null;
+		try {
+			list=smc.queryForList("myprofile.salesSelect",id);
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 }

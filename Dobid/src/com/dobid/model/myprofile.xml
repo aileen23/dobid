@@ -41,6 +41,12 @@
 		from auction,auction_participant
 		where auction.auction_board_num=auction_participant.auction_board_num and basket.member_id=#member_id#
 	</select>
+	
+	<select id="salesSelect" parameterClass="String" resultClass="auctionDTO">
+		select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
+		from auction
+		where seller_id=#seller_id#
+	</select>
 </sqlMap>
 
 
