@@ -137,7 +137,7 @@
 		<action path="/service_ono_write"
 			type="com.dobid.actions.service.Customerservice_ono_Action">
 			<forward name="success" path="/main.do"/>
-			
+			<forward name="fail" path="/service_ono.do"/>
 		</action>
 
 		<!-- customservice_report -->
@@ -145,7 +145,7 @@
 		<action path="/service_report_write"
 			type="com.dobid.actions.service.Customerservice_report_Action">
 			<forward name="success" path="/main.do"/>
-			
+			<forward name="fail" path="/service_report.do"/>
 		</action>
 		
 		
