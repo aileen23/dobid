@@ -95,10 +95,9 @@
 				url : url,
 				data : params,
 				success : function(args) {
-					/* $("#result").html(args); */
-					<%-- --%>
-					console.log(args);
 					$("#buffer").val(args);
+					alert("이메일이 발송 되었습니다. \n 발송된 이메일을 확인하고 인증 번호를 입력해주십시오~!");
+					$("#send").fadeOut(500);
 				},
 				error : function(e) {
 					alert(e.responseText);
