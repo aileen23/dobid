@@ -149,8 +149,9 @@
 			</form>
 			<form action="/Dobid/admin_board.do" method="POST">
 			<div class="col-sm-offset-3 col-sm-5">
-			<input type="hidden" name="del">
 				<button class="button button5 btn-default" id="board_del">삭제</button>
+				<input type="hidden" name="del" value="del">
+				
 			</form>
 
 				<button class="button button5 btn-default" id="close">취소</button>

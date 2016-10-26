@@ -215,4 +215,40 @@ public class boardDAO {
 	}
 	
 	
+	public boolean adminNoticeBoardDel(String num){//관리자 공지사항 게시판 삭제
+		try {
+			int bagic_num = Integer.parseInt(num);
+			smc.delete("board.adminnoticeboarddel",bagic_num);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	
+	public boolean adminFreeBoardDel(String num){//관리자 공지사항 게시판 삭제
+		try {
+			int bagic_num = Integer.parseInt(num);
+			smc.delete("board.adminfreeboarddel",bagic_num);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

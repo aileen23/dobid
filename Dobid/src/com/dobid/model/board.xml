@@ -111,6 +111,16 @@
 	from freeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id order by a.upload_date desc
 	</select>
 	
+	<!-- 관리자 공지 삭제 -->
+	<delete id="adminnoticeboarddel" parameterClass="int">
+	delete from noticeboard where basic_board_num=#basic_board_num#
+	</delete>
+	
+	<!-- 관리자 자유게시판 삭제 -->
+	<delete id="adminfreeboarddel" parameterClass="int">
+	delete from freeboard where basic_board_num=#basic_board_num#
+	</delete>
+	
 </sqlMap>
 	
 

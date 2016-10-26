@@ -28,14 +28,18 @@ public class Admin_board_Action extends Action {
 
 		String admin_boardselecttext = request.getParameter("admin_boardselecttext");
 		String catalogue = request.getParameter("catalogue");
-
 		String del = request.getParameter("del");
+		String admin_board_view_title = request.getParameter("admin_board_view_title");
 		
 		
 		System.out.println(request.getParameter("admin_boardselecttext"));
 		System.out.println(request.getParameter("catalogue"));
 		System.out.println(request.getParameter("del"));
-
+		System.out.println(request.getParameter("admin_board_view_title"));
+		
+		
+		
+		
 			if (admin_boardselecttext == null && catalogue == null) {
 				List<Admin_noticeDTO> adminnoticelist = null;
 				adminnoticelist = dao.adminNoticeSelectAll();
@@ -62,6 +66,9 @@ public class Admin_board_Action extends Action {
 				adminfreeselectlist = dao.adminFreetitle(admin_boardselecttext);
 				request.setAttribute("adminboardlist", adminfreeselectlist);
 
+			}else if(del!=null){
+				
+				
 			}
 
 
