@@ -17,7 +17,8 @@
 	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
-
+	 <typeAlias alias="adminnoticeDTO" type="com.dobid.beans.Admin_noticeDTO" />
+	<typeAlias alias="adminfreeDTO" type="com.dobid.beans.Admin_freeDTO" />
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
@@ -62,6 +63,51 @@
 	<!-- 검색 게시판 리스트보기(자유) 글제목으로만 -->
 	<select id="FreeSelectTitle" resultClass="freeboardDTO" parameterClass="String">
 		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where title like '%'||#title#||'%'
+	</select>
+	
+	
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--위로는 완벽  -->
+
+
+		<!-- 관리자 게시판 전체조회(공지사항) -->
+	<select id="adminnoticelist" resultClass="adminnoticeDTO">
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,to_date(a.UPLOAD_DATE,'YYYY-MM-DD:HH24:MI:SS'),a.image_path 
+	from noticeboard a, member m
+	</select>
+	
+	<!-- 관리자 게시판 전체조회(자유게시판) -->
+	<select id="adminfreelist" resultClass="adminfreeDTO" >
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,to_date(a.UPLOAD_DATE,'YYYY-MM-DD:HH24:MI:SS'),a.image_path 
+	from freeboard a, member m
+	</select>
+	
+	<!-- 관리자 제목으로 상세보기 팝업(공지) -->
+	<select id="adminnoticeselect" resultClass="adminnoticeDTO" parameterClass="String">
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,to_date(a.UPLOAD_DATE,'YYYY-MM-DD:HH24:MI:SS'),a.image_path 
+	from noticeboard a, member m where member_id like '%'||#member_id#||'%'
+	</select>
+	
+	<!-- 관리자 제목으로 상세보기 팝업(자유) -->
+	<select id="adminfreeselect" resultClass="adminfreeDTO" parameterClass="String">
+		select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,to_date(a.UPLOAD_DATE,'YYYY-MM-DD:HH24:MI:SS'),a.image_path 
+	from freeboard a, member m where member_id like '%'||#member_id#||'%'
+	
+	</select>
+	
+	<!-- 검색 관리자 게시판(공지) 글제목으로만 -->
+	<select id="adminnoticetitle" resultClass="noticeboardDTO" parameterClass="String">
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,to_date(a.UPLOAD_DATE,'YYYY-MM-DD:HH24:MI:SS'),a.image_path 
+	from noticeboard a, member m where title like '%'||#title#||'%'
+	</select>
+	
+	<!-- 검색 관리자 게시판(자유) 글제목으로만 -->
+	<select id="adminfreetitle" resultClass="freeboardDTO" parameterClass="String">
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,to_date(a.UPLOAD_DATE,'YYYY-MM-DD:HH24:MI:SS'),a.image_path 
+	from freeboard a, member m where title like '%'||#title#||'%'
 	</select>
 	
 </sqlMap>

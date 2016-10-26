@@ -47,10 +47,10 @@ public class Customerservice_report_Action extends Action{
 			dao.ServiceReport(dto);	
 				
 			if (dao.ServiceReport(dto)) {
-				
+				request.getSession().setAttribute("servicereport", "success");
 				return mapping.findForward("success");
 			} else {
-				
+				request.getSession().setAttribute("servicereport", "fail");
 				return mapping.findForward("fail");
 											
 			}

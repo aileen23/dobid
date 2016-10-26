@@ -1,6 +1,7 @@
 package com.dobid.actions.service;
 
 
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -22,7 +23,8 @@ public class Customerservice_ono_Action extends Action{
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-
+		
+		request.setCharacterEncoding("UTF-8");
 			
 		String savePath="image\\upload_ono";
 		MultipartRequest mrequest = new MultipartRequest(request, request.getServletContext().getRealPath("")+savePath,
@@ -46,12 +48,14 @@ public class Customerservice_ono_Action extends Action{
 			ServiceDAO dao = new ServiceDAO();
 			dao.ServiceOno(dto);
 			System.out.println(dao.ServiceOno(dto));
-				
+			
+			
+			
 			if (dao.ServiceOno(dto)) {
-				
+				request.getSession().setAttribute("serviceono", "success");
 				return mapping.findForward("success");
 			} else {
-				
+				request.getSession().setAttribute("serviceono", "fail");
 				return mapping.findForward("fail");
 											
 			}

@@ -34,6 +34,19 @@
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#submit').click(function(){
+			if(request.getSession().setAttribute("servicereport", "success")){
+				alert("aaaaaaaaaaa");
+			}else{
+				alert("bbbbbbbbbbbbbbbbbbbb");
+			}
+		});
+	});
+
+</script>
 
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
@@ -50,7 +63,7 @@
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputTitle" placeholder="신고할 제목을 입력하세요"  name="title">
+      <input type="text" class="form-control" id="inputTitle" placeholder="문의할 제목을 입력하세요"  name="title">
     </div>
   </div>
   <div class="form-group">
