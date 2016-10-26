@@ -77,19 +77,11 @@ try {
         
 } catch (Exception mex) {
     mex.printStackTrace();
-    String script = "<script type='text/javascript'>\n";
-    script += "alert('메일발송에 실패했습니다.');\n";
-    script += "history.back();\n";
-    script += "</script>";
-    out.print(script);
+
     return;
 }
     
-String script = "<script type='text/javascript'>\n";
-script += "alert('메일발송에 성공했습니다.');\n";
-script += "</script>";
-script += "<meta http-equiv='refresh' content='0; url=MailForm.html' />";
-out.print(script);
+
 %>
 
 <%=buffer.toString()%>
