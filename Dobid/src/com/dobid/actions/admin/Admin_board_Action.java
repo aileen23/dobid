@@ -37,13 +37,7 @@ public class Admin_board_Action extends Action {
 		System.out.println("admin_board_view_num : " + request.getParameter("admin_board_view_num"));
 		System.out.println("admin_board_view_userid : " + request.getParameter("admin_board_view_userid"));
 
-		if (del.equals("del")) {
-			if (admin_board_view_userid.equals("admin")) {
-				dao.adminNoticeBoardDel(admin_board_view_num);
-			} else {
-				dao.adminFreeBoardDel(admin_board_view_num);
-			}
-		} else {
+		if (del == null) {
 
 			if (admin_boardselecttext == null && catalogue == null) {
 				List<Admin_noticeDTO> adminnoticelist = null;
@@ -71,6 +65,13 @@ public class Admin_board_Action extends Action {
 				adminfreeselectlist = dao.adminFreetitle(admin_boardselecttext);
 				request.setAttribute("adminboardlist", adminfreeselectlist);
 
+			}
+		} else {
+			if (admin_board_view_userid.equals("admin")) {
+
+				dao.adminNoticeBoardDel(admin_board_view_num);
+			} else {
+				dao.adminFreeBoardDel(admin_board_view_num);
 			}
 		}
 
