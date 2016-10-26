@@ -113,7 +113,7 @@
 			}else if ($("#nickname").attr("readonly") != "readonly") {
 				alert("닉네임 중복체크를 해주세요.");
 				return false;
-			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100) || $("#address").val().replace(" ","").length != $("#address").val().length) {
+			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100)) {
 				alert("주소를 확인해주세요.");
 				return false;
 			}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
