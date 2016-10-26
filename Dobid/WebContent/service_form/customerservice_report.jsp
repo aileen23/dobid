@@ -37,7 +37,7 @@
 
 <script type="text/javascript">
 	function button_event() {
-		if (confirm("신고하기를 정말 취소하시겠습니까? \n 작성된 신고 내용은 모두 사라집니다") == true) { //확인
+		if (confirm("1:1 문의를 정말 취소하시겠습니까? \n 작성된 문의 내용은 모두 사라지며 메인페이지로 넘어갑니다") == true) { //확인
 
 			location.href = '/Dobid/main.do';
 		} else { //취소

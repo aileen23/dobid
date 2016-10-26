@@ -36,7 +36,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function button_event() {
-		if (confirm("1:1 문의를 정말 취소하시겠습니까? \n 작성된 문의 내용은 모두 사라집니다") == true) { //확인
+		if (confirm("1:1 문의를 정말 취소하시겠습니까? \n 작성된 문의 내용은 모두 사라지며 메인페이지로 넘어갑니다") == true) { //확인
 
 			location.href = '/Dobid/main.do';
 		} else { //취소
