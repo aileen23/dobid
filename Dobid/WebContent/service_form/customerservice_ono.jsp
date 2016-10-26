@@ -34,26 +34,37 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#submit").click(function(){
-		if(sf.inputTitle.value == ""){
+		
+		var fileNm = sfo.cma_file.value;		
+		
+		if(sfo.inputTitle.value == ""){
 			alert("타이들을 작성해주세요");
-			sf.categorl.focus();
-			return flase;
-		}else if(sf.categorl.value =="선택해주세요"){
+			sfo.inputTitle.focus();
+			return false;
+		}else if(sfo.categorl.value =="선택해주세요"){
 			alert("분류를 선택헤 주세요");
-			sf.categorl.focus();
-			return flase;
-		}else if(sf.inputTextarea.value == ""){
+			sfo.categorl.focus();
+			return false;
+		}else if(sfo.inputTextarea.value == ""){
 			alert("내용을 입력하세요");
-			sf.inputTextarea.focus();
-			return flase;
-		}else if(!sf.cma_file.value){
+			sfo.inputTextarea.focus();
+			return false;
+		}else if(!sfo.cma_file.value){
 			alert("첨부할 파일이 없습니다");
-		}else if(sf.cma_file.value != ".gif" || sf.cma_file.value != ".jpg" || sf.cma_file.value != ".png"){
-			alert("gif, jpg, png 이미지 파일만 업로드 가능합니다");
-			sf.inputTextarea.focus();
-			return flase;			
+			$("#cma_file").click();
+			return false;	
+		}else if (fileNm != "") {
+			 
+		    var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
+		 
+		    if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
+		        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
+		        $("#cma_file").click();
+		        return false;
+		    }
+		 
 		}else{
-			return ture;
+			return true;
 		}
 	});
 	});
@@ -70,11 +81,11 @@ $(document).ready(function(){
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
- <form name="sf" action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal">
+ <form name="sfo" action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputTitle" name="title" placeholder="신고할 제목을 입력하세요">
+      <input type="text" class="form-control" id="inputTitle" name="title" placeholder="문의할 제목을 입력하세요">
     </div>
   </div>
   <div class="form-group">

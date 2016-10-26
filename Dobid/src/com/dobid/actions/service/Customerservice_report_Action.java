@@ -44,13 +44,11 @@ public class Customerservice_report_Action extends Action{
 														service_date);
 		
 			ServiceDAO dao = new ServiceDAO();
-			dao.ServiceReport(dto);	
+			boolean flag = dao.ServiceReport(dto);	
 				
-			if (dao.ServiceReport(dto)) {
-				request.getSession().setAttribute("servicereport", "success");
+			if (flag == false) {
 				return mapping.findForward("success");
 			} else {
-				request.getSession().setAttribute("servicereport", "fail");
 				return mapping.findForward("fail");
 											
 			}

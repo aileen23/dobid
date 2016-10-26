@@ -35,17 +35,38 @@
    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <script type="text/javascript">
-
-	$(document).ready(function(){
-		$('#submit').click(function(){
-			if(request.getSession().setAttribute("servicereport", "success")){
-				alert("aaaaaaaaaaa");
-			}else{
-				alert("bbbbbbbbbbbbbbbbbbbb");
-			}
-		});
+$(document).ready(function(){
+	$("#submit").click(function(){
+		
+		var fileNm = sfr.cma_file.value;		
+		
+		if(sfr.inputTitle.value == ""){
+			alert("타이들을 작성해주세요");
+			sfr.inputTitle.focus();
+			return false;
+		}else if(sfr.inputTextarea.value == ""){
+			alert("내용을 입력하세요");
+			sfr.inputTextarea.focus();
+			return false;
+		}else if(!sfr.cma_file.value){
+			alert("첨부할 파일이 없습니다");
+			$("#cma_file").click();
+			return false;	
+		}else if (fileNm != "") {
+			 
+		    var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
+		 
+		    if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
+		        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
+		        $("#cma_file").click();
+		        return false;
+		    }
+		 
+		}else{
+			return true;
+		}
 	});
-
+	});
 </script>
 
 </head>
@@ -59,7 +80,7 @@
 <a href="service_report.do"><button class="button button5 btn-default active">신고하기</button></a>
 </p>
 <hr>
-<form class="form-horizontal" action="service_report_write.do" method="post" enctype="multipart/form-data">
+<form name="sfr" class="form-horizontal" action="service_report_write.do" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
@@ -91,7 +112,7 @@
     </div>
 </div>
 
-<button type="submit" class="button button5 btn-default col-sm-offset-5">확인</button>
+<button type="submit" class="button button5 btn-default col-sm-offset-5" id="submit">확인</button>
 <button type="reset" class="button button5 btn-default">취소</button>
 
 </form>

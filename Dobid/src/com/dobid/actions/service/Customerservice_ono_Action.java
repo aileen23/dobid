@@ -51,7 +51,7 @@ public class Customerservice_ono_Action extends Action{
 			
 			
 			
-			if (!flag) {
+			if (flag == false) {
 				return mapping.findForward("fail");
 			} else {
 				return mapping.findForward("success");
