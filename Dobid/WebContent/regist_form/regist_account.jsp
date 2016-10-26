@@ -137,35 +137,7 @@
 			$("#popup").hide();
 		});//팝업창 띄우기
 		
-		$("#send").click(function() {
 
-			var url = "checkid.do";
-			var params = "id=" + $("#id").val();
-
-			$.ajax({
-				type : "POST",
-				url : url,
-				data : params,
-				success : function(args) {
-					/* $("#result").html(args); */
-					if (args != 1) {
-						alert("이미 사용중인 아이디입니다.");
-					} else if ($("#id").val().length < 6 || $("#id").val().length > 20) {
-						alert("6 - 20 자리의 아이디를 입력해주세요.");
-					}else if ($("#id").val().replace(" ", "").length != $("#id").val().length) {
-						alert("아이디에 공백을 사용할수 없습니다.")
-					}
-					else {
-						alert("사용 가능한 아이디입니다.");
-						$("#id").attr("readonly", true);
-						$("#checkid").fadeOut(500);
-					}
-				},
-				error : function(e) {
-					alert(e.responseText);
-				}
-			});//이메일 발송 버튼 클릭시
-		
 	});//ready
 </script>
 
@@ -319,7 +291,7 @@
 					<input type="email" class="form-control"
 						placeholder="이메일 입력" id="receiver" >
 				</div>
-				<button type="button" class="btn btn-default" id="certification_send"
+				<button type="button" class="btn btn-default" id="send"
 					style="margin-right: 5%">발송</button>
 			</div>
 			<div class="form-group">
@@ -328,13 +300,15 @@
 					<input type="email" class="form-control"
 						placeholder="인증번호 입력" id="certification">
 				</div>
-				<button type="button" class="btn btn-default" id="certification_check"
+				<button type="button" class="btn btn-default" id="check_buffer"
 					style="margin-right: 5%">확인</button>
 			</div>
 			<br>
 			
 			<button type="button" class="btn btn-default" id="close"
 					style="margin-left: 45%">닫기</button>
+					
+			<input type="text" hidden="" id="buffer">
 			</form>
 
 
