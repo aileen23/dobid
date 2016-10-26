@@ -46,19 +46,18 @@ public class Customerservice_ono_Action extends Action{
 												service_date);
 			
 			ServiceDAO dao = new ServiceDAO();
-			dao.ServiceOno(dto);
-			System.out.println(dao.ServiceOno(dto));
+			boolean flag = dao.ServiceOno(dto);
 			
 			
 			
-			if (dao.ServiceOno(dto)) {
-				request.getSession().setAttribute("serviceono", "success");
-				return mapping.findForward("success");
-			} else {
-				request.getSession().setAttribute("serviceono", "fail");
+			
+			if (!flag) {
 				return mapping.findForward("fail");
+			} else {
+				return mapping.findForward("success");
 											
 			}
+			
 		
 	}
 

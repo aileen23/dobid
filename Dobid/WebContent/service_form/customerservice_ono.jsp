@@ -10,7 +10,7 @@
     									"location.replace('/Dobid/login.do');"+
     								"</script>");
     }
-    
+    	
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,17 +32,31 @@
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
-	$(document).ready(function(){
-		$('#submit').click(function(){
-			if(request.getSession().setAttribute("serviceono", "success")){
-				alert("aaaaaaaaaaa");
-			}else{
-				alert("bbbbbbbbbbbbbbbbbbbb");
-			}
-		});
+$(document).ready(function(){
+	$("#submit").click(function(){
+		if(sf.inputTitle.value == ""){
+			alert("타이들을 작성해주세요");
+			sf.categorl.focus();
+			return flase;
+		}else if(sf.categorl.value =="선택해주세요"){
+			alert("분류를 선택헤 주세요");
+			sf.categorl.focus();
+			return flase;
+		}else if(sf.inputTextarea.value == ""){
+			alert("내용을 입력하세요");
+			sf.inputTextarea.focus();
+			return flase;
+		}else if(!sf.cma_file.value){
+			alert("첨부할 파일이 없습니다");
+		}else if(sf.cma_file.value != ".gif" || sf.cma_file.value != ".jpg" || sf.cma_file.value != ".png"){
+			alert("gif, jpg, png 이미지 파일만 업로드 가능합니다");
+			sf.inputTextarea.focus();
+			return flase;			
+		}else{
+			return ture;
+		}
 	});
-
+	});
 </script>
  
 </head>
@@ -56,7 +70,7 @@
 <a href="service_report.do"><button class="button button5 btn-default">신고하기</button></a>
 </p>
 <hr>
- <form action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal">
+ <form name="sf" action="service_ono_write.do" method="post" enctype="multipart/form-data" class="form-horizontal">
   <div class="form-group">
     <label for="inputTitle" class="col-sm-3 control-label">제목</label>
     <div class="col-sm-5">
@@ -66,13 +80,13 @@
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">작성자</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="inputWriter" placeholder=${logincheck } name="member_id" readonly="readonly">
+      <input type="text" class="form-control" id="inputWriter" value=${logincheck } name="member_id" readonly="readonly">
     </div>
   </div>
   <div class="form-group">
     <label for="inputWriter" class="col-sm-3 control-label">분류</label>
     <div class="col-sm-5">
-      <select class="form-control" name="categori">
+      <select class="form-control" name="categori" id="categorl">
       	<option>선택해주세요</option>
       	<option>구매관련</option>
       	<option>판매관련</option>
@@ -96,7 +110,7 @@
         <label  for="cma_file"class="text-center">첨부파일</label>
         <input type="file" name="image_path" id="cma_file" accept="image/*" capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))"/>
         <br><br>
-        <div align="center" style="text-decoration: underline">* 최대 300MB 용량까지 업로드 가능</div><br>
+        <div align="center" style="text-decoration: underline">* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다</div><br>
         <div id="cma_image" style="width:100%;max-width:100%;display:none;"></div><br>
         
     </div>
