@@ -115,10 +115,10 @@
 			<form class="form-horizontal" action="/Dobid/admin_board.do" method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
-						<input type="text" class="form-control"
+						<input type="text" class="form-control" name="admin_board_view_title"
 							id="admin_board_view_title" style="margin-top: 20px;"
-							 disabled
-							name="admin_board_view_title">
+							 disabled>
+							
 					</div>
 				</div>
 				<div class="form-group">
@@ -145,13 +145,16 @@
 							disabled></textarea>
 					</div>
 				</div>
-
-	
-
+		
+			
 			<div class="col-sm-offset-3 col-sm-5">
 				<button class="button button5 btn-default">삭제</button>
+				<input type="hidden" id="admin_board_view_title" name="admin_board_view_title">
 				<input type="hidden" name="del" value="del">
 				
+			
+			
+			</div>
 			</form>
 
 				<button class="button button5 btn-default" id="close">취소</button>

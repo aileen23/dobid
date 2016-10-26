@@ -30,12 +30,13 @@ public class Admin_board_Action extends Action {
 		String catalogue = request.getParameter("catalogue");
 		String del = request.getParameter("del");
 		String admin_board_view_titles = request.getParameter("admin_board_view_title");
-		
+		String admin_board_view_userid = request.getParameter("admin_board_view_userid");
 		
 		System.out.println("admin_boardselecttext : "+request.getParameter("admin_boardselecttext"));
 		System.out.println("catalogue : "+request.getParameter("catalogue"));
 		System.out.println("del : "+request.getParameter("del"));
 		System.out.println("admin_board_view_title : "+request.getParameter("admin_board_view_title"));
+		System.out.println("admin_board_view_userid : "+request.getParameter("admin_board_view_userid"));
 		
 		
 		
