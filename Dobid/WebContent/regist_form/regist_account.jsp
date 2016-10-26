@@ -128,6 +128,15 @@
 			
 		});//유효성 검사
 		
+		
+		$("#popup").hide();
+		$("#email_check").click(function(){
+		$("#popup").show();
+		});
+		$("#close").click(function(){
+			$("#popup").hide();
+		});
+		
 	});//ready
 </script>
 
@@ -196,6 +205,8 @@
 					<input type="email" class="form-control" name="email"
 						placeholder="E-mail" id="email">
 				</div>
+				<button type="button" class="btn btn-default" id="email_check"
+					style="margin-right: 5%">Check</button>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">NickName</label>
@@ -257,6 +268,52 @@
 			<br> <br> <br>
 		</form>
 	</div>
+	
+	
+	<div id="popup" class="overlay" style="  z-index: 25;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;">
+    <div style="background-color: white; width: 40%; height: 30%; margin-left: 30%; margin-top: 17%; border: 1px solid black;">
+
+			<br>
+			<center><font size="4" color="black">이메일 인증</font></center>
+			<br>
+			<form class="form-horizontal"  method="post">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">E-mail</label>
+				<div class="col-sm-5">
+					<input type="email" class="form-control"
+						placeholder="이메일 입력" id="certification_email" >
+				</div>
+				<button type="button" class="btn btn-default" id="certification_send"
+					style="margin-right: 5%">발송</button>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">인증번호</label>
+				<div class="col-sm-5">
+					<input type="email" class="form-control"
+						placeholder="인증번호 입력" id="certification">
+				</div>
+				<button type="button" class="btn btn-default" id="certification_check"
+					style="margin-right: 5%">확인</button>
+			</div>
+			<br>
+			
+			<button type="button" class="btn btn-default" id="close"
+					style="margin-left: 45%">닫기</button>
+			</form>
+
+
+		</div>
+	</div>
+	
+	
+	
 	<div class="container">
 
 		<hr>
