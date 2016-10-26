@@ -84,6 +84,28 @@
 			});
 
 		});//checknickname버튼 클릭시
+		
+		$("#send").click(function() {
+
+			var url = "sendMail.do";
+			var params = "receiver=" + $("#receiver").val();
+
+			$.ajax({
+				type : "POST",
+				url : url,
+				data : params,
+				success : function(args) {
+					/* $("#result").html(args); */
+					<%-- --%>
+					console.log(args);
+					$("#buffer").val(args);
+				},
+				error : function(e) {
+					alert(e.responseText);
+				}
+			});
+
+		});//send 버튼 클릭시
 
 		$(":password").keyup(function() {
 			if ($("#password").val() == $("#checkpassword").val() && $("#password").val().length > 5 && $("#password").val().length < 21 && $("#password").val().replace(" ","").length == $("#password").val().length) {
@@ -129,7 +151,8 @@
 		});//유효성 검사
 		
 		
-		$("#popup").hide();
+		$("#popup").hide();//팝업창 숨기기
+		
 		$("#email_check").click(function(){
 		$("#popup").show();
 		});
@@ -137,6 +160,19 @@
 			$("#popup").hide();
 		});//팝업창 띄우기
 		
+		
+		$("#check_buffer").click(function () {
+			if ($("#buffer").val() == $("#certification").val()) {
+				$("#popup").hide();
+				$("#email").val($("#receiver").val());
+				$("#email").attr("readonly", true);
+				$("#email_check").fadeOut(500);
+				alert("이메일 인증에 성공하셨습니다.");
+			}else {
+				alert("인증번호가 일치하지 않습니다.");
+			}
+			
+		});//이메일 인증번호 확인버튼 클릭시
 
 	});//ready
 </script>
