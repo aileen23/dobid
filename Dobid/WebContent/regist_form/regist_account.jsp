@@ -282,7 +282,7 @@ function DaumPostcode() {
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
            // document.getElementById('sample2_postcode').value = data.zonecode; //5자리 새우편번호 사용
-            document.getElementById('inputAddress').value = fullAddr;
+            document.getElementById('address').value = fullAddr;
             //document.getElementById('sample2_addressEnglish').value = data.addressEnglish;
 
             // iframe을 넣은 element를 안보이게 한다.
