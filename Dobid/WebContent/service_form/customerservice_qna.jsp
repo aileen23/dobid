@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>고객센터 - 자주하는 질문</title>
-<!-- customerservice_qna.jsp -->
+<%-- customerservice_qna.jsp --%>
 
 <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -16,7 +16,7 @@
 
 </script>
 
-<!-- *.do 에 대한 CSS, 파일 경로 -->
+<%-- *.do 에 대한 CSS, 파일 경로 --%>
 <link rel="stylesheet" type="text/css" href="service_form/css/service.css">
 <script src="service_form/js/customerservice_qna.js"></script>
 

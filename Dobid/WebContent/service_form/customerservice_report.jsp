@@ -20,17 +20,17 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-<!-- *.do 에 대한 CSS, JS 파일 경로 -->
+<%-- *.do 에 대한 CSS, JS 파일 경로 --%>
 <script src="service_form/js/customerservice_report.js"></script>
-<!-- 유효성 검사 -->
+<%-- 유효성 검사 --%>
 <script src="service_form/js/customerservice_report_upload.js"></script>
-<!-- 첨부파일 업로드 -->
+<%-- 첨부파일 업로드 --%>
 <link rel="stylesheet" type="text/css"
 	href="service_form/css/service.css">
 
-<!-- <!-- JSP파일에 대한 CSS, JS 파일 경로 
+<%-- JSP파일에 대한 CSS, JS 파일 경로 
 <script src="js/customerservice_ono.js"></script>
-<link rel="stylesheet" type="text/css" href="css/service.css"> -->
+<link rel="stylesheet" type="text/css" href="css/service.css"> --%>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
