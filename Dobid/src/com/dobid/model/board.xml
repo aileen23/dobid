@@ -75,15 +75,15 @@
 
 		<!-- 관리자 게시판 전체조회(공지사항) -->
 	<select id="adminnoticelist" resultClass="adminnoticeDTO">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path 
-	from noticeboard a, member m where a.member_id=m.member_id
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
+	from noticeboard a, member m where a.member_id=m.member_id order by a.upload_date desc
 
 	</select>
 	
 	<!-- 관리자 게시판 전체조회(자유게시판) -->
 	<select id="adminfreelist" resultClass="adminfreeDTO" >
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path 
-	from freeboard a, member m where a.member_id=m.member_id
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
+	from freeboard a, member m where a.member_id=m.member_id order by a.upload_date desc
 	</select>
 	
 	<!-- 관리자 제목으로 상세보기 팝업(공지) -->
@@ -101,14 +101,14 @@
 	
 	<!-- 검색 관리자 게시판(공지) 글제목으로만 -->
 	<select id="adminnoticetitle" resultClass="adminnoticeDTO" parameterClass="String">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path 
-	from noticeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
+	from noticeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id order by a.upload_date desc
 	</select>
 	
 	<!-- 검색 관리자 게시판(자유) 글제목으로만 -->
 	<select id="adminfreetitle" resultClass="adminfreeDTO" parameterClass="String">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path 
-	from freeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id
+	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
+	from freeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id order by a.upload_date desc
 	</select>
 	
 </sqlMap>

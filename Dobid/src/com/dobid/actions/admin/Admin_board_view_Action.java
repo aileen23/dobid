@@ -21,17 +21,18 @@ public class Admin_board_view_Action extends Action {
 		
 		request.setCharacterEncoding("UTF-8");
 		String member_id= request.getParameter("member_id");
-		
-		
+		System.out.println(member_id);
+		Admin_noticeDTO noticeobject=null;
+		Admin_freeDTO freeobject =null;
 		if (member_id.equals("admin")) {
 			
-			Admin_noticeDTO noticeobject = new Admin_noticeDTO();
+			noticeobject = new Admin_noticeDTO();
 			boardDAO dao = new boardDAO();
 			noticeobject = dao.adminNoticeSelect(member_id);
 			request.setAttribute("adminviewobject", noticeobject);
 
 		} else if (member_id!=null){
-			Admin_freeDTO freeobject = new Admin_freeDTO();
+			freeobject = new Admin_freeDTO();
 			boardDAO dao = new boardDAO();
 			freeobject = dao.adminFreeSelect(member_id);
 			request.setAttribute("adminviewobject", freeobject);
