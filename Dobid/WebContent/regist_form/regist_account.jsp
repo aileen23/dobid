@@ -34,11 +34,13 @@
 				data : params,
 				success : function(args) {
 					/* $("#result").html(args); */
-					if (args == 1 && $("#id").val().length >= 6) {
-						alert("사용할수 있는 아이디입니다.");
+					if (args != 1) {
+						alert("이미 사용중인 아이디입니다.");
+					} else if ($("#id").val().length < 6 || $("#id").val().length > 20) {
+						alert("6 - 20 자리의 아이디를 입력해주세요.");
+					}else {
+						alert("사용 가능한 아이디입니다.");
 						$("#id").attr("readonly", true);
-					} else {
-						alert("사용할수 없는 아이디입니다.");
 					}
 				},
 				error : function(e) {
@@ -59,11 +61,13 @@
 				data : params,
 				success : function(args) {
 					/* $("#result").html(args); */
-					if (args == 1 && $("#nickname").val().length >= 6) {
-						alert("사용할수 있는 닉네임입니다.");
+					if (args != 1) {
+						alert("이미 사용중인 닉네임입니다.");
+					} else if ($("#nickname").val().length < 2 || $("#nickname").val().length > 10) {
+						alert("2 - 10 자리의 닉네임을 입력해주세요.");
+					}else {
+						alert("사용 가능한 닉네임 입니다.");
 						$("#nickname").attr("readonly", true);
-					} else {
-						alert("사용할수 없는 닉네임입니다.");
 					}
 				},
 				error : function(e) {
@@ -72,7 +76,6 @@
 			});
 
 		});//checknickname버튼 클릭시
-
 
 	});//ready
 </script>
@@ -153,27 +156,27 @@
 			</div>
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
-				<div class="col-sm-4">
+				<div class="col-sm-8">
 					<input type="text" class="form-control" name="address"
-						style="height: 100px;" placeholder="Address" id="address"
+						 placeholder="Address" id="address"
 						onclick="DaumPostcode()">
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Introduction</label>
-				<div class="col-sm-4">
+				<div class="col-sm-8">
 					<input type="text" class="form-control" name="introduction"
-						style="height: 100px;" placeholder="Introduction"
+						 placeholder="Introduction"
 						id="introduction">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">Birthday</label>
+				<label  class="col-sm-2 control-label" style="margin-right: 1.7%">Birthday</label>
 				<div class="input-group date form_date col-sm-4" data-date=""
 					data-date-format="yyyymmdd" data-link-field="dtp_input2"
 					data-link-format="yyyy-mm-dd">
-					<input class="form-control" size="16" type="text" name="birthday"
+					<input class="form-control" size="16" type="text" name="birthday" id="birthday"
 						value="" readonly> <span class="input-group-addon"><span
 						class="glyphicon glyphicon-remove"></span></span> <span
 						class="input-group-addon"><span
