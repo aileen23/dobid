@@ -31,23 +31,22 @@
 		<hr>
 
 		<div class="form-group">
-
-			<button class="button button5 btn-default">검색</button>
-			<div class="col-sm-5">
-				<input type="text" class="form-control" id="admin_select"
-					placeholder="검색어입력">
-
-			</div>
-			<div class="col-sm-5">
-				<select style="width: 30%" class="form-control">
+			<div class="col-sm-2 col-sm-offset-1">
+				<select class="form-control">
 					<option>경매</option>
 					<option>핫경매</option>
 					<option>공동구매</option>
 				</select>
 			</div>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" id="admin_select" placeholder="검색어입력">
+
+			</div>
+			<button class="button button5 btn-default">검색</button>
+			
 		</div>
 
-		<table class="table table-bordered">
+		<table class="table table-bordered" style="margin-top: 50px">
 
 			<tr>
 				<th>글번호</th>

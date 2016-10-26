@@ -61,23 +61,23 @@
 
 		<div class="form-group">
 			<form action="/Dobid/admin_board.do" method="POST">
-				<button class="button button5 btn-default" id="admin_boardselect"
-					name="admin_boardselect">검색</button>
-				<div class="col-sm-5">
-					<input type="text" class="form-control"
-						name="admin_boardselecttext" placeholder="검색어입력">
-
-				</div>
-				<div class="col-sm-5">
-					<select style="width: 30%" class="form-control" name="catalogue">
+				<div class="col-sm-2 col-sm-offset-1">
+					<select class="form-control" name="catalogue">
 						<option value="notice">공지사항</option>
 						<option value="free">자유게시판</option>
 					</select>
 				</div>
+				<div class="col-sm-7">
+					<input type="text" class="form-control"
+						name="admin_boardselecttext" placeholder="검색어입력">
+
+				</div>
+				<button class="button button5 btn-default" id="admin_boardselect"
+					name="admin_boardselect">검색</button>
 			</form>
 		</div>
 
-		<table class="table table-bordered">
+		<table class="table table-bordered" style="margin-top: 50px">
 
 			<tr>
 				<th>글번호</th>
