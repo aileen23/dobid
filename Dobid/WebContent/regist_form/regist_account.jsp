@@ -108,12 +108,12 @@
 				alert("전화번호를 확인해주세요.");
 				return false;
 			}else if ($("#email").val().length < 1 || ($("#email").val().length > 30)){
-				alert("전화번호를 확인해주세요.");
+				alert("이메일을 확인해주세요.");
 				return false;
 			}else if ($("#nickname").attr("readonly") != "readonly") {
 				alert("닉네임 중복체크를 해주세요.");
 				return false;
-			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100)) {
+			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100) || $("#address").val().replace(" ","").length != $("#address").val().length) {
 				alert("전화번호를 확인해주세요.");
 				return false;
 			}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
