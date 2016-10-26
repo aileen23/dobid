@@ -114,7 +114,7 @@
     <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
       <div class="panel-body">
 			아이디와 비밀번호는 아래의 경로를 통해 찾을 수 있습니다.<br>
-			*홈페이지 > 아이디/비밀번호 찾기 <a>바로가기</a><br>
+			*홈페이지 > 아이디/비밀번호 찾기 <a href="findid.do">바로가기</a><br>
 			아이디 찾기 : 회원가입 시 등록하셨던 정보를 통해 아이디를 찾으실 수 있습니다.<br>
 			비밀번호 찾기 : 회원가입 시 등록하셨던 이메일로 발송된 새로운 비밀번호 입력하시여 로그인 후에 비밀번호를 재설정해주시기 바랍니다.
 			
@@ -213,7 +213,7 @@
     <div id="collapse11th" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11th">
       <div class="panel-body">
 			문의는 1대1 문의를 통해 가능하며 아래의 경로를 통해 문의 하실 수 있습니다.<br>
- 			*홈페이지> 고객센터 > 1대1 문의 <a href="service_ono.do">바로가기</a>
+ 			*홈페이지> 고객센터 > 1:1 문의 <a href="service_ono.do">바로가기</a>
       </div>
     </div>
   </div>
@@ -236,7 +236,7 @@
     <div class="panel-heading" role="tab" id="heading13th">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse13th" aria-expanded="false" aria-controls="collapse13th">
-			<b>[기타] - 타인 명의 계좌로 인증 되지 않아요.</b>
+			<b>[기타] 타인 명의 계좌로 인증 되지 않아요.</b>
         </a>
       </h4>
     </div>
@@ -246,6 +246,24 @@
       </div>
     </div>
   </div>
+  
+  <div class="panel panel-default" id="ect">
+    <div class="panel-heading" role="tab" id="heading14th">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse14th" aria-expanded="false" aria-controls="collapse14th">
+			<b>※ 찾으시는 질문이 없나요?</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapse14th" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13th">
+      <div class="panel-body">
+			찾으시는 질문이 자주 하는 질문에 없으신가요?<br>
+			아래의 경로로 1:1 문의를 주시면 친절하게 답변 해드리겠습니다<br>
+ 			*홈페이지> 고객센터 > 1대1 문의 <a href="service_ono.do">바로가기</a>
+      </div>
+    </div>
+  </div>
+  
 </div>
 </form>
 <!-- Footer -->
