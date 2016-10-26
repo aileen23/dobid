@@ -28,11 +28,11 @@ public class Board_list_Action extends Action {
 
 		List<NoticeboardDTO> noticelist = null;
 
-		noticelist = dao.NoticeSelectAll();
+		noticelist = dao.noticeSelectAll();
 		request.setAttribute("noticelist", noticelist);
 
 		List<FreeboardDTO> freelist = null;
-		freelist = dao.FreeSelectAll();
+		freelist = dao.freeSelectAll();
 		request.setAttribute("freelist", freelist);
 
 		
@@ -44,12 +44,12 @@ public class Board_list_Action extends Action {
 		
 		if (notselect!=null) {
 			List<NoticeboardDTO> noticeselectlist = null;
-			noticeselectlist=dao.NoticeSelectTitle(notselect);
+			noticeselectlist=dao.noticeSelectTitle(notselect);
 			request.setAttribute("noticelist", noticeselectlist);
 	
 		} else if (freeselect!=null) {
 			List<FreeboardDTO> freeselectlist = null;
-			freeselectlist=dao.FreeSelectAllTitle(freeselect);
+			freeselectlist=dao.freeSelectAllTitle(freeselect);
 			request.setAttribute("freelist", freeselectlist);
 			
 			

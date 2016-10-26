@@ -27,16 +27,16 @@ public class Board_content_view_Action extends Action {
 			
 			NoticeboardDTO noticeobject = new NoticeboardDTO();
 			boardDAO dao = new boardDAO();
-			noticeobject = dao.NoticeSelect(num);
-			dao.NoticeSelectCnt(num);
+			noticeobject = dao.noticeSelect(num);
+			dao.noticeSelectCnt(num);
 			request.setAttribute("viewobject", noticeobject);
 
 		} else if (id.equals("2")) {
 
 			FreeboardDTO freeobject = new FreeboardDTO();
 			boardDAO dao = new boardDAO();
-			freeobject = dao.FreeSelect(num);
-			dao.FreeSelectCnt(num);
+			freeobject = dao.freeSelect(num);
+			dao.freeSelectCnt(num);
 			request.setAttribute("viewobject", freeobject);
 		}
 
