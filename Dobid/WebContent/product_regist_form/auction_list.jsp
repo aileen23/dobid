@@ -16,8 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="/Dobid/product_regist_form/css/shop-homepage.css" rel="stylesheet">
 <script src="js/jquery-3.0.0.js"></script>
 <script>
 $(document).ready(function(){
@@ -92,7 +91,7 @@ $(document).ready(function(){
 				<button type='submit' class='sch_smit'>검색</button>
 			</div>
 			
-			<div class="top_title">경매 중인 물품</div><a href="group_list.do" class="btn btn-default" style="margin-left:92%;">경매등록</a>
+			<div class="top_title">경매 중인 물품</div><a href="regist.do" class="btn btn-default" style="margin-left:92%;">경매등록</a>
 				<div id="box">
 <% List<Auction_listDTO> list = (List<Auction_listDTO>)request.getAttribute("list");
 for(int i = 0; i <list.size(); i++ ){ %>

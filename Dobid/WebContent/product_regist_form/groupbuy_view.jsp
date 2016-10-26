@@ -33,11 +33,11 @@ if(session.getAttribute("logincheck") == null){
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/auction_view.css" rel="stylesheet">
+<link href="/Dobid/product_regist_form/css/auction_view.css" rel="stylesheet">
 <title>공대구매뷰</title>
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
-<script src="js/jquery-3.0.0.js"></script>
+<script src="/Dobid/product_regist_form/js/jquery-3.0.0.js"></script>
 <script>
 $(document).ready(function(){
 	$("#buyBtn").click(function(){
@@ -56,11 +56,11 @@ $(document).ready(function(){
   				<div class="fires_box">
   					<div id="slider">
 						<figure>
-							<img src="마계촌.png" alt="">
-							<img src="마계촌.png" alt="">
-							<img src="마계촌.png" alt="">
-							<img src="마계촌.png" alt="">
-							<img src="마계촌.png" alt="">
+							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
+							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
+							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
+							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
+							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
 						</figure>
 					</div>
 				</div>

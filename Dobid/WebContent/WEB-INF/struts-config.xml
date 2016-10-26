@@ -68,29 +68,29 @@
 		<action path="/Welcome" forward="/pages/Welcome.jsp" />
 
 		<!-- product_regist 관련 액션. -->
-		<action path="/product_regist_form/regist" forward="/product_regist_form/auction_regist.jsp"></action>
-		<action path="/product_regist_form/auction_regist" type="com.dobid.product_regist.action.Product_regist"
+		<action path="/regist" forward="/product_regist_form/auction_regist.jsp"></action>
+		<action path="/auction_regist" type="com.dobid.product_regist.action.Product_regist"
 			name="regist_actionForm">
-			<forward path="/product_regist_form/list.do" name="success"
+			<forward path="/list.do" name="success"
 				redirect="true"></forward>
 			<forward path="/product_regist/regist.do" name="fail"></forward>
 		</action>
-		<action path="/product_regist_form/list" type="com.dobid.product_regist.action.Auction_list"
+		<action path="/list" type="com.dobid.product_regist.action.Auction_list"
 			name="listForm">
 			<forward name="suecc" path="/product_regist_form/auction_list.jsp"></forward>
 		</action>
-		<action path="/product_regist_form/search_more" forward="/product_regist_form/search_more.jsp"></action>
-		<action path="/product_regist_form/search" forward="/product_regist_form/search.jsp"></action>
-		<action path="/product_regist_form/group_list" forward="/product_regist_form/groupbuy_list.jsp"></action>
-		<action path="/product_regist_form/group_search" forward="/product_regist_form/group_search.jsp"></action>
-		<action path="/product_regist_form/group_search_more" forward="/product_regist_form/group_search_more.jsp"></action>
-		<action path="/product_regist_form/auction_view" forward="/product_regist_form/auction_view.jsp"></action>
-		<action path="/product_regist_form/groupbuy_view" forward="/product_regist_form/groupbuy_view.jsp"></action>
-		<action path="/product_regist_form/groupbuy_regist" type="com.dobid.product_regist.action.Groupbuy_regist">
-			<forward name="sueccess" path="/product_regist_form/group_list.do"></forward>
+		<action path="/search_more" forward="/product_regist_form/search_more.jsp"></action>
+		<action path="/search" forward="/product_regist_form/search.jsp"></action>
+		<action path="/group_list" forward="/product_regist_form/groupbuy_list.jsp"></action>
+		<action path="/group_search" forward="/product_regist_form/group_search.jsp"></action>
+		<action path="/group_search_more" forward="/product_regist_form/group_search_more.jsp"></action>
+		<action path="/auction_view" forward="/product_regist_form/auction_view.jsp"></action>
+		<action path="/groupbuy_view" forward="/product_regist_form/groupbuy_view.jsp"></action>
+		<action path="/groupbuy_regist" type="com.dobid.product_regist.action.Groupbuy_regist">
+			<forward name="sueccess" path="/group_list.do"></forward>
 		</action>
-		<action path="/product_regist_form/auction_buy" type="com.dobid.product_regist.action.Auction_buy">
-			<forward name="sueccess" path="/product_regist_form/list.do"></forward>
+		<action path="/auction_buy" type="com.dobid.product_regist.action.Auction_buy">
+			<forward name="sueccess" path="/list.do"></forward>
 		</action>
 
 		<!-- main, login, register account, find -->
@@ -129,23 +129,27 @@
 		</action>
 		<!-- customservice -->
 		<!-- customservice_qna -->
-		<action path="/service_qna" forward="/service_form/customerservice_qna.jsp">
+		<action path="/service_qna" forward="/service_form/customerservice_qna.jsp" />
 
-		</action>
-
+		
 		<!-- customservice_ono -->
-		<action path="/service_ono" forward="/service_form/customerservice_ono.jsp"></action>
+		<action path="/service_ono" forward="/service_form/customerservice_ono.jsp" />
 		<action path="/service_ono_write"
 			type="com.dobid.actions.service.Customerservice_ono_Action">
-			<forward name="success" path="/main.do"></forward>
+			<forward name="success" path="/main.do"/>
+			<forward name="fail" path="/service_ono.do"/>
 		</action>
 
 		<!-- customservice_report -->
-		<action path="/service_report" forward="/service_form/customerservice_report.jsp"></action>
+		<action path="/service_report" forward="/service_form/customerservice_report.jsp" />
 		<action path="/service_report_write"
 			type="com.dobid.actions.service.Customerservice_report_Action">
-			<forward name="success" path="/service_report.do"></forward>
+			<forward name="success" path="/main.do"/>
+			<forward name="fail" path="/service_report.do"/>
 		</action>
+		
+		
+		<!-- 게시판(박종민) -->
 
 		<!-- board_list -->
 		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
@@ -168,9 +172,14 @@
 			type="com.dobid.actions.board.Board_freedom_write_Action">
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
+		
+		<!-- 관리자 (박종민) -->
 
-
-
+		<!-- admin_board.jsp -->
+		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
+			<forward name="success" path="/admin_form/admin_board.jsp"></forward>
+		</action>
+	
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 

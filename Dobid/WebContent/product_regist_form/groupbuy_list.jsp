@@ -14,9 +14,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/shop-homepage.css" rel="stylesheet">
-<script src="js/jquery-3.0.0.js"></script>
+<link href="/Dobid/product_regist_form/css/shop-homepage.css" rel="stylesheet">
+<script src="/Dobid/product_regist_form/js/jquery-3.0.0.js"></script>
 <script>
 $(document).ready(function(){
 

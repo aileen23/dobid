@@ -15,9 +15,9 @@ if(session.getAttribute("logincheck") == null){
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/auction_regist.css" rel="stylesheet" type="text/css">
-<script src="js/jquery-3.0.0.js"></script>
-<script src="js/auction_regist.js"></script>
+<link href="/Dobid/product_regist_form/css/auction_regist.css" rel="stylesheet" type="text/css">
+<script src="/Dobid/product_regist_form/js/jquery-3.0.0.js"></script>
+<script src="/Dobid/product_regist_form/js/auction_regist.js"></script>
 <title>경매등록</title>
 <script type="text/javascript">
 </script>
