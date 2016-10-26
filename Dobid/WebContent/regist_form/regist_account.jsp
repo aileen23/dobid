@@ -114,7 +114,7 @@
 				alert("닉네임 중복체크를 해주세요.");
 				return false;
 			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100) || $("#address").val().replace(" ","").length != $("#address").val().length) {
-				alert("전화번호를 확인해주세요.");
+				alert("주소를 확인해주세요.");
 				return false;
 			}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
 				alert("자기소개를 확인해주세요.");
