@@ -186,6 +186,12 @@
 		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
 			<forward name="success" path="/admin_form/admin_board.jsp"></forward>
 		</action>
+		
+		<!-- 관리자 게시판 상세보기 -->
+		<action path="/admin_board_view" type="com.dobid.actions.admin.Admin_board_view_Action">
+		<forward name="success" path="/admin_form_admin_board.jsp"></forward>
+		</action>
+		
 	
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 

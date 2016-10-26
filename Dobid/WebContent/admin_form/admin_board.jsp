@@ -17,8 +17,8 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#popup").hide();
-	$(".href").click(function(){
+	
+	$("#popupon").click(function(){
 		$("#popup").show();
 	});
 	$("#close").click(function(){
@@ -69,16 +69,21 @@ $(document).ready(function(){
 				<th>이메일</th>	
 				<th>내용</th>
 				<th>등록일자</th>
+				<th>상세보기</th>
+	
 			</tr>
 		<c:forEach items="${adminboardlist }" var="adminboardlist">
 			<tr>
 				<td>${ adminboardlist.basic_board_num}</td>
-				<td><a href="admin_board.do?num=${adminboardlist.member_id }">${ adminboardlist.member_id}</a></td>
+				<td>${ adminboardlist.member_id}</td>
 				<td>${ adminboardlist.name}</td>
 				<td>${ adminboardlist.nickname}</td>
 				<td>${ adminboardlist.email}</td>
 				<td>${ adminboardlist.contents}</td>
 				<td>${ adminboardlist.upload_date}</td>
+				<td><button id="popupon">상세보기<input type="hidden" value="${ adminboardlist.member_id}"></button></td>
+				
+				
 			</tr>
 </c:forEach>
 
