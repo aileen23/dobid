@@ -19,7 +19,7 @@ public class boardDAO {
 		smc = SqlMapConfig.getSqlMapInstance();
 	}
 	
-	public List<NoticeboardDTO> NoticeSelectAll(){ //borad_list 공지사항 전체목록
+	public List<NoticeboardDTO> noticeSelectAll(){ //borad_list 공지사항 전체목록
 		List<NoticeboardDTO> list=null;
 		try {
 			list = smc.queryForList("board.NoticeSelectAll");
@@ -30,7 +30,7 @@ public class boardDAO {
 		return list;
 	}
 	
-	public List<FreeboardDTO> FreeSelectAll(){ //borad_list 자유게시판 전체목록
+	public List<FreeboardDTO> freeSelectAll(){ //borad_list 자유게시판 전체목록
 		List<FreeboardDTO> list=null;
 		try {
 			list = smc.queryForList("board.FreeSelectAll");
@@ -42,7 +42,7 @@ public class boardDAO {
 	}
 	
 	
-	public boolean FreeBoardWrite(FreeboardDTO freeboard) { //board_freedom_write 자유게시판 글쓰기
+	public boolean freeBoardWrite(FreeboardDTO freeboard) { //board_freedom_write 자유게시판 글쓰기
 
 		try {
 			smc.insert("board.FreeBoardWrite", freeboard);
@@ -56,7 +56,7 @@ public class boardDAO {
 	}
 	
 	
-	public NoticeboardDTO NoticeSelect(String num){ //board_content_view 공지사항 상세보기
+	public NoticeboardDTO noticeSelect(String num){ //board_content_view 공지사항 상세보기
 		NoticeboardDTO noticeboardDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
@@ -69,7 +69,7 @@ public class boardDAO {
 			
 		
 	}
-	public FreeboardDTO FreeSelect(String num){ //board_content_view 자유게시판 상세보기
+	public FreeboardDTO freeSelect(String num){ //board_content_view 자유게시판 상세보기
 		FreeboardDTO freeboardDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
@@ -82,7 +82,7 @@ public class boardDAO {
 	}
 		
 	
-	public boolean NoticeSelectCnt(String num){//조회수 증가
+	public boolean noticeSelectCnt(String num){//조회수 증가
 		
 		try {
 			int bagic_num = Integer.parseInt(num);
@@ -95,7 +95,7 @@ public class boardDAO {
 		return false;
 		
 	}
-	public boolean FreeSelectCnt(String num){//조회수증가
+	public boolean freeSelectCnt(String num){//조회수증가
 		
 		try {
 			int bagic_num = Integer.parseInt(num);
@@ -110,7 +110,7 @@ public class boardDAO {
 	}
 	
 	
-	public List<NoticeboardDTO> NoticeSelectTitle(String title){ //공지사항리스트 검색
+	public List<NoticeboardDTO> noticeSelectTitle(String title){ //공지사항리스트 검색
 		List<NoticeboardDTO> list=null;
 		try {
 			list = smc.queryForList("board.NoticeSelectTitle",title);
@@ -121,7 +121,7 @@ public class boardDAO {
 		return list;
 	}
 	
-	public List<FreeboardDTO> FreeSelectAllTitle(String title){ //공지사항 리스트 검색
+	public List<FreeboardDTO> freeSelectAllTitle(String title){ //공지사항 리스트 검색
 		List<FreeboardDTO> list=null;
 
 		try {

@@ -37,7 +37,7 @@ public class Board_freedom_write_Action extends Action{
 	    		request.getParameter("free_file"),0,board_date);
 		
 		boardDAO dao = new boardDAO();
-		dao.FreeBoardWrite(dto);
+		dao.freeBoardWrite(dto);
 		
 		return mapping.findForward("success");
 	}
