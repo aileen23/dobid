@@ -28,6 +28,12 @@
 	 	update member set member_id=#member_id#, name=#name#, pass=#pass#, phone=#phone#, email=#email#, address=#address#,
 		nickname=#nickname#, introduction=#introduction#, birthday=#birthday#
 	</update>
+	
+	<select id="basketSelect" parameterClass="String" resultClass="auctionDTO">
+		select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
+		from auction,basket 
+		where auction.auction_board_num=basket.board_num and basket.member_id=#member_id#
+	</select>
 </sqlMap>
 
 

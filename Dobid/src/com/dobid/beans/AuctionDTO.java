@@ -18,6 +18,7 @@ public class AuctionDTO {
 	private String highest_price_id;
 	private String hot_check;
 
+
 	public AuctionDTO() {
 	}
 
@@ -118,6 +119,18 @@ public class AuctionDTO {
 		this.highest_price = highest_price;
 	}
 
+	public AuctionDTO(int auction_board_num, String title,
+			 String main_image_path,  String end_date,
+			 int highest_price, String hot_check) {
+		super();
+		this.auction_board_num = auction_board_num;
+		this.title = title;
+		this.main_image_path = main_image_path;
+		this.end_date = end_date;
+		this.highest_price = highest_price;
+		this.hot_check = hot_check;
+	}
+	
 	public int getAuction_board_num() {
 		return auction_board_num;
 	}

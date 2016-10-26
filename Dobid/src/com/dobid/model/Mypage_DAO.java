@@ -1,7 +1,9 @@
 package com.dobid.model;
 
 import java.sql.SQLException;
+import java.util.List;
 
+import com.dobid.beans.AuctionDTO;
 import com.dobid.beans.MemberDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -40,5 +42,17 @@ public class Mypage_DAO {
 		
 		return null;
 	}
-
+	
+	public List<AuctionDTO> basketSelect(String id){
+		List<AuctionDTO> list = null;
+		try {
+			list=smc.queryForList("myprofile.basketSelect",id);
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
 }
