@@ -28,15 +28,13 @@
 	<br>
 	<br>
 		<div class="titleText" style="margin-left: 20px">
-		<font size="80" color="black">My Page</font><br>
+		<font size="80" color="black">정보수정</font><br>
 		</div>
 
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
 	<div class="container-fluid">
-	<br>
-		<br>	<br>
 	<form class="form-horizontal" style="margin-left: 25%" role="form">
 		<div class="form-group" >
 			<label for="inputId" class="col-sm-2 control-label">ID</label>
