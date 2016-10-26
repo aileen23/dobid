@@ -74,7 +74,7 @@ public class Admin_board_Action extends Action {
 					dao.adminFreeBoardDel(admin_board_view_num);
 				}
 				
-				
+
 			}
 
 
