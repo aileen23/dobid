@@ -17,6 +17,7 @@
 	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
 	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
+	<typeAlias alias="myauctionDTO" type="com.dobid.beans.Auction_myAuctionDTO"/>
 
 	<select id="select" parameterClass="String" resultClass="memberDTO">
 		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
@@ -33,6 +34,12 @@
 		select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
 		from auction,basket 
 		where auction.auction_board_num=basket.board_num and basket.member_id=#member_id#
+	</select>
+	
+	<select id="auctionSelect" parameterClass="String" resultClass="myauctionDTO">
+		select auction_board_num,main_image_path,title,end_date,hot_check,dib_price_amount 
+		from auction,auction_participant
+		where auction.auction_board_num=auction_participant.auction_board_num and basket.member_id=#member_id#
 	</select>
 </sqlMap>
 

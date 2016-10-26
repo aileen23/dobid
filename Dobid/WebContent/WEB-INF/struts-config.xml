@@ -131,6 +131,9 @@
 		<action path="/myprofile_basket" type="com.dobid.actions.mypage.Mypage_basket_Action">
 			<forward name="success" path="/mypage_form/myprofile_sales_list.jsp" />
 		</action>		
+		<action path="/myprofile_Auction" type="com.dobid.actions.mypage.Mypage_auction_Action">
+			<forward name="success" path="/mypage_form/myprofile_auction_details.jsp" />
+		</action>		
 		
 		
 		
