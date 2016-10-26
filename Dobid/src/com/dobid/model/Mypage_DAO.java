@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.dobid.beans.AuctionDTO;
+import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.beans.MemberDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -55,8 +56,8 @@ public class Mypage_DAO {
 		return null;
 		
 	}
-	public List<AuctionDTO> auctionSelect(String id){
-		List<AuctionDTO> list = null;
+	public List<Auction_myAuctionDTO> auctionSelect(String id){
+		List<Auction_myAuctionDTO> list = null;
 		try {
 			list=smc.queryForList("myprofile.auctionSelect",id);
 			return list;

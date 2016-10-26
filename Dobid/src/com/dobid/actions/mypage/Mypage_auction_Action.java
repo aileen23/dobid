@@ -5,14 +5,18 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.AuctionDTO;
+import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.model.Mypage_DAO;
 
-public class Mypage_auction_Action extends ActionForward {
+public class Mypage_auction_Action extends Action {
+	
+	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
@@ -20,7 +24,7 @@ public class Mypage_auction_Action extends ActionForward {
 		
 		Mypage_DAO dao = new Mypage_DAO();
 		
-		List<AuctionDTO> list = dao.basketSelect(id);
+		List<Auction_myAuctionDTO> list = dao.auctionSelect(id);
 		
 		request.setAttribute("list", list);
 		
