@@ -86,6 +86,7 @@
 		});//checknickname버튼 클릭시
 		
 		$("#send").click(function() {
+					$("#send").fadeOut(500);
 					alert("이메일이 발송 되었습니다. \n 발송된 이메일을 확인하고 인증 번호를 입력해주십시오~!");
 
 			var url = "sendMail.do";
@@ -97,7 +98,6 @@
 				data : params,
 				success : function(args) {
 					$("#buffer").val(args);
-					$("#send").fadeOut(500);
 				},
 				error : function(e) {
 					alert(e.responseText);
