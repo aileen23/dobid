@@ -26,9 +26,9 @@
 	FindPassDTO dto = new FindPassDTO();
 	Encryption enc = new Encryption("chlvlfgkschlvlfgks");
 	dto.setMember_id(request.getParameter("id"));
-	dto.setEmail(enc.aesEncode(request.getParameter("receiver")));
+	dto.setEmail(request.getParameter("receiver"));
 	dto.setName(request.getParameter("name"));
-	dto.setPass(buffer.toString());
+	dto.setPass(enc.aesEncode(buffer.toString()));
 	
 	if (dao.findpass(dto) != 1) {
 		buffer.delete(0, 7);
