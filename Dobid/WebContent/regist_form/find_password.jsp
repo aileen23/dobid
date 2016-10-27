@@ -15,40 +15,8 @@
 <!-- Custom CSS -->
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
 
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#findpass").click(function() {
-		$.ajax({
-			type : "POST",
-			url : "findpass.do",
-			data : {
-				id:$("#id").val(),
-				name:$("#id").val(),
-				receiver:$("#id").val(),
-			},
-			success : function(args) {
-				/* $("#result").html(args); */
-				if (args == 0) {
-					alert("ID, E-mail, Name을 확인해주세요.");
-				} 
-				else {
-					alert("메일을 발송하였습니다!");
-					$("#id").attr("readonly", true);
-					$("#name").attr("readonly", true);
-					$("#receiver").attr("readonly", true);
-					$("#findpass").fadeOut(500);
-				}
-			},
-			error : function(e) {
-				alert(e.responseText);
-			}
-		});
 
-	});//findpass버튼 클릭시
 
-});//ready
-
-	</script>
 	
 </head>
 
