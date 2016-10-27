@@ -24,13 +24,20 @@
 	<br>
 	<br>
 	<br>
+		<div class="titleText" style="margin-left: 20px">
+		<font size="80" color="black">회원탈퇴</font><br>
+		</div>
 
+	<div class="container-fluid"	style="margin-bottom: 100px">
+		<header><%@include file="mypageHeader.jsp"%></header>
+	</div>
 
 	<center>
-		<font size="8" color="black">정말로<br> 탈퇴하시겠어요? </font>
+		<font size="8" color="black">정말로<br> 탈퇴하시겠어요? </font><br><br>
+		<font size="3" color="red">본 사이트는 회원탈퇴를 하여도 <br>회원님의 작성글과 댓글이 삭제되지않습니다.</font>
 	</center>
 	<br><br><br><br>
-	<form class="form-horizontal" style="margin-left: 33%" role="form">
+	<form class="form-horizontal" style="margin-left: 33%" role="form" action="myprofile_withdrawal.do">
 
 
 		<div class="form-group">
