@@ -13,7 +13,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.Service_onoDTO;
+import com.dobid.beans.Service_answerDTO;
 import com.dobid.model.ServiceDAO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -35,14 +35,14 @@ public class Customerservice_ono_Action extends Action{
 		String service_date = df.format(date);
 		
 
-		
-		Service_onoDTO dto = new Service_onoDTO(
+		System.out.println(mrequest.getParameter("title")+"asdasdasd");
+		Service_answerDTO dto = new Service_answerDTO(
 												mrequest.getParameter("member_id"),
 												mrequest.getParameter("title"),
 												mrequest.getParameter("categori"),
 												mrequest.getParameter("contents"),
 												//mrequest.getParameter("image_path"),
-												savePath+"/"+mrequest.getFilesystemName("image_path"),// 경로와 파일명:  /image/upload/kwbg001.png
+												savePath+"/"+mrequest.getFilesystemName("image_path"),// 寃쎈��� ���쇰�:  /image/upload/kwbg001.png
 												service_date);
 			
 			ServiceDAO dao = new ServiceDAO();

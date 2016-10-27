@@ -2,15 +2,15 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <sqlMap namespace="service">
 	
-	<typeAlias alias="service_answerDTO" type="com.dobid.beans.Service_answerDTO" />
-	<typeAlias alias="service_reportDTO" type="com.dobid.beans.Service_reportDTO" />
+	<typeAlias alias="service_answer" type="com.dobid.beans.Service_answerDTO" />
+	<typeAlias alias="service_report" type="com.dobid.beans.Service_reportDTO" />
 
-	<insert id="serviceOno" parameterClass="service_answerDTO">
-		insert into service_answer values
+	<insert id="serviceOno" parameterClass="service_answer">
+		insert into service_answer(MEMBER_ID,TITLE,CATEGORI,CONTENTS,IMAGE_PATH,UPLOAD_DATE) values
 			(#member_id#, #title#, #categori#, #contents#, #image_path#, to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 	
-	<insert id="serviceReport" parameterClass="service_reportDTO">
+	<insert id="serviceReport" parameterClass="service_report">
 		insert into service_report values
 			(#member_id#, #title#, #contents#, #image_path#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>

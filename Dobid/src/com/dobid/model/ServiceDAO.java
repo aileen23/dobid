@@ -2,7 +2,7 @@ package com.dobid.model;
 
 import java.sql.SQLException;
 
-import com.dobid.beans.Service_onoDTO;
+import com.dobid.beans.Service_answerDTO;
 import com.dobid.beans.Service_reportDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -15,10 +15,10 @@ public class ServiceDAO {
 		smc = SqlMapConfig.getSqlMapInstance();
 	}
 	
-	public boolean ServiceOno(Service_onoDTO serverOno) {
+	public boolean ServiceOno(Service_answerDTO serviceAnswer) {
 
 		try {
-			smc.insert("service.serviceOno", serverOno);
+			smc.insert("service.serviceOno", serviceAnswer);
 			System.out.println("입력성공");
 			return true;
 		} catch (SQLException e) {e.printStackTrace();

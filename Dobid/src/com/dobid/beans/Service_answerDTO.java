@@ -8,15 +8,28 @@ public class Service_answerDTO {
 	private String categori;
 	private String contents;
 	private String image_path;
-	private Date upload_date;
+	private String upload_date;
 	private String answer_contents;
-	private Date answer_date;
+	private String answer_date;
 
 	public Service_answerDTO() {
 	}
 
+	
 	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
-			Date upload_date, String answer_contents, Date answer_date) {
+			String upload_date) {
+		super();
+		this.member_id = member_id;
+		this.title = title;
+		this.categori = categori;
+		this.contents = contents;
+		this.image_path = image_path;
+		this.upload_date = upload_date;
+	}
+
+
+	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
+			String upload_date, String answer_contents, String answer_date) {
 		super();
 		this.member_id = member_id;
 		this.title = title;
@@ -68,11 +81,11 @@ public class Service_answerDTO {
 		this.image_path = image_path;
 	}
 
-	public Date getUpload_date() {
+	public String getUpload_date() {
 		return upload_date;
 	}
 
-	public void setUpload_date(Date upload_date) {
+	public void setUpload_date(String upload_date) {
 		this.upload_date = upload_date;
 	}
 
@@ -84,12 +97,14 @@ public class Service_answerDTO {
 		this.answer_contents = answer_contents;
 	}
 
-	public Date getAnswer_date() {
+	public String getAnswer_date() {
 		return answer_date;
 	}
 
-	public void setAnswer_date(Date answer_date) {
+	public void setAnswer_date(String answer_date) {
 		this.answer_date = answer_date;
 	}
+
+	
 
 }
