@@ -37,7 +37,7 @@
 		<font size="3" color="red">본 사이트는 회원탈퇴를 하여도 <br>회원님의 작성글과 댓글이 삭제되지않습니다.</font>
 	</center>
 	<br><br><br><br>
-	<form class="form-horizontal" style="margin-left: 33%" role="form" action="myprofile_withdrawal.do">
+	<form class="form-horizontal" style="margin-left: 33%" role="form" action="myprofile_withdrawalOK.do">
 
 
 		<div class="form-group">

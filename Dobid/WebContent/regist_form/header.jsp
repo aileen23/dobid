@@ -18,61 +18,6 @@
 			$("#font1").animate({opacity: "0.2"}, 1000);
 			$("#font1").animate({opacity: "1"}, 1000);
 			}
-		/* 
-		$("#Auction").mouseover(function() {
-			$(this).css("background-color", "#FFF");
-			$(this).css("color", "black");
-		});
-		$("#Auction").mouseout(function() {
-			$(this).css("background-color", "black");
-			$(this).css("color", "white");
-		});
-		$("#Auction").click(function() {
-			$("#dropAuction").show();
-		});
-		$("#dropAuction").mouseout(function() {
-			$(this).hide();
-		});
-
-		$("#gongdong").mouseover(function() {
-			$(this).css("background-color", "#FFF");
-			$(this).css("color", "black");
-		});
-		$("#gongdong").mouseout(function() {
-			$(this).css("background-color", "black");
-			$(this).css("color", "white");
-		});
-
-		$("#Service").mouseover(function() {
-			$(this).css("background-color", "white");
-			$(this).css("color", "black");
-		});
-		$("#Service").mouseout(function() {
-			$(this).css("background-color", "black");
-			$(this).css("color", "white");
-		});
-
-		$("#Service").click(function() {
-			$("#dropService").show();
-		});
-		$("#dropService").mouseout(function() {
-			$(this).hide();
-		});
-
-		$("#Board").mouseover(function() {
-			$(this).css("background-color", "white");
-			$(this).css("color", "black");
-		});
-		$("#Board").mouseout(function() {
-			$(this).css("background-color", "black");
-			$(this).css("color", "white");
-		});
-		$("#Board").click(function() {
-			$("#dropBoard").show();
-		});
-		$("#dropBoard").mouseout(function() {
-			$(this).hide();
-		}); */
 	});
 
 </script>
