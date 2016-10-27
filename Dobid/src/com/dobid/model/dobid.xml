@@ -19,6 +19,7 @@
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	<typeAlias alias="loginDTO" type="com.dobid.beans.LoginDTO" />
 	<typeAlias alias="findidDTO" type="com.dobid.beans.Find_idDTO" />
+	<typeAlias alias="findpassDTO" type="com.dobid.beans.FindPassDTO" />
 
 	<insert id="registAccount" parameterClass="memberDTO">
 		insert into member
@@ -43,6 +44,10 @@
 	<select id="check_email" parameterClass="String" resultClass="String">
 		select email from member where email = #email#
 	</select>
+
+	<update id="findpassDTO" parameterClass="findpassDTO">
+	update member set pass=#pass# where member_id = #member_id# and email = #email and name = #name#
+	</update>
 
 </sqlMap>
 

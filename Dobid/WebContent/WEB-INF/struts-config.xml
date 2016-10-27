@@ -121,6 +121,7 @@
 		</action>
 
 		<action path="/findpassword" forward="/regist_form/find_password.jsp"></action>
+		<action path="/findpass" forward="/regist_form/findpass.jsp"></action>
 		
 		<!-- ############Mypage############ -->
 		<action path="/myprofile" type="com.dobid.actions.mypage.Mypage_Action">

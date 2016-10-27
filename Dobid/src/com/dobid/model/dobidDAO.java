@@ -2,6 +2,7 @@ package com.dobid.model;
 
 import java.sql.SQLException;
 
+import com.dobid.beans.FindPassDTO;
 import com.dobid.beans.Find_idDTO;
 import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
@@ -83,10 +84,22 @@ public class dobidDAO {
 
 		return 0;
 	}
-	
+
 	public int checkemail(String email) {
 		try {
 			if (smc.queryForObject("dobid.check_email", email) == null) {
+				return 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	public int findpass(FindPassDTO findpass) {
+		try {
+			if (smc.update("dobid.find_pass", findpass) == 1) {
 				return 1;
 			}
 		} catch (SQLException e) {

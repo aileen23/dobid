@@ -12,6 +12,39 @@
 <!-- Custom CSS -->
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
 
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#findpass").click(function() {
+
+		var url = "findpass.do";
+		var params1 = "receiver=" + $("#receiver").val();
+		var params2 = "id=" + $("#id").val();
+		var params3 = "name=" + $("#name").val();
+
+		$.ajax({
+			type : "POST",
+			url : url,
+			data : params1+"&"+params2+"&"+params3,
+			success : function(args) {
+				/* $("#result").html(args); */
+				if (args != 1) {
+					alert("이름, 이메일, ID을 확인해 주세요.");
+				}
+				else {
+					alert("메일이 발송되었습니다. 메일을 확인해주세요.");
+					$("#id").attr("readonly", true);
+					$("#receiver").attr("readonly", true);
+					$("#name").attr("readonly", true);
+					$("#findpass").fadeOut(500);
+				}
+			},
+			error : function(e) {
+				alert(e.responseText);
+			}
+		});//ajax
+
+	});//ready
+	</script>
 </head>
 
 
@@ -27,19 +60,19 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="ID">
+      <input type="text" class="form-control" id="id" placeholder="ID">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="E-mail">
+      <input type="text" class="form-control" id="receiver" placeholder="E-mail">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Name">
+      <input type="text" class="form-control" id="name" placeholder="Name">
     </div>
   </div>
 
@@ -47,7 +80,7 @@
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
-      <button type="submit" class="btn btn-default" style="margin-right: 10%">Find Password</button> 
+      <button type="button" class="btn btn-default" style="margin-right: 10%" id="findpass">Find Password</button> 
     </div>
   </div>
   

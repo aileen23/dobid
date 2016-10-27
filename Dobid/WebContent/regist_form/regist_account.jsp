@@ -243,7 +243,7 @@
 				<label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
 				<div class="col-sm-4">
 					<input type="email" class="form-control" name="email"
-						placeholder="E-mail" id="email">
+						placeholder="E-mail" id="email" readonly="readonly">
 				</div>
 				<button type="button" class="btn btn-default" id="email_check"
 					style="margin-right: 5%">Check</button>
