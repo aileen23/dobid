@@ -70,10 +70,10 @@
 				</select>
 			</div>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" id="admin_auctionlist_selecttext" placeholder="검색어입력">
+				<input type="text" class="form-control" id="admin_auction_selecttext" placeholder="검색어입력">
 
 			</div>
-			<button class="button button5 btn-default" id="admin_auctionlist_select">검색</button>
+			<button class="button button5 btn-default" id="admin_auction_select">검색</button>
 			</form>
 		</div>
 
@@ -164,7 +164,7 @@
 				<button class="button button5 btn-default">삭제</button>
 			
 				<input type="hidden" name="del" value="del">
-				<input type="hidden" id="admin_auctionlist_view_num" name="admin_auctionlist_view_num">
+				<input type="hidden" id="admin_auctionlist_view_num" name="admin_auction_view_num">
 				<input type="hidden" id="admin_auction_catalogue" name="admin_auction_catalogue">
 				
 			

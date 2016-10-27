@@ -19,6 +19,9 @@
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	 <typeAlias alias="adminnoticeDTO" type="com.dobid.beans.Admin_noticeDTO" />
 	<typeAlias alias="adminfreeDTO" type="com.dobid.beans.Admin_freeDTO" />
+	<typeAlias alias="adminauctionDTO" type="com.dobid.beans.Admin_auctionDTO"/>
+	<typeAlias alias="adminhotauctionDTO" type="com.dobid.beans.Admin_hotAuctionDTO"/>
+	<typeAlias alias="admingroupauctionDTO" type="com.dobid.beans.Admin_groupBuyDTO"/>
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">

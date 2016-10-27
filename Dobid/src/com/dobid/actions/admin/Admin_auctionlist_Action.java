@@ -28,20 +28,20 @@ public class Admin_auctionlist_Action extends Action{
 
 		
 	
-		String admin_auctionlist_selecttext = request.getParameter("admin_auctionlist_selecttext");
+		String admin_auction_selecttext = request.getParameter("admin_auction_selecttext");
 		String catalogue = request.getParameter("catalogue");
 		String del = request.getParameter("del");
-		String admin_auctionlist_view_num = request.getParameter("admin_auctionlist_view_num");
-		String admin_board_view_userid = request.getParameter("admin_board_view_userid");
+		String admin_auction_view_num = request.getParameter("admin_auction_view_num");
+		String admin_auction_view_userid = request.getParameter("admin_auction_view_userid");
 		String admin_auction_catalogue = request.getParameter("admin_auction_catalogue");
 		
 		
 		
-		System.out.println("admin_auctionlist_selecttext : " + request.getParameter("admin_auctionlist_selecttext"));
+		System.out.println("admin_auction_selecttext : " + request.getParameter("admin_auction_selecttext"));
 		System.out.println("catalogue : " + request.getParameter("catalogue"));
 		System.out.println("del : " + request.getParameter("del"));
-		System.out.println("admin_auctionlist_view_num : " + request.getParameter("admin_auctionlist_view_num"));
-		System.out.println("admin_board_view_userid : " + request.getParameter("admin_board_view_userid"));
+		System.out.println("admin_auction_view_num : " + request.getParameter("admin_auction_view_num"));
+		System.out.println("admin_auction_view_userid : " + request.getParameter("admin_auction_view_userid"));
 		System.out.println("admin_auction_catalogue : " + request.getParameter("admin_auction_catalogue"));
 
 		
@@ -49,60 +49,60 @@ public class Admin_auctionlist_Action extends Action{
 		
 		if (del == null) {
 
-			if (admin_auctionlist_selecttext == null && catalogue == null) {
+			if (admin_auction_selecttext == null && catalogue == null) {
 				List<Admin_auctionDTO> adminauction = null;
 				adminauction = dao.adminAuctionSelectAll();
 				request.setAttribute("adminauctionlist", adminauction);
 				
-			} else if (admin_auctionlist_selecttext == null && catalogue.equals("auction")) {
+			} else if (admin_auction_selecttext == null && catalogue.equals("auction")) {
 				List<Admin_auctionDTO> adminauction = null;
 				adminauction = dao.adminAuctionSelectAll();
 				request.setAttribute("adminauctionlist", adminauction);
 
-			} else if (admin_auctionlist_selecttext == null && catalogue.equals("hotauction")) {
+			} else if (admin_auction_selecttext == null && catalogue.equals("hotauction")) {
 
 				List<Admin_hotAuctionDTO> adminhotauction = null;
 				adminhotauction = dao.adminHotAuctionSelectAll();
 				request.setAttribute("adminauctionlist", adminhotauction);
 				
-			}else if (admin_auctionlist_selecttext == null && catalogue.equals("groupauction")) {
+			}else if (admin_auction_selecttext == null && catalogue.equals("groupauction")) {
 
 				List<Admin_groupBuyDTO> admingroupauction = null;
 				admingroupauction = dao.adminGroupAuctionSelectAll();
 				request.setAttribute("adminauctionlist", admingroupauction);
 				
-			} else if (admin_auctionlist_selecttext != null && catalogue.equals("auction")) {
+			} else if (admin_auction_selecttext != null && catalogue.equals("auction")) {
 
 				List<Admin_auctionDTO> adminauctionselectlist = null;
-				adminauctionselectlist = dao.adminAucionSelectTitle(admin_auctionlist_selecttext);
+				adminauctionselectlist = dao.adminAucionSelectTitle(admin_auction_selecttext);
 				request.setAttribute("adminauctionlist", adminauctionselectlist);
 
-			} else if (admin_auctionlist_selecttext != null && catalogue.equals("hotauction")) {
+			} else if (admin_auction_selecttext != null && catalogue.equals("hotauction")) {
 
 				List<Admin_hotAuctionDTO> adminhotauctionselectlist = null;
-				adminhotauctionselectlist = dao.adminHotAucionSelectTitle(admin_auctionlist_selecttext);
+				adminhotauctionselectlist = dao.adminHotAucionSelectTitle(admin_auction_selecttext);
 				request.setAttribute("adminauctionlist", adminhotauctionselectlist);
 
-			}else if (admin_auctionlist_selecttext != null && catalogue.equals("groupauction")) {
+			}else if (admin_auction_selecttext != null && catalogue.equals("groupauction")) {
 
 				List<Admin_groupBuyDTO> admingroupauctionselectlist = null;
-				admingroupauctionselectlist = dao.adminGroupAucionSelectTitle(admin_auctionlist_selecttext);
+				admingroupauctionselectlist = dao.adminGroupAucionSelectTitle(admin_auction_selecttext);
 				request.setAttribute("adminauctionlist", admingroupauctionselectlist);
 
 			}
 		} else {
 			if (admin_auction_catalogue.equals("groupauction")) {
 				
-				boolean delflag=dao.adminGroupActionDel(admin_auctionlist_view_num);
+				boolean delflag=dao.adminGroupActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 				
 			} else if(admin_auction_catalogue.equals("auction")){
 				
-				boolean delflag=dao.adminActionDel(admin_auctionlist_view_num);
+				boolean delflag=dao.adminActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 				
 			}else if(admin_auction_catalogue.equals("hotauction")){
-				boolean delflag=dao.adminHotActionDel(admin_auctionlist_view_num);
+				boolean delflag=dao.adminHotActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 			}
 		}
