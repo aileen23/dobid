@@ -56,13 +56,13 @@ public class Admin_board_Action extends Action {
 			} else if (admin_boardselecttext != null && catalogue.equals("notice")) {
 
 				List<Admin_noticeDTO> adminnoticeselectlist = null;
-				adminnoticeselectlist = dao.adminNoticetitle(admin_boardselecttext);
+				adminnoticeselectlist = dao.adminNoticeSelectTitle(admin_boardselecttext);
 				request.setAttribute("adminboardlist", adminnoticeselectlist);
 
 			} else if (admin_boardselecttext != null && catalogue.equals("free")) {
 
 				List<Admin_freeDTO> adminfreeselectlist = null;
-				adminfreeselectlist = dao.adminFreetitle(admin_boardselecttext);
+				adminfreeselectlist = dao.adminFreeSelectTitle(admin_boardselecttext);
 				request.setAttribute("adminboardlist", adminfreeselectlist);
 
 			}

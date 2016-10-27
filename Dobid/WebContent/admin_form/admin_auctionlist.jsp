@@ -34,6 +34,7 @@
 			$("#admin_auction_view_ing").val($(this).children().eq(5).text());
 			$("#admin_auction_view_userid").val($(this).children().eq(3).text());
 			$("#admin_auction_view_img").val($(this).children().eq(6).text());
+			$("#admin_auction_catalogue").val($(this).children().eq(4).text());
 			$("#admin_auction_view_content").val($(this).children().eq(2).text());
 			
 			
@@ -164,6 +165,7 @@
 			
 				<input type="hidden" name="del" value="del">
 				<input type="hidden" id="admin_auctionlist_view_num" name="admin_auctionlist_view_num">
+				<input type="hidden" id="admin_auction_catalogue" name="admin_auction_catalogue">
 				
 			
 			
