@@ -1,7 +1,7 @@
 //ajax.js
 
 var xhr=null;
-
+ 
 function setXMLHttpRequest(){
   if(window.ActiveXObject){	//브라우저에서 ActiveXObject객체를 지원한다면 (~IE10)
 	try{

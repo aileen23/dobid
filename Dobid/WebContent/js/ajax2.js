@@ -1,4 +1,4 @@
-//ajax2.js
+//js폴더: ajax2.js
 
 var ajax = {};
 ajax.xhr = {}; // ajax.xhr패키지정의
