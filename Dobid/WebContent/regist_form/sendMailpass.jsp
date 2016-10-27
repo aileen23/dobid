@@ -29,6 +29,7 @@
 	dto.setPass(buffer.toString());
 	
 	if (dao.findpass(dto) != 1) {
+		buffer.delete(0, 7);
 		buffer.append(0);
 	} else {
 
