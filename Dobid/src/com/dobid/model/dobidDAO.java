@@ -7,7 +7,6 @@ import com.dobid.beans.Find_idDTO;
 import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
-import com.sun.org.apache.regexp.internal.recompile;
 
 import iba.SqlMapConfig;
 
@@ -97,7 +96,7 @@ public class dobidDAO {
 		return 0;
 	}
 
-	public int findpass(FindPassDTO findpass) {
+	/*public int findpass(FindPassDTO findpass) {
 		try {
 			if (smc.update("dobid.find_pass", findpass) == 1) {
 				return 1;
@@ -107,6 +106,6 @@ public class dobidDAO {
 		}
 
 		return 0;
-	}
+	}*/
 
 }
