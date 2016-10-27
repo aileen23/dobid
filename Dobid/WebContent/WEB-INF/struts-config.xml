@@ -149,7 +149,7 @@
 			<forward name="success" path="/mypage_form/myprofile_sales_list.jsp" />
 		</action>		
 		<action path="/myprofile_withdrawal" type="com.dobid.actions.mypage.Mypage_withdrawal_Action">
-			<forward name="success" path="main.do" />
+			<forward name="success" path="/main.do" />
 		</action>		
 		
 		
