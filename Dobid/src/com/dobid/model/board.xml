@@ -15,7 +15,6 @@
 	<typeAlias alias="memberDTO" type="com.dobid.beans.MemberDTO" />
 	<typeAlias alias="messageDTO" type="com.dobid.beans.MessageDTO" />
 	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
-	<typeAlias alias="service_answerDTO" type="com.dobid.Service_answerDTO" />
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	 <typeAlias alias="adminnoticeDTO" type="com.dobid.beans.Admin_noticeDTO" />
 	<typeAlias alias="adminfreeDTO" type="com.dobid.beans.Admin_freeDTO" />
