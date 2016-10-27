@@ -5,13 +5,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<script type="text/javascript"
+	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript"
+	src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
 <!-- Bootstrap Core CSS -->
 <link href="./regist_form/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
+<script type="text/javascript">
 
+$(function(){
+    $("#findpass").click(function(){
+  	 $.ajax({
+  		 url:'sendmailpass.do',
+  	     data: {
+  	    	id:$("#id").val(),
+  	    	receiver:$("#receiver").val(),
+  	    	name:$("#name").val()
+  	           },
+  	     type:'POST',
+  	     success:function(result){
+  	    	 if (result == 0) {
+				alert("ID, E-mail, Name을 확인해주세요.");
+			}else {
+				$("#id").attr("readonly", true);
+				$("#receiver").attr("readonly", true);
+				$("#name").attr("readonly", true);
+				$("#findpass").fadeOut(500);
+				alert("이메일로 임시 비밀번호를 발송하였습니다.");
+			}
+  	     }
+  	 });
+    });//버튼클릭	
+  });//complete load
+</script>
+
+
+
+	
 </head>
 
 
@@ -27,19 +60,19 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="ID">
+      <input type="text" class="form-control" id="id" placeholder="ID">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">E-mail</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="E-mail">
+      <input type="text" class="form-control" id="receiver" placeholder="E-mail">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="Name">
+      <input type="text" class="form-control" id="name" placeholder="Name">
     </div>
   </div>
 
@@ -47,7 +80,7 @@
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
-      <button type="submit" class="btn btn-default" style="margin-right: 10%">Find Password</button> 
+      <button type="button" class="btn btn-default" style="margin-right: 10%" id="findpass">Find Password</button> 
     </div>
   </div>
   

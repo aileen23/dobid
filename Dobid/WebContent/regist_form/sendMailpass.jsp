@@ -1,3 +1,4 @@
+<%@page import="com.dobid.beans.FindPassDTO"%>
 <%@page import="com.dobid.model.dobidDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -11,26 +12,33 @@
 <%@ page import="javax.mail.Authenticator"%>
 <%@ page import="java.util.Properties"%>
 <%@page import="com.dobid.actions.regist.SMTPAuthenticator"%>
-
 <%
 	request.setCharacterEncoding("UTF-8");
 
 	StringBuffer buffer = new StringBuffer();
+	for (int i = 0; i <= 6; i++) {
+		int n = (int) (Math.random() * 10);
+		buffer.append(n);
+	}
 
 	dobidDAO dao = new dobidDAO();
-	if (dao.checkemail(request.getParameter("receiver")) != 1) {
+	FindPassDTO dto = new FindPassDTO();
+	dto.setMember_id(request.getParameter("id"));
+	dto.setEmail(request.getParameter("receiver"));
+	dto.setName(request.getParameter("name"));
+	dto.setPass(buffer.toString());
+	
+	if (dao.findpass(dto) != 1) {
+		buffer.delete(0, 7);
 		buffer.append(0);
 	} else {
 
-		for (int i = 0; i <= 6; i++) {
-			int n = (int) (Math.random() * 10);
-			buffer.append(n);
-		}
+		
 
 		String sender = "scv852456@gmail.com"; // 보내는 메일주소 구글로 입력
 		String receiver = request.getParameter("receiver");
-		String subject = "Dobid 회원가입 인증번호입니다. ";
-		String content = "인증번호는 [" + buffer.toString() + "] 입니다. ";
+		String subject = "Dobid 임시 비밀번호 입니다. ";
+		String content = "임시 비밀번호는 [" + buffer.toString() + "] 입니다. ";
 
 		// 정보를 담기 위한 객체
 		Properties p = new Properties();

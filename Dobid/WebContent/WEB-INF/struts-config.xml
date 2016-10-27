@@ -199,7 +199,6 @@
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
 		
-<!-- 관리자공지/자유게시판 (박종민) -->
 
 		<!-- admin_board.jsp -->
 		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
@@ -213,8 +212,6 @@
 		<action path="/admin_auctionlist" type="com.dobid.actions.admin.Admin_auctionlist_Action">
 			<forward name="success" path="/admin_form/admin_auctionlist.jsp"></forward>
 		</action>
-		
-			
 	
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
