@@ -13,9 +13,10 @@
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
 
 
+
 </head>
 
-<body>
+<body id="body">
 	<header><%@include file="header.jsp"%></header>
 	<!-- 헤더 -->
 	<br>

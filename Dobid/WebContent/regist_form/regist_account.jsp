@@ -112,7 +112,10 @@
 		$(":password").keyup(function() {
 			if ($("#password").val() == $("#checkpassword").val() && $("#password").val().length > 5 && $("#password").val().length < 21 && $("#password").val().replace(" ","").length == $("#password").val().length) {
 				$("#passcheck").html("<font color = 'blue'>o</font>");
-			}else {
+			}else if ($("#password").val().length == 0 || $("#checkpassword").val().length == 0) {
+				$("#passcheck").html("");
+			}
+			else {
 				$("#passcheck").html("<font color = 'red'>x</font>");
 			}
 			
@@ -153,13 +156,13 @@
 		});//유효성 검사
 		
 		
-		$("#popup").hide();//팝업창 숨기기
+		$("#popup").fadeOut(500);//팝업창 숨기기
 		
 		$("#email_check").click(function(){
-		$("#popup").show();
+		$("#popup").fadeIn(700);
 		});
 		$("#close").click(function(){
-			$("#popup").hide();
+			$("#popup").fadeOut(500);
 		});//팝업창 띄우기
 		
 		
