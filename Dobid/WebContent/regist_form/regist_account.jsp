@@ -87,8 +87,6 @@
 		
 		$("#send").click(function() {
 					$("#send").fadeOut(500);
-					alert("이메일이 발송 되었습니다. \n 발송된 이메일을 확인하고 인증 번호를 입력해주십시오~!");
-
 			var url = "sendMail.do";
 			var params = "receiver=" + $("#receiver").val();
 
@@ -97,7 +95,13 @@
 				url : url,
 				data : params,
 				success : function(args) {
+					if (args == 0) {
+						alert("이미 회원가입된 이메일 입니다.");
+						$("#send").fadeIn(500);
+					}else {
+					alert("이메일이 발송 되었습니다. \n 발송된 이메일을 확인하고 인증 번호를 입력해주십시오~!");
 					$("#buffer").val(args);
+					}
 				},
 				error : function(e) {
 					alert(e.responseText);

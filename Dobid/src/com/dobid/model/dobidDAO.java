@@ -83,5 +83,17 @@ public class dobidDAO {
 
 		return 0;
 	}
+	
+	public int checkemail(String email) {
+		try {
+			if (smc.queryForObject("dobid.check_email", email) == null) {
+				return 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
 
 }

@@ -40,6 +40,9 @@
 	<select id="check_nickname" parameterClass="String" resultClass="String">
 		select nickname from member where nickname = #nickname#
 	</select>
+	<select id="check_email" parameterClass="String" resultClass="String">
+		select email from member where email = #email#
+	</select>
 
 </sqlMap>
 
