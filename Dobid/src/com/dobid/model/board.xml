@@ -73,8 +73,7 @@
 <!--  -->
 <!--  -->
 <!--  -->
-<!--위로는 완벽  -->
-
+<!-- 관리자 공지사항/자유게시판 (전체리스트/팝업/검색/삭제) -->
 
 		<!-- 관리자 게시판 전체조회(공지사항) -->
 	<select id="adminnoticelist" resultClass="adminnoticeDTO">
@@ -124,6 +123,117 @@
 	delete from freeboard where basic_board_num=#basic_board_num#
 	</delete>
 	
+	
+	
+	
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- 관리자 경매게시판(일반,핫,공동) (전체리스트/팝업/검색/삭제) -->
+
+
+
+	<!-- 관리자 경매게시물 전체조회(일반경매) -->
+	<select id="adminauctionlist" resultClass="adminauctionDTO">
+	select auctionboard_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date
+	from auction
+	where bid_check="경매"
+	order by regost_date desc
+	</select>
+
+	<!-- 관리자 경매게시물 전체조회(핫경매) -->
+	<select id="adminhotauctionlist" resultClass="adminhotauctionDTO">
+	select auctionboard_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date
+	from auction
+	where bid_check="핫경매"
+	order by regost_date desc
+	</select>
+
+	<!-- 관리자 경매게시물 전체조회(공동구매) -->
+	<select id="admingroupauctionlist" resultClass="admingroupauctionDTO">
+	select groupbuy_board_num,title,contents,'admin',categori,'group',main_image_path,regist_date
+	from groupbuy
+	order by regost_date desc
+	</select>
+	
+	
+	<!-- 관리자 경매게시물 상세보기 팝업(일반경매) -->
+	<select id="adminauctionselect" resultClass="adminauctionDTO" parameterClass="int">
+	select auctionboard_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date
+	from auction
+	where bid_check="경매" and auctionboard_num=#auctionboard_num#
+	order by regost_date desc
+	</select>
+	
+	<!-- 관리자 경매게시물 상세보기 팝업(핫경매) -->
+	<select id="adminhotauctionselect" resultClass="adminhotauctionDTO" parameterClass="int">
+	select auctionboard_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date
+	from auction
+	where bid_check="핫경매" and auctionboard_num=#auctionboard_num#
+	order by regost_date desc
+	</select>
+	
+	<!-- 관리자 경매게시물 상세보기 팝업(그룹) -->
+	<select id="admingroupauctionselect" resultClass="admingroupauctionDTO" parameterClass="int">
+	select groupbuy_board_num,title,contents,'admin',categori,'group',main_image_path,regist_date
+	from groupbuy 
+	where groupbuy_board_num=#groupbuy_board_num#
+	order by regost_date desc
+	</select>
+
+	<!-- 검색 관리자 게시판(일반경매) 글제목으로만 -->
+	<select id="adminauctionselecttitle" resultClass="adminauctionDTO" parameterClass="String">
+	
+	select auctionboard_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date
+	from auction
+	where bid_check="경매" and title like '%'||#title#||'%'
+	order by regost_date desc
+	</select>
+
+
+	<!-- 검색 관리자 게시판(핫경매) 글제목으로만 -->
+	<select id="adminhotauctionselecttitle" resultClass="adminhotauctionDTO" parameterClass="String">
+	
+	select auctionboard_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date
+	from auction
+	where bid_check="핫경매" and title like '%'||#title#||'%'
+	order by regost_date desc
+	</select>
+
+	<!-- 검색 관리자 게시판(그룹구매) 글제목으로만 -->
+	<select id="admingroupauctionselecttitle" resultClass="admingroupauctionDTO" parameterClass="String">
+	
+	select groupbuy_board_num,title,contents,'admin',categori,'group',main_image_path,regist_date
+	from groupbuy 
+	where title like '%'||#title#||'%'
+	order by regost_date desc
+	</select>
+
+
+	<!-- 관리자 일반 삭제 -->
+	<delete id="adminauctiondel" parameterClass="int">
+	delete from auction where auctionboard_num=#auctionboard_num# and bid_check='경매'
+	</delete>
+
+	<!-- 관리자 핫경매 삭제 -->
+	<delete id="adminhotauctiondel" parameterClass="int">
+	delete from auction where auctionboard_num=#auctionboard_num# and bid_check='핫경매'
+	</delete>
+
+
+	<!-- 관리자 그룹경매 삭제 -->
+	<delete id="admingroupauctiondel" parameterClass="int">
+	delete from groupbuy where auctionboard_num=#auctionboard_num#
+	</delete>
+
+
+
+
+
+
+
+
 </sqlMap>
 	
 

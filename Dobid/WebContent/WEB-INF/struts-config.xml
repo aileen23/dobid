@@ -199,11 +199,19 @@
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
 		
-		<!-- 관리자 (박종민) -->
+		<!-- 관리자공지/자유게시판 (박종민) -->
 
 		<!-- admin_board.jsp -->
 		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
 			<forward name="success" path="/admin_form/admin_board.jsp"></forward>
+		</action>
+		
+		
+		<!-- 관리자 일반/핫/공동구매 게시글 (박종민) -->
+
+		<!-- admin_board.jsp -->
+		<action path="/admin_auctionlist" type="com.dobid.actions.admin.Admin_auctionlist_Action">
+			<forward name="success" path="/admin_form/admin_auctionlist.jsp"></forward>
 		</action>
 		
 		
