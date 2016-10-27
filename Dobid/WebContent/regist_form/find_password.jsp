@@ -5,7 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<script type="text/javascript"
+	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript"
+	src="/Dobid/mypage_form/js/bootstrap.min.js"></script>
 <!-- Bootstrap Core CSS -->
 <link href="./regist_form/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,36 +18,38 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#findpass").click(function() {
-
-		var url = "findpass.do";
-		var params1 = "receiver=" + $("#receiver").val();
-		var params2 = "id=" + $("#id").val();
-		var params3 = "name=" + $("#name").val();
-
 		$.ajax({
 			type : "POST",
-			url : url,
-			data : params1+"&"+params2+"&"+params3,
+			url : "findpass.do",
+			data : {
+				id:$("#id").val(),
+				name:$("#id").val(),
+				receiver:$("#id").val(),
+			},
 			success : function(args) {
 				/* $("#result").html(args); */
-				if (args != 1) {
-					alert("이름, 이메일, ID을 확인해 주세요.");
-				}
+				if (args == 0) {
+					alert("ID, E-mail, Name을 확인해주세요.");
+				} 
 				else {
-					alert("메일이 발송되었습니다. 메일을 확인해주세요.");
+					alert("메일을 발송하였습니다!");
 					$("#id").attr("readonly", true);
-					$("#receiver").attr("readonly", true);
 					$("#name").attr("readonly", true);
+					$("#receiver").attr("readonly", true);
 					$("#findpass").fadeOut(500);
 				}
 			},
 			error : function(e) {
 				alert(e.responseText);
 			}
-		});//ajax
+		});
 
-	});//ready
+	});//findpass버튼 클릭시
+
+});//ready
+
 	</script>
+	
 </head>
 
 
