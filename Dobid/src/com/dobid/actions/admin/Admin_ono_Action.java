@@ -33,18 +33,22 @@ public class Admin_ono_Action extends Action {
 		String admin_ono_view_answer_contents = request.getParameter("admin_ono_view_answer_contents");
 		String admin_ono_view_upload_date = request.getParameter("admin_ono_view_upload_date");
 
-		String admin_board_view_userid = request.getParameter("admin_board_view_userid");
-
 		System.out.println("admin_ono_selecttext : " + request.getParameter("admin_ono_selecttext"));
 		System.out.println("catalogue : " + request.getParameter("catalogue"));
 		System.out.println("del : " + request.getParameter("del"));
+		System.out.println("send : " + request.getParameter("send"));
 		System.out
 				.println("admin_ono_view_answer_contents : " + request.getParameter("admin_ono_view_answer_contents"));
 		System.out.println("admin_ono_view_upload_date : " + request.getParameter("admin_ono_view_upload_date"));
 
-		if (del == null) {
+		if (del == null && send == null) {
+			if (admin_ono_selecttext == null && catalogue == null) {
+				catalogue = "구매관련";
+				List<Service_answerDTO> adminonolist = null;
+				adminonolist = dao.adminOnoSelectAll(catalogue);
+				request.setAttribute("adminonolist", adminonolist);
 
-			if (admin_ono_selecttext == null && catalogue != null) {
+			} else if (admin_ono_selecttext.equals("") && catalogue != null) {
 				List<Service_answerDTO> adminonolist = null;
 				adminonolist = dao.adminOnoSelectAll(catalogue);
 				request.setAttribute("adminonolist", adminonolist);
@@ -54,6 +58,7 @@ public class Admin_ono_Action extends Action {
 				Service_answerDTO onoparam = new Service_answerDTO(admin_ono_selecttext, catalogue);
 
 				admionoselectlist = dao.adminOnoSelectTitle(onoparam);
+
 				request.setAttribute("adminonolist", admionoselectlist);
 
 			}
@@ -62,25 +67,12 @@ public class Admin_ono_Action extends Action {
 
 			boolean delflag = dao.adminOnoDel(admin_ono_view_upload_date);
 			request.setAttribute("delflag", delflag);
-
-		} else if (send != null) {
-			boolean upflag=dao.adminOnoSend(admin_ono_view_answer_contents);
-			request.setAttribute("upflag", upflag);
 			
+		} else if (send != null) {
+			boolean upflag = dao.adminOnoSend(admin_ono_view_answer_contents);
+			request.setAttribute("upflag", upflag);
 		}
 
 		return mapping.findForward("success");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

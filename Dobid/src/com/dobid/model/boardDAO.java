@@ -1,7 +1,6 @@
 package com.dobid.model;
 
 import java.sql.SQLException;
-
 import java.util.List;
 
 import com.dobid.beans.Admin_auctionDTO;
@@ -12,6 +11,7 @@ import com.dobid.beans.Admin_noticeDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.NoticeboardDTO;
 import com.dobid.beans.Service_answerDTO;
+import com.dobid.beans.Service_reportDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
@@ -404,13 +404,13 @@ public class boardDAO {
 
 	/////////////////////////////////////////// 관리자 ono
 
-	public List<Service_answerDTO> adminOnoSelectAll(String catalogue) {
+	public List<Service_answerDTO> adminOnoSelectAll(String categori) {
 
 		List<Service_answerDTO> list = null;
 
 		try {
 
-			list = smc.queryForList("board.adminonolist", catalogue);
+			list = smc.queryForList("board.adminonolist", categori);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -447,11 +447,11 @@ public class boardDAO {
 		return false;
 	}
 	
-	public boolean adminOnoSend(String answer_contents) {
+	public boolean adminOnoSend(String answer_cotents) {
 		
 		try {
 			
-			smc.update("board.adminonosend", answer_contents);
+			smc.update("board.adminonosend", answer_cotents);
 			return true;
 		} catch (NumberFormatException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -459,5 +459,50 @@ public class boardDAO {
 		}
 		return false;
 	}
+	
+	/////////////////////////////////////////////////////////관리자 신고하기
+	
+	
+	public List<Service_reportDTO> adminReportSelectAll() {
+		
+		List<Service_reportDTO> list = null;
+		
+		try {
+			
+			list = smc.queryForList("board.adminreportall");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+		
+	}
+	
+	public List<Service_reportDTO> adminReportSelect(String title) {
 
+		List<Service_reportDTO> list = null;
+
+		try {
+
+			list = smc.queryForList("board.adminreportselect", title);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+
+	}
+
+	public boolean adminReportDel(String upload_date) {
+
+		try {
+
+			smc.delete("board.adminreportdel", upload_date);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
