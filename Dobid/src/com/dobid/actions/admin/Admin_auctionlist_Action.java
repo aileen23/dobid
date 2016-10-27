@@ -2,6 +2,7 @@ package com.dobid.actions.admin;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,10 +12,10 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Admin_auctionDTO;
-import com.dobid.beans.Admin_freeDTO;
+
 import com.dobid.beans.Admin_groupBuyDTO;
 import com.dobid.beans.Admin_hotAuctionDTO;
-import com.dobid.beans.Admin_noticeDTO;
+
 import com.dobid.model.boardDAO;
 
 public class Admin_auctionlist_Action extends Action{
