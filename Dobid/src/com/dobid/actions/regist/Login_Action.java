@@ -10,6 +10,7 @@ import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.LoginDTO;
 import com.dobid.beans.MemberDTO;
+import com.dobid.model.Encryption;
 import com.dobid.model.dobidDAO;
 
 public class Login_Action extends Action {
@@ -23,14 +24,12 @@ public class Login_Action extends Action {
 		 * dto.setMember_id(request.getParameter("id"));
 		 * dto.setPass(request.getParameter("pass"));
 		 */
-		System.out.println(request.getParameter("id"));
-		System.out.println(request.getParameter("pass"));
 		LoginDTO dto = new LoginDTO();
+		Encryption enc = new Encryption("chlvlfgkschlvlfgks");
 		dto.setmember_id(request.getParameter("id"));
-		dto.setPass(request.getParameter("pass"));
+		dto.setPass(enc.aesEncode(request.getParameter("pass")));
 
 		dobidDAO dao = new dobidDAO();
-		System.out.println(dao.login(dto));
 		if (dao.login(dto) == null || dao.login(dto).equals("")) {
 			request.getSession().setAttribute("logincheck", "");
 			return mapping.findForward("fail");

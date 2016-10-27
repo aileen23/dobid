@@ -20,7 +20,6 @@ public class dobidDAO {
 	public boolean insert(MemberDTO member) {
 		try {
 			smc.insert("dobid.registAccount", member);
-			System.out.println("가입성공");
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();

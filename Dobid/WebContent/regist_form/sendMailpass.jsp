@@ -1,3 +1,4 @@
+<%@page import="com.dobid.model.Encryption"%>
 <%@page import="com.dobid.beans.FindPassDTO"%>
 <%@page import="com.dobid.model.dobidDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -23,8 +24,9 @@
 
 	dobidDAO dao = new dobidDAO();
 	FindPassDTO dto = new FindPassDTO();
+	Encryption enc = new Encryption("chlvlfgkschlvlfgks");
 	dto.setMember_id(request.getParameter("id"));
-	dto.setEmail(request.getParameter("receiver"));
+	dto.setEmail(enc.aesEncode(request.getParameter("receiver")));
 	dto.setName(request.getParameter("name"));
 	dto.setPass(buffer.toString());
 	
