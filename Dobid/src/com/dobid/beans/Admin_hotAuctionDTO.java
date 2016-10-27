@@ -10,7 +10,7 @@ public class Admin_hotAuctionDTO {
 	private String check;
 	private String ing;
 	private String image_path;
-	private String date;
+	private String regist_date;
 	
 
 	
@@ -21,7 +21,7 @@ public class Admin_hotAuctionDTO {
 
 
 	public Admin_hotAuctionDTO(int basic_board_num, String title, String contents, String member_id, String catalogue,
-			String check, String ing, String image_path, String date) {
+			String check, String ing, String image_path, String regist_date) {
 		super();
 		this.basic_board_num = basic_board_num;
 		this.title = title;
@@ -31,7 +31,7 @@ public class Admin_hotAuctionDTO {
 		this.check = check;
 		this.ing = ing;
 		this.image_path = image_path;
-		this.date = date;
+		this.regist_date = regist_date;
 	}
 
 
@@ -132,13 +132,13 @@ public class Admin_hotAuctionDTO {
 
 
 
-	public String getDate() {
-		return date;
+	public String getregist_date() {
+		return regist_date;
 	}
 
 
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setregist_date(String regist_date) {
+		this.regist_date = regist_date;
 	}
 }

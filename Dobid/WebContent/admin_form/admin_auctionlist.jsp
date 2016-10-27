@@ -92,15 +92,20 @@
 			</tr>
 		<c:forEach items="${adminauctionlist }" var="adminauctionlist">
 			<tr class="list">
-				<td>adminauctionlist_basic_board_num</td>
-				<td>adminauctionlist_title</td>
-				<td>adminauctionlist_content</td>
-				<td>adminauctionlist_member_id</td>
-				<td>adminauctionlist_catalogue</td>
-				<td>adminauctionlist_check</td>
-				<td>adminauctionlist_ing</td>
-				<td>adminauctionlist_date</td>
+			
+				<td>${adminauctionlist.basic_board_num }</td>
+				<td>${adminauctionlist.title }</td>
+				<td>${adminauctionlist.content }</td>
+				<td>${adminauctionlist.member_id }</td>
+				<td>${adminauctionlist.catalogue }</td>
+				<td>${adminauctionlist.check }</td>
+				<td>${adminauctionlist.ing }</td>
+				<td>${adminauctionlist.date }</td>
+		
 				
+			
+			
+	
 
 			</tr>
 		</c:forEach>
