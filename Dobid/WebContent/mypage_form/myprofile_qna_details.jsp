@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
@@ -19,34 +20,46 @@
 <script type="text/javascript" src="./js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 </head>
 <body>
+	<!-- 헤더 -->
+	<br>
+	<br>
+	<br>
+		<div class="titleText" style="margin-left: 20px">
+		<font size="80" color="black">1:1 문의내역</font><br>
+		</div>
 
+	<div class="container-fluid"	style="margin-bottom: 100px">
+		<header><%@include file="mypageHeader.jsp"%></header>
+	</div>
 <div class="container">
-  <h2>문의내역</h2>
-	<br><br>        
-  <table class="table table-bordered">
+  <table class="table">
     <thead>
       <tr>
-        <th>답변상태</th>
+        <th>제목</th>
+        <th>카테고리</th>
         <th>내용</th>
-        <th>보낸시간</th>
+        <th>날짜</th>
+        <th>상세보기</th>
+        <th>답변상태</th>
       </tr>
     </thead>
     <tbody>
+    <c:forEach items="${list }" var="qnalist">
       <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+        <td>${qnalist.title}</td>
+        <td>${qnalist.categori}</td>
+        <td>${qnalist.contents}</td>
+        <td>${qnalist.upload_date}</td>
+        <td>상세보기</td>
+        <c:choose>
+        	<c:when test="${qnalist.answer_contents eq null}">
+        	<td>답변대기</td>        
+        	</c:when>
+       		<c:otherwise><td>답변완료</td></c:otherwise>
+        </c:choose>
+
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+      </c:forEach>
     </tbody>
   </table>
 </div>

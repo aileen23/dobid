@@ -33,7 +33,7 @@
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
 <div>
-  <table width="400" height="130" align="center" cellpadding="20" cellspacing="0">
+  <table width="570" height="130" align="center" cellpadding="20" cellspacing="0">
     <tbody align="center">
     
       <tr>

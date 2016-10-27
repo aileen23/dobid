@@ -13,6 +13,7 @@ import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
 import com.dobid.beans.MemberDTO;
+import com.dobid.beans.Service_answerDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
@@ -125,5 +126,16 @@ public class Mypage_DAO {
 		}
 		return result;
 	}
+	
+	public List<Service_answerDTO> qnaselect(String id) {
+		List<Service_answerDTO> list = null;
+		try {
+			list = smc.queryForList("myprofile.qnaselect", id);
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 
+	}
 }

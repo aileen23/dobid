@@ -23,11 +23,11 @@
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
 <div class="container">
-     	<b>현재 사용가능금액 :</b> 100,000원
+     	<b>현재 사용가능금액 :</b> ${Charging_amount }원
 </div>
 <br>
 <div class="container">
-  <table class="table table-bordered">
+  <table class="table">
     <thead>
       <tr>
      	<th></th>
