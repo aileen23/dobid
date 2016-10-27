@@ -209,11 +209,17 @@
 		
 		<!-- 관리자 일반/핫/공동구매 게시글 (박종민) -->
 
-		<!-- admin_board.jsp -->
+		
 		<action path="/admin_auctionlist" type="com.dobid.actions.admin.Admin_auctionlist_Action">
 			<forward name="success" path="/admin_form/admin_auctionlist.jsp"></forward>
 		</action>
+		<!-- 관리자 1대1대화 (박종민) -->
 		
+		<action path="/admin_ono" type="com.dobid.actions.admin.Admin_ono_Action">
+			<forward name="success" path="/admin_form/admin_ono.jsp"></forward>
+		</action>
+		
+		<!--  -->
 			 <!-- 댓글관련 요청 -->        
         <action path="/board_content_view_reply_add"
                 type="com.dobid.actions.reply.AddAction">
