@@ -19,11 +19,11 @@ public class ServiceDAO {
 
 		try {
 			smc.insert("service.serviceOno", serverOno);
-			System.out.println("ìž…ë ¥ì„±ê³µ");
+			System.out.println("ÀÔ·Â¼º°ø");
 			return true;
 		} catch (SQLException e) {e.printStackTrace();
 		}
-		System.out.println("ìž…ë ¥ì‹¤íŒ¨");
+		System.out.println("ÀÔ·Â½ÇÆÐ");
 		return false;
 	}
 
@@ -32,12 +32,12 @@ public class ServiceDAO {
 
 		try {
 			smc.insert("service.serviceReport", serverReport);
-			System.out.println("ìž…ë ¥ì„±ê³µ");
+			System.out.println("ÀÔ·Â¼º°ø");
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("ìž…ë ¥ì‹¤íŒ¨");
+		System.out.println("ÀÔ·Â½ÇÆÐ");
 		return false;
 	}
 }
