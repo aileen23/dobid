@@ -193,10 +193,10 @@
 	<br>
 
 	<center>
-		<font size="80" color="black">Register</font><br>
+		<font size="80" color="black" id="font1">Register</font><br>
 	</center>
 	<center>
-		<font size="3" color="black">your Account</font>
+		<font size="3" color="black" id="font2">your Account</font>
 	</center>
 	<br>
 	<div class="container">

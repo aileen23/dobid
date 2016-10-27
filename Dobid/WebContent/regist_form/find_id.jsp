@@ -11,11 +11,10 @@
 
 <!-- Custom CSS -->
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
-
+<script type="text/javascript"
+	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 
 </head>
-
-
 <body>
 	<header><%@include file="header.jsp"%></header>
 	<!-- 헤더 -->
@@ -27,10 +26,10 @@
 	<br>
 
 	<center>
-		<font size="80" color="black">Find</font><br>
+		<font size="80" color="black" id="font1">Find</font><br>
 	</center>
 	<center>
-		<font size="3" color="black">Your ID</font>
+		<font size="3" color="black" id="font2">Your ID</font>
 	</center>
 	<br>
 	<form class="form-horizontal" style="margin-left: 25%" method="post" action="do_find_id.do">

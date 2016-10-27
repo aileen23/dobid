@@ -14,7 +14,10 @@
 <script>
 		
 	$(document).ready(function(){
-		
+		for (var i = 0; i < 100; i++) {
+			$("#font1").animate({opacity: "0.2"}, 1000);
+			$("#font1").animate({opacity: "1"}, 1000);
+			}
 		/* 
 		$("#Auction").mouseover(function() {
 			$(this).css("background-color", "#FFF");
@@ -77,7 +80,7 @@
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="main.do">Do!bid</a>
+			<a class="navbar-brand" href="main.do" id="font1">Do!bid</a>
 		</div>
 		<ul class="nav navbar-nav">
 			<li class="dropdown"><a class="dropdown-toggle"

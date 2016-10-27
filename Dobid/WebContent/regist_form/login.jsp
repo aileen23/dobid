@@ -12,6 +12,9 @@
 <!-- Custom CSS -->
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
 
+<script type="text/javascript"
+	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+
 
 
 </head>
@@ -27,10 +30,10 @@
 	<br>
 
 	<center>
-		<font size="80" color="black">Login</font><br>
+		<font size="80" color="black" id="font1">Login</font><br>
 	</center>
 	<center>
-		<font size="3" color="black">welcome Do Bid</font>
+		<font size="3" color="black" id="font2">welcome Do Bid</font>
 	</center>
 	<br>
 	<form class="form-horizontal" style="margin-left: 25%" method="post"

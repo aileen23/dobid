@@ -53,8 +53,8 @@ $(function(){
 <!-- 헤더 -->
 <br><br><br><br><br><br>
 
-<center><font size="80" color="black">Find</font><br></center>
-<center><font size="3" color="black">Your Password</font></center>
+<center><font size="80" color="black" id="font1">Find</font><br></center>
+<center><font size="3" color="black" id="font2">Your Password</font></center>
 <br>
 <form class="form-horizontal" style="margin-left: 25%">
   <div class="form-group">
