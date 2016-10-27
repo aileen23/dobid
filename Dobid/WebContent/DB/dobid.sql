@@ -233,8 +233,8 @@ categori				varchar2(30)	not null,
 contents				varchar2(3000)	not null,
 image_path				varchar2(500)	not null,
 upload_date				date			not null,
-answer_contents			varchar2(3000)	not null,
-answer_date				date			not null
+answer_contents			varchar2(3000)	null,
+answer_date				date			null
 
 );
 
