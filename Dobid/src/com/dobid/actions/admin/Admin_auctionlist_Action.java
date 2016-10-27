@@ -2,6 +2,7 @@ package com.dobid.actions.admin;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,10 +12,10 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Admin_auctionDTO;
-import com.dobid.beans.Admin_freeDTO;
+
 import com.dobid.beans.Admin_groupBuyDTO;
 import com.dobid.beans.Admin_hotAuctionDTO;
-import com.dobid.beans.Admin_noticeDTO;
+
 import com.dobid.model.boardDAO;
 
 public class Admin_auctionlist_Action extends Action{
@@ -34,6 +35,7 @@ public class Admin_auctionlist_Action extends Action{
 		String admin_auction_view_num = request.getParameter("admin_auction_view_num");
 		String admin_auction_view_userid = request.getParameter("admin_auction_view_userid");
 		String admin_auction_catalogue = request.getParameter("admin_auction_catalogue");
+		String admin_auction_check = request.getParameter("admin_auction_check");
 		
 		
 		
@@ -43,6 +45,7 @@ public class Admin_auctionlist_Action extends Action{
 		System.out.println("admin_auction_view_num : " + request.getParameter("admin_auction_view_num"));
 		System.out.println("admin_auction_view_userid : " + request.getParameter("admin_auction_view_userid"));
 		System.out.println("admin_auction_catalogue : " + request.getParameter("admin_auction_catalogue"));
+		System.out.println("admin_auction_check : " + request.getParameter("admin_auction_check"));
 
 		
 		
@@ -91,17 +94,17 @@ public class Admin_auctionlist_Action extends Action{
 
 			}
 		} else {
-			if (admin_auction_catalogue.equals("groupauction")) {
+			if (admin_auction_check.equals("groupauction")) {
 				
 				boolean delflag=dao.adminGroupActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 				
-			} else if(admin_auction_catalogue.equals("auction")){
+			} else if(admin_auction_check.equals("auction")){
 				
 				boolean delflag=dao.adminActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 				
-			}else if(admin_auction_catalogue.equals("hotauction")){
+			}else if(admin_auction_check.equals("hotauction")){
 				boolean delflag=dao.adminHotActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 			}

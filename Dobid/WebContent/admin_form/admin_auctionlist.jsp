@@ -31,11 +31,12 @@
 			
 			$("#admin_auctionlist_view_num").val($(this).children().eq(0).text());
 			$("#adminauctionlist_title").val($(this).children().eq(1).text());
-			$("#admin_auction_view_ing").val($(this).children().eq(5).text());
-			$("#admin_auction_view_userid").val($(this).children().eq(3).text());
-			$("#admin_auction_view_img").val($(this).children().eq(6).text());
-			$("#admin_auction_catalogue").val($(this).children().eq(4).text());
 			$("#admin_auction_view_content").val($(this).children().eq(2).text());
+			$("#admin_auction_view_userid").val($(this).children().eq(3).text());
+			$("#admin_auction_catalogue").val($(this).children().eq(4).text());
+			$("#admin_auction_check").val($(this).children().eq(5).text());
+			$("#admin_auction_view_ing").val($(this).children().eq(6).text());
+			$("#admin_auction_view_img").val($(this).children().eq(7).text());
 			
 			
 	
@@ -85,17 +86,26 @@
 				<th>내용</th>
 				<th>판매자아이디</th>
 				<th>구분</th>
+				<th>경매방식</th>
 				<th>진행여부</th>
+				<th>등록시간</th>
 			</tr>
 		<c:forEach items="${adminauctionlist }" var="adminauctionlist">
 			<tr class="list">
-				<td>adminauctionlist_basic_board_num</td>
-				<td>adminauctionlist_title</td>
-				<td>adminauctionlist_content</td>
-				<td>adminauctionlist_member_id</td>
-				<td>adminauctionlist_catalogue</td>
-				<td>adminauctionlist_ing</td>
+			
+				<td>${adminauctionlist.basic_board_num }</td>
+				<td>${adminauctionlist.title }</td>
+				<td>${adminauctionlist.content }</td>
+				<td>${adminauctionlist.member_id }</td>
+				<td>${adminauctionlist.catalogue }</td>
+				<td>${adminauctionlist.check }</td>
+				<td>${adminauctionlist.ing }</td>
+				<td>${adminauctionlist.date }</td>
+		
 				
+			
+			
+	
 
 			</tr>
 		</c:forEach>
@@ -142,6 +152,15 @@
 							 readOnly>
 					</div>
 				</div>
+				
+				<div class="form-group">
+
+					<div class="col-sm-offset-3 col-sm-5">
+						<input type="text" class="form-control"
+							id="admin_auction_catalogue" name="admin_auction_catalogue"
+							 readOnly>
+					</div>
+				</div>
 
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
@@ -165,7 +184,7 @@
 			
 				<input type="hidden" name="del" value="del">
 				<input type="hidden" id="admin_auctionlist_view_num" name="admin_auction_view_num">
-				<input type="hidden" id="admin_auction_catalogue" name="admin_auction_catalogue">
+				<input type="hidden" id="admin_auction_check" name="admin_auction_check">
 				
 			
 			

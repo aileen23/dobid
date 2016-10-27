@@ -270,6 +270,7 @@ public class boardDAO {
 		return list;
 	}
 	
+
 	public List<Admin_groupBuyDTO> adminGroupAuctionSelectAll(){ //관리자 그룹경매 리스트
 		List<Admin_groupBuyDTO> list=null;
 		try {
@@ -327,7 +328,6 @@ public class boardDAO {
 	}
 	
 	
-	
 	public Admin_auctionDTO adminAuctionSelect(String num){ //관리자 일반경매 상세보기
 		Admin_auctionDTO adminauctionDTO = null;
 		try {
@@ -365,7 +365,6 @@ public class boardDAO {
 		return admingroupauctionDTO;	
 	}
 	
-	
 	public boolean adminActionDel(String num){//관리자 일반경매 게시판 상세보기 삭제
 		try {
 			int bagic_num = Integer.parseInt(num);
@@ -401,26 +400,7 @@ public class boardDAO {
 		}
 		return false;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	
