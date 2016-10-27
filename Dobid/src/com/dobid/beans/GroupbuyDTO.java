@@ -20,6 +20,7 @@ public class GroupbuyDTO {
 	private int first_price;
 	private int discount_price;
 	private int now_step;
+	private String BUY_CHECK;
 
 	public GroupbuyDTO() {
 	}
@@ -67,6 +68,33 @@ public class GroupbuyDTO {
 
 	
 	
+	public GroupbuyDTO(int num, int groupbuy_board_num, String title,
+			String contents, String main_image_path, String explain_image_path,
+			int participant_num, String categori, int amount, String end_date,
+			String regist_date, int step_participant, int step_discount,
+			int first_price, int discount_price, int now_step, String bUY_CHECK) {
+		super();
+		this.num = num;
+		this.groupbuy_board_num = groupbuy_board_num;
+		this.title = title;
+		this.contents = contents;
+		this.main_image_path = main_image_path;
+		this.explain_image_path = explain_image_path;
+		this.participant_num = participant_num;
+		this.categori = categori;
+		this.amount = amount;
+		this.end_date = end_date;
+		this.regist_date = regist_date;
+		this.step_participant = step_participant;
+		this.step_discount = step_discount;
+		this.first_price = first_price;
+		this.discount_price = discount_price;
+		this.now_step = now_step;
+		BUY_CHECK = bUY_CHECK;
+	}
+
+
+
 	public int getNum() {
 		return num;
 	}
@@ -199,4 +227,16 @@ public class GroupbuyDTO {
 		this.now_step = now_step;
 	}
 
+
+
+	public String getBUY_CHECK() {
+		return BUY_CHECK;
+	}
+
+
+
+	public void setBUY_CHECK(String bUY_CHECK) {
+		BUY_CHECK = bUY_CHECK;
+	}
+	
 }

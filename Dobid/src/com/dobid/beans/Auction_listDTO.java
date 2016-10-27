@@ -12,7 +12,7 @@ public class Auction_listDTO {
 	private String end_date;
 	private String main_image_path;
 	private String title;
-	
+	private String bid_check;
 	
 	
 	public Auction_listDTO() {
@@ -36,6 +36,23 @@ public class Auction_listDTO {
 	
 
 
+	public Auction_listDTO(String num, String auction_board_num, String email,
+			String name, String start_amount, String highest_price,
+			String regist_date, String end_date, String main_image_path,
+			String title, String bid_check) {
+		super();
+		this.num = num;
+		this.auction_board_num = auction_board_num;
+		this.email = email;
+		this.name = name;
+		this.start_amount = start_amount;
+		this.highest_price = highest_price;
+		this.regist_date = regist_date;
+		this.end_date = end_date;
+		this.main_image_path = main_image_path;
+		this.title = title;
+		this.bid_check = bid_check;
+	}
 	public String getAuction_board_num() {
 		return auction_board_num;
 	}
@@ -95,6 +112,12 @@ public class Auction_listDTO {
 	}
 	public void setMain_image_path(String main_image_path) {
 		this.main_image_path = main_image_path;
+	}
+	public String getBid_check() {
+		return bid_check;
+	}
+	public void setBid_check(String bid_check) {
+		this.bid_check = bid_check;
 	}
 	
 	

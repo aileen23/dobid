@@ -14,7 +14,7 @@
 	String categori = request.getParameter("categori");
 	int count = Integer.parseInt(request.getParameter("lastNum"));
 	
-	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,categori,count,count+6);
+	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,categori,count,count+6,"경매중");
 	Product_registDAO dao = new Product_registDAO();
 
 	List<Auction_listDTO> list = dao.search_list(auction_list_paramiterDTO);

@@ -65,10 +65,10 @@ if(session.getAttribute("logincheck") == null){
   		<div class="check_and_cach">
   			<div>
   				<label class="checkbox-inline">
-  					<input type="radio" id="inlineCheckbox1" name="auction_check" value="1" checked="checked"> 경매
+  					<input type="radio" id="inlineCheckbox1" name="auction_check" value="경매" checked="checked"> 경매
 				</label>
 				<label class="checkbox-inline">
- 					 <input type="radio" id="inlineCheckbox2" name="auction_check" value="2"> 핫 경매
+ 					 <input type="radio" id="inlineCheckbox2" name="auction_check" value="핫경매"> 핫 경매
 				</label>
   			</div>
   			<div class="start_cach_box">

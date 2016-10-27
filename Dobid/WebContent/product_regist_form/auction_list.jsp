@@ -17,7 +17,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="/Dobid/product_regist_form/css/shop-homepage.css" rel="stylesheet">
-<script src="js/jquery-3.0.0.js"></script>
+<script src="/Dobid/product_regist_form/js/jquery-3.0.0.js"></script>
 <script>
 $(document).ready(function(){
 

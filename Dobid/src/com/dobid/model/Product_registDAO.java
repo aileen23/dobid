@@ -24,7 +24,7 @@ public class Product_registDAO {
 	}
 	
 	public boolean insert(AuctionDTO inputdate) {
-		
+
 		try {
 			smc.insert("product_regist.auction_regist",inputdate);
 		} catch (SQLException e) {

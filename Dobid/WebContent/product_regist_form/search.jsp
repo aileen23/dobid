@@ -12,7 +12,7 @@
 */	
 	String text = request.getParameter("text");
 	String categori = request.getParameter("categori");
-	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,categori,0,6);
+	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,categori,0,6,"경매중");
 	Product_registDAO dao = new Product_registDAO();
 
 	List<Auction_listDTO> list = dao.search_list(auction_list_paramiterDTO);

@@ -6,6 +6,7 @@ public class Auction_list_paramiterDTO {
 	private String categori;
 	private int startCount;
 	private int endCount;
+	private String check;
 	
 	
 	
@@ -20,6 +21,17 @@ public class Auction_list_paramiterDTO {
 		this.categori = categori;
 		this.startCount = startCount;
 		this.endCount = endCount;
+	}
+
+	
+	public Auction_list_paramiterDTO(String search, String categori,
+			int startCount, int endCount, String check) {
+		super();
+		this.search = search;
+		this.categori = categori;
+		this.startCount = startCount;
+		this.endCount = endCount;
+		this.check = check;
 	}
 
 	public String getSearch() {
@@ -49,5 +61,14 @@ public class Auction_list_paramiterDTO {
 	public void setEndCount(int endCount) {
 		this.endCount = endCount;
 	}
+
+	public String getCheck() {
+		return check;
+	}
+
+	public void setCheck(String check) {
+		this.check = check;
+	}
+	
 	
 }
