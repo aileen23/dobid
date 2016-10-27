@@ -138,4 +138,14 @@ public class Mypage_DAO {
 		return null;
 
 	}
+	public boolean deleteid(String id){
+		
+		try {
+			smc.queryForObject("myprofile.delete",id);
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
