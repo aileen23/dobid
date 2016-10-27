@@ -29,13 +29,13 @@
 		
 			$("#popup").show();
 			
-			$("#admin_auctionlist_view_num").val($(this).children().eq(0).text());
-			$("#adminauctionlist_title").val($(this).children().eq(1).text());
+			$("#admin_auction_view_num").val($(this).children().eq(0).text());
+			$("#admin_auction_title").val($(this).children().eq(1).text());
 			$("#admin_auction_view_content").val($(this).children().eq(2).text());
 			$("#admin_auction_view_userid").val($(this).children().eq(3).text());
 			$("#admin_auction_catalogue").val($(this).children().eq(4).text());
-			$("#admin_auction_check").val($(this).children().eq(5).text());
-			$("#admin_auction_view_ing").val($(this).children().eq(6).text());
+			$("#admin_auction_hot_check").val($(this).children().eq(5).text());
+			$("#admin_auction_bid_check").val($(this).children().eq(6).text());
 			$("#admin_auction_view_img").val($(this).children().eq(7).text());
 			
 			
@@ -71,7 +71,7 @@
 				</select>
 			</div>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" id="admin_auction_selecttext" placeholder="검색어입력">
+				<input type="text" class="form-control" id="admin_auction_selecttext" name="admin_auction_selecttext" placeholder="검색어입력">
 
 			</div>
 			<button class="button button5 btn-default" id="admin_auction_select">검색</button>
@@ -86,22 +86,22 @@
 				<th>내용</th>
 				<th>판매자아이디</th>
 				<th>구분</th>
-				<th>경매방식</th>
+				<th>유형</th>
 				<th>진행여부</th>
 				<th>등록시간</th>
 			</tr>
 		<c:forEach items="${adminauctionlist }" var="adminauctionlist">
 			<tr class="list">
 			
-				<td>${adminauctionlist.basic_board_num }</td>
+				<td>${adminauctionlist.auction_board_num }</td>
 				<td>${adminauctionlist.title }</td>
-				<td>${adminauctionlist.content }</td>
-				<td>${adminauctionlist.member_id }</td>
-				<td>${adminauctionlist.catalogue }</td>
-				<td>${adminauctionlist.check }</td>
-				<td>${adminauctionlist.ing }</td>
-				<td>${adminauctionlist.date }</td>
-		
+				<td>${adminauctionlist.contents }</td>
+				<td>${adminauctionlist.seller_id }</td>
+				<td>${adminauctionlist.categori }</td>
+				<td>${adminauctionlist.hot_check }</td>
+				<td>${adminauctionlist.bid_check }</td>
+				<td>${adminauctionlist.regist_date }</td>
+
 				
 			
 			
@@ -126,11 +126,11 @@
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
 			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_board.do" method="POST">
+			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do" method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
-						<input type="text" class="form-control" name="admin_auction_view_title"
-							id="admin_auction_view_title" style="margin-top: 20px;"
+						<input type="text" class="form-control" name="admin_auction_title"
+							id="admin_auction_title" style="margin-top: 20px;"
 							 readOnly>
 							
 					</div>
@@ -148,7 +148,7 @@
 
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
-							id="admin_auction_view_ing" name="admin_auction_view_ing"
+							id="admin_auction_bid_check" name="admin_auction_bid_check"
 							 readOnly>
 					</div>
 				</div>
@@ -183,8 +183,9 @@
 				<button class="button button5 btn-default">삭제</button>
 			
 				<input type="hidden" name="del" value="del">
-				<input type="hidden" id="admin_auctionlist_view_num" name="admin_auction_view_num">
-				<input type="hidden" id="admin_auction_check" name="admin_auction_check">
+				<input type="hidden" id="admin_auction_view_num" name="admin_auction_view_num">
+				<input type="hidden" id="admin_auction_hot_check" name="admin_auction_hot_check">
+				
 				
 			
 			

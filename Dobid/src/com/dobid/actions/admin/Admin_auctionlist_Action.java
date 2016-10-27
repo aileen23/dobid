@@ -35,7 +35,8 @@ public class Admin_auctionlist_Action extends Action{
 		String admin_auction_view_num = request.getParameter("admin_auction_view_num");
 		String admin_auction_view_userid = request.getParameter("admin_auction_view_userid");
 		String admin_auction_catalogue = request.getParameter("admin_auction_catalogue");
-		String admin_auction_check = request.getParameter("admin_auction_check");
+		String admin_auction_bid_check = request.getParameter("admin_auction_bid_check");
+		String admin_auction_hot_check = request.getParameter("admin_auction_hot_check");
 		
 		
 		
@@ -45,7 +46,8 @@ public class Admin_auctionlist_Action extends Action{
 		System.out.println("admin_auction_view_num : " + request.getParameter("admin_auction_view_num"));
 		System.out.println("admin_auction_view_userid : " + request.getParameter("admin_auction_view_userid"));
 		System.out.println("admin_auction_catalogue : " + request.getParameter("admin_auction_catalogue"));
-		System.out.println("admin_auction_check : " + request.getParameter("admin_auction_check"));
+		System.out.println("admin_auction_bid_check : " + request.getParameter("admin_auction_bid_check"));
+		System.out.println("admin_auction_hot_check : " + request.getParameter("admin_auction_hot_check"));
 
 		
 		
@@ -94,17 +96,17 @@ public class Admin_auctionlist_Action extends Action{
 
 			}
 		} else {
-			if (admin_auction_check.equals("groupauction")) {
+			if (admin_auction_hot_check.equals("공동구매")) {
 				
 				boolean delflag=dao.adminGroupActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 				
-			} else if(admin_auction_check.equals("auction")){
+			} else if(admin_auction_hot_check.equals("경매")){
 				
 				boolean delflag=dao.adminActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 				
-			}else if(admin_auction_check.equals("hotauction")){
+			}else if(admin_auction_hot_check.equals("핫경매")){
 				boolean delflag=dao.adminHotActionDel(admin_auction_view_num);
 				request.setAttribute("delflag", delflag);
 			}

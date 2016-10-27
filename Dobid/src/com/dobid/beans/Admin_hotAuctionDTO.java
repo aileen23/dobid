@@ -2,15 +2,15 @@ package com.dobid.beans;
 
 public class Admin_hotAuctionDTO {
 
-	private int basic_board_num;
+	private int auction_board_num;
 	private String title;
 	private String contents;
-	private String member_id;
-	private String catalogue;
-	private String check;
-	private String ing;
-	private String image_path;
+	private String seller_id;
+	private String categori;
+	private String bid_check;
+	private String main_image_path;
 	private String regist_date;
+	private String hot_check;
 	
 
 	
@@ -20,30 +20,30 @@ public class Admin_hotAuctionDTO {
 
 
 
-	public Admin_hotAuctionDTO(int basic_board_num, String title, String contents, String member_id, String catalogue,
-			String check, String ing, String image_path, String regist_date) {
+	public Admin_hotAuctionDTO(int auction_board_num, String title, String contents, String seller_id, String categori,
+			String bid_check, String main_image_path, String regist_date, String hot_check) {
 		super();
-		this.basic_board_num = basic_board_num;
+		this.auction_board_num = auction_board_num;
 		this.title = title;
 		this.contents = contents;
-		this.member_id = member_id;
-		this.catalogue = catalogue;
-		this.check = check;
-		this.ing = ing;
-		this.image_path = image_path;
+		this.seller_id = seller_id;
+		this.categori = categori;
+		this.bid_check = bid_check;
+		this.main_image_path = main_image_path;
 		this.regist_date = regist_date;
+		this.hot_check = hot_check;
 	}
 
 
 
-	public int getBasic_board_num() {
-		return basic_board_num;
+	public int getAuction_board_num() {
+		return auction_board_num;
 	}
 
 
 
-	public void setBasic_board_num(int basic_board_num) {
-		this.basic_board_num = basic_board_num;
+	public void setAuction_board_num(int auction_board_num) {
+		this.auction_board_num = auction_board_num;
 	}
 
 
@@ -72,73 +72,76 @@ public class Admin_hotAuctionDTO {
 
 
 
-	public String getMember_id() {
-		return member_id;
+	public String getSeller_id() {
+		return seller_id;
 	}
 
 
 
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setSeller_id(String seller_id) {
+		this.seller_id = seller_id;
 	}
 
 
 
-	public String getCatalogue() {
-		return catalogue;
+	public String getCategori() {
+		return categori;
 	}
 
 
 
-	public void setCatalogue(String catalogue) {
-		this.catalogue = catalogue;
+	public void setCategori(String categori) {
+		this.categori = categori;
 	}
 
 
 
-	public String getCheck() {
-		return check;
+	public String getBid_check() {
+		return bid_check;
 	}
 
 
 
-	public void setCheck(String check) {
-		this.check = check;
+	public void setBid_check(String bid_check) {
+		this.bid_check = bid_check;
 	}
 
 
 
-	public String getIng() {
-		return ing;
+	public String getMain_image_path() {
+		return main_image_path;
 	}
 
 
 
-	public void setIng(String ing) {
-		this.ing = ing;
+	public void setMain_image_path(String main_image_path) {
+		this.main_image_path = main_image_path;
 	}
 
 
 
-	public String getImage_path() {
-		return image_path;
-	}
-
-
-
-	public void setImage_path(String image_path) {
-		this.image_path = image_path;
-	}
-
-
-
-	public String getregist_date() {
+	public String getRegist_date() {
 		return regist_date;
 	}
 
 
 
-	public void setregist_date(String regist_date) {
+	public void setRegist_date(String regist_date) {
 		this.regist_date = regist_date;
 	}
+
+
+
+	public String getHot_check() {
+		return hot_check;
+	}
+
+
+
+	public void setHot_check(String hot_check) {
+		this.hot_check = hot_check;
+	}
+
+
+
 }
