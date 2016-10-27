@@ -20,6 +20,54 @@ if(session.getAttribute("logincheck") == null){
 <script src="/Dobid/product_regist_form/js/auction_regist.js"></script>
 <title>경매등록</title>
 <script type="text/javascript">
+$( document ).ready(function() {
+
+
+	$('.file_form').change(function() { 
+		readURL(this); 
+	
+	});
+	$('.file_form2').change(function() { 
+		readURL2(this); 
+	
+	});
+	function readURL(input) { 
+        if (input.files && input.files[0]) { 
+            var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성 
+            reader.onload = function (e) { 
+            //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러 
+                $('.imag_view').attr('src', e.target.result); 
+                //이미지 Tag의 SRC속성에 읽어들인 File내용을 지정 
+                //(아래 코드에서 읽어들인 dataURL형식) 
+            }                    
+            reader.readAsDataURL(input.files[0]); 
+            //File내용을 읽어 dataURL형식의 문자열로 저장 
+        } 
+    }//readURL()-- 
+    function readURL2(input) {
+    	var file = input.files; // files 를 사용하면 파일의 정보를 알 수 있음
+		var count = 0;
+    	// 파일의 갯수만큼 반복
+    	if(file.length > 5){
+    		alert("5개 이상은 못올립니다.");
+    		return;
+    	}
+    	for(var i=0; i<file.length; i++){
+
+    		var reader = new FileReader(); // FileReader 객체 사용
+    		reader.onload = function(rst){
+    			var st = ".a"+count;
+    			count++;
+    			$(st).attr("src", rst.target.result); // append 메소드를 사용해서 이미지 추가
+    			// 이미지는 base64 문자열로 추가
+    			// 이 방법을 응용하면 선택한 이미지를 미리보기 할 수 있음
+    		}
+    		reader.readAsDataURL(file[i]); // 파일을 읽는다
+
+    	}
+
+    }//readURL()-- 
+});
 </script>
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
@@ -46,20 +94,20 @@ if(session.getAttribute("logincheck") == null){
   			<img class="imag_view" alt="" src=""><br>
   			<div class="filebox main_file">
   				<label for="ex_file">업로드</label>
-  				<input type="file" id="ex_file" name="main_file"> 
+  				<input type="file" id="ex_file" class="file_form" name="main_file"> 
 			</div>
   		</div>
   		<div class="the_input">
   			<div class="sub_image_box">
-  			<img alt="" src="">
-  			<img alt="" src="">
-  			<img alt="" src="">
-  			<img alt="" src="">
-  			<img alt="" src="">
+  			<img class="a0" alt="" src="">
+  			<img class="a1" alt="" src="">
+  			<img class="a2" alt="" src="">
+  			<img class="a3" alt="" src="">
+  			<img class="a4" alt="" src="">
   			</div><br>
   			<div class="filebox sub_file">
-  				<label for="ex_file">업로드</label>
-  				<input type="file" id="ex_file" name="sub_file"> 
+  				<label for="ex_file2">업로드</label>
+  				<input multiple="multiple" type="file" id="ex_file2" class="file_form2" name="sub_file"> 
 			</div>
   		</div>
   		<div class="check_and_cach">

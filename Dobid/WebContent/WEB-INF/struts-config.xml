@@ -73,7 +73,7 @@
 			name="regist_actionForm">
 			<forward path="/list.do" name="success"
 				redirect="true"></forward>
-			<forward path="/product_regist/regist.do" name="fail"></forward>
+			<forward path="/regist.do" name="fail"></forward>
 		</action>
 		<action path="/list" type="com.dobid.product_regist.action.Auction_list"
 			name="listForm">
@@ -121,6 +121,7 @@
 		</action>
 
 		<action path="/findpassword" forward="/regist_form/find_password.jsp"></action>
+		<action path="/sendmailpass" forward="/regist_form/sendMailpass.jsp"></action>
 		
 		<!-- ############Mypage############ -->
 		<action path="/myprofile" type="com.dobid.actions.mypage.Mypage_Action">
@@ -198,7 +199,7 @@
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
 		
-		<!-- 관리자 (박종민) -->
+<!-- 관리자공지/자유게시판 (박종민) -->
 
 		<!-- admin_board.jsp -->
 		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
@@ -206,6 +207,14 @@
 		</action>
 		
 		
+		<!-- 관리자 일반/핫/공동구매 게시글 (박종민) -->
+
+		<!-- admin_board.jsp -->
+		<action path="/admin_auctionlist" type="com.dobid.actions.admin.Admin_auctionlist_Action">
+			<forward name="success" path="/admin_form/admin_auctionlist.jsp"></forward>
+		</action>
+		
+			
 	
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 

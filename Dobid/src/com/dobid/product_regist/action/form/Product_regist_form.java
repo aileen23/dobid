@@ -1,6 +1,7 @@
 package com.dobid.product_regist.action.form;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,7 +16,7 @@ public class Product_regist_form extends ActionForm{
 	private String title_text;
 	private String count_text;
 	private FormFile main_file;
-	private FormFile sub_file;
+	private List<FormFile> sub_file;
 	private String auction_check;
 	private String start_cach;
 	private String day;
@@ -91,7 +92,12 @@ public class Product_regist_form extends ActionForm{
 
 
 
-	public FormFile getSub_file() {
+
+
+
+
+
+	public List<FormFile> getSub_file() {
 		return sub_file;
 	}
 
@@ -99,7 +105,7 @@ public class Product_regist_form extends ActionForm{
 
 
 
-	public void setSub_file(FormFile sub_file) {
+	public void setSub_file(List<FormFile> sub_file) {
 		this.sub_file = sub_file;
 	}
 
