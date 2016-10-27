@@ -2,9 +2,9 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <!-- reply.xml -->
 <sqlMap namespace="reply">
-   <typeAlias alias="reply" type="com.dobid.beans.ReplyDTO"/>
+   <typeAlias alias="boderreply" type="com.dobid.beans.ReplyDTO"/>
    
-   <insert id="add" parameterClass="reply">
+   <insert id="add" parameterClass="boderreply">
        insert into reply values (reply_seq.nextval, #name#, #content#)
    </insert>
    
@@ -13,19 +13,19 @@
        where no=#no#
    </delete>
    
-   <update id="update" parameterClass="reply">
+   <update id="update" parameterClass="boderreply">
        update reply
        set name=#name#, content=#content#
        where no=#no#
    </update>
    
-   <select id="find" parameterClass="int" resultClass="reply">
+   <select id="find" parameterClass="int" resultClass="boderreply">
        select name,content
        from reply
        where no=#no#
    </select>
    
-   <select id="findAll"  resultClass="reply">
+   <select id="findAll"  resultClass="boderreply">
        select no,name,content
        from reply
        order by no

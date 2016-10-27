@@ -30,7 +30,7 @@
   <sqlMap resource="./com/dobid/model/myprofile.xml"/>
   <sqlMap resource="./com/dobid/model/board.xml"/>
   <sqlMap resource="./com/dobid/model/service.xml"/>
-  <!-- <sqlMap resource="./com/dobid/model/reply.xml"/> -->
+  <sqlMap resource="./com/dobid/model/reply.xml"/>
   
 </sqlMapConfig>
 

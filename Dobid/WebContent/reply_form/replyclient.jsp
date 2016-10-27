@@ -14,7 +14,7 @@
         border-top: 1px solid black;
      }
   </style>
-  <script type="text/javascript" src="../js/ajax2.js"></script>
+  <script type="text/javascript" src="js/ajax2.js"></script>
   <script type="text/javascript">
     //댓글 등록 작업 : addReply, addResult
     function addReply(){//댓글 등록 요청
