@@ -32,7 +32,7 @@
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
 <div class="container">
-  <table class="table">[]
+  <table class="table">
     <thead>
       <tr>
         <th>제목</th>

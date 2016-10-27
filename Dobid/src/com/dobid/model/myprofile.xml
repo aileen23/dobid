@@ -60,7 +60,7 @@
 	</select>
 	
 	<select id="qnaselect" parameterClass="String" resultClass="service_answerDTO">
-		select title,categori,contents,upload_date,answer_comment,answer_date
+		select title,categori,contents,upload_date,answer_cotents,answer_date
 		from service_answer
 		where member_id=#member_id#
 	</select>
