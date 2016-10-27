@@ -95,8 +95,8 @@ public class dobidDAO {
 
 		return 0;
 	}
-
-	/*public int findpass(FindPassDTO findpass) {
+	
+	public int findpass(FindPassDTO findpass) {
 		try {
 			if (smc.update("dobid.find_pass", findpass) == 1) {
 				return 1;
@@ -106,6 +106,6 @@ public class dobidDAO {
 		}
 
 		return 0;
-	}*/
+	}
 
 }

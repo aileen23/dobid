@@ -9,6 +9,14 @@ public class FindPassDTO {
 	public FindPassDTO() {
 	}
 
+	public FindPassDTO(String member_id, String name, String email, String pass) {
+		super();
+		this.member_id = member_id;
+		this.name = name;
+		this.email = email;
+		this.pass = pass;
+	}
+
 	public String getMember_id() {
 		return member_id;
 	}
@@ -38,14 +46,6 @@ public class FindPassDTO {
 	}
 
 	public void setPass(String pass) {
-		this.pass = pass;
-	}
-
-	public FindPassDTO(String member_id, String name, String email, String pass) {
-		super();
-		this.member_id = member_id;
-		this.name = name;
-		this.email = email;
 		this.pass = pass;
 	}
 

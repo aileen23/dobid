@@ -14,6 +14,26 @@
 
 <!-- Custom CSS -->
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
+<script type="text/javascript">
+
+$(function(){
+    $("#findpass").click(function(){
+  	 // alert(  $('[name=emp]:checked').val() );
+  	 //$.ajax({});
+  	 $.ajax({
+  		 url:'mission3.do',
+  	     data: {
+  	    	     search:$('[name=emp]:checked').val(),//검색조건
+  	    	     keyword:$('[name=keyword]').val()//키워드
+  	           },
+  	     type:'POST',
+  	     success:function(result){
+  	    	$('div').html(result);
+  	     }
+  	 });
+    });//버튼클릭	
+  });//complete load
+</script>
 
 
 
