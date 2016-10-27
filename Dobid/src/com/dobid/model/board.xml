@@ -21,6 +21,7 @@
 	<typeAlias alias="adminauctionDTO" type="com.dobid.beans.Admin_auctionDTO"/>
 	<typeAlias alias="adminhotauctionDTO" type="com.dobid.beans.Admin_hotAuctionDTO"/>
 	<typeAlias alias="admingroupauctionDTO" type="com.dobid.beans.Admin_groupBuyDTO"/>
+	<typeAlias alias="seriveanswerDTO" type="com.dobid.beans.Service_answerDTO"/>
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
@@ -230,10 +231,28 @@
 
 
 
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--관리자 ono  -->
 
 
+<!-- 관리자 ono게시물 카탈로그별 조회(1대1) -->
 
+	<select id="admingroupauctionlist" resultClass="admingroupauctionDTO">
+	select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date
+	from groupbuy
+	order by regist_date desc
+	</select>
+<!-- 관리자 ono게시물 검색어와 카탈로그별 조회(1대1) -->
 
+	<select id="admingroupauctionlist" resultClass="admingroupauctionDTO">
+	select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date
+	from groupbuy
+	order by regist_date desc
+	</select>
 
 </sqlMap>
 	

@@ -11,6 +11,7 @@ import com.dobid.beans.Admin_hotAuctionDTO;
 import com.dobid.beans.Admin_noticeDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.NoticeboardDTO;
+import com.dobid.beans.Service_answerDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
@@ -401,6 +402,55 @@ public class boardDAO {
 		return false;
 	}
 
+	
+	///////////////////////////////////////////관리자 ono
+	
+	
+	public List<Service_answerDTO> adminOnoSelectAll(String catalogue){
+		
+		List<Service_answerDTO> list = null;
+		
+		try {
+			
+			list=smc.queryForList("board.adminonoselectall", catalogue);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+		
+		
+		
+	}
+	
+	public List<Service_answerDTO> adminOnoSelectTitle(Service_answerDTO onoparam){
+		
+		List<Service_answerDTO> list = null;
+		
+		try {
+			
+			list=smc.queryForList("board.adminonoselectall", onoparam);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

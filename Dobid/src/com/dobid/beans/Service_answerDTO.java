@@ -11,8 +11,14 @@ public class Service_answerDTO {
 	private String upload_date;
 	private String answer_contents;
 	private String answer_date;
+	private String admin_ono_selecttext;
 
+	
 	public Service_answerDTO() {
+	}
+	public Service_answerDTO(String admin_ono_selecttext, String categori) {
+		this.admin_ono_selecttext = admin_ono_selecttext;
+		this.categori = categori;
 	}
 
 	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
@@ -104,6 +110,11 @@ public class Service_answerDTO {
 		this.answer_date = answer_date;
 	}
 
-	
+	public String getAdmin_ono_selecttext() {
+		return admin_ono_selecttext;
+	}
+	public void setAdmin_ono_selecttext(String admin_ono_selecttext) {
+		this.admin_ono_selecttext = admin_ono_selecttext;
+	}
 
 }
