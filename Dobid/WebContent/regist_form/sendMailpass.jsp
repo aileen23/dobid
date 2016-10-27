@@ -37,7 +37,7 @@
 		String sender = "scv852456@gmail.com"; // 보내는 메일주소 구글로 입력
 		String receiver = request.getParameter("receiver");
 		String subject = "Dobid 임시 비밀번호 입니다. ";
-		String content = "임시 비밀번호는 [ " + buffer.toString() + " ] 입니다. ";
+		String content = "임시 비밀번호는 [" + buffer.toString() + "] 입니다. ";
 
 		// 정보를 담기 위한 객체
 		Properties p = new Properties();

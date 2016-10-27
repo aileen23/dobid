@@ -18,17 +18,24 @@
 
 $(function(){
     $("#findpass").click(function(){
-  	 // alert(  $('[name=emp]:checked').val() );
-  	 //$.ajax({});
   	 $.ajax({
-  		 url:'mission3.do',
+  		 url:'sendmailpass.do',
   	     data: {
-  	    	     search:$('[name=emp]:checked').val(),//검색조건
-  	    	     keyword:$('[name=keyword]').val()//키워드
+  	    	id:$("#id").val(),
+  	    	receiver:$("#receiver").val(),
+  	    	name:$("#name").val()
   	           },
   	     type:'POST',
   	     success:function(result){
-  	    	$('div').html(result);
+  	    	 if (result == 0) {
+				alert("ID, E-mail, Name을 확인해주세요.");
+			}else {
+				$("#id").attr("readonly", true);
+				$("#receiver").attr("readonly", true);
+				$("#name").attr("readonly", true);
+				$("#findpass").fadeOut(500);
+				alert("이메일로 임시 비밀번호를 발송하였습니다.");
+			}
   	     }
   	 });
     });//버튼클릭	
