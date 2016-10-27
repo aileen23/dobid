@@ -89,15 +89,15 @@
 				<th>시간</th>
 				<th>답변</th>
 			</tr>
-			<c:forEach items="${adminboardlist }" var="adminboardlist">
+			<c:forEach items="${adminonolist }" var="adminonolist">
 			<tr class="list">
 			
-				<td>title</td>
-				<td>member_id</td>
-				<td>categori</td>
-				<td>contents</td>
-				<td>upload_date</td>
-				<td>answer_contents</td>
+				<td>${adminonolist.title }</td>
+				<td>${adminonolist.member_id}</td>
+				<td>${adminonolist.categori}</td>
+				<td>${adminonolist.contents}</td>
+				<td>${adminonolist.upload_date}</td>
+				<td>${adminonolist.answer_contents}</td>
 			</tr>
 </c:forEach>
 
@@ -105,14 +105,13 @@
 
 	</div>
 	
-	
-	
+
 	
 <div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
 			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_board.do" method="POST">
+			<form class="form-horizontal" action="/Dobid/admin_ono.do" method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control" name="admin_ono_view_title"
@@ -142,7 +141,7 @@
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="image" src="../image/dobid.png"
-							id="admin_board_view_img" name="admin_board_view_img"
+							id="admin_ono_view_img" name="admin_ono_view_img"
 							 readOnly>
 					</div>
 				</div>
@@ -155,27 +154,32 @@
 					</div>
 				</div>
 				
-				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
-						<textarea class="form-control " id="admin_ono_view_answer_contents"
-							name="admin_ono_view_answer_contents"
-							style="height: 200px"
-							></textarea>
-					</div>
-				</div>
+			
 		
 			
 			<div class="col-sm-offset-3 col-sm-5">
 				<button class="button button5 btn-default">삭제</button>
 			
 				<input type="hidden" name="del" value="del">
+				<input type="hidden" name="admin_ono_view_upload_date" id="admin_ono_view_upload_date">
 				
 			
 			
 			</div>
 			</form>
-
-				<button class="button button5 btn-default" id="close">취소</button>
+			<button class="button button5 btn-default" id="close">취소</button>
+			<form action="/Dobid/admin_ono.do" method="POST">
+				<button class="button button5 btn-default">답장</button>
+				
+				<input type="hidden" name="send" value="send">
+				<div class="form-group">
+					<div class="col-sm-offset-3 col-sm-5">
+						<textarea class="form-control " id="admin_ono_view_answer_contents"
+							name="admin_ono_view_answer_contents"
+							style="height: 200px"></textarea>
+					</div>
+				</div>
+			</form>
 			</div>
 		</div>
 

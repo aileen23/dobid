@@ -22,9 +22,9 @@ public class boardDAO {
 	public boardDAO() {
 		smc = SqlMapConfig.getSqlMapInstance();
 	}
-	
-	public List<NoticeboardDTO> noticeSelectAll(){ //borad_list 공지사항 전체목록
-		List<NoticeboardDTO> list=null;
+
+	public List<NoticeboardDTO> noticeSelectAll() { // borad_list 공지사항 전체목록
+		List<NoticeboardDTO> list = null;
 		try {
 			list = smc.queryForList("board.NoticeSelectAll");
 		} catch (SQLException e) {
@@ -33,9 +33,9 @@ public class boardDAO {
 		}
 		return list;
 	}
-	
-	public List<FreeboardDTO> freeSelectAll(){ //borad_list 자유게시판 전체목록
-		List<FreeboardDTO> list=null;
+
+	public List<FreeboardDTO> freeSelectAll() { // borad_list 자유게시판 전체목록
+		List<FreeboardDTO> list = null;
 		try {
 			list = smc.queryForList("board.FreeSelectAll");
 		} catch (SQLException e) {
@@ -44,9 +44,9 @@ public class boardDAO {
 		}
 		return list;
 	}
-	
-	
-	public boolean freeBoardWrite(FreeboardDTO freeboard) { //board_freedom_write 자유게시판 글쓰기
+
+	public boolean freeBoardWrite(FreeboardDTO freeboard) { // board_freedom_write
+															// 자유게시판 글쓰기
 
 		try {
 			smc.insert("board.FreeBoardWrite", freeboard);
@@ -58,36 +58,36 @@ public class boardDAO {
 		return false;
 
 	}
-	
-	
-	public NoticeboardDTO noticeSelect(String num){ //board_content_view 공지사항 상세보기
+
+	public NoticeboardDTO noticeSelect(String num) { // board_content_view 공지사항
+														// 상세보기
 		NoticeboardDTO noticeboardDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			noticeboardDTO=(NoticeboardDTO)smc.queryForObject("board.NoticeSelect", bagic_num);
+			noticeboardDTO = (NoticeboardDTO) smc.queryForObject("board.NoticeSelect", bagic_num);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return noticeboardDTO;
-			
-		
+
 	}
-	public FreeboardDTO freeSelect(String num){ //board_content_view 자유게시판 상세보기
+
+	public FreeboardDTO freeSelect(String num) { // board_content_view 자유게시판
+													// 상세보기
 		FreeboardDTO freeboardDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			freeboardDTO= (FreeboardDTO)smc.queryForObject("board.FreeSelect", bagic_num);
-			
+			freeboardDTO = (FreeboardDTO) smc.queryForObject("board.FreeSelect", bagic_num);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return freeboardDTO;	
+		return freeboardDTO;
 	}
-		
-	
-	public boolean noticeSelectCnt(String num){//조회수 증가
-		
+
+	public boolean noticeSelectCnt(String num) {// 조회수 증가
+
 		try {
 			int bagic_num = Integer.parseInt(num);
 			smc.update("board.NoticeSelectCnt", bagic_num);
@@ -97,10 +97,11 @@ public class boardDAO {
 		}
 
 		return false;
-		
+
 	}
-	public boolean freeSelectCnt(String num){//조회수증가
-		
+
+	public boolean freeSelectCnt(String num) {// 조회수증가
+
 		try {
 			int bagic_num = Integer.parseInt(num);
 			smc.update("board.FreeSelectCnt", bagic_num);
@@ -110,40 +111,36 @@ public class boardDAO {
 		}
 
 		return false;
-		
+
 	}
-	
-	
-	public List<NoticeboardDTO> noticeSelectTitle(String title){ //공지사항리스트 검색
-		List<NoticeboardDTO> list=null;
+
+	public List<NoticeboardDTO> noticeSelectTitle(String title) { // 공지사항리스트 검색
+		List<NoticeboardDTO> list = null;
 		try {
-			list = smc.queryForList("board.NoticeSelectTitle",title);
+			list = smc.queryForList("board.NoticeSelectTitle", title);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
 	}
-	
-	public List<FreeboardDTO> freeSelectAllTitle(String title){ //공지사항 리스트 검색
-		List<FreeboardDTO> list=null;
+
+	public List<FreeboardDTO> freeSelectAllTitle(String title) { // 공지사항 리스트 검색
+		List<FreeboardDTO> list = null;
 
 		try {
-			list = smc.queryForList("board.FreeSelectTitle",title);
+			list = smc.queryForList("board.FreeSelectTitle", title);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
 	}
-	
-	
-	
-/////////////////////////////////////////////관리자 공지/자유 게시물
-	
-	
-	public List<Admin_noticeDTO> adminNoticeSelectAll(){ //admin 관리자공지사항 전체목록
-		List<Admin_noticeDTO> list=null;
+
+	///////////////////////////////////////////// 관리자 공지/자유 게시물
+
+	public List<Admin_noticeDTO> adminNoticeSelectAll() { // admin 관리자공지사항 전체목록
+		List<Admin_noticeDTO> list = null;
 		try {
 			list = smc.queryForList("board.adminnoticelist");
 		} catch (SQLException e) {
@@ -152,79 +149,78 @@ public class boardDAO {
 		}
 		return list;
 	}
-	
-	public List<Admin_freeDTO> adminFreeSelectAll(){ //admin 관리자자유게시판 전체목록
-		List<Admin_freeDTO> list=null;
+
+	public List<Admin_freeDTO> adminFreeSelectAll() { // admin 관리자자유게시판 전체목록
+		List<Admin_freeDTO> list = null;
 		try {
 			list = smc.queryForList("board.adminfreelist");
 
-		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return list;
 	}
-	
-	
-	public List<Admin_noticeDTO> adminNoticeSelectTitle(String title){ //관리자 공지사항리스트 검색
-		List<Admin_noticeDTO> list = null;
-	
-		try {
-			
-			list=smc.queryForList("board.adminnoticetitle", title);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		return list;
-			
-		
-	}
-	public List<Admin_freeDTO> adminFreeSelectTitle(String title){ //괸리자 공지사항 리스트 검색
-		List<Admin_freeDTO> list = null;
-	
-		try {
-			list= smc.queryForList("board.adminfreetitle", title);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;	
-	}
-	
 
-	//상세보기 
-	public Admin_noticeDTO adminNoticeSelect(String num){ //관리자 공지사항 상세보기
+	public List<Admin_noticeDTO> adminNoticeSelectTitle(String title) { // 관리자
+																		// 공지사항리스트
+																		// 검색
+		List<Admin_noticeDTO> list = null;
+
+		try {
+
+			list = smc.queryForList("board.adminnoticetitle", title);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+
+	}
+
+	public List<Admin_freeDTO> adminFreeSelectTitle(String title) { // 괸리자 공지사항
+																	// 리스트 검색
+		List<Admin_freeDTO> list = null;
+
+		try {
+			list = smc.queryForList("board.adminfreetitle", title);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	// 상세보기
+	public Admin_noticeDTO adminNoticeSelect(String num) { // 관리자 공지사항 상세보기
 		Admin_noticeDTO adminnoticeboardDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			adminnoticeboardDTO=(Admin_noticeDTO)smc.queryForObject("board.adminnoticeselect", bagic_num);
+			adminnoticeboardDTO = (Admin_noticeDTO) smc.queryForObject("board.adminnoticeselect", bagic_num);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return adminnoticeboardDTO;
-			
-		
+
 	}
-	public Admin_freeDTO adminFreeSelect(String num){ //관리자 자유게시판 상세보기
+
+	public Admin_freeDTO adminFreeSelect(String num) { // 관리자 자유게시판 상세보기
 		Admin_freeDTO adminfreeboardDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			adminfreeboardDTO= (Admin_freeDTO)smc.queryForObject("board.adminfreeselect", bagic_num);
-			
+			adminfreeboardDTO = (Admin_freeDTO) smc.queryForObject("board.adminfreeselect", bagic_num);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return adminfreeboardDTO;	
+		return adminfreeboardDTO;
 	}
-	
-	
-	public boolean adminNoticeBoardDel(String num){//관리자 공지사항 게시판 삭제
+
+	public boolean adminNoticeBoardDel(String num) {// 관리자 공지사항 게시판 삭제
 		try {
 			int bagic_num = Integer.parseInt(num);
-			smc.delete("board.adminnoticeboarddel",bagic_num);
+			smc.delete("board.adminnoticeboarddel", bagic_num);
 			return true;
 		} catch (NumberFormatException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -232,12 +228,11 @@ public class boardDAO {
 		}
 		return false;
 	}
-	
-	
-	public boolean adminFreeBoardDel(String num){//관리자 공지사항 게시판 삭제
+
+	public boolean adminFreeBoardDel(String num) {// 관리자 공지사항 게시판 삭제
 		try {
 			int bagic_num = Integer.parseInt(num);
-			smc.delete("board.adminfreeboarddel",bagic_num);
+			smc.delete("board.adminfreeboarddel", bagic_num);
 			return true;
 		} catch (NumberFormatException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -245,12 +240,13 @@ public class boardDAO {
 		}
 		return false;
 	}
-	
-	//////////////////////////////////////////////////////////////////////////////////// 관리자 경매 게시물
-	
-	
-	public List<Admin_auctionDTO> adminAuctionSelectAll(){ //관리자 일반경매 리스트
-		List<Admin_auctionDTO> list=null;
+
+	//////////////////////////////////////////////////////////////////////////////////// 관리자
+	//////////////////////////////////////////////////////////////////////////////////// 경매
+	//////////////////////////////////////////////////////////////////////////////////// 게시물
+
+	public List<Admin_auctionDTO> adminAuctionSelectAll() { // 관리자 일반경매 리스트
+		List<Admin_auctionDTO> list = null;
 		try {
 			list = smc.queryForList("board.adminauctionlist");
 		} catch (SQLException e) {
@@ -259,9 +255,9 @@ public class boardDAO {
 		}
 		return list;
 	}
-	
-	public List<Admin_hotAuctionDTO> adminHotAuctionSelectAll(){ //관리자 핫경매 리스트
-		List<Admin_hotAuctionDTO> list=null;
+
+	public List<Admin_hotAuctionDTO> adminHotAuctionSelectAll() { // 관리자 핫경매 리스트
+		List<Admin_hotAuctionDTO> list = null;
 		try {
 			list = smc.queryForList("board.adminhotauctionlist");
 		} catch (SQLException e) {
@@ -270,10 +266,10 @@ public class boardDAO {
 		}
 		return list;
 	}
-	
 
-	public List<Admin_groupBuyDTO> adminGroupAuctionSelectAll(){ //관리자 그룹경매 리스트
-		List<Admin_groupBuyDTO> list=null;
+	public List<Admin_groupBuyDTO> adminGroupAuctionSelectAll() { // 관리자 그룹경매
+																	// 리스트
+		List<Admin_groupBuyDTO> list = null;
 		try {
 			list = smc.queryForList("board.admingroupauctionlist");
 		} catch (SQLException e) {
@@ -282,118 +278,98 @@ public class boardDAO {
 		}
 		return list;
 	}
-	
-	public List<Admin_auctionDTO> adminAucionSelectTitle(String title){ //관리자 일반경매리스트 검색
+
+	public List<Admin_auctionDTO> adminAucionSelectTitle(String title) { // 관리자
+																			// 일반경매리스트
+																			// 검색
 		List<Admin_auctionDTO> list = null;
-	
+
 		try {
-			
-			list=smc.queryForList("board.adminauctionselecttitle", title);
+
+			list = smc.queryForList("board.adminauctionselecttitle", title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
-			
-		
+
 	}
-	
-	public List<Admin_hotAuctionDTO> adminHotAucionSelectTitle(String title){ //관리자 핫경매리스트 검색
+
+	public List<Admin_hotAuctionDTO> adminHotAucionSelectTitle(String title) { // 관리자
+																				// 핫경매리스트
+																				// 검색
 		List<Admin_hotAuctionDTO> list = null;
-		
+
 		try {
-			
-			list=smc.queryForList("board.adminhotauctionselecttitle", title);
+
+			list = smc.queryForList("board.adminhotauctionselecttitle", title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
-		
-		
+
 	}
-	
-	public List<Admin_groupBuyDTO> adminGroupAucionSelectTitle(String title){ //관리자 공동구매 리스트 검색
+
+	public List<Admin_groupBuyDTO> adminGroupAucionSelectTitle(String title) { // 관리자
+																				// 공동구매
+																				// 리스트
+																				// 검색
 		List<Admin_groupBuyDTO> list = null;
-		
+
 		try {
-			
-			list=smc.queryForList("board.admingroupauctionselecttitle", title);
+
+			list = smc.queryForList("board.admingroupauctionselecttitle", title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
-		
-		
+
 	}
-	
-	
-	public Admin_auctionDTO adminAuctionSelect(String num){ //관리자 일반경매 상세보기
+
+	public Admin_auctionDTO adminAuctionSelect(String num) { // 관리자 일반경매 상세보기
 		Admin_auctionDTO adminauctionDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			adminauctionDTO= (Admin_auctionDTO)smc.queryForObject("board.adminauctionselect", bagic_num);
-			
+			adminauctionDTO = (Admin_auctionDTO) smc.queryForObject("board.adminauctionselect", bagic_num);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return adminauctionDTO;	
+		return adminauctionDTO;
 	}
-	
-	public Admin_hotAuctionDTO adminHotAuctionSelect(String num){ //관리자 핫경매 상세보기
+
+	public Admin_hotAuctionDTO adminHotAuctionSelect(String num) { // 관리자 핫경매
+																	// 상세보기
 		Admin_hotAuctionDTO adminhotauctionDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			adminhotauctionDTO= (Admin_hotAuctionDTO)smc.queryForObject("board.adminhotauctionselect", bagic_num);
-			
+			adminhotauctionDTO = (Admin_hotAuctionDTO) smc.queryForObject("board.adminhotauctionselect", bagic_num);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return adminhotauctionDTO;	
+		return adminhotauctionDTO;
 	}
-	
-	
-	public Admin_groupBuyDTO adminGroupAuctionSelect(String num){ //관리자 그룹경매 상세보기
+
+	public Admin_groupBuyDTO adminGroupAuctionSelect(String num) { // 관리자 그룹경매
+																	// 상세보기
 		Admin_groupBuyDTO admingroupauctionDTO = null;
 		try {
 			int bagic_num = Integer.parseInt(num);
-			admingroupauctionDTO= (Admin_groupBuyDTO)smc.queryForObject("board.admingroupauctionselect", bagic_num);
-			
+			admingroupauctionDTO = (Admin_groupBuyDTO) smc.queryForObject("board.admingroupauctionselect", bagic_num);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return admingroupauctionDTO;	
+		return admingroupauctionDTO;
 	}
-	
-	public boolean adminActionDel(String num){//관리자 일반경매 게시판 상세보기 삭제
+
+	public boolean adminActionDel(String num) {// 관리자 일반경매 게시판 상세보기 삭제
 		try {
 			int bagic_num = Integer.parseInt(num);
-			smc.delete("board.adminauctiondel",bagic_num);
-			return true;
-		} catch (NumberFormatException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
-	public boolean adminHotActionDel(String num){//관리자 핫경매 게시판 상세보기 삭제
-		try {
-			int bagic_num = Integer.parseInt(num);
-			smc.delete("board.adminhotauctiondel",bagic_num);
-			return true;
-		} catch (NumberFormatException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
-	
-	public boolean adminGroupActionDel(String num){//관리자 공동경매 게시판 상세보기 삭제
-		try {
-			int bagic_num = Integer.parseInt(num);
-			smc.delete("board.admingroupauctiondel",bagic_num);
+			smc.delete("board.adminauctiondel", bagic_num);
 			return true;
 		} catch (NumberFormatException | SQLException e) {
 			// TODO Auto-generated catch block
@@ -402,58 +378,86 @@ public class boardDAO {
 		return false;
 	}
 
-	
-	///////////////////////////////////////////관리자 ono
-	
-	
-	public List<Service_answerDTO> adminOnoSelectAll(String catalogue){
-		
-		List<Service_answerDTO> list = null;
-		
+	public boolean adminHotActionDel(String num) {// 관리자 핫경매 게시판 상세보기 삭제
 		try {
-			
-			list=smc.queryForList("board.adminonoselectall", catalogue);
+			int bagic_num = Integer.parseInt(num);
+			smc.delete("board.adminhotauctiondel", bagic_num);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean adminGroupActionDel(String num) {// 관리자 공동경매 게시판 상세보기 삭제
+		try {
+			int bagic_num = Integer.parseInt(num);
+			smc.delete("board.admingroupauctiondel", bagic_num);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	/////////////////////////////////////////// 관리자 ono
+
+	public List<Service_answerDTO> adminOnoSelectAll(String catalogue) {
+
+		List<Service_answerDTO> list = null;
+
+		try {
+
+			list = smc.queryForList("board.adminonolist", catalogue);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
-		
-		
-		
+
 	}
-	
-	public List<Service_answerDTO> adminOnoSelectTitle(Service_answerDTO onoparam){
-		
+
+	public List<Service_answerDTO> adminOnoSelectTitle(Service_answerDTO onoparam) {
+
 		List<Service_answerDTO> list = null;
-		
+
 		try {
-			
-			list=smc.queryForList("board.adminonoselectall", onoparam);
+
+			list = smc.queryForList("board.adminonoselect", onoparam);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
-		
-		
-		
+
+	}
+
+	public boolean adminOnoDel(String upload_date) {
+
+		try {
+
+			smc.delete("board.adminonodel", upload_date);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public boolean adminOnoSend(String answer_contents) {
+		
+		try {
+			
+			smc.update("board.adminonosend", answer_contents);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 }
