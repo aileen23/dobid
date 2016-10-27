@@ -4,7 +4,10 @@ import java.sql.SQLException;
 
 import java.util.List;
 
+import com.dobid.beans.Admin_auctionDTO;
 import com.dobid.beans.Admin_freeDTO;
+import com.dobid.beans.Admin_groupBuyDTO;
+import com.dobid.beans.Admin_hotAuctionDTO;
 import com.dobid.beans.Admin_noticeDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.NoticeboardDTO;
@@ -241,9 +244,38 @@ public class boardDAO {
 	}
 	
 	
+	public List<Admin_auctionDTO> adminAuctionSelectAll(){ //일반경매 리스트
+		List<Admin_auctionDTO> list=null;
+		try {
+			list = smc.queryForList("board.adminauctionlist");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
+	public List<Admin_hotAuctionDTO> adminHotAuctionSelectAll(){ //일반경매 리스트
+		List<Admin_hotAuctionDTO> list=null;
+		try {
+			list = smc.queryForList("board.adminhotauctionlist");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
-	
+	public List<Admin_groupBuyDTO> adminGroupAuctionSelectAll(){ //일반경매 리스트
+		List<Admin_groupBuyDTO> list=null;
+		try {
+			list = smc.queryForList("board.admingroupauctionlist");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 	
 	

@@ -15,7 +15,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<% request.setCharacterEncoding("UTF-8");%>
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -24,7 +24,7 @@
 			$("#popup").hide();
 		});
 
-		$(".a").click(function() {
+		$(".list").click(function() {
 			console.log($(this).children().text());
 		
 			$("#popup").show();
@@ -44,6 +44,7 @@
 		
 	});
 </script>
+
 
 <title>게시글관리</title>
 
@@ -92,7 +93,7 @@
 			</tr>
 			<c:forEach items="${adminboardlist }" var="adminboardlist">
 
-				<tr class="a">
+				<tr class="list">
 					<td>${ adminboardlist.basic_board_num}</td>
 					<td>${ adminboardlist.member_id}</td>
 					<td>${ adminboardlist.name}</td>

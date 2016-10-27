@@ -69,12 +69,35 @@ public class Admin_board_Action extends Action {
 		} else {
 			if (admin_board_view_userid.equals("admin")) {
 
-				dao.adminNoticeBoardDel(admin_board_view_num);
+				boolean delflag=dao.adminNoticeBoardDel(admin_board_view_num);
+				request.setAttribute("delflag", delflag);
 			} else {
-				dao.adminFreeBoardDel(admin_board_view_num);
+				boolean delflag=dao.adminFreeBoardDel(admin_board_view_num);
+				request.setAttribute("delflag", delflag);
 			}
 		}
 
 		return mapping.findForward("success");
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
