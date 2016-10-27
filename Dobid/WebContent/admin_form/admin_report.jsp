@@ -44,22 +44,22 @@
 	});
 </script>
 
-<title>1대1문의보기</title>
+<title>신고하기보기</title>
 
 
 </head>
-<!-- board_list.jsp 자유게시판과 공지사항을 탭으로구분하여 보여줌 -->
+
 <body>
 <!-- 헤더 -->
 	<br>
 	<br>
 	<br>
 	<div class="container">
-		<h3>1대1문의보기</h3>
+		<h3>신고하기보기</h3>
 		<hr>
 		
 		<div class="form-group">
-			<form action="/Dobid/admin_ono.do" method="POST">
+			<form action="/Dobid/admin_report.do" method="POST">
 				
 				<div class="col-sm-7">
 					<input type="text" class="form-control"
@@ -102,7 +102,7 @@
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
 			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_ono.do" method="POST">
+			<form class="form-horizontal" action="/Dobid/admin_report.do" method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control" name="admin_report_view_title"

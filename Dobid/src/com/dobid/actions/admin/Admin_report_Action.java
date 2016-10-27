@@ -33,12 +33,12 @@ public class Admin_report_Action extends Action{
 		System.out.println("admin_report_view_upload_date : " + request.getParameter("admin_report_view_upload_date"));
 
 		if (del == null) {
-			if (admin_report_selecttext.equals("")) {
+			if (admin_report_selecttext==null) {
 				List<Service_reportDTO> adminreportlist = null;
 				adminreportlist = dao.adminReportSelectAll();
 				request.setAttribute("adminreportlist", adminreportlist);
 
-			} else if (admin_report_selecttext != null) {
+			} else if (admin_report_selecttext!=null) {
 				List<Service_reportDTO> adminreportlist = null;
 				adminreportlist = dao.adminReportSelect(admin_report_selecttext);
 				request.setAttribute("adminreportlist", adminreportlist);

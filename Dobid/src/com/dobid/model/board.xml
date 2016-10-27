@@ -274,20 +274,17 @@
 	select member_id,title,contents,image_path,upload_date
 	from service_report
 	</select>
-
+<!-- 관리자 신고하기 게시물 검색 -->
 	<select id="adminreportselect" resultClass="seriverepotDTO" parameterClass="String">
 	select member_id,title,contents,image_path,upload_date
 	from service_report
-	where title=#title#
+	where title like '%'||#title#||'%'
 	</select>
 
 <!-- 관리자 신고하기 삭제 -->
-	<delete id="seriverepotDTO" parameterClass="String">
+	<delete id="adminreportdel" parameterClass="String">
 	delete from service_report where upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
 	</delete>
-
-
-
 
 
 
