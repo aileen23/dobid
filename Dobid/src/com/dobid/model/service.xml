@@ -2,12 +2,12 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <sqlMap namespace="service">
 	
-	<typeAlias alias="service_onoDTO" type="com.dobid.beans.Service_onoDTO" />
+	<typeAlias alias="service_answerDTO" type="com.dobid.beans.Service_answerDTO" />
 	<typeAlias alias="service_reportDTO" type="com.dobid.beans.Service_reportDTO" />
 
-	<insert id="serviceOno" parameterClass="service_onoDTO">
+	<insert id="serviceOno" parameterClass="service_answerDTO">
 		insert into service_answer values
-			(#member_id#, #title#, #categori#, #contents#, #image_path#, to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'), #answer_contents#, to_date(#answer_date#,'YYYY-MM-DD:HH24:MI:SS'))
+			(#member_id#, #title#, #categori#, #contents#, #image_path#, to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 	
 	<insert id="serviceReport" parameterClass="service_reportDTO">

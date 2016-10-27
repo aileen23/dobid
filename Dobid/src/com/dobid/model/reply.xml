@@ -2,7 +2,7 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <!-- reply.xml -->
 <sqlMap namespace="reply">
-   <typeAlias alias="reply" type="reply.dto.Reply"/>
+   <typeAlias alias="reply" type="com.dobid.beans.ReplyDTO"/>
    
    <insert id="add" parameterClass="reply">
        insert into reply values (reply_seq.nextval, #name#, #content#)

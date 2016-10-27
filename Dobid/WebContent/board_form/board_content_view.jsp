@@ -115,7 +115,7 @@ function getQuerystring(paramName){
 		
 	<Br><br><Br>
 	<Br><br><Br>
-	
+	<%@include file="/reply_form/replyclient.jsp" %>
   	<footer> <%@include file="/regist_form/footer.jsp"%>
 		</footer>
 </body>

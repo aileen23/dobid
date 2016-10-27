@@ -21,7 +21,7 @@
        var name = document.addForm.name.value;	
        var content = document.addForm.content.value;	
        var params="name="+name+"&content="+content; //"name=길동&content=안녕"
-       new ajax.xhr.Request("board_content_view_reply_add.do", params, addResult, 'POST');	
+       new ajax.xhr.Request("/Dobid/board_content_view_reply_add.do", params, addResult, 'POST');	
     }//addReply
     function addResult(xhr){//등록요청후 실행할 콜백함수
        if(xhr.readyState==4){
@@ -45,7 +45,7 @@
        
        var params="no="+no+"&name="+name+"&content="+content; 
            //"no=3&name=길동&content=안녕"
-       new ajax.xhr.Request("board_content_view_reply_update.do", params, updateResult, 'POST');	
+       new ajax.xhr.Request("/Dobid/board_content_view_reply_update.do", params, updateResult, 'POST');	
     }//updateReply
     
     function updateResult(xhr){//수정요청후 실행할 콜백함수
@@ -61,7 +61,7 @@
     }//updateResult  
     
     function deleteReply(no){//댓글 삭제요청
-       new ajax.xhr.Request('board_content_view_reply_delete.do','no='+no,deleteResult,'POST');	
+       new ajax.xhr.Request('/Dobid/board_content_view_reply_delete.do','no='+no,deleteResult,'POST');	
     }
     function deleteResult(xhr){//삭제요청후 콜백
        if(xhr.readyState==4){
@@ -77,7 +77,7 @@
     
     
     function loadReplyList(){//목록요청
-       new ajax.xhr.Request('Dobid/board_content_view_reply_list.do',null,loadReplyResult);
+       new ajax.xhr.Request('/Dobid/board_content_view_reply_list.do',null,loadReplyResult);
     }//loadReplyList
     
     function loadReplyResult(xhr){//콜백: 목록출력
@@ -167,7 +167,7 @@
 </head>
 <!-- replyclient.html -->
 <body>
-	<div style="width: 30%; margin-left: 33.3%">
+	<div style="width: 40%; margin-left: 33.3%">
   <!-- 댓글 목록 출력 -->
   <div id="replyList" style="width: 100%;" ></div>
   

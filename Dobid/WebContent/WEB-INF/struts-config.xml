@@ -215,22 +215,22 @@
 		
 			 <!-- 댓글관련 요청 -->        
         <action path="/board_content_view_reply_add"
-                type="reply.actions.AddAction">
+                type="com.dobid.actions.reply.AddAction">
              <forward name="success" path="/reply_form/addResult.jsp"></forward>        
         </action>
         
         <action path="/board_content_view_reply_list"
-                type="reply.actions.ListAction">
+                type="com.dobid.actions.reply.ListAction">
              <forward name="success" path="/reply_form/replyList.jsp"></forward>        
         </action>
         
         <action path="/board_content_view_reply_update"
-                type="reply.actions.UpdateAction">
+                type="com.dobid.actions.reply.UpdateAction">
              <forward name="success" path="/reply_form/addResult.jsp"></forward>        
         </action>
         
         <action path="/board_content_view_reply_delete"
-                type="reply.actions.DeleteAction">
+                type="com.dobid.actions.reply.DeleteAction">
              <forward name="success" path="/reply_form/addResult.jsp"></forward>        
         </action>
 	
