@@ -212,6 +212,27 @@
 		<action path="/admin_auctionlist" type="com.dobid.actions.admin.Admin_auctionlist_Action">
 			<forward name="success" path="/admin_form/admin_auctionlist.jsp"></forward>
 		</action>
+		
+			 <!-- 댓글관련 요청 -->        
+        <action path="/board_content_view_reply_add"
+                type="reply.actions.AddAction">
+             <forward name="success" path="/reply_form/addResult.jsp"></forward>        
+        </action>
+        
+        <action path="/board_content_view_reply_list"
+                type="reply.actions.ListAction">
+             <forward name="success" path="/reply_form/replyList.jsp"></forward>        
+        </action>
+        
+        <action path="/board_content_view_reply_update"
+                type="reply.actions.UpdateAction">
+             <forward name="success" path="/reply_form/addResult.jsp"></forward>        
+        </action>
+        
+        <action path="/board_content_view_reply_delete"
+                type="reply.actions.DeleteAction">
+             <forward name="success" path="/reply_form/addResult.jsp"></forward>        
+        </action>
 	
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 

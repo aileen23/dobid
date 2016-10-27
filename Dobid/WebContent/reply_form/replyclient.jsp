@@ -167,8 +167,6 @@
 </head>
 <!-- replyclient.html -->
 <body>
-	<h3 style="margin-left: 33%">댓글</h3>
-	<hr>
 	<div style="width: 30%; margin-left: 33.3%">
   <!-- 댓글 목록 출력 -->
   <div id="replyList" style="width: 100%;" ></div>
