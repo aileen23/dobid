@@ -14,7 +14,15 @@ public class Service_answerDTO {
 
 	public Service_answerDTO() {
 	}
-
+	public Service_answerDTO(String title, String categori, String contents,Date upload_date, String answer_contents, Date answer_date) {
+		super();
+		this.title = title;
+		this.categori = categori;
+		this.contents = contents;
+		this.upload_date = upload_date;
+		this.answer_contents = answer_contents;
+		this.answer_date = answer_date;
+	}
 	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
 			Date upload_date, String answer_contents, Date answer_date) {
 		super();

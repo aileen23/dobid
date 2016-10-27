@@ -24,8 +24,10 @@ public class Mypage_charge_Action extends Action{
 		Mypage_DAO dao = new Mypage_DAO();
 		
 		List<ChargelistDTO> list = dao.chargeSelect(id);
+		int Charging_amount = dao.select(id).getCharging_amount();
 		
 		request.setAttribute("list", list);
+		request.setAttribute("Charging_amount", Charging_amount);
 		
 		return  mapping.findForward("success");
 	}
