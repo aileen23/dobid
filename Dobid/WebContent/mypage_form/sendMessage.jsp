@@ -5,6 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+ $(function(){
+	$('sendMessage').click(function(){
+		$.ajax({
+			url:'/',
+			data:'',
+			type:'POST',
+			success:function(result){
+				$('#printdiv').html(result);	
+			}
+		});
+	});
+	 
+ });
+
+</script>
 </head>
 <body>
 <table>
