@@ -238,6 +238,12 @@
 			<forward name="success" path="/admin_form/admin_memberdel.jsp"></forward>
 		</action>
 		
+		<!-- 관리자 페이지테스트중 신고하기 (박종민) -->
+		
+		<action path="/admin_pagetest" type="com.dobid.actions.admin.Admin_pagetest_Action">
+			<forward name="success" path="/admin_form/admin_pagetest.jsp"></forward>
+		</action>
+		
 		<!--  -->
 			 <!-- 댓글관련 요청 -->        
         <action path="/board_content_view_reply_add"

@@ -1,7 +1,9 @@
 package com.dobid.model;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.dobid.beans.Admin_auctionDTO;
 import com.dobid.beans.Admin_freeDTO;
@@ -556,19 +558,38 @@ public class boardDAO {
 	
 	
 	
+/////////아페이징 짜쯩난다
 	
-	
-	
-	
-	
-	
-	
+  public int adminReportCount() {
+      int cnt = 0;
+      try {
+         cnt = (int) smc.queryForObject("board.adminreportcount");
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+      return cnt;
+
+   }
+
+   public List<Service_reportDTO> adminReportPage(int start, int end) {
+      List<Service_reportDTO> list = null;
+      try {
+         Map<String, Integer> map = new HashMap<>();
+         map.put("start", start);
+         map.put("end", end);
+         list = smc.queryForList("board.adminreportpage", map);
+      } catch (SQLException e) {
+         e.printStackTrace();
+      }
+      return list;
+
+
 
 	
 	
 	
 	
-	
+   }
 	
 	
 	

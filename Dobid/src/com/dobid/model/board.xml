@@ -362,6 +362,23 @@
 	</delete>
 
 
+	<!-- 관리자 신고하기 페이징 만들기 싫다 진짜 -->
+	<!-- 신고하기 카운터 -->
+	<select id="adminreportcount" resultClass="int">
+		select count(*) from service_report
+	</select>
+
+	<!-- 신고하기 페이지 나누기기기기기기기기기기 -->
+	<select id="adminreportpage" resultClass="seriverepotDTO" parameterClass="java.util.Map">
+		select member_id,title,contents,image_path,upload_date
+		from (select member_id,title,contents,image_path,upload_date, rownum rn
+		from (select member_id,title,contents,image_path,upload_date
+		from service_report order by upload_date desc))
+		where rn between #start# and #end#
+	</select>
+
+	
+	
 
 </sqlMap>
 	
