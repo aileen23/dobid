@@ -28,14 +28,14 @@ public class MessageDTO {
 		this.contents = contents;
 		this.regist_date =regist_date;
 	}
-	public MessageDTO(String send_id, String member_id, String title, String contents,
-			char reception_check) {
+	
+	public MessageDTO(String regist_date,String send_id, String member_id, String contents,String title) {
 		super();
 		this.send_id = send_id;
 		this.member_id = member_id;
 		this.title = title;
 		this.contents = contents;
-		this.reception_check = reception_check;
+		this.regist_date =regist_date;
 	}
 	public String getRegist_date() {
 		return regist_date;

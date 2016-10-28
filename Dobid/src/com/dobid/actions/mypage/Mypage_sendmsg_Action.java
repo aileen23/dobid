@@ -16,12 +16,12 @@ public class Mypage_sendmsg_Action extends Action{
 public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 		HttpServletResponse response) throws Exception {
 	
-		String id= (String) request.getSession().getAttribute("logincheck");
+		String send_id= (String) request.getSession().getAttribute("logincheck");
 		String member_id =request.getParameter("member_id");
 		String title =request.getParameter("title");
 		String contents =request.getParameter("contents");
 		
-		MessageDTO list = new MessageDTO(id, member_id, title, contents,'0');
+		MessageDTO list = new MessageDTO("0",send_id,member_id,contents,title);
 		
 		Mypage_DAO dao = new Mypage_DAO();
 		
