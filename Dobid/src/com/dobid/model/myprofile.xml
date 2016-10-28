@@ -2,23 +2,21 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <sqlMap namespace="myprofile">
 
-	<typeAlias alias="auction_participantDTO" type="com.dobid.beans.Auction_participantDTO" />
-	<typeAlias alias="auction_review2DTO" type="com.dobid.beans.Auction_reviewDTO" />
-	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
-	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
 	<typeAlias alias="chargeDTO" type="com.dobid.beans.ChargeDTO" />
 	<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.Groupbuy_participantDTO" />
 	<typeAlias alias="groupbuy_reviewDTO" type="com.dobid.beans.Groupbuy_reviewDTO" />
 	<typeAlias alias="groupbuyDTO" type="com.dobid.beans.GroupbuyDTO" />
+
+
+
+	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
 	<typeAlias alias="memberDTO" type="com.dobid.beans.MemberDTO" />
 	<typeAlias alias="messageDTO" type="com.dobid.beans.MessageDTO" />
-	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
-	<typeAlias alias="service_answerDTO" type="com.dobid.beans.Service_answerDTO" />
-	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	<typeAlias alias="auction_myAuctionDTO" type="com.dobid.beans.Auction_myAuctionDTO"/>
 	<typeAlias alias="chargelistDTO" type="com.dobid.beans.ChargelistDTO"/>
 	<typeAlias alias="auction_ChargeDTO" type="com.dobid.beans.Auction_ChargeDTO"/>
-
+	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
+	<typeAlias alias="service_answerDTO2" type="com.dobid.beans.Service_answerDTO" />
 	<select id="select" parameterClass="String" resultClass="memberDTO">
 		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
 		from member
@@ -32,8 +30,8 @@
 	
 	<select id="basketSelect" parameterClass="String" resultClass="auctionDTO">
 		select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
-		from auction a,basket b
-		where a.auction_board_num=b.board_num and b.member_id=#member_id#
+		from auction ,basket 
+		where auction.auction_board_num=basket.board_num and basket.member_id=#member_id#
 	</select>
 	
 	<select id="auctionSelect" parameterClass="String" resultClass="auction_myAuctionDTO">
@@ -59,7 +57,7 @@
 		where sysdate>end_date and highest_price_id=#highest_price_id# 
 	</select>
 	
-	<select id="qnaselect" parameterClass="String" resultClass="service_answerDTO">
+	<select id="qnaselect" parameterClass="String" resultClass="service_answerDTO2">
 		select title,categori,contents,upload_date,answer_cotents,answer_date
 		from service_answer
 		where member_id=#member_id#
