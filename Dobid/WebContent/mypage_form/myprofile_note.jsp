@@ -11,7 +11,7 @@
 	$(function(){
 		$('#receive').click(function(){
 			$.ajax({
-				url:'',
+				url:'/receive.do',
 				data:'',
 				type:'POST',
 				success:function(result){
@@ -21,7 +21,7 @@
 		});
 		$('#send').click(function(){
 			$.ajax({
-				url:'',
+				url:'/send.do',
 				data:'',
 				type:'POST',
 				success:function(result){
