@@ -2,297 +2,369 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <sqlMap namespace="board">
 
-	<typeAlias alias="auction_participantDTO" type="com.dobid.beans.Auction_participantDTO" />
-	<typeAlias alias="auction_review2DTO" type="com.dobid.beans.Auction_reviewDTO" />
-	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
-	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
-	<typeAlias alias="chargeDTO" type="com.dobid.beans.ChargeDTO" />
-	<typeAlias alias="commentDTO" type="com.dobid.beans.CommentDTO" />
+
 	<typeAlias alias="freeboardDTO" type="com.dobid.beans.FreeboardDTO" />
-	<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.Groupbuy_participantDTO" />
-	<typeAlias alias="groupbuy_reviewDTO" type="com.dobid.beans.Groupbuy_reviewDTO" />
-	<typeAlias alias="groupbuyDTO" type="com.dobid.beans.GroupbuyDTO" />
-	<typeAlias alias="memberDTO" type="com.dobid.beans.MemberDTO" />
-	<typeAlias alias="messageDTO" type="com.dobid.beans.MessageDTO" />
 	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
-	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
-	 <typeAlias alias="adminnoticeDTO" type="com.dobid.beans.Admin_noticeDTO" />
+	<typeAlias alias="adminnoticeDTO" type="com.dobid.beans.Admin_noticeDTO" />
 	<typeAlias alias="adminfreeDTO" type="com.dobid.beans.Admin_freeDTO" />
-	<typeAlias alias="adminauctionDTO" type="com.dobid.beans.Admin_auctionDTO"/>
-	<typeAlias alias="adminhotauctionDTO" type="com.dobid.beans.Admin_hotAuctionDTO"/>
-	<typeAlias alias="admingroupauctionDTO" type="com.dobid.beans.Admin_groupBuyDTO"/>
-	<typeAlias alias="seriveanswerDTO" type="com.dobid.beans.Service_answerDTO"/>
-	<typeAlias alias="seriverepotDTO" type="com.dobid.beans.Service_reportDTO"/>
+	<typeAlias alias="adminauctionDTO" type="com.dobid.beans.Admin_auctionDTO" />
+	<typeAlias alias="adminhotauctionDTO" type="com.dobid.beans.Admin_hotAuctionDTO" />
+	<typeAlias alias="admingroupauctionDTO" type="com.dobid.beans.Admin_groupBuyDTO" />
+	<typeAlias alias="seriveanswerDTO" type="com.dobid.beans.Service_answerDTO" />
+	<typeAlias alias="seriverepotDTO" type="com.dobid.beans.Service_reportDTO" />
+	<typeAlias alias="adminmemberDTO" type="com.dobid.beans.MemberDTO" />
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard order by basic_board_num desc
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from
+		noticeboard order by basic_board_num desc
 	</select>
-	
+
 	<!-- 게시판 리스트보기(자유) -->
 	<select id="FreeSelectAll" resultClass="freeboardDTO">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard order by basic_board_num desc
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+		order by basic_board_num desc
 	</select>
-	
+
 	<!-- 게시판 상세보기(공지) -->
-	<select id="NoticeSelect" resultClass="noticeboardDTO" parameterClass="int">
-		select basic_board_num,member_id,title,contents,cilck_count,upload_date from noticeboard where basic_board_num=#basic_board_num#
+	<select id="NoticeSelect" resultClass="noticeboardDTO"
+		parameterClass="int">
+		select
+		basic_board_num,member_id,title,contents,cilck_count,upload_date from
+		noticeboard where basic_board_num=#basic_board_num#
 	</select>
-	
+
 	<!-- 게시판 조회수 증가(공지) -->
 	<update id="NoticeSelectCnt" parameterClass="int">
-	update noticeboard set cilck_count=cilck_count+1 where basic_board_num=#basic_board_num#
+		update noticeboard set cilck_count=cilck_count+1 where
+		basic_board_num=#basic_board_num#
 	</update>
-	
+
 	<!-- 게시판 상세보기(자유) -->
-	<select id="FreeSelect" resultClass="freeboardDTO" parameterClass="int">
-		select basic_board_num,member_id,title,contents,cilck_count,upload_date from freeboard where basic_board_num=#basic_board_num#
+	<select id="FreeSelect" resultClass="freeboardDTO"
+		parameterClass="int">
+		select
+		basic_board_num,member_id,title,contents,cilck_count,upload_date from
+		freeboard where basic_board_num=#basic_board_num#
 	</select>
-	
+
 	<!-- 게시판 조회수 증가(자유) -->
 	<update id="FreeSelectCnt" parameterClass="int">
-	update freeboard set cilck_count=cilck_count+1 where basic_board_num=#basic_board_num#
+		update freeboard set cilck_count=cilck_count+1 where
+		basic_board_num=#basic_board_num#
 	</update>
-	
+
 	<!-- 자유게시판 글쓰기 -->
 	<insert id="FreeBoardWrite" parameterClass="freeboardDTO">
-		insert into freeboard values (freeboard_seq.NEXTVAL,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
+		insert into freeboard
+		values
+		(freeboard_seq.NEXTVAL,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
-	
+
 	<!-- 검색 게시판 리스트보기(공지) 글제목으로만 -->
-	<select id="NoticeSelectTitle" resultClass="noticeboardDTO" parameterClass="String">
-		select basic_board_num,member_id,title,cilck_count,upload_date from noticeboard where title like '%'||#title#||'%'
+	<select id="NoticeSelectTitle" resultClass="noticeboardDTO"
+		parameterClass="String">
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from
+		noticeboard where title like '%'||#title#||'%'
 	</select>
-	
+
 	<!-- 검색 게시판 리스트보기(자유) 글제목으로만 -->
-	<select id="FreeSelectTitle" resultClass="freeboardDTO" parameterClass="String">
-		select basic_board_num,member_id,title,cilck_count,upload_date from freeboard where title like '%'||#title#||'%'
+	<select id="FreeSelectTitle" resultClass="freeboardDTO"
+		parameterClass="String">
+		select
+		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
+		where title like '%'||#title#||'%'
 	</select>
-	
-	
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- 관리자 공지사항/자유게시판 (전체리스트/팝업/검색/삭제) -->
 
-		<!-- 관리자 게시판 전체조회(공지사항) -->
+
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!-- 관리자 공지사항/자유게시판 (전체리스트/팝업/검색/삭제) -->
+
+	<!-- 관리자 게시판 전체조회(공지사항) -->
 	<select id="adminnoticelist" resultClass="adminnoticeDTO">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
-	from noticeboard a, member m where a.member_id=m.member_id order by a.upload_date desc
+		select
+		a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
+		from noticeboard a, member m where a.member_id=m.member_id order by
+		a.upload_date desc
 
 	</select>
-	
+
 	<!-- 관리자 게시판 전체조회(자유게시판) -->
-	<select id="adminfreelist" resultClass="adminfreeDTO" >
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
-	from freeboard a, member m where a.member_id=m.member_id order by a.upload_date desc
+	<select id="adminfreelist" resultClass="adminfreeDTO">
+		select
+		a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
+		from freeboard a, member m where a.member_id=m.member_id order by
+		a.upload_date desc
 	</select>
-	
+
 	<!-- 관리자 제목으로 상세보기 팝업(공지) -->
-	<select id="adminnoticeselect" resultClass="adminnoticeDTO" parameterClass="int">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
-	from noticeboard a, member m where a.basic_board_num=#basic_board_num# and a.member_id=m.member_id
+	<select id="adminnoticeselect" resultClass="adminnoticeDTO"
+		parameterClass="int">
+		select
+		a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
+		from noticeboard a, member m where a.basic_board_num=#basic_board_num#
+		and a.member_id=m.member_id
 	</select>
-	
+
 	<!-- 관리자 제목으로 상세보기 팝업(자유) -->
-	<select id="adminfreeselect" resultClass="adminfreeDTO" parameterClass="int">
-		select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
-	from freeboard a, member m where a.basic_board_num=#basic_board_num# and a.member_id=m.member_id
-	
+	<select id="adminfreeselect" resultClass="adminfreeDTO"
+		parameterClass="int">
+		select
+		a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
+		from freeboard a, member m where a.basic_board_num=#basic_board_num#
+		and a.member_id=m.member_id
+
 	</select>
-	
+
 	<!-- 검색 관리자 게시판(공지) 글제목으로만 -->
-	<select id="adminnoticetitle" resultClass="adminnoticeDTO" parameterClass="String">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
-	from noticeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id order by a.upload_date desc
+	<select id="adminnoticetitle" resultClass="adminnoticeDTO"
+		parameterClass="String">
+		select
+		a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
+		from noticeboard a, member m where title like '%'||#title#||'%' and
+		a.member_id=m.member_id order by a.upload_date desc
 	</select>
-	
+
 	<!-- 검색 관리자 게시판(자유) 글제목으로만 -->
-	<select id="adminfreetitle" resultClass="adminfreeDTO" parameterClass="String">
-	select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title 
-	from freeboard a, member m where title like '%'||#title#||'%' and a.member_id=m.member_id order by a.upload_date desc
+	<select id="adminfreetitle" resultClass="adminfreeDTO"
+		parameterClass="String">
+		select
+		a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,a.title
+		from freeboard a, member m where title like '%'||#title#||'%' and
+		a.member_id=m.member_id order by a.upload_date desc
 	</select>
-	
+
 	<!-- 관리자 공지 삭제 -->
 	<delete id="adminnoticeboarddel" parameterClass="int">
-	delete from noticeboard where basic_board_num=#basic_board_num#
+		delete from noticeboard where basic_board_num=#basic_board_num#
 	</delete>
-	
+
 	<!-- 관리자 자유게시판 삭제 -->
 	<delete id="adminfreeboarddel" parameterClass="int">
-	delete from freeboard where basic_board_num=#basic_board_num#
+		delete from freeboard where basic_board_num=#basic_board_num#
 	</delete>
-	
-	
-	
-	
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- 관리자 경매게시판(일반,핫,공동) (전체리스트/팝업/검색/삭제) -->
+
+
+
+
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!-- 관리자 경매게시판(일반,핫,공동) (전체리스트/팝업/검색/삭제) -->
 
 
 
 	<!-- 관리자 경매게시물 전체조회(일반경매) -->
 	<select id="adminauctionlist" resultClass="adminauctionDTO">
-	select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check 
-	from auction
-	where hot_check='경매'
-	order by regist_date desc
+		select
+		auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
+		from auction
+		where hot_check='경매'
+		order by regist_date desc
 	</select>
 
 
 
 	<!-- 관리자 경매게시물 전체조회(핫경매) -->
 	<select id="adminhotauctionlist" resultClass="adminhotauctionDTO">
-	select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check 
-	from auction
-	where hot_check='핫경매'
-	order by regist_date desc
+		select
+		auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
+		from auction
+		where hot_check='핫경매'
+		order by regist_date desc
 	</select>
 
 	<!-- 관리자 경매게시물 전체조회(공동구매) -->
 	<select id="admingroupauctionlist" resultClass="admingroupauctionDTO">
-	select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date
-	from groupbuy
-	order by regist_date desc
+		select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매'
+		hot_check,main_image_path,regist_date
+		from groupbuy
+		order by regist_date desc
 	</select>
-	
-	
+
+
 	<!-- 관리자 경매게시물 상세보기 팝업(일반경매) -->
-	<select id="adminauctionselect" resultClass="adminauctionDTO" parameterClass="int">
-	select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check 
-	from auction
-	where hot_check='경매' and auctionboard_num=#auctionboard_num#
-	order by regist_date desc
+	<select id="adminauctionselect" resultClass="adminauctionDTO"
+		parameterClass="int">
+		select
+		auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
+		from auction
+		where hot_check='경매' and auctionboard_num=#auctionboard_num#
+		order by regist_date desc
 	</select>
-	
+
 	<!-- 관리자 경매게시물 상세보기 팝업(핫경매) -->
-	<select id="adminhotauctionselect" resultClass="adminhotauctionDTO" parameterClass="int">
-	select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check 
-	from auction
-	where hot_check='핫경매' and auctionboard_num=#auctionboard_num#
-	order by regist_date desc
+	<select id="adminhotauctionselect" resultClass="adminhotauctionDTO"
+		parameterClass="int">
+		select
+		auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
+		from auction
+		where hot_check='핫경매' and auctionboard_num=#auctionboard_num#
+		order by regist_date desc
 	</select>
-	
+
 	<!-- 관리자 경매게시물 상세보기 팝업(그룹) -->
-	<select id="admingroupauctionselect" resultClass="admingroupauctionDTO" parameterClass="int">
-	select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date
-	from groupbuy 
-	where groupbuy_board_num=#groupbuy_board_num#
-	order by regist_date desc
+	<select id="admingroupauctionselect" resultClass="admingroupauctionDTO"
+		parameterClass="int">
+		select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매'
+		hot_check,main_image_path,regist_date
+		from groupbuy
+		where groupbuy_board_num=#groupbuy_board_num#
+		order by regist_date desc
 	</select>
 
 	<!-- 검색 관리자 게시판(일반경매) 글제목으로만 -->
-	<select id="adminauctionselecttitle" resultClass="adminauctionDTO" parameterClass="String">
-	
-	select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check 
-	from auction
-	where hot_check='경매' and title like '%'||#title#||'%'
-	order by regist_date desc
+	<select id="adminauctionselecttitle" resultClass="adminauctionDTO"
+		parameterClass="String">
+
+		select
+		auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
+		from auction
+		where hot_check='경매' and title like '%'||#title#||'%'
+		order by regist_date desc
 	</select>
 
 
 	<!-- 검색 관리자 게시판(핫경매) 글제목으로만 -->
-	<select id="adminhotauctionselecttitle" resultClass="adminhotauctionDTO" parameterClass="String">
-	
-	select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check 
-	from auction
-	where hot_check='핫경매' and title like '%'||#title#||'%'
-	order by regist_date desc
+	<select id="adminhotauctionselecttitle" resultClass="adminhotauctionDTO"
+		parameterClass="String">
+
+		select
+		auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
+		from auction
+		where hot_check='핫경매' and title like '%'||#title#||'%'
+		order by regist_date desc
 	</select>
 
 	<!-- 검색 관리자 게시판(그룹구매) 글제목으로만 -->
-	<select id="admingroupauctionselecttitle" resultClass="admingroupauctionDTO" parameterClass="String">
-	
-	select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date
-	from groupbuy 
-	where title like '%'||#title#||'%'
-	order by regist_date desc
+	<select id="admingroupauctionselecttitle" resultClass="admingroupauctionDTO"
+		parameterClass="String">
+
+		select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매'
+		hot_check,main_image_path,regist_date
+		from groupbuy
+		where title like '%'||#title#||'%'
+		order by regist_date desc
 	</select>
 
 
 	<!-- 관리자 일반 삭제 -->
 	<delete id="adminauctiondel" parameterClass="int">
-	delete from auction where auction_board_num=#auction_board_num# and hot_check='경매'
+		delete from auction where auction_board_num=#auction_board_num# and
+		hot_check='경매'
 	</delete>
 
 	<!-- 관리자 핫경매 삭제 -->
 	<delete id="adminhotauctiondel" parameterClass="int">
-	delete from auction where auction_board_num=#auction_board_num# and hot_check='핫경매'
+		delete from auction where auction_board_num=#auction_board_num# and
+		hot_check='핫경매'
 	</delete>
 
 
 	<!-- 관리자 그룹경매 삭제 -->
 	<delete id="admingroupauctiondel" parameterClass="int">
-	delete from groupbuy where groupbuy_board_num=#groupbuy_board_num#
+		delete from groupbuy where groupbuy_board_num=#groupbuy_board_num#
 	</delete>
 
 
 
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--  -->
-	<!--관리자 ono  -->
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!-- -->
+	<!--관리자 ono -->
 
 
-<!-- 관리자 ono게시물 카탈로그별 조회(1대1) -->
+	<!-- 관리자 ono게시물 카탈로그별 조회(1대1) -->
 
-	<select id="adminonolist" resultClass="seriveanswerDTO" parameterClass="String">
-	select answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id 
-	from service_answer
-	where categori=#categori#
+	<select id="adminonolist" resultClass="seriveanswerDTO"
+		parameterClass="String">
+		select
+		answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id
+		from service_answer
+		where categori=#categori#
 
 	</select>
-	
-<!-- 관리자 ono게시물 검색어와 카탈로그별 조회(1대1) -->
 
-	<select id="adminonoselect" resultClass="seriveanswerDTO" parameterClass="seriveanswerDTO">
-	select answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id 
-	from service_answer 
-	where categori=#categori# and title=#admin_ono_selecttext#
+	<!-- 관리자 ono게시물 검색어와 카탈로그별 조회(1대1) -->
+
+	<select id="adminonoselect" resultClass="seriveanswerDTO"
+		parameterClass="seriveanswerDTO">
+		select
+		answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id
+		from service_answer
+		where categori=#categori# and title=#admin_ono_selecttext#
 	</select>
 
-<!-- ono 1대1 삭제 -->
+	<!-- ono 1대1 삭제 -->
 	<delete id="adminonodel" parameterClass="String">
-	delete from service_answer where upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
+		delete from service_answer where
+		upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
 	</delete>
-	
-<!-- ono 1대1 답변 -->
-	<update id="adminonosend" parameterClass="seriveanswerDTO" >
-	update service_answer set answer_date=to_date(#answer_date#,'YYYY-MM-DD:HH24:MI:SS'),answer_contents=#answer_contents# 
-	where upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
+
+	<!-- ono 1대1 답변 -->
+	<update id="adminonosend" parameterClass="seriveanswerDTO">
+		update service_answer set
+		answer_date=to_date(#answer_date#,'YYYY-MM-DD:HH24:MI:SS'),answer_contents=#answer_contents#
+		where upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
 	</update>
 
 
-<!-- 관리자 신고하기 게시물 -->
+	<!-- 관리자 신고하기 게시물 -->
 
-	<select id="adminreportall" resultClass="seriverepotDTO" >
-	select member_id,title,contents,image_path,upload_date
-	from service_report
+	<select id="adminreportall" resultClass="seriverepotDTO">
+		select member_id,title,contents,image_path,upload_date
+		from service_report
 	</select>
-<!-- 관리자 신고하기 게시물 검색 -->
-	<select id="adminreportselect" resultClass="seriverepotDTO" parameterClass="String">
-	select member_id,title,contents,image_path,upload_date
-	from service_report
-	where title like '%'||#title#||'%'
+	<!-- 관리자 신고하기 게시물 검색 -->
+	<select id="adminreportselect" resultClass="seriverepotDTO"
+		parameterClass="String">
+		select member_id,title,contents,image_path,upload_date
+		from service_report
+		where title like '%'||#title#||'%'
 	</select>
 
-<!-- 관리자 신고하기 삭제 -->
+	<!-- 관리자 신고하기 삭제 -->
 	<delete id="adminreportdel" parameterClass="String">
-	delete from service_report where upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
+		delete from service_report where
+		upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
 	</delete>
 
+
+
+	<!-- 관리자 멤버관리 게시물 -->
+
+	<select id="adminmemberdelall" resultClass="adminmemberDTO">
+		select
+		member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
+		from member
+	</select>
+	<!-- 관리자 멤버관리 게시물 검색 -->
+	<select id="adminmemberdelselect" resultClass="adminmemberDTO"
+		parameterClass="String">
+		select
+		member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
+		from member
+		where member_id like '%'||#member_id#||'%'
+	</select>
+
+	<!-- 관리자 멤버관리 삭제 -->
+	<delete id="adminmemberdeldel" parameterClass="String">
+		delete from member where member_id=#member_id#
+	</delete>
 
 
 
 </sqlMap>
 	
-
 
 
 

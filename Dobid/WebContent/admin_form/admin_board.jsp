@@ -15,34 +15,38 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<% request.setCharacterEncoding("UTF-8");%>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(
+			function() {
 
+				$("#close").click(function() {
+					$("#popup").hide();
+				});
 
-		$("#close").click(function() {
-			$("#popup").hide();
-		});
+				$(".list").click(
+						function() {
+							console.log($(this).children().text());
 
-		$(".list").click(function() {
-			console.log($(this).children().text());
-		
-			$("#popup").show();
-			
-			$("#admin_board_view_title").val($(this).children().eq(4).text());
-			$("#admin_board_view_userid").val($(this).children().eq(1).text());
-			$("#admin_board_view_img").val($(this).children().eq(7).text());
-			$("#admin_board_view_content").val($(this).children().eq(6).text());
-			
-			
-			$("#admin_board_view_num").val($(this).children().eq(0).text());
-	
-		});
-		
-	
-		
-		
-	});
+							$("#popup").show();
+
+							$("#admin_board_view_title").val(
+									$(this).children().eq(4).text());
+							$("#admin_board_view_userid").val(
+									$(this).children().eq(1).text());
+							$("#admin_board_view_img").val(
+									$(this).children().eq(7).text());
+							$("#admin_board_view_content").val(
+									$(this).children().eq(6).text());
+
+							$("#admin_board_view_num").val(
+									$(this).children().eq(0).text());
+
+						});
+
+			});
 </script>
 
 
@@ -101,7 +105,8 @@
 					<td>${ adminboardlist.title}</td>
 					<td>${ adminboardlist.email}</td>
 					<td>${ adminboardlist.contents}</td>
-					<td>${ adminboardlist.upload_date}<input class="image_path" type="hidden" name="${ adminboardlist.image_path}"></td>
+					<td>${ adminboardlist.upload_date}<input class="image_path"
+						type="hidden" name="${ adminboardlist.image_path}"></td>
 				</tr>
 			</c:forEach>
 
@@ -116,13 +121,14 @@
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
 			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_board.do" method="POST">
+			<form class="form-horizontal" action="/Dobid/admin_board.do"
+				method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
-						<input type="text" class="form-control" name="admin_board_view_title"
-							id="admin_board_view_title" style="margin-top: 20px;" value="asd"
-							 readOnly>
-							
+						<input type="text" class="form-control"
+							name="admin_board_view_title" id="admin_board_view_title"
+							style="margin-top: 20px;" value="asd" readOnly>
+
 					</div>
 				</div>
 				<div class="form-group">
@@ -130,50 +136,57 @@
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
 							id="admin_board_view_userid" name="admin_board_view_userid"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="image" src="../image/dobid.png"
-							id="admin_board_view_img" name="admin_board_view_img"
-							 readOnly>
+							id="admin_board_view_img" name="admin_board_view_img" readOnly>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<textarea class="form-control " id="admin_board_view_content"
-							name="admin_board_view_content"
-							style="height: 200px"
-							readOnly></textarea>
+							name="admin_board_view_content" style="height: 200px" readOnly></textarea>
 					</div>
 				</div>
-		
-			
-			<div class="col-sm-offset-3 col-sm-5">
-				<button class="button button5 btn-default">삭제</button>
-			
-				<input type="hidden" name="del" value="del">
-				<input type="hidden" id="admin_board_view_num" name="admin_board_view_num">
-				
-			
-			
-			</div>
+
+
+				<div class="col-sm-offset-3 col-sm-5">
+					<button class="button button5 btn-default">삭제</button>
+
+					<input type="hidden" name="del" value="del"> <input
+						type="hidden" id="admin_board_view_num"
+						name="admin_board_view_num">
+
+
+
+				</div>
 			</form>
 
-				<button class="button button5 btn-default" id="close">취소</button>
-			</div>
+			<button class="button button5 btn-default" id="close">취소</button>
+		</div>
+	</div>
+	</div>
+
+
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
+		<div class="container">
+
+			<hr>
+
+			<!-- Footer -->
+			<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+
 		</div>
 	</div>
 
 
-	<Br>
-	<Br>
-	<br>
-	<br>
-	<br>
-	<!-- Footer -->
-	<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 </body>
 </html>

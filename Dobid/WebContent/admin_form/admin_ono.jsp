@@ -209,7 +209,7 @@
 		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 
 	</div>
-	
+	</div>
 	
 	
 </body>

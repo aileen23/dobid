@@ -9,6 +9,7 @@ import com.dobid.beans.Admin_groupBuyDTO;
 import com.dobid.beans.Admin_hotAuctionDTO;
 import com.dobid.beans.Admin_noticeDTO;
 import com.dobid.beans.FreeboardDTO;
+import com.dobid.beans.MemberDTO;
 import com.dobid.beans.NoticeboardDTO;
 import com.dobid.beans.Service_answerDTO;
 import com.dobid.beans.Service_reportDTO;
@@ -505,4 +506,70 @@ public class boardDAO {
 		}
 		return false;
 	}
+	
+	
+	///////////////////////////////// 관리자 멤버보기/삭제
+	
+	
+	public List<MemberDTO> adminMemberdelSelectAll() {
+		
+		List<MemberDTO> list = null;
+		
+		try {
+			
+			list = smc.queryForList("board.adminmemberdelall");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+		
+	}
+	
+	public List<MemberDTO> adminMemberdelSelect(String member_id) {
+
+		List<MemberDTO> list = null;
+
+		try {
+
+			list = smc.queryForList("board.adminmemberdelselect", member_id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+
+	}
+
+	public boolean adminMemberdelDel(String member_id) {
+
+		try {
+
+			smc.delete("board.adminmemberdeldel", member_id);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 }

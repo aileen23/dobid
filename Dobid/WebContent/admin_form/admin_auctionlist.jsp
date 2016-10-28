@@ -17,34 +17,39 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(
+			function() {
 
+				$("#close").click(function() {
+					$("#popup").hide();
+				});
 
-		$("#close").click(function() {
-			$("#popup").hide();
-		});
+				$(".list").click(
+						function() {
+							console.log($(this).children().text());
 
-		$(".list").click(function() {
-			console.log($(this).children().text());
-		
-			$("#popup").show();
-			
-			$("#admin_auction_view_num").val($(this).children().eq(0).text());
-			$("#admin_auction_title").val($(this).children().eq(1).text());
-			$("#admin_auction_view_content").val($(this).children().eq(2).text());
-			$("#admin_auction_view_userid").val($(this).children().eq(3).text());
-			$("#admin_auction_catalogue").val($(this).children().eq(4).text());
-			$("#admin_auction_hot_check").val($(this).children().eq(5).text());
-			$("#admin_auction_bid_check").val($(this).children().eq(6).text());
-			$("#admin_auction_view_img").val($(this).children().eq(7).text());
-			
-			
-	
-		});
+							$("#popup").show();
 
-		
-		
-	});
+							$("#admin_auction_view_num").val(
+									$(this).children().eq(0).text());
+							$("#admin_auction_title").val(
+									$(this).children().eq(1).text());
+							$("#admin_auction_view_content").val(
+									$(this).children().eq(2).text());
+							$("#admin_auction_view_userid").val(
+									$(this).children().eq(3).text());
+							$("#admin_auction_catalogue").val(
+									$(this).children().eq(4).text());
+							$("#admin_auction_hot_check").val(
+									$(this).children().eq(5).text());
+							$("#admin_auction_bid_check").val(
+									$(this).children().eq(6).text());
+							$("#admin_auction_view_img").val(
+									$(this).children().eq(7).text());
+
+						});
+
+			});
 </script>
 
 <title>관리자 경매리스트</title>
@@ -53,7 +58,7 @@
 </head>
 <!-- board_list.jsp 자유게시판과 공지사항을 탭으로구분하여 보여줌 -->
 <body>
-<!-- 헤더 -->
+	<!-- 헤더 -->
 	<br>
 	<br>
 	<br>
@@ -62,19 +67,21 @@
 		<hr>
 
 		<div class="form-group">
-		<form action="/Dobid/admin_auctionlist.do" method="POST">
-			<div class="col-sm-2 col-sm-offset-1">
-				<select class="form-control" name="catalogue">
-					<option value="auction">경매</option>
-					<option value="hotauction">핫경매</option>
-					<option value="groupauction">공동구매</option>
-				</select>
-			</div>
-			<div class="col-sm-7">
-				<input type="text" class="form-control" id="admin_auction_selecttext" name="admin_auction_selecttext" placeholder="검색어입력">
+			<form action="/Dobid/admin_auctionlist.do" method="POST">
+				<div class="col-sm-2 col-sm-offset-1">
+					<select class="form-control" name="catalogue">
+						<option value="auction">경매</option>
+						<option value="hotauction">핫경매</option>
+						<option value="groupauction">공동구매</option>
+					</select>
+				</div>
+				<div class="col-sm-7">
+					<input type="text" class="form-control"
+						id="admin_auction_selecttext" name="admin_auction_selecttext"
+						placeholder="검색어입력">
 
-			</div>
-			<button class="button button5 btn-default" id="admin_auction_select">검색</button>
+				</div>
+				<button class="button button5 btn-default" id="admin_auction_select">검색</button>
 			</form>
 		</div>
 
@@ -90,25 +97,25 @@
 				<th>진행여부</th>
 				<th>등록시간</th>
 			</tr>
-		<c:forEach items="${adminauctionlist }" var="adminauctionlist">
-			<tr class="list">
-			
-				<td>${adminauctionlist.auction_board_num }</td>
-				<td>${adminauctionlist.title }</td>
-				<td>${adminauctionlist.contents }</td>
-				<td>${adminauctionlist.seller_id }</td>
-				<td>${adminauctionlist.categori }</td>
-				<td>${adminauctionlist.hot_check }</td>
-				<td>${adminauctionlist.bid_check }</td>
-				<td>${adminauctionlist.regist_date }</td>
+			<c:forEach items="${adminauctionlist }" var="adminauctionlist">
+				<tr class="list">
 
-				
-			
-			
-	
+					<td>${adminauctionlist.auction_board_num }</td>
+					<td>${adminauctionlist.title }</td>
+					<td>${adminauctionlist.contents }</td>
+					<td>${adminauctionlist.seller_id }</td>
+					<td>${adminauctionlist.categori }</td>
+					<td>${adminauctionlist.hot_check }</td>
+					<td>${adminauctionlist.bid_check }</td>
+					<td>${adminauctionlist.regist_date }</td>
 
-			</tr>
-		</c:forEach>
+
+
+
+
+
+				</tr>
+			</c:forEach>
 
 		</table>
 
@@ -120,19 +127,19 @@
 
 
 
-	
+
 
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
 			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do" method="POST">
+			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do"
+				method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control" name="admin_auction_title"
-							id="admin_auction_title" style="margin-top: 20px;"
-							 readOnly>
-							
+							id="admin_auction_title" style="margin-top: 20px;" readOnly>
+
 					</div>
 				</div>
 				<div class="form-group">
@@ -140,25 +147,25 @@
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
 							id="admin_auction_view_userid" name="admin_auction_view_userid"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
 							id="admin_auction_bid_check" name="admin_auction_bid_check"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
 							id="admin_auction_catalogue" name="admin_auction_catalogue"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
 
@@ -166,44 +173,53 @@
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="image" src="../image/dobid.png"
 							id="admin_auction_view_img" name="admin_auction_view_img"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<textarea class="form-control " id="admin_auction_view_content"
-							name="admin_auction_view_content"
-							style="height: 200px"
-							readOnly></textarea>
+							name="admin_auction_view_content" style="height: 200px" readOnly></textarea>
 					</div>
 				</div>
-		
-			
-			<div class="col-sm-offset-3 col-sm-5">
-				<button class="button button5 btn-default">삭제</button>
-			
-				<input type="hidden" name="del" value="del">
-				<input type="hidden" id="admin_auction_view_num" name="admin_auction_view_num">
-				<input type="hidden" id="admin_auction_hot_check" name="admin_auction_hot_check">
-				
-				
-			
-			
-			</div>
+
+
+				<div class="col-sm-offset-3 col-sm-5">
+					<button class="button button5 btn-default">삭제</button>
+
+					<input type="hidden" name="del" value="del"> <input
+						type="hidden" id="admin_auction_view_num"
+						name="admin_auction_view_num"> <input type="hidden"
+						id="admin_auction_hot_check" name="admin_auction_hot_check">
+
+
+
+
+				</div>
 			</form>
 
-				<button class="button button5 btn-default" id="close">취소</button>
-			</div>
+			<button class="button button5 btn-default" id="close">취소</button>
 		</div>
+	</div>
 
 
 
-	<Br>
-	<Br>
-	<br>
-	<br>
-	<br>
-	<!-- Footer -->
-	<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
+		<div class="container">
+
+			<hr>
+
+			<!-- Footer -->
+			<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+
+		</div>
+	</div>
+
+
 </body>
 </html>
