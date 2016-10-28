@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
 <%
@@ -18,14 +17,11 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <%-- *.do 에 대한 CSS, JS 파일 경로 --%>
-<script src="service_form/js/customerservice_ono.js"
-	type="text/javascript"></script>
+<script src="service_form/js/customerservice_ono.js" type="text/javascript"></script>
 <%-- 유효성검사  --%>
-<script src="service_form/js/customerservice_ono_upload.js"
-	type="text/javascript"></script>
+<script src="service_form/js/customerservice_ono_upload.js" type="text/javascript"></script>
 <%-- 첨부파일 업로드  --%>
-<link rel="stylesheet" type="text/css"
-	href="service_form/css/service.css">
+<link rel="stylesheet" type="text/css" href="service_form/css/service.css">
 
 
 <link rel="stylesheet"

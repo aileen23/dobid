@@ -21,16 +21,19 @@ public class AddAction extends Action{
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
     		HttpServletResponse response) throws Exception {
+    	request.setCharacterEncoding("UTF-8");
     	ReplyDTO reply = new ReplyDTO(0,
                                request.getParameter("name"),
                                request.getParameter("content")); 
     	
     	ReplyDAO dao = new ReplyDAO();
-    	   if(dao.insert(reply)){
-    		 request.setAttribute("msg", "댓글등록성공!!");   
+    	 if(dao.insert(reply)){
+    		 request.setAttribute("msg", "댓글등록성공!!");  
     	   }else{
     		 request.setAttribute("msg", "댓글등록실패!!");  
-    	   }    	
+    	   }
+    	 
+    	
     	return mapping.findForward("success");
     }
 }

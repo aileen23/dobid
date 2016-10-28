@@ -18,6 +18,7 @@ public class UpdateAction extends Action{//DB수정요청
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
 		ReplyDTO reply = new ReplyDTO(
 								Integer.parseInt(request.getParameter("no")),
 								request.getParameter("name"),
@@ -29,6 +30,7 @@ public class UpdateAction extends Action{//DB수정요청
 		   }else{
 			   request.setAttribute("msg", "댓글수정실패!!");
 		   }
+		   
 		
 		return mapping.findForward("success");
 	}

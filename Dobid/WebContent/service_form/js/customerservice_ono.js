@@ -31,8 +31,7 @@ $(document).ready(function() {
 			}
 
 		} else {
-			alert("신고가 완료 되었습니다 \n 메인페이지로 이동합니다");
-			return true;
+			alert("ASDASDASD");
 		}
 	});
 

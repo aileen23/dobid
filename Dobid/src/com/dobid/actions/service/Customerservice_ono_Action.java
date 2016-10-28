@@ -34,8 +34,6 @@ public class Customerservice_ono_Action extends Action{
 		Date date = new Date();
 		String service_date = df.format(date);
 		
-
-		System.out.println(mrequest.getParameter("title")+"asdasdasd");
 		Service_answerDTO dto = new Service_answerDTO(
 												mrequest.getParameter("member_id"),
 												mrequest.getParameter("title"),

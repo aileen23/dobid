@@ -20,6 +20,7 @@ public class ListAction extends Action{//목록출력 요청
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
 	   ReplyDAO dao = new ReplyDAO();
 	    //List<Reply>  list =  dao.findAll();
 	    request.setAttribute("list", dao.findAll());//list);

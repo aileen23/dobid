@@ -16,6 +16,7 @@ public class DeleteAction extends Action{
    @Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+	   request.setCharacterEncoding("UTF-8");
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		ReplyDAO dao = new ReplyDAO();
@@ -24,6 +25,7 @@ public class DeleteAction extends Action{
 		   }else{
 			   request.setAttribute("msg", "댓글삭제실패!!"); 
 		   }
+		   
 		   
 		return mapping.findForward("success");
 	}
