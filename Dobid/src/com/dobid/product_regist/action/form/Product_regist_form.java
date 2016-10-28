@@ -23,7 +23,7 @@ public class Product_regist_form extends ActionForm{
 	private String hour;  
 	private String minute;
 	private String textarea;
-	
+	private String oldcheck;
 	
 	
 	
@@ -204,6 +204,22 @@ public class Product_regist_form extends ActionForm{
 	public void setTextarea(String textarea) {
 		this.textarea = textarea;
 	}
+	
+
+
+	public String getOldcheck() {
+		return oldcheck;
+	}
+
+
+
+
+
+	public void setOldcheck(String oldcheck) {
+		this.oldcheck = oldcheck;
+	}
+
+
 
 
 
