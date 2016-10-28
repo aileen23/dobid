@@ -79,6 +79,11 @@
 		from message
 		where send_id=#send_id#
 	</select>
+	
+	<insert id="sendmsg" parameterClass="messageDTO">
+		insert into message
+		values (#member_id#,#send_id#,#title#,#contents#,sysdate,#reception_check#)
+	</insert>
 </sqlMap>
 
 

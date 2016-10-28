@@ -31,7 +31,7 @@
 		});
 		$('#sendMessage').click(function(){
 			$.ajax({
-				url:'',
+				url:'/sendMessage.jsp',
 				data:'',
 				type:'POST',
 				success:function(result){

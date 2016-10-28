@@ -28,7 +28,15 @@ public class MessageDTO {
 		this.contents = contents;
 		this.regist_date =regist_date;
 	}
-
+	public MessageDTO(String send_id, String member_id, String title, String contents,
+			char reception_check) {
+		super();
+		this.send_id = send_id;
+		this.member_id = member_id;
+		this.title = title;
+		this.contents = contents;
+		this.reception_check = reception_check;
+	}
 	public String getRegist_date() {
 		return regist_date;
 	}

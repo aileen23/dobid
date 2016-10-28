@@ -171,5 +171,12 @@ public class Mypage_DAO {
 		}
 		return list;
 	}
-	
+	public void sendmsg(MessageDTO dto){
+		try {
+			smc.insert("myprofile.sendmsg",dto);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

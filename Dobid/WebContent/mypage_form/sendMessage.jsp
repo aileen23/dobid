@@ -9,10 +9,15 @@
  $(function(){
 	$('sendMessage').click(function(){
 		$.ajax({
-			url:'/',
-			data:'',
+			url:'/sendmessage.do',
+			data:{
+				member_id:$('#member_id').val(),
+				title:$('#title').val(),
+				contents:$('#contents').val()				
+			},
 			type:'POST',
 			success:function(result){
+				alert("메세지를 전송하였습니다")
 				$('#printdiv').html(result);	
 			}
 		});
@@ -25,7 +30,7 @@
 <body>
 <table>
 <tbody>
-<tr><td>받는사람 : </td><td><input type="text" id="memberid"></td></tr>
+<tr><td>받는사람 : </td><td><input type="text" id="member_id"></td></tr>
 <tr><td>제목 :</td><td><input type="text" id="title"></td></tr>
 <tr><td>내용 :</td><td><textarea rows="15" cols="40" id="contents"></textarea></td></tr>
 </tbody>
