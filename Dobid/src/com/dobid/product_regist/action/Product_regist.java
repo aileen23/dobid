@@ -43,6 +43,7 @@ public class Product_regist extends Action{
 		
 		//유저 아이디
 		String user_id = (String) request.getSession().getAttribute("logincheck");
+
 		//데이터 가져오기.
 		String cate = forms.getCate();
 		System.out.println(cate);
@@ -56,6 +57,7 @@ public class Product_regist extends Action{
 		String hour = forms.getHour(); 
 		String minute = forms.getMinute();
 		String text = forms.getTextarea();
+		String oldcheck = forms.getOldcheck();
 		
 		//현재 시간과 종료시간 셋팅.
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -79,7 +81,7 @@ public class Product_regist extends Action{
 
 		//추후 등록자 아이디로 변경해야됨.
 		AuctionDTO auctionDTO = new AuctionDTO(user_id, title_text, text, main_path,sub_path, 
-				Integer.parseInt(start_cach), cate, Integer.parseInt(count_text),end_date+day+hour+minute+"00", regist_date, auction_check);
+				Integer.parseInt(start_cach), cate, Integer.parseInt(count_text),end_date+day+hour+minute+"00", regist_date, auction_check,oldcheck);
 		
 		//SqlMapClient client = SqlMapConfig.getSqlMapInstance();
 		Product_registDAO dao = new Product_registDAO();

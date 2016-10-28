@@ -79,9 +79,11 @@ $( document ).ready(function() {
   		</div>
   		<form action="auction_regist.do" method="POST" enctype="multipart/form-data">
   		<div class="first_input">
-  			<select class="form-control3" name="cate">
-  				<option value="새제품">새제품</option>
+  		<select class="cate_box" name="oldcheck">
+  		  		<option value="새제품">새제품</option>
   				<option value="중고제품">중고제품</option>
+  		</select>
+  			<select class="form-control3" name="cate">
   				<option value="미술">미술</option>
  				<option value="골동품">골동품</option>
  				<option value="의류">의류</option>

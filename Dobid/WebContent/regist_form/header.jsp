@@ -34,10 +34,6 @@
 				<ul class="dropdown-menu" id="dropAuction">
 					<li><a href="/Dobid/list.do?categori=새제품">새제품</a></li>
 					<li><a href="/Dobid/list.do?categori=중고제품">중고상품</a></li>
-					<li><a href="/Dobid/list.do?categori=미술">미술</a></li>
-					<li><a href="/Dobid/list.do?categori=골동품">골동품</a></li>
-					<li><a href="/Dobid/list.do?categori=의류">의류</a></li>
-					<li><a href="/Dobid/list.do?categori=기타">기타</a></li>
 				</ul></li>
 
 			<li id="navbar_gong"><a href="/Dobid/group_list.do" id="gongdong">공동구매</a></li>

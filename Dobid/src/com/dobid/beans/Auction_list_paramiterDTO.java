@@ -7,7 +7,7 @@ public class Auction_list_paramiterDTO {
 	private int startCount;
 	private int endCount;
 	private String check;
-	
+	private String oldcheck;
 	
 	
 	public Auction_list_paramiterDTO() {
@@ -32,6 +32,18 @@ public class Auction_list_paramiterDTO {
 		this.startCount = startCount;
 		this.endCount = endCount;
 		this.check = check;
+	}
+
+	
+	public Auction_list_paramiterDTO(String search, String categori,
+			int startCount, int endCount, String check, String oldcheck) {
+		super();
+		this.search = search;
+		this.categori = categori;
+		this.startCount = startCount;
+		this.endCount = endCount;
+		this.check = check;
+		this.oldcheck = oldcheck;
 	}
 
 	public String getSearch() {
@@ -68,6 +80,14 @@ public class Auction_list_paramiterDTO {
 
 	public void setCheck(String check) {
 		this.check = check;
+	}
+
+	public String getOldcheck() {
+		return oldcheck;
+	}
+
+	public void setOldcheck(String oldcheck) {
+		this.oldcheck = oldcheck;
 	}
 	
 	

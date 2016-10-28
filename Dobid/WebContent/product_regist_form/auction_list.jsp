@@ -28,18 +28,22 @@ $(document).ready(function(){
 		$(this).css("background-color","#BDBDBD");
 	});
 	//더보기.
-	$("#more_Btn").click(function(){
+	$(document).on("click","#more_Btn",function(){  
+	//$("#more_Btn").click(function(){
+		console.log("aaaa");
 		var text = $(".input_text").val();
+		
 		var nowAddress = unescape(encodeURIComponent(location.href));
 
-        nowAddress = decodeURIComponent(nowAddress)
-
-		var categori = nowAddress.substring(1).split("?")[1].split("=")[1];
+        nowAddress = decodeURIComponent(nowAddress);
+        
+		var oldcheck = nowAddress.substring(1).split("?")[1].split("=")[1];
+        var categori = $("#cate option:selected").val();
 		var lastNum = $("#more_Btn").attr("name");
 		$.ajax({
             url:'search_more.do',	
             type:'POST',
-            data:{"text" : text,"lastNum" : lastNum,"categori":categori},
+            data:{"text" : text,"lastNum" : lastNum,"categori":categori,"oldcheck":oldcheck},
             success:function(result){
             	$("#more_Btn").remove();
   				$("#box").append(result);
@@ -53,17 +57,19 @@ $(document).ready(function(){
         });
 	});
 	//검색.
-	$(".sch_smit").click(function(){
+	$(document).on("click",".sch_smit",function(){  
+	//$(".sch_smit").click(function(){
 		var text = $(".input_text").val();
 		var nowAddress = unescape(encodeURIComponent(location.href));
 
-        nowAddress = decodeURIComponent(nowAddress)
+        nowAddress = decodeURIComponent(nowAddress);
 
-		var categori = nowAddress.substring(1).split("?")[1].split("=")[1];
+		var oldcheck = nowAddress.substring(1).split("?")[1].split("=")[1];
+        var categori = $("#cate option:selected").val(); 
 		$.ajax({
             url:'search.do',	
             type:'POST',
-            data:{"text" : text,"categori" :categori},
+            data:{"text" : text,"oldcheck" :oldcheck,"categori":categori},
             success:function(result){
             	$("#more_Btn").attr("name",0);
             		$("#box").empty();
@@ -85,13 +91,21 @@ $(document).ready(function(){
 <body>
  <div class="row2">
  			<div class="search_box">
+ 			<select id="cate" class="form-control3" name="cate">
+ 				<option value="">전체</option>
+  				<option value="미술">미술</option>
+ 				<option value="골동품">골동품</option>
+ 				<option value="의류">의류</option>
+ 				<option value="기타">기타</option>
+			</select>
  				<div class='green_window'>
 					<input type='text' class='input_text' />
 				</div>
 				<button type='submit' class='sch_smit'>검색</button>
 			</div>
 			
-			<div class="top_title">경매 중인 물품</div><a href="regist.do" class="btn btn-default" style="margin-left:92%;">경매등록</a>
+			<div class="top_title">경매 중인 물품</div>
+			<a href="regist.do" class="btn btn-default" style="margin-left:92%;">경매등록</a>
 				<div id="box">
 <% List<Auction_listDTO> list = (List<Auction_listDTO>)request.getAttribute("list");
 for(int i = 0; i <list.size(); i++ ){ %>

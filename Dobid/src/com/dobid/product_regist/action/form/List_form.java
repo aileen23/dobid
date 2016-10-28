@@ -6,7 +6,7 @@ public class List_form extends ActionForm{
 	
 	private String search_text;
 	private String categori;
-
+	
 	public String getSearch_text() {
 		return search_text;
 	}

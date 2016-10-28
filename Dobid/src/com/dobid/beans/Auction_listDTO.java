@@ -13,6 +13,7 @@ public class Auction_listDTO {
 	private String main_image_path;
 	private String title;
 	private String bid_check;
+	private String old_check;
 	
 	
 	public Auction_listDTO() {
@@ -34,7 +35,6 @@ public class Auction_listDTO {
 		this.title = title;
 	}
 	
-
 
 	public Auction_listDTO(String num, String auction_board_num, String email,
 			String name, String start_amount, String highest_price,
@@ -118,6 +118,12 @@ public class Auction_listDTO {
 	}
 	public void setBid_check(String bid_check) {
 		this.bid_check = bid_check;
+	}
+	public String getOld_check() {
+		return old_check;
+	}
+	public void setOld_check(String old_check) {
+		this.old_check = old_check;
 	}
 	
 	

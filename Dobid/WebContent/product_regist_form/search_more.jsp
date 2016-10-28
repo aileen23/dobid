@@ -12,9 +12,12 @@
 	
 	String text = request.getParameter("text");
 	String categori = request.getParameter("categori");
+	String oldcheck = request.getParameter("oldcheck");
+	System.out.println(categori);
+	System.out.println(oldcheck);
 	int count = Integer.parseInt(request.getParameter("lastNum"));
 	
-	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,categori,count,count+6,"경매중");
+	Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO(text,categori,count,count+6,"경매중",oldcheck);
 	Product_registDAO dao = new Product_registDAO();
 
 	List<Auction_listDTO> list = dao.search_list(auction_list_paramiterDTO);
@@ -24,8 +27,9 @@
 <% 
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
+                        <div class="thumbnail"><a href="auction_view.do?id=<%= list.get(i).getAuction_board_num()%>">
                             <img src="http://placehold.it/320x150" alt="">
+                            </a>
                             <!-- <img src="<%= list.get(i).getMain_image_path()%>" alt=""> -->
                             <div class="caption">
                             	<div class="center_title">
