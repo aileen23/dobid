@@ -192,7 +192,7 @@
 					<div class="col-sm-offset-3 col-sm-5">
 						<textarea class="form-control " id="admin_memberdel_view_introduction"
 							name="admin_memberdel_view_introduction"
-							style="height: 200px"
+							style="height: 100px"
 							readOnly></textarea>
 					</div>
 				</div>
