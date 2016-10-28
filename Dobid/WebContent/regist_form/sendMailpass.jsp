@@ -39,7 +39,7 @@
 
 		String sender = "scv852456@gmail.com"; // 보내는 메일주소 구글로 입력
 		String receiver = request.getParameter("receiver");
-		String subject = "Dobid 임시 비밀번호 입니다. ";
+		String subject = "Dobid 임시 비밀번호 입니다. \n 인증번호를 사이트에 임시비밀번호로 로그인후 사용하실 비밀번호로 수정해주세요.";
 		String content = "임시 비밀번호는 [" + buffer.toString() + "] 입니다. ";
 
 		// 정보를 담기 위한 객체

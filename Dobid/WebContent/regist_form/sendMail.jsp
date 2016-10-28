@@ -29,7 +29,7 @@
 
 		String sender = "scv852456@gmail.com"; // 보내는 메일주소 구글로 입력
 		String receiver = request.getParameter("receiver");
-		String subject = "Dobid 회원가입 인증번호입니다. ";
+		String subject = "Dobid 회원가입 인증번호입니다. \n 인증번호를 입력해서 인증을 완료하세요";
 		String content = "인증번호는 [" + buffer.toString() + "] 입니다. ";
 
 		// 정보를 담기 위한 객체

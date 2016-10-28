@@ -18,6 +18,7 @@
 
 $(function(){
     $("#findpass").click(function(){
+    	$("#findpass").fadeOut(500);
   	 $.ajax({
   		 url:'sendmailpass.do',
   	     data: {
@@ -29,11 +30,11 @@ $(function(){
   	     success:function(result){
   	    	 if (result == 0) {
 				alert("ID, E-mail, Name을 확인해주세요.");
+				$("#findpass").fadeIn(500);
 			}else {
 				$("#id").attr("readonly", true);
 				$("#receiver").attr("readonly", true);
 				$("#name").attr("readonly", true);
-				$("#findpass").fadeOut(500);
 				alert("이메일로 임시 비밀번호를 발송하였습니다.");
 			}
   	     }

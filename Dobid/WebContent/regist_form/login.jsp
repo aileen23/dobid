@@ -16,7 +16,6 @@
 	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 
 
-
 </head>
 
 <body id="body">
@@ -41,7 +40,7 @@
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" name="id" placeholder="ID">
+				<input type="text" class="form-control" name="id" placeholder="ID" id="id">
 			</div>
 		</div>
 		<div class="form-group">
