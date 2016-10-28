@@ -5,19 +5,9 @@
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
-<title>Bootstrap Case</title>
+<title>Do!bid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Bootstrap Core CSS -->
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="./css/shop-homepage.css" rel="stylesheet">
-
-<!-- Script -->
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 </head>
 <body>
 	<!-- 헤더 -->

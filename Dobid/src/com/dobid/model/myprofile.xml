@@ -58,15 +58,27 @@
 	</select>
 	
 	<select id="qnaselect" parameterClass="String" resultClass="service_answerDTO2">
-		select title,categori,contents,upload_date,answer_cotents,answer_date
+		select title,categori,contents,upload_date,answer_contents,answer_date
 		from service_answer
 		where member_id=#member_id#
 	</select>
 	
-	<delete id="delete" parameterClass="String">
+	<delete id="deleteid" parameterClass="String" >
 		delete from member
 		where member_id=#member_id#
 	</delete>
+	
+	<select id="receivelist" parameterClass="String" resultClass="messageDTO">
+		select title,contents,regist_date,send_id
+		from message
+		where member_id=#member_id#
+	</select>
+	
+	<select id="sendlist" parameterClass="String" resultClass="messageDTO">
+		select title,contents,regist_date,member_id,reception_check
+		from message
+		where send_id=#send_id#
+	</select>
 </sqlMap>
 
 

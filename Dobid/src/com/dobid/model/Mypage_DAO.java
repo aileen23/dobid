@@ -13,6 +13,7 @@ import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
 import com.dobid.beans.MemberDTO;
+import com.dobid.beans.MessageDTO;
 import com.dobid.beans.Service_answerDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
@@ -141,11 +142,34 @@ public class Mypage_DAO {
 	public boolean deleteid(String id){
 		
 		try {
-			smc.queryForObject("myprofile.delete",id);
+			smc.delete("myprofile.deleteid",id);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
+	
+	public List<MessageDTO> receivelist(String id){
+		List<MessageDTO> list =null;
+		try {
+			list = smc.queryForList("myprofile.receivelist",id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public List<MessageDTO> sendlist(String id){
+		List<MessageDTO> list =null;
+		try {
+			list = smc.queryForList("myprofile.sendlist",id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 }
