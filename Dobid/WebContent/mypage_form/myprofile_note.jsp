@@ -11,7 +11,7 @@
 	$(function(){
 		$('#receive').click(function(){
 			$.ajax({
-				url:'/receive.do',
+				url:'/Dobid/receive.do',
 				data:'',
 				type:'POST',
 				success:function(result){
@@ -21,7 +21,7 @@
 		});
 		$('#send').click(function(){
 			$.ajax({
-				url:'/send.do',
+				url:'/Dobid/send.do',
 				data:'',
 				type:'POST',
 				success:function(result){
@@ -31,7 +31,7 @@
 		});
 		$('#sendMessage').click(function(){
 			$.ajax({
-				url:'/sendMessage.jsp',
+				url:'/Dobid/mypage_form/sendMessage.jsp',
 				data:'',
 				type:'POST',
 				success:function(result){
@@ -51,6 +51,9 @@
 		<div class="titleText" style="margin-left: 20px">
 		<font size="80" color="black">쪽지함</font><br>
 		</div>
+	<div class="container-fluid"	style="margin-bottom: 100px">
+		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
+	</div>
 		<div>
 			<input type="button" name="receive" value="받은쪽지함" id="receive">
 			<input type="button" name="send" value="보낸쪽지함" id="send">

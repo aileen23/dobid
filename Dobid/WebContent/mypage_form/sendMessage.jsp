@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
  $(function(){
-	$('sendMessage').click(function(){
+	$('#sendMessage').click(function(){
 		$.ajax({
 			url:'/sendmessage.do',
 			data:{
