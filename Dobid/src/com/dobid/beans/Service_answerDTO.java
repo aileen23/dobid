@@ -1,6 +1,5 @@
 package com.dobid.beans;
 
-import java.sql.Date;
 
 public class Service_answerDTO {
 	private String member_id;
@@ -16,10 +15,26 @@ public class Service_answerDTO {
 	
 	public Service_answerDTO() {
 	}
+	
+	
+	
+	public Service_answerDTO(String answer_date, String answer_contents, String upload_date) {
+		super();
+		this.answer_date = answer_date;
+		this.answer_contents = answer_contents;
+		this.upload_date = upload_date;
+	}
+
+
+
 	public Service_answerDTO(String admin_ono_selecttext, String categori) {
 		this.admin_ono_selecttext = admin_ono_selecttext;
 		this.categori = categori;
 	}
+	
+
+
+	
 
 	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
 			String upload_date) {

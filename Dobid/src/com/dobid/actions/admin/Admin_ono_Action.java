@@ -1,5 +1,7 @@
 package com.dobid.actions.admin;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +25,10 @@ public class Admin_ono_Action extends Action {
 			HttpServletResponse response) throws Exception {
 
 		request.setCharacterEncoding("UTF-8");
-
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+	    Date date = new Date();
+	    String answer_date = df.format(date);
+	    
 		boardDAO dao = new boardDAO();
 
 		String admin_ono_selecttext = request.getParameter("admin_ono_selecttext");
@@ -64,15 +69,30 @@ public class Admin_ono_Action extends Action {
 			}
 
 		} else if (del != null) {
-
 			boolean delflag = dao.adminOnoDel(admin_ono_view_upload_date);
 			request.setAttribute("delflag", delflag);
 			
 		} else if (send != null) {
-			boolean upflag = dao.adminOnoSend(admin_ono_view_answer_contents);
+			Service_answerDTO onosendparam =null;
+			onosendparam = new Service_answerDTO(answer_date,admin_ono_view_answer_contents,admin_ono_view_upload_date);
+			boolean upflag = dao.adminOnoSend(onosendparam);
 			request.setAttribute("upflag", upflag);
 		}
 
 		return mapping.findForward("success");
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

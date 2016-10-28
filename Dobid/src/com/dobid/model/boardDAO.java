@@ -435,7 +435,7 @@ public class boardDAO {
 	}
 
 	public boolean adminOnoDel(String upload_date) {
-
+		
 		try {
 
 			smc.delete("board.adminonodel", upload_date);
@@ -447,11 +447,11 @@ public class boardDAO {
 		return false;
 	}
 	
-	public boolean adminOnoSend(String answer_cotents) {
+	public boolean adminOnoSend(Service_answerDTO onosendparam) {
 		
 		try {
 			
-			smc.update("board.adminonosend", answer_cotents);
+			smc.update("board.adminonosend", onosendparam);
 			return true;
 		} catch (NumberFormatException | SQLException e) {
 			// TODO Auto-generated catch block

@@ -263,8 +263,9 @@
 	</delete>
 	
 <!-- ono 1대1 답변 -->
-	<update id="adminonosend" parameterClass="String">
-	update service_answer set answer_date=#upload_date#,answer_cotents=#answer_cotents#
+	<update id="adminonosend" parameterClass="seriveanswerDTO" >
+	update service_answer set answer_date=to_date(#answer_date#,'YYYY-MM-DD:HH24:MI:SS'),answer_cotents=#answer_contents# 
+	where upload_date=#upload_date#
 	</update>
 
 
