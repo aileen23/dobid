@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 <script type="text/javascript">
  $(function(){
-	$('#sendMessage').click(function(){
-		$.ajax({
-			url:'/sendmessage.do',
+	$('#sendMessage2').click(function(){
+		 $.ajax({
+			url:'/Dobid/sendmessage.do',
 			data:{
 				member_id:$('#member_id').val(),
 				title:$('#title').val(),
@@ -17,8 +17,11 @@
 			},
 			type:'POST',
 			success:function(result){
-				alert("메세지를 전송하였습니다")
+				alert("메세지를 전송하였습니다");
 				$('#printdiv').html(result);	
+			},
+			error:function(xhr,status,error){
+				alert(error);
 			}
 		});
 	});
@@ -35,6 +38,6 @@
 <tr><td>내용 :</td><td><textarea rows="15" cols="40" id="contents"></textarea></td></tr>
 </tbody>
 </table>
-<input type="button" value="보내기" id="sendMessage">
+<input type="button" value="보내기" id="sendMessage2">
 </body>
 </html>

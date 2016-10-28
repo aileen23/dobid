@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript">
 	$(function(){
-		$('#receive').click(function(){
+		$('#receiveMSG').click(function(){
 			$.ajax({
 				url:'/Dobid/receive.do',
 				data:'',
@@ -19,7 +19,7 @@
 				}
 			});
 		});
-		$('#send').click(function(){
+		$('#sendMSG').click(function(){
 			$.ajax({
 				url:'/Dobid/send.do',
 				data:'',
@@ -55,8 +55,8 @@
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
 		<div>
-			<input type="button" name="receive" value="받은쪽지함" id="receive">
-			<input type="button" name="send" value="보낸쪽지함" id="send">
+			<input type="button" name="receive" value="받은쪽지함" id="receiveMSG">
+			<input type="button" name="send" value="보낸쪽지함" id="sendMSG">
 			<input type="button" name="sendMessage" value="글쓰기" id="sendMessage">
 		</div>
 			<br>

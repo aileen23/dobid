@@ -18,11 +18,11 @@
       </tr>
     </thead>
     <tbody>
-    <c:forEach items="${ list }" var="receivelist"></c:forEach>
+    <c:forEach items="${receivelist}" var="listmsg"></c:forEach>
       <tr>
-        <td>${receivelist.send_id }</td>
-        <td>${receivelist.contents }</td>
-        <td>${receivelist.regist_date }</td>
+        <td>${listmsg.send_id }</td>
+        <td>${listmsg.contents }</td>
+        <td>${listmsg.regist_date }</td>
       </tr>
     </tbody>
   </table>

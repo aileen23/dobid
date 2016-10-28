@@ -24,6 +24,6 @@ public class Mypage_send_Action extends Action {
 		
 		request.setAttribute("list", list);
 		
-		return mapping.findForward("send");
+		return mapping.findForward("success");
 	}
 }

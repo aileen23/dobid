@@ -153,10 +153,10 @@
 			<forward name="success" path="/regist_form/logout.jsp" />
 		</action>		
 		<action path="/receive" type="com.dobid.actions.mypage.Mypage_receive_Action">
-			<forward name="receive" path="/mypage_form/receive.jsp" />
+			<forward name="success" path="/mypage_form/receive.jsp" />
 		</action>	
 		<action path="/send" type="com.dobid.actions.mypage.Mypage_receive_Action">
-			<forward name="send" path="/mypage_form/send.jsp" />
+			<forward name="success" path="/mypage_form/send.jsp" />
 		</action>	
 		<action path="/sendmessage" type="com.dobid.actions.mypage.Mypage_sendmsg_Action">
 			<forward name="success" path="/mypage_form/sendMessage.jsp" />

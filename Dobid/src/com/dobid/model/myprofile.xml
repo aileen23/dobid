@@ -81,8 +81,8 @@
 	</select>
 	
 	<insert id="sendmsg" parameterClass="messageDTO">
-		insert into message
-		values (#member_id#,#send_id#,#title#,#contents#,sysdate,#reception_check#)
+		insert into message(member_id,send_id,title,contents,regist_date)
+		values (#member_id#,#send_id#,#title#,#contents#,sysdate)
 	</insert>
 </sqlMap>
 
