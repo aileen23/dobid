@@ -18,13 +18,6 @@ public class Service_answerDTO {
 	
 	
 	
-	public Service_answerDTO(String answer_date, String answer_contents, String upload_date) {
-		super();
-		this.answer_date = answer_date;
-		this.answer_contents = answer_contents;
-		this.upload_date = upload_date;
-	}
-
 
 
 	public Service_answerDTO(String admin_ono_selecttext, String categori) {
@@ -34,6 +27,12 @@ public class Service_answerDTO {
 	
 
 
+	
+	public Service_answerDTO(String upload_date, String answer_contents, String answer_date) {
+		this.upload_date = upload_date;
+		this.answer_contents = answer_contents;
+		this.answer_date = answer_date;
+	}
 	
 
 	public Service_answerDTO(String member_id, String title, String categori, String contents, String image_path,
@@ -59,6 +58,7 @@ public class Service_answerDTO {
 		this.upload_date = upload_date;
 		this.answer_contents = answer_contents;
 		this.answer_date = answer_date;
+		
 	}
 
 	public String getMember_id() {

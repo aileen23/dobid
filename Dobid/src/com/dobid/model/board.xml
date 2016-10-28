@@ -243,7 +243,7 @@
 <!-- 관리자 ono게시물 카탈로그별 조회(1대1) -->
 
 	<select id="adminonolist" resultClass="seriveanswerDTO" parameterClass="String">
-	select answer_date,answer_cotents,upload_date,image_path,contents,categori,title,member_id 
+	select answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id 
 	from service_answer
 	where categori=#categori#
 
@@ -252,7 +252,7 @@
 <!-- 관리자 ono게시물 검색어와 카탈로그별 조회(1대1) -->
 
 	<select id="adminonoselect" resultClass="seriveanswerDTO" parameterClass="seriveanswerDTO">
-	select answer_date,answer_cotents,upload_date,image_path,contents,categori,title,member_id 
+	select answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id 
 	from service_answer 
 	where categori=#categori# and title=#admin_ono_selecttext#
 	</select>
@@ -264,8 +264,8 @@
 	
 <!-- ono 1대1 답변 -->
 	<update id="adminonosend" parameterClass="seriveanswerDTO" >
-	update service_answer set answer_date=to_date(#answer_date#,'YYYY-MM-DD:HH24:MI:SS'),answer_cotents=#answer_contents# 
-	where upload_date=#upload_date#
+	update service_answer set answer_date=to_date(#answer_date#,'YYYY-MM-DD:HH24:MI:SS'),answer_contents=#answer_contents# 
+	where upload_date=to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS')
 	</update>
 
 

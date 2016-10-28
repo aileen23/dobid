@@ -37,6 +37,7 @@ public class Admin_ono_Action extends Action {
 		String send = request.getParameter("send");
 		String admin_ono_view_answer_contents = request.getParameter("admin_ono_view_answer_contents");
 		String admin_ono_view_upload_date = request.getParameter("admin_ono_view_upload_date");
+		String admin_ono_view_upload_date_send = request.getParameter("admin_ono_view_upload_date_send");
 
 		System.out.println("admin_ono_selecttext : " + request.getParameter("admin_ono_selecttext"));
 		System.out.println("catalogue : " + request.getParameter("catalogue"));
@@ -45,6 +46,7 @@ public class Admin_ono_Action extends Action {
 		System.out
 				.println("admin_ono_view_answer_contents : " + request.getParameter("admin_ono_view_answer_contents"));
 		System.out.println("admin_ono_view_upload_date : " + request.getParameter("admin_ono_view_upload_date"));
+		System.out.println("admin_ono_view_upload_date_send : " + request.getParameter("admin_ono_view_upload_date_send"));
 
 		if (del == null && send == null) {
 			if (admin_ono_selecttext == null && catalogue == null) {
@@ -63,18 +65,18 @@ public class Admin_ono_Action extends Action {
 				Service_answerDTO onoparam = new Service_answerDTO(admin_ono_selecttext, catalogue);
 
 				admionoselectlist = dao.adminOnoSelectTitle(onoparam);
-
+				
 				request.setAttribute("adminonolist", admionoselectlist);
 
 			}
 
-		} else if (del != null) {
+		} else if (del != null && send==null) {
 			boolean delflag = dao.adminOnoDel(admin_ono_view_upload_date);
 			request.setAttribute("delflag", delflag);
 			
-		} else if (send != null) {
+		} else if (send != null && del==null) {
 			Service_answerDTO onosendparam =null;
-			onosendparam = new Service_answerDTO(answer_date,admin_ono_view_answer_contents,admin_ono_view_upload_date);
+			onosendparam = new Service_answerDTO(admin_ono_view_upload_date_send,admin_ono_view_answer_contents,answer_date);
 			boolean upflag = dao.adminOnoSend(onosendparam);
 			request.setAttribute("upflag", upflag);
 		}

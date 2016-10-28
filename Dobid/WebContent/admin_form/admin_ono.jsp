@@ -1,3 +1,4 @@
+<%@page import="com.dobid.beans.Service_answerDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -17,8 +18,7 @@
 <% request.setCharacterEncoding("UTF-8");%>
 <script type="text/javascript">
 	$(document).ready(function() {
-
-
+		
 		$("#close").click(function() {
 			$("#popup").hide();
 		});
@@ -35,7 +35,7 @@
 			$("#admin_ono_view_upload_date").val($(this).children().eq(4).text());
 			$("#admin_ono_view_answer_contents").val($(this).children().eq(5).text());
 
-			
+			$("#admin_ono_view_upload_date_send").val($(this).children().eq(4).text());
 		});
 		
 	
@@ -88,6 +88,7 @@
 				<th>내용</th>
 				<th>시간</th>
 				<th>답변</th>
+		
 			</tr>
 			<c:forEach items="${adminonolist }" var="adminonolist">
 			<tr class="list">
@@ -155,31 +156,37 @@
 				</div>
 				
 			
-		
+	
 			
 			<div class="col-sm-offset-3 col-sm-5">
 				<button class="button button5 btn-default">삭제</button>
-			
+				
 				<input type="hidden" name="del" value="del">
 				<input type="hidden" name="admin_ono_view_upload_date" id="admin_ono_view_upload_date">
-				
+		
 			
 			
 			</div>
 			</form>
 			<button class="button button5 btn-default" id="close">취소</button>
+	
+	
 			<form action="/Dobid/admin_ono.do" method="POST">
 				<button class="button button5 btn-default">답장</button>
 				<input type="hidden" name="send" value="send">
+				<input type="hidden" name="admin_ono_view_upload_date_send" id="admin_ono_view_upload_date_send">
+				
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<textarea class="form-control " id="admin_ono_view_answer_contents"
 							name="admin_ono_view_answer_contents"
 							style="height: 200px"></textarea>
+						
 					</div>
 				</div>
 			</form>
 			</div>
+			
 		</div>
 
 
