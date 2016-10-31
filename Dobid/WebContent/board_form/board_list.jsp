@@ -122,7 +122,7 @@ function getQuerystring(paramName){
 				</tr>
 			</c:forEach>
 
-ㅌ
+
 		</table>
 		<div class="col-sm-offset-6 col-sm-6">
 		<div class="col-sm-7">
