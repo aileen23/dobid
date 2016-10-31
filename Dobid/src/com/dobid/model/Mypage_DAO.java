@@ -109,7 +109,7 @@ public class Mypage_DAO {
 				for (int i = 0; i < list2.size(); i++) {
 					Date date = list2.get(i).getCharge_date();
 					String title = list2.get(i).getCharge_type();
-					int price = list2.get(i).getCharge_before_amount();
+					int price = list2.get(i).getCharge_will_amount();
 					
 					result.add(new ChargelistDTO("충전", date, title, price));
 				}
