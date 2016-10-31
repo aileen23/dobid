@@ -96,6 +96,25 @@
 
 		</table>
 
+		<div class="form-group">
+			<div class="col-sm-7">
+				<br>
+				<c:if test="${page == 1}">이전</c:if>
+				<c:if test="${page > 1}">
+					<a href="admin_report.do?page=${ page-1 }&admin_report_selecttext=${admin_report_selecttext }">이전</a>
+				</c:if>
+
+				<c:if test="${page == totalPage }">다음</c:if>
+				<c:if test="${page < totalPage }">
+					<a href="admin_report.do?page=${ page+1 }&admin_report_selecttext=${admin_report_selecttext }">다음</a>
+				</c:if>
+				<br>
+				<br>
+				<c:forEach begin="1" end="${totalPage }" var="i">
+       [<a href="admin_report.do?page=${ i }&admin_report_selecttext=${admin_report_selecttext }">${i }</a>]
+    </c:forEach>
+			</div>
+		</div>
 	</div>
 
 <div id="popup" class="overlay"

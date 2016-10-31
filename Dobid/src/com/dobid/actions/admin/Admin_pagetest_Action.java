@@ -43,7 +43,7 @@ public class Admin_pagetest_Action extends Action {
 
 				int page = 1;// 기본페이지를 1페이지로 하겠다!!
 
-				int viewRowCnt = 3;// 한 페이지에 보여줄 행(레코드)의 수
+				int viewRowCnt = 5;// 한 페이지에 보여줄 행(레코드)의 수
 				if (pageStr != null) {
 					page = Integer.parseInt(pageStr);
 				}

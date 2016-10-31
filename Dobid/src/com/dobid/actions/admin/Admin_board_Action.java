@@ -2,7 +2,6 @@ package com.dobid.actions.admin;
 
 import java.util.List;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,7 +12,7 @@ import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Admin_freeDTO;
 import com.dobid.beans.Admin_noticeDTO;
-
+import com.dobid.beans.Service_reportDTO;
 import com.dobid.model.boardDAO;
 
 public class Admin_board_Action extends Action {
@@ -38,12 +37,44 @@ public class Admin_board_Action extends Action {
 		System.out.println("admin_board_view_num : " + request.getParameter("admin_board_view_num"));
 		System.out.println("admin_board_view_userid : " + request.getParameter("admin_board_view_userid"));
 
+		ActionForward forward = mapping.findForward("success");
+		List<Admin_noticeDTO> adminboardlist = dao.adminNoticeSelectAll();
 		if (del == null) {
-
 			if (admin_boardselecttext == null && catalogue == null) {
-				List<Admin_noticeDTO> adminnoticelist = null;
-				adminnoticelist = dao.adminNoticeSelectAll();
-				request.setAttribute("adminboardlist", adminnoticelist);
+
+				adminboardlist = dao.adminNoticeSelectAll();
+				request.getSession().setAttribute("adminboardlist", adminboardlist);
+				forward = mapping.findForward("adminboardlist");
+				// 페이지 정보 얻어오기
+				String pageStr = request.getParameter("page");
+
+				int page = 1;// 기본페이지를 1페이지로 하겠다!!
+
+				int viewRowCnt = 5;// 한 페이지에 보여줄 행(레코드)의 수
+				if (pageStr != null) {
+					page = Integer.parseInt(pageStr);
+				}
+
+				int end = page * viewRowCnt;
+				int start = end - (viewRowCnt - 1);
+				int totalRecord = dao.adminNoticeCount();
+				System.out.println("totalRecord: " + totalRecord);
+				int totalPage = totalRecord / viewRowCnt;
+				if (totalRecord % viewRowCnt > 0)
+					totalPage++;
+				request.getSession().removeAttribute("adminboardlist");
+				request.getSession().removeAttribute("page");
+				request.getSession().removeAttribute("totalPage");
+				adminboardlist = dao.adminNoticePage(start, end);
+				request.getSession().setAttribute("adminboardlist", adminboardlist);// 4.
+																					// 영역에
+																					// 데이터
+																					// 저장
+				request.getSession().setAttribute("page", page);// 현재페이지
+				request.getSession().setAttribute("totalPage", totalPage);// 전체페이지
+				// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
+				return forward = mapping.findForward("success");
+
 			} else if (admin_boardselecttext == null && catalogue.equals("notice")) {
 				List<Admin_noticeDTO> adminnoticelist = null;
 				adminnoticelist = dao.adminNoticeSelectAll();
@@ -70,10 +101,10 @@ public class Admin_board_Action extends Action {
 		} else {
 			if (admin_board_view_userid.equals("admin")) {
 
-				boolean delflag=dao.adminNoticeBoardDel(admin_board_view_num);
+				boolean delflag = dao.adminNoticeBoardDel(admin_board_view_num);
 				request.setAttribute("delflag", delflag);
 			} else {
-				boolean delflag=dao.adminFreeBoardDel(admin_board_view_num);
+				boolean delflag = dao.adminFreeBoardDel(admin_board_view_num);
 				request.setAttribute("delflag", delflag);
 			}
 		}
@@ -81,24 +112,3 @@ public class Admin_board_Action extends Action {
 		return mapping.findForward("success");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

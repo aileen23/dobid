@@ -15,6 +15,7 @@ import org.apache.struts.action.ActionMapping;
 import com.dobid.beans.Admin_freeDTO;
 import com.dobid.beans.Admin_noticeDTO;
 import com.dobid.beans.Service_answerDTO;
+import com.dobid.beans.Service_reportDTO;
 import com.dobid.model.boardDAO;
 import com.dobid.model.dobidDAO;
 
@@ -48,15 +49,49 @@ public class Admin_ono_Action extends Action {
 		System.out.println("admin_ono_view_upload_date : " + request.getParameter("admin_ono_view_upload_date"));
 		System.out.println("admin_ono_view_upload_date_send : " + request.getParameter("admin_ono_view_upload_date_send"));
 
+		
+		
+		ActionForward forward = mapping.findForward("success");
+		List<Service_answerDTO> adminonolist = dao.adminOnoSelectAll(catalogue);
 		if (del == null && send == null) {
 			if (admin_ono_selecttext == null && catalogue == null) {
-				catalogue = "구매관련";
-				List<Service_answerDTO> adminonolist = null;
+
 				adminonolist = dao.adminOnoSelectAll(catalogue);
-				request.setAttribute("adminonolist", adminonolist);
+				request.getSession().setAttribute("adminonolist", adminonolist);
+				forward = mapping.findForward("adminonolist");
+				// 페이지 정보 얻어오기
+				String pageStr = request.getParameter("page");
+
+				int page = 1;// 기본페이지를 1페이지로 하겠다!!
+
+				int viewRowCnt = 5;// 한 페이지에 보여줄 행(레코드)의 수
+				if (pageStr != null) {
+					page = Integer.parseInt(pageStr);
+				}
+
+				int end = page * viewRowCnt;
+				int start = end - (viewRowCnt - 1);
+				int totalRecord = dao.adminReportCount();
+				System.out.println("totalRecord: " + totalRecord);
+				int totalPage = totalRecord / viewRowCnt;
+				if (totalRecord % viewRowCnt > 0)
+					totalPage++;
+				request.getSession().removeAttribute("adminonotlist");
+				request.getSession().removeAttribute("page");
+				request.getSession().removeAttribute("totalPage");
+				adminonolist = dao.adminOnoPage(start, end);
+				request.getSession().setAttribute("adminonolist", adminonolist);// 4.
+																						// 영역에
+																						// 데이터
+																						// 저장
+				request.getSession().setAttribute("page", page);// 현재페이지
+				request.getSession().setAttribute("totalPage", totalPage);// 전체페이지
+				// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
+				return forward = mapping.findForward("success");
+				
+	
 
 			} else if (admin_ono_selecttext.equals("") && catalogue != null) {
-				List<Service_answerDTO> adminonolist = null;
 				adminonolist = dao.adminOnoSelectAll(catalogue);
 				request.setAttribute("adminonolist", adminonolist);
 

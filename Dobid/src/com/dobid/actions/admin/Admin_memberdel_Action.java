@@ -14,9 +14,8 @@ import com.dobid.beans.MemberDTO;
 import com.dobid.beans.Service_reportDTO;
 import com.dobid.model.boardDAO;
 
-public class Admin_memberdel_Action extends Action{
+public class Admin_memberdel_Action extends Action {
 
-	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -38,19 +37,55 @@ public class Admin_memberdel_Action extends Action{
 		System.out.println("del : " + request.getParameter("del"));
 
 
-		if (del == null) {
-			if (admin_memberdel_selecttext==null) {
-				List<MemberDTO> adminmemberdellist = null;
-				adminmemberdellist = dao.adminMemberdelSelectAll();
-				request.setAttribute("adminmemberdellist", adminmemberdellist);
+	
 
-			} else if (admin_memberdel_selecttext!=null) {
-				List<MemberDTO> adminmemberdellist = null;
-				adminmemberdellist = dao.adminMemberdelSelect(admin_memberdel_selecttext);
-				request.setAttribute("adminmemberdellist", adminmemberdellist);
+		
+			ActionForward forward = mapping.findForward("success");
+			List<MemberDTO> adminmemberdellist = dao.adminMemberdelSelectAll();
+			if (del == null) {
+				if (admin_memberdel_selecttext==null) {
 
-			}
+					adminmemberdellist = dao.adminMemberdelSelectAll();
+					request.getSession().setAttribute("adminmemberdellist", adminmemberdellist);
+					forward = mapping.findForward("adminmemberdellist");
+					// 페이지 정보 얻어오기
+					String pageStr = request.getParameter("page");
 
+					int page = 1;// 기본페이지를 1페이지로 하겠다!!
+
+					int viewRowCnt = 5;// 한 페이지에 보여줄 행(레코드)의 수
+					if (pageStr != null) {
+						page = Integer.parseInt(pageStr);
+					}
+
+					int end = page * viewRowCnt;
+					int start = end - (viewRowCnt - 1);
+					int totalRecord = dao.adminReportCount();
+					System.out.println("totalRecord: " + totalRecord);
+					int totalPage = totalRecord / viewRowCnt;
+					if (totalRecord % viewRowCnt > 0)
+						totalPage++;
+					request.getSession().removeAttribute("adminmemberdellist");
+					request.getSession().removeAttribute("page");
+					request.getSession().removeAttribute("totalPage");
+					adminmemberdellist = dao.adminMemberDelPage(start, end);// dao.adminMemberDelSelectAll();
+					request.getSession().setAttribute("adminmemberdellist", adminmemberdellist);// 4.
+																							// 영역에
+																							// 데이터
+																							// 저장
+					request.getSession().setAttribute("page", page);// 현재페이지
+					request.getSession().setAttribute("totalPage", totalPage);// 전체페이지
+					// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
+					return forward = mapping.findForward("success");
+
+				}
+					else if (admin_memberdel_selecttext!=null) {
+						adminmemberdellist = dao.adminMemberdelSelect(admin_memberdel_selecttext);
+						request.setAttribute("adminmemberdellist", adminmemberdellist);
+
+					}
+			
+			
 		} else if (del != null) {
 
 			boolean delflag = dao.adminMemberdelDel(admin_memberdel_view_member_id);
