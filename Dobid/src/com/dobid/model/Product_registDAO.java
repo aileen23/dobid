@@ -131,6 +131,7 @@ public class Product_registDAO {
 			smc.update("product_regist.auction_buy_update",dto);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println("aaaaaa");
 			e.printStackTrace();
 			return false;
 		}

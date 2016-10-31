@@ -11,10 +11,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.AuctionDTO;
 import com.dobid.beans.Auction_participantDTO;
 import com.dobid.beans.Auction_updateDTO;
-import com.dobid.beans.Groupbuy_participantDTO;
 import com.dobid.model.Product_registDAO;
 
 public class Auction_buy extends Action{
@@ -41,7 +39,7 @@ public class Auction_buy extends Action{
 		if(check == true && update_check == true){
 			actionMapping = mapping.findForward("sueccess");
 		}else {
-			System.out.println("실패");
+			actionMapping = mapping.findForward("fail");
 		}
 		
 		return actionMapping;
