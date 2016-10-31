@@ -1,3 +1,5 @@
+<%@page import="com.dobid.beans.MessageDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
@@ -18,12 +20,18 @@
       </tr>
     </thead>
     <tbody>
-    <c:forEach items="${receivelist}" var="listmsg"></c:forEach>
+    <%
+    	List<MessageDTO> list = (List<MessageDTO>)request.getAttribute("receivelist");
+    	for(int i=0;i<list.size();i++){
+    %>
       <tr>
-        <td>${listmsg.send_id }</td>
-        <td>${listmsg.contents }</td>
-        <td>${listmsg.regist_date }</td>
+        <td><%=list.get(i).getSend_id() %></td>
+        <td><%=list.get(i).getContents() %></td>
+        <td><%=list.get(i).getRegist_date()%></td>
       </tr>
+    <%
+    	}
+    %>
     </tbody>
   </table>
 </div>

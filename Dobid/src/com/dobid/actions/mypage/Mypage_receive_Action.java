@@ -21,8 +21,11 @@ public class Mypage_receive_Action extends Action{
 		
 		String id= (String) request.getSession().getAttribute("logincheck");
 		Mypage_DAO dao = new Mypage_DAO();
-		List<MessageDTO> receivelist = dao.receivelist(id);
 		
+		List<MessageDTO> receivelist = dao.receivelist(id);
+		for (int i=0;i<receivelist.size();i++) {
+	 		System.out.println(receivelist.get(i).getSend_id());
+		}
 		request.setAttribute("receivelist", receivelist);
 		
 		return mapping.findForward("success");
