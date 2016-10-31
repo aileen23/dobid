@@ -132,6 +132,9 @@
 		<action path="/myprofile_update" type="com.dobid.actions.mypage.Mypage_Action">
 			<forward name="success" path="/mypage_form/myprofile_update.jsp" />
 		</action>
+		<action path="/myprofile_update2" type="com.dobid.actions.mypage.Mypage_update_Action">
+			<forward name="success" path="/myprofile_update.do" />
+		</action>
 		<action path="/myprofile_basket" type="com.dobid.actions.mypage.Mypage_basket_Action">
 			<forward name="success" path="/mypage_form/myprofile_basket.jsp" />
 		</action>		

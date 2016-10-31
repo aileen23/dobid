@@ -36,7 +36,7 @@
 	</div>
 	<div class="container-fluid">
 		<form class="form-horizontal" style="margin-left: 25%" role="form"
-			action="myprofile_update.do">
+			action="myprofile_update2.do">
 			<div class="form-group">
 				<label for="inputId" class="col-sm-2 control-label">ID</label>
 				<div class="col-sm-4">
@@ -54,7 +54,7 @@
 			<div class="form-group">
 				<label for="inputPwd" class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-4">
-					<input type="password" class="form-control" id="inputPwd"
+					<input type="password" class="form-control" id="inputPwd" name="pass"
 						placeholder="Password">
 				</div>
 			</div>
@@ -68,21 +68,21 @@
 			<div class="form-group">
 				<label for="inputPhone" class="col-sm-2 control-label">Phone</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputPhone"
+					<input type="text" class="form-control" id="inputPhone" name="phone"
 						placeholder="${member.phone } ">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputEmail"
+					<input type="text" class="form-control" id="inputEmail" 
 						placeholder="${member.email }" disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputAddress" class="col-sm-2 control-label">Address</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputAddress"
+					<input type="text" class="form-control" id="inputAddress" name="address"
 						placeholder="${member.address }" onclick="DaumPostcode()">
 				</div>
 			</div>
@@ -97,7 +97,7 @@
 			<div class="form-group">
 				<label for="inputIntro" class="col-sm-2 control-label">Introduction</label>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" id="inputIntro"
+					<input type="text" class="form-control" id="inputIntro" name="introduction"
 						placeholder="${member.introduction }">
 				</div>
 			</div>
