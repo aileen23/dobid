@@ -106,7 +106,7 @@ function getQuerystring(paramName){
 
 			<tr>
 				<th>글번호</th>
-				<th>아이디</th>
+				<th>작성자</th>
 				<th>제목</th>
 				<th>조회수</th>
 				<th>등록일자</th>
@@ -142,7 +142,7 @@ function getQuerystring(paramName){
 
 			<tr>
 				<th>글번호</th>
-				<th>아이디</th>
+				<th>작성자</th>
 				<th>제목</th>
 				<th>조회수</th>
 				<th>등록일자</th>
@@ -152,7 +152,7 @@ function getQuerystring(paramName){
 
 				<tr>
 					<td>${freelist.basic_board_num }</td>
-					<td>${freelist.member_id }</td>
+					<td>${freelist.nickname }</td>
 					<td><a href="board_content_view.do?id=${2 }&num=${freelist.basic_board_num }">${freelist.title }</a></td>
 					<td>${freelist.cilck_count }</td>
 					<td>${freelist.upload_date }</td>

@@ -102,7 +102,7 @@ public class Mypage_DAO {
 				for (int i = 0; i < list.size(); i++) {
 					Date date = list.get(i).getEnd_date();
 					String title = list.get(i).getTitle();
-					int price = list.get(i).getHighest_price();
+					int price = list.get(i).getHighest_price();	
 					
 					result.add(new ChargelistDTO("사용", date, title, price));
 				}
