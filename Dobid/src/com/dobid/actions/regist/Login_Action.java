@@ -2,6 +2,8 @@ package com.dobid.actions.regist;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -9,11 +11,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.LoginDTO;
-import com.dobid.beans.MemberDTO;
 import com.dobid.model.Encryption;
 import com.dobid.model.dobidDAO;
 
-public class Login_Action extends Action {
+public class Login_Action extends Action implements HttpSessionBindingListener {
+
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -37,5 +39,15 @@ public class Login_Action extends Action {
 			request.getSession().setAttribute("logincheck", dao.login(dto));
 			return mapping.findForward("success");
 		}
+	}
+
+	@Override
+	public void valueBound(HttpSessionBindingEvent event) {
+		
+	}
+
+	@Override
+	public void valueUnbound(HttpSessionBindingEvent event) {
+		
 	}
 }
