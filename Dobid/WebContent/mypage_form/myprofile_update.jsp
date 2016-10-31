@@ -35,7 +35,7 @@
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
 	<div class="container-fluid">
-	<form class="form-horizontal" style="margin-left: 25%" role="form">
+	<form class="form-horizontal" style="margin-left: 25%" role="form" action="myprofile_update.do">
 		<div class="form-group" >
 			<label for="inputId" class="col-sm-2 control-label">ID</label>
 			<div class="col-sm-4">
@@ -75,7 +75,7 @@
 			<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputEmail"
-					placeholder="${member.email }">
+					placeholder="${member.email }" disabled >
 			</div>
 		</div>
 		<div class="form-group">

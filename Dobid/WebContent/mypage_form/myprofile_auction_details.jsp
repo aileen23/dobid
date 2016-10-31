@@ -25,8 +25,8 @@
 	<div class="container">
 		<c:forEach items="${list }" var="auctionlist">
 		<div class="panel panel-default row">
-			<div class="panel-body col-xs-4"><img src="${basketlist.main_image_path}" width="80%"  height="80%"> </div>
-			<div class="panel-body col-xs-8"><font color="red">${basketlist.hot_check}</font><br>${basketlist.title}<br>입찰가격 : ${basketlist.dib_price_amount }원<br>종료일:  ${basketlist.end_date}</div>
+			<div class="panel-body col-xs-4"><img src="${auctionlist.main_image_path}" width="80%"  height="80%"> </div>
+			<div class="panel-body col-xs-8"><font color="red">${auctionlist.hot_check}</font><br>${auctionlist.title}<br>입찰가격 : ${auctionlist.dib_price_amount }원<br>종료일:  ${auctionlist.end_date}</div>
 		</div>
 		</c:forEach>
 	</div>
