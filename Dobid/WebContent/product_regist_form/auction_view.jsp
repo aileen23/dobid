@@ -48,6 +48,29 @@ $(document).ready(function(){
 		location.replace("auction_buy.do?id="+id+"&price="+input_price);
 		}
 	});
+	$(".basket_btn").click(function(){
+		var id = $('.wap').attr("name");
+		var check = $('.content').attr("name");
+		$.ajax({
+            url:'basket_add.do',	
+            type:'POST',
+            data:{"id" : id,"check":check},
+            success:function(result){
+            	console.log(result);
+            	if(result == "OK"){
+            		alert("찜목록에 추가됬습니다.");	
+            	}else {
+            		alert("추가실패");
+            	}
+
+           	},
+           	error: function(xhr,status,error){ 
+
+           	          alert("code:"+xhr.status); 
+           	      } 
+
+        });
+	});
 });
 function showKeyCode(event) {
 	event = event || window.event;
@@ -109,7 +132,7 @@ function showKeyCode(event) {
 	int view_ss = ((nowtal_int-(view_hour*3600))-view_mi*60);
 %>
 	<div class="wap" name="<%=id%>">
-  		<div class="content">
+  		<div class="content" name="<%= auctionDTO.getHot_check()%>">
   			<span class="title"><%=auctionDTO.getTitle() %></span>
   			<div class="box">
   				<div class="fires_box">
@@ -184,6 +207,7 @@ function showKeyCode(event) {
   					</div>
   					<input type="text" class="form-control2" id="inputId" placeholder="금액" onkeydown="return showKeyCode(event)">
   					<button id="buyBtn" type="button" class="btn btn-default" style="margin-right: 5%">경매참가하기</button>
+  					<button type="button" class="basket_btn btn-default">찜하기</button>
   				</div>
   			</div>
   			<textarea class="text_area" rows="20" cols="110" style="resize: none;" readonly="readonly"><%= auctionDTO.getContents() %></textarea>

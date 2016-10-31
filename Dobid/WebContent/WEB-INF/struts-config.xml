@@ -94,6 +94,7 @@
 			<forward name="sueccess" path="/list.do"></forward>
 			<forward name="fail" path="/fail.do"></forward>
 		</action>
+		<action path="/basket_add" forward="/product_regist_form/basket_add.jsp"></action>
 		<!-- main, login, register account, find -->
 		<action path="/checkid" forward="/regist_form/checkid.jsp"></action>
 		<action path="/checknickname" forward="/regist_form/checknickname.jsp"></action>

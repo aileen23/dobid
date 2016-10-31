@@ -46,6 +46,14 @@ public class Auction_list_paramiterDTO {
 		this.oldcheck = oldcheck;
 	}
 
+	
+	
+	public Auction_list_paramiterDTO(String check, String oldcheck) {
+		super();
+		this.check = check;
+		this.oldcheck = oldcheck;
+	}
+
 	public String getSearch() {
 		return search;
 	}

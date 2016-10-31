@@ -8,6 +8,7 @@ import com.dobid.beans.Auction_listDTO;
 import com.dobid.beans.Auction_list_paramiterDTO;
 import com.dobid.beans.Auction_participantDTO;
 import com.dobid.beans.Auction_updateDTO;
+import com.dobid.beans.BasketDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.GroupbuyDTO;
 import com.dobid.beans.Groupbuy_participantDTO;
@@ -142,6 +143,30 @@ public class Product_registDAO {
 		
 		try {
 			smc.insert("dobid.FreeBoardWrite", freeboard);
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	
+		return false;
+		
+	}
+	public List<Auction_listDTO> main_list(){
+		List<Auction_listDTO> list = null;
+		Auction_list_paramiterDTO auction_list_paramiterDTO = new Auction_list_paramiterDTO("핫경매","경매중");
+		try {
+			list = smc.queryForList("product_regist.main_list",auction_list_paramiterDTO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	public boolean basket_add(BasketDTO freeboard){
+		
+		try {
+			smc.insert("product_regist.basket_add", freeboard);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();

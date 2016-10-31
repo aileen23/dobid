@@ -45,7 +45,28 @@ $(document).ready(function(){
 		var price = $('.now_bid_text').text();
 		location.replace("groupbuy_regist.do?id="+id+"&price="+price);
 	});
-	
+	$(".basket_btn").click(function(){
+		var id = $('.wap').attr("name");
+		var check = "공동구매";
+		$.ajax({
+            url:'basket_add.do',	
+            type:'POST',
+            data:{"id" : id,"check":check},
+            success:function(result){
+            	if(result == "OK"){
+            		alert("찜목록에 추가됬습니다.");	
+            	}else {
+            		alert("추가실패");
+            	}
+
+           	},
+           	error: function(xhr,status,error){ 
+
+           	          alert("code:"+xhr.status); 
+           	      } 
+
+        });
+	});
 });
 </script>
 <body>
@@ -126,6 +147,7 @@ $(document).ready(function(){
   					<p class="now_bid">현재 참여자 수</p>
   					<p class="now_bid_text2"><%=dto.getParticipant_num()%>명</p>
   					<button id="buyBtn" type="button" class="btn btn-default" style="margin-right: 5%">공동구매참가하기</button>
+  					<button type="button" class="basket_btn btn-default">찜하기</button>
   				</div>
   			</div>
   			<textarea class="text_area" rows="20" cols="110" style="resize: none;" readonly="readonly"><%=dto.getContents()%></textarea>

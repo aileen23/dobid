@@ -28,7 +28,7 @@
    </select>
     <!-- 경매뷰   -->
    <select id="auction_object_select" parameterClass="Int" resultClass="auction_reviewDTO">
-   		select AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,END_DATE,REGIST_DATE,HIGHEST_PRICE from auction where AUCTION_BOARD_NUM=#Int#
+   		select AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,END_DATE,REGIST_DATE,HIGHEST_PRICE,HOT_CHECK from auction where AUCTION_BOARD_NUM=#Int#
    </select>
     <!-- 유저정보가져오기  -->
    <select id="user_id_select" parameterClass="String" resultClass="String">
@@ -55,5 +55,12 @@
 	<insert id="auction_buy_d" parameterClass="auction_buy_aaa">
 		INSERT INTO "DOBID"."AUCTION_PARTICIPANT" (AUCTION_BOARD_NUM, BID_PRICE_AMOUNT, BUYER_ID, BID_DATE, BID_CHECK) VALUES (#auction_board_num#, #bid_price_amount#, #buyer_id#, TO_DATE(#bid_date#, 'YYYY-MM-DD HH24:MI:SS'),#bid_check#)		
 	</insert>
-
+	 <!-- 메인 핫경매 목록 -->
+   <select id="main_list" resultClass="auction_list" parameterClass="paramiter">
+   		<![CDATA[select * from (select rownum rnum,a.AUCTION_BOARD_NUM, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.HOT_CHECK=#check# AND a.BID_CHECK=#oldcheck#) where rnum BETWEEN 0 and 6]]> 
+   </select>
+	<!-- 찜목록 추가 -->
+	<insert id="basket_add" parameterClass="basketDTO">
+		<![CDATA[INSERT INTO BASKET values(#check#,#board_num#,#member_id#)]]> 
+	</insert>
 </sqlMap>
