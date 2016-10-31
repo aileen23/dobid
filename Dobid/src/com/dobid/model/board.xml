@@ -343,15 +343,13 @@
 	<!-- 관리자 멤버관리 게시물 -->
 
 	<select id="adminmemberdelall" resultClass="adminmemberDTO">
-		select
-		member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
+		select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
 		from member
 	</select>
 	<!-- 관리자 멤버관리 게시물 검색 -->
 	<select id="adminmemberdelselect" resultClass="adminmemberDTO"
 		parameterClass="String">
-		select
-		member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
+		select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
 		from member
 		where member_id like '%'||#member_id#||'%'
 	</select>
