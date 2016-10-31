@@ -17,26 +17,21 @@
         <th>받은사람</th>
         <th>제목</th>
         <th>보낸시간</th>
-        <th>읽은시간</th>
       </tr>
     </thead>
     <tbody>
         <%
-    	List<MessageDTO> list = (List<MessageDTO>)request.getAttribute("list");
+    	List<MessageDTO> list = (List<MessageDTO>)request.getAttribute("sendlist");
     	for(int i=0;i<list.size();i++){
-    %>
+ 		 %>
       <tr>
         <td><%=list.get(i).getMember_id()%></td>
         <td><%=list.get(i).getTitle()%></td>
         <td><%=list.get(i).getRegist_date() %></td>
-		<%if(list.get(i).getReception_check()==0){ %>
-        <td>읽지않음</td>
-        <%}else { %>
-        <td>읽음</td>
-        <% } %>
+
       </tr>
       <%
-    	}
+       }
     %>
     </tbody>
   </table>

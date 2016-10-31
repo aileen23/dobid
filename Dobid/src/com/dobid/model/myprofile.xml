@@ -75,7 +75,7 @@
 	</select>
 	
 	<select id="sendlist" parameterClass="String" resultClass="messageDTO">
-		select title,contents,regist_date,member_id,reception_check
+		select title,contents,regist_date,member_id
 		from message
 		where send_id=#send_id#
 	</select>
