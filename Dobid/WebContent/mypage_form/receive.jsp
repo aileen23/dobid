@@ -15,7 +15,7 @@
     <thead>
       <tr>
         <th>보낸사람</th>
-        <th>내용</th>
+        <th>제목</th>
         <th>보낸시간</th>
       </tr>
     </thead>
@@ -26,7 +26,7 @@
     %>
       <tr>
         <td><%=list.get(i).getSend_id() %></td>
-        <td><%=list.get(i).getContents() %></td>
+        <td><%=list.get(i).getTitle() %></td>
         <td><%=list.get(i).getRegist_date()%></td>
       </tr>
     <%

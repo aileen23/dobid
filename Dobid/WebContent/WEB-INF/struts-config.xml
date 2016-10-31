@@ -155,7 +155,7 @@
 		<action path="/receive" type="com.dobid.actions.mypage.Mypage_receive_Action">
 			<forward name="success" path="/mypage_form/receive.jsp" />
 		</action>	
-		<action path="/send" type="com.dobid.actions.mypage.Mypage_receive_Action">
+		<action path="/send" type="com.dobid.actions.mypage.Mypage_send_Action">
 			<forward name="success" path="/mypage_form/send.jsp" />
 		</action>	
 		<action path="/sendmessage" type="com.dobid.actions.mypage.Mypage_sendmsg_Action">
