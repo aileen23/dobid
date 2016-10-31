@@ -57,14 +57,14 @@ public class Admin_ono_Action extends Action {
 			if (admin_ono_selecttext == null && catalogue == null) {
 
 				adminonolist = dao.adminOnoSelectAll(catalogue);
-				request.getSession().setAttribute("adminonolist", adminonolist);
+				request.setAttribute("adminonolist", adminonolist);
 				forward = mapping.findForward("adminonolist");
 				// 페이지 정보 얻어오기
 				String pageStr = request.getParameter("page");
 
 				int page = 1;// 기본페이지를 1페이지로 하겠다!!
 
-				int viewRowCnt = 5;// 한 페이지에 보여줄 행(레코드)의 수
+				int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
 				if (pageStr != null) {
 					page = Integer.parseInt(pageStr);
 				}
@@ -76,16 +76,16 @@ public class Admin_ono_Action extends Action {
 				int totalPage = totalRecord / viewRowCnt;
 				if (totalRecord % viewRowCnt > 0)
 					totalPage++;
-				request.getSession().removeAttribute("adminonotlist");
-				request.getSession().removeAttribute("page");
-				request.getSession().removeAttribute("totalPage");
+				request.removeAttribute("adminonotlist");
+				request.removeAttribute("page");
+				request.removeAttribute("totalPage");
 				adminonolist = dao.adminOnoPage(start, end);
-				request.getSession().setAttribute("adminonolist", adminonolist);// 4.
+				request.setAttribute("adminonolist", adminonolist);// 4.
 																						// 영역에
 																						// 데이터
 																						// 저장
-				request.getSession().setAttribute("page", page);// 현재페이지
-				request.getSession().setAttribute("totalPage", totalPage);// 전체페이지
+				request.setAttribute("page", page);// 현재페이지
+				request.setAttribute("totalPage", totalPage);// 전체페이지
 				// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
 				return forward = mapping.findForward("success");
 				

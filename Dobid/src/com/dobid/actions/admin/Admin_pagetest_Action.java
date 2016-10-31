@@ -36,7 +36,7 @@ public class Admin_pagetest_Action extends Action {
 			if (admin_report_selecttext == null) {
 
 				adminreportlist = dao.adminReportSelectAll();
-				request.getSession().setAttribute("adminreportlist", adminreportlist);
+				request.setAttribute("adminreportlist", adminreportlist);
 				forward = mapping.findForward("adminreportlist");
 				// 페이지 정보 얻어오기
 				String pageStr = request.getParameter("page");
