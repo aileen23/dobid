@@ -69,6 +69,7 @@
 		select
 		basic_board_num,member_id,title,cilck_count,upload_date from
 		noticeboard where title like '%'||#title#||'%'
+		order by basic_board_num desc
 	</select>
 
 	<!-- 검색 게시판 리스트보기(자유) 글제목으로만 -->
@@ -77,6 +78,7 @@
 		select
 		basic_board_num,member_id,title,cilck_count,upload_date from freeboard
 		where title like '%'||#title#||'%'
+		order by basic_board_num desc
 	</select>
 
 
@@ -291,6 +293,7 @@
 		answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id
 		from service_answer
 		where categori=#categori#
+		order by upload_date desc
 
 	</select>
 
@@ -302,6 +305,7 @@
 		answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id
 		from service_answer
 		where categori=#categori# and title=#admin_ono_selecttext#
+		order by upload_date desc
 	</select>
 
 	<!-- ono 1대1 삭제 -->
@@ -323,6 +327,7 @@
 	<select id="adminreportall" resultClass="seriverepotDTO">
 		select member_id,title,contents,image_path,upload_date
 		from service_report
+		order by upload_date desc
 	</select>
 	<!-- 관리자 신고하기 게시물 검색 -->
 	<select id="adminreportselect" resultClass="seriverepotDTO"
@@ -330,6 +335,7 @@
 		select member_id,title,contents,image_path,upload_date
 		from service_report
 		where title like '%'||#title#||'%'
+		order by upload_date desc
 	</select>
 
 	<!-- 관리자 신고하기 삭제 -->
