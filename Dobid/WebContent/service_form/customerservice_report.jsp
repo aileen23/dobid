@@ -73,7 +73,7 @@
 			<label for="inputWriter" class="col-sm-3 control-label">작성자</label>
 			<div class="col-sm-5">
 				<input type="text" class="form-control" id="inputWriter"
-					placeholder=${logincheck } name="member_id" readonly="readonly">
+					value=${logincheck } name="member_id" readonly="readonly">
 			</div>
 		</div>
 		<div class="form-group">
