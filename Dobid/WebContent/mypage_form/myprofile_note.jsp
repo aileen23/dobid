@@ -54,7 +54,7 @@
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
-		<div>
+		<div style="margin-left: 100px">
 			<input type="button" name="receive" value="받은쪽지함" id="receiveMSG">
 			<input type="button" name="send" value="보낸쪽지함" id="sendMSG">
 			<input type="button" name="sendMessage" value="글쓰기" id="sendMessage">

@@ -29,21 +29,21 @@
 				<label for="inputId" class="col-sm-2 control-label">ID</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputId"
-						placeholder="${member.member_id }" disabled>
+						placeholder="${member.member_id }"  value="${member.member_id }" disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputName" class="col-sm-2 control-label">Name</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputName"
-						placeholder="${member.name }" disabled>
+						placeholder="${member.name }" value="${member.name }" disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputPwd" class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-4">
 					<input type="password" class="form-control" id="inputPwd" name="pass"
-						placeholder="Password">
+						placeholder="Password" >
 				</div>
 			</div>
 			<div class="form-group">
@@ -57,21 +57,21 @@
 				<label for="inputPhone" class="col-sm-2 control-label">Phone</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputPhone" name="phone"
-						placeholder="${member.phone } ">
+						placeholder="${member.phone } " value="${member.phone }">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputEmail" 
-						placeholder="${member.email }" disabled>
+						placeholder="${member.email }"  value="${member.email }"disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputAddress" class="col-sm-2 control-label">Address</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputAddress" name="address"
-						placeholder="${member.address }" onclick="DaumPostcode()">
+						placeholder="${member.address }" value ="${member.address }"onclick="DaumPostcode()">
 				</div>
 			</div>
 
@@ -79,14 +79,14 @@
 				<label for="inputNickName" class="col-sm-2 control-label">NickName</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputNickName"
-						placeholder="${member.nickname }" disabled>
+						placeholder="${member.nickname }" value="${member.nickname }" disabled>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputIntro" class="col-sm-2 control-label">Introduction</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputIntro" name="introduction"
-						placeholder="${member.introduction }">
+						placeholder="${member.introduction }" value="${member.introduction }">
 				</div>
 			</div>
 			
@@ -94,7 +94,7 @@
 				<label for="Birthday" class="col-sm-2 control-label">Birthday</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="Birthday"
-						placeholder="${member.birthday }" disabled>
+						placeholder="${member.birthday }" value="${member.birthday }" disabled>
 				</div>
 			</div>
 
