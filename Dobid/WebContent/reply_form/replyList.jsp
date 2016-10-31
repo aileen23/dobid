@@ -7,7 +7,9 @@
     {
      no:${reply.no },
      name:'${reply.name }',
-     content:'${reply.content }'
+     content:'${ reply.content }',
+     page_type:'${ reply.page_type }',
+     num:'${ reply.num }'
     }
     <c:if test="${stat.count < list.size() }">,</c:if> 
   </c:forEach> 

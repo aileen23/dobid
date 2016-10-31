@@ -5,45 +5,45 @@
    <typeAlias alias="boderreply" type="com.dobid.beans.ReplyDTO"/>
    <!-- 공지사항 -->
    <insert id="add" parameterClass="boderreply">
-       insert into reply values (reply_seq.nextval, #name#, #content#)
+       insert into  reply values (reply_seq.nextval, #name#, #content#, #page_type#, #num#)
    </insert>
    
    <delete id="delete" parameterClass="int">
-       delete reply
-       where no=#no#
+       delete  reply
+       where page_type=#page_type# and num=#num#
    </delete>
    
    <update id="update" parameterClass="boderreply">
-       update reply
+       update  reply
        set name=#name#, content=#content#
-       where no=#no#
+       where page_type=#page_type# and num=#num#
    </update>
    
    <select id="find" parameterClass="int" resultClass="boderreply">
        select name,content
-       from reply
-       where no=#no#
+       from  reply
+        where no=#no#
    </select>
    
    <select id="findAll"  resultClass="boderreply">
-       select no,name,content
-       from reply
+       select no,name,content 
+       from  reply
        order by no
    </select>
    
    
-   <!-- 자유게시판 -->
+   <!-- 자유게시판
    <insert id="add2" parameterClass="boderreply">
-       insert into board_freedom_write_reply values (reply_seq.nextval, #name#, #content#)
+       insert into  board_freedom_write_reply values (board_freedom_write_reply_seq.nextval, #name#, #content#)
    </insert>
    
    <delete id="delete2" parameterClass="int">
-       delete from reply
+       delete from  board_freedom_write_reply
        where no=#no#
    </delete>
    
    <update id="update2" parameterClass="boderreply">
-       update board_freedom_write_reply
+       update  board_freedom_write_reply
        set name=#name#, content=#content#
        where no=#no#
    </update>
@@ -58,7 +58,7 @@
        select no,name,content
        from board_freedom_write_reply
        order by no
-   </select>
+   </select> -->
    
 </sqlMap>
 

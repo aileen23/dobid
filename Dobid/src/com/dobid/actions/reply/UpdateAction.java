@@ -22,7 +22,10 @@ public class UpdateAction extends Action{//DB수정요청
 		ReplyDTO reply = new ReplyDTO(
 								Integer.parseInt(request.getParameter("no")),
 								request.getParameter("name"),
-								request.getParameter("content"));
+								request.getParameter("content"),
+								request.getParameter("page_type"),
+	                            request.getParameter("num")
+								);
 		
 		ReplyDAO dao = new ReplyDAO();
 		   if(dao.update(reply)){

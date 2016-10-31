@@ -46,10 +46,10 @@ public class ReplyDAO {
        return false;	
     }//update
     
-    public ReplyDTO find(int no){
+    public ReplyDTO find(String page_type, String num){
        ReplyDTO reply=null;
 	try {
-		reply = (ReplyDTO) sqlMap.queryForObject("reply.find",no);
+		reply = (ReplyDTO) sqlMap.queryForObject("reply.find",num);
 		} catch (SQLException e) {
 			e.printStackTrace();
 	   }       

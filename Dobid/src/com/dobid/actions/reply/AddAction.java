@@ -24,7 +24,15 @@ public class AddAction extends Action{
     	request.setCharacterEncoding("UTF-8");
     	ReplyDTO reply = new ReplyDTO(0,
                                request.getParameter("name"),
-                               request.getParameter("content")); 
+                               request.getParameter("content"),
+                               request.getParameter("page_type"),
+                               request.getParameter("num")
+    							); 
+    	
+    	System.out.println(request.getParameter("name"));
+    	System.out.println(request.getParameter("content"));
+    	System.out.println(request.getParameter("page_type"));
+    	System.out.println(request.getParameter("num"));
     	
     	ReplyDAO dao = new ReplyDAO();
     	 if(dao.insert(reply)){
@@ -33,7 +41,6 @@ public class AddAction extends Action{
     		 request.setAttribute("msg", "댓글등록실패!!");  
     	   }
     	 
-    	
     	return mapping.findForward("success");
     }
 }

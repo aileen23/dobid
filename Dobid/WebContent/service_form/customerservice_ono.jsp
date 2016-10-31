@@ -31,7 +31,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	function button_event() {
+	function reset() {
 		if (confirm("1:1 문의를 정말 취소하시겠습니까? \n 작성된 문의 내용은 모두 사라지며 메인페이지로 넘어갑니다") == true) { //확인
 
 			location.href = '/Dobid/main.do';
@@ -113,7 +113,7 @@
 		<button type="submit"
 			class="button button5 btn-default col-sm-offset-5" id="submit">확인</button>
 		<button type="reset" class="button button5 btn-default"
-			onclick="button_event()">취소</button>
+			onclick="reset()">취소</button>
 	</form>
 
 

@@ -13,13 +13,17 @@
         border-top: 1px solid black;
      }
   </style>
-  <script type="text/javascript" src="js/ajax2.js"></script>
+ <!--  <script type="text/javascript" src="js/ajax2.js"></script> -->
+  <script type="text/javascript" src="/Dobid/js/ajax2.js"></script>
   <script type="text/javascript">
     //댓글 등록 작업 : addReply, addResult
     function addReply(){//댓글 등록 요청
-       var name = document.addForm.name.value;	
-       var content = document.addForm.content.value;	
-       var params="name="+name+"&content="+content; //"name=길동&content=안녕"
+       var name = document.addForm.name.value;
+       var content = document.addForm.content.value;
+       var page_type = document.addForm.page_type.value;
+       var num = document.addForm.num.value;
+       var params="name="+name+"&content="+content+"&page_type="+page_type+"&num="+num; //"name=길동&content=안녕"
+       alert(params);
        new ajax.xhr.Request("/Dobid/board_content_view_reply_add.do", params, addResult, 'POST');	
     }//addReply
     function addResult(xhr){//등록요청후 실행할 콜백함수
@@ -31,6 +35,7 @@
     		  loadReplyList();
     		  
     		  document.addForm.content.value='';
+    		  document.addForm.content.focus();
     		  
     	  }
        }	
@@ -40,8 +45,9 @@
        var no = document.updateForm.no.value;	
        var name = document.updateForm.name.value;	
        var content = document.updateForm.content.value;	
-       
-       var params="no="+no+"&name="+name+"&content="+content; 
+       var page_type = document.addForm.page_type.value;
+       var num =document.addForm.num.type.value;
+       var params="name="+name+"&content="+content+"&name"+page_type+"&num"+num;
            //"no=3&name=길동&content=안녕"
        new ajax.xhr.Request("/Dobid/board_content_view_reply_update.do", params, updateResult, 'POST');	
     }//updateReply
@@ -135,7 +141,7 @@
        
        $("#old_reply").hide();
        updateForm.content.focus();
-       $("#update_data").css('margin-top') = "-30%";
+       /* $("#update_data").css('margin-top') = "-30%"; */
        
     }//viewUpdateForm
     
@@ -163,8 +169,9 @@
     //reply: { no:1, name:'나기롱', content:'Ajax재밌어요~!!' }
       var replyDiv = document.createElement('div');//<div></div>
       replyDiv.setAttribute("id","r"+ reply.no);//<div id="r1"></div>	
-      var html =  '<div id="old_reply"><br><strong id="reply_name">'+reply.name+'</strong><br><div id="reply_comment">'+
-               reply.content.replace('/\n/g', '\n<br>')+'</div><br>'+
+      var html =  '<div id="old_reply"><br>'+
+      		'<strong id="reply_name">'+reply.name+'</strong><br><div id="reply_comment">'+
+      		'<p>'+reply.content.replace('\n', '\n<br>')+'</p></div><br>'+
  		'<div style="float: right;" id="update_data">'+
  		'<input type="button" value="수정" id="update_text" onclick="viewUpdateForm('+reply.no+')">'+
       	'<input type="button" value="삭제"  onclick="deleteReply('+reply.no+')"></div></div>';
@@ -188,8 +195,10 @@
      	
      	<div style="width: 100%; margin-top: 10px;">
      	<br>
-     	<label style="display:;">${logincheck }</label>
+     	<label>${logincheck }</label>
         <input type="text" name="name" size="10" value="${logincheck }" style="display: none;">
+        <input type="text" name="page_type" size="10" value="12345" style="display: ;">
+        <input type="text" name="num" size="10" value="67890" style="display: ;">
 		</div>
 		<div>
    		<textarea rows="5" name="content" style="vertical-align: middle; width: 75%"></textarea>
