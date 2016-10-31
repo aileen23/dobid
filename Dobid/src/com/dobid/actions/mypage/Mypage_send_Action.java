@@ -20,9 +20,8 @@ public class Mypage_send_Action extends Action {
 		
 		String id= (String) request.getSession().getAttribute("logincheck");
 		Mypage_DAO dao = new Mypage_DAO();
-		List<MessageDTO> list = dao.sendlist(id);
-		
-		request.setAttribute("list", list);
+		List<MessageDTO> sendlist = dao.sendlist(id);
+		request.setAttribute("sendlist", sendlist);
 		
 		return mapping.findForward("success");
 	}
