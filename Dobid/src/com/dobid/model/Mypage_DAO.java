@@ -43,7 +43,7 @@ public class Mypage_DAO {
 	public String update(MemberDTO dto) {
 
 		try {
-			smc.queryForObject("myprofile.update", dto);
+			smc.update("myprofile.update", dto);
 			return "업데이트성공";
 		} catch (SQLException e) {
 			e.printStackTrace();

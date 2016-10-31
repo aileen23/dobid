@@ -7,19 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<%-- 
-<!-- Bootstrap Core CSS -->
-<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-<!-- Custom CSS -->
-<link href="./css/shop-homepage.css" rel="stylesheet">
-<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-
-<!-- Script -->
-<script type="text/javascript" src="./js/jquery-1.8.3.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
---%>
 </head>
 
 <body>
