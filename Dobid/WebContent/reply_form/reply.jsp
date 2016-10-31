@@ -196,9 +196,9 @@
      	<div style="width: 100%; margin-top: 10px;">
      	<br>
      	<label>${logincheck }</label>
-        <input type="text" name="name" size="10" value="${logincheck }" style="display: none;">
-        <input type="text" name="page_type" size="10" value="12345" style="display: ;">
-        <input type="text" name="num" size="10" value="67890" style="display: ;">
+        <input type="text" name="name" size="10" value="${logincheck }" style="display: none;"><br>
+        <input type="text" name="page_type" size="10" value="게시글종류" style="display: ;" readonly="readonly">
+        <input type="text" name="num" size="10" value="게시글번호" style="display: ;" readonly="readonly">
 		</div>
 		<div>
    		<textarea rows="5" name="content" style="vertical-align: middle; width: 75%"></textarea>
