@@ -84,7 +84,7 @@ function getQuerystring(paramName){
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="view_write_user"
-						placeholder="${viewobject.member_id }" disabled>
+						placeholder="${viewobject.nickname }" disabled>
 				</div>
 			</div>
 			

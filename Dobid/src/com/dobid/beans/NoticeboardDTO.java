@@ -10,9 +10,25 @@ public class NoticeboardDTO {
 	private String image_path;
 	private int cilck_count;
 	private String upload_date;
+	private String nickname;
 
 	public NoticeboardDTO() {
 	}
+
+	public NoticeboardDTO(int basic_board_num, String member_id, String title, String contents, String image_path,
+			int cilck_count, String upload_date, String nickname) {
+		super();
+		this.basic_board_num = basic_board_num;
+		this.member_id = member_id;
+		this.title = title;
+		this.contents = contents;
+		this.image_path = image_path;
+		this.cilck_count = cilck_count;
+		this.upload_date = upload_date;
+		this.nickname = nickname;
+	}
+	
+	
 
 	public NoticeboardDTO(int basic_board_num, String member_id, String title, String contents, String image_path,
 			int cilck_count, String upload_date) {
@@ -81,5 +97,15 @@ public class NoticeboardDTO {
 	public void setUpload_date(String upload_date) {
 		this.upload_date = upload_date;
 	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	
 
 }
