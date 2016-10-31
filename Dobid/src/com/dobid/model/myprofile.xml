@@ -24,8 +24,8 @@
 	</select>
 
 	<update id="update" parameterClass="memberDTO">
-	 	update member set member_id=#member_id#, name=#name#, pass=#pass#, phone=#phone#, email=#email#, address=#address#,
-		nickname=#nickname#, introduction=#introduction#, birthday=#birthday#
+	 	update member set pass=#pass#, phone=#phone#, address=#address#,introduction=#introduction#
+		where member_id=#member_id#
 	</update>
 	
 	<select id="basketSelect" parameterClass="String" resultClass="auctionDTO">

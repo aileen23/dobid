@@ -25,9 +25,8 @@
   <table class="table">
     <thead>
       <tr>
-        <th>제목</th>
         <th>카테고리</th>
-        <th>내용</th>
+        <th>제목</th>
         <th>날짜</th>
         <th>상세보기</th>
         <th>답변상태</th>
@@ -36,9 +35,8 @@
     <tbody>
     <c:forEach items="${list }" var="qnalist">
       <tr>
-        <td>${qnalist.title}</td>
         <td>${qnalist.categori}</td>
-        <td>${qnalist.contents}</td>
+        <td>${qnalist.title}</td>
         <td>${qnalist.upload_date}</td>
         <td>상세보기</td>
         <c:choose>
