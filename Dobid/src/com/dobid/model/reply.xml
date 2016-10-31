@@ -28,7 +28,7 @@
    <select id="findAll"  resultClass="boderreply">
        select no,name,content 
        from  reply
-       order by no desc
+       order by no
    </select>
    
    
