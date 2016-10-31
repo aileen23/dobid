@@ -9,16 +9,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript">
-$(function(){
-	
-	
-	$("#detail").click(function(){
-	$("#tablegate").val($(this).children().eq(0).text());
+function callTable(tablegate,tabletitle,tabledate,tablecontent){
+	$("#tablegate").text(tablegate);
+	$("#tabletitle").text(tabletitle);
+	$("#tabledate").text(tabledate);
+	$("#tablecontent").text(tablecontent);
 	$("#popup").fadeIn(700);
-	});
-$("#close").click(function(){
+}
+function callAnsTable(tableAnswerDate,tableAnswerCon){
+	$("#tableAnswerDate").text(tableAnswerDate);
+	$("#tableAnswerCon").text(tableAnswerCon);
+	$("#popup2").fadeIn(700);
+}
+
+$(function(){
+	$("#close").click(function(){
 	$("#popup").fadeOut(500);
-});//팝업창 띄우기
+});
+	$("#close2").click(function(){
+		$("#popup2").fadeOut(500);
+	});
+
 
 });
 </script>
@@ -49,19 +60,21 @@ $("#close").click(function(){
 			</thead>
 			<tbody>
 				<c:forEach items="${ list }" var="listqna">
-					<tr>
+					<tr class="tr">
 						<td>${listqna.categori }</td>
 						<td>${listqna.title }</td>
 						<td>${listqna.upload_date }</td>
-						<td><button id="detail" value="${listqna }">상세보기</button></td>
+						<td><button onclick="callTable('${listqna.categori }','${listqna.title }','${listqna.upload_date }','${listqna.contents }')">상세보기</button></td>
 						<c:choose>
-							<c:when test="${qnalist.answer_contents eq null}">
+							<c:when test="${empty listqna.answer_date}">
 								<td>답변대기</td>
 							</c:when>
 							<c:otherwise>
-								<td><button id="answer">답변완료</button></td>
+								<td><button onclick="callAnsTable('${listqna.answer_date}','${ listqna.answer_contents}')">답변완료</button></td>
 							</c:otherwise>
 						</c:choose>
+						
+						
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -70,37 +83,59 @@ $("#close").click(function(){
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 40%; height: 30%; margin-left: 30%; margin-top: 17%; border: 1px solid black;">
+			style="background-color: white; width: 50%; height: 60%; margin-left: 20%; margin-top: 10%;  border: 1px solid black;">
 
 			<br>
 			<table class="table">
 				<tr>
 					<td>카테고리</td>
-					<td><input type="text" id="tablegate"></td>
+					<td><div id="tablegate"></div></td>
 				</tr>
 				<tr>
 					<td>제목</td>
-					<td><input type="text" id="tabletitle"></td>
+					<td><div id="tabletitle"></div></td>
 				</tr>
 				<tr>
 					<td>시간</td>
-					<td><input type="text" id="tabledate"></td>
+					<td><div id="tabledate"></div></td>
 				</tr>
 				<tr>
 					<td>내용</td>
-					<td><input type="text" id="tablecontent"></td>
+					<td><div id="tablecontent"></div></td>
 				</tr>
 			</table>
-
-
 			<button type="button" class="btn btn-default" id="close"
 				style="margin-left: 45%">닫기</button>
 
 
+		</div>
+	</div>
+	
+	<div id="popup2" class="overlay"
+		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
+		<div
+			style="background-color: white; width: 50%; height: 60%; margin-left: 20%; margin-top: 10%;  border: 1px solid black;">
 
+			<br>
+			<table class="table">
+
+				<tr>
+					<td>답변날짜</td>
+					<td><div id="tableAnswerDate"></div></td>
+				</tr>
+				<tr>
+					<td>답변내용</td>
+					<td><div id="tableAnswerCon"></div></td>
+				</tr>
+			</table>
+
+
+			<button type="button2" class="btn btn-default" id="close2"
+				style="margin-left: 45%">닫기</button>
 
 		</div>
 	</div>
+	
 
 </body>
 <footer>
