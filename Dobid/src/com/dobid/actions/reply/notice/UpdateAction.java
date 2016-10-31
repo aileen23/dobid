@@ -1,4 +1,4 @@
-package com.dobid.actions.reply;
+package com.dobid.actions.reply.notice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.ReplyDTO;
+import com.dobid.beans.Reply_noticeDTO;
 import com.dobid.model.ReplyDAO;
 
 
@@ -19,16 +19,16 @@ public class UpdateAction extends Action{//DB수정요청
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
-		ReplyDTO reply = new ReplyDTO(
+		Reply_noticeDTO reply_notice = new Reply_noticeDTO(
 								Integer.parseInt(request.getParameter("no")),
 								request.getParameter("name"),
 								request.getParameter("content"),
-								request.getParameter("page_type"),
-	                            request.getParameter("num")
+	                            request.getParameter("num"),
+	                            request.getParameter("nickname")
 								);
 		
 		ReplyDAO dao = new ReplyDAO();
-		   if(dao.update(reply)){
+		   if(dao.updaten_notice(reply_notice)){
 			   request.setAttribute("msg", "댓글수정성공!!");
 		   }else{
 			   request.setAttribute("msg", "댓글수정실패!!");

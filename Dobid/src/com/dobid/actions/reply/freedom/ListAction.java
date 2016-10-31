@@ -1,4 +1,4 @@
-package com.dobid.actions.reply;
+package com.dobid.actions.reply.freedom;
 
 
 
@@ -12,7 +12,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.ReplyDTO;
+import com.dobid.beans.Reply_freedomDTO;
 import com.dobid.model.ReplyDAO;
 import com.dobid.util.Util;
 import com.sun.glass.ui.Size;
@@ -28,16 +28,14 @@ public class ListAction extends Action{//목록출력 요청
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
+		
 	   ReplyDAO dao = new ReplyDAO();
-	   /*List<ReplyDTO>  list =  dao.findAll();
-	    for(int i=0; i<list.size(); i++){
-	    	 ReplyDTO reply = list.get(i);
-	    	 reply.setContent(Util.toJS(reply.getContent()));
-	    }*/
+	   List<Reply_freedomDTO>  list =  dao.findAll_freedom();
 	   
 	   
 	   
-	    request.setAttribute("list", dao.findAll());//list);
+	   
+	    request.setAttribute("list", list);//list);
 	   return mapping.findForward("success");
 	}//execute
 }

@@ -1,4 +1,4 @@
-package com.dobid.actions.reply;
+package com.dobid.actions.reply.notice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +20,7 @@ public class DeleteAction extends Action{
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		ReplyDAO dao = new ReplyDAO();
-		   if(dao.delete(no)){
+		   if(dao.delete_notice(no)){
 			   request.setAttribute("msg", "댓글삭제성공!!");
 		   }else{
 			   request.setAttribute("msg", "댓글삭제실패!!"); 
