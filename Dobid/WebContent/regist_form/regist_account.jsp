@@ -463,15 +463,16 @@ function initLayerPosition(){
     var width = 300; //우편번호서비스가 들어갈 element의 width
     var height = 480; //우편번호서비스가 들어갈 element의 height
     var borderWidth = 5; //샘플에서 사용하는 border의 두께
+    var zIndex = 10001;
 
     // 위에서 선언한 값들을 실제 element에 넣는다.
     element_layer.style.width = width + 'px';
     element_layer.style.height = height + 'px';
     element_layer.style.border = borderWidth + 'px solid';
+    element_layer.style.zIndex = zIndex;
     // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
     element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
     element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
-    
     element_layer.style.opacity = 0.8;
 }
 

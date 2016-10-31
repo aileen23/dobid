@@ -13,6 +13,9 @@
 <link href="./regist_form/css/shop-homepage.css" rel="stylesheet">
 <script type="text/javascript"
 	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+	<script type="text/javascript"
+      src="/Dobid/mypage_form/js/bootstrap-datetimepicker.js"
+      charset="UTF-8"></script>
 
 </head>
 <body>
@@ -51,7 +54,7 @@
 			<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" name="phone"
-					placeholder="Phone">
+					placeholder="Phone (' - ' except)">
 			</div>
 		</div>
 
