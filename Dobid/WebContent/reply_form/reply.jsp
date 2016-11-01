@@ -22,7 +22,8 @@
        var content = document.addForm.content.value;
        var page_type = document.addForm.page_type.value;
        var num = document.addForm.num.value;
-       var params="name="+name+"&content="+content+"&page_type="+page_type+"&num="+num; //"name=길동&content=안녕"
+       var nickname = document.addForm.nickname.value;
+       var params="name="+name+"&content="+content+"&page_type="+page_type+"&num="+num+"&nickname="+nickname; //"name=길동&content=안녕"
        alert(params);
        new ajax.xhr.Request("/Dobid/board_content_view_reply_add.do", params, addResult, 'POST');	
     }//addReply
@@ -45,9 +46,9 @@
        var no = document.updateForm.no.value;	
        var name = document.updateForm.name.value;	
        var content = document.updateForm.content.value;	
-       var page_type = document.addForm.page_type.value;
-       var num =document.addForm.num.type.value;
-       var params="name="+name+"&content="+content+"&name"+page_type+"&num"+num;
+       var page_type = document.updateForm.page_type.value;
+       var num = document.updateForm.num.type.value;
+       var params="name="+name+"&content="+content+"&page_type="+page_type+"&num="+num;
            //"no=3&name=길동&content=안녕"
        new ajax.xhr.Request("/Dobid/board_content_view_reply_update.do", params, updateResult, 'POST');	
     }//updateReply
@@ -170,7 +171,7 @@
       var replyDiv = document.createElement('div');//<div></div>
       replyDiv.setAttribute("id","r"+ reply.no);//<div id="r1"></div>	
       var html =  '<div id="old_reply"><br>'+
-      		'<strong id="reply_name">'+reply.name+'</strong><br><div id="reply_comment">'+
+      		'<strong id="reply_name">'+reply.nickname+'</strong><br><div id="reply_comment">'+
       		'<p>'+reply.content.replace('\n', '\n<br>')+'</p></div><br>'+
  		'<div style="float: right;" id="update_data">'+
  		'<input type="button" value="수정" id="update_text" onclick="viewUpdateForm('+reply.no+')">'+
@@ -198,7 +199,8 @@
      	<label>${logincheck }</label>
         <input type="text" name="name" size="10" value="${logincheck }" style="display: none;"><br>
         <input type="text" name="page_type" size="10" value="게시글종류" style="display: ;" readonly="readonly">
-        <input type="text" name="num" size="10" value="게시글번호" style="display: ;" readonly="readonly">
+        <input type="text" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
+        <input type="text" name="nickname" size="10" value="${reply.nickname }" style="display: ;" readonly="readonly">
 		</div>
 		<div>
    		<textarea rows="5" name="content" style="vertical-align: middle; width: 75%"></textarea>
@@ -212,7 +214,10 @@
      <form name="updateForm">
        <input type="hidden" name="no">
        	 <label style="display:;">${logincheck }</label>
-         <input type="hidden" name="name" size="10" readonly="readonly"><br>
+       	 <input type="text" name="page_type" size="10" value="게시글종류" style="display: ;" readonly="readonly">
+        <input type="text" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
+        <input type="text" name="nickname" size="10" value="닉네임" style="display: ;" readonly="readonly">
+         <input type="text" name="name" size="10" readonly="readonly"><br>
         <textarea rows="5" style="width: 105%" name="content"></textarea><br><br>
        <input type="button" value="취소" style="float: right;" onclick="hideUpdateForm()">
        <input type="button" value="등록" style="float: right;" onclick="updateReply()">

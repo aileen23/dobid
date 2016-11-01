@@ -5,7 +5,7 @@ public class Util {
 		return str.replace("\\", "\\\\")
 		          .replace("\'", "\\\'")
 		          .replace("\"", "\\\"")
-		          .replace("\r\n", "\\n")
-		          .replace("\n", "\\n");
+		          .replace("\r\n", "<br>")
+		          .replace("\n", "<br>");
 	}
 }

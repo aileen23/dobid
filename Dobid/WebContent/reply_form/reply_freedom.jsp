@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,6 +23,7 @@
        var nickname = document.addForm.nickname.value;	
        
        var params="name="+name+"&content="+content+"&num="+num+"&nickname="+nickname; //"name=길동&content=안녕"
+       alert(params);
        new ajax.xhr.Request("/Dobid/board_content_view_reply_add.do", params, addResult, 'POST');	
     }//addReply
     function addResult(xhr){//등록요청후 실행할 콜백함수
@@ -64,7 +64,7 @@
     }//updateResult  
     
     function deleteReply(no){//댓글 삭제요청
-       new ajax.xhr.Request('delete.do','no='+no,deleteResult,'POST');	
+       new ajax.xhr.Request('/Dobid/board_content_view_reply_delete.do','no='+no,deleteResult,'POST');	
     }
     function deleteResult(xhr){//삭제요청후 콜백
        if(xhr.readyState==4){
@@ -80,7 +80,7 @@
     
     
     function loadReplyList(){//목록요청
-       new ajax.xhr.Request('list.do',null,loadReplyResult);
+       new ajax.xhr.Request('/Dobid/board_content_view_reply_list.do',null,loadReplyResult);
     }//loadReplyList
     
     function loadReplyResult(xhr){//콜백: 목록출력
@@ -181,8 +181,8 @@
      	<div style="width: 100%; margin-top: 10px;">
      	<br>
      	<input type="text" name="name" size="10" value="${logincheck }" style="display: none;"><br>
-        <input type="hidden" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
-        <input type="hidden" name="nickname" size="10" value="${reply.nickname }" style="display: ;" readonly="readonly">
+        <input type="text" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
+        <input type="text" name="nickname" size="10" value="닉네임입력" style="display: ;" readonly="readonly">
         </div>
 		<div>
    		<textarea rows="5" name="content" style="vertical-align: middle; width: 75%"></textarea>

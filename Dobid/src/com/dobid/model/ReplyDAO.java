@@ -6,19 +6,21 @@ import java.util.List;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
-import com.dobid.beans.ReplyDTO;
+
+import com.dobid.beans.Reply_freedomDTO;
+import com.dobid.beans.Reply_noticeDTO;
 
 public class ReplyDAO {
 	
-	SqlMapClient sqlMap;
+	SqlMapClient smc;
 	
 	public ReplyDAO() {
-	  sqlMap = SqlMapConfig.getSqlMapInstance();
+	  smc = SqlMapConfig.getSqlMapInstance();
 	}	
 	
-    public boolean insert(ReplyDTO reply){
+    public boolean insert_freedom(Reply_freedomDTO reply_freedom){
        try {
-		sqlMap.insert("reply.add",reply);		
+		smc.insert("reply.add_freedom",reply_freedom);
 		   return true;
 	   } catch (SQLException e) {
 		e.printStackTrace();
@@ -26,9 +28,9 @@ public class ReplyDAO {
        return false;
     }//insert
     
-    public boolean delete(int no){
+    public boolean delete_freedom(int no){
        try {
-		int t = sqlMap.delete("reply.delete",no);
+		int t = smc.delete("reply.delete_freedom",no);
 		   if(t==1)return true;
 	  } catch (SQLException e) {
 		e.printStackTrace();
@@ -36,9 +38,9 @@ public class ReplyDAO {
        return false;	
     }//delete
     
-    public boolean update(ReplyDTO reply){
+    public boolean update_freedom(Reply_freedomDTO reply_freedom){
        try {
-		int t = sqlMap.update("reply.update",reply);
+		int t = smc.update("reply.update_freedom",reply_freedom);
 		   if(t==1)return true;
 	  } catch (SQLException e) {
 		e.printStackTrace();
@@ -46,25 +48,77 @@ public class ReplyDAO {
        return false;	
     }//update
     
-    public ReplyDTO find(String page_type, String num){
-       ReplyDTO reply=null;
+    public Reply_freedomDTO find_freedom(int no){
+       Reply_freedomDTO reply=null;
 	try {
-		reply = (ReplyDTO) sqlMap.queryForObject("reply.find",num);
+		reply = (Reply_freedomDTO) smc.queryForObject("reply.find",no);
 		} catch (SQLException e) {
 			e.printStackTrace();
 	   }       
        return reply;
     }//find
     
-    public List<ReplyDTO> findAll(){
-       List<ReplyDTO> list=null;
+    public List<Reply_freedomDTO> findAll_freedom(){
+       List<Reply_freedomDTO> list=null;
 		try {
-			list = sqlMap.queryForList("reply.findAll");
+			list = smc.queryForList("reply.findAll_freedom");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
        return list;	
     }//findAll
+    
+    
+    
+    public boolean insert_noitice(Reply_noticeDTO reply_notice){
+        try {
+ 		smc.insert("reply.add",reply_notice);
+ 		   return true;
+ 	   } catch (SQLException e) {
+ 		e.printStackTrace();
+ 	   }
+        return false;
+     }//insert
+     
+     public boolean delete_notice(int no){
+        try {
+ 		int t = smc.delete("reply.delete",no);
+ 		   if(t==1)return true;
+ 	  } catch (SQLException e) {
+ 		e.printStackTrace();
+ 	  }       
+        return false;	
+     }//delete
+     
+     public boolean updaten_notice(Reply_noticeDTO reply_freedom){
+        try {
+ 		int t = smc.update("reply.update",reply_freedom);
+ 		   if(t==1)return true;
+ 	  } catch (SQLException e) {
+ 		e.printStackTrace();
+ 	  }       
+        return false;	
+     }//update
+     
+     public Reply_noticeDTO find_notice(int no){
+        Reply_noticeDTO reply=null;
+ 	try {
+ 		reply = (Reply_noticeDTO) smc.queryForObject("reply.find",no);
+ 		} catch (SQLException e) {
+ 			e.printStackTrace();
+ 	   }       
+        return reply;
+     }//find
+     
+     public List<Reply_noticeDTO> findAll_notice(){
+        List<Reply_noticeDTO> list=null;
+ 		try {
+ 			list = smc.queryForList("reply.findAll_freedom");
+ 		} catch (SQLException e) {
+ 			e.printStackTrace();
+ 		}
+        return list;	
+     }//findAll
     
 }
 

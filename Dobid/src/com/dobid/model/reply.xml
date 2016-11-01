@@ -2,63 +2,65 @@
 <!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
 <!-- reply.xml -->
 <sqlMap namespace="reply">
-   <typeAlias alias="boderreply" type="com.dobid.beans.ReplyDTO"/>
-   <!-- 공지사항 -->
-   <insert id="add" parameterClass="boderreply">
-       insert into  reply values (reply_seq.nextval, #name#, #content#, #page_type#, #num#)
+   <typeAlias alias="reply_freedom" type="com.dobid.beans.Reply_freedomDTO"/>
+   <typeAlias alias="reply_notice" type="com.dobid.beans.Reply_noticeDTO"/>
+   <!-- 자유게시판 -->
+   <insert id="add_freedom" parameterClass="reply_freedom">
+       insert into  reply_freedom values (reply_freedom_seq.nextval, #name#, #content#, #num#)
    </insert>
    
-   <delete id="delete" parameterClass="int">
-       delete  reply
-       where page_type=#page_type# and num=#num#
+   <delete id="delete_freedom" parameterClass="int">
+       delete  reply_freedom
+       where no=#no#
    </delete>
    
-   <update id="update" parameterClass="boderreply">
-       update  reply
+   <update id="update_freedom" parameterClass="reply_freedom">
+       update  reply_freedom
        set name=#name#, content=#content#
-       where page_type=#page_type# and num=#num#
+       where no=#no#
    </update>
    
-   <select id="find" parameterClass="int" resultClass="boderreply">
+   <select id="find_freedom" parameterClass="int" resultClass="reply_freedom">
        select name,content
-       from  reply
+       from  reply_freedom
         where no=#no#
    </select>
    
-   <select id="findAll"  resultClass="boderreply">
-       select no,name,content 
-       from  reply
+   <select id="findAll_freedom"  resultClass="reply_freedom">
+       select r.no, r.name, r.content, m.nickname
+       from  reply_freedom r, member m
        order by no
    </select>
    
    
-   <!-- 자유게시판
-   <insert id="add2" parameterClass="boderreply">
-       insert into  board_freedom_write_reply values (board_freedom_write_reply_seq.nextval, #name#, #content#)
+   <!--  공지사항 -->
+      <insert id="add_notice" parameterClass="reply_notice">
+       insert into  reply_freedom values (reply_notice_seq.nextval, #name#, #content#, #num#)
    </insert>
    
-   <delete id="delete2" parameterClass="int">
-       delete from  board_freedom_write_reply
+   <delete id="delete_notice" parameterClass="int">
+       delete  reply_freedom
        where no=#no#
    </delete>
    
-   <update id="update2" parameterClass="boderreply">
-       update  board_freedom_write_reply
+   <update id="update_notice" parameterClass="reply_notice">
+       update  reply_freedom
        set name=#name#, content=#content#
        where no=#no#
    </update>
    
-   <select id="find2" parameterClass="int" resultClass="boderreply">
+   <select id="find_notice" parameterClass="int" resultClass="reply_notice">
        select name,content
-       from board_freedom_write_reply
-       where no=#no#
+       from  reply_freedom
+        where no=#no#
    </select>
    
-   <select id="findAll2"  resultClass="boderreply">
-       select no,name,content
-       from board_freedom_write_reply
+   <select id="findAll_notice"  resultClass="reply_notice">
+       select r.no, r.name, r.content, m.nickname
+       from  reply_freedom r, member m 
        order by no
-   </select> -->
+   </select>
+
    
 </sqlMap>
 

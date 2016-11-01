@@ -8,8 +8,8 @@
      no:${reply.no },
      name:'${reply.name }',
      content:'${ reply.content }',
-     page_type:'${ reply.page_type }',
-     num:'${ reply.num }'
+     num:'${ reply.num }',
+     nickname:'${reply.nickname }'
     }
     <c:if test="${stat.count < list.size() }">,</c:if> 
   </c:forEach> 
