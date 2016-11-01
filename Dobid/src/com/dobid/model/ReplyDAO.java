@@ -110,10 +110,10 @@ public class ReplyDAO {
         return reply;
      }//find
      
-     public List<Reply_noticeDTO> findAll_notice(){
+     public List<Reply_noticeDTO> findAll_notice(int num){
         List<Reply_noticeDTO> list=null;
  		try {
- 			list = smc.queryForList("reply.findAll_freedom");
+ 			list = smc.queryForList("reply.findAll_freedom", num);
  		} catch (SQLException e) {
  			e.printStackTrace();
  		}

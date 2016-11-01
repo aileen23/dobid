@@ -13,10 +13,6 @@ import com.dobid.model.ReplyDAO;
 
 
 
-
-
-
-
 public class AddAction extends Action{
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -35,12 +31,11 @@ public class AddAction extends Action{
     	System.out.println(request.getParameter("nickname"));
     	
     	ReplyDAO dao = new ReplyDAO();
+    	
     	 if(dao.insert_noitice(reply_notice)){
-    		 request.getSession().setAttribute("reply", reply_notice);
     		 request.setAttribute("msg", "댓글등록성공!!");  
     	   }else{
-   		   request.getSession().setAttribute("reply", reply_notice);
-   		   request.setAttribute("msg", "댓글등록실패!!");  
+    		 request.setAttribute("msg", "댓글등록실패!!");  
     	   }
     	 
     	return mapping.findForward("success");
