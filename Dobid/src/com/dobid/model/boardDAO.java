@@ -61,6 +61,20 @@ public class boardDAO {
 		return false;
 
 	}
+	
+	public boolean noticeBoardWrite(NoticeboardDTO noticeboard) { // board_freedom_write
+		// 자유게시판 글쓰기
+		
+		try {
+			smc.insert("board.NoticeBoardWrite", noticeboard);
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+		
+	}
 
 	public NoticeboardDTO noticeSelect(String num) { // board_content_view 공지사항
 														// 상세보기

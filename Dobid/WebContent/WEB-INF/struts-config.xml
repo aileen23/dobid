@@ -212,6 +212,16 @@
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
 		
+		<!-- board_freedom_write -->
+		<action path="/admin_noticeboard_write" forward="/board_form/admin_noticeboard_write.jsp">
+		</action>
+
+		<!-- board_freedom_write -->
+		<action path="/admin_noticeboard_write_input"
+			type="com.dobid.actions.board.Admin_noticeboard_write_Action">
+			<forward name="success" path="/admin_noticeboard_write.do"></forward>
+		</action>
+		
 <!-- 관리자 공지 -->
 		<!-- admin_noticeboard.jsp -->
 		<action path="/admin_noticeboard" type="com.dobid.actions.admin.Admin_noticeboard_Action">
