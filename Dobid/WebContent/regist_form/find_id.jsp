@@ -37,26 +37,34 @@
 	<br>
 	<form class="form-horizontal" style="margin-left: 25%" method="post" action="do_find_id.do">
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+			<label for="name" class="col-sm-2 control-label">Name</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" name="name"
 					placeholder="Name">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Birthday</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="birthday"
-					placeholder="Birthday">
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
+			<label for="phone" class="col-sm-2 control-label">Phone</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" name="phone"
 					placeholder="Phone (' - ' except)">
 			</div>
 		</div>
+		
+		<div class="form-group">
+			<label  class="col-sm-2 control-label" style="margin-right: 1.7%">Birthday</label>
+				<div class="input-group date form_date col-sm-4" data-date=""
+					data-date-format="yyyymmdd" data-link-field="dtp_input2"
+					data-link-format="yyyy-mm-dd">
+				<input class="form-control" size="16" type="text" name="birthday" id="birthday"
+					value="" readonly> <span class="input-group-addon"><span
+					class="glyphicon glyphicon-remove"></span></span> <span
+					class="input-group-addon"><span
+					class="glyphicon glyphicon-calendar"></span></span>
+			</div>
+			<input type="hidden" id="dtp_input2" value="" /><br />
+		</div>
+			
 
 
 
@@ -94,5 +102,42 @@
 		</footer>
 
 	</div>
+<script type="text/javascript"
+    src="/Dobid/mypage_form/js/bootstrap-datetimepicker.js"
+      charset="UTF-8"></script>
+	<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+    //language:  'fr',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	forceParse: 0,
+    showMeridian: 1
+});
+$('.form_date').datetimepicker({
+    language:  'uk',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 2,
+	minView: 2,
+	forceParse: 0
+});
+$('.form_time').datetimepicker({
+    language:  'uk',
+    weekStart: 1,
+    todayBtn:  1,
+	autoclose: 1,
+	todayHighlight: 1,
+	startView: 1,
+	minView: 0,
+	maxView: 1,
+	forceParse: 0
+});
+
+</script>
 </body>
 </html>

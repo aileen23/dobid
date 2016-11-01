@@ -23,6 +23,8 @@ public class Mypage_qna_Action extends Action{
 		
 		Mypage_DAO dao = new Mypage_DAO();
 		List<Service_answerDTO> list = dao.qnaselect(id);
+		
+		
 		request.setAttribute("list", list);
 		return  mapping.findForward("success");
 	}
