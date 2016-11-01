@@ -42,7 +42,7 @@ public String getContent() {
 }
 
 public void setContent(String content) {
-	this.content = content;
+	this.content = Util.toJS(content);
 }
 
 public String getNum() {

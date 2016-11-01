@@ -20,6 +20,7 @@ public class DeleteAction extends Action{
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		ReplyDAO dao = new ReplyDAO();
+		
 		   if(dao.delete_freedom(no)){
 			   request.setAttribute("msg", "댓글삭제성공!!");
 		   }else{
