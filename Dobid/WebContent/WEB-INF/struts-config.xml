@@ -190,9 +190,14 @@
 		
 		<!-- 게시판(박종민) -->
 
-		<!-- board_list -->
-		<action path="/board_list" type="com.dobid.actions.board.Board_list_Action">
-			<forward name="success" path="/board_form/board_list.jsp"></forward>
+		<!-- noticeboard_list -->
+		<action path="/noticeboard_list" type="com.dobid.actions.board.Board_noticelist_Action">
+			<forward name="success" path="/board_form/noticeboard_list.jsp"></forward>
+		</action>
+		
+		<!-- freeboard_list -->
+		<action path="/freeboard_list" type="com.dobid.actions.board.Board_freelist_Action">
+			<forward name="success" path="/board_form/freeboard_list.jsp"></forward>
 		</action>
 
 
