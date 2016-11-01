@@ -11,7 +11,7 @@
 $(document).ready(function(){ 
 	var id = getQuerystring(id);
 
-	$('#FreeBoardWrite').on('click', function() {  //자유게시판
+	$('#NoticeBoardWrite').on('click', function() {  //자유게시판
     	$(location).attr('href', '/Dobid/admin_noticeboard.do');
 	});
 
@@ -75,7 +75,7 @@ $(document).ready(function(){
 	
 		</p>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST">
+		<form class="form-horizontal" action="/Dobid/board_noticeboard_write_input.do" method="POST">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
@@ -113,7 +113,7 @@ $(document).ready(function(){
 
 
 		<div class="col-sm-offset-4 ">
-			<input type="submit" class="button button5 btn-default" id="FreeBoardWrite" value="글쓰기">
+			<input type="submit" class="button button5 btn-default" id="NoticeBoardWrite" value="글쓰기">
 			<button class="button button5 btn-default" id="pageback">취소</button>
 		</div>
 	</form>
