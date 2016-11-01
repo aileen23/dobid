@@ -14,6 +14,43 @@ $(document).ready(function() {
 	$("#inputAddress").val(add[0]);
 	$("#inputdetailAddress").val(add[1]);
 	
+	$(":password").keyup(function() {
+		if ($("#inputPwd").val() == $("#inputPwdCheck").val() && $("#inputPwd").val().length > 5 && $("#inputPwd").val().length < 21 && $("#inputPwd").val().replace(" ","").length == $("#inputPwd").val().length) {
+			$("#passcheck").html("<font color = 'blue'>o</font>");
+		}else if ($("#inputPwd").val().length == 0 || $("#inputPwdCheck").val().length == 0) {
+			$("#passcheck").html("");
+		}
+		else {
+			$("#passcheck").html("<font color = 'red'>6-20자리</font>");
+		}
+		
+	});//패스워드 체크
+	
+	$("#update").click(function () {
+		
+		if($("#inputPwd").val() != $("#inputPwdCheck").val() || $("#inputPwd").val().length < 6|| $("#inputPwd").val().length > 20 || $("#inputPwd").val().replace(" ","").length != $("#inputPwd").val().length){
+			alert("비밀번호를 확인해주세요.");
+			return false;
+
+		}else if ($("#phone").val().length < 1 || $("#phone").val().length > 15 || isNaN($("#phone").val())) {
+			alert("전화번호를 확인해주세요.");
+			return false;
+
+		}else if ($("#address").val().length < 1 || ($("#address").val().length > 100)) {
+			alert("주소를 확인해주세요.");
+			return false;
+		}else if ($("#detailaddress").val().length < 1 || ($("#detailaddress").val().length > 100)) {
+			alert("상세주소를 확인해주세요.");
+			return false;
+		}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
+			alert("자기소개를 확인해주세요.");
+			return false;
+
+		}else {
+			alert("회원정보를 수정하였습니다");
+		}
+		
+	});//유효성 검사
 })
 </script>
 
@@ -52,8 +89,9 @@ $(document).ready(function() {
 				<label for="inputPwd" class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-4">
 					<input type="password" class="form-control" id="inputPwd" name="pass"
-						placeholder="Password" >
+						placeholder="Password (6-20)" >
 				</div>
+				<div id="passcheck" ></div>
 			</div>
 			<div class="form-group">
 				<label for="inputPwdCheck" class="col-sm-2 control-label">CheckPassword</label>
@@ -115,7 +153,7 @@ $(document).ready(function() {
 			</div>
 
 			<div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
-				<button type="submit" class="btn btn-default"
+				<button type="submit" class="btn btn-default" id="update"
 					style="margin-right: 5%">Update</button>
 			</div>
 	</form>
@@ -218,37 +256,7 @@ $(document).ready(function() {
 					+ 'px';
 			element_layer.style.zIndex = 10001;
 		}
-		$('.form_datetime').datetimepicker({
-			//language:  'fr',
-			weekStart : 1,
-			todayBtn : 1,
-			autoclose : 1,
-			todayHighlight : 1,
-			startView : 2,
-			forceParse : 0,
-			showMeridian : 1
-		});
-		$('.form_date').datetimepicker({
-			language : 'uk',
-			weekStart : 1,
-			todayBtn : 1,
-			autoclose : 1,
-			todayHighlight : 1,
-			startView : 2,
-			minView : 2,
-			forceParse : 0
-		});
-		$('.form_time').datetimepicker({
-			language : 'uk',
-			weekStart : 1,
-			todayBtn : 1,
-			autoclose : 1,
-			todayHighlight : 1,
-			startView : 1,
-			minView : 0,
-			maxView : 1,
-			forceParse : 0
-		});
+		
 	</script>
 </body>
 </html>
