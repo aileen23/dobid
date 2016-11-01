@@ -44,10 +44,10 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="birthday" class="col-sm-2 control-label">Birthday</label>
+			<label for="phone" class="col-sm-2 control-label">Phone</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" name="birthday"
-					placeholder="Birthday">
+				<input type="text" class="form-control" name="phone"
+					placeholder="Phone (' - ' except)">
 			</div>
 		</div>
 		
@@ -65,13 +65,6 @@
 			<input type="hidden" id="dtp_input2" value="" /><br />
 		</div>
 			
-		<div class="form-group">
-			<label for="phone" class="col-sm-2 control-label">Phone</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" name="phone"
-					placeholder="Phone (' - ' except)">
-			</div>
-		</div>
 
 
 
