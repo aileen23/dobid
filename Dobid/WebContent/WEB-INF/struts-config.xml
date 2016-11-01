@@ -213,7 +213,7 @@
 		</action>
 		
 		<!-- board_freedom_write -->
-		<action path="/admin_noticeboard_write" forward="/board_form/admin_noticeboard_write.jsp">
+		<action path="/admin_noticeboard_write" forward="/admin_form/admin_noticeboard_write.jsp">
 		</action>
 
 		<!-- board_freedom_write -->

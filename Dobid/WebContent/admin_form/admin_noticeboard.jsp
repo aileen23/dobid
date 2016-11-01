@@ -106,6 +106,15 @@
 			</c:forEach>
 
 		</table>
+		
+		<form action="/Dobid/admin_noticeboard_write.do">
+		<div class="form-group">
+			<div class="col-sm-7">
+			<button class="button button5 btn-default">글쓰기</button>
+		</div></div>
+		</form>
+		
+		
 		<div class="form-group">
 			<div class="col-sm-7">
 				<br>
