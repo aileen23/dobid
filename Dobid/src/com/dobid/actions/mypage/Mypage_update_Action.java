@@ -28,7 +28,7 @@ public class Mypage_update_Action extends Action{
 		dto.setMember_id(id);
 		dto.setPass(enc.aesEncode(request.getParameter("pass")));
 		dto.setPhone(request.getParameter("phone"));
-		dto.setAddress(request.getParameter("address"));
+		dto.setAddress(request.getParameter("address")+"%%"+request.getParameter("inputdetailaddress"));
 		dto.setIntroduction(request.getParameter("introduction"));
 		
 		dao.update(dto);

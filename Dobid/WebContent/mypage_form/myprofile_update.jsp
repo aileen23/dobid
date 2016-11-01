@@ -7,6 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	var address = "${member.address }";
+	var add = address.split("%%");
+	$("#inputAddress").val(add[0]);
+	$("#inputdetailAddress").val(add[1]);
+	
+})
+</script>
 
 </head>
 
@@ -71,7 +80,14 @@
 				<label for="inputAddress" class="col-sm-2 control-label">Address</label>
 				<div class="col-sm-4">
 					<input type="text" class="form-control" id="inputAddress" name="address"
-						placeholder="${member.address }" value ="${member.address }"onclick="DaumPostcode()">
+						placeholder="" value ="" onclick="DaumPostcode()">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress" class="col-sm-2 control-label">Detail Address</label>
+				<div class="col-sm-4">
+					<input type="text" class="form-control" id="inputdetailAddress" name="inputdetailaddress"
+						placeholder="" value ="">
 				</div>
 			</div>
 

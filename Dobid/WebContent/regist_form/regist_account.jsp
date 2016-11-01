@@ -271,7 +271,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+				<label for="inputEmail3" class="col-sm-2 control-label">Detail Address</label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control" name="detailaddress"
 						 placeholder="Address" id="detailaddress">
