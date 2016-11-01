@@ -30,7 +30,6 @@ public class Admin_freeboard_Action extends Action {
 		String admin_board_view_userid = request.getParameter("admin_board_view_userid");
 
 		System.out.println("admin_boardselecttext : " + request.getParameter("admin_boardselecttext"));
-		System.out.println("catalogue : " + request.getParameter("catalogue"));
 		System.out.println("del : " + request.getParameter("del"));
 		System.out.println("admin_board_view_num : " + request.getParameter("admin_board_view_num"));
 		System.out.println("admin_board_view_userid : " + request.getParameter("admin_board_view_userid"));
@@ -38,8 +37,7 @@ public class Admin_freeboard_Action extends Action {
 		ActionForward forward = mapping.findForward("success");
 		if (del == null) {
 			if (admin_boardselecttext == null) {
-				List<Admin_freeDTO> adminfreelist = null;
-				adminfreelist = dao.adminFreeSelectAll();
+				List<Admin_freeDTO> adminfreelist =dao.adminFreeSelectAll();
 				request.setAttribute("adminboardlist", adminfreelist);
 				forward = mapping.findForward("adminboardlist");
 				// 페이지 정보 얻어오기
@@ -54,7 +52,7 @@ public class Admin_freeboard_Action extends Action {
 
 				int end = page * viewRowCnt;
 				int start = end - (viewRowCnt - 1);
-				int totalRecord = dao.adminNoticeCount();
+				int totalRecord = dao.adminFreeCount();
 				System.out.println("totalRecord: " + totalRecord);
 				int totalPage = totalRecord / viewRowCnt;
 				if (totalRecord % viewRowCnt > 0)

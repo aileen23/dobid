@@ -38,7 +38,6 @@
 					<li><a href="/Dobid/admin_noticeboard.do">공지사항</a></li>
 					<li><a href="/Dobid/admin_freeboard.do">자유게시판</a></li>
 				</ul></li>
-			<li id="navbar_gong"><a href="admin_board.do" id="gongdong">게시판관리</a></li>
 			<li id="navbar_gong"><a href="admin_auctionlist.do"
 				id="gongdong">경매물품관리</a></li>
 			<li id="navbar_gong"><a href="admin_ono.do" id="gongdong">1대1문의보기</a></li>

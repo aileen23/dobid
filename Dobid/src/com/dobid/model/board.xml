@@ -453,14 +453,18 @@
 
 	<!-- 자유게시판 페이지 나누기기기기기기기기기기 --> 
 	<select id="adminfreelistpage" resultClass="adminfreeDTO" parameterClass="java.util.Map">
-		select basic_board_num,member_id,title,contents,cilck_count,upload_date
-		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date, rownum rn
-		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date
-		from freeboard order by basic_board_num desc))
+select basic_board_num, member_id, name, nickname, email, contents, upload_date, image_path, title
+		from (select basic_board_num, member_id, name, nickname, email, contents, upload_date, image_path, title, rownum rn
+		from (select a.basic_board_num,m.member_id,m.name,m.nickname,m.email,a.contents,a.upload_date,a.image_path,
+		             a.title
+		       from freeboard a, member m 
+		       where a.member_id=m.member_id
+		       order by a.upload_date desc)
+			)
 		where rn between #start# and #end#
 	</select>
-	
-	
+
+
 
 </sqlMap>
 	
