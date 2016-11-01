@@ -130,11 +130,14 @@
 				<c:if test="${page < totalPage }">
 					<a href="admin_auctionlist.do?page=${ page+1 }">다음</a>
 				</c:if>
-				<br>
-				<br>
-				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="admin_auctionlist.do?page=${ i }">${i }</a>]
+				<br> <br>
+
+
+				<c:forEach begin="0" end="${totalPage }" var="i">
+       [<a href="admin_board.do?page=${ i }">${i }</a>]
     </c:forEach>
+
+
 			</div>
 		</div>
 	</div>

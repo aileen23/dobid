@@ -212,10 +212,15 @@
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
 		
-
-		<!-- admin_board.jsp -->
-		<action path="/admin_board" type="com.dobid.actions.admin.Admin_board_Action">
-			<forward name="success" path="/admin_form/admin_board.jsp"></forward>
+<!-- 관리자 공지 -->
+		<!-- admin_noticeboard.jsp -->
+		<action path="/admin_noticeboard" type="com.dobid.actions.admin.Admin_noticeboard_Action">
+			<forward name="success" path="/admin_form/admin_noticeboard.jsp"></forward>
+		</action>
+<!-- 관리자 자유 -->		
+		<!-- admin_freeboard.jsp -->
+		<action path="/admin_freeboard" type="com.dobid.actions.admin.Admin_freeboard_Action">
+			<forward name="success" path="/admin_form/admin_freeboard.jsp"></forward>
 		</action>
 		
 		

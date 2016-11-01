@@ -118,7 +118,7 @@
 				</c:if>
 				<br>
 				<br>
-				<c:forEach begin="1" end="${totalPage }" var="i">
+				<c:forEach begin="0" end="${totalPage }" var="i">
        [<a href="admin_ono.do?page=${ i }">${i }</a>]
     </c:forEach>
 			</div>

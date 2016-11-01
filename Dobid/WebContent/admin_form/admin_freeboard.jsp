@@ -50,7 +50,7 @@
 </script>
 
 
-<title>게시글관리</title>
+<title>자유게시판</title>
 
 
 </head>
@@ -61,21 +61,14 @@
 	<br>
 	<br>
 	<div class="container">
-		<h3>게시글관리</h3>
+		<h3>자유게시판</h3>
 		<hr>
 
 		<div class="form-group">
-			<form action="/Dobid/admin_board.do" method="POST">
-				<div class="col-sm-2 col-sm-offset-1">
-					<select class="form-control" name="catalogue">
-						<option value="notice">공지사항</option>
-						<option value="free">자유게시판</option>
-					</select>
-				</div>
+			<form action="/Dobid/admin_freeboard.do" method="POST">
 				<div class="col-sm-7">
 					<input type="text" class="form-control"
 						name="admin_boardselecttext" placeholder="검색어입력">
-
 				</div>
 				<button class="button button5 btn-default" id="admin_boardselect"
 					name="admin_boardselect">검색</button>
@@ -116,17 +109,17 @@
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="admin_board.do?page=${ page-1 }">이전</a>
+					<a href="admin_freeboard.do?page=${ page-1 }">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="admin_board.do?page=${ page+1 }">다음</a>
+					<a href="admin_freeboard.do?page=${ page+1 }">다음</a>
 				</c:if>
 				<br>
 				<br>
 				<c:forEach begin="0" end="${totalPage }" var="i">
-       [<a href="admin_board.do?page=${ i }">${i }</a>]
+       [<a href="admin_freeboard.do?page=${ i }">${i }</a>]
     </c:forEach>
 			</div>
 		</div>
@@ -187,7 +180,7 @@
 			<button class="button button5 btn-default" id="close">취소</button>
 		</div>
 	</div>
-	</div>
+
 
 
 	<div class="container">
