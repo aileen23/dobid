@@ -118,7 +118,6 @@ $(function(){
 
 			<br>
 			<table class="table">
-
 				<tr>
 					<td>답변날짜</td>
 					<td><div id="tableAnswerDate"></div></td>
@@ -128,8 +127,6 @@ $(function(){
 					<td><div id="tableAnswerCon"></div></td>
 				</tr>
 			</table>
-
-
 			<button type="button2" class="btn btn-default" id="close2"
 				style="margin-left: 45%">닫기</button>
 
