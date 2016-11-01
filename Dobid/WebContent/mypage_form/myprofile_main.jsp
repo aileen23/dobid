@@ -57,4 +57,5 @@
   &nbsp;</div>
   
 </body>
+	<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 </html>

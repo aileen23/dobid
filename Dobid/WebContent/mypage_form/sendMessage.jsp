@@ -36,8 +36,8 @@
 <tr><td>받는사람 : </td><td><input type="text" id="member_id"></td></tr>
 <tr><td>제목 :</td><td><input type="text" id="title"></td></tr>
 <tr><td>내용 :</td><td><textarea rows="15" cols="40" id="contents"></textarea></td></tr>
+<tr><td><input type="button" value="보내기" id="sendMessage2" class="btn btn-default"></td></tr>
 </tbody>
 </table>
-<input type="button" value="보내기" id="sendMessage2">
 </body>
 </html>
