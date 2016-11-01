@@ -30,13 +30,13 @@ public class AddAction extends Action{
     	System.out.println(request.getParameter("num"));
     	System.out.println(request.getParameter("nickname"));
     	
+    	request.setAttribute("nickname", reply_freedom.getNickname());
     	ReplyDAO dao = new ReplyDAO();
     	
     	 if(dao.insert_freedom(reply_freedom)){
-    		 request.getSession().setAttribute("reply_freedom", reply_freedom);
     		 request.setAttribute("msg", "댓글등록성공!!");  
     	   }else{
-   		   request.getSession().setAttribute("reply_freedom", reply_freedom);
+   		   
    		   request.setAttribute("msg", "댓글등록실패!!");  
     	   }
     	 

@@ -46,9 +46,9 @@
        var content = document.updateForm.content.value;	
        var num = document.updateForm.num.value;	
        var nickname = document.updateForm.nickname.value;	
-       var params="name="+name+"&content="+content+"&num="+num+"&nickname="+nickname;
+       var params="no="+no+"&name="+name+"&content="+content+"&num="+num+"&nickname="+nickname;
            //"no=3&name=길동&content=안녕"
-       new ajax.xhr.Request("update.do", params, updateResult, 'POST');	
+       new ajax.xhr.Request("/Dobid/board_content_view_reply_update.do", params, updateResult, 'POST');	
     }//updateReply
     
     function updateResult(xhr){//수정요청후 실행할 콜백함수
@@ -80,7 +80,7 @@
     
     
     function loadReplyList(){//목록요청
-       new ajax.xhr.Request('/Dobid/board_content_view_reply_list.do',null,loadReplyResult);
+       new ajax.xhr.Request('/Dobid/board_content_view_reply_list.do',"num=${param.num}",loadReplyResult);
     }//loadReplyList
     
     function loadReplyResult(xhr){//콜백: 목록출력
@@ -123,16 +123,19 @@
        //댓글<div>태그에 정의된 reply(JSON)객체 얻기
        var reply = replyDiv.reply;
        
-       alert('reply.no='+reply.no);
+       /* alert('reply.no='+reply.no);
        alert('document.updateForm='+document.updateForm);
-       alert('document.updateForm.no='+document.updateForm.no);
+       alert('document.updateForm.no='+document.updateForm.no);  */
        
        document.updateForm.no.value=  reply.no;
        document.updateForm.name.value= reply.name;
        document.updateForm.content.value= reply.content;       
+       document.updateForm.nickname.value= reply.nickname;       
        
-       replyDiv.appendChild(upFormDiv);       
+       replyDiv.appendChild(upFormDiv);    
        upFormDiv.style.display='';
+       
+       
     }//viewUpdateForm
     
     function hideUpdateForm(){//수정폼 감추기
@@ -143,6 +146,7 @@
       root.appendChild(upFormDiv);
       
       upFormDiv.style.display='none';
+      
       
     }
     
@@ -156,11 +160,11 @@
     //reply: { no:1, name:'나기롱', content:'Ajax재밌어요~!!' }
       var replyDiv = document.createElement('div');//<div></div>
       replyDiv.setAttribute("id","r"+ reply.no);//<div id="r1"></div>	
-      var html =  '<br><strong>'+reply.nickname+'</strong><br>'+
+      var html =  '<br><strong>'+reply.nickname+'</strong><br><div id=old_data>'+
                reply.content.replace('/\n/g', '\n<br>')+'<br>'+
  		'<div  style="float: right;">'+
  		'<input type="button" value="수정" onclick="viewUpdateForm('+reply.no+')">'+
-      	'<input type="button" value="삭제" onclick="deleteReply('+reply.no+')"></div>';
+      	'<input type="button" value="삭제" onclick="deleteReply('+reply.no+')"></div></div>';
       replyDiv.innerHTML = html; // <div id="r1">나길롱<br>안녕<br>수정삭제</div>	        
       replyDiv.reply = reply; //replyDiv엘리먼트에 reply JSON객체저장
       replyDiv.className='reply'; //<div id="r1" class="reply">내용</div>
@@ -179,10 +183,10 @@
      <form name="addForm">
      	
      	<div style="width: 100%; margin-top: 10px;">
-     	<br>
-     	<input type="text" name="name" size="10" value="${logincheck }" style="display: none;"><br>
-        <input type="text" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
-        <input type="text" name="nickname" size="10" value="닉네임입력" style="display: ;" readonly="readonly">
+     	
+     	<input type="hidden" name="name" size="10" value="${logincheck }" ><br>
+        <input type="hidden" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
+        <input type="hidden" name="nickname" size="10" value="${nickname }" style="display: ;" readonly="readonly">
         </div>
 		<div>
    		<textarea rows="5" name="content" style="vertical-align: middle; width: 75%"></textarea>
@@ -195,10 +199,10 @@
   <div id="replyUpdate" style="display:none; margin: 10px;">
      <form name="updateForm">
        <input type="hidden" name="no">
-       	 <label style="display:;">${logincheck }</label>
-       	<input type="text" name="num" size="10" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
-        <input type="text" name="nickname" size="10" value="닉네임" style="display: ;" readonly="readonly">
-         <input type="text" name="name" size="10" readonly="readonly"><br>
+       	 <input type="hidden" name="nickname" size="10" style="display: ;" readonly="readonly">
+       	 <input type="hidden" name="num" size="5" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
+         <input type="hidden" name="name" size="10" readonly="readonly"><br>
+         
         <textarea rows="5" style="width: 105%" name="content"></textarea><br><br>
        <input type="button" value="취소" style="float: right;" onclick="hideUpdateForm()">
        <input type="button" value="등록" style="float: right;" onclick="updateReply()">

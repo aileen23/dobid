@@ -58,10 +58,10 @@ public class ReplyDAO {
        return reply;
     }//find
     
-    public List<Reply_freedomDTO> findAll_freedom(){
+    public List<Reply_freedomDTO> findAll_freedom(int num){
        List<Reply_freedomDTO> list=null;
 		try {
-			list = smc.queryForList("reply.findAll_freedom");
+			list = smc.queryForList("reply.findAll_freedom", num);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

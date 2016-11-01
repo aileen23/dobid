@@ -28,9 +28,9 @@ public class ListAction extends Action{//목록출력 요청
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
-		
+		int num = Integer.parseInt(request.getParameter("num"));
 	   ReplyDAO dao = new ReplyDAO();
-	   List<Reply_freedomDTO>  list =  dao.findAll_freedom();
+	   List<Reply_freedomDTO>  list =  dao.findAll_freedom(num);
 	   
 	   
 	   

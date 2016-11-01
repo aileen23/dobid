@@ -23,12 +23,13 @@
    <select id="find_freedom" parameterClass="int" resultClass="reply_freedom">
        select name,content
        from  reply_freedom
-        where no=#no#
+        where num=#num#
    </select>
    
    <select id="findAll_freedom"  resultClass="reply_freedom">
-       select r.no, r.name, r.content, m.nickname
+       select r.no, r.name, r.content, r.num, m.nickname
        from  reply_freedom r, member m
+       where m.member_id = r.name and num = #num#
        order by no
    </select>
    
@@ -39,25 +40,26 @@
    </insert>
    
    <delete id="delete_notice" parameterClass="int">
-       delete  reply_freedom
+       delete  reply_notice
        where no=#no#
    </delete>
    
    <update id="update_notice" parameterClass="reply_notice">
-       update  reply_freedom
+       update  reply_notice
        set name=#name#, content=#content#
        where no=#no#
    </update>
    
    <select id="find_notice" parameterClass="int" resultClass="reply_notice">
        select name,content
-       from  reply_freedom
+       from  reply_notice
         where no=#no#
    </select>
    
    <select id="findAll_notice"  resultClass="reply_notice">
-       select r.no, r.name, r.content, m.nickname
-       from  reply_freedom r, member m 
+       select r.no, r.name, r.content, r.num, m.nickname
+       from  reply_notice r, member m, freeboard f
+       where r.num = f.basic_board_num and r.num = f.basic_board_num
        order by no
    </select>
 
