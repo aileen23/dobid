@@ -62,7 +62,7 @@ public class boardDAO {
 
 	}
 	
-	public boolean noticeBoardWrite(NoticeboardDTO noticeboard) { // board_freedom_write
+	public boolean noticeBoardWrite(NoticeboardDTO noticeboard) { //관리자 공지사항글쓰기
 		// 자유게시판 글쓰기
 		
 		try {

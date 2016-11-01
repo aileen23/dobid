@@ -82,10 +82,7 @@
 			<tr>
 				<th>글번호</th>
 				<th>아이디</th>
-				<th>이름</th>
-				<th>닉네임</th>
 				<th>제목</th>
-				<th>이메일</th>
 				<th>내용</th>
 				<th>등록일자</th>
 
@@ -95,10 +92,7 @@
 				<tr class="list">
 					<td>${ adminboardlist.basic_board_num}</td>
 					<td>${ adminboardlist.member_id}</td>
-					<td>${ adminboardlist.name}</td>
-					<td>${ adminboardlist.nickname}</td>
 					<td>${ adminboardlist.title}</td>
-					<td>${ adminboardlist.email}</td>
 					<td>${ adminboardlist.contents}</td>
 					<td>${ adminboardlist.upload_date}<input class="image_path"
 						type="hidden" name="${ adminboardlist.image_path}"></td>
@@ -143,7 +137,7 @@
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
 			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_board.do"
+			<form class="form-horizontal" action="/Dobid/admin_noticeboard.do"
 				method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">

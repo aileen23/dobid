@@ -27,12 +27,12 @@ public class Admin_noticeboard_write_Action extends Action{
 	    Date date = new Date();
 	    String board_date = df.format(date);
 	    //request.getParameter("free_whiter_user")
-	    System.out.println(request.getParameter("free_title"));
-	    System.out.println(request.getParameter("free_contents"));
-	    System.out.println(request.getParameter("free_file"));
+	    System.out.println(request.getParameter("notice_title"));
+	    System.out.println(request.getParameter("notice_contents"));
+	    System.out.println(request.getParameter("notice_file"));
 	    NoticeboardDTO dto = new NoticeboardDTO(0,(String)request.getSession().getAttribute("logincheck"),
-	    		request.getParameter("free_title"),request.getParameter("free_contents"),
-	    		request.getParameter("free_file"),0,board_date);
+	    		request.getParameter("notice_title"),request.getParameter("notice_contents"),
+	    		request.getParameter("notice_file"),0,board_date);
 		
 		boardDAO dao = new boardDAO();
 		dao.noticeBoardWrite(dto);

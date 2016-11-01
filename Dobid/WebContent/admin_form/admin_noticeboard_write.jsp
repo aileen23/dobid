@@ -9,11 +9,7 @@
 
 <script>
 $(document).ready(function(){ 
-	var id = getQuerystring(id);
 
-	$('#NoticeBoardWrite').on('click', function() {  //자유게시판
-    	$(location).attr('href', '/Dobid/admin_noticeboard.do');
-	});
 
 	$("#pageback").click(function(){ //돌아가기
 
@@ -63,7 +59,7 @@ $(document).ready(function(){
 </script>
 
 </head>
-<header><%@include file="/regist_form/header.jsp"%></header>
+<header><%@include file="../admin_form/admin_header.jsp"%></header>
 <body><br>
 <br>
 <br>
@@ -80,7 +76,7 @@ $(document).ready(function(){
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="notice_title" placeholder="제목" name="free_title">
+					<input type="text" class="form-control" id="notice_title" placeholder="제목" name="notice_title">
 				</div>
 			</div>
 			<div class="form-group">
@@ -94,7 +90,7 @@ $(document).ready(function(){
 				<label for="inputTextarea" class="col-sm-4 control-label">내용</label>
 				<div class="col-sm-5">
 					<textarea class="form-control " id="notice_contents"
-						placeholder="내용을 입력하세요" style="height: 200px" name="free_contents"></textarea>
+						placeholder="내용을 입력하세요" style="height: 200px" name="notice_contents"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
@@ -102,7 +98,7 @@ $(document).ready(function(){
 
 				<div class="filebox col-sm-5">
 					<label for="notice_file">첨부파일</label> <input type="file"
-						name="notice_file" id="free_file" accept="image/*" capture="camera"
+						name="notice_file" id="notice_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#notice_img'))" /> <br> <br>
 					<div id="notice_img"
 						style="width: 100%; max-width: 100%; display: none;"></div>
@@ -128,7 +124,7 @@ $(document).ready(function(){
 	<Br><br><Br>
 	<Br><br><Br>
 	<%@include file="/reply_form/board_freedom_write_reply.jsp" %>
-  	<footer> <%@include file="/regist_form/footer.jsp"%>
+			<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 		</footer>
 </body>
 

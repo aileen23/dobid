@@ -58,9 +58,9 @@
 
 	<!-- 공지사항 글쓰기 -->
 	<insert id="NoticeBoardWrite" parameterClass="noticeboardDTO">
-		insert into freeboard
+		insert into noticeboard
 		values
-		(freeboard_seq.NEXTVAL,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
+		(noticeboard_seq.NEXTVAL,#member_id#,#title#,#contents#,#image_path#,#cilck_count#,to_date(#upload_date#,'YYYY-MM-DD:HH24:MI:SS'))
 	</insert>
 	
 	<!-- 자유게시판 글쓰기 -->
