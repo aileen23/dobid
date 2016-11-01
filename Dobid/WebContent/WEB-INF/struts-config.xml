@@ -71,8 +71,7 @@
 		<action path="/regist" forward="/product_regist_form/auction_regist.jsp"></action>
 		<action path="/auction_regist" type="com.dobid.product_regist.action.Product_regist"
 			name="regist_actionForm">
-			<forward path="/list.do" name="success"
-				redirect="true"></forward>
+			<forward path="/list.do" name="success" redirect="true"></forward>
 			<forward path="/regist.do" name="fail"></forward>
 		</action>
 		<action path="/list" type="com.dobid.product_regist.action.Auction_list"
@@ -124,7 +123,7 @@
 
 		<action path="/findpassword" forward="/regist_form/find_password.jsp"></action>
 		<action path="/sendmailpass" forward="/regist_form/sendMailpass.jsp"></action>
-		
+
 		<!-- ############ Mypage ############ -->
 		<action path="/myprofile" type="com.dobid.actions.mypage.Mypage_Action">
 			<forward name="success" path="/mypage_form/myprofile_main.jsp" />
@@ -137,74 +136,81 @@
 		</action>
 		<action path="/myprofile_basket" type="com.dobid.actions.mypage.Mypage_basket_Action">
 			<forward name="success" path="/mypage_form/myprofile_basket.jsp" />
-		</action>		
+		</action>
 		<action path="/myprofile_Auction" type="com.dobid.actions.mypage.Mypage_auction_Action">
 			<forward name="success" path="/mypage_form/myprofile_auction_details.jsp" />
-		</action>		
+		</action>
 		<action path="/myprofile_note" type="com.dobid.actions.mypage.Mypage_note_Action">
 			<forward name="success" path="/mypage_form/myprofile_note.jsp" />
-		</action>		
+		</action>
 		<action path="/myprofile_charge" type="com.dobid.actions.mypage.Mypage_charge_Action">
 			<forward name="success" path="/mypage_form/myprofile_charge_details.jsp" />
-		</action>		
+		</action>
 		<action path="/myprofile_qna" type="com.dobid.actions.mypage.Mypage_qna_Action">
 			<forward name="success" path="/mypage_form/myprofile_qna_details.jsp" />
-		</action>		
+		</action>
 		<action path="/myprofile_sales" type="com.dobid.actions.mypage.Mypage_sales_Action">
 			<forward name="success" path="/mypage_form/myprofile_sales_list.jsp" />
-		</action>		
+		</action>
 		<action path="/myprofile_withdrawal" forward="/mypage_form/myprofile_withdrawal.jsp"></action>
-		<action path="/myprofile_withdrawalOK" type="com.dobid.actions.mypage.Mypage_withdrawal_Action">
+		<action path="/myprofile_withdrawalOK"
+			type="com.dobid.actions.mypage.Mypage_withdrawal_Action">
 			<forward name="success" path="/regist_form/logout.jsp" />
-		</action>		
+		</action>
 		<action path="/receive" type="com.dobid.actions.mypage.Mypage_receive_Action">
 			<forward name="success" path="/mypage_form/receive.jsp" />
-		</action>	
+		</action>
 		<action path="/send" type="com.dobid.actions.mypage.Mypage_send_Action">
 			<forward name="success" path="/mypage_form/send.jsp" />
-		</action>	
+		</action>
 		<action path="/sendmessage" type="com.dobid.actions.mypage.Mypage_sendmsg_Action">
 			<forward name="success" path="/mypage_form/sendMessage.jsp" />
-		</action>	
+		</action>
 		<!-- customservice -->
 		<!-- customservice_qna -->
 		<action path="/service_qna" forward="/service_form/customerservice_qna.jsp" />
 
-		
+
 		<!-- customservice_ono -->
 		<action path="/service_ono" forward="/service_form/customerservice_ono.jsp" />
 		<action path="/service_ono_write"
 			type="com.dobid.actions.service.Customerservice_ono_Action">
-			<forward name="success" path="/main.do"/>
-			<forward name="fail" path="/service_ono.do"/>
+			<forward name="success" path="/main.do" />
+			<forward name="fail" path="/service_ono.do" />
 		</action>
 
 		<!-- customservice_report -->
 		<action path="/service_report" forward="/service_form/customerservice_report.jsp" />
 		<action path="/service_report_write"
 			type="com.dobid.actions.service.Customerservice_report_Action">
-			<forward name="success" path="/main.do"/>
-			<forward name="fail" path="/service_report.do"/>
+			<forward name="success" path="/main.do" />
+			<forward name="fail" path="/service_report.do" />
 		</action>
-		
-		
+
+
 		<!-- 게시판(박종민) -->
 
 		<!-- noticeboard_list -->
 		<action path="/noticeboard_list" type="com.dobid.actions.board.Board_noticelist_Action">
 			<forward name="success" path="/board_form/board_noticelist.jsp"></forward>
 		</action>
-		
+
 		<!-- freeboard_list -->
 		<action path="/freeboard_list" type="com.dobid.actions.board.Board_freelist_Action">
 			<forward name="success" path="/board_form/board_freelist.jsp"></forward>
 		</action>
 
 
-		<!-- board_content_view -->
-		<action path="/board_content_view"
-			type="com.dobid.actions.board.Board_content_view_Action">
-			<forward name="success" path="/board_form/board_content_view.jsp"></forward>
+		<!-- noticeboard_content_view -->
+		<action path="/noticeboard_content_view"
+			type="com.dobid.actions.board.Board_noticecontent_view_Action">
+			<forward name="success" path="/board_form/board_noticecontent_view.jsp"></forward>
+		</action>
+
+		<!-- freeboard_content_view -->
+		<action path="/freeboard_content_view"
+			type="com.dobid.actions.board.Board_freecontent_view_Action">
+			<forward name="success" path="/board_form/board_freecontent_view.jsp"></forward>
 		</action>
 
 		<!-- board_freedom_write -->
@@ -216,7 +222,7 @@
 			type="com.dobid.actions.board.Board_freedom_write_Action">
 			<forward name="success" path="/board_list.do"></forward>
 		</action>
-		
+
 		<!-- admin_noticeboard_write -->
 		<action path="/admin_noticeboard_write" forward="/admin_form/admin_noticeboard_write.jsp">
 		</action>
@@ -226,77 +232,72 @@
 			type="com.dobid.actions.admin.Admin_noticeboard_write_Action">
 			<forward name="success" path="/admin_noticeboard.do"></forward>
 		</action>
-		
-<!-- 관리자 공지 -->
+
+		<!-- 관리자 공지 -->
 		<!-- admin_noticeboard.jsp -->
 		<action path="/admin_noticeboard" type="com.dobid.actions.admin.Admin_noticeboard_Action">
 			<forward name="success" path="/admin_form/admin_noticeboard.jsp"></forward>
 		</action>
-<!-- 관리자 자유 -->		
+		<!-- 관리자 자유 -->
 		<!-- admin_freeboard.jsp -->
 		<action path="/admin_freeboard" type="com.dobid.actions.admin.Admin_freeboard_Action">
 			<forward name="success" path="/admin_form/admin_freeboard.jsp"></forward>
 		</action>
-		
-		
+
+
 		<!-- 관리자 일반/핫/공동구매 게시글 (박종민) -->
 
-		
+
 		<action path="/admin_auctionlist" type="com.dobid.actions.admin.Admin_auctionlist_Action">
 			<forward name="success" path="/admin_form/admin_auctionlist.jsp"></forward>
 		</action>
 		<!-- 관리자 1대1대화 (박종민) -->
-		
+
 		<action path="/admin_ono" type="com.dobid.actions.admin.Admin_ono_Action">
 			<forward name="success" path="/admin_form/admin_ono.jsp"></forward>
 		</action>
-		
+
 		<!-- 관리자 신고하기 (박종민) -->
-		
+
 		<action path="/admin_report" type="com.dobid.actions.admin.Admin_report_Action">
 			<forward name="success" path="/admin_form/admin_report.jsp"></forward>
 		</action>
-		
+
 		<!-- 관리자 멤버관리 (박종민) -->
-		
+
 		<action path="/admin_memberdel" type="com.dobid.actions.admin.Admin_memberdel_Action">
 			<forward name="success" path="/admin_form/admin_memberdel.jsp"></forward>
 		</action>
-		
+
 		<!-- 관리자 페이지테스트중 신고하기 (박종민) -->
-		
+
 		<action path="/admin_pagetest" type="com.dobid.actions.admin.Admin_pagetest_Action">
 			<forward name="success" path="/admin_form/admin_pagetest.jsp"></forward>
 		</action>
-		
+
 		<!-- 관리자 페이지테스트중 신고하기 (박종민) -->
-		
+
 		<action path="/admin_pagetest" type="com.dobid.actions.admin.Admin_pagetest_Action">
 			<forward name="success" path="/admin_form/admin_pagetest.jsp"></forward>
 		</action>
-		
-		<!--  -->
-			 <!-- 댓글관련 요청 -->        
-        <action path="/board_content_view_reply_add"
-                type="com.dobid.actions.reply.freedom.AddAction">
-             <forward name="success" path="/reply_form/addResult.jsp"></forward>        
-        </action>
-        
-        <action path="/board_content_view_reply_list"
-                type="com.dobid.actions.reply.freedom.ListAction">
-             <forward name="success" path="/reply_form/replyList.jsp"></forward>        
-        </action>
-        
-        <action path="/board_content_view_reply_update"
-                type="com.dobid.actions.reply.freedom.UpdateAction">
-             <forward name="success" path="/reply_form/addResult.jsp"></forward>        
-        </action>
-        
-        <action path="/board_content_view_reply_delete"
-                type="com.dobid.actions.reply.freedom.DeleteAction">
-             <forward name="success" path="/reply_form/addResult.jsp"></forward>        
-        </action>
-	
+
+		<!-- -->
+		<!-- 댓글관련 요청 -->
+		<action path="/board_content_view_reply_add" type="com.dobid.actions.reply.freedom.AddAction">
+			<forward name="success" path="/reply_form/addResult.jsp"></forward>
+		</action>
+
+		<action path="/board_content_view_reply_list" type="com.dobid.actions.reply.freedom.ListAction">
+			<forward name="success" path="/reply_form/replyList.jsp"></forward>
+		</action>
+
+		<action path="/board_content_view_reply_update" type="com.dobid.actions.reply.freedom.UpdateAction">
+			<forward name="success" path="/reply_form/addResult.jsp"></forward>
+		</action>
+
+		<action path="/board_content_view_reply_delete" type="com.dobid.actions.reply.freedom.DeleteAction">
+			<forward name="success" path="/reply_form/addResult.jsp"></forward>
+		</action>
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 

@@ -11,7 +11,7 @@
 	$(document).ready(function() {
 
 		$('#freeboardSelectAll').on('click', function() { //자유게시판 목록버튼
-			$(location).attr('href', '/Dobid/board_freelist.do');
+			$(location).attr('href', '/Dobid/freeboard_list.do');
 
 		});
 		$('#freeWrite').on('click', function() { //글쓰기 버튼
@@ -45,7 +45,7 @@
 		<br> <br> <br> <br> <br> <br> <br>
 		<Br>
 		<br> <Br>
-		<form action="/Dobid/board_freelist.do" method="POST">
+		<form action="/Dobid/freeboard_list.do" method="POST">
 
 			<h3>자유게시판</h3>
 			<hr>
@@ -66,7 +66,7 @@
 						<td>${freelist.basic_board_num }</td>
 						<td>${freelist.nickname }</td>
 						<td><a
-							href="board_content_view.do?num=${freelist.basic_board_num }">${freelist.title }</a></td>
+							href="freeboard_content_view.do?num=${freelist.basic_board_num }">${freelist.title }</a></td>
 						<td>${freelist.cilck_count }</td>
 						<td>${freelist.upload_date }</td>
 					</tr>

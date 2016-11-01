@@ -11,7 +11,7 @@
 	$(document).ready(function() {
 
 		$('#noticeboardSelectAll').on('click', function() { //공지사항 목록버튼
-			$(location).attr('href', '/Dobid/board_noticelist.do');
+			$(location).attr('href', '/Dobid/noticeboard_list.do');
 		});
 
 	});
@@ -40,7 +40,7 @@
 
 		<Br>
 		<br> <Br>
-		<form action="/Dobid/board_noticelist.do" method="POST">
+		<form action="/Dobid/noticeboard_list.do" method="POST">
 
 			<h3>공지사항</h3>
 			<hr>
