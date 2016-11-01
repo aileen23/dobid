@@ -58,8 +58,8 @@
    
    <select id="findAll_notice"  resultClass="reply_notice">
        select r.no, r.name, r.content, r.num, m.nickname
-       from  reply_notice r, member m, freeboard f
-       where r.num = f.basic_board_num and r.num = f.basic_board_num
+       from  reply_freedom r, member m
+       where m.member_id = r.name and num = #num#
        order by no
    </select>
 

@@ -72,7 +72,7 @@ public class ReplyDAO {
     
     public boolean insert_noitice(Reply_noticeDTO reply_notice){
         try {
- 		smc.insert("reply.add",reply_notice);
+ 		smc.insert("reply.add_notice",reply_notice);
  		   return true;
  	   } catch (SQLException e) {
  		e.printStackTrace();
@@ -82,7 +82,7 @@ public class ReplyDAO {
      
      public boolean delete_notice(int no){
         try {
- 		int t = smc.delete("reply.delete",no);
+ 		int t = smc.delete("reply.delete_notice",no);
  		   if(t==1)return true;
  	  } catch (SQLException e) {
  		e.printStackTrace();
@@ -92,7 +92,7 @@ public class ReplyDAO {
      
      public boolean updaten_notice(Reply_noticeDTO reply_freedom){
         try {
- 		int t = smc.update("reply.update",reply_freedom);
+ 		int t = smc.update("reply.update_notice",reply_freedom);
  		   if(t==1)return true;
  	  } catch (SQLException e) {
  		e.printStackTrace();
@@ -113,7 +113,7 @@ public class ReplyDAO {
      public List<Reply_noticeDTO> findAll_notice(int num){
         List<Reply_noticeDTO> list=null;
  		try {
- 			list = smc.queryForList("reply.findAll_freedom", num);
+ 			list = smc.queryForList("reply.findAll_notice", num);
  		} catch (SQLException e) {
  			e.printStackTrace();
  		}

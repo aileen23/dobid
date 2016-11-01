@@ -92,7 +92,7 @@ $(document).ready(function(){
 	
 		
 	<Br><br>
-	<%@include file="/reply_form/reply_freedom.jsp" %>
+	<%@include file="/reply_form/reply_notice.jsp" %>
   	<footer> <%@include file="/regist_form/footer.jsp"%>
 		</footer>
 </body>
