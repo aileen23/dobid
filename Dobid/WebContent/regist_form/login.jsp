@@ -35,7 +35,7 @@
 		<font size="3" color="black" id="font2">welcome Do Bid</font>
 	</center>
 	<br>
-	<form class="form-horizontal" style="margin-left: 25%" method="post"
+	<form class="form-horizontal col-sm-offset-3"method="post"
 		action="do_login.do">
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
@@ -53,13 +53,14 @@
 
 
 		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-12" style="margin-bottom: 1%">
+			<div class="col-sm-offset-2 col-sm-4" style="margin-bottom: 1%">
 				<button type="submit" class="btn btn-default"
 					style="margin-right: 10%">Sign in</button>
-				<a href="regist_account.do"><button type="button"
-						class="btn btn-default" style="margin-right: 1%">Sign up</button></a>
 				<a href="findid.do"><button type="button" class="btn btn-default"
-					style="margin-right: 1%">Find ID</button></a>
+					style="margin-right: 1%; float: right;">Find ID</button></a>
+				<a href="regist_account.do"><button type="button"
+						class="btn btn-default" style="margin-right: 1%; float: right;">Sign up</button></a>
+				
 			</div>
 		</div>
 
