@@ -283,20 +283,39 @@
 
 		<!-- -->
 		<!-- 댓글관련 요청 -->
-		<action path="/board_content_view_reply_add" type="com.dobid.actions.reply.freedom.AddAction">
+		<!-- 자유게시판 -->
+		<action path="/freeboard_content_view_reply_add" type="com.dobid.actions.reply.freedom.AddAction">
 			<forward name="success" path="/reply_form/addResult.jsp"></forward>
 		</action>
 
-		<action path="/board_content_view_reply_list" type="com.dobid.actions.reply.freedom.ListAction">
+		<action path="/freeboard_content_view_reply_list" type="com.dobid.actions.reply.freedom.ListAction">
 			<forward name="success" path="/reply_form/replyList.jsp"></forward>
 		</action>
 
-		<action path="/board_content_view_reply_update" type="com.dobid.actions.reply.freedom.UpdateAction">
+		<action path="/freeboard_content_view_reply_update" type="com.dobid.actions.reply.freedom.UpdateAction">
 			<forward name="success" path="/reply_form/addResult.jsp"></forward>
 		</action>
 
-		<action path="/board_content_view_reply_delete" type="com.dobid.actions.reply.freedom.DeleteAction">
+		<action path="/freeboard_content_view_reply_delete" type="com.dobid.actions.reply.freedom.DeleteAction">
 			<forward name="success" path="/reply_form/addResult.jsp"></forward>
+		</action>
+		
+		
+		<!-- 공지사항 -->
+		<action path="/noticeboard_content_view_reply_add" type="com.dobid.actions.reply.notice.AddAction">
+			<forward name="success" path="/reply_form/addResult2.jsp"></forward>
+		</action>
+
+		<action path="/noticeboard_content_viewreply_list" type="com.dobid.actions.reply.notice.ListAction">
+			<forward name="success" path="/reply_form/replyList2.jsp"></forward>
+		</action>
+
+		<action path="/noticeboard_content_view_reply_update" type="com.dobid.actions.reply.notice.UpdateAction">
+			<forward name="success" path="/reply_form/addResult2.jsp"></forward>
+		</action>
+
+		<action path="/noticeboard_content_view_reply_delete" type="com.dobid.actions.reply.notice.DeleteAction">
+			<forward name="success" path="/reply_form/addResult2.jsp"></forward>
 		</action>
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
