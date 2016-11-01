@@ -17,22 +17,14 @@
         %>
 <script>
 $(document).ready(function(){ 
-	var id = getQuerystring(id);
+	
 
 	
-	$('#freebtn').on('click', function() {  //자유게시판
-    	$(location).attr('href', '/Dobid/board_list.do?id=2');
-
-	});
-	
-	$('#boardSelectAll').on('click', function() {  //자유게시판
-    	$(location).attr('href', '/Dobid/board_list.do?id=2');
+	$('#freeboardSelectAll').on('click', function() {  //자유게시판
+    	$(location).attr('href', '/Dobid/board_freedom_write.do');
 
 	});
 	
-    $('#noticebtn').on('click', function() {  //공지사항
-    	$(location).attr('href', '/Dobid/board_list.do?id=1');
-	});
 
 	$("#pageback").click(function(){ //돌아가기
 
@@ -47,15 +39,6 @@ $(document).ready(function(){
 
 </script>
 
-<script type="text/javascript">
-function getQuerystring(paramName){
-
-	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
-	//var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
-	console.log(_tempUrl);
-	return _tempUrl.split("=")[1];
-}
-</script>
 
 <!-- CSS -->
 <link href="./css/jongmin.css" rel="stylesheet">
@@ -142,9 +125,9 @@ function getQuerystring(paramName){
 
 
 		<div class="col-sm-offset-4 ">
-			<input type="submit" class="button button5 btn-default" id="FreeBoardWrite" value="글쓰기">
+			<input type="submit" class="button button5 btn-default" value="글쓰기">
 			<button class="button button5 btn-default" id="pageback">취소</button>
-			<button class="button button5 btn-default" id="boardSelectAll">목록</button>
+			<button class="button button5 btn-default" id="freeboardSelectAll">목록</button>
 		</div>
 	</form>
 		

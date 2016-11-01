@@ -134,7 +134,7 @@
 
 
 				<c:forEach begin="0" end="${totalPage }" var="i">
-       [<a href="admin_board.do?page=${ i }">${i }</a>]
+       [<a href="admin_auctionlist.do?page=${ i }">${i }</a>]
     </c:forEach>
 
 

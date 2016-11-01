@@ -71,7 +71,7 @@ public class Admin_ono_Action extends Action {
 
 				int end = page * viewRowCnt;
 				int start = end - (viewRowCnt - 1);
-				int totalRecord = dao.adminReportCount();
+				int totalRecord = dao.adminOnoCount();
 				System.out.println("totalRecord: " + totalRecord);
 				int totalPage = totalRecord / viewRowCnt;
 				if (totalRecord % viewRowCnt > 0)
@@ -92,6 +92,7 @@ public class Admin_ono_Action extends Action {
 	
 
 			} else if (admin_ono_selecttext.equals("") && catalogue != null) {
+				
 				adminonolist = dao.adminOnoSelectAll(catalogue);
 				request.setAttribute("adminonolist", adminonolist);
 

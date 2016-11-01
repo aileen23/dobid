@@ -220,7 +220,7 @@
 		<!-- board_freedom_write -->
 		<action path="/board_freedom_write_input"
 			type="com.dobid.actions.board.Board_freedom_write_Action">
-			<forward name="success" path="/board_list.do"></forward>
+			<forward name="success" path="/freeboard_list.do"></forward>
 		</action>
 
 		<!-- admin_noticeboard_write -->
