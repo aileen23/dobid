@@ -1,7 +1,8 @@
 package com.dobid.beans;
 
 public class Auction_myAuctionDTO {
-
+	public Auction_myAuctionDTO() {
+	}
 	public int getAuction_board_num() {
 		return auction_board_num;
 	}
