@@ -60,7 +60,7 @@
 					<tr>
 						<td>${noticelist.basic_board_num }</td>
 						<td>${noticelist.member_id }</td>
-						<td><a href="board_content_view.do?num=${noticelist.basic_board_num }">${noticelist.title }</a></td>
+						<td><a href="noticeboard_content_view.do?num=${noticelist.basic_board_num }">${noticelist.title }</a></td>
 						<td>${noticelist.cilck_count }</td>
 						<td>${noticelist.upload_date }</td>
 					</tr>
@@ -78,6 +78,26 @@
 		</form>
 		<input type="button" value="목록" id="noticeboardSelectAll"
 			class="button button5 btn-default">
+			
+			<div class="form-group">
+			<div class="col-sm-7">
+				<br>
+				<c:if test="${page == 1}">이전</c:if>
+				<c:if test="${page > 1}">
+					<a href="noticeboard_list.do?page=${ page-1 }">이전</a>
+				</c:if>
+
+				<c:if test="${page == totalPage }">다음</c:if>
+				<c:if test="${page < totalPage }">
+					<a href="noticeboard_list.do?page=${ page+1 }">다음</a>
+				</c:if>
+				<br>
+				<br>
+				<c:forEach begin="0" end="${totalPage }" var="i">
+       [<a href="noticeboard_list.do?page=${ i }">${i }</a>]
+    </c:forEach>
+			</div>
+		</div>
 	</div>
 	<Br>
 	<br>

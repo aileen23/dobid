@@ -28,6 +28,7 @@ public class Admin_freeDTO {
 		this.image_path = image_path;
 		this.title = title;
 	}
+	
 	public int getBasic_board_num() {
 		return basic_board_num;
 	}
