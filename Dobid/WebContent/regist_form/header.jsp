@@ -38,11 +38,11 @@
 
 			<li id="navbar_gong"><a href="/Dobid/group_list.do" id="gongdong">공동구매</a></li>
 			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="board_list.do" id="Board">커뮤니티<span
+				data-toggle="dropdown" href="noticeboard_list.do" id="Board">커뮤니티<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" id="dropBoard">
-					<li><a href="/Dobid/board_list.do?id=1">공지사항</a></li>
-					<li><a href="/Dobid/board_list.do?id=2">자유게시판</a></li>
+					<li><a href="/Dobid/noticeboard_list.do">공지사항</a></li>
+					<li><a href="/Dobid/freeboard_list.do">자유게시판</a></li>
 				</ul></li>
 
 			<li class="dropdown"><a class="dropdown-toggle"
