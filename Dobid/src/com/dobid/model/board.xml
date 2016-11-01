@@ -366,7 +366,7 @@
 		delete from member where member_id=#member_id#
 	</delete>
 
-
+<!-- 페이징ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ -->
 
 	<!-- 관리자 신고하기 페이징 -->
 	<!-- 신고하기 카운터 -->
@@ -471,7 +471,42 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		where rn between #start# and #end#
 	</select>
 
+	<!-- 유저게시판 페이징 -->
+	<!-- 유저공지 게시판 카운터 -->
+	<select id="noticelistcount" resultClass="int">
+		select count(*) from noticeboard
+	</select>
 
+	<!-- 유저공지게시판 페이지 나누기기기기기기기기기기 --> 
+	<select id="noticelistpage" resultClass="noticeboardDTO" parameterClass="java.util.Map">
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date 
+		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date , rownum rn
+		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date 
+		from noticeboard order by basic_board_num desc))
+		where rn between #start# and #end#
+	</select>
+	
+	<!-- 유저게시판 페이징 -->
+	<!-- 유저자유게시판 카운터 -->
+	<select id="freelistcount" resultClass="int">
+		select count(*) from freeboard
+	</select>
+
+	<!-- 유저자유게시판 페이지 나누기기기기기기기기기기 --> 
+	<select id="freelistpage" resultClass="freeboardDTO" parameterClass="java.util.Map">
+		select basic_board_num, member_id, nickname, contents, upload_date, image_path, title,cilck_count
+		from (select basic_board_num, member_id, nickname, contents, upload_date, image_path, title,cilck_count, rownum rn
+		from (select a.basic_board_num,m.member_id,m.nickname,a.contents,a.upload_date,a.image_path,a.title,a.cilck_count
+		       from freeboard a, member m 
+		       where a.member_id=m.member_id
+		       order by a.basic_board_num desc)
+			)
+		where rn between #start# and #end#
+		
+		
+	</select>
+	
+	
 
 </sqlMap>
 	

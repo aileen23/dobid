@@ -10,7 +10,7 @@ public class FreeboardDTO {
 	private String image_path;
 	private int cilck_count;
 	private String upload_date;
-	private String nickname;;
+	private String nickname;
 
 	public FreeboardDTO() {
 	}

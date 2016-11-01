@@ -15,13 +15,16 @@ $(document).ready(function() {
 	$("#inputdetailAddress").val(add[1]);
 	
 	$(":password").keyup(function() {
-		if ($("#inputPwd").val() == $("#inputPwdCheck").val() && $("#inputPwd").val().length > 5 && $("#inputPwd").val().length < 21 && $("#inputPwd").val().replace(" ","").length == $("#inputPwd").val().length) {
-			$("#passcheck").html("<font color = 'blue'>o</font>");
+		
+		if ($("#inputPwd").val() != $("#inputPwdCheck").val() ){
+			$("#passcheck").html("<font color = 'red'>두 비밀번호가 맞지않습니다.</font>");			
+		}else if($("#inputPwd").val().length > 5 && $("#inputPwd").val().length < 21 && $("#inputPwd").val().replace(" ","").length == $("#inputPwd").val().length) {
+			$("#passcheck").html("<font color = 'blue'>O</font>");
 		}else if ($("#inputPwd").val().length == 0 || $("#inputPwdCheck").val().length == 0) {
 			$("#passcheck").html("");
 		}
 		else {
-			$("#passcheck").html("<font color = 'red'>6-20자리</font>");
+			$("#passcheck").html("<font color = 'red'>비밀번호를 6-20자리입력해주세요.</font>");
 		}
 		
 	});//패스워드 체크

@@ -85,9 +85,28 @@
 		<input type="button" value="목록" id="freeboardSelectAll"
 			class="button button5 btn-default"> <input type="button"
 			value="글쓰기" id="freeWrite" class="button button5 btn-default">
+			
+			<div class="form-group">
+			<div class="col-sm-7">
+				<br>
+				<c:if test="${page == 1}">이전</c:if>
+				<c:if test="${page > 1}">
+					<a href="freeboard_list.do?page=${ page-1 }">이전</a>
+				</c:if>
+
+				<c:if test="${page == totalPage }">다음</c:if>
+				<c:if test="${page < totalPage }">
+					<a href="freeboard_list.do?page=${ page+1 }">다음</a>
+				</c:if>
+				<br>
+				<br>
+				<c:forEach begin="0" end="${totalPage }" var="i">
+       [<a href="freeboard_list.do?page=${ i }">${i }</a>]
+    </c:forEach>
+			</div>
+		</div>
 	</div>
 
-	</div>
 
 	<Br>
 	<br>
