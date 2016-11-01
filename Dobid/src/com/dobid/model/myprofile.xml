@@ -35,9 +35,9 @@
 	</select>
 	
 	<select id="auctionSelect" parameterClass="String" resultClass="auction_myAuctionDTO">
-		select auction_board_num,main_image_path,title,end_date,hot_check,dib_price_amount 
-		from auction,auction_participanta
-		where auction.auction_board_num=auction_participant.auction_board_num and basket.member_id=#member_id#
+		select auction.auction_board_num, main_image_path, title, end_date, hot_check, bid_price_amount 
+		from auction, auction_participant
+		where auction.auction_board_num=auction_participant.auction_board_num and auction_participant.buyer_id=#auction_participant.buyer_id#
 	</select>
 	
 	<select id="salesSelect" parameterClass="String" resultClass="auctionDTO">

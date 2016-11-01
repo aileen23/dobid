@@ -20,9 +20,10 @@ public class Mypage_receive_Action extends Action{
 			HttpServletResponse response) throws Exception {
 		
 		String id= (String) request.getSession().getAttribute("logincheck");
+	
 		Mypage_DAO dao = new Mypage_DAO();
-		
-		List<MessageDTO> receivelist = dao.receivelist(id);
+		String Nicname = dao.select(id).getNickname();
+		List<MessageDTO> receivelist = dao.receivelist(Nicname);
 		request.setAttribute("receivelist", receivelist);
 		return mapping.findForward("success");
 	}
