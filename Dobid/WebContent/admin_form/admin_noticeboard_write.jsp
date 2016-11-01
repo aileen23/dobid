@@ -75,7 +75,7 @@ $(document).ready(function(){
 	
 		</p>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/board_noticeboard_write_input.do" method="POST">
+		<form class="form-horizontal" action="/Dobid/admin_noticeboard_write_input.do" method="POST">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>

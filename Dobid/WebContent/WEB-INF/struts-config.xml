@@ -219,7 +219,7 @@
 		<!-- admin_noticeboard_write -->
 		<action path="/admin_noticeboard_write_input"
 			type="com.dobid.actions.admin.Admin_noticeboard_write_Action">
-			<forward name="success" path="/admin_noticeboard_write.do"></forward>
+			<forward name="success" path="/admin_noticeboard.do"></forward>
 		</action>
 		
 <!-- 관리자 공지 -->
