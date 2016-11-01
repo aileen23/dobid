@@ -25,7 +25,7 @@ public class Regist_account_Action extends Action {
 		dto.setPass(enc.aesEncode(request.getParameter("pass")));
 		dto.setPhone(request.getParameter("phone"));
 		dto.setEmail(request.getParameter("email"));
-		dto.setAddress(request.getParameter("address"));
+		dto.setAddress(request.getParameter("address")+"%%"+request.getParameter("detailaddress"));
 		dto.setNickname(request.getParameter("nickname"));
 		dto.setIntroduction(request.getParameter("introduction"));
 		dto.setBirthday(request.getParameter("birthday"));

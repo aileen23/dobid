@@ -143,6 +143,9 @@
 			}else if ($("#address").val().length < 1 || ($("#address").val().length > 100)) {
 				alert("주소를 확인해주세요.");
 				return false;
+			}else if ($("#detailaddress").val().length < 1 || ($("#detailaddress").val().length > 100)) {
+				alert("상세주소를 확인해주세요.");
+				return false;
 			}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
 				alert("자기소개를 확인해주세요.");
 				return false;
@@ -265,6 +268,13 @@
 					<input type="text" class="form-control" name="address"
 						 placeholder="Address" id="address"
 						onclick="DaumPostcode()">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">Address</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="detailaddress"
+						 placeholder="Address" id="detailaddress">
 				</div>
 			</div>
 
