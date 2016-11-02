@@ -282,6 +282,11 @@
 		<action path="/admin_memberdel" type="com.dobid.actions.admin.Admin_memberdel_Action">
 			<forward name="success" path="/admin_form/admin_memberdel.jsp"></forward>
 		</action>
+		<!-- 관리자 탈퇴요청회원 (박종민) -->
+
+		<action path="/admin_memberaskdel" type="com.dobid.actions.admin.Admin_memberaskdel_Action">
+			<forward name="success" path="/admin_form/admin_memberaskdel.jsp"></forward>
+		</action>
 
 		<!-- 관리자 페이지테스트중 신고하기 (박종민) -->
 

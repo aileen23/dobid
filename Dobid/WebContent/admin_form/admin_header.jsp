@@ -47,6 +47,7 @@
 			<li id="navbar_gong"><a href="admin_ono.do" id="gongdong">1대1문의보기</a></li>
 			<li id="navbar_gong"><a href="admin_report.do" id="gongdong">신고목록</a></li>
 			<li id="navbar_gong"><a href="admin_memberdel.do" id="gongdong">회원관리</a></li>
+			<li id="navbar_gong"><a href="admin_memberaskdel.do" id="gongdong">탈퇴요청목록</a></li>
 
 
 		</ul>
