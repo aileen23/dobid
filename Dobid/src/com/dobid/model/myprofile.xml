@@ -30,8 +30,8 @@
 	
 	<select id="basketSelect" parameterClass="java.util.Map" resultClass="auctionDTO">
 		select auction_board_num, main_image_path, title, highest_price, end_date, hot_check
-			from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check rownum rn
-					from (select a.auction_board_num,a.main_image_path,a.title,a.highest_price,a.end_date,a.hot_check
+			from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check, rownum rn
+					from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
 							from auction a, basket b
 							where a.auction_board_num=b.board_num and b.member_id=#member_id#)
 					)
