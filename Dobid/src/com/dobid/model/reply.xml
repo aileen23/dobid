@@ -9,9 +9,9 @@
        insert into  reply_freedom values (reply_freedom_seq.nextval, #name#, #content#, #num#)
    </insert>
    
-   <delete id="delete_freedom" parameterClass="int">
+   <delete id="delete_freedom" parameterClass="reply_freedom">
        delete  reply_freedom
-       where no=#no#
+       where no=#no# and name=#name#
    </delete>
    
    <update id="update_freedom" parameterClass="reply_freedom">
@@ -39,9 +39,9 @@
        insert into  reply_notice values (reply_notice_seq.nextval, #name#, #content#, #num#)
    </insert>
    
-   <delete id="delete_notice" parameterClass="int">
+   <delete id="delete_notice" parameterClass="reply_notice">
        delete  reply_notice
-       where no=#no#
+       where no=#no# and name=#name#
    </delete>
    
    <update id="update_notice" parameterClass="reply_notice">
