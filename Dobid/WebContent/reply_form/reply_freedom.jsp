@@ -40,13 +40,13 @@
        }	
     }//addResult  
     
-    function updateReply(){//댓글 수정 요청
+    function updateReply(no, name){//댓글 수정 요청
        var no = document.updateForm.no.value;	
        var name = document.updateForm.name.value;	
        var content = document.updateForm.content.value;	
        var num = document.updateForm.num.value;	
        var nickname = document.updateForm.nickname.value;	
-       var params="no="+no+"&name="+name+"&content="+content+"&num="+num+"&nickname="+nickname;
+       var params="no="+no+"&name=${logincheck}&content="+content+"&num="+num+"&nickname="+nickname;
            //"no=3&name=길동&content=안녕"
        new ajax.xhr.Request("/Dobid/freeboard_content_view_reply_update.do", params, updateResult, 'POST');	
     }//updateReply
@@ -132,8 +132,13 @@
        document.updateForm.content.value= reply.content;       
        document.updateForm.nickname.value= reply.nickname;       
        
-       replyDiv.appendChild(upFormDiv);    
-       upFormDiv.style.display='';
+       if(name===""){
+			alert("로그인이 필요한 작업입니다");
+		}else{
+      
+      replyDiv.appendChild(upFormDiv);    
+      upFormDiv.style.display='';
+		}
        
        
     }//viewUpdateForm
@@ -201,7 +206,7 @@
      <form name="updateForm">
        <input type="hidden" name="no">
        	 <input type="hidden" name="nickname" size="10" style="display: ;" readonly="readonly">
-       	 <input type="hidden" name="num" size="5" value="${viewobject.basic_board_num }" style="display: ;" readonly="readonly">
+       	 <input type="hidden" name="num" size="5" value="${freeobject.basic_board_num }" style="display: ;" readonly="readonly">
          <input type="hidden" name="name" size="10" readonly="readonly"><br>
          
         <textarea rows="5" style="width: 105%" name="content"></textarea><br><br>

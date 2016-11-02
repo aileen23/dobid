@@ -18,6 +18,11 @@ public class AddAction extends Action{
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
     		HttpServletResponse response) throws Exception {
     	request.setCharacterEncoding("UTF-8");
+    	String name = request.getParameter("name");
+    	
+    	if(name.equals("")){
+			request.setAttribute("msg", "로그인이 필요합니다");
+		}else{
     	Reply_freedomDTO reply_freedom = new Reply_freedomDTO(0,
                                request.getParameter("name"),
                                request.getParameter("content"),
@@ -33,11 +38,9 @@ public class AddAction extends Action{
     	ReplyDAO dao = new ReplyDAO();
     	
     	 if(dao.insert_freedom(reply_freedom)){
-    		 request.setAttribute("msg", "댓글등록성공!!");  
-    	   }else{
-   		   request.setAttribute("msg", "댓글등록실패!!");  
+    		 request.setAttribute("msg", "댓글 등록을 완료하였습니다");  
     	   }
-    	 
+		} 
     	return mapping.findForward("success");
     }
 }

@@ -19,6 +19,12 @@ public class UpdateAction extends Action{//DB수정요청
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
+		
+		String name = request.getParameter("name");
+		if(name.equals("")){
+			request.setAttribute("msg", "로그인이 필요한 작업입니다");
+		}else{
+		
 		Reply_noticeDTO reply_notice = new Reply_noticeDTO(
 								Integer.parseInt(request.getParameter("no")),
 								request.getParameter("name"),
@@ -31,10 +37,10 @@ public class UpdateAction extends Action{//DB수정요청
 		   if(dao.updaten_notice(reply_notice)){
 			   request.setAttribute("msg", "댓글수정성공!!");
 		   }else{
-			   request.setAttribute("msg", "댓글수정실패!!");
+			   request.setAttribute("msg", "본인의 댓글만 수정 가능힙니다");
 		   }
 		   
-		
+		}
 		return mapping.findForward("success");
 	}
 

@@ -17,7 +17,7 @@
    <update id="update_freedom" parameterClass="reply_freedom">
        update  reply_freedom
        set name=#name#, content=#content#
-       where no=#no#
+       where no=#no# and name=#name#
    </update>
    
    <select id="find_freedom" parameterClass="int" resultClass="reply_freedom">

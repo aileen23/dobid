@@ -17,7 +17,12 @@ public class AddAction extends Action{
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
     		HttpServletResponse response) throws Exception {
-    	request.setCharacterEncoding("UTF-8");
+    	request.setCharacterEncoding("UTF-8");    	
+    	String name = request.getParameter("name");
+    	
+    	if(name.equals("")){
+			request.setAttribute("msg", "로그인이 필요합니다");
+		}else{
     	Reply_noticeDTO reply_notice = new Reply_noticeDTO(0,
                                request.getParameter("name"),
                                request.getParameter("content"),
@@ -34,10 +39,8 @@ public class AddAction extends Action{
     	
     	 if(dao.insert_noitice(reply_notice)){
     		 request.setAttribute("msg", "댓글등록성공!!");  
-    	   }else{
-    		 request.setAttribute("msg", "댓글등록실패!!");  
     	   }
-    	 
+		}
     	return mapping.findForward("success");
     }
 }
