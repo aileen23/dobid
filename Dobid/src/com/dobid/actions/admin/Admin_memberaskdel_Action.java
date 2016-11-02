@@ -10,8 +10,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.dobid.beans.MemberDTO;
-import com.dobid.beans.Service_reportDTO;
+import com.dobid.beans.Admin_memberAskDelListDTO;
 import com.dobid.model.boardDAO;
 
 public class Admin_memberaskdel_Action extends Action {
@@ -33,13 +32,12 @@ public class Admin_memberaskdel_Action extends Action {
 		System.out.println("update : " + request.getParameter("update"));
 
 		ActionForward forward = mapping.findForward("success");
-		// List<MemberDTO> adminmemberdellist = dao.adminMemberdelSelectAll();
 		if (update == null) {
 			if (admin_memberaskdel_selecttext == null) {
 				admin_memberaskdel_selecttext = "";
 			}
 
-			List<MemberDTO> adminmemberaskdellist = null;
+			List<Admin_memberAskDelListDTO> adminmemberaskdellist = null;
 			// 페이지 정보 얻어오기
 			String pageStr = request.getParameter("page");
 

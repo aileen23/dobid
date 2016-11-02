@@ -7,11 +7,11 @@ public class Admin_memberAskDelListDTO {
 	private String email;
 	private String birthday;
 	private int charging_amount;
-	private int withdrawal;
-	private int delete_date;
+	private String withdrawal;
+	private String delete_date;
 
 	public Admin_memberAskDelListDTO(String member_id, String name, String phone, String email, String birthday,
-			int charging_amount, int withdrawal, int delete_date) {
+			int charging_amount, String withdrawal, String delete_date) {
 		super();
 		this.member_id = member_id;
 		this.name = name;
@@ -71,19 +71,19 @@ public class Admin_memberAskDelListDTO {
 		this.charging_amount = charging_amount;
 	}
 
-	public int getWithdrawal() {
+	public String getWithdrawal() {
 		return withdrawal;
 	}
 
-	public void setWithdrawal(int withdrawal) {
+	public void setWithdrawal(String withdrawal) {
 		this.withdrawal = withdrawal;
 	}
 
-	public int getDelete_date() {
+	public String getDelete_date() {
 		return delete_date;
 	}
 
-	public void setDelete_date(int delete_date) {
+	public void setDelete_date(String delete_date) {
 		this.delete_date = delete_date;
 	}
 

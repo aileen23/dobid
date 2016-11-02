@@ -13,7 +13,7 @@
 	<typeAlias alias="seriveanswerDTO" type="com.dobid.beans.Service_answerDTO" />
 	<typeAlias alias="seriverepotDTO" type="com.dobid.beans.Service_reportDTO" />
 	<typeAlias alias="adminmemberDTO" type="com.dobid.beans.MemberDTO" />
-	<typeAlias alias="adminmemberaskdellistDTO" type="com.dobid.beans.Admin_memberAskDelListDTO" />
+	<typeAlias alias="adminmemberaskdellistDTO" type="com.dobid.beans.Admin_memberAskDelListDTO"/>
 
 	<!-- 게시판 리스트보기(공지) -->
 	<select id="NoticeSelectAll" resultClass="noticeboardDTO">
@@ -525,7 +525,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 	<!-- 관리자 탈퇴요청회원 페이징 -->
 	<!-- 탈퇴요청회원 카운터 -->
 	<select id="adminmemberaskdelcount" resultClass="int" parameterClass="String">
-		select count(*) from member where member_id like '%'||#member_id#||'%'
+		select count(*) from member where member_id like '%'||#member_id#||'%' and withdrawal='탈퇴대기중'
 	</select>
 
 	<!-- 탈퇴요청회원 페이지 나누기기기기기기기기기기 --> 
@@ -534,7 +534,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		from (select member_id,name,phone,email,birthday,charging_amount,withdrawal,delete_date, rownum rn
 		from (select member_id,name,phone,email,birthday,charging_amount,withdrawal,delete_date
 		from member order by delete_date desc))
-		where rn between #start# and #end# and member_id like '%'||#member_id#||'%'
+		where rn between #start# and #end# and member_id like '%'||#member_id#||'%' and withdrawal='탈퇴대기중'
 	</select>
 	
 	<!-- 탈퇴요청회원 업데이트-->

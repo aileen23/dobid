@@ -9,6 +9,7 @@ import com.dobid.beans.Admin_auctionDTO;
 import com.dobid.beans.Admin_freeDTO;
 import com.dobid.beans.Admin_groupBuyDTO;
 import com.dobid.beans.Admin_hotAuctionDTO;
+import com.dobid.beans.Admin_memberAskDelListDTO;
 import com.dobid.beans.Admin_noticeDTO;
 import com.dobid.beans.FreeboardDTO;
 import com.dobid.beans.MemberDTO;
@@ -826,8 +827,8 @@ public class boardDAO {
 
 	}
 
-	public List<MemberDTO> adminMemberAskDelPage(int start, int end, String member_id) {
-		List<MemberDTO> list = null;
+	public List<Admin_memberAskDelListDTO> adminMemberAskDelPage(int start, int end, String member_id) {
+		List<Admin_memberAskDelListDTO> list = null;
 		try {
 			Map<String, String> map = new HashMap<>();
 			map.put("start", Integer.toString(start));
