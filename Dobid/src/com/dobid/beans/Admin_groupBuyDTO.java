@@ -36,6 +36,14 @@ public class Admin_groupBuyDTO {
 
 
 
+	public Admin_groupBuyDTO(String contents, String categori) {
+		super();
+		this.contents = contents;
+		this.categori = categori;
+	}
+
+
+
 	public int getAuction_board_num() {
 		return auction_board_num;
 	}
