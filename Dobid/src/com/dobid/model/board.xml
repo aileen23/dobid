@@ -22,7 +22,7 @@
 	</select>
 
 	<!-- 게시판 리스트보기(자유) -->
-	<select id="FreeSelectAll" resultClass="freeboardDTO">
+	<select id="FreeSelectAll" resultClass="freeboardDTO" >
 		select a.basic_board_num,a.member_id,a.title,a.cilck_count,a.upload_date,m.nickname
 		from freeboard a, member m where a.member_id=m.member_id 
 		order by a.basic_board_num desc
@@ -488,8 +488,8 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 
 	<!-- 유저게시판 페이징 -->
 	<!-- 유저공지 게시판 카운터 -->
-	<select id="noticelistcount" resultClass="int">
-		select count(*) from noticeboard
+	<select id="noticelistcount" resultClass="int" parameterClass="String">
+		select count(*) from noticeboard where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 유저공지게시판 페이지 나누기기기기기기기기기기 --> 
@@ -498,13 +498,13 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date , rownum rn
 		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date 
 		from noticeboard order by basic_board_num desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>
 	
 	<!-- 유저게시판 페이징 -->
 	<!-- 유저자유게시판 카운터 -->
-	<select id="freelistcount" resultClass="int">
-		select count(*) from freeboard
+	<select id="freelistcount" resultClass="int" parameterClass="String">
+		select count(*) from freeboard where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 유저자유게시판 페이지 나누기기기기기기기기기기 --> 
@@ -516,7 +516,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		       where a.member_id=m.member_id
 		       order by a.basic_board_num desc)
 			)
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 		
 		
 	</select>

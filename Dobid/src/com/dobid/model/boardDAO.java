@@ -50,10 +50,10 @@ public class boardDAO {
 	
 	///////// 공지사항 관리 페이징 메소드
 
-	public int NoticeCount() {
+	public int NoticeCount(String title) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.noticelistcount");
+			cnt = (int) smc.queryForObject("board.noticelistcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -61,12 +61,13 @@ public class boardDAO {
 
 	}
 
-	public List<NoticeboardDTO> NoticePage(int start, int end) {
+	public List<NoticeboardDTO> NoticePage(int start, int end,String title) {
 		List<NoticeboardDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end", Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.noticelistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -77,10 +78,10 @@ public class boardDAO {
 
 	///////// 자유게시판 유저 페이징 메소드
 
-	public int FreeCount() {//자유 페이징카운터
+	public int FreeCount(String title) {//자유 페이징카운터
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.freelistcount");
+			cnt = (int) smc.queryForObject("board.freelistcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -88,12 +89,13 @@ public class boardDAO {
 
 	}
 
-	public List<FreeboardDTO> FreePage(int start, int end) {
+	public List<FreeboardDTO> FreePage(int start, int end, String title) {
 		List<FreeboardDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end", Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.freelistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
