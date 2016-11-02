@@ -25,11 +25,26 @@
 	<div class="container">
 		<c:forEach items="${list }" var="basketlist">
 		<div class="panel panel-default row">
-			<div class="panel-body col-xs-4"><img src="${basketlist.main_image_path}" width="80%"  height="80%""> </div>
+			<div class="panel-body col-xs-4"><img src="${basketlist.main_image_path}" width="80%"  height="80%"> </div>
 			<div class="panel-body col-xs-8"><font color="red">${basketlist.hot_check}</font><br>${basketlist.title}<br>최고가격: ${basketlist.highest_price}<br> 종료일:  ${basketlist.end_date} </div>
 		</div>
 		</c:forEach>
-		
+		    <br>
+      <c:if test="${page == 1}">이전</c:if>
+      <c:if test="${page > 1}">
+         <a href="myprofile_basket.do?page=${ page-1 }">이전</a>      
+      </c:if>
+         
+      <c:if test="${page == totalPage }">다음</c:if>
+      <c:if test="${page < totalPage }">
+         <a href="myprofile_basket.do?page=${ page+1 }">다음</a>      
+      </c:if>
+    <br><br>
+    <c:if test="${totalPage>0}">
+    <c:forEach begin="1" end="${totalPage }" var="i">
+       [<a href="myprofile_basket.do?page=${ i }">${i }</a>]
+    </c:forEach>
+    </c:if>
 
 	</div>
 

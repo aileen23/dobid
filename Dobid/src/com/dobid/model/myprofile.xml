@@ -17,6 +17,7 @@
 	<typeAlias alias="auction_ChargeDTO" type="com.dobid.beans.Auction_ChargeDTO"/>
 	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
 	<typeAlias alias="service_answerDTO2" type="com.dobid.beans.Service_answerDTO" />
+	<typeAlias alias="delidDTO" type="com.dobid.beans.DelidDTO"/>
 	<select id="select" parameterClass="String" resultClass="memberDTO">
 		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
 		from member
@@ -28,10 +29,14 @@
 		where member_id=#member_id#
 	</update>
 	
-	<select id="basketSelect" parameterClass="String" resultClass="auctionDTO">
-		select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
-		from auction ,basket 
-		where auction.auction_board_num=basket.board_num and basket.member_id=#member_id#
+	<select id="basketSelect" parameterClass="java.util.Map" resultClass="auctionDTO">
+		select auction_board_num, main_image_path, title, highest_price, end_date, hot_check
+			from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check, rownum rn
+					from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
+							from auction a, basket b
+							where a.auction_board_num=b.board_num and b.member_id=#member_id#)
+					)
+		where rn between #start# and #end#
 	</select>
 	
 	<select id="auctionSelect" parameterClass="String" resultClass="auction_myAuctionDTO">
@@ -63,10 +68,9 @@
 		where member_id=#member_id#
 	</select>
 	
-	<delete id="deleteid" parameterClass="String" >
-		delete from member
-		where member_id=#member_id#
-	</delete>
+	<update id="deleteid" parameterClass="delidDTO">
+	update member set withdrawal = #withdrawal# where member_id = #member_id#
+	</update>
 	
 	<select id="receivelist" parameterClass="String" resultClass="messageDTO">
 		select title,contents,regist_date,send_id
@@ -84,6 +88,10 @@
 		insert into message(member_id,send_id,title,contents,regist_date)
 		values (#member_id#,#send_id#,#title#,#contents#,sysdate)
 	</insert>
+	
+	<select id="countlist" parameterClass="String" resultClass="java.lang.Integer">
+		select count(*) from basket where member_id=#member_id#
+	</select>
 </sqlMap>
 
 

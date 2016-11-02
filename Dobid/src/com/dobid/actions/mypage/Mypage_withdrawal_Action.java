@@ -8,6 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.dobid.beans.DelidDTO;
 import com.dobid.model.Mypage_DAO;
 
 public class Mypage_withdrawal_Action extends Action {
@@ -18,8 +19,10 @@ public class Mypage_withdrawal_Action extends Action {
 		String id = (String) request.getSession().getAttribute("logincheck");
 
 		Mypage_DAO dao = new Mypage_DAO();
-
-		dao.deleteid(id);
+		DelidDTO dto = new DelidDTO();
+		dto.setMember_id(id);
+		dto.setWithdrawal("탈퇴대기중");
+		dao.deleteid(dto);
 		return mapping.findForward("success");
 
 	}

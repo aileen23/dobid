@@ -30,7 +30,7 @@
 	</insert>
 	<select id="login" parameterClass="loginDTO" resultClass="String">
 		select
-		member_id from member where member_id = #member_id# and pass = #pass#
+		member_id from member where member_id = #member_id# and pass = #pass# and withdrawal = #withdrawal#
 	</select>
 	<select id="find_id" parameterClass="findidDTO" resultClass="String">
 		select member_id from member where name=#name# and birthday=#birthday#

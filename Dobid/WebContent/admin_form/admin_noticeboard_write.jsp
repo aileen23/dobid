@@ -123,7 +123,7 @@ $(document).ready(function(){
 		
 	<Br><br><Br>
 	<Br><br><Br>
-	<%@include file="/reply_form/board_freedom_write_reply.jsp" %>
+
 			<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 		</footer>
 </body>

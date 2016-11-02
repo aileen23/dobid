@@ -41,9 +41,13 @@
 						alert("아이디에 공백을 사용할수 없습니다.")
 					}
 					else {
-						alert("사용 가능한 아이디입니다.");
+						if (confirm("사용가능한 아이디입니다. 이 아이디를 사용하시겠습니까?")) {
 						$("#id").attr("readonly", true);
 						$("#checkid").fadeOut(500);
+						}
+						else {
+							return false;
+						}
 					}
 				},
 				error : function(e) {
@@ -72,9 +76,13 @@
 						alert("닉네임에 공백을 사용할수 없습니다.");
 					}
 					else {
-						alert("사용 가능한 닉네임 입니다.");
+						if (confirm("사용 가능한 닉네임 입니다. 이 닉네임을 사용하시겠습니까?")) {
 						$("#nickname").attr("readonly", true);
-						$("#checknickname").fadeOut(500);
+						$("#checknickname").fadeOut(500);							
+						}
+						else {
+							return false;
+						}
 					}
 				},
 				error : function(e) {

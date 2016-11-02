@@ -5,20 +5,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.dobid.beans.AuctionDTO;
 import com.dobid.beans.Auction_ChargeDTO;
 import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
+import com.dobid.beans.DelidDTO;
 import com.dobid.beans.MemberDTO;
 import com.dobid.beans.MessageDTO;
 import com.dobid.beans.Service_answerDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
-import oracle.net.jdbc.TNSAddress.AddressList;
 
 public class Mypage_DAO {
 
@@ -52,10 +54,14 @@ public class Mypage_DAO {
 		return null;
 	}
 
-	public List<AuctionDTO> basketSelect(String id) {
+	public List<AuctionDTO> basketSelect(String id,int start,int end) {
 		List<AuctionDTO> list = null;
 		try {
-			list = smc.queryForList("myprofile.basketSelect", id);
+			Map<String, Object> map = new HashMap<>();
+			map.put("start", start);
+			map.put("end", end);
+			map.put("member_id", id);
+			list = smc.queryForList("myprofile.basketSelect", map);
 			return list;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -139,10 +145,10 @@ public class Mypage_DAO {
 		return null;
 
 	}
-	public boolean deleteid(String id){
+	public boolean deleteid(DelidDTO delid){
 		
 		try {
-			smc.delete("myprofile.deleteid",id);
+			smc.update("myprofile.deleteid",delid);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -178,5 +184,16 @@ public class Mypage_DAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public int countlist (String id){
+		int num=0;
+		try {
+			num = (int) smc.queryForObject("myprofile.countlist",id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return num;
 	}
 }
