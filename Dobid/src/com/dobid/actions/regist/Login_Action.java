@@ -28,8 +28,9 @@ public class Login_Action extends Action implements HttpSessionBindingListener {
 		 */
 		LoginDTO dto = new LoginDTO();
 		Encryption enc = new Encryption("chlvlfgkschlvlfgks");
-		dto.setmember_id(request.getParameter("id"));
+		dto.setMember_id(request.getParameter("id"));
 		dto.setPass(enc.aesEncode(request.getParameter("pass")));
+		dto.setWithdrawal("사용중");
 
 		dobidDAO dao = new dobidDAO();
 		if (dao.login(dto) == null || dao.login(dto).equals("")) {
