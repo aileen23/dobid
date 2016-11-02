@@ -97,12 +97,13 @@ public class Admin_ono_Action extends Action {
 				request.setAttribute("adminonolist", adminonolist);
 
 			} else if (admin_ono_selecttext != null && catalogue != null) {
-				List<Service_answerDTO> admionoselectlist = null;
-				Service_answerDTO onoparam = new Service_answerDTO(admin_ono_selecttext, catalogue);
+				//List<Service_answerDTO> admionoselectlist = null;
+				Service_answerDTO onoparam =null;
+				onoparam = new Service_answerDTO(admin_ono_selecttext, catalogue);
 
-				admionoselectlist = dao.adminOnoSelectTitle(onoparam);
+				adminonolist = dao.adminOnoSelectTitle(onoparam);
 				
-				request.setAttribute("adminonolist", admionoselectlist);
+				request.setAttribute("adminonolist", adminonolist);
 
 			}
 

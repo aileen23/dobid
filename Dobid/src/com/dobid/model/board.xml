@@ -302,7 +302,7 @@
 	<select id="adminonoselect" resultClass="seriveanswerDTO" parameterClass="seriveanswerDTO">
 		select answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id
 		from service_answer
-		where categori=#categori# and title=#admin_ono_selecttext#
+		where categori=#categori# and title like '%'||#admin_ono_selecttext#||'%'
 		order by upload_date desc
 	</select>
 
