@@ -42,7 +42,6 @@ public class Admin_groupbuylist_Action extends Action {
 		System.out.println("admin_auction_hot_check : " + request.getParameter("admin_auction_hot_check"));
 
 		ActionForward forward = mapping.findForward("success");
-		// List<Service_reportDTO> adminreportlist = dao.adminReportSelectAll();
 		if (del == null) {
 			if (admin_auction_selecttext == null && catalogue == null) {
 				admin_auction_selecttext = "";

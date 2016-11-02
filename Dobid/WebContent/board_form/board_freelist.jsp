@@ -42,7 +42,7 @@
 <body>
 
 	<div class="container">
-		<br> <br> <br> <br> <br> <br> <br>
+		
 		<Br>
 		<br> <Br>
 		<form action="/Dobid/freeboard_list.do" method="POST">
@@ -100,7 +100,7 @@
 				</c:if>
 				<br>
 				<br>
-				<c:forEach begin="0" end="${totalPage }" var="i">
+				<c:forEach begin="1" end="${totalPage }" var="i">
        [<a href="freeboard_list.do?page=${ i }">${i }</a>]
     </c:forEach>
 			</div>

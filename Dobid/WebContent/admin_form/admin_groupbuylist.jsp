@@ -52,7 +52,7 @@
 			});
 </script>
 
-<title>관리자 경매리스트</title>
+<title>관리자 공동구매리스트</title>
 
 
 </head>
@@ -63,17 +63,16 @@
 	<br>
 	<br>
 	<div class="container">
-		<h3>경매물품관리</h3>
+		<h3>공동구매 물품관리</h3>
 		<hr>
+
+
+
 
 		<div class="form-group">
 			<form action="/Dobid/admin_auctionlist.do" method="POST">
-				<div class="col-sm-2 col-sm-offset-1">
-					<select class="form-control" name="catalogue">
-						<option value="auction">경매</option>
-						<option value="hotauction">핫경매</option>
-					</select>
-				</div>
+
+
 				<div class="col-sm-7">
 					<input type="text" class="form-control"
 						id="admin_auction_selecttext" name="admin_auction_selecttext"
@@ -96,17 +95,17 @@
 				<th>진행여부</th>
 				<th>등록시간</th>
 			</tr>
-			<c:forEach items="${adminauctionlist }" var="adminauctionlist">
+			<c:forEach items="${admingroupbuylist }" var="admingroupbuylist">
 				<tr class="list">
 
-					<td>${adminauctionlist.auction_board_num }</td>
-					<td>${adminauctionlist.title }</td>
-					<td>${adminauctionlist.contents }</td>
-					<td>${adminauctionlist.seller_id }</td>
-					<td>${adminauctionlist.categori }</td>
-					<td>${adminauctionlist.hot_check }</td>
-					<td>${adminauctionlist.bid_check }</td>
-					<td>${adminauctionlist.regist_date }</td>
+					<td>${admingroupbuylist.auction_board_num }</td>
+					<td>${admingroupbuylist.title }</td>
+					<td>${admingroupbuylist.contents }</td>
+					<td>${admingroupbuylist.seller_id }</td>
+					<td>${admingroupbuylist.categori }</td>
+					<td>${admingroupbuylist.hot_check }</td>
+					<td>${admingroupbuylist.buy_check }</td>
+					<td>${admingroupbuylist.regist_date }</td>
 
 
 

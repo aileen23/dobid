@@ -420,7 +420,7 @@
 	<!-- 관리자 경매물품 페이징 -->
 	<!-- 경매/핫물품 카운터 -->
 	<select id="adminauctionlistcount" resultClass="int" parameterClass="adminauctionDTO">
-		select count(*) from auction where title like '%'||#title#||'%'	and hot_check like #hot_check#
+		select count(*) from auction where title like '%'||#title#||'%'	and hot_check like #hot_check#||'%'
 	</select>
 
 
@@ -430,7 +430,7 @@
 		from (select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check, rownum rn
 		from (select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
 		from auction order by auction_board_num desc))
-		where rn between #start# and #end# and title like '%'||#title#||'%'	and hot_check like #hot_check#
+		where rn between #start# and #end# and title like '%'||#title#||'%'	and hot_check like #hot_check#||'%'
 	</select>
 	
 
@@ -442,9 +442,9 @@
 
 	<!-- 공동구매 페이지 나누기기기기기기기기기기 --> 
 	<select id="admingroupbuylistpage" resultClass="admingroupauctionDTO" parameterClass="java.util.Map">
-		select groupbuy_board_num,title,contents,seller_id,categori,hot_check,main_image_path,regist_date
-		from (select groupbuy_board_num,title,contents,seller_id,categori,hot_check,main_image_path,regist_date, rownum rn
-		from (select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date
+		select groupbuy_board_num,title,contents,seller_id,categori,hot_check,main_image_path,regist_date,buy_check
+		from (select groupbuy_board_num,title,contents,seller_id,categori,hot_check,main_image_path,regist_date,buy_check, rownum rn
+		from (select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date,buy_check
 		from groupbuy order by groupbuy_board_num desc))
 		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>
