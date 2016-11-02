@@ -12,7 +12,14 @@
 <script
    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
+	$(document).ready(function(){
+		$("#myqna").click(function(){
+			if (session.getAttribute("logincheck") == null) {
+				alert('로그인을 하셔야합니다.');
+				location.replace('/Dobid/login.do');
+			}
+		});
+	});
 
 </script>
 
@@ -228,7 +235,7 @@
     <div id="collapse12th" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12th">
       <div class="panel-body">
 			문의 내용과 답변은 아래의 경로를 통해 문의 내역을 확인하실 수 있습니다.<br>
-			*홈페이지> 마이페이지 > 문의내역 <a>바로가기</a>
+			*홈페이지> 마이페이지 > 문의내역 <a href="myprofile_qna.do" id="myqna">바로가기</a>
       </div>
     </div>
   </div>
@@ -270,8 +277,7 @@
 		
 		<hr>
 		<div style="margin-bottom: -10%; height: 10%" >
-		<footer> <%@ include file="/regist_form/footer.jsp"%>
-		</footer>
+		<footer> <%@ include file="/regist_form/footer.jsp"%></footer>
 		</div>
 
 </body>
