@@ -28,9 +28,12 @@ public class ReplyDAO {
        return false;
     }//insert
     
-    public boolean delete_freedom(int no){
+    public boolean delete_freedom(Reply_freedomDTO reply_freedom){
+    	System.out.println("»èÁ¦ ÇÁ¸®´ý");
+    	System.out.println(" no="+ reply_freedom.getNo());
+    	System.out.println(" name="+ reply_freedom.getName());
        try {
-		int t = smc.delete("reply.delete_freedom",no);
+		int t = smc.delete("reply.delete_freedom",reply_freedom);
 		   if(t==1)return true;
 	  } catch (SQLException e) {
 		e.printStackTrace();
@@ -80,9 +83,9 @@ public class ReplyDAO {
         return false;
      }//insert
      
-     public boolean delete_notice(int no){
+     public boolean delete_notice(Reply_noticeDTO reply_notice){
         try {
- 		int t = smc.delete("reply.delete_notice",no);
+ 		int t = smc.delete("reply.delete_notice", reply_notice);
  		   if(t==1)return true;
  	  } catch (SQLException e) {
  		e.printStackTrace();

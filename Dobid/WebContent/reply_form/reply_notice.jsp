@@ -63,8 +63,8 @@
        }	
     }//updateResult  
     
-    function deleteReply(no){//댓글 삭제요청
-       new ajax.xhr.Request('/Dobid/noticeboard_content_view_reply_delete.do','no='+no,deleteResult,'POST');	
+    function deleteReply(no, name){//댓글 삭제요청
+       new ajax.xhr.Request('/Dobid/noticeboard_content_view_reply_delete.do','no='+no+'&name=${logincheck}',deleteResult,'POST');	
     }
     function deleteResult(xhr){//삭제요청후 콜백
        if(xhr.readyState==4){

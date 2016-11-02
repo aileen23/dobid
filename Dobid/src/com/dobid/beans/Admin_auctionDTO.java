@@ -33,6 +33,17 @@ public class Admin_auctionDTO {
 	}
 
 
+
+
+
+
+	public Admin_auctionDTO(String title, String hot_check) {
+		super();
+		this.title = title;
+		this.hot_check = hot_check;
+	}
+
+
 	public int getAuction_board_num() {
 		return auction_board_num;
 	}

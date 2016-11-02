@@ -28,13 +28,12 @@ public class Board_noticelist_Action extends Action {
 		boardDAO dao = new boardDAO();
 
 		ActionForward forward = mapping.findForward("success");
-		List<NoticeboardDTO> noticelist = dao.noticeSelectAll();
+	
 		
 		if(notselect == null){
-		noticelist = dao.noticeSelectAll();
-		request.setAttribute("noticelist", noticelist);
-		forward = mapping.findForward("noticelist");
-
+			notselect="";
+		}
+		List<NoticeboardDTO> noticelist=null;
 		// 페이지 정보 얻어오기
 		String pageStr = request.getParameter("page");
 
@@ -47,7 +46,7 @@ public class Board_noticelist_Action extends Action {
 
 		int end = page * viewRowCnt;
 		int start = end - (viewRowCnt - 1);
-		int totalRecord = dao.NoticeCount();
+		int totalRecord = dao.NoticeCount(notselect);
 		System.out.println("totalRecord: " + totalRecord);
 		int totalPage = totalRecord / viewRowCnt;
 		if (totalRecord % viewRowCnt > 0)
@@ -55,7 +54,7 @@ public class Board_noticelist_Action extends Action {
 		request.removeAttribute("noticelist");
 		request.removeAttribute("page");
 		request.removeAttribute("totalPage");
-		noticelist = dao.NoticePage(start, end);
+		noticelist = dao.NoticePage(start, end,notselect);
 		request.setAttribute("noticelist", noticelist);// 4.
 															// 영역에
 															// 데이터
@@ -63,16 +62,10 @@ public class Board_noticelist_Action extends Action {
 		request.setAttribute("page", page);// 현재페이지
 		request.setAttribute("totalPage", totalPage);// 전체페이지
 		// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
-		return forward = mapping.findForward("success");
+	
 
-		}else if (notselect != null) {
-			List<NoticeboardDTO> noticeselectlist = null;
-			noticeselectlist = dao.noticeSelectAllTitle(notselect);
-			request.setAttribute("noticelist", noticeselectlist);
-
-		}
+	
 
 		return mapping.findForward("success");
 	}
-
 }

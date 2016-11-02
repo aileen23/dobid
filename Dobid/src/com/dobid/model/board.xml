@@ -22,7 +22,7 @@
 	</select>
 
 	<!-- 게시판 리스트보기(자유) -->
-	<select id="FreeSelectAll" resultClass="freeboardDTO">
+	<select id="FreeSelectAll" resultClass="freeboardDTO" >
 		select a.basic_board_num,a.member_id,a.title,a.cilck_count,a.upload_date,m.nickname
 		from freeboard a, member m where a.member_id=m.member_id 
 		order by a.basic_board_num desc
@@ -370,8 +370,8 @@
 
 	<!-- 관리자 신고하기 페이징 -->
 	<!-- 신고하기 카운터 -->
-	<select id="adminreportcount" resultClass="int">
-		select count(*) from service_report
+	<select id="adminreportcount" resultClass="int" parameterClass="String">
+		select count(*) from service_report where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 신고하기 페이지 나누기기기기기기기기기기 -->
@@ -380,15 +380,15 @@
 		from (select member_id,title,contents,image_path,upload_date, rownum rn
 		from (select member_id,title,contents,image_path,upload_date
 		from service_report order by upload_date desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>
 
 	
 	
 	<!-- 관리자 1대1 페이징 -->
 	<!-- 1대1 카운터 -->
-	<select id="adminonocount" resultClass="int">
-		select count(*) from service_answer
+	<select id="adminonocount" resultClass="int" parameterClass="seriveanswerDTO">
+		select count(*) from service_answer where title like '%'||#title#||'%' and categori like '%'||#categori#||'%'
 	</select>
 
 	<!-- 1대1 페이지 나누기기기기기기기기기기 -->
@@ -397,14 +397,14 @@
 		from (select  answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id, rownum rn
 		from (select  answer_date,answer_contents,upload_date,image_path,contents,categori,title,member_id
 		from service_answer order by upload_date desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%' and categori like '%'||#categori#||'%'
 	</select>
 
 
 	<!-- 관리자 회원관리 페이징 -->
 	<!-- 회원관리 카운터 -->
-	<select id="adminmemberdelcount" resultClass="int">
-		select count(*) from member
+	<select id="adminmemberdelcount" resultClass="int" parameterClass="String">
+		select count(*) from member where member_id like '%'||#member_id#||'%'
 	</select>
 
 	<!-- 회원관리 페이지 나누기기기기기기기기기기 --> 
@@ -413,32 +413,47 @@
 		from (select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount, rownum rn
 		from (select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
 		from member order by name desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and member_id like '%'||#member_id#||'%'
 	</select>
 
 	
 	<!-- 관리자 경매물품 페이징 -->
-	<!-- 경매물품 카운터 -->
-	<select id="adminauctionlistcount" resultClass="int">
-		select count(*) from auction
+	<!-- 경매/핫물품 카운터 -->
+	<select id="adminauctionlistcount" resultClass="int" parameterClass="adminauctionDTO">
+		select count(*) from auction where title like '%'||#title#||'%'	and hot_check like #hot_check#||'%'
 	</select>
 
 
-	<!-- 경매물품 페이지 나누기기기기기기기기기기 --> 
+	<!-- 경매/핫물품 페이지 나누기기기기기기기기기기 --> 
 	<select id="adminauctionlistpage" resultClass="adminauctionDTO" parameterClass="java.util.Map">
 		select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
 		from (select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check, rownum rn
 		from (select auction_board_num,title,contents,seller_id,categori,bid_check,main_image_path,regist_date,hot_check
 		from auction order by auction_board_num desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'	and hot_check like #hot_check#||'%'
 	</select>
 	
+
+	<!-- 공동구매 카운터 -->
+	<select id="admingroupbuylistcount" resultClass="int" parameterClass="String">
+		select count(*) from groupbuy where title like '%'||#title#||'%'
+	</select>
+
+
+	<!-- 공동구매 페이지 나누기기기기기기기기기기 --> 
+	<select id="admingroupbuylistpage" resultClass="admingroupauctionDTO" parameterClass="java.util.Map">
+		select groupbuy_board_num,title,contents,seller_id,categori,hot_check,main_image_path,regist_date,buy_check
+		from (select groupbuy_board_num,title,contents,seller_id,categori,hot_check,main_image_path,regist_date,buy_check, rownum rn
+		from (select groupbuy_board_num,title,contents,'admin' seller_id,categori,'공동구매' hot_check,main_image_path,regist_date,buy_check
+		from groupbuy order by groupbuy_board_num desc))
+		where rn between #start# and #end# and title like '%'||#title#||'%'
+	</select>
 	
 	
 	<!-- 관리자 게시판 페이징 -->
 	<!-- 공지 게시판 카운터 -->
-	<select id="adminnoticelistcount" resultClass="int">
-		select count(*) from noticeboard
+	<select id="adminnoticelistcount" resultClass="int" parameterClass="String">
+		select count(*) from noticeboard where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 공지게시판 페이지 나누기기기기기기기기기기 --> 
@@ -447,15 +462,15 @@
 		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date, rownum rn
 		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date
 		from noticeboard order by basic_board_num desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>
 	
 	
 	
 	<!-- 관리자 게시판 페이징 -->
 	<!-- 자유 게시판 카운터 -->
-	<select id="adminfreelistcount" resultClass="int">
-		select count(*) from freeboard
+	<select id="adminfreelistcount" resultClass="int" parameterClass="String">
+		select count(*) from freeboard where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 자유게시판 페이지 나누기기기기기기기기기기 --> 
@@ -468,13 +483,13 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		       where a.member_id=m.member_id
 		       order by a.upload_date desc)
 			)
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>
 
 	<!-- 유저게시판 페이징 -->
 	<!-- 유저공지 게시판 카운터 -->
-	<select id="noticelistcount" resultClass="int">
-		select count(*) from noticeboard
+	<select id="noticelistcount" resultClass="int" parameterClass="String">
+		select count(*) from noticeboard where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 유저공지게시판 페이지 나누기기기기기기기기기기 --> 
@@ -483,13 +498,13 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date , rownum rn
 		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date 
 		from noticeboard order by basic_board_num desc))
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>
 	
 	<!-- 유저게시판 페이징 -->
 	<!-- 유저자유게시판 카운터 -->
-	<select id="freelistcount" resultClass="int">
-		select count(*) from freeboard
+	<select id="freelistcount" resultClass="int" parameterClass="String">
+		select count(*) from freeboard where title like '%'||#title#||'%'
 	</select>
 
 	<!-- 유저자유게시판 페이지 나누기기기기기기기기기기 --> 
@@ -501,7 +516,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		       where a.member_id=m.member_id
 		       order by a.basic_board_num desc)
 			)
-		where rn between #start# and #end#
+		where rn between #start# and #end# and title like '%'||#title#||'%'
 		
 		
 	</select>

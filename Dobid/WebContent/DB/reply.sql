@@ -17,6 +17,7 @@ create sequence reply_freedom_seq
        nocycle
        nocache;
        
+-- 공지사항 
  drop table reply_notice;
 create table  reply_notice(
    no       number primary key,   -- ��� ��ȣ
@@ -26,13 +27,16 @@ create table  reply_notice(
 );
        
 
--- 공지사항 
 drop sequence reply_notice_seq;
 create sequence reply_notice_seq
        start with 1
        increment by 1
        nocycle
        nocache;
+       
+       
+       
+       
        
        select r.no, r.name, r.content, r.num, m.nickname
        from  reply_freedom r, member m
@@ -57,4 +61,8 @@ select r.no, r.name, r.content, r.num, m.nickname
        where m.member_id = r.name and num = 40
        order by no;
 
+       select * from REPLY_FREEDOM;
+       
+              delete  reply_freedom
+       where no=5 and name=123456;
 

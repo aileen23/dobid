@@ -70,9 +70,8 @@
 			<form action="/Dobid/admin_auctionlist.do" method="POST">
 				<div class="col-sm-2 col-sm-offset-1">
 					<select class="form-control" name="catalogue">
-						<option value="auction">경매</option>
-						<option value="hotauction">핫경매</option>
-						<option value="groupauction">공동구매</option>
+						<option value="경매">경매</option>
+						<option value="핫경매">핫경매</option>
 					</select>
 				</div>
 				<div class="col-sm-7">
@@ -133,7 +132,7 @@
 				<br> <br>
 
 
-				<c:forEach begin="0" end="${totalPage }" var="i">
+				<c:forEach begin="1" end="${totalPage }" var="i">
        [<a href="admin_auctionlist.do?page=${ i }">${i }</a>]
     </c:forEach>
 

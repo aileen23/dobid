@@ -50,10 +50,10 @@ public class boardDAO {
 	
 	///////// 공지사항 관리 페이징 메소드
 
-	public int NoticeCount() {
+	public int NoticeCount(String title) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.noticelistcount");
+			cnt = (int) smc.queryForObject("board.noticelistcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -61,12 +61,13 @@ public class boardDAO {
 
 	}
 
-	public List<NoticeboardDTO> NoticePage(int start, int end) {
+	public List<NoticeboardDTO> NoticePage(int start, int end,String title) {
 		List<NoticeboardDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end", Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.noticelistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -77,10 +78,10 @@ public class boardDAO {
 
 	///////// 자유게시판 유저 페이징 메소드
 
-	public int FreeCount() {//자유 페이징카운터
+	public int FreeCount(String title) {//자유 페이징카운터
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.freelistcount");
+			cnt = (int) smc.queryForObject("board.freelistcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -88,12 +89,13 @@ public class boardDAO {
 
 	}
 
-	public List<FreeboardDTO> FreePage(int start, int end) {
+	public List<FreeboardDTO> FreePage(int start, int end, String title) {
 		List<FreeboardDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end", Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.freelistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -622,23 +624,25 @@ public class boardDAO {
 
 	///////// 신고하기 페이징 메소드
 
-	public int adminReportCount() {
+	public int adminSelectReportCount(String title) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.adminreportcount");
+			cnt = (int) smc.queryForObject("board.adminreportcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return cnt;
-
+		
 	}
 
-	public List<Service_reportDTO> adminReportPage(int start, int end) {
+	public List<Service_reportDTO> adminReportPage(int start, int end, String title) {
 		List<Service_reportDTO> list = null;
+		Integer.toString(start);
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end",Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.adminreportpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -648,10 +652,10 @@ public class boardDAO {
 
 	///////// 1대1 페이징 메소드
 
-	public int adminOnoCount() {
+	public int adminOnoCount(Service_answerDTO onoparam) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.adminonocount");
+			cnt = (int) smc.queryForObject("board.adminonocount",onoparam);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -659,12 +663,14 @@ public class boardDAO {
 
 	}
 
-	public List<Service_answerDTO> adminOnoPage(int start, int end) {
+	public List<Service_answerDTO> adminOnoPage(int start, int end,String title,String categori) {
 		List<Service_answerDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start",Integer.toString(start));
+			map.put("end",Integer.toString(end));
+			map.put("title", title);
+			map.put("categori", categori);
 			list = smc.queryForList("board.adminonopage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -674,10 +680,10 @@ public class boardDAO {
 
 	///////// 회원관리 페이징 메소드
 
-	public int adminMemberDelCount() {
+	public int adminMemberDelCount(String member_id) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.adminmemberdelcount");
+			cnt = (int) smc.queryForObject("board.adminmemberdelcount",member_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -685,12 +691,13 @@ public class boardDAO {
 
 	}
 
-	public List<MemberDTO> adminMemberDelPage(int start, int end) {
+	public List<MemberDTO> adminMemberDelPage(int start, int end,String member_id) {
 		List<MemberDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end", Integer.toString(end));
+			map.put("member_id", member_id);
 			list = smc.queryForList("board.adminmemberdelpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -698,12 +705,12 @@ public class boardDAO {
 		return list;
 	}
 
-	///////// 경매물품 관리 페이징 메소드
+	///////// 경매/핫 관리 페이징 메소드
 
-	public int adminAuctionCount() {
+	public int adminAuctionCount(Admin_auctionDTO auctionparam) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.adminauctionlistcount");
+			cnt = (int) smc.queryForObject("board.adminauctionlistcount",auctionparam);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -711,13 +718,41 @@ public class boardDAO {
 
 	}
 
-	public List<Admin_auctionDTO> adminAuctionPage(int start, int end) {
+	public List<Admin_auctionDTO> adminAuctionPage(int start, int end,String title,String hot_check) {
 		List<Admin_auctionDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start",Integer.toString(start));
+			map.put("end",Integer.toString(end));
+			map.put("title", title);
+			map.put("hot_check", hot_check);
 			list = smc.queryForList("board.adminauctionlistpage", map);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	///////// 공동구매 관리 페이징 메소드
+	
+	public int adminGroupBuyCount(String title) {
+		int cnt = 0;
+		try {
+			cnt = (int) smc.queryForObject("board.admingroupbuylistcount",title);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cnt;
+		
+	}
+	
+	public List<Admin_groupBuyDTO> adminGroupBuyPage(int start, int end,String title) {
+		List<Admin_groupBuyDTO> list = null;
+		try {
+			Map<String, String> map = new HashMap<>();
+			map.put("start",Integer.toString(start));
+			map.put("end",Integer.toString(end));
+			map.put("title", title);
+			list = smc.queryForList("board.admingroupbuylistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -726,10 +761,10 @@ public class boardDAO {
 
 	///////// 공지사항 관리 페이징 메소드
 
-	public int adminNoticeCount() {
+	public int adminNoticeCount(String title) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.adminnoticelistcount");
+			cnt = (int) smc.queryForObject("board.adminnoticelistcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -737,12 +772,13 @@ public class boardDAO {
 
 	}
 
-	public List<Admin_noticeDTO> adminNoticePage(int start, int end) {
+	public List<Admin_noticeDTO> adminNoticePage(int start, int end, String title) {
 		List<Admin_noticeDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end",Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.adminnoticelistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -752,10 +788,10 @@ public class boardDAO {
 
 	///////// 자유게시판 관리 페이징 메소드
 
-	public int adminFreeCount() {
+	public int adminFreeCount(String title) {
 		int cnt = 0;
 		try {
-			cnt = (int) smc.queryForObject("board.adminfreelistcount");
+			cnt = (int) smc.queryForObject("board.adminfreelistcount",title);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -763,12 +799,13 @@ public class boardDAO {
 
 	}
 
-	public List<Admin_freeDTO> adminFreePage(int start, int end) {
+	public List<Admin_freeDTO> adminFreePage(int start, int end,String title) {
 		List<Admin_freeDTO> list = null;
 		try {
-			Map<String, Integer> map = new HashMap<>();
-			map.put("start", start);
-			map.put("end", end);
+			Map<String, String> map = new HashMap<>();
+			map.put("start", Integer.toString(start));
+			map.put("end", Integer.toString(end));
+			map.put("title", title);
 			list = smc.queryForList("board.adminfreelistpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();

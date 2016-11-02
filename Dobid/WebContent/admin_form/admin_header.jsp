@@ -31,15 +31,19 @@
 			<a class="navbar-brand" href="main.do" id="font1">Do!bid</a>
 		</div>
 		<ul class="nav navbar-nav">
-		<li class="dropdown"><a class="dropdown-toggle"
+			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#" id="Auction">게시판관리<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" id="dropAuction">
 					<li><a href="/Dobid/admin_noticeboard.do">공지사항</a></li>
 					<li><a href="/Dobid/admin_freeboard.do">자유게시판</a></li>
 				</ul></li>
-			<li id="navbar_gong"><a href="admin_auctionlist.do"
-				id="gongdong">경매물품관리</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#" id="Auction">경매물품관리<span class="caret"></span></a>
+				<ul class="dropdown-menu" id="dropAuction">
+					<li><a href="/Dobid/admin_auctionlist.do">일반/핫경매</a></li>
+					<li><a href="/Dobid/admin_groupbuylist.do">공동구매</a></li>
+				</ul></li>
 			<li id="navbar_gong"><a href="admin_ono.do" id="gongdong">1대1문의보기</a></li>
 			<li id="navbar_gong"><a href="admin_report.do" id="gongdong">신고목록</a></li>
 			<li id="navbar_gong"><a href="admin_memberdel.do" id="gongdong">회원관리</a></li>

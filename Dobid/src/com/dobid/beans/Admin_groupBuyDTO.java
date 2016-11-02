@@ -7,7 +7,7 @@ public class Admin_groupBuyDTO {
 	private String contents;
 	private String seller_id;
 	private String categori;
-	private String bid_check;
+	private String buy_check;
 	private String main_image_path;
 	private String regist_date;
 	private String hot_check;
@@ -21,17 +21,25 @@ public class Admin_groupBuyDTO {
 
 
 	public Admin_groupBuyDTO(int auction_board_num, String title, String contents, String seller_id, String categori,
-			String bid_check, String main_image_path, String regist_date, String hot_check) {
+			String buy_check, String main_image_path, String regist_date, String hot_check) {
 		super();
 		this.auction_board_num = auction_board_num;
 		this.title = title;
 		this.contents = contents;
 		this.seller_id = seller_id;
 		this.categori = categori;
-		this.bid_check = bid_check;
+		this.buy_check = buy_check;
 		this.main_image_path = main_image_path;
 		this.regist_date = regist_date;
 		this.hot_check = hot_check;
+	}
+
+
+
+	public Admin_groupBuyDTO(String contents, String categori) {
+		super();
+		this.contents = contents;
+		this.categori = categori;
 	}
 
 
@@ -96,14 +104,14 @@ public class Admin_groupBuyDTO {
 
 
 
-	public String getBid_check() {
-		return bid_check;
+	public String getbuy_check() {
+		return buy_check;
 	}
 
 
 
-	public void setBid_check(String bid_check) {
-		this.bid_check = bid_check;
+	public void setbuy_check(String buy_check) {
+		this.buy_check = buy_check;
 	}
 
 
