@@ -3,6 +3,7 @@ package com.dobid.beans;
 import java.sql.Date;
 
 public class AuctionDTO {
+
 	private int auction_board_num;
 	private String seller_id;
 	private String title;
@@ -22,6 +23,14 @@ public class AuctionDTO {
 	public AuctionDTO() {
 	}
 
+	public AuctionDTO(String seller_id, String title, String end_date, int highest_price, String highest_price_id) {
+		super();
+		this.seller_id = seller_id;
+		this.title = title;
+		this.end_date = end_date;
+		this.highest_price = highest_price;
+		this.highest_price_id = highest_price_id;
+	}
 	public AuctionDTO(int auction_board_num, String seller_id, String title,
 			String contents, String main_image_path, String explain_image_path,
 			int start_amount, String categori, int amount, String end_date,

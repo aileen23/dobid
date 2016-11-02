@@ -196,4 +196,32 @@ public class Mypage_DAO {
 		}
 		return num;
 	}
+	public void auctionend(String num){
+		AuctionDTO dto = new AuctionDTO();
+		try {
+			smc.update("myprofile.auctionend",num); //경매중->경매종료
+			dto= (AuctionDTO) smc.queryForObject("myprofile.endselect",num); //글 select
+			int price=dto.getHighest_price();
+			String buyid = dto.getHighest_price_id();
+			String sellerid = dto.getSeller_id();
+			
+			Map<String,Object> map = new HashMap<>();
+			map.put("member_id", buyid);
+			map.put("charge_will_amount", price);
+			map.put("charge_type", dto.getTitle());
+			smc.insert("myprofile.chargelistadd",map); //구매기록남기기
+			
+			Map<String,Object> map2 = new HashMap<>();
+			map.put("member_id", sellerid);
+			map.put("charge_will_amount", price);
+			map.put("charge_type", dto.getTitle());
+			smc.insert("myprofile.chargelistadd",map2); //판매기록남기기
+			
+			smc.update("myprofile.auctionpay",price);//구매금액차감
+			smc.update("myprofile.auctionsell",price);//판매금액입금
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

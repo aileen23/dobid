@@ -6,9 +6,6 @@
 	<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.Groupbuy_participantDTO" />
 	<typeAlias alias="groupbuy_reviewDTO" type="com.dobid.beans.Groupbuy_reviewDTO" />
 	<typeAlias alias="groupbuyDTO" type="com.dobid.beans.GroupbuyDTO" />
-
-
-
 	<typeAlias alias="auctionDTO" type="com.dobid.beans.AuctionDTO" />
 	<typeAlias alias="memberDTO" type="com.dobid.beans.MemberDTO" />
 	<typeAlias alias="messageDTO" type="com.dobid.beans.MessageDTO" />
@@ -69,7 +66,7 @@
 	</select>
 	
 	<update id="deleteid" parameterClass="delidDTO">
-	update member set withdrawal = #withdrawal# where member_id = #member_id#
+	update member set withdrawal = #withdrawal#, delete_date = (sysdate+(1/24)) where member_id = #member_id#
 	</update>
 	
 	<select id="receivelist" parameterClass="String" resultClass="messageDTO">
@@ -92,6 +89,28 @@
 	<select id="countlist" parameterClass="String" resultClass="java.lang.Integer">
 		select count(*) from basket where member_id=#member_id#
 	</select>
+	
+	<!-- 경매종료 -->
+	<update id="auctionend" parameterClass="String">
+		update auction set bid_check='종료' where auction_board_num=#auction_board_num#
+	</update>
+	<select id="endselect" parameterClass="String" resultClass="auctionDTO">
+		select title,highest_price,end_date,highest_price_id,bid_check,seller_id
+		from auction
+		where auction_board_num=#auction_board_num#
+	</select>
+	<update id="auctionpay" parameterClass="String">
+		update member set charging_amount=-#charging_amount# where member_id=#member_id#
+	</update>
+	
+	<update id="auctionsell" parameterClass="String">
+		update member set charging_amount=+#charging_amount# where member_id=#member_id#
+	</update>
+	
+	<insert id="chargelistadd" parameterClass="java.util.Map">
+		insert into charge(member_id,charge_will_amount,charge_date,charge_type,charge_check,charge_before_amount)
+		values(#member_id#,#charge_will_amount#,sysdate,#charge_type#,1,(select charging_amount from member where member_id=#member_id#))
+	</insert>
 </sqlMap>
 
 
