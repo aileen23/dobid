@@ -255,7 +255,7 @@
 		<!-- 관리자 공동구매 게시글 (박종민) -->
 
 
-		<action path="admin_groupbuylist.do" type="com.dobid.actions.admin.Admin_groupbuylist_Action">
+		<action path="admin_groupbuylist" type="com.dobid.actions.admin.Admin_groupbuylist_Action">
 			<forward name="success" path="/admin_form/admin_groupbuylist.jsp"></forward>
 		</action>
 		<!-- 관리자 1대1대화 (박종민) -->
