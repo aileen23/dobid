@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt"%>
 <jsp:useBean id="now" class="java.util.Date"/>
+<!--<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>-->
 <!DOCTYPE html>
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
@@ -10,17 +11,17 @@
 <title></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>
 <script type="text/javascript">
 $(function(){
-	var sysdate
 	$("#auctionEnd").click(function(){
 		var enddate="${auctionlist.end_date}".replace(/-/g, "");
-		var nowdate=now.replace(/-/g, "");
+		var nowdate="${now}".replace(/-/g, "");
 		
+		console.log(enddate);
+		console.log(nowdate);
 		if(nowdate-enddate>0){
 			$.ajax({
-				url:'/',
+				url:'/auctionend.do',
 				data:{auction_board_num:"${auctionlist.auction_board_num}" },
 				type:'POST',
 				success: alert("경매가 종료되었습니다.")
@@ -45,7 +46,6 @@ $(function(){
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
-	
 	<div class="container">
 		<c:forEach items="${list }" var="saleslist">
 		<div class="panel panel-default row">
