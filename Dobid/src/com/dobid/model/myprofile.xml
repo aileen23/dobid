@@ -69,7 +69,7 @@
 	</select>
 	
 	<update id="deleteid" parameterClass="delidDTO">
-	update member set member_id = #member_id, withdrawal = #withdrawal#
+	update member set withdrawal = #withdrawal# where member_id = #member_id#
 	</update>
 	
 	<select id="receivelist" parameterClass="String" resultClass="messageDTO">

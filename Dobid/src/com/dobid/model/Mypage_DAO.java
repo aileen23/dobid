@@ -21,7 +21,6 @@ import com.dobid.beans.Service_answerDTO;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import iba.SqlMapConfig;
-import oracle.net.jdbc.TNSAddress.AddressList;
 
 public class Mypage_DAO {
 
