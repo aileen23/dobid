@@ -14,7 +14,8 @@
 
 <script type="text/javascript"
 	src="/Dobid/mypage_form/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
-
+<script type="text/javascript">
+</script>
 
 </head>
 
