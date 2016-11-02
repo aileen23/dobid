@@ -14,6 +14,7 @@ import com.dobid.beans.Auction_ChargeDTO;
 import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
+import com.dobid.beans.DelidDTO;
 import com.dobid.beans.MemberDTO;
 import com.dobid.beans.MessageDTO;
 import com.dobid.beans.Service_answerDTO;
@@ -145,10 +146,10 @@ public class Mypage_DAO {
 		return null;
 
 	}
-	public boolean deleteid(String id){
+	public boolean deleteid(DelidDTO delid){
 		
 		try {
-			smc.delete("myprofile.deleteid",id);
+			smc.update("myprofile.deleteid",delid);
 			return true;
 		} catch (SQLException e) {
 			e.printStackTrace();

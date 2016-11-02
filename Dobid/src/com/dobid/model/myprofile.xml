@@ -17,6 +17,7 @@
 	<typeAlias alias="auction_ChargeDTO" type="com.dobid.beans.Auction_ChargeDTO"/>
 	<typeAlias alias="basketDTO" type="com.dobid.beans.BasketDTO" />
 	<typeAlias alias="service_answerDTO2" type="com.dobid.beans.Service_answerDTO" />
+	<typeAlias alias="delidDTO" type="com.dobid.beans.DelidDTO"/>
 	<select id="select" parameterClass="String" resultClass="memberDTO">
 		select member_id, name,  pass,  phone,  email,  address, nickname,  introduction,  birthday, charging_amount
 		from member
@@ -30,8 +31,8 @@
 	
 	<select id="basketSelect" parameterClass="java.util.Map" resultClass="auctionDTO">
 		select auction_board_num, main_image_path, title, highest_price, end_date, hot_check
-			from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check rownum rn
-					from (select a.auction_board_num,a.main_image_path,a.title,a.highest_price,a.end_date,a.hot_check
+			from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check, rownum rn
+					from (select auction_board_num,main_image_path,title,highest_price,end_date,hot_check
 							from auction a, basket b
 							where a.auction_board_num=b.board_num and b.member_id=#member_id#)
 					)
@@ -67,10 +68,9 @@
 		where member_id=#member_id#
 	</select>
 	
-	<delete id="deleteid" parameterClass="String" >
-		delete from member
-		where member_id=#member_id#
-	</delete>
+	<update id="deleteid" parameterClass="delidDTO">
+	update member set member_id = #member_id, withdrawal = #withdrawal#
+	</update>
 	
 	<select id="receivelist" parameterClass="String" resultClass="messageDTO">
 		select title,contents,regist_date,send_id
