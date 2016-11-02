@@ -36,7 +36,7 @@
    
    <!--  공지사항 -->
       <insert id="add_notice" parameterClass="reply_notice">
-       insert into  reply_freedom values (reply_notice_seq.nextval, #name#, #content#, #num#)
+       insert into  reply_notice values (reply_notice_seq.nextval, #name#, #content#, #num#)
    </insert>
    
    <delete id="delete_notice" parameterClass="int">
@@ -58,7 +58,7 @@
    
    <select id="findAll_notice"  resultClass="reply_notice">
        select r.no, r.name, r.content, r.num, m.nickname
-       from  reply_freedom r, member m
+       from  reply_notice r, member m
        where m.member_id = r.name and num = #num#
        order by no
    </select>
