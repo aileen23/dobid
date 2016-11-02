@@ -10,6 +10,10 @@ public class Admin_memberAskDelListDTO {
 	private String withdrawal;
 	private String delete_date;
 
+	public Admin_memberAskDelListDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Admin_memberAskDelListDTO(String member_id, String name, String phone, String email, String birthday,
 			int charging_amount, String withdrawal, String delete_date) {
 		super();

@@ -534,7 +534,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		from (select member_id,name,phone,email,birthday,charging_amount,withdrawal,delete_date, rownum rn
 		from (select member_id,name,phone,email,birthday,charging_amount,withdrawal,delete_date
 		from member order by delete_date desc))
-		where rn between #start# and #end# and member_id like '%'||#member_id#||'%' and withdrawal='탈퇴대기중'
+		where rn between #start# and #end# and member_id like '%'||#member_id#||'%' and withdrawal=#withdrawal#
 	</select>
 	
 	<!-- 탈퇴요청회원 업데이트-->
