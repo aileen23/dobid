@@ -109,18 +109,19 @@
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="admin_ono.do?page=${ page-1 }">이전</a>
+					<a href="admin_ono.do?page=${ page-1 }&catalogue=${catalogue}&admin_ono_selecttext=${select}">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="admin_ono.do?page=${ page+1 }">다음</a>
+					<a href="admin_ono.do?page=${ page+1 }&catalogue=${catalogue}&admin_ono_selecttext=${select}">다음</a>
 				</c:if>
 				<br>
-				<br>
-				<c:forEach begin="1" end="${totalPage }" var="i">
+				<br><c:if test="${totalPage >1}">
+				<c:forEach begin="1" end="${totalPage }&catalogue=${catalogue}&admin_ono_selecttext=${select}" var="i">
        [<a href="admin_ono.do?page=${ i }">${i }</a>]
     </c:forEach>
+    </c:if>
 			</div>
 		</div>
 	</div>

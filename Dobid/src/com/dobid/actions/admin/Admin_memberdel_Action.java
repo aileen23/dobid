@@ -61,11 +61,14 @@ public class Admin_memberdel_Action extends Action {
 			request.removeAttribute("adminmemberdellist");
 			request.removeAttribute("page");
 			request.removeAttribute("totalPage");
+			request.removeAttribute("select");
 			adminmemberdellist = dao.adminMemberDelPage(start, end, admin_memberdel_selecttext);
 			request.setAttribute("adminmemberdellist", adminmemberdellist);// 4.
 																			// 영역에
 																			// 데이터
 																			// 저장
+		
+			request.setAttribute("select", admin_memberdel_selecttext);// 현재페이지
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
 			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
