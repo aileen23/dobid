@@ -53,6 +53,7 @@ $(document).ready(function(){
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+	<script src="/Dobid/admin_form/js/admin_upload.js" type="text/javascript"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -114,21 +115,20 @@ $(document).ready(function(){
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+				<label for="inputFile" class="col-sm-4 control-label ">첨부파일</label>
 
 				<div class="filebox col-sm-5">
-					<label for="notice_file">첨부파일</label> <input type="file"
-						name="notice_file" id="notice_file" accept="image/*" capture="camera"
+					<label for="notice_file" class="text-center">첨부파일</label>
+					<input type="file" name="notice_file" id="notice_file" accept="image/*" capture="camera"
 						onchange="getThumbnailPrivew(this,$('#notice_img'))" /> <br> <br>
-					<div id="notice_img"
-						style="width: 100%; max-width: 100%; display: none;"></div>
+					<div id="notice_img" style="width: 100%; max-width: 100%; display: none;"></div>
 				</div>
 			</div>
 
 
 
 
-		<div class="col-sm-offset-4 ">
+		<div class="col-sm-offset-1 ">
 			<input type="submit" class="button button5 btn-default" id="check" value="글쓰기">
 			<button class="button button5 btn-default" id="pageback">취소</button>
 		</div>

@@ -75,9 +75,9 @@
 		<h3>1대1문의보기</h3>
 		<hr>
 
-		<div class="form-group">
+		<div class="form-group col-sm-8" style="float: right;">
 			<form action="/Dobid/admin_ono.do" method="POST">
-				<div class="col-sm-2 col-sm-offset-1">
+				<div class="col-sm-4">
 					<select class="form-control" name="catalogue">
 						<option value="구매관련">구매관련</option>
 						<option value="판매관련">판매관련</option>
@@ -92,39 +92,40 @@
 
 				</div>
 				<button class="button button5 btn-default" id="admin_ono_select"
-					name="admin_ono_select">검색</button>
+					name="admin_ono_select" style="float: right;">검색</button>
 			</form>
 		</div>
-		<table class="table table-bordered">
+		<table class="table table-bordered" style="table-layout:fixed">
 
 			<tr>
 
-				<th>제목</th>
-				<th>작성자</th>
-				<th>구분</th>
-				<th>내용</th>
-				<th>이미지</th>
-				<th>시간</th>
-				<th>답변</th>
+				<th style="text-align:center; width: 10%; text-align: ">제목</th>
+				<th style="text-align:center; width: 10%">작성자</th>
+				<th style="text-align:center; width: 10%">구분</th>
+				<th style="text-align:center; width: 25%">내용</th>
+				<th style="text-align:center; width: 10%">이미지</th>
+				<th style="text-align:center; width: 15%">시간</th>
+				<th style="text-align:center;  width: 20%">답변</th>
 
 			</tr>
 			<c:forEach items="${adminonolist }" var="adminonolist">
 				<tr class="list">
 
-					<td>${adminonolist.title }</td>
-					<td>${adminonolist.member_id}</td>
-					<td>${adminonolist.categori}</td>
-					<td>${adminonolist.contents}</td>
-					<td>${adminonolist.image_path}</td>
-					<td>${adminonolist.upload_date}</td>
-					<td>${adminonolist.answer_contents}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${adminonolist.title }</td>
+					<td style="text-align:center;">${adminonolist.member_id}</td>
+					<td style="text-align:center;">${adminonolist.categori}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden;">${adminonolist.contents}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden;">${adminonolist.image_path}</td>
+					<td style="text-align:center;">${adminonolist.upload_date}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${adminonolist.answer_contents}</td>
 				</tr>
 			</c:forEach>
 
 		</table>
 
 		<div class="form-group">
-			<div class="col-sm-7">
+			<div>
+			<center>
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
@@ -145,6 +146,7 @@
        [<a href="admin_ono.do?page=${ i }">${i }</a>]
     </c:forEach>
 				</c:if>
+			</center>
 			</div>
 		</div>
 	</div>
@@ -154,11 +156,11 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 60%; height: 70%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
+			style="background-color: white; width: 700px; height: 600px; margin-left: 30%; margin-top: 10%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_ono.do"
 				method="POST">
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-5">
 						<input type="text" class="form-control"
 							name="admin_ono_view_title" id="admin_ono_view_title"
 							style="margin-top: 20px;" value="asd" readOnly>
@@ -167,7 +169,7 @@
 				</div>
 				<div class="form-group">
 
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-6">
 						<input type="text" class="form-control"
 							id="admin_ono_view_member_id" name="admin_ono_view_member_id"
 							readOnly>
@@ -175,7 +177,7 @@
 				</div>
 				<div class="form-group">
 
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-6">
 						<input type="text" class="form-control"
 							id="admin_ono_view_categori" name="admin_ono_view_categori"
 							readOnly>
@@ -184,13 +186,13 @@
 
 
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-6">
 						<input type="image" src="../image/dobid.png"
 							id="admin_ono_view_img" name="admin_ono_view_img" readOnly>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-6">
 						<textarea class="form-control " id="admin_ono_view_contents"
 							name="admin_ono_view_contents" style="height: 100px" readOnly></textarea>
 					</div>
@@ -199,7 +201,7 @@
 
 
 
-				<div class="col-sm-offset-4 col-sm-5">
+				<div class="col-sm-offset-3 col-sm-2">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input

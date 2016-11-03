@@ -117,7 +117,8 @@
 		
 		
 		<div class="form-group">
-			<div class="col-sm-7">
+			<div>
+				<center>
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
@@ -131,9 +132,10 @@
 				<br>
 				<br><c:if test="${totalPage >1}">
 				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="admin_noticeboard.do?page=${ i }&admin_boardselecttext=${select}">${i }</a>]
-    </c:forEach>
-    </c:if>
+       			[<a href="admin_noticeboard.do?page=${ i }&admin_boardselecttext=${select}">${i }</a>]
+    			</c:forEach>
+    			</c:if>
+    			</center>
 			</div>
 		</div>
 	</div>

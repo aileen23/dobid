@@ -95,31 +95,31 @@
 			</form>
 		</div>
 
-		<table class="table table-bordered" style="margin-top: 50px">
+		<table class="table table-bordered" style="margin-top: 50px; table-layout: fixed;">
 
 			<tr>
-				<th>글번호</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>판매자아이디</th>
-				<th>구분</th>
-				<th>유형</th>
-				<th>진행여부</th>
-				<th>이미지</th>
-				<th>등록시간</th>
+				<th style="text-align:center; width: 8%">글번호</th>
+				<th style="text-align:center; width: 10%">제목</th>
+				<th style="text-align:center; width: 23%">내용</th>
+				<th style="text-align:center; width: 10%">판매자아이디</th>
+				<th style="text-align:center; width: 8%">구분</th>
+				<th style="text-align:center; width: 8%">유형</th>
+				<th style="text-align:center; width: 8%">진행여부</th>
+				<th style="text-align:center; width: 10%">이미지</th>
+				<th style="text-align:center; width: 15%">등록시간</th>
 			</tr>
 			<c:forEach items="${adminauctionlist }" var="adminauctionlist">
 				<tr class="list">
 
-					<td>${adminauctionlist.auction_board_num }</td>
-					<td>${adminauctionlist.title }</td>
-					<td>${adminauctionlist.contents }</td>
-					<td>${adminauctionlist.seller_id }</td>
-					<td>${adminauctionlist.categori }</td>
-					<td>${adminauctionlist.hot_check }</td>
-					<td>${adminauctionlist.bid_check }</td>
-					<td>${adminauctionlist.main_image_path }</td>
-					<td>${adminauctionlist.regist_date }</td>
+					<td style="text-align:center;">${adminauctionlist.auction_board_num }</td>
+					<td style="text-overflow:ellipsis; overflow:hidden;">${adminauctionlist.title }</td>
+					<td style="text-overflow:ellipsis; overflow:hidden;">${adminauctionlist.contents }</td>
+					<td style="text-align:center;">${adminauctionlist.seller_id }</td>
+					<td style="text-align:center;">${adminauctionlist.categori }</td>
+					<td style="text-align:center;">${adminauctionlist.hot_check }</td>
+					<td style="text-align:center;">${adminauctionlist.bid_check }</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${adminauctionlist.main_image_path }</td>
+					<td style="text-align:center;">${adminauctionlist.regist_date }</td>
 
 
 
@@ -168,11 +168,11 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 50%; height: 70%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
+			style="background-color: white; width: 700px; height: 680px; margin-left: 30%; margin-top: 5%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do"
 				method="POST">
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control" name="admin_auction_title"
 							id="admin_auction_title" style="margin-top: 20px;" readOnly>
 
@@ -180,7 +180,7 @@
 				</div>
 				<div class="form-group">
 
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							id="admin_auction_view_userid" name="admin_auction_view_userid"
 							readOnly>
@@ -189,7 +189,7 @@
 
 				<div class="form-group">
 
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							id="admin_auction_bid_check" name="admin_auction_bid_check"
 							readOnly>
@@ -198,7 +198,7 @@
 
 				<div class="form-group">
 
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							id="admin_auction_catalogue" name="admin_auction_catalogue"
 							readOnly>
@@ -206,30 +206,29 @@
 				</div>
 
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="image" src="../image/dobid.png"
 							id="admin_auction_view_img" name="admin_auction_view_img"
 							readOnly>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<textarea class="form-control " id="admin_auction_view_content"
-							name="admin_auction_view_content" style="height: 200px" readOnly></textarea>
+							name="admin_auction_view_content" style="height: 350px" readOnly></textarea>
 					</div>
 				</div>
 
 
-				<div class="col-sm-offset-4 col-sm-5">
+				<div class="col-sm-offset-4 col-sm-3">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_auction_view_num"
 						name="admin_auction_view_num"> <input type="hidden"
 						id="admin_auction_hot_check" name="admin_auction_hot_check">
+					<input type="button" class="button button5 btn-default" id="close" style="float: right;"  value="취소">
 
-
-				<input type="button" class="button button5 btn-default" id="close" value="취소">
 
 
 				</div>
