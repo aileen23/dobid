@@ -53,7 +53,7 @@
 
 
 
-			<div class="col-md-12">
+			<div class="col-md-10 col-sm-offset-1">
 
 				<div class="row carousel-holder">
 
