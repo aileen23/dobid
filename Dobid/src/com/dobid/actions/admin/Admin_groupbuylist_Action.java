@@ -67,11 +67,13 @@ public class Admin_groupbuylist_Action extends Action {
 			request.removeAttribute("adminreportlist");
 			request.removeAttribute("page");
 			request.removeAttribute("totalPage");
+			request.removeAttribute("select");
 			admingroupbuyselectlist = dao.adminGroupBuyPage(start, end, admin_auction_selecttext);
 			request.setAttribute("admingroupbuylist", admingroupbuyselectlist);// 4.
 																		// 영역에
 																		// 데이터
 																		// 저장
+			request.setAttribute("select", admin_auction_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
 			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!

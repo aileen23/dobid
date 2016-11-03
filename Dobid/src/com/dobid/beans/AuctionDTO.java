@@ -20,6 +20,7 @@ public class AuctionDTO {
 	private String hot_check;
 	private String oldcheck;
 
+	private String bid_check;
 	public AuctionDTO() {
 	}
 
@@ -130,7 +131,7 @@ public class AuctionDTO {
 
 	public AuctionDTO(int auction_board_num, String title,
 			 String main_image_path,  String end_date,
-			 int highest_price, String hot_check) {
+			 int highest_price, String hot_check,String bid_check) {
 		super();
 		this.auction_board_num = auction_board_num;
 		this.title = title;
@@ -138,6 +139,7 @@ public class AuctionDTO {
 		this.end_date = end_date;
 		this.highest_price = highest_price;
 		this.hot_check = hot_check;
+		this.bid_check = bid_check;
 	}
 	
 	
@@ -302,6 +304,13 @@ public class AuctionDTO {
 
 	public void setOldcheck(String oldcheck) {
 		this.oldcheck = oldcheck;
+	}
+	public String getBid_check() {
+		return bid_check;
+	}
+	
+	public void setBid_check(String bid_check) {
+		this.bid_check = bid_check;
 	}
 	
 

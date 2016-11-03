@@ -81,11 +81,16 @@ public class Admin_ono_Action extends Action {
 			request.removeAttribute("adminonotlist");
 			request.removeAttribute("page");
 			request.removeAttribute("totalPage");
+			request.removeAttribute("catalogue");
+			request.removeAttribute("select");
 			adminonolist = dao.adminOnoPage(start, end, admin_ono_selecttext,catalogue);
 			request.setAttribute("adminonolist", adminonolist);// 4.
 																// 영역에
 																// 데이터
 																// 저장
+			
+			request.setAttribute("catalogue", catalogue);
+			request.setAttribute("select", admin_ono_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
 			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
