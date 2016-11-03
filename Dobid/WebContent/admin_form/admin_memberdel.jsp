@@ -18,6 +18,12 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
+<%
+   if (session.getAttribute("adminlogincheck") == null) {
+      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+            + "location.replace('/Dobid/admin_login.do');" + "</script>");
+   }
+%>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -140,7 +146,7 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
+			style="background-color: white; width: 60%; height: 78%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_memberdel.do"
 				method="POST">
 
@@ -231,17 +237,17 @@
 
 
 
-				<div class="col-sm-offset-3 col-sm-5">
+				<div class="col-sm-offset-4 col-sm-5">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" name="admin_memberdel_view_member_id"
 						id="admin_memberdel_view_member_id">
 
+			<input type="button" class="button button5 btn-default" id="close" value="취소">
 
 				</div>
 			</form>
-			<button class="button button5 btn-default" id="close">취소</button>
 
 
 		</div>

@@ -19,6 +19,12 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
+<%
+   if (session.getAttribute("adminlogincheck") == null) {
+      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+            + "location.replace('/Dobid/admin_login.do');" + "</script>");
+   }
+%>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -33,17 +39,17 @@
 
 							$("#popup").show();
 
-							$("#admin_board_view_title").val(
-									$(this).children().eq(4).text());
-							$("#admin_board_view_userid").val(
-									$(this).children().eq(1).text());
-							$("#admin_board_view_img").val(
-									$(this).children().eq(7).text());
-							$("#admin_board_view_content").val(
-									$(this).children().eq(6).text());
-
 							$("#admin_board_view_num").val(
 									$(this).children().eq(0).text());
+							$("#admin_board_view_userid").val(
+									$(this).children().eq(1).text());
+							$("#admin_board_view_title").val(
+									$(this).children().eq(4).text());
+							$("#admin_board_view_content").val(
+									$(this).children().eq(6).text());
+							$("#admin_board_view_img").val(
+									$(this).children().eq(7).text());
+
 
 						});
 
@@ -86,6 +92,7 @@
 				<th>제목</th>
 				<th>이메일</th>
 				<th>내용</th>
+				<th>이미지</th>
 				<th>등록일자</th>
 
 			</tr>
@@ -99,8 +106,8 @@
 					<td>${ adminboardlist.title}</td>
 					<td>${ adminboardlist.email}</td>
 					<td>${ adminboardlist.contents}</td>
-					<td>${ adminboardlist.upload_date}<input class="image_path"
-						type="hidden" name="${ adminboardlist.image_path}"></td>
+					<td>${ adminboardlist.image_path}</td>
+					<td>${ adminboardlist.upload_date}</td>
 				</tr>
 			</c:forEach>
 
@@ -167,19 +174,19 @@
 				</div>
 
 
-				<div class="col-sm-offset-3 col-sm-5">
+				<div class="col-sm-offset-4 col-sm-5">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_board_view_num"
 						name="admin_board_view_num">
 
-
+<input type="button" class="button button5 btn-default" id="close" value="취소">
 
 				</div>
 			</form>
 
-			<button class="button button5 btn-default" id="close">취소</button>
+			
 		</div>
 	</div>
 

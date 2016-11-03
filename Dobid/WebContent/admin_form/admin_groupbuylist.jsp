@@ -17,7 +17,12 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<%
+   if (session.getAttribute("adminlogincheck") == null) {
+      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+            + "location.replace('/Dobid/admin_login.do');" + "</script>");
+   }
+%>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -95,6 +100,7 @@
 				<th>구분</th>
 				<th>유형</th>
 				<th>진행여부</th>
+				<th>이미지</th>
 				<th>등록시간</th>
 			</tr>
 			<c:forEach items="${admingroupbuylist }" var="admingroupbuylist">
@@ -107,6 +113,7 @@
 					<td>${admingroupbuylist.categori }</td>
 					<td>${admingroupbuylist.hot_check }</td>
 					<td>${admingroupbuylist.buy_check }</td>
+					<td>${admingroupbuylist.main_image_path }</td>
 					<td>${admingroupbuylist.regist_date }</td>
 
 
@@ -161,7 +168,7 @@
 
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
-		<div style="background-color: white; width: 40%; height: 70%; margin-left: 30%; margin-top: 10%; border: 1px solid black;">
+		<div style="background-color: white; width: 40%; height: 70%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do"
 				method="POST">
 				<div class="form-group">
