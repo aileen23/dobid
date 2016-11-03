@@ -31,14 +31,14 @@ public class Group_regist extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		request.setCharacterEncoding("UTF-8");
+		
 		Group_regits_form form2 = (Group_regits_form) form;
 		
 		String cate = form2.getCate();
 		String title_text  = form2.getTitle_text();
 		String count_text  = form2.getCount_text();
-		//FormFile main_file = form2.getMain_file();
-		//List<FormFile> sub_file =  form2.getSub_file();
+		FormFile main_file = form2.getMain_file();
+		List<FormFile> sub_file =  form2.getSub_file();
 		String start_cach = form2.getStart_cach();
 		String day = form2.getDay();
 		String hour = form2.getHour();
@@ -58,17 +58,17 @@ public class Group_regist extends Action{
 				String main_path= "/";
 				String sub_path= "/";
 				//이미지 업로드하고 경로 받기.
-				/*if(main_file != null){
+				if(main_file != null){
 					main_path = file_upload(main_file);
 				}
 				if(sub_file != null){
 					sub_path = multifileUpload(sub_file);
-				}*/
+				}
 
 				ActionForward forward = null;
 
 				//추후 등록자 아이디로 변경해야됨.
-				GroupbuyDTO auctionDTO = new GroupbuyDTO(title_text,text,"/a","/a",cate,Integer.parseInt(count_text),end_date+day+hour+minute,regist_date,Integer.parseInt(step_participant),Integer.parseInt(step_discoun),Integer.parseInt(start_cach),Integer.parseInt(start_cach));
+				GroupbuyDTO auctionDTO = new GroupbuyDTO(title_text,text,main_path,sub_path,cate,Integer.parseInt(count_text),end_date+day+hour+minute,regist_date,Integer.parseInt(step_participant),Integer.parseInt(step_discoun),Integer.parseInt(start_cach),Integer.parseInt(start_cach));
 				
 				//SqlMapClient client = SqlMapConfig.getSqlMapInstance();
 				Product_registDAO dao = new Product_registDAO();

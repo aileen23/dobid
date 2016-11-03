@@ -14,8 +14,8 @@ public class Group_regits_form extends ActionForm{
 	private String cate;
 	private String title_text;
 	private String count_text;
-	//private FormFile main_file;
-	//private List<FormFile> sub_file;
+	private FormFile main_file;
+	private List<FormFile> sub_file;
 	private String start_cach;
 	private String day;
 	private String hour;
@@ -43,39 +43,19 @@ public class Group_regits_form extends ActionForm{
 		this.count_text = count_text;
 	}
 
-	/*public FormFile getMain_file() {
+	public FormFile getMain_file() {
 		return main_file;
 	}
-
-
-
-
 
 	public void setMain_file(FormFile main_file) {
 		this.main_file = main_file;
 	}
-
-
-
-
-
-
-
-
-
-
 	public List<FormFile> getSub_file() {
 		return sub_file;
 	}
-
-
-
-
-
 	public void setSub_file(List<FormFile> sub_file) {
 		this.sub_file = sub_file;
-	}*/
-	
+	}
 	public String getDay() {
 		return day;
 	}
@@ -118,5 +98,15 @@ public class Group_regits_form extends ActionForm{
 	public void setStep_discoun(String step_discoun) {
 		this.step_discoun = step_discoun;
 	}
+	@Override
+	public void reset(ActionMapping mapping, HttpServletRequest request) {
+		try {
+		     request.setCharacterEncoding("UTF-8");
+		     } catch (UnsupportedEncodingException e) {
+		       e.printStackTrace();
+		     }
 
+
+		super.reset(mapping, request);
+	}
 }

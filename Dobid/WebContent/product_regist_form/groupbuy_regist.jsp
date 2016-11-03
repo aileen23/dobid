@@ -71,7 +71,7 @@ $( document ).ready(function() {
   			<p>경매 등록하기</p>
   			<p>뒤로</p>
   		</div>
-  		<form action="groupbuy_regist_regist.do" method="get" enctype="multipart/form-data">
+  		<form action="groupbuy_regist_regist.do" method="POST" enctype="multipart/form-data">
   		<div class="first_input">
   			<select class="form-control3" name="cate">
   				<option value="미술">미술</option>
