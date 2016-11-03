@@ -32,39 +32,33 @@ public class Admin_report_Action extends Action {
 		System.out.println("del : " + request.getParameter("del"));
 		System.out.println("admin_report_view_upload_date : " + request.getParameter("admin_report_view_upload_date"));
 
-		ActionForward forward = mapping.findForward("success");
-		// List<Service_reportDTO> adminreportlist = dao.adminReportSelectAll();
+		if (admin_report_selecttext == null) {
+			admin_report_selecttext = "";
+		}
+		// 페이지 정보 얻어오기
+		String pageStr = request.getParameter("page");
+
+		int page = 1;// 기본페이지를 1페이지로 하겠다!!
+
+		int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
+
+		int end = page * viewRowCnt;
+		int start = end - (viewRowCnt - 1);
+		int totalRecord = dao.adminSelectReportCount(admin_report_selecttext);
+		System.out.println("totalRecord: " + totalRecord);
+		int totalPage = totalRecord / viewRowCnt;
+		if (totalRecord % viewRowCnt > 0)
+			totalPage++;
+		request.removeAttribute("adminreportlist");
+		request.removeAttribute("page");
+		request.removeAttribute("totalPage");
+		request.removeAttribute("select");
+
 		if (del == null) {
-			if (admin_report_selecttext == null) {
-				admin_report_selecttext = "";
-			}
-			List<Service_reportDTO> adminreportlist = null;
-			// 페이지 정보 얻어오기
-			String pageStr = request.getParameter("page");
 
-			int page = 1;// 기본페이지를 1페이지로 하겠다!!
-
-			int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
-			if (pageStr != null) {
-				page = Integer.parseInt(pageStr);
-			}
-
-			int end = page * viewRowCnt;
-			int start = end - (viewRowCnt - 1);
-			int totalRecord = dao.adminSelectReportCount(admin_report_selecttext);
-			System.out.println("totalRecord: " + totalRecord);
-			int totalPage = totalRecord / viewRowCnt;
-			if (totalRecord % viewRowCnt > 0)
-				totalPage++;
-			request.removeAttribute("adminreportlist");
-			request.removeAttribute("page");
-			request.removeAttribute("totalPage");
-			request.removeAttribute("select");
-			adminreportlist = dao.adminReportPage(start, end, admin_report_selecttext);
-			request.setAttribute("adminreportlist", adminreportlist);// 4.
-																		// 영역에
-																		// 데이터
-																		// 저장
 			request.setAttribute("select", admin_report_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
@@ -76,7 +70,8 @@ public class Admin_report_Action extends Action {
 			request.setAttribute("delreportflag", delreportflag);
 
 		}
-
+		List<Service_reportDTO> adminreportlist = dao.adminReportPage(start, end, admin_report_selecttext);
+		request.setAttribute("adminreportlist", adminreportlist);
 		return mapping.findForward("success");
 	}
 }

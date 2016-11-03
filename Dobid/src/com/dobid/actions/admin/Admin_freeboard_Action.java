@@ -34,46 +34,41 @@ public class Admin_freeboard_Action extends Action {
 		System.out.println("admin_board_view_num : " + request.getParameter("admin_board_view_num"));
 		System.out.println("admin_board_view_userid : " + request.getParameter("admin_board_view_userid"));
 
-		ActionForward forward = mapping.findForward("success");
+		
+		if (admin_boardselecttext == null) {
+			admin_boardselecttext = "";
+		}
+		
+		
+		
+		// 페이지 정보 얻어오기
+		String pageStr = request.getParameter("page");
+		
+		int page = 1;// 기본페이지를 1페이지로 하겠다!!
+		
+		int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
+		
+		int end = page * viewRowCnt;
+		int start = end - (viewRowCnt - 1);
+		int totalRecord = dao.adminFreeCount(admin_boardselecttext);
+		System.out.println("totalRecord: " + totalRecord);
+		int totalPage = totalRecord / viewRowCnt;
+		if (totalRecord % viewRowCnt > 0)
+			totalPage++;
+		request.removeAttribute("adminboardlist");
+		request.removeAttribute("page");
+		request.removeAttribute("totalPage");
+		request.removeAttribute("select");
+		
 		if (del == null) {
-			if (admin_boardselecttext == null) {
-				admin_boardselecttext = "";
-			}
-
-			List<Admin_freeDTO> adminfreeselectlist = null;
-
-			// 페이지 정보 얻어오기
-			String pageStr = request.getParameter("page");
-
-			int page = 1;// 기본페이지를 1페이지로 하겠다!!
-
-			int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
-			if (pageStr != null) {
-				page = Integer.parseInt(pageStr);
-			}
-
-			int end = page * viewRowCnt;
-			int start = end - (viewRowCnt - 1);
-			int totalRecord = dao.adminFreeCount(admin_boardselecttext);
-			System.out.println("totalRecord: " + totalRecord);
-			int totalPage = totalRecord / viewRowCnt;
-			if (totalRecord % viewRowCnt > 0)
-				totalPage++;
-			request.removeAttribute("adminboardlist");
-			request.removeAttribute("page");
-			request.removeAttribute("totalPage");
-			request.removeAttribute("select");
-			adminfreeselectlist = dao.adminFreePage(start, end, admin_boardselecttext);
-			request.setAttribute("adminboardlist", adminfreeselectlist);// 4.
-			// 영역에
-			// 데이터
-			// 저장
 
 			request.setAttribute("select", admin_boardselecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
-			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
-			// return forward = mapping.findForward("success");
+		
 
 		} else {
 
@@ -81,6 +76,9 @@ public class Admin_freeboard_Action extends Action {
 			request.setAttribute("delfreeflag", delfreeflag);
 		}
 
+		List<Admin_freeDTO> adminfreeselectlist = dao.adminFreePage(start, end, admin_boardselecttext);
+		request.setAttribute("adminboardlist", adminfreeselectlist);
+		
 		return mapping.findForward("success");
 
 	}
