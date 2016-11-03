@@ -94,7 +94,7 @@ public class Group_regist extends Action{
 			    
 			       String path = "/image";  // 업로드할 경로
 			      String realPath = "";
-			    
+			      String dbPath = "/image";
 			       /*
 			        * 파일 업로드 시작
 			      */
@@ -149,7 +149,7 @@ public class Group_regist extends Action{
 			       /*
 			        * 파일 업로드 끝
 			      */
-			       return realPath+'/'+realName;
+			       return dbPath+'/'+realName;
 			}
 			
 			private String multifileUpload(List<FormFile> files) {
@@ -170,7 +170,7 @@ public class Group_regist extends Action{
 			    
 			       String path = "/image";  // 업로드할 경로
 			      String realPath = "";
-			    
+			      String dbPath="/image";
 			       /*
 			        * 파일 업로드 시작
 			      */
@@ -222,6 +222,6 @@ public class Group_regist extends Action{
 			         try { if(os != null) os.close(); } catch (IOException ignore) { }
 			         try { if(in != null) in.close(); } catch (IOException ignore) { }
 			       }
-				return realPath+"/"+realName;
+				return dbPath+"/"+realName;
 			}
 }

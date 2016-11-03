@@ -37,7 +37,7 @@ if(session.getAttribute("logincheck") == null){
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/Dobid/product_regist_form/css/auction_view.css" rel="stylesheet">
+<link href="/Dobid/product_regist_form/css/group_view.css" rel="stylesheet">
 <title>공대구매뷰</title>
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
@@ -81,11 +81,12 @@ $(document).ready(function(){
   				<div class="fires_box">
   					<div id="slider">
 						<figure>
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
+							<%
+							String[] path = dto.getExplain_image_path().split("@");
+							for(int i = 1; i < path.length-1; i++){
+								out.print("<img src='/Dobid"+path[i]+"'>");
+							}
+						%>
 						</figure>
 					</div>
 				</div>
@@ -151,7 +152,6 @@ $(document).ready(function(){
   					<p class="now_bid">현재 참여자 수</p>
   					<p class="now_bid_text2"><%=dto.getParticipant_num()%>명</p>
   					<button id="buyBtn" type="button" class="btn btn-default" style="margin-right: 5%">공동구매참가하기</button>
-  					<button type="button" class="basket_btn btn-default">찜하기</button>
   				</div>
   			</div>
   			<textarea class="text_area" rows="20" cols="110" style="resize: none;" readonly="readonly"><%=dto.getContents()%></textarea>

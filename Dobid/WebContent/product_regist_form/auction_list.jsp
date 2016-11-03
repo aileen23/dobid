@@ -111,9 +111,9 @@ $(document).ready(function(){
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail"><a href="auction_view.do?id=<%= list.get(i).getAuction_board_num()%>">
-                            <img src="http://placehold.it/320x150" alt="">
+                        <img src="/Dobid<%= list.get(i).getMain_image_path()%>" alt="" style="width: 320px; height: 150px;">
+                            <!--<img src="http://placehold.it/320x150" alt="">-->
                             </a>
-                            <!-- <img src="<%= list.get(i).getMain_image_path()%>" alt=""> -->
                             <div class="caption">
                             	<div class="center_title">
                             		<div><%= list.get(i).getTitle() %></div>  
@@ -122,7 +122,7 @@ for(int i = 0; i <list.size(); i++ ){ %>
                                 	<div class="caption_div_bold">입찰시작금액</div>                              
                                 	<div class="caption_div_bold">현재최고금액</div>
                                 </div>
-                                <div class="caption_div">
+                                <div class="caption_div_a">
                                 	<div><%= list.get(i).getStart_amount()%>원</div>
                                 	<div><%= list.get(i).getHighest_price()%>원</div>
                                 </div>
@@ -130,12 +130,9 @@ for(int i = 0; i <list.size(); i++ ){ %>
                                 	<div class="caption_div_bold">입찰 등록 시간</div>
                                 	<div class="caption_div_bold">종료 시간</div>
                                 </div>
-                                <div class="caption_div">
+                                <div class="caption_div_a">
                                 	<div><%= list.get(i).getRegist_date()%></div>
                                 	<div><%= list.get(i).getEnd_date()%></div>
-                                </div>
-                                <div class="caption_div">
-                                	<%= list.get(i).getEmail()%>(<%=list.get(i).getName() %>)
                                 </div>                       
                             </div>
                         </div>

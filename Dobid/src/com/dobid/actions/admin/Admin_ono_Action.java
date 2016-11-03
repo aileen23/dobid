@@ -50,51 +50,42 @@ public class Admin_ono_Action extends Action {
 		System.out.println(
 				"admin_ono_view_upload_date_send : " + request.getParameter("admin_ono_view_upload_date_send"));
 
-		ActionForward forward = mapping.findForward("success");
+		if (admin_ono_selecttext == null && catalogue == null) {
+			admin_ono_selecttext = "";
+			catalogue = "";
+		}
+
+		Service_answerDTO onoparam = null;
+		onoparam = new Service_answerDTO(admin_ono_selecttext, catalogue);
+
+		// 페이지 정보 얻어오기
+		String pageStr = request.getParameter("page");
+
+		int page = 1;// 기본페이지를 1페이지로 하겠다!!
+
+		int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
+
+		int end = page * viewRowCnt;
+		int start = end - (viewRowCnt - 1);
+		int totalRecord = dao.adminOnoCount(onoparam);
+		System.out.println("totalRecord: " + totalRecord);
+		int totalPage = totalRecord / viewRowCnt;
+		if (totalRecord % viewRowCnt > 0)
+			totalPage++;
+		request.removeAttribute("adminonotlist");
+		request.removeAttribute("page");
+		request.removeAttribute("totalPage");
+		request.removeAttribute("catalogue");
+		request.removeAttribute("select");
 
 		if (del == null && send == null) {
-			if (admin_ono_selecttext == null && catalogue == null) {
-				admin_ono_selecttext = "";
-				catalogue = "";
-			}
-			List<Service_answerDTO> adminonolist = null;
-			Service_answerDTO onoparam = null;
-			onoparam = new Service_answerDTO(admin_ono_selecttext, catalogue);
-
-			// 페이지 정보 얻어오기
-			String pageStr = request.getParameter("page");
-
-			int page = 1;// 기본페이지를 1페이지로 하겠다!!
-
-			int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
-			if (pageStr != null) {
-				page = Integer.parseInt(pageStr);
-			}
-
-			int end = page * viewRowCnt;
-			int start = end - (viewRowCnt - 1);
-			int totalRecord = dao.adminOnoCount(onoparam);
-			System.out.println("totalRecord: " + totalRecord);
-			int totalPage = totalRecord / viewRowCnt;
-			if (totalRecord % viewRowCnt > 0)
-				totalPage++;
-			request.removeAttribute("adminonotlist");
-			request.removeAttribute("page");
-			request.removeAttribute("totalPage");
-			request.removeAttribute("catalogue");
-			request.removeAttribute("select");
-			adminonolist = dao.adminOnoPage(start, end, admin_ono_selecttext,catalogue);
-			request.setAttribute("adminonolist", adminonolist);// 4.
-																// 영역에
-																// 데이터
-																// 저장
-			
 			request.setAttribute("catalogue", catalogue);
 			request.setAttribute("select", admin_ono_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
-			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
-			return forward = mapping.findForward("success");
 
 		} else if (del != null && send == null) {
 			boolean delonoflag = dao.adminOnoDel(admin_ono_view_upload_date);
@@ -108,6 +99,8 @@ public class Admin_ono_Action extends Action {
 			request.setAttribute("uponoflag", uponoflag);
 		}
 
+		List<Service_answerDTO> adminonolist = dao.adminOnoPage(start, end, admin_ono_selecttext, catalogue);
+		request.setAttribute("adminonolist", adminonolist);
 		return mapping.findForward("success");
 	}
 }

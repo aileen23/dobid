@@ -104,12 +104,13 @@ public class Product_regist extends Action{
 			
 			String realName = "";
 			String fileName = attr.getFileName();
+		
 		       String fileContextType = attr.getContentType();
 		       int fileSize = attr.getFileSize();
 		    
 		       String path = "/image";  // 업로드할 경로
 		      String realPath = "";
-		    
+		      String dbPath = "/image"; //path와 같게 해주세요.
 		       /*
 		        * 파일 업로드 시작
 		      */
@@ -164,7 +165,7 @@ public class Product_regist extends Action{
 		       /*
 		        * 파일 업로드 끝
 		      */
-		       return realPath+'/'+realName;
+		       return dbPath+'/'+realName;
 		}
 		
 		private String multifileUpload(List<FormFile> files) {
@@ -185,7 +186,7 @@ public class Product_regist extends Action{
 		    
 		       String path = "/image";  // 업로드할 경로
 		      String realPath = "";
-		    
+		      String dbPath = "/image";
 		       /*
 		        * 파일 업로드 시작
 		      */
@@ -237,7 +238,7 @@ public class Product_regist extends Action{
 		         try { if(os != null) os.close(); } catch (IOException ignore) { }
 		         try { if(in != null) in.close(); } catch (IOException ignore) { }
 		       }
-			return realPath+"/"+realName;
+			return dbPath+"/"+realName;
 		}
 	
 }

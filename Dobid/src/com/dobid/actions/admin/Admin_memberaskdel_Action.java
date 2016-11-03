@@ -31,43 +31,40 @@ public class Admin_memberaskdel_Action extends Action {
 		System.out.println("member_id : " + request.getParameter("member_id"));
 		System.out.println("update : " + request.getParameter("update"));
 
-		ActionForward forward = mapping.findForward("success");
+	
+		if (admin_memberaskdel_selecttext == null) {
+			admin_memberaskdel_selecttext = "";
+		}
+		
+		
+		// 페이지 정보 얻어오기
+		String pageStr = request.getParameter("page");
+		
+		int page = 1;// 기본페이지를 1페이지로 하겠다!!
+		
+		int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
+		
+		int end = page * viewRowCnt;
+		int start = end - (viewRowCnt - 1);
+		int totalRecord = dao.adminMemberAskDelCount(admin_memberaskdel_selecttext);
+		System.out.println("totalRecord: " + totalRecord);
+		int totalPage = totalRecord / viewRowCnt;
+		if (totalRecord % viewRowCnt > 0)
+			totalPage++;
+		request.removeAttribute("adminmemberaskdellist");
+		request.removeAttribute("page");
+		request.removeAttribute("totalPage");
+		request.removeAttribute("select");
 		if (update == null) {
-			if (admin_memberaskdel_selecttext == null) {
-				admin_memberaskdel_selecttext = "";
-			}
-
-			List<Admin_memberAskDelListDTO> adminmemberaskdellist = null;
-			// 페이지 정보 얻어오기
-			String pageStr = request.getParameter("page");
-
-			int page = 1;// 기본페이지를 1페이지로 하겠다!!
-
-			int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
-			if (pageStr != null) {
-				page = Integer.parseInt(pageStr);
-			}
-
-			int end = page * viewRowCnt;
-			int start = end - (viewRowCnt - 1);
-			int totalRecord = dao.adminMemberAskDelCount(admin_memberaskdel_selecttext);
-			System.out.println("totalRecord: " + totalRecord);
-			int totalPage = totalRecord / viewRowCnt;
-			if (totalRecord % viewRowCnt > 0)
-				totalPage++;
-			request.removeAttribute("adminmemberaskdellist");
-			request.removeAttribute("page");
-			request.removeAttribute("totalPage");
-			request.removeAttribute("select");
-			adminmemberaskdellist = dao.adminMemberAskDelPage(start, end, admin_memberaskdel_selecttext);
-			request.setAttribute("adminmemberaskdellist", adminmemberaskdellist);// 4.
-																			// 영역에
-																			// 데이터
-																			// 저장
+			
+			
 			request.setAttribute("select", admin_memberaskdel_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
-			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
+		
 		
 
 		} else if (update != null) {
@@ -77,6 +74,9 @@ public class Admin_memberaskdel_Action extends Action {
 
 		}
 
+		List<Admin_memberAskDelListDTO> adminmemberaskdellist = dao.adminMemberAskDelPage(start, end, admin_memberaskdel_selecttext);
+		request.setAttribute("adminmemberaskdellist", adminmemberaskdellist);
+		
 		return mapping.findForward("success");
 	}
 

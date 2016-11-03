@@ -215,10 +215,8 @@ div#slider figure {
 }
 .only{
 	font-size: large;
-	line-height:45px;
-	color: black;
-	top: -50px;
-	margin-left: 20px;
+	line-height:30px;
+	color: white;
 }
 .form-control2 {
     display: block;

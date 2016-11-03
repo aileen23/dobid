@@ -35,6 +35,9 @@
 			type="com.dobid.product_regist.action.form.List_form"></form-bean>
 		<form-bean name="gorupForm"
 			type="com.dobid.product_regist.action.form.Group_regits_form"></form-bean>
+		<form-bean name="freeForm"
+			type="com.dobid.actions.board.form.Freeboard_form"></form-bean>
+
 		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
 			type="app.InputForm"/> end sample -->
 		<!-- sample form bean descriptor for a DynaActionForm <form-bean name="logonForm" 
@@ -97,9 +100,10 @@
 		</action>
 		<action path="/basket_add" forward="/product_regist_form/basket_add.jsp"></action>
 		<action path="/groupbuy_regist_view" forward="/product_regist_form/groupbuy_regist.jsp"></action>
-		<action path="/groupbuy_regist_regist" type="com.dobid.product_regist.action.Group_regist" 
+		<action path="/groupbuy_regist_regist" type="com.dobid.product_regist.action.Group_regist"
 			name="gorupForm">
-			<forward path="/admin_groupbuylist.do" name="sueccess" redirect="true"></forward>
+			<forward path="/admin_groupbuylist.do" name="sueccess"
+				redirect="true"></forward>
 			<forward path="/fail.do" name="fail" redirect="true"></forward>
 		</action>
 		<!-- main, login, register account, find -->
@@ -114,12 +118,12 @@
 			<forward name="success" path="/main.do"></forward>
 			<forward name="fail" path="/login.do"></forward>
 		</action>
-		
+
 		<action path="/admin_login" forward="/regist_form/admin_login.jsp"></action>
-		
+
 		<action path="/do_admin_login" type="com.dobid.actions.regist.Login_admin_Action">
-		<forward name="success" path="/admin_noticeboard.do"></forward>
-		<forward name="fail" path="/admin_login.do"></forward>
+			<forward name="success" path="/admin_noticeboard.do"></forward>
+			<forward name="fail" path="/admin_login.do"></forward>
 		</action>
 
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
@@ -181,13 +185,14 @@
 		<action path="/sendmessage" type="com.dobid.actions.mypage.Mypage_sendmsg_Action">
 			<forward name="success" path="/mypage_form/sendMessage.jsp" />
 		</action>
-		<action path="/myprofile_groupbuylist" type="com.dobid.actions.mypage.Mypage_groupbuyList_Actions">
+		<action path="/myprofile_groupbuylist"
+			type="com.dobid.actions.mypage.Mypage_groupbuyList_Actions">
 			<forward name="success" path="/mypage_form/myprofile_groupbuy_details.jsp" />
 		</action>
-		
-		
-		
-		
+
+
+
+
 		<!-- customservice -->
 		<!-- customservice_qna -->
 		<action path="/service_qna" forward="/service_form/customerservice_qna.jsp" />
@@ -237,11 +242,12 @@
 
 		<!-- board_freedom_write -->
 		<action path="/board_freedom_write" forward="/board_form/board_freedom_write.jsp">
+		
 		</action>
 
 		<!-- board_freedom_write -->
 		<action path="/board_freedom_write_input"
-			type="com.dobid.actions.board.Board_freedom_write_Action">
+			type="com.dobid.actions.board.Board_freedom_write_Action" name="freeForm">
 			<forward name="success" path="/freeboard_list.do"></forward>
 		</action>
 
@@ -277,7 +283,8 @@
 		<!-- 관리자 공동구매 게시글 (박종민) -->
 
 
-		<action path="/admin_groupbuylist" type="com.dobid.actions.admin.Admin_groupbuylist_Action">
+		<action path="/admin_groupbuylist"
+			type="com.dobid.actions.admin.Admin_groupbuylist_Action">
 			<forward name="success" path="/admin_form/admin_groupbuylist.jsp"></forward>
 		</action>
 		<!-- 관리자 1대1대화 (박종민) -->
@@ -299,7 +306,8 @@
 		</action>
 		<!-- 관리자 탈퇴요청회원 (박종민) -->
 
-		<action path="/admin_memberaskdel" type="com.dobid.actions.admin.Admin_memberaskdel_Action">
+		<action path="/admin_memberaskdel"
+			type="com.dobid.actions.admin.Admin_memberaskdel_Action">
 			<forward name="success" path="/admin_form/admin_memberaskdel.jsp"></forward>
 		</action>
 
@@ -333,8 +341,8 @@
 		<action path="/freeboard_content_view_reply_delete" type="com.dobid.actions.reply.freedom.DeleteAction">
 			<forward name="success" path="/reply_form/addResult.jsp"></forward>
 		</action>
-		
-		
+
+
 		<!-- 공지사항 -->
 		<action path="/noticeboard_content_view_reply_add" type="com.dobid.actions.reply.notice.AddAction">
 			<forward name="success" path="/reply_form/addResult.jsp"></forward>

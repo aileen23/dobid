@@ -41,42 +41,37 @@ public class Admin_groupbuylist_Action extends Action {
 		System.out.println("admin_auction_bid_check : " + request.getParameter("admin_auction_bid_check"));
 		System.out.println("admin_auction_hot_check : " + request.getParameter("admin_auction_hot_check"));
 
-		ActionForward forward = mapping.findForward("success");
+		if (admin_auction_selecttext == null && catalogue == null) {
+			admin_auction_selecttext = "";
+		}
+		
+		// 페이지 정보 얻어오기
+		String pageStr = request.getParameter("page");
+		
+		int page = 1;// 기본페이지를 1페이지로 하겠다!!
+		
+		int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
+		
+		int end = page * viewRowCnt;
+		int start = end - (viewRowCnt - 1);
+		int totalRecord = dao.adminGroupBuyCount(admin_auction_selecttext);
+		System.out.println("totalRecord: " + totalRecord);
+		int totalPage = totalRecord / viewRowCnt;
+		if (totalRecord % viewRowCnt > 0)
+			totalPage++;
+		request.removeAttribute("adminreportlist");
+		request.removeAttribute("page");
+		request.removeAttribute("totalPage");
+		request.removeAttribute("select");
 		if (del == null) {
-			if (admin_auction_selecttext == null && catalogue == null) {
-				admin_auction_selecttext = "";
-				}
-			List<Admin_groupBuyDTO> admingroupbuyselectlist = null;
-			// 페이지 정보 얻어오기
-			String pageStr = request.getParameter("page");
-
-			int page = 1;// 기본페이지를 1페이지로 하겠다!!
-
-			int viewRowCnt = 10;// 한 페이지에 보여줄 행(레코드)의 수
-			if (pageStr != null) {
-				page = Integer.parseInt(pageStr);
-			}
-
-			int end = page * viewRowCnt;
-			int start = end - (viewRowCnt - 1);
-			int totalRecord = dao.adminGroupBuyCount(admin_auction_selecttext);
-			System.out.println("totalRecord: " + totalRecord);
-			int totalPage = totalRecord / viewRowCnt;
-			if (totalRecord % viewRowCnt > 0)
-				totalPage++;
-			request.removeAttribute("adminreportlist");
-			request.removeAttribute("page");
-			request.removeAttribute("totalPage");
-			request.removeAttribute("select");
-			admingroupbuyselectlist = dao.adminGroupBuyPage(start, end, admin_auction_selecttext);
-			request.setAttribute("admingroupbuylist", admingroupbuyselectlist);// 4.
-																		// 영역에
-																		// 데이터
-																		// 저장
+			
 			request.setAttribute("select", admin_auction_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
-			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
+	
 
 		} else if (del != null) {
 
@@ -84,6 +79,8 @@ public class Admin_groupbuylist_Action extends Action {
 			request.setAttribute("delgroupflag", delgroupflag);
 
 		}
+		List<Admin_groupBuyDTO> admingroupbuyselectlist = dao.adminGroupBuyPage(start, end, admin_auction_selecttext);
+		request.setAttribute("admingroupbuylist", admingroupbuyselectlist);
 		return mapping.findForward("success");
 	}
 }
