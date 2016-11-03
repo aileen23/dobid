@@ -113,7 +113,8 @@
 
 		</table>
 		<div class="form-group">
-			<div class="col-sm-7">
+			<div>
+			<center>
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
@@ -127,9 +128,10 @@
 				<br>
 				<br><c:if test="${totalPage >1}">
 				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="admin_freeboard.do?page=${ i }&admin_boardselecttext=${select}">${i }</a>]
-    </c:forEach>
-    </c:if>
+     			[<a href="admin_freeboard.do?page=${ i }&admin_boardselecttext=${select}">${i }</a>]
+ 				</c:forEach>
+    			</c:if>
+    			</center>
 			</div>
 		</div>
 	</div>
@@ -140,11 +142,11 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
+			style="background-color: white; width: 700px; height: 600px; margin-left: 30%; margin-top: 10%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_freeboard.do"
 				method="POST">
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							name="admin_board_view_title" id="admin_board_view_title"
 							style="margin-top: 20px;" value="asd" readOnly>
@@ -153,7 +155,7 @@
 				</div>
 				<div class="form-group">
 
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							id="admin_board_view_userid" name="admin_board_view_userid"
 							readOnly>
@@ -161,27 +163,27 @@
 				</div>
 
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="image" src="../image/dobid.png"
 							id="admin_board_view_img" name="admin_board_view_img" readOnly>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<textarea class="form-control " id="admin_board_view_content"
-							name="admin_board_view_content" style="height: 200px" readOnly></textarea>
+							name="admin_board_view_content" style="height: 350px" readOnly></textarea>
 					</div>
 				</div>
 
 
-				<div class="col-sm-offset-4 col-sm-5">
+				<div class="col-sm-offset-4 col-sm-3">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_board_view_num"
 						name="admin_board_view_num">
+					<input type="button" class="button button5 btn-default" id="close" style="float: right;"  value="취소">
 
-<input type="button" class="button button5 btn-default" id="close" value="취소">
 
 				</div>
 			</form>

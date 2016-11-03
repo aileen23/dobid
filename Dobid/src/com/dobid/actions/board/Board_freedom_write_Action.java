@@ -37,6 +37,7 @@ public class Board_freedom_write_Action extends Action {
 		String contents=forms.getContents();
 		FormFile image=forms.getImage_path();
 		String member_id = (String)request.getSession().getAttribute("logincheck");
+		
 		String image_path= "/";
 	
 		//이미지 업로드하고 경로 받기.
@@ -46,9 +47,10 @@ public class Board_freedom_write_Action extends Action {
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String board_date = df.format(date);
+		
 
 
-		FreeboardDTO dto = new FreeboardDTO(0, member_id,title, contents,image_path, 0, board_date);
+		FreeboardDTO dto = new FreeboardDTO(0, member_id,title,contents,image_path,0, board_date);
 
 		boardDAO dao = new boardDAO();
 		dao.freeBoardWrite(dto);

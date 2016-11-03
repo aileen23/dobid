@@ -53,6 +53,7 @@ $(document).ready(function(){
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+	<script src="/Dobid/admin_form/js/admin_upload.js" type="text/javascript"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -91,12 +92,12 @@ $(document).ready(function(){
 	
 		</p>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/admin_noticeboard_write_input.do" method="POST">
+		<form class="form-horizontal" action="/Dobid/admin_noticeboard_write_input.do" method="POST" enctype="multipart/form-data">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="notice_title" placeholder="제목" name="notice_title">
+					<input type="text" class="form-control" id="title" placeholder="제목" name="title">
 				</div>
 			</div>
 			<div class="form-group">
@@ -110,25 +111,23 @@ $(document).ready(function(){
 				<label for="inputTextarea" class="col-sm-4 control-label">내용</label>
 				<div class="col-sm-5">
 					<textarea class="form-control " id="notice_contents"
-						placeholder="내용을 입력하세요" style="height: 200px" name="notice_contents"></textarea>
+						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
+			
 			<div class="form-group">
 				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
 				<div class="filebox col-sm-5">
-					<label for="notice_file">첨부파일</label> <input type="file"
-						name="notice_file" id="notice_file" accept="image/*" capture="camera"
-						onchange="getThumbnailPrivew(this,$('#notice_img'))" /> <br> <br>
-					<div id="notice_img"
-						style="width: 100%; max-width: 100%; display: none;"></div>
+					<label for="free_file">첨부파일</label> 
+					<input type="file" id="image_path" class="file_form" name="image_path" onchange="getThumbnailPrivew(this,$('#notice_img'))" /> <br> <br>
+					<div id="notice_img" style="width: 100%; max-width: 100%; display: none;"></div>
 				</div>
 			</div>
+			
 
 
-
-
-		<div class="col-sm-offset-4 ">
+		<div class="col-sm-offset-1 ">
 			<input type="submit" class="button button5 btn-default" id="check" value="글쓰기">
 			<button class="button button5 btn-default" id="pageback">취소</button>
 		</div>

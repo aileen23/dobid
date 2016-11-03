@@ -8,16 +8,16 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
-public class Freeboard_form extends ActionForm {
+public class Noticeboard_form extends ActionForm {
 
 	private String title;
 	private String contents;
 	private FormFile image_path;
 
-	public Freeboard_form() {
+	public Noticeboard_form() {
 		// TODO Auto-generated constructor stub
 	}
-	public Freeboard_form(String title, String contents, FormFile image_path) {
+	public Noticeboard_form(String title, String contents, FormFile image_path) {
 		super();
 		this.title = title;
 		this.contents = contents;

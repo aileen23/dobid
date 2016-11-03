@@ -2,7 +2,7 @@ package com.dobid.beans;
 
 public class Admin_groupBuyDTO {
 
-	private int auction_board_num;
+	private int groupbuy_board_num;
 	private String title;
 	private String contents;
 	private String seller_id;
@@ -20,10 +20,10 @@ public class Admin_groupBuyDTO {
 
 
 
-	public Admin_groupBuyDTO(int auction_board_num, String title, String contents, String seller_id, String categori,
+	public Admin_groupBuyDTO(int groupbuy_board_num, String title, String contents, String seller_id, String categori,
 			String buy_check, String main_image_path, String regist_date, String hot_check) {
 		super();
-		this.auction_board_num = auction_board_num;
+		this.groupbuy_board_num = groupbuy_board_num;
 		this.title = title;
 		this.contents = contents;
 		this.seller_id = seller_id;
@@ -44,14 +44,14 @@ public class Admin_groupBuyDTO {
 
 
 
-	public int getAuction_board_num() {
-		return auction_board_num;
+	public int getgroupbuy_board_num() {
+		return groupbuy_board_num;
 	}
 
 
 
-	public void setAuction_board_num(int auction_board_num) {
-		this.auction_board_num = auction_board_num;
+	public void setgroupbuy_board_num(int groupbuy_board_num) {
+		this.groupbuy_board_num = groupbuy_board_num;
 	}
 
 

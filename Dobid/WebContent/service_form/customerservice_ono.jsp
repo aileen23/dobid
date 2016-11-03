@@ -96,16 +96,14 @@
 
 
 			<div class="filebox col-sm-5">
-				<label for="cma_file" class="text-center">첨부파일</label> <input
-					type="file" name="image_path" id="cma_file" accept="image/*"
-					capture="camera"
-					onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br> <br>
+				<label for="cma_file" class="text-center">첨부파일</label>
+				<input type="file" name="image_path" id="cma_file" accept="image/*"
+					capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br> <br>
 				<div align="center" style="text-decoration: underline">
 					* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다
 				</div>
 				<br>
-				<div id="cma_image"
-					style="width: 100%; max-width: 100%; display: none;"></div>
+				<div id="cma_image" style="width: 100%; max-width: 100%; display: none;"></div>
 				<br>
 
 			</div>

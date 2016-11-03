@@ -99,12 +99,12 @@ $(document).ready(function(){
 
 <h3>자유게시판 글쓰기</h3>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST">
+		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST" enctype="multipart/form-data">
 		
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="free_title" placeholder="제목" name="free_title">
+					<input type="text" class="form-control" id="title" placeholder="제목" name="title">
 				</div>
 			</div>
 			<div class="form-group">
@@ -117,19 +117,21 @@ $(document).ready(function(){
 			<div class="form-group">
 				<label for="inputTextarea" class="col-sm-4 control-label">내용</label>
 				<div class="col-sm-5">
-					<textarea class="form-control " id="free_contents"
-						placeholder="내용을 입력하세요" style="height: 200px" name="free_contents"></textarea>
+					<textarea class="form-control " id="contents"
+						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
+			
+			
+		
+
 			<div class="form-group">
 				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
 				<div class="filebox col-sm-5">
-					<label for="free_file">첨부파일</label> <input type="file"
-						name="free_file" id="free_file" accept="image/*" capture="camera"
-						onchange="getThumbnailPrivew(this,$('#free_img'))" /> <br> <br>
-					<div id="free_img"
-						style="width: 100%; max-width: 100%; display: none;"></div>
+					<label for="free_file">첨부파일</label> 
+					<input type="file" id="image_path" class="file_form" name="image_path" onchange="getThumbnailPrivew(this,$('#free_img'))" /> <br> <br>
+					<div id="free_img" style="width: 100%; max-width: 100%; display: none;"></div>
 				</div>
 			</div>
 
