@@ -167,7 +167,7 @@
 			<forward name="success" path="/mypage_form/sendMessage.jsp" />
 		</action>
 		<action path="/auctionend" type="com.dobid.actions.mypage.Mypage_auctionEnd_Action">
-			<forward name="success" path="/myprofile_sales.do" />
+			<forward name="success" path="/mypage_form/sales_list_result.jsp" />
 		</action>
 		
 		

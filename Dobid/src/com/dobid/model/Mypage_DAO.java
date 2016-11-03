@@ -199,26 +199,40 @@ public class Mypage_DAO {
 	public void auctionend(String num){
 		AuctionDTO dto = new AuctionDTO();
 		try {
-			smc.update("myprofile.auctionend",num); //경매중->경매종료
+			Map<String,String> map = new HashMap<>();
+			map.put("auction_board_num",num);
+			map.put("bid_check","종료");
+			smc.update("myprofile.auctionend",map); //경매중->경매종료
+			
 			dto= (AuctionDTO) smc.queryForObject("myprofile.endselect",num); //글 select
 			int price=dto.getHighest_price();
 			String buyid = dto.getHighest_price_id();
 			String sellerid = dto.getSeller_id();
 			
-			Map<String,Object> map = new HashMap<>();
-			map.put("member_id", buyid);
-			map.put("charge_will_amount", price);
-			map.put("charge_type", dto.getTitle());
-			smc.insert("myprofile.chargelistadd",map); //구매기록남기기
+			Map<String,Object> map1 = new HashMap<>();
+			map1.put("member_id", buyid);
+			map1.put("charge_will_amount", price);
+			map1.put("charge_type", dto.getTitle());
+			map1.put("charge_type", dto.getTitle());
+			map1.put("charge_check",0); //charge_check=0 사용
+			smc.insert("myprofile.chargelistadd",map1); //구매기록남기기
 			
 			Map<String,Object> map2 = new HashMap<>();
-			map.put("member_id", sellerid);
-			map.put("charge_will_amount", price);
-			map.put("charge_type", dto.getTitle());
+			map2.put("member_id", sellerid);
+			map2.put("charge_will_amount", price);
+			map2.put("charge_type", dto.getTitle());
+			map1.put("charge_check",1);//charge_check==1판매(충전)
 			smc.insert("myprofile.chargelistadd",map2); //판매기록남기기
 			
-			smc.update("myprofile.auctionpay",price);//구매금액차감
-			smc.update("myprofile.auctionsell",price);//판매금액입금
+			Map<String,Object> map3 = new HashMap<>();
+			map3.put("member_id", buyid);
+			map3.put("charging_amount", price);
+			smc.update("myprofile.auctionpay",map3);//구매금액차감
+			
+			Map<String,Object> map4 = new HashMap<>();
+			map4.put("member_id", sellerid);
+			map4.put("charging_amount", price);
+			smc.update("myprofile.auctionsell",map4);//판매금액입금
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
