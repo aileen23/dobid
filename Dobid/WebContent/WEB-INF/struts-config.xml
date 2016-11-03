@@ -106,6 +106,7 @@
 			<forward name="success" path="/main.do"></forward>
 			<forward name="fail" path="/login.do"></forward>
 		</action>
+		<action path="/admin_login" forward="/regist_form/admin_login.jsp"></action>
 
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
 		</action>
@@ -167,7 +168,7 @@
 			<forward name="success" path="/mypage_form/sendMessage.jsp" />
 		</action>
 		<action path="/auctionend" type="com.dobid.actions.mypage.Mypage_auctionEnd_Action">
-			<forward name="success" path="/myprofile_sales.do" />
+			<forward name="success" path="/mypage_form/sales_list_result.jsp" />
 		</action>
 		
 		
