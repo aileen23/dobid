@@ -175,4 +175,15 @@ public class Product_registDAO {
 		return false;
 		
 	}
+	public boolean group_insert(GroupbuyDTO inputdate) {
+
+		try {
+			smc.insert("product_regist.group_regist",inputdate);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
 }

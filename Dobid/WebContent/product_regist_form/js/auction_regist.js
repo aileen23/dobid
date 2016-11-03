@@ -18,7 +18,7 @@ function input_check(){
 	  }else if(time.getDate() > Number(day)){
 		  alert("지난 날짜를 종료시간으로 등록하지 못합니다.");
 		  return false;
-	  }else if(time.getHours() > Number(hour)){
+	  }else if(time.getDate() < Number(day) && time.getHours() > Number(hour)){
 		  alert("지난 시간을 종료시간으로 등록하지 못합니다.");
 		  return false;
 	  }

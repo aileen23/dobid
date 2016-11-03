@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-    /*2016-11-03
+    /*2016-11-02
 	작성자 : 신유동
 */	
     %>
@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/Dobid/product_regist_form/css/auction_regist.css" rel="stylesheet" type="text/css">
+<link href="/Dobid/product_regist_form/css/groupbuy_regist.css" rel="stylesheet" type="text/css">
 <script src="/Dobid/product_regist_form/js/jquery-3.0.0.js"></script>
 <script src="/Dobid/product_regist_form/js/auction_regist.js"></script>
 <title>경매등록</title>
@@ -63,7 +63,7 @@ $( document ).ready(function() {
     }//readURL()-- 
 });
 </script>
-<header><%@include file="/regist_form/header.jsp"%></header>
+<header><%@include file="../admin_form/admin_header.jsp"%></header>
 <body>
   <div class="wap">
   	<div class="content">
@@ -71,8 +71,14 @@ $( document ).ready(function() {
   			<p>경매 등록하기</p>
   			<p>뒤로</p>
   		</div>
-  		<form action="auction_regist.do" method="POST" enctype="multipart/form-data">
+  		<form action="groupbuy_regist_regist.do" method="get" enctype="multipart/form-data">
   		<div class="first_input">
+  			<select class="form-control3" name="cate">
+  				<option value="미술">미술</option>
+ 				<option value="골동품">골동품</option>
+ 				<option value="의류">의류</option>
+ 				<option value="기타">기타</option>
+			</select>
   			<input id="title_text" type="text" class="form-control4" name="title_text" placeholder="제목을 입력해주세요.">
   			<input id="count_text" type="text" class="form-control5" name="count_text" placeholder="개수" onkeydown="return showKeyCode(event)">
   		</div>
@@ -97,15 +103,8 @@ $( document ).ready(function() {
 			</div>
   		</div>
   		<div class="check_and_cach">
-  			<div>
-  				<label class="checkbox-inline">
-  					<input type="radio" id="inlineCheckbox1" name="auction_check" value="경매" checked="checked"> 경매
-				</label>
-				<label class="checkbox-inline">
- 					 <input type="radio" id="inlineCheckbox2" name="auction_check" value="핫경매"> 핫 경매
-				</label>
-  			</div>
-  			<div class="start_cach_box">
+
+  			<div class="start_cach_box" style="margin-left: 20%;">
   				<label for="no_box" class="big_text">시작금액</label>
   				<br/>
   				<input id="start_cach" type="text" class="form-control6" name="start_cach" placeholder="&nbsp;&nbsp;시작 금액을 입력해주세요." onkeydown="return showKeyCode(event)">
@@ -127,7 +126,7 @@ $( document ).ready(function() {
 					<select id="hour" class="form-control7" name="hour">
 						<option class="hour_text">시</option>
 								<script>
-									for (i=1;i < 25 ;i++ )
+									for (i=1;i < 24 ;i++ )
 										if(i < 10)
 											document.write('<option value="0'+i+'">0'+i+'</option>');
 											else
@@ -146,6 +145,17 @@ $( document ).ready(function() {
 					</select>
 				</div>
 			</div>
+			<div class="start_cach_box" style="margin-left: 20%;">
+  				<label for="no_box" class="big_text">단계별 인원수</label>
+  				<br/>
+  				<input id="start_cach" type="text" class="form-control6" name="step_participant" placeholder="&nbsp;&nbsp;숫자만 입력해주세요." onkeydown="return showKeyCode(event)">
+  			</div>
+  			<div class="time_select">
+  				<label for="no_box" class="big_text">할인률</label>
+  				<br/>
+  				<input id="start_cach" type="text" class="form-control6" name="step_discoun" placeholder="소수점없이 숫자만 입력해주세요." onkeydown="return showKeyCode(event)">
+  			</div>
+  			
   		</div>
   		<div class="textarea_bot">
   			<textarea rows="20" cols="140" id="text_a" name="textarea" style="resize: none;"></textarea>
@@ -155,6 +165,5 @@ $( document ).ready(function() {
   	</div>
   </div>
 </body>
-<footer> <%@include file="/regist_form/footer.jsp"%>
-		</footer>
+<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 </html>

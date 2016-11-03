@@ -18,6 +18,11 @@
 		insert into auction (AUCTION_BOARD_NUM,SELLER_ID,TITLE,CONTENTS,MAIN_IMAGE_PATH,EXPLAIN_IMAGE_PATH,START_AMOUNT,CATEGORI,AMOUNT,END_DATE,REGIST_DATE,HOT_CHECK,OLD_CHECK) 
    		values (AUCTION_SEQ.NEXTVAL,#seller_id#,#title#,#contents#,#main_image_path#,#explain_image_path#,#start_amount#,#categori#,#amount#,to_date(#end_date#,'YYYY-MM-DD:HH24:MI:SS'),to_date(#regist_date#,'YYYY-MM-DD:HH24:MI:SS'),#hot_check#,#oldcheck#)
    </insert>
+   <!-- 공동구매등록. -->
+   <insert id="group_regist" parameterClass="groupbuy_list">
+		INSERT INTO "DOBID"."GROUPBUY" (GROUPBUY_BOARD_NUM, TITLE, CONTENTS, MAIN_IMAGE_PATH, EXPLAIN_IMAGE_PATH, PARTICIPANT_NUM, CATEGORI, AMOUNT, END_DATE, REGIST_DATE, STEP_PARTICIPANT, STEP_DISCOUNT, FIRST_PRICE, DISCOUNT_PRICE) 
+		VALUES (GROUPBUY_SEQ.NEXTVAL, #title#, #contents#, #main_image_path#, #explain_image_path#, #participant_num#, #categori#, #amount#, TO_DATE(#end_date#, 'YYYY-MM-DD:HH24:MI:SS'), TO_DATE(#regist_date#, 'YYYY-MM-DD:HH24:MI:SS'), #step_participant#, #step_discount#, #first_price#, #discount_price#)
+   </insert>
    <!-- 경매목록 -->
    <select id="search_list" parameterClass="paramiter" resultClass="auction_list">
    		select * from (select rownum rnum,a.AUCTION_BOARD_NUM, m.EMAIL, m.NAME, a.START_AMOUNT, a.HIGHEST_PRICE, a.REGIST_DATE, a.END_DATE, a.MAIN_IMAGE_PATH, a.TITLE from AUCTION a, MEMBER m where a.SELLER_ID = m.MEMBER_ID AND a.TITLE LIKE '%'||#search#||'%' AND a.CATEGORI LIKE '%'||#categori#||'%' AND a.BID_CHECK=#check# AND a.OLD_CHECK=#oldcheck#) where rnum BETWEEN #startCount# and #endCount# 

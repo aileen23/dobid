@@ -15,6 +15,7 @@ import com.dobid.beans.Auction_myAuctionDTO;
 import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
 import com.dobid.beans.DelidDTO;
+import com.dobid.beans.Groupbuy_participantDTO;
 import com.dobid.beans.MemberDTO;
 import com.dobid.beans.MessageDTO;
 import com.dobid.beans.Service_answerDTO;
@@ -245,5 +246,33 @@ public class Mypage_DAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public int countGroupList (String id){ //공동구매 아이디매칭 리스트 카운트
+		int num=0;
+		try {
+			num = (int) smc.queryForObject("myprofile.countGroupList",id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return num;
+	}
+	
+	public List<Groupbuy_participantDTO> groupSelect(String id,int start,int end) {
+		List<Groupbuy_participantDTO> list = null;
+		try {
+			Map<String, Object> map = new HashMap<>();
+			map.put("start", start);
+			map.put("end", end);
+			map.put("member_id", id);
+			list = smc.queryForList("myprofile.groupSelect", map);
+			return list;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return null;
+
 	}
 }
