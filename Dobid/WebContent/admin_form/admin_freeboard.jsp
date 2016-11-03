@@ -71,9 +71,9 @@
 		<h3>자유게시판</h3>
 		<hr>
 
-		<div class="form-group">
+		<div class="form-group col-sm-5" style="float: right;">
 			<form action="/Dobid/admin_freeboard.do" method="POST">
-				<div class="col-sm-7">
+				<div class="col-sm-10">
 					<input type="text" class="form-control"
 						name="admin_boardselecttext" placeholder="검색어입력">
 				</div>
@@ -82,32 +82,32 @@
 			</form>
 		</div>
 
-		<table class="table table-bordered" style="margin-top: 50px">
+		<table class="table table-bordered" style="margin-top: 50px; table-layout:fixed">
 
 			<tr>
-				<th>글번호</th>
-				<th>아이디</th>
-				<th>이름</th>
-				<th>닉네임</th>
-				<th>제목</th>
-				<th>이메일</th>
-				<th>내용</th>
-				<th>이미지</th>
-				<th>등록일자</th>
+				<th style="text-align:center; width: 6%">글번호</th>
+				<th style="text-align:center; width: 10%">아이디</th>
+				<th style="text-align:center; width: 8%">이름</th>
+				<th style="text-align:center; width: 8%">닉네임</th>
+				<th style="text-align:center; width: 10%">제목</th>
+				<th style="text-align:center; width: 13%">이메일</th>
+				<th style="text-align:center; width: %">내용</th>
+				<th style="text-align:center; width: 10%">이미지</th>
+				<th style="text-align:center; width: 15%">등록일자</th>
 
 			</tr>
 			<c:forEach items="${adminboardlist }" var="adminboardlist">
 
 				<tr class="list">
-					<td>${ adminboardlist.basic_board_num}</td>
-					<td>${ adminboardlist.member_id}</td>
-					<td>${ adminboardlist.name}</td>
-					<td>${ adminboardlist.nickname}</td>
-					<td>${ adminboardlist.title}</td>
-					<td>${ adminboardlist.email}</td>
-					<td>${ adminboardlist.contents}</td>
+					<td style="text-align: center;">${ adminboardlist.basic_board_num}</td>
+					<td style="text-align: center;">${ adminboardlist.member_id}</td>
+					<td style="text-align: center;">${ adminboardlist.name}</td>
+					<td style="text-align: center;">${ adminboardlist.nickname}</td>
+					<td  style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.title}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.email}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.contents}</td>
 					<td>${ adminboardlist.image_path}</td>
-					<td>${ adminboardlist.upload_date}</td>
+					<td style="text-align: center;">${ adminboardlist.upload_date}</td>
 				</tr>
 			</c:forEach>
 

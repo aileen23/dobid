@@ -76,11 +76,11 @@
 
 
 
-		<div class="form-group">
+		<div class="form-group col-sm-5" style="float: right;">
 			<form action="/Dobid/admin_auctionlist.do" method="POST">
 
 
-				<div class="col-sm-7">
+				<div class="col-sm-10">
 					<input type="text" class="form-control"
 						id="admin_auction_selecttext" name="admin_auction_selecttext"
 						placeholder="검색어입력">
@@ -90,31 +90,31 @@
 			</form>
 		</div>
 
-		<table class="table table-bordered" style="margin-top: 50px">
+		<table class="table table-bordered" style="margin-top: 50px; table-layout: fixed;">
 
 			<tr>
-				<th>글번호</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>판매자아이디</th>
-				<th>구분</th>
-				<th>유형</th>
-				<th>진행여부</th>
-				<th>이미지</th>
-				<th>등록시간</th>
+				<th style="text-align: center; width: 8%">글번호</th>
+				<th style="text-align: center; width: 15%">제목</th>
+				<th style="text-align: center; width: auto;">내용</th>
+				<th style="text-align: center; width: 10%">판매자아이디</th>
+				<th style="text-align: center; width: 8%">구분</th>
+				<th style="text-align: center; width: 8%">유형</th>
+				<th style="text-align: center; width: 10%">진행여부</th>
+				<th style="text-align: center; width: 10%">이미지</th>
+				<th style="text-align: center; widows: 20%">등록시간</th>
 			</tr>
 			<c:forEach items="${admingroupbuylist }" var="admingroupbuylist">
 				<tr class="list">
 
-					<td>${admingroupbuylist.auction_board_num }</td>
-					<td>${admingroupbuylist.title }</td>
-					<td>${admingroupbuylist.contents }</td>
-					<td>${admingroupbuylist.seller_id }</td>
-					<td>${admingroupbuylist.categori }</td>
-					<td>${admingroupbuylist.hot_check }</td>
-					<td>${admingroupbuylist.buy_check }</td>
-					<td>${admingroupbuylist.main_image_path }</td>
-					<td>${admingroupbuylist.regist_date }</td>
+					<td style="text-align: center;">${admingroupbuylist.auction_board_num }</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${admingroupbuylist.title }</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${admingroupbuylist.contents }</td>
+					<td style="text-align: center;">${admingroupbuylist.seller_id }</td>
+					<td style="text-align: center;">${admingroupbuylist.categori }</td>
+					<td style="text-align: center;">${admingroupbuylist.hot_check }</td>
+					<td style="text-align: center;">${admingroupbuylist.buy_check }</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${admingroupbuylist.main_image_path }</td>
+					<td style="text-align: center;">${admingroupbuylist.regist_date }</td>
 
 
 
@@ -128,10 +128,11 @@
 		
 			<form action="groupbuy_regist_view.do">
 		<div class="form-group">
-			<div class="col-sm-7">
-			<button class="button button5 btn-default">글쓰기</button>
+			<div>
+			<button class="button button5 btn-default" style="float: right;">글쓰기</button>
 		</div></div>
 		</form>
+		
 		
 		
 		<div class="form-group">

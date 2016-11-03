@@ -70,10 +70,10 @@
 		<h3>공지사항</h3>
 		<hr>
 
-		<div class="form-group">
+		<div class="form-group col-sm-5" style="float: right;">
 			<form action="/Dobid/admin_noticeboard.do" method="POST">
 	
-				<div class="col-sm-7">
+				<div class="col-sm-10">
 					<input type="text" class="form-control"
 						name="admin_boardselecttext" placeholder="검색어입력">
 
@@ -83,26 +83,26 @@
 			</form>
 		</div>
 
-		<table class="table table-bordered" style="margin-top: 50px">
+		<table class="table table-bordered" style="margin-top: 50px; table-layout:fixed">
 
 			<tr>
-				<th>글번호</th>
-				<th>아이디</th>
-				<th>제목</th>
-				<th>내용</th>
-				<th>이미지</th>
-				<th>등록일자</th>
-
+				<th style="width: 8%; text-align: center;"><b>글번호</b></th>
+				<th style="width: 10%; text-align: center;"><b>아이디</b></th>
+				<th style="width: 15%; text-align: center;"><b>제목</b></th>
+				<th style="width: 40%; text-align: center;"><b>내용</b></th>
+				<th style="width: 12%; text-align: center;"><b>이미지</b></th>
+				<th style="width: 15%; text-align: center;"><b>등록일자</b></th>
+				
 			</tr>
 			<c:forEach items="${adminboardlist }" var="adminboardlist">
 
 				<tr class="list">
-					<td>${ adminboardlist.basic_board_num}</td>
-					<td>${ adminboardlist.member_id}</td>
-					<td>${ adminboardlist.title}</td>
-					<td>${ adminboardlist.contents}</td>
+					<td style="text-align: center">${ adminboardlist.basic_board_num}</td>
+					<td style="text-align: center">${ adminboardlist.member_id}</td>
+					<td  style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.title}</td>
+					<td  style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.contents}</td>
 					<td>${ adminboardlist.image_path}</td>
-					<td>${ adminboardlist.upload_date}</td>
+					<td style="text-align: center">${ adminboardlist.upload_date}</td>
 				</tr>
 			</c:forEach>
 
@@ -110,8 +110,8 @@
 		
 		<form action="/Dobid/admin_noticeboard_write.do">
 		<div class="form-group">
-			<div class="col-sm-7">
-			<button class="button button5 btn-default">글쓰기</button>
+			<div>
+			<button class="button button5 btn-default" style="float: right;">글쓰기</button>
 		</div></div>
 		</form>
 		
@@ -184,8 +184,7 @@
 					<input type="hidden" name="del" value="del">
 					<input type="hidden" id="admin_board_view_num"
 						name="admin_board_view_num">
-						   
-					<button class="button button5 btn-default colsm-offset-2" style="float: right;" id="close">취소</button>
+				<input type="button" class="button button5 btn-default" id="close" style="float: right;"  value="취소">
 
 
 				</div>
