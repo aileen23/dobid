@@ -31,6 +31,8 @@ public class DeleteAction extends Action{
 		ReplyDAO dao = new ReplyDAO();
 		   if(dao.delete_notice(reply_notice)){
 			   request.setAttribute("msg", "댓글 삭제 성공!!");
+		   }else{
+			   request.setAttribute("msg", "본인의 댓글만 삭제 가능합니다"); 
 		   }
 		   
 		return mapping.findForward("success");
