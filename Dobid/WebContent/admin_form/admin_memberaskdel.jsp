@@ -22,10 +22,14 @@
 
 
 <script type="text/javascript">
-	function update(member_id, update) {
-		$("#member_id").text(member_id);
-		$("#update").text(update);
-	}
+	$(document).ready(function() {
+		for (var int = 0; int < ${adminmemberaskdellist }.length; int++) {
+			$("#bokgu"+i).click(function () {
+				var memberid = $("tr"+i).children(0).val();
+			})
+		}
+
+	});
 </script>
 <title>탈퇴요청관리</title>
 
@@ -69,8 +73,8 @@
 
 			</tr>
 			<c:forEach items="${adminmemberaskdellist }"
-				var="adminmemberaskdellist">
-				<tr class="list">
+				var="adminmemberaskdellist" varStatus="i">
+				<tr class="list" id="tr${i.index}">
 
 					<td>${adminmemberaskdellist.member_id}</td>
 					<td>${adminmemberaskdellist.name }</td>
@@ -80,7 +84,7 @@
 					<td>${adminmemberaskdellist.charging_amount}</td>
 					<td>${adminmemberaskdellist.withdrawal}</td>
 					<td>${adminmemberaskdellist.delete_date}</td>
-					<td><button onclick="update('${adminmemberaskdellist.member_id}','update')">복구</button></td>
+					<td><button id="bokgu${i.index}">복구</button></td>
 				</tr>
 			</c:forEach>
 		</table>
