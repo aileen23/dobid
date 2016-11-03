@@ -156,11 +156,11 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 700px; height: 600px; margin-left: 30%; margin-top: 10%; border: 1px solid black;">
+			style="background-color: white; width: 700px; height: 680px; margin-left: 30%; margin-top: 5%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_ono.do"
 				method="POST">
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							name="admin_ono_view_title" id="admin_ono_view_title"
 							style="margin-top: 20px;" value="asd" readOnly>
@@ -169,7 +169,7 @@
 				</div>
 				<div class="form-group">
 
-					<div class="col-sm-offset-2 col-sm-6">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							id="admin_ono_view_member_id" name="admin_ono_view_member_id"
 							readOnly>
@@ -177,7 +177,7 @@
 				</div>
 				<div class="form-group">
 
-					<div class="col-sm-offset-2 col-sm-6">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="text" class="form-control"
 							id="admin_ono_view_categori" name="admin_ono_view_categori"
 							readOnly>
@@ -186,41 +186,41 @@
 
 
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-6">
+					<div class="col-sm-offset-2 col-sm-8">
 						<input type="image" src="../image/dobid.png"
 							id="admin_ono_view_img" name="admin_ono_view_img" readOnly>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-6">
+					<div class="col-sm-offset-2 col-sm-8">
 						<textarea class="form-control " id="admin_ono_view_contents"
-							name="admin_ono_view_contents" style="height: 100px" readOnly></textarea>
+							name="admin_ono_view_contents" style="height: 150px" readOnly></textarea>
 					</div>
 				</div>
 
 
 
 
-				<div class="col-sm-offset-3 col-sm-2">
+				<div class="col-sm-offset-4 col-sm-3">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" name="admin_ono_view_upload_date"
 						id="admin_ono_view_upload_date"> <input type="button"
-						class="button button5 btn-default" id="close" value="취소">
+						class="button button5 btn-default" id="close" style="float: right;" value="취소">
+						<br>
 
 
 				</div>
 			</form>
 
-
 			<form action="/Dobid/admin_ono.do" method="POST">
 
 				<div class="form-group">
-					<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-offset-2 col-sm-8">
 						<textarea class="form-control "
 							id="admin_ono_view_answer_contents"
-							name="admin_ono_view_answer_contents" style="height: 100px"></textarea>
+							name="admin_ono_view_answer_contents" style="height: 200px"></textarea>
 						<div class="col-sm-offset-4 col-sm-5">
 							<button class="button button5 btn-default">답장</button>
 							<input type="hidden" name="send" value="send"> <input
