@@ -7,19 +7,16 @@
 <head>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-	
-    $('#noticeboardSelectAll').on('click', function() {  //공지사항전체목록보기버튼
-    	$(location).attr('href', '/Dobid/noticeboard_list.do');
+	$(document).ready(function() {
+
+		$('#noticeboardSelectAll').on('click', function() { //공지사항전체목록보기버튼
+			$(location).attr('href', '/Dobid/noticeboard_list.do');
+		});
+
 	});
- 
-
-
-
-
-});
 </script>
 
 
@@ -34,7 +31,7 @@ $(document).ready(function(){
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -45,13 +42,14 @@ $(document).ready(function(){
 
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
-<body><br>
-<br>
-<br>
-<br>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<center>
-<h3>공지사항 상세보기</h3>
+		<h3>공지사항 상세보기</h3>
 		<hr>
 		<form class="form-horizontal">
 			<div class="form-group">
@@ -68,30 +66,20 @@ $(document).ready(function(){
 						placeholder="${noticeobject.nickname }" disabled>
 				</div>
 			</div>
-			
-			<div class="form-group">
-			    <label for="inputFile" class="col-sm-4 control-label" >첨부파일</label>
-			    <div class="filebox col-sm-5">
-  					<div id="slider">
-  					
-  					
 
-						<c:set var="image_path1" value="${noticeobject.image_path }"/>
-						<c:set var="image_path2" value="${fn:split(image_path1,'@')}"/>
-						<c:set var="image_path3" value="${fn:length(image_path2)-1}"/>
-  					<c:forEach  begin="1" end="image_path3" var="i" items="image_path2">
-  						
-  						<img src="/Dobid"+${i} }>
-  						
-  					</c:forEach>
+			<div class="form-group">
+				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+				<div class="filebox col-sm-5">
+					<img alt="이미지설명" src="${noticeobject.image_path }" width="100%">
 				</div>
-			    </div>
 			</div>
+			
 			<div class="form-group">
 				<label for="inputTextarea" class="col-sm-4 control-label" disabled>내용</label>
 				<div class="col-sm-5">
-					<textarea class="form-control " id="view_contents" 
-						placeholder="${noticeobject.contents }" style="height: 200px" disabled></textarea>
+					<textarea class="form-control " id="view_contents"
+						placeholder="${noticeobject.contents }" style="height: 200px"
+						disabled></textarea>
 				</div>
 			</div>
 
@@ -102,13 +90,14 @@ $(document).ready(function(){
 		</div>
 
 	</center>
-	
-	
-	
-		
-	<Br><br>
-	<%@include file="/reply_form/reply_notice.jsp" %>
-  	<footer> <%@include file="/regist_form/footer.jsp"%>
-		</footer>
+
+
+
+
+	<Br>
+	<br>
+	<%@include file="/reply_form/reply_notice.jsp"%>
+	<footer> <%@include file="/regist_form/footer.jsp"%>
+	</footer>
 </body>
 </html>

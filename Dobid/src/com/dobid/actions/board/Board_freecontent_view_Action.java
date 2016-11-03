@@ -24,6 +24,7 @@ public class Board_freecontent_view_Action extends Action{
 			FreeboardDTO freeobject = new FreeboardDTO();
 			boardDAO dao = new boardDAO();
 			freeobject = dao.freeSelect(num);
+	
 			dao.freeSelectCnt(num);
 			request.setAttribute("freeobject", freeobject);
 

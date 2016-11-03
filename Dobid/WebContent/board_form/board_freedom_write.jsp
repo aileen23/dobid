@@ -18,6 +18,23 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
+		$('.file_form').change(function() {
+			readURL(this);
+		});
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성 
+				reader.onload = function(e) {
+					//파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러 
+					$('.imag_view').attr('src', e.target.result);
+					//이미지 Tag의 SRC속성에 읽어들인 File내용을 지정 
+					//(아래 코드에서 읽어들인 dataURL형식) 
+				}
+				reader.readAsDataURL(input.files[0]);
+				//File내용을 읽어 dataURL형식의 문자열로 저장 
+			}
+		}//readURL()-- 
+
 		$('#freeboardSelectAll').on('click', function() { //자유게시판
 			$(location).attr('href', '/Dobid/board_freedom_write.do');
 
@@ -54,7 +71,8 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
-<script src="/Dobid/board_form/js/freedom_upload.js" type="text/javascript"></script>
+<script src="/Dobid/board_form/js/freedom_upload.js"
+	type="text/javascript"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -118,23 +136,28 @@
 						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
-<div class="form-group">
-			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+			<div class="form-group">
+				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
 
-			<div class="filebox col-sm-5">
-				<label for="cma_file" class="text-center">첨부파일</label>
-				<input type="file" name="image_path" id="cma_file" accept="image/*"
-					capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br> <br>
-				<div align="center" style="text-decoration: underline">
-					* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다
+
+
+				<div class="filebox col-sm-5">
+					<img class="imag_view" alt="" src=""><br>
+					<div class="filebox main_file">
+						<label for="cma_file" class="text-center">첨부파일</label> <input
+							type="file" name="image_path" id="cma_file" class="file_form" />
+						<br> <br>
+						<div align="center" style="text-decoration: underline">
+							* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다 <br>
+
+
+						</div>
+					</div>
+					<br>
+
 				</div>
-				<br>
-				<div id="cma_image" style="width: 100%; max-width: 100%; display: none;"></div>
-				<br>
-
 			</div>
-		</div>
 
 			<div class="col-sm-offset-4 ">
 				<input type="submit" class="button button5 btn-default" id="check"

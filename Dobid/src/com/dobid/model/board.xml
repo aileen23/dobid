@@ -459,9 +459,9 @@
 
 	<!-- 공지게시판 페이지 나누기기기기기기기기기기 --> 
 	<select id="adminnoticelistpage" resultClass="adminnoticeDTO" parameterClass="java.util.Map">
-		select basic_board_num,member_id,title,contents,cilck_count,upload_date
-		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date, rownum rn
-		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date,image_path
+		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date,image_path, rownum rn
+		from (select basic_board_num,member_id,title,contents,cilck_count,upload_date,image_path
 		from noticeboard order by basic_board_num desc))
 		where rn between #start# and #end# and title like '%'||#title#||'%'
 	</select>

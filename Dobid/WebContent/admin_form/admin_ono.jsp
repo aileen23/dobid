@@ -55,7 +55,7 @@
 									$(this).children().eq(6).text());
 
 							$("#admin_ono_view_upload_date_send").val(
-									$(this).children().eq(4).text());
+									$(this).children().eq(5).text());
 						});
 
 			});
@@ -187,8 +187,7 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-						<input type="image" src="../image/dobid.png"
-							id="admin_ono_view_img" name="admin_ono_view_img" readOnly>
+					<img alt="이미지설명" src="admin_ono_view_img" name="admin_ono_view_img"  width="100%">
 					</div>
 				</div>
 				<div class="form-group">

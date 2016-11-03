@@ -4,43 +4,59 @@
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<% request.setCharacterEncoding("UTF-8");%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <%
-   if (session.getAttribute("adminlogincheck") == null) {
-      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
-            + "location.replace('/Dobid/admin_login.do');" + "</script>");
-   }
+	request.setCharacterEncoding("UTF-8");
+%>
+<%
+	if (session.getAttribute("adminlogincheck") == null) {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/Dobid/admin_login.do');" + "</script>");
+	}
 %>
 
 <script type="text/javascript">
-$(document).ready(function(){ 
+	$(document).ready(function() {
+		$('.file_form').change(function() {
+			readURL(this);
+		});
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader(); //파일을 읽기 위한 FileReader객체 생성 
+				reader.onload = function(e) {
+					//파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러 
+					$('.img_view').attr('src', e.target.result);
+					//이미지 Tag의 SRC속성에 읽어들인 File내용을 지정 
+					//(아래 코드에서 읽어들인 dataURL형식) 
+				}
+				reader.readAsDataURL(input.files[0]);
+				//File내용을 읽어 dataURL형식의 문자열로 저장 
+			}
+		}//readURL()-- 
 
+		$("#pageback").click(function() { //돌아가기
 
-	$("#pageback").click(function(){ //돌아가기
+			window.history.back();
 
-		window.history.back();
+		});
 
-	});
-	
-	$("#check").click(function() {
-		
-		if($("#notice_title").val().length < 1){
-			
-			alert("제목을 입력해주세요");
-			return false;
-			}else if($("#notice_contents").val().length < 1){
-				
+		$("#check").click(function() {
+
+			if ($("#notice_title").val().length < 1) {
+
+				alert("제목을 입력해주세요");
+				return false;
+			} else if ($("#notice_contents").val().length < 1) {
+
 				alert("내용을 입력해주세요.");
 				return false;
-			}else{
+			} else {
 				alert("글쓰기 완료");
 			}
 		});
 
-
-});
-
+	});
 </script>
 
 
@@ -52,8 +68,9 @@ $(document).ready(function(){
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
-	<script src="/Dobid/admin_form/js/admin_upload.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+<script src="/Dobid/admin_form/js/admin_upload.js"
+	type="text/javascript"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -76,35 +93,39 @@ $(document).ready(function(){
 			reader.readAsDataURL(html.files[0]);
 		}
 	}
-	
 </script>
 
 </head>
 <header><%@include file="../admin_form/admin_header.jsp"%></header>
-<body><br>
-<br>
-<br>
-<br>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
 
 
 	<center>
-<H3>공지사항 글쓰기</H3>
-	
+		<H3>공지사항 글쓰기</H3>
+
 		</p>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/admin_noticeboard_write_input.do" method="POST" enctype="multipart/form-data">
-		
+		<form class="form-horizontal"
+			action="/Dobid/admin_noticeboard_write_input.do" method="POST"
+			enctype="multipart/form-data">
+
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="title" placeholder="제목" name="title">
+					<input type="text" class="form-control" id="title" placeholder="제목"
+						name="title">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="notice_whiter_user"
-						placeholder="<%=request.getSession().getAttribute("logincheck") %>" name="free_whiter_user" disabled>
+						placeholder="<%=request.getSession().getAttribute("logincheck")%>"
+						name="free_whiter_user" disabled>
 				</div>
 			</div>
 			<div class="form-group">
@@ -114,43 +135,52 @@ $(document).ready(function(){
 						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
+			
 			<div class="form-group">
-			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+
+				<div class="filebox col-sm-5">
+					<img class="img_view" alt="" src=""><br>
+					<div class="filebox main_file">
+						<label for="cma_file" class="text-center">첨부파일</label> <input
+							type="file" name="image_path" id="cma_file" class="file_form" />
+						<br> <br>
+						<div align="center" style="text-decoration: underline">
+							* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다 <br>
 
 
-			<div class="filebox col-sm-5">
-				<label for="cma_file" class="text-center">첨부파일</label>
-				<input type="file" name="image_path" id="cma_file" accept="image/*"
-					capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br> <br>
-				<div align="center" style="text-decoration: underline">
-					* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다
+						</div>
+					</div>
+					<br>
+
 				</div>
-				<br>
-				<div id="cma_image" style="width: 100%; max-width: 100%; display: none;"></div>
-				<br>
-
 			</div>
-		</div>			
 
 
-		<div class="col-sm-offset-1 ">
-			<input type="submit" class="button button5 btn-default" id="check" value="글쓰기">
-			<button class="button button5 btn-default" id="pageback">취소</button>
-		</div>
-	</form>
-		
-		
-		
+
+			<div class="col-sm-offset-1 ">
+				<input type="submit" class="button button5 btn-default" id="check"
+					value="글쓰기">
+				<button class="button button5 btn-default" id="pageback">취소</button>
+			</div>
+		</form>
+
+
+
 
 	</center>
-	
-	
-		
-	<Br><br><Br>
-	<Br><br><Br>
 
-			<footer> <%@include file="/regist_form/footer.jsp"%></footer>
-		</footer>
+
+
+	<Br>
+	<br>
+	<Br>
+	<Br>
+	<br>
+	<Br>
+
+	<footer> <%@include file="/regist_form/footer.jsp"%></footer>
+	</footer>
 </body>
 
 

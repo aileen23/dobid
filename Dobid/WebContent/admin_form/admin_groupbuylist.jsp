@@ -209,9 +209,8 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-						<input type="image" src="../image/dobid.png"
-							id="admin_auction_view_img" name="admin_auction_view_img"
-							readOnly>
+					<img alt="이미지설명" src="admin_auction_view_img" name="admin_auction_view_img"  width="100%">
+						
 					</div>
 				</div>
 				<div class="form-group">

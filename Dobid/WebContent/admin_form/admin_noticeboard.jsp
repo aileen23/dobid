@@ -101,7 +101,7 @@
 					<td style="text-align: center">${ adminboardlist.member_id}</td>
 					<td  style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.title}</td>
 					<td  style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.contents}</td>
-					<td>${ adminboardlist.image_path}</td>
+					<td style="text-overflow:ellipsis; overflow:hidden">${ adminboardlist.image_path}</td>
 					<td style="text-align: center">${ adminboardlist.upload_date}</td>
 				</tr>
 			</c:forEach>
@@ -168,8 +168,8 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-						<input type="image" src="../image/dobid.png"
-							id="admin_board_view_img" name="admin_board_view_img" readOnly>
+					<img alt="이미지설명" src="admin_board_view_img" name="admin_board_view_img"  width="100%">
+		
 					</div>
 				</div>
 				<div class="form-group">

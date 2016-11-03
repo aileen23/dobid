@@ -160,9 +160,8 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-						<input type="image" src="../image/dobid.png"
-							id="admin_report_view_image_path" name="admin_report_view_image_path"
-							 readOnly>
+					<img alt="이미지설명" src="admin_report_view_image_path" name="admin_report_view_image_path"  width="100%">
+						
 					</div>
 				</div>
 				<div class="form-group">
