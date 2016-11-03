@@ -100,6 +100,7 @@
 				<th>구분</th>
 				<th>유형</th>
 				<th>진행여부</th>
+				<th>이미지</th>
 				<th>등록시간</th>
 			</tr>
 			<c:forEach items="${admingroupbuylist }" var="admingroupbuylist">
@@ -112,6 +113,7 @@
 					<td>${admingroupbuylist.categori }</td>
 					<td>${admingroupbuylist.hot_check }</td>
 					<td>${admingroupbuylist.buy_check }</td>
+					<td>${admingroupbuylist.main_image_path }</td>
 					<td>${admingroupbuylist.regist_date }</td>
 
 

@@ -47,10 +47,12 @@
 									$(this).children().eq(2).text());
 							$("#admin_ono_view_contents").val(
 									$(this).children().eq(3).text());
-							$("#admin_ono_view_upload_date").val(
+							$("#admin_ono_view_img").val(
 									$(this).children().eq(4).text());
-							$("#admin_ono_view_answer_contents").val(
+							$("#admin_ono_view_upload_date").val(
 									$(this).children().eq(5).text());
+							$("#admin_ono_view_answer_contents").val(
+									$(this).children().eq(6).text());
 
 							$("#admin_ono_view_upload_date_send").val(
 									$(this).children().eq(4).text());
@@ -101,6 +103,7 @@
 				<th>작성자</th>
 				<th>구분</th>
 				<th>내용</th>
+				<th>이미지</th>
 				<th>시간</th>
 				<th>답변</th>
 
@@ -112,6 +115,7 @@
 					<td>${adminonolist.member_id}</td>
 					<td>${adminonolist.categori}</td>
 					<td>${adminonolist.contents}</td>
+					<td>${adminonolist.image_path}</td>
 					<td>${adminonolist.upload_date}</td>
 					<td>${adminonolist.answer_contents}</td>
 				</tr>

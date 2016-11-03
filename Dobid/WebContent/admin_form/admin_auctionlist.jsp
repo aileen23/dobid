@@ -27,7 +27,7 @@
 
 <script type="text/javascript">
 	$("#bt_del").click(function() {
-		location.reload("admin_auctionlist.do");
+		location.reload("admin_auctionlist.do?page=&catalogue=&admin_auction_selecttext=");
 
 	});
 	$(document).ready(
@@ -55,9 +55,9 @@
 									$(this).children().eq(4).text());
 							$("#admin_auction_hot_check").val(
 									$(this).children().eq(5).text());
-							$("#admin_auction_bid_check").val(
-									$(this).children().eq(6).text());
 							$("#admin_auction_view_img").val(
+									$(this).children().eq(6).text());
+							$("#admin_auction_bid_check").val(
 									$(this).children().eq(7).text());
 
 						});
@@ -111,6 +111,7 @@
 				<th>구분</th>
 				<th>유형</th>
 				<th>진행여부</th>
+				<th>이미지</th>
 				<th>등록시간</th>
 			</tr>
 			<c:forEach items="${adminauctionlist }" var="adminauctionlist">
@@ -123,6 +124,7 @@
 					<td>${adminauctionlist.categori }</td>
 					<td>${adminauctionlist.hot_check }</td>
 					<td>${adminauctionlist.bid_check }</td>
+					<td>${adminauctionlist.main_image_path }</td>
 					<td>${adminauctionlist.regist_date }</td>
 
 

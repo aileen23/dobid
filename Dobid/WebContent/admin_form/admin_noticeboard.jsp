@@ -39,17 +39,16 @@
 
 							$("#popup").show();
 
-							$("#admin_board_view_title").val(
-									$(this).children().eq(4).text());
-							$("#admin_board_view_userid").val(
-									$(this).children().eq(1).text());
-							$("#admin_board_view_img").val(
-									$(this).children().eq(7).text());
-							$("#admin_board_view_content").val(
-									$(this).children().eq(6).text());
-
 							$("#admin_board_view_num").val(
 									$(this).children().eq(0).text());
+							$("#admin_board_view_userid").val(
+									$(this).children().eq(1).text());
+							$("#admin_board_view_title").val(
+									$(this).children().eq(2).text());
+							$("#admin_board_view_content").val(
+									$(this).children().eq(3).text());
+							$("#admin_board_view_img").val(
+									$(this).children().eq(4).text());
 
 						});
 
@@ -91,6 +90,7 @@
 				<th>아이디</th>
 				<th>제목</th>
 				<th>내용</th>
+				<th>이미지</th>
 				<th>등록일자</th>
 
 			</tr>
@@ -101,8 +101,8 @@
 					<td>${ adminboardlist.member_id}</td>
 					<td>${ adminboardlist.title}</td>
 					<td>${ adminboardlist.contents}</td>
-					<td>${ adminboardlist.upload_date}<input class="image_path"
-						type="hidden" name="${ adminboardlist.image_path}"></td>
+					<td>${ adminboardlist.image_path}</td>
+					<td>${ adminboardlist.upload_date}</td>
 				</tr>
 			</c:forEach>
 
