@@ -241,13 +241,13 @@
 		</action>
 
 		<!-- board_freedom_write -->
-		<action path="/board_freedom_write" forward="/board_form/board_freedom_write.jsp" name="freeForm">
+		<action path="/board_freedom_write" forward="/board_form/board_freedom_write.jsp">
 		
 		</action>
 
 		<!-- board_freedom_write -->
 		<action path="/board_freedom_write_input"
-			type="com.dobid.actions.board.Board_freedom_write_Action">
+			type="com.dobid.actions.board.Board_freedom_write_Action" name="freeForm">
 			<forward name="success" path="/freeboard_list.do"></forward>
 		</action>
 
