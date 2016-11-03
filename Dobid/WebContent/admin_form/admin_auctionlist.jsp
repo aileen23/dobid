@@ -17,6 +17,14 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<%
+   if (session.getAttribute("adminlogincheck") == null) {
+      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+            + "location.replace('/Dobid/admin_login.do');" + "</script>");
+   }
+%>
+
+
 <script type="text/javascript">
 	$("#bt_del").click(function() {
 		location.reload("admin_auctionlist.do");

@@ -19,6 +19,12 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
+<%
+   if (session.getAttribute("adminlogincheck") == null) {
+      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+            + "location.replace('/Dobid/admin_login.do');" + "</script>");
+   }
+%>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
