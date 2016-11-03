@@ -15,22 +15,26 @@
 	<typeAlias alias="memberDTO" type="com.dobid.beans.MemberDTO" />
 	<typeAlias alias="messageDTO" type="com.dobid.beans.MessageDTO" />
 	<typeAlias alias="noticeboardDTO" type="com.dobid.beans.NoticeboardDTO" />
-	
+
 	<typeAlias alias="serviceDTO" type="com.dobid.beans.ServiceDTO" />
 	<typeAlias alias="loginDTO" type="com.dobid.beans.LoginDTO" />
 	<typeAlias alias="findidDTO" type="com.dobid.beans.Find_idDTO" />
 	<typeAlias alias="findpassDTO" type="com.dobid.beans.FindPassDTO" />
-	
+
 
 	<insert id="registAccount" parameterClass="memberDTO">
 		insert into member
-		values (#member_id#, #name#, #pass#, #phone#, #email#,
-		#address#,
-		#nickname#, #introduction#, #birthday#, #charging_amount#)
+		values (member_id = #member_id#, name = #name#, pass = #pass#, phone =
+		#phone#, email = #email#,
+		address = #address#,
+		nickname = #nickname#,
+		introduction = #introduction#, birthday = #birthday#, charging_amount =
+		#charging_amount#)
 	</insert>
 	<select id="login" parameterClass="loginDTO" resultClass="String">
 		select
-		member_id from member where member_id = #member_id# and pass = #pass# and withdrawal = #withdrawal#
+		member_id from member where member_id = #member_id# and pass = #pass#
+		and withdrawal = #withdrawal#
 	</select>
 	<select id="find_id" parameterClass="findidDTO" resultClass="String">
 		select member_id from member where name=#name# and birthday=#birthday#
@@ -46,7 +50,9 @@
 		select email from member where email = #email#
 	</select>
 	<update id="find_pass" parameterClass="findpassDTO">
-		update member set pass = #pass# where member_id = #member_id# and name = #name# and email = #email#
+		update member set pass =
+		#pass# where member_id = #member_id# and name = #name# and email =
+		#email#
 	</update>
 </sqlMap>
 
