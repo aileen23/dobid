@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,7 +72,19 @@ $(document).ready(function(){
 			<div class="form-group">
 			    <label for="inputFile" class="col-sm-4 control-label" >첨부파일</label>
 			    <div class="filebox col-sm-5">
-			        <img alt="이미지설명" src="../image/logo.png"  width="100%">
+  					<div id="slider">
+  					
+  					
+
+						<c:set var="image_path1" value="${noticeobject.image_path }"/>
+						<c:set var="image_path2" value="${fn:split(image_path1,'@')}"/>
+						<c:set var="image_path3" value="${fn:length(image_path2)-1}"/>
+  					<c:forEach  begin="1" end="image_path3" var="i" items="image_path2">
+  						
+  						<img src="/Dobid"+${i} }>
+  						
+  					</c:forEach>
+				</div>
 			    </div>
 			</div>
 			<div class="form-group">
