@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.AuctionDTO;
 import com.dobid.beans.Groupbuy_participantDTO;
+import com.dobid.beans.Groupbuy_participantListDTO;
 import com.dobid.model.Mypage_DAO;
 
 public class Mypage_groupbuyList_Actions extends Action {
@@ -21,7 +22,6 @@ public class Mypage_groupbuyList_Actions extends Action {
 		
 		
 		String id= (String) request.getSession().getAttribute("logincheck");
-		String action = request.getParameter("action");
 		String pageStr = request.getParameter("page");
 		
 		int page=1;
@@ -37,7 +37,7 @@ public class Mypage_groupbuyList_Actions extends Action {
 		int totalPage = totalRecord/viewRowCnt;
 	      if(totalRecord%viewRowCnt >0)
     	  totalPage++;
-		List<Groupbuy_participantDTO> list = dao.groupSelect(id,start,end);
+		List<Groupbuy_participantListDTO> list = dao.groupSelect(id,start,end);
 		
 		request.setAttribute("list", list);
 		request.setAttribute("page", page);//현재페이지

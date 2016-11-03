@@ -16,6 +16,7 @@
 	<typeAlias alias="service_answerDTO2" type="com.dobid.beans.Service_answerDTO" />
 	<typeAlias alias="delidDTO" type="com.dobid.beans.DelidDTO"/>
 	<typeAlias alias="groupbuy_participantDTO" type="com.dobid.beans.Groupbuy_participantDTO"/>
+	<typeAlias alias="groupbuy_participantListDTO" type="com.dobid.beans.Groupbuy_participantListDTO"/>
 	
 	
 	
@@ -121,10 +122,10 @@
 	
 	<!-- 공동구매목록출력 -->
 	<select id="countGroupList" parameterClass="String" resultClass="java.lang.Integer">
-		select count(*) from groupbuy_participant where member_id=#member_id#
+		select count(*) from groupbuy_participant where buyer_id=#buyer_id#
 	</select>
-	<select id="groupSelect" parameterClass="java.util.Map" resultClass="Groupbuy_participantDTO">
-		select a.groupbuy_board_num,main_image_path,title,discount_price,end_date 
+	<select id="groupSelect" parameterClass="java.util.Map" resultClass="Groupbuy_participantListDTO">
+		select groupbuy_board_num,main_image_path,title,discount_price,end_date 
 			from (select groupbuy_board_num,main_image_path,title,discount_price,end_date, rownum rn
 					from (select a.groupbuy_board_num,main_image_path,title,discount_price,end_date
 							from groupbuy a, groupbuy_participant b
