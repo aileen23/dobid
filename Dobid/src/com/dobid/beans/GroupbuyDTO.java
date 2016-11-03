@@ -93,6 +93,27 @@ public class GroupbuyDTO {
 		BUY_CHECK = bUY_CHECK;
 	}
 
+	
+
+	public GroupbuyDTO(String title, String contents, String main_image_path,
+			String explain_image_path, String categori, int amount,
+			String end_date, String regist_date, int step_participant,
+			int step_discount, int first_price, int discount_price) {
+		super();
+		this.title = title;
+		this.contents = contents;
+		this.main_image_path = main_image_path;
+		this.explain_image_path = explain_image_path;
+		this.categori = categori;
+		this.amount = amount;
+		this.end_date = end_date;
+		this.regist_date = regist_date;
+		this.step_participant = step_participant;
+		this.step_discount = step_discount;
+		this.first_price = first_price;
+		this.discount_price = discount_price;
+	}
+
 
 
 	public int getNum() {

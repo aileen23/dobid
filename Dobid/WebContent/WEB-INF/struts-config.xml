@@ -33,6 +33,8 @@
 			name="regist_actionForm" />
 		<form-bean name="listForm"
 			type="com.dobid.product_regist.action.form.List_form"></form-bean>
+		<form-bean name="gorupForm"
+			type="com.dobid.product_regist.action.form.Group_regits_form"></form-bean>
 		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
 			type="app.InputForm"/> end sample -->
 		<!-- sample form bean descriptor for a DynaActionForm <form-bean name="logonForm" 
@@ -95,6 +97,11 @@
 		</action>
 		<action path="/basket_add" forward="/product_regist_form/basket_add.jsp"></action>
 		<action path="/groupbuy_regist_view" forward="/product_regist_form/groupbuy_regist.jsp"></action>
+		<action path="/groupbuy_regist_regist" type="com.dobid.product_regist.action.Group_regist" 
+			name="gorupForm">
+			<forward path="/admin_groupbuylist.do" name="sueccess" redirect="true"></forward>
+			<forward path="/fail.do" name="fail" redirect="true"></forward>
+		</action>
 		<!-- main, login, register account, find -->
 		<action path="/checkid" forward="/regist_form/checkid.jsp"></action>
 		<action path="/checknickname" forward="/regist_form/checknickname.jsp"></action>
@@ -174,8 +181,8 @@
 		<action path="/sendmessage" type="com.dobid.actions.mypage.Mypage_sendmsg_Action">
 			<forward name="success" path="/mypage_form/sendMessage.jsp" />
 		</action>
-		<action path="/auctionend" type="com.dobid.actions.mypage.Mypage_auctionEnd_Action">
-			<forward name="success" path="/mypage_form/sales_list_result.jsp" />
+		<action path="/myprofile_groupbuylist" type="com.dobid.actions.mypage.Mypage_groupbuyList_Actions">
+			<forward name="success" path="/mypage_form/myprofile_groupbuy_details.jsp" />
 		</action>
 		
 		
