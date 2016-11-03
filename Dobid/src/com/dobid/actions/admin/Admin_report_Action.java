@@ -70,8 +70,8 @@ public class Admin_report_Action extends Action {
 
 		} else if (del != null) {
 
-			boolean delflag = dao.adminReportDel(admin_report_view_upload_date);
-			request.setAttribute("delflag", delflag);
+			boolean delreportflag = dao.adminReportDel(admin_report_view_upload_date);
+			request.setAttribute("delreportflag", delreportflag);
 
 		}
 

@@ -23,9 +23,16 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		for (var int = 0; int < ${adminmemberaskdellist }.length; int++) {
-			$("#bokgu"+i).click(function () {
-				var memberid = $("tr"+i).children(0).val();
+		for (var int = 0; int < '${adminmemberaskdellist }'.length; int++) {
+			$("#bokgu"+int).click(function () {
+				var member_id = $("#tr"+int).children(0).val();
+				
+					$.ajax({
+						url:'admin_memberaskdel.do',
+						data:{member_id:member_id,update:'update'},
+						type:'POST'
+					});
+					
 			})
 		}
 
@@ -84,7 +91,7 @@
 					<td>${adminmemberaskdellist.charging_amount}</td>
 					<td>${adminmemberaskdellist.withdrawal}</td>
 					<td>${adminmemberaskdellist.delete_date}</td>
-					<td><button id="bokgu${i.index}">복구</button></td>
+					<td><button id="bokgu'${i.index}'">복구</button></td>
 				</tr>
 			</c:forEach>
 		</table>

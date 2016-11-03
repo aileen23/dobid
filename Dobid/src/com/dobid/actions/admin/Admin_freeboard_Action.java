@@ -74,8 +74,8 @@ public class Admin_freeboard_Action extends Action {
 
 		} else {
 
-			boolean delflag = dao.adminFreeBoardDel(admin_board_view_num);
-			request.setAttribute("delflag", delflag);
+			boolean delfreeflag = dao.adminFreeBoardDel(admin_board_view_num);
+			request.setAttribute("delfreeflag", delfreeflag);
 		}
 
 		return mapping.findForward("success");

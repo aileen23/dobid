@@ -73,8 +73,8 @@ public class Admin_memberdel_Action extends Action {
 
 		} else if (del != null) {
 
-			boolean delflag = dao.adminMemberdelDel(admin_memberdel_view_member_id);
-			request.setAttribute("delflag", delflag);
+			boolean delmemberflag = dao.adminMemberdelDel(admin_memberdel_view_member_id);
+			request.setAttribute("delmemberflag", delmemberflag);
 
 		}
 

@@ -73,8 +73,8 @@ public class Admin_noticeboard_Action extends Action {
 		
 		} else {
 
-			boolean delflag = dao.adminNoticeBoardDel(admin_board_view_num);
-			request.setAttribute("delflag", delflag);
+			boolean delnoticeflag = dao.adminNoticeBoardDel(admin_board_view_num);
+			request.setAttribute("delnoticeflag", delnoticeflag);
 
 		}
 

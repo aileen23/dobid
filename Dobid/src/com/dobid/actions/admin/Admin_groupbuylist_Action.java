@@ -78,8 +78,8 @@ public class Admin_groupbuylist_Action extends Action {
 
 		} else if (del != null) {
 
-			boolean delflag = dao.adminGroupActionDel(admin_auction_view_num);
-			request.setAttribute("delflag", delflag);
+			boolean delgroupflag = dao.adminGroupActionDel(admin_auction_view_num);
+			request.setAttribute("delgroupflag", delgroupflag);
 
 		}
 		return mapping.findForward("success");

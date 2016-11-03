@@ -70,8 +70,8 @@ public class Admin_memberaskdel_Action extends Action {
 
 		} else if (update != null) {
 
-			boolean updateflag = dao.adminMemberdelUpdate(member_id);
-			request.setAttribute("updateflag", updateflag);
+			boolean upaskflag = dao.adminMemberdelUpdate(member_id);
+			request.setAttribute("upaskflag", upaskflag);
 
 		}
 

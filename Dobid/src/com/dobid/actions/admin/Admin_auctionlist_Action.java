@@ -88,12 +88,12 @@ public class Admin_auctionlist_Action extends Action {
 		} else {
 			if (admin_auction_hot_check.equals("경매")) {
 
-				boolean delflag = dao.adminActionDel(admin_auction_view_num);
-				request.setAttribute("delflag", delflag);
+				boolean delauctionflag = dao.adminActionDel(admin_auction_view_num);
+				request.setAttribute("delauctionflag", delauctionflag);
 
 			} else if (admin_auction_hot_check.equals("핫경매")) {
-				boolean delflag = dao.adminHotActionDel(admin_auction_view_num);
-				request.setAttribute("delflag", delflag);
+				boolean delhotflag = dao.adminHotActionDel(admin_auction_view_num);
+				request.setAttribute("delhotflag", delhotflag);
 			}
 		}
 
