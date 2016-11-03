@@ -24,7 +24,7 @@ function auctionpost(date,num){
 		if(nowdate>enddate){
 			$.ajax({
 				url:'/auctionend.do',
-				data:{"auction_board_num":"num"}, //이 부분도 auctionlist는 아래에 jstl 배열에서 선언된 명칭입니다. 그 밖인 이곳에는 request에 list라는 키값으로 해셔야합니다.
+				data:{auction_board_num:'num'}, //이 부분도 auctionlist는 아래에 jstl 배열에서 선언된 명칭입니다. 그 밖인 이곳에는 request에 list라는 키값으로 해셔야합니다.
 				type:'POST',
 				success: alert("경매가 종료되었습니다.")
 			});
