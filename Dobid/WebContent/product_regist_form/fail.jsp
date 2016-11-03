@@ -11,7 +11,7 @@
 <header><%@include file="/regist_form/header.jsp"%></header>
 <body>
 <div class="row2">
-	<div style="margin: 0 auto; background-color: #E6E6E6; width: 20%; height: 40%; text-align: center; font-size: 2em;">경매가 완료된 상품입니다.</div>
+	<div style="margin: 0 auto; background-color: #E6E6E6; width: 20%; height: 40%; text-align: center; font-size: 2em;">서버 오류입니다.</div>
 	<button type="button" style="margin-left: 45%;" onclick="location.replace('main.do');">메인으로 가기</button>
 	</div>
 </body>
