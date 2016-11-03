@@ -23,11 +23,11 @@
 
 
 	<insert id="registAccount" parameterClass="memberDTO">
-		INSERT INTO
-		"DOBID"."MEMBER" (member_id, name, pass, phone, email, address,
+		insert into
+		member (member_id, name, pass, phone, email, address,
 		nickname, introduction, birthday, charging_amount) VALUES
-		(#member_id,#name ,#pass ,#phone ,#email ,#address ,#nickname
-		,#introduction ,#birthday ,#charging_amount );
+		(#member_id#, #name#, #pass# , #phone# , #email# , #address# , #nickname#
+		, #introduction# , #birthday# , #charging_amount# )
 	</insert>
 	<select id="login" parameterClass="loginDTO" resultClass="String">
 		select
