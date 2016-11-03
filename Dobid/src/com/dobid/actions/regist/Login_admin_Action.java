@@ -18,10 +18,12 @@ public class Login_admin_Action extends Action {
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
 
-		Admin_loginDTO dto = new Admin_loginDTO();
 		Encryption enc = new Encryption("chlvlfgkschlvlfgks");
+		Admin_loginDTO dto = new Admin_loginDTO();
+
 		dto.setAdmin_id(request.getParameter("id"));
-		dto.setPass(request.getParameter("pass"));
+		dto.setPass(enc.aesEncode(request.getParameter("pass")));
+		System.out.println(request.getParameter("id") + enc.aesEncode(request.getParameter("pass")));
 
 		dobidDAO dao = new dobidDAO();
 

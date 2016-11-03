@@ -60,7 +60,7 @@
 	</update>
 	<select id="admin_login" parameterClass="adminloginDTO"
 		resultClass="String">
-		select admin_id from ADMIN where admin_id = #admin_id# and pass = #pass#
+		select admin_id from admin where admin_id = #admin_id# and pass = #pass#
 	</select>
 </sqlMap>
 

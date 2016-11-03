@@ -26,7 +26,7 @@
 <center><font size="80" color="black">Login</font><br></center>
 <center><font size="3" color="black">for admin</font></center>
 <br>
-<form class="form-horizontal" style="margin-left: 25%" action="do_admin_login.do">
+<form class="form-horizontal" style="margin-left: 25%" action="do_admin_login.do" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">

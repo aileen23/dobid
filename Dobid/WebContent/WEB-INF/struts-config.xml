@@ -106,7 +106,9 @@
 			<forward name="success" path="/main.do"></forward>
 			<forward name="fail" path="/login.do"></forward>
 		</action>
+		
 		<action path="/admin_login" forward="/regist_form/admin_login.jsp"></action>
+		
 		<action path="/do_admin_login" type="com.dobid.actions.regist.Login_admin_Action">
 		<forward name="success" path="/admin_noticeboard.do"></forward>
 		<forward name="fail" path="/admin_login.do"></forward>
