@@ -11,38 +11,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<% request.setCharacterEncoding("UTF-8");%>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
 <script type="text/javascript">
-	$(document).ready(function() {
-		
-		$("#close").click(function() {
-			$("#popup").hide();
-		});
+	$(document).ready(
+			function() {
 
-		$(".list").click(function() {
-			console.log($(this).children().text());
-		
-			$("#popup").show();
-			
-			$("#admin_ono_view_title").val($(this).children().eq(0).text());
-			$("#admin_ono_view_member_id").val($(this).children().eq(1).text());
-			$("#admin_ono_view_categori").val($(this).children().eq(2).text());
-			$("#admin_ono_view_contents").val($(this).children().eq(3).text());
-			$("#admin_ono_view_upload_date").val($(this).children().eq(4).text());
-			$("#admin_ono_view_answer_contents").val($(this).children().eq(5).text());
+				$("#close").click(function() {
+					$("#popup").hide();
+				});
 
-			$("#admin_ono_view_upload_date_send").val($(this).children().eq(4).text());
-		});
-		
-	
-		
-		
-	});
+				$(".list").click(
+						function() {
+							console.log($(this).children().text());
+
+							$("#popup").show();
+
+							$("#admin_ono_view_title").val(
+									$(this).children().eq(0).text());
+							$("#admin_ono_view_member_id").val(
+									$(this).children().eq(1).text());
+							$("#admin_ono_view_categori").val(
+									$(this).children().eq(2).text());
+							$("#admin_ono_view_contents").val(
+									$(this).children().eq(3).text());
+							$("#admin_ono_view_upload_date").val(
+									$(this).children().eq(4).text());
+							$("#admin_ono_view_answer_contents").val(
+									$(this).children().eq(5).text());
+
+							$("#admin_ono_view_upload_date_send").val(
+									$(this).children().eq(4).text());
+						});
+
+			});
 </script>
 
 <title>1대1문의보기</title>
@@ -51,14 +59,14 @@
 </head>
 <!-- board_list.jsp 자유게시판과 공지사항을 탭으로구분하여 보여줌 -->
 <body>
-<!-- 헤더 -->
+	<!-- 헤더 -->
 	<br>
 	<br>
 	<br>
 	<div class="container">
 		<h3>1대1문의보기</h3>
 		<hr>
-		
+
 		<div class="form-group">
 			<form action="/Dobid/admin_ono.do" method="POST">
 				<div class="col-sm-2 col-sm-offset-1">
@@ -71,8 +79,8 @@
 					</select>
 				</div>
 				<div class="col-sm-7">
-					<input type="text" class="form-control"
-						name="admin_ono_selecttext" placeholder="검색어입력">
+					<input type="text" class="form-control" name="admin_ono_selecttext"
+						placeholder="검색어입력">
 
 				</div>
 				<button class="button button5 btn-default" id="admin_ono_select"
@@ -89,19 +97,19 @@
 				<th>내용</th>
 				<th>시간</th>
 				<th>답변</th>
-		
+
 			</tr>
 			<c:forEach items="${adminonolist }" var="adminonolist">
-			<tr class="list">
+				<tr class="list">
 
-				<td>${adminonolist.title }</td>
-				<td>${adminonolist.member_id}</td>
-				<td>${adminonolist.categori}</td>
-				<td>${adminonolist.contents}</td>
-				<td>${adminonolist.upload_date}</td>
-				<td>${adminonolist.answer_contents}</td>
-			</tr>
-</c:forEach>
+					<td>${adminonolist.title }</td>
+					<td>${adminonolist.member_id}</td>
+					<td>${adminonolist.categori}</td>
+					<td>${adminonolist.contents}</td>
+					<td>${adminonolist.upload_date}</td>
+					<td>${adminonolist.answer_contents}</td>
+				</tr>
+			</c:forEach>
 
 		</table>
 
@@ -110,36 +118,41 @@
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="admin_ono.do?page=${ page-1 }&catalogue=${catalogue}&admin_ono_selecttext=${select}">이전</a>
+					<a
+						href="admin_ono.do?page=${ page-1 }&catalogue=${catalogue}&admin_ono_selecttext=${select}">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="admin_ono.do?page=${ page+1 }&catalogue=${catalogue}&admin_ono_selecttext=${select}">다음</a>
+					<a
+						href="admin_ono.do?page=${ page+1 }&catalogue=${catalogue}&admin_ono_selecttext=${select}">다음</a>
 				</c:if>
-				<br>
-				<br><c:if test="${totalPage >1}">
-				<c:forEach begin="1" end="${totalPage }&catalogue=${catalogue}&admin_ono_selecttext=${select}" var="i">
+				<br> <br>
+				<c:if test="${totalPage >1}">
+					<c:forEach begin="1"
+						end="${totalPage }&catalogue=${catalogue}&admin_ono_selecttext=${select}"
+						var="i">
        [<a href="admin_ono.do?page=${ i }">${i }</a>]
     </c:forEach>
-    </c:if>
+				</c:if>
 			</div>
 		</div>
 	</div>
-	
 
-	
-<div id="popup" class="overlay"
+
+
+	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
-			<form class="form-horizontal" action="/Dobid/admin_ono.do" method="POST">
+			style="background-color: white; width: 60%; height: 70%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
+			<form class="form-horizontal" action="/Dobid/admin_ono.do"
+				method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
-						<input type="text" class="form-control" name="admin_ono_view_title"
-							id="admin_ono_view_title" style="margin-top: 20px;" value="asd"
-							 readOnly>
-							
+						<input type="text" class="form-control"
+							name="admin_ono_view_title" id="admin_ono_view_title"
+							style="margin-top: 20px;" value="asd" readOnly>
+
 					</div>
 				</div>
 				<div class="form-group">
@@ -147,7 +160,7 @@
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
 							id="admin_ono_view_member_id" name="admin_ono_view_member_id"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
 				<div class="form-group">
@@ -155,7 +168,7 @@
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="text" class="form-control"
 							id="admin_ono_view_categori" name="admin_ono_view_categori"
-							 readOnly>
+							readOnly>
 					</div>
 				</div>
 
@@ -163,75 +176,74 @@
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<input type="image" src="../image/dobid.png"
-							id="admin_ono_view_img" name="admin_ono_view_img"
-							 readOnly>
+							id="admin_ono_view_img" name="admin_ono_view_img" readOnly>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
 						<textarea class="form-control " id="admin_ono_view_contents"
-							name="admin_ono_view_contents"
-							style="height: 200px"
-							readOnly></textarea>
+							name="admin_ono_view_contents" style="height: 100px" readOnly></textarea>
 					</div>
 				</div>
-				
-			
-	
-			
-			<div class="col-sm-offset-3 col-sm-5">
-				<button class="button button5 btn-default">삭제</button>
-				
-				<input type="hidden" name="del" value="del">
-				<input type="hidden" name="admin_ono_view_upload_date" id="admin_ono_view_upload_date">
-		
-			
-			
-			</div>
+
+
+
+
+				<div class="col-sm-offset-4 col-sm-5">
+					<button class="button button5 btn-default">삭제</button>
+
+					<input type="hidden" name="del" value="del"> <input
+						type="hidden" name="admin_ono_view_upload_date"
+						id="admin_ono_view_upload_date"> <input type="button"
+						class="button button5 btn-default" id="close" value="취소">
+
+
+				</div>
 			</form>
-			<button class="button button5 btn-default" id="close">취소</button>
-	
-	
+
+
 			<form action="/Dobid/admin_ono.do" method="POST">
-				<button class="button button5 btn-default">답장</button>
-				<input type="hidden" name="send" value="send">
-				<input type="hidden" name="admin_ono_view_upload_date_send" id="admin_ono_view_upload_date_send">
-				
+
 				<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-5">
-						<textarea class="form-control " id="admin_ono_view_answer_contents"
-							name="admin_ono_view_answer_contents"
-							style="height: 200px"></textarea>
-						
+						<textarea class="form-control "
+							id="admin_ono_view_answer_contents"
+							name="admin_ono_view_answer_contents" style="height: 100px"></textarea>
+						<div class="col-sm-offset-4 col-sm-5">
+							<button class="button button5 btn-default">답장</button>
+							<input type="hidden" name="send" value="send"> <input
+								type="hidden" name="admin_ono_view_upload_date_send"
+								id="admin_ono_view_upload_date_send">
+						</div>
 					</div>
 				</div>
 			</form>
-			</div>
-			
 		</div>
 
+	</div>
 
 
-	
-	
-	
-	
-	
+
+
+
+
+
+
+	<div class="container">
+
+		<hr>
+
+		<!-- Footer -->
 		<div class="container">
 
-		<hr>
+			<hr>
 
-		<!-- Footer -->
-			<div class="container">
+			<!-- Footer -->
+			<footer> <%@include file="/regist_form/footer.jsp"%></footer>
 
-		<hr>
-
-		<!-- Footer -->
-		<footer> <%@include file="/regist_form/footer.jsp"%></footer>
-
+		</div>
 	</div>
-	</div>
-	
-	
+
+
 </body>
 </html>

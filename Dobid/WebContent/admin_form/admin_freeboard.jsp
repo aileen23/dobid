@@ -167,19 +167,19 @@
 				</div>
 
 
-				<div class="col-sm-offset-3 col-sm-5">
+				<div class="col-sm-offset-4 col-sm-5">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_board_view_num"
 						name="admin_board_view_num">
 
-
+<input type="button" class="button button5 btn-default" id="close" value="취소">
 
 				</div>
 			</form>
 
-			<button class="button button5 btn-default" id="close">취소</button>
+			
 		</div>
 	</div>
 
