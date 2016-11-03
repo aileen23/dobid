@@ -22,21 +22,16 @@
 
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		for (var int = 0; int < '${adminmemberaskdellist }'.length; int++) {
-			$("#bokgu"+int).click(function () {
-				var member_id = $("#tr"+int).children(0).val();
-				
-					$.ajax({
-						url:'admin_memberaskdel.do',
-						data:{member_id:member_id,update:'update'},
-						type:'POST'
-					});
-					
-			})
-		}
-
-	});
+	function bokgu(id) {
+		var member_id = id
+	
+		$.ajax({
+			url:'admin_memberaskdel.do',
+			data:{member_id:memberid, update:'update'}, 
+			type:'POST',
+			success: alert("탈퇴를 취소 처리하였습니다.")
+		});
+	}
 </script>
 <title>탈퇴요청관리</title>
 
@@ -80,8 +75,8 @@
 
 			</tr>
 			<c:forEach items="${adminmemberaskdellist }"
-				var="adminmemberaskdellist" varStatus="i">
-				<tr class="list" id="tr${i.index}">
+				var="adminmemberaskdellist">
+				<tr class="list" >
 
 					<td>${adminmemberaskdellist.member_id}</td>
 					<td>${adminmemberaskdellist.name }</td>
@@ -91,7 +86,7 @@
 					<td>${adminmemberaskdellist.charging_amount}</td>
 					<td>${adminmemberaskdellist.withdrawal}</td>
 					<td>${adminmemberaskdellist.delete_date}</td>
-					<td><button id="bokgu'${i.index}'">복구</button></td>
+					<td><button onclick="bokgu('${adminmemberaskdellist.member_id}')">복구</button></td>
 				</tr>
 			</c:forEach>
 		</table>
