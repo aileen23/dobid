@@ -26,17 +26,17 @@
 <center><font size="80" color="black">Login</font><br></center>
 <center><font size="3" color="black">for admin</font></center>
 <br>
-<form class="form-horizontal" style="margin-left: 25%">
+<form class="form-horizontal" style="margin-left: 25%" action="do_admin_login.do">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="inputId" placeholder="ID">
+      <input type="text" class="form-control" name="id" placeholder="ID">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-4">
-      <input type="password" class="form-control" id="inputPwd" placeholder="Password">
+      <input type="password" class="form-control" name="pass" placeholder="Password">
     </div>
   </div>
   
