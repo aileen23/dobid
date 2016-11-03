@@ -54,6 +54,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+<script src="/Dobid/board_form/js/freedom_upload.js" type="text/javascript"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -117,33 +118,23 @@
 						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
+<div class="form-group">
+			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
 
-
-
-
-
-			<div class="form-group">
-				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
-
-
-				<div class="filebox col-sm-5">
-					<label for="free_file">첨부파일</label> <input type="file"
-						id="image_path" class="file_form" name="image_path"
-						capture="camera"
-						onchange="getThumbnailPrivew(this,$('#free_img'))" /> <br> <br>
-					<div align="center" style="text-decoration: underline">
-						* 최대 * 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드
-						가능합니다
-					</div>
-					<br>
-					<div id="free_img"
-						style="width: 100%; max-width: 100%; display: none;"></div>
-					<br>
+			<div class="filebox col-sm-5">
+				<label for="cma_file" class="text-center">첨부파일</label>
+				<input type="file" name="image_path" id="cma_file" accept="image/*"
+					capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br> <br>
+				<div align="center" style="text-decoration: underline">
+					* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다
 				</div>
+				<br>
+				<div id="cma_image" style="width: 100%; max-width: 100%; display: none;"></div>
+				<br>
+
 			</div>
-
-
+		</div>
 
 			<div class="col-sm-offset-4 ">
 				<input type="submit" class="button button5 btn-default" id="check"
