@@ -59,7 +59,7 @@ function auctionpost(date,num){
 			<div class="panel-body col-xs-6"><font color="red">${saleslist.hot_check}</font><br>${saleslist.title}<br>최고가격: ${saleslist.highest_price}<br> 종료일:  ${saleslist.end_date} </div>
 			<div class="panel-body col-xs-2">
 			<c:if test="${saleslist.bid_check=='경매중'}">
-				<button onclick="auctionpost('${saleslist.end_date}','${saleslist.auction_board_num}')">경매종료</button>
+				<button class="btn btn-default" onclick="auctionpost('${saleslist.end_date}','${saleslist.auction_board_num}')">경매종료</button>
 			</c:if>
 			</div>
 		</div>

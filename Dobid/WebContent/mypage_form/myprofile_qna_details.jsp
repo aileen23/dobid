@@ -64,13 +64,13 @@ $(function(){
 						<td>${listqna.categori }</td>
 						<td>${listqna.title }</td>
 						<td>${listqna.upload_date }</td>
-						<td><button onclick="callTable('${listqna.categori }','${listqna.title }','${listqna.upload_date }','${listqna.contents }')">상세보기</button></td>
+						<td><button class="btn btn-default" onclick="callTable('${listqna.categori }','${listqna.title }','${listqna.upload_date }','${listqna.contents }')">상세보기</button></td>
 						<c:choose>
 							<c:when test="${empty listqna.answer_date}">
 								<td>답변대기</td>
 							</c:when>
 							<c:otherwise>
-								<td><button onclick="callAnsTable('${listqna.answer_date}','${ listqna.answer_contents}')">답변완료</button></td>
+								<td><button class="btn btn-default" onclick="callAnsTable('${listqna.answer_date}','${ listqna.answer_contents}')">답변완료</button></td>
 							</c:otherwise>
 						</c:choose>
 						
