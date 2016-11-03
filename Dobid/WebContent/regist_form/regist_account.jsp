@@ -22,6 +22,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		var regid = /^[A-Za-z0-9]{6,20}$/;
 		$("#checkid").click(function() {
 
 			var url = "checkid.do";
@@ -35,10 +36,10 @@
 					/* $("#result").html(args); */
 					if (args != 1) {
 						alert("이미 사용중인 아이디입니다.");
-					} else if ($("#id").val().length < 6 || $("#id").val().length > 20) {
-						alert("6 - 20 자리의 아이디를 입력해주세요.");
 					}else if ($("#id").val().replace(" ", "").length != $("#id").val().length) {
 						alert("아이디에 공백을 사용할수 없습니다.")
+					} else if (!regid.test($("#id").val())) {
+						alert("영문과 숫자 6-20자 이내로 입력하세요.");
 					}
 					else {
 						if (confirm("사용가능한 아이디입니다. 이 아이디를 사용하시겠습니까?")) {
