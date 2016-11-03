@@ -33,7 +33,7 @@ public class Customerservice_ono_Action extends Action{
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String service_date = df.format(date);
-		
+		System.out.println(request.getServletContext().getRealPath(""));
 		Service_answerDTO dto = new Service_answerDTO(
 												mrequest.getParameter("member_id"),
 												mrequest.getParameter("title"),
