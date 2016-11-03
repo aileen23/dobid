@@ -27,7 +27,7 @@ public class Login_admin_Action extends Action {
 
 		dobidDAO dao = new dobidDAO();
 
-		if (dao.admin_login(dto).equals("") || dao.admin_login(dto) == null) {
+		if (dao.admin_login(dto) == null || dao.admin_login(dto).equals("")) {
 			request.getSession().setAttribute("adminlogincheck", "");
 			return mapping.findForward("fail");
 		} else {
