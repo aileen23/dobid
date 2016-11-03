@@ -11,7 +11,7 @@
 <header><%@include file="/regist_form/header.jsp"%></header>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Do!bid</title>
 
 <script type="text/javascript">
 $(document).ready(function() {

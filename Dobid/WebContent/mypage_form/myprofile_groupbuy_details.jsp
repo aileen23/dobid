@@ -11,7 +11,7 @@
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
-<title></title>
+<title>Do!bid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,11 +28,11 @@
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
-	<div class="container">
+	<div class="container" style="size: auto;width: 70%;">
 		<c:forEach items="${list }" var="groupbuylist">
 		<div class="panel panel-default row">
 			<div class="panel-body col-xs-4"><img src="${groupbuylist.main_image_path}" width="80%"  height="80%"> </div>
-			<div class="panel-body col-xs-8"><b>${groupbuylist.title}</b><br>현재가격: ${groupbuylist.discount_price}<br> 종료일:  ${groupbuylist.end_date} </div>
+			<div class="panel-body col-xs-8"><a href="groupbuy_view.do?id=${groupbuylist.groupbuy_board_num }"><b>${groupbuylist.title}</b></a><br>현재가격: ${groupbuylist.discount_price}<br> 종료일:  ${groupbuylist.end_date} </div>
 		</div>
 		</c:forEach>
 		    <br>
