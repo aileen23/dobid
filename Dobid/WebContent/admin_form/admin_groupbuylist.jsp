@@ -119,7 +119,7 @@
 
 		</table>
 		
-			<form action="groupbuy_regist.do">
+			<form action="groupbuy_regist_view.do">
 		<div class="form-group">
 			<div class="col-sm-7">
 			<button class="button button5 btn-default">글쓰기</button>

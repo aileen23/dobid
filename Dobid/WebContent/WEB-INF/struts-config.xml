@@ -94,6 +94,7 @@
 			<forward name="fail" path="/fail.do"></forward>
 		</action>
 		<action path="/basket_add" forward="/product_regist_form/basket_add.jsp"></action>
+		<action path="/groupbuy_regist_view" forward="/product_regist_form/groupbuy_regist.jsp"></action>
 		<!-- main, login, register account, find -->
 		<action path="/checkid" forward="/regist_form/checkid.jsp"></action>
 		<action path="/checknickname" forward="/regist_form/checknickname.jsp"></action>
@@ -106,7 +107,9 @@
 			<forward name="success" path="/main.do"></forward>
 			<forward name="fail" path="/login.do"></forward>
 		</action>
+		
 		<action path="/admin_login" forward="/regist_form/admin_login.jsp"></action>
+		
 		<action path="/do_admin_login" type="com.dobid.actions.regist.Login_admin_Action">
 		<forward name="success" path="/admin_noticeboard.do"></forward>
 		<forward name="fail" path="/admin_login.do"></forward>
