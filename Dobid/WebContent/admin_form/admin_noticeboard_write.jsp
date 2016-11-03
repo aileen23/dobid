@@ -13,7 +13,7 @@
    }
 %>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function(){ 
 
 
@@ -23,7 +23,20 @@ $(document).ready(function(){
 
 	});
 	
-
+	$("#check").click(function() {
+		
+		if($("#notice_title").val().length < 1){
+			
+			alert("제목을 입력해주세요");
+			return false;
+			}else if($("#notice_contents").val().length < 1){
+				
+				alert("내용을 입력해주세요.");
+				return false;
+			}else{
+				alert("글쓰기 완료");
+			}
+		});
 
 
 });
@@ -116,7 +129,7 @@ $(document).ready(function(){
 
 
 		<div class="col-sm-offset-4 ">
-			<input type="submit" class="button button5 btn-default" id="NoticeBoardWrite" value="글쓰기">
+			<input type="submit" class="button button5 btn-default" id="check" value="글쓰기">
 			<button class="button button5 btn-default" id="pageback">취소</button>
 		</div>
 	</form>
