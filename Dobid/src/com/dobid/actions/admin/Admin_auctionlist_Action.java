@@ -23,9 +23,12 @@ public class Admin_auctionlist_Action extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
-
 		boardDAO dao = new boardDAO();
-
+		//if(request.getParameter("endBtn")==null){
+			
+		
+		
+		System.out.println(request.getParameter("endBtn"));
 		String admin_auction_selecttext = request.getParameter("admin_auction_selecttext");
 		String catalogue = request.getParameter("catalogue");
 		String admin_auction_view_userid = request.getParameter("admin_auction_view_userid");
@@ -37,17 +40,6 @@ public class Admin_auctionlist_Action extends Action {
 		String admin_auction_view_num = request.getParameter("admin_auction_view_num");
 		String admin_auction_hot_check = request.getParameter("admin_auction_hot_check");
 		
-		
-
-		System.out.println("admin_auction_selecttext : " + request.getParameter("admin_auction_selecttext"));
-		System.out.println("catalogue : " + request.getParameter("catalogue"));
-		System.out.println("del : " + request.getParameter("del"));
-		System.out.println("admin_auction_view_num : " + request.getParameter("admin_auction_view_num"));
-		System.out.println("admin_auction_view_userid : " + request.getParameter("admin_auction_view_userid"));
-		System.out.println("admin_auction_catalogue : " + request.getParameter("admin_auction_catalogue"));
-		System.out.println("admin_auction_bid_check : " + request.getParameter("admin_auction_bid_check"));
-		System.out.println("admin_auction_hot_check : " + request.getParameter("admin_auction_hot_check"));
-
 		
 		
 		if (admin_auction_selecttext == null && catalogue == null) {
@@ -101,7 +93,10 @@ public class Admin_auctionlist_Action extends Action {
 		
 		List<Admin_auctionDTO> adminauctionlist =dao.adminAuctionPage(start, end,admin_auction_selecttext, catalogue);
 		request.setAttribute("adminauctionlist", adminauctionlist);
-
+		/*}else if(request.getParameter("endBtn") != null){
+			String admin_auction_view_num = request.getParameter("admin_auction_view_num");
+			System.out.println(admin_auction_view_num);
+		}*/
 		return mapping.findForward("success");
 	}
 }
