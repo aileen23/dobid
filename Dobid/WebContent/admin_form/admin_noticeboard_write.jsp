@@ -114,9 +114,8 @@ $(document).ready(function(){
 						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
-			
 			<div class="form-group">
-			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+			<label for="inputFile" class="col-sm-3 control-label">첨부파일</label>
 
 
 			<div class="filebox col-sm-5">
@@ -131,8 +130,7 @@ $(document).ready(function(){
 				<br>
 
 			</div>
-		</div>
-			
+		</div>			
 
 
 		<div class="col-sm-offset-1 ">
