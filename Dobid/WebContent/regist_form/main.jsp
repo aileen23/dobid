@@ -46,6 +46,7 @@
 
 
 	<!-- Page Content -->
+	<br><br>
 	<div class="container">
 
 		<div class="row">
@@ -64,18 +65,33 @@
 									class="active"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="5"></li>
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
-									<img class="slide-image" src="http://placehold.it/800x300"
+									<img class="slide-image" src="/Dobid/image/bbeabbearo.png"
 										alt="">
 								</div>
 								<div class="item">
-									<img class="slide-image" src="http://placehold.it/800x300"
+									<img class="slide-image" src="/Dobid/image/dauni.png"
 										alt="">
 								</div>
 								<div class="item">
-									<img class="slide-image" src="http://placehold.it/800x300"
+									<img class="slide-image" src="/Dobid/image/hwajangpoom.png"
+										alt="">
+								</div>
+								<div class="item">
+									<img class="slide-image" src="/Dobid/image/wear.png"
+										alt="">
+								</div>
+								<div class="item">
+									<img class="slide-image" src="/Dobid/image/winter.png"
+										alt="">
+								</div>
+								<div class="item">
+									<img class="slide-image" src="/Dobid/image/warm.png"
 										alt="">
 								</div>
 							</div>
