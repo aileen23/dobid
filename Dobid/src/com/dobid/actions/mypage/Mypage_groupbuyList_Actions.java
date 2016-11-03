@@ -11,13 +11,14 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.AuctionDTO;
+import com.dobid.beans.Groupbuy_participantDTO;
 import com.dobid.model.Mypage_DAO;
 
-
-public class Mypage_basket_Action extends Action{
+public class Mypage_groupbuyList_Actions extends Action {
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		
 		
 		String id= (String) request.getSession().getAttribute("logincheck");
 		String action = request.getParameter("action");
@@ -32,15 +33,16 @@ public class Mypage_basket_Action extends Action{
 		int start=end-(viewRowCnt-1);
 	  
 		Mypage_DAO dao = new Mypage_DAO();
-		int totalRecord=dao.countlist(id);
+		int totalRecord=dao.countGroupList(id);
 		int totalPage = totalRecord/viewRowCnt;
 	      if(totalRecord%viewRowCnt >0)
     	  totalPage++;
-		List<AuctionDTO> list = dao.basketSelect(id,start,end);
+		List<Groupbuy_participantDTO> list = dao.groupSelect(id,start,end);
 		
 		request.setAttribute("list", list);
 		request.setAttribute("page", page);//현재페이지
   	  	request.setAttribute("totalPage", totalPage);//전체페이지
 		return  mapping.findForward("success");
 	}
+
 }

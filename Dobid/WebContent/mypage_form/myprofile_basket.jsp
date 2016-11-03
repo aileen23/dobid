@@ -7,7 +7,7 @@
 				+ "location.replace('/Dobid/login.do');" + "</script>");
 	}
 %>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
