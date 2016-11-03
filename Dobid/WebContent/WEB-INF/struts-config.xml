@@ -37,6 +37,8 @@
 			type="com.dobid.product_regist.action.form.Group_regits_form"></form-bean>
 		<form-bean name="freeForm"
 			type="com.dobid.actions.board.form.Freeboard_form"></form-bean>
+		<form-bean name="noticeForm"
+			type="com.dobid.actions.board.form.Noticeboard_form"></form-bean>
 
 		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
 			type="app.InputForm"/> end sample -->
@@ -257,7 +259,7 @@
 
 		<!-- admin_noticeboard_write -->
 		<action path="/admin_noticeboard_write_input"
-			type="com.dobid.actions.admin.Admin_noticeboard_write_Action">
+			type="com.dobid.actions.admin.Admin_noticeboard_write_Action" name="noticeForm">
 			<forward name="success" path="/admin_noticeboard.do"></forward>
 		</action>
 
