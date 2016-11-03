@@ -4,64 +4,56 @@
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<% request.setCharacterEncoding("UTF-8");%>
-     <%
-   
-    if(session.getAttribute("logincheck") == null){
-       out.print("<script type='text/javascript'>"+
-                               "alert('로그인을 하셔야합니다.');"+
-                               "location.replace('/Dobid/login.do');"+
-                            "</script>");
-    }
-        %>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
+<%
+	if (session.getAttribute("logincheck") == null) {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/Dobid/login.do');" + "</script>");
+	}
+%>
 <script type="text/javascript">
-$(document).ready(function(){ 
-	
-	
-	$('#freeboardSelectAll').on('click', function() {  //자유게시판
-    	$(location).attr('href', '/Dobid/board_freedom_write.do');
+	$(document).ready(function() {
 
-	});
-	
+		$('#freeboardSelectAll').on('click', function() { //자유게시판
+			$(location).attr('href', '/Dobid/board_freedom_write.do');
 
-	$("#pageback").click(function(){ //돌아가기
+		});
 
-		window.history.back();
+		$("#pageback").click(function() { //돌아가기
 
-	});
-	
-	$("#check").click(function() {
-		
-		if($("#free_title").val().length < 1){
-			
-			alert("제목을 입력해주세요");
-			return false;
-			}else if($("#free_contents").val().length < 1){
-				
+			window.history.back();
+
+		});
+
+		$("#check").click(function() {
+
+			if ($("#free_title").val().length < 1) {
+
+				alert("제목을 입력해주세요");
+				return false;
+			} else if ($("#free_contents").val().length < 1) {
+
 				alert("내용을 입력해주세요.");
 				return false;
-			}else{
+			} else {
 				alert("글쓰기 완료");
 			}
 		});
-	
 
-
-
-});
-
+	});
 </script>
 
 
-<!-- CSS -->
-<link href="./css/jongmin.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판 쓰기 뷰</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
+<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -84,34 +76,38 @@ $(document).ready(function(){
 			reader.readAsDataURL(html.files[0]);
 		}
 	}
-	
 </script>
 
 </head>
 <header><%@include file="/regist_form/header.jsp"%></header>
-<body><br>
-<br>
-<br>
-<br>
+<body>
+	<br>
+	<br>
+	<br>
+	<br>
 
 
 	<center>
 
-<h3>자유게시판 글쓰기</h3>
+		<h3>자유게시판 글쓰기</h3>
 		<hr>
-		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST" enctype="multipart/form-data">
-		
+		<form class="form-horizontal"
+			action="/Dobid/board_freedom_write_input.do" method="POST"
+			enctype="multipart/form-data">
+
 			<div class="form-group">
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="title" placeholder="제목" name="title">
+					<input type="text" class="form-control" id="title" placeholder="제목"
+						name="title">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="free_whiter_user"
-						placeholder="<%=request.getSession().getAttribute("logincheck") %>" name="free_whiter_user" disabled>
+						placeholder="<%=request.getSession().getAttribute("logincheck")%>"
+						name="free_whiter_user" disabled>
 				</div>
 			</div>
 			<div class="form-group">
@@ -121,41 +117,57 @@ $(document).ready(function(){
 						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
-			
-			
-		
+
+
+
+
+
 
 			<div class="form-group">
 				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
+
 				<div class="filebox col-sm-5">
-					<label for="free_file">첨부파일</label> 
-					<input type="file" id="image_path" class="file_form" name="image_path" onchange="getThumbnailPrivew(this,$('#free_img'))" /> <br> <br>
-					<div id="free_img" style="width: 100%; max-width: 100%; display: none;"></div>
+					<label for="free_file">첨부파일</label> <input type="file"
+						id="image_path" class="file_form" name="image_path"
+						capture="camera"
+						onchange="getThumbnailPrivew(this,$('#free_img'))" /> <br> <br>
+					<div align="center" style="text-decoration: underline">
+						* 최대 * 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드
+						가능합니다
+					</div>
+					<br>
+					<div id="free_img"
+						style="width: 100%; max-width: 100%; display: none;"></div>
+					<br>
 				</div>
 			</div>
 
 
 
+			<div class="col-sm-offset-4 ">
+				<input type="submit" class="button button5 btn-default" id="check"
+					value="글쓰기">
+				<button class="button button5 btn-default" id="pageback">취소</button>
+				<button class="button button5 btn-default" id="freeboardSelectAll">목록</button>
+			</div>
+		</form>
 
-		<div class="col-sm-offset-4 ">
-			<input type="submit" class="button button5 btn-default" id="check" value="글쓰기">
-			<button class="button button5 btn-default" id="pageback">취소</button>
-			<button class="button button5 btn-default" id="freeboardSelectAll">목록</button>
-		</div>
-	</form>
-		
-		
-		
+
+
 
 	</center>
-	
-	
-		
-	<Br><br><Br>
-	<Br><br><Br>
-  	<footer> <%@include file="/regist_form/footer.jsp"%>
-		</footer>
+
+
+
+	<Br>
+	<br>
+	<Br>
+	<Br>
+	<br>
+	<Br>
+	<footer> <%@include file="/regist_form/footer.jsp"%>
+	</footer>
 </body>
 
 

@@ -1,6 +1,6 @@
 package com.dobid.actions.admin;
-
 import java.io.BufferedOutputStream;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,6 +19,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
+import com.dobid.actions.board.form.Noticeboard_form;
 import com.dobid.beans.NoticeboardDTO;
 import com.dobid.model.boardDAO;
 
@@ -30,16 +31,30 @@ public class Admin_noticeboard_write_Action extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
+		
+		Noticeboard_form forms = (Noticeboard_form) form;// 액션폼
+
+
+		String title = forms.getTitle();
+		String contents=forms.getContents();
+		FormFile image=forms.getImage_path();
+		String member_id = (String)request.getSession().getAttribute("adminlogincheck");
+		
+		String image_path= "/";
+	
+		//이미지 업로드하고 경로 받기.
+		image_path = file_upload(image);
+		
+		
+		
+		
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 	    Date date = new Date();
 	    String board_date = df.format(date);
-	    //request.getParameter("free_whiter_user")
-	    System.out.println(request.getParameter("notice_title"));
-	    System.out.println(request.getParameter("notice_contents"));
-	    System.out.println(request.getParameter("notice_file"));
-	    NoticeboardDTO dto = new NoticeboardDTO(0,(String)request.getSession().getAttribute("logincheck"),
-	    		request.getParameter("notice_title"),request.getParameter("notice_contents"),
-	    		request.getParameter("notice_file"),0,board_date);
+
+
+
+	    NoticeboardDTO dto = new NoticeboardDTO(0, member_id,title,contents,image_path,0, board_date);
 		
 		boardDAO dao = new boardDAO();
 		dao.noticeBoardWrite(dto);
