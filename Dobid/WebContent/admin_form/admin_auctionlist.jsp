@@ -26,10 +26,7 @@
 
 
 <script type="text/javascript">
-	$("#bt_del").click(function() {
-		location.reload("admin_auctionlist.do?page=&catalogue=&admin_auction_selecttext=");
 
-	});
 	$(document).ready(
 			function() {
 
@@ -62,10 +59,7 @@
 
 						});
 				
-				$("#bt_del").click(function() {
-					location.reload();
-				});
-
+			
 			});//ready
 </script>
 
@@ -80,7 +74,7 @@
 	<br>
 	<br>
 	<div class="container">
-		<h3>경매물품관리</h3>
+		<h3>경매물품관리${test }</h3>
 		<hr>
 
 		<div class="form-group">
@@ -227,7 +221,7 @@
 
 
 				<div class="col-sm-offset-4 col-sm-5">
-					<button class="button button5 btn-default" id="bt_del">삭제</button>
+					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_auction_view_num"

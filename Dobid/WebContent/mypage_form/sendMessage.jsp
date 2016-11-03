@@ -31,7 +31,7 @@
 </script>
 </head>
 <body>
-<table style="margin-left: 150px">
+<table style="margin-left: 17%">
 <tbody>
 <tr><td>받는사람 : </td><td><input type="text" id="member_id"></td></tr>
 <tr><td>제목 :</td><td><input type="text" id="title"></td></tr>

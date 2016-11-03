@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Do!bid</title>
 </head>
 <body>
-<div class="container">
+<div class="container" style="size: auto;width: 70%;">
   <table class="table">
     <thead>
       <tr>

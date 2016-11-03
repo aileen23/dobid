@@ -45,7 +45,7 @@
 			
 		});
 		
-	
+
 		
 		
 	});
@@ -176,7 +176,7 @@
 		
 			
 			<div class="col-sm-offset-4 col-sm-5">
-				<button class="button button5 btn-default">삭제</button>
+				<button class="button button5 btn-default" >삭제</button>
 			
 				<input type="hidden" name="del" value="del">
 				<input type="hidden" name="admin_report_view_upload_date" id="admin_report_view_upload_date">

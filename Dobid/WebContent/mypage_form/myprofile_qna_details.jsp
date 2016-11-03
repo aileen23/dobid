@@ -53,7 +53,7 @@ $(function(){
 	<div class="container-fluid" style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
-	<div class="container">
+	<div class="container" style="size: auto;width: 70%;">
 		<table class="table">
 			<thead>
 				<tr>

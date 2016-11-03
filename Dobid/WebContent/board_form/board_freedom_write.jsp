@@ -15,10 +15,9 @@
                             "</script>");
     }
         %>
-<script>
+<script type="text/javascript">
 $(document).ready(function(){ 
 	
-
 	
 	$('#freeboardSelectAll').on('click', function() {  //자유게시판
     	$(location).attr('href', '/Dobid/board_freedom_write.do');
@@ -31,6 +30,21 @@ $(document).ready(function(){
 		window.history.back();
 
 	});
+	
+	$("#check").click(function() {
+		
+		if($("#free_title").val().length < 1){
+			
+			alert("제목을 입력해주세요");
+			return false;
+			}else if($("#free_contents").val().length < 1){
+				
+				alert("내용을 입력해주세요.");
+				return false;
+			}else{
+				alert("글쓰기 완료");
+			}
+		});
 	
 
 
@@ -83,10 +97,7 @@ $(document).ready(function(){
 
 	<center>
 
-		<p style="margin-left: -30%">
-		<input type="button" class="button button5 btn-default active" value="자유게시판" id="freebtn">
-		<input type="button" class="button button5 btn-default active" value="공지사항" id="noticebtn"> 
-		</p>
+<h3>자유게시판 글쓰기</h3>
 		<hr>
 		<form class="form-horizontal" action="/Dobid/board_freedom_write_input.do" method="POST">
 		
@@ -126,7 +137,7 @@ $(document).ready(function(){
 
 
 		<div class="col-sm-offset-4 ">
-			<input type="submit" class="button button5 btn-default" value="글쓰기">
+			<input type="submit" class="button button5 btn-default" id="check" value="글쓰기">
 			<button class="button button5 btn-default" id="pageback">취소</button>
 			<button class="button button5 btn-default" id="freeboardSelectAll">목록</button>
 		</div>

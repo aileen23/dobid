@@ -12,7 +12,7 @@
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
-<title>Bootstrap Case</title>
+<title>Do!bid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,11 +29,11 @@
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
-<div class="container">
+<div class="container" style="size: auto;width: 70%;">
      	<b>현재 사용가능금액 :</b> ${Charging_amount }원
 </div>
 <br>
-<div class="container">
+<div class="container" style="size: auto;width: 70%;">
   <table class="table">
     <thead>
       <tr>

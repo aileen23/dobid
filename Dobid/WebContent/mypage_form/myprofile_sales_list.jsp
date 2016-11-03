@@ -12,7 +12,7 @@
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
-<title></title>
+<title>Do!bid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript">
@@ -58,11 +58,11 @@ function auctionpost(date,num){
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
-	<div class="container" id="listdiv">
+	<div class="container" id="listdiv" style="size: auto;width: 70%;">
 		<c:forEach items="${list }" var="saleslist">
 		<div class="panel panel-default row">
 			<div class="panel-body col-xs-4"><img src="${saleslist.main_image_path}" width="80%"  height="80%"> </div>
-			<div class="panel-body col-xs-6"><font color="red">${saleslist.hot_check}</font><br>${saleslist.title}<br>최고가격: ${saleslist.highest_price}<br> 종료일:  ${saleslist.end_date} </div>
+			<div class="panel-body col-xs-6"><font color="red">${saleslist.hot_check}</font><br><a href="auction_view.do?id=${saleslist.auction_board_num }"><b>${saleslist.title}</b></a><br>최고가격: ${saleslist.highest_price}<br> 종료일:  ${saleslist.end_date} </div>
 			<div class="panel-body col-xs-2">
 			<c:if test="${saleslist.bid_check=='경매중'}">
 				<button class="btn btn-default" onclick="auctionpost('${saleslist.end_date}','${saleslist.auction_board_num}')">경매종료</button>

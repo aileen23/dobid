@@ -11,7 +11,7 @@
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
 <head>
-<title>Bootstrap Case</title>
+<title>Do!bid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,17 +23,17 @@
 	<br>
 	<br>
 		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
-		<font size="80" color="black">경매내역</font><br>
+		<font size="80" color="black">경매참여내역</font><br>
 		</div>
 
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
-	<div class="container">
+	<div class="container" style="size: auto;width: 70%;">
 		<c:forEach items="${list }" var="auctionlist">
 		<div class="panel panel-default row">
 			<div class="panel-body col-xs-4"><img src="${auctionlist.main_image_path}" width="80%"  height="80%"> </div>
-			<div class="panel-body col-xs-6"><font color="red">${auctionlist.hot_check}</font><br>${auctionlist.title}<br>입찰가격 : ${auctionlist.bid_price_amount }원<br>종료일:  ${auctionlist.end_date}</div>
+			<div class="panel-body col-xs-6"><font color="red">${auctionlist.hot_check}</font><br><a href="auction_view.do?id=${auctionlist.auction_board_num }"><b>${auctionlist.title}</b></a><br>입찰가격 : ${auctionlist.bid_price_amount }원<br>종료일:  ${auctionlist.end_date}</div>
 
 		</div>
 		</c:forEach>
