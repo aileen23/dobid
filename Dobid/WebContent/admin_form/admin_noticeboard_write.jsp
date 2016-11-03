@@ -115,7 +115,7 @@ $(document).ready(function(){
 				</div>
 			</div>
 			<div class="form-group">
-			<label for="inputFile" class="col-sm-3 control-label">첨부파일</label>
+			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
 
 			<div class="filebox col-sm-5">
