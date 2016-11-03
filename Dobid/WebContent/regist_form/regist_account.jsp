@@ -154,6 +154,9 @@
 			}else if ($("#detailaddress").val().length < 1 || ($("#detailaddress").val().length > 100)) {
 				alert("상세주소를 확인해주세요.");
 				return false;
+			}else if ($("#detailaddress").val().replace("%", "") != $("#detailaddress").val()) {
+				alert("상세주소에 특수문자 (%)를 사용할수 없습니다.");
+				return false;
 			}else if ($("#introduction").val().length < 1 || ($("#introduction").val().length > 330)) {
 				alert("자기소개를 확인해주세요.");
 				return false;

@@ -2,6 +2,7 @@ package com.dobid.model;
 
 import java.sql.SQLException;
 
+import com.dobid.beans.Admin_loginDTO;
 import com.dobid.beans.FindPassDTO;
 import com.dobid.beans.Find_idDTO;
 import com.dobid.beans.LoginDTO;
@@ -94,7 +95,7 @@ public class dobidDAO {
 
 		return 0;
 	}
-	
+
 	public int findpass(FindPassDTO findpass) {
 		try {
 			if (smc.update("dobid.find_pass", findpass) == 1) {
@@ -105,6 +106,18 @@ public class dobidDAO {
 		}
 
 		return 0;
+	}
+
+	public String admin_login(Admin_loginDTO admin) {
+		String admin_login = "";
+		try {
+			admin_login = (String) smc.queryForObject("dobid.admin_login", admin);
+			return admin_login;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return admin_login;
 	}
 
 }

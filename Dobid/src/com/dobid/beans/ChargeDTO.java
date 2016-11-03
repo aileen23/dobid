@@ -5,15 +5,15 @@ import java.sql.Date;
 public class ChargeDTO {
 	private String member_id;
 	private int charge_will_amount;
-	private Date charge_date;
+	private String charge_date;
 	private String charge_type;
-	private char charge_check;
+	private String charge_check;
 	private int charge_before_amount;
 
 	public ChargeDTO() {
 	}
 
-	public ChargeDTO(String member_id, int charge_will_amount, Date charge_date, String charge_type, char charge_check,
+	public ChargeDTO(String member_id, int charge_will_amount, String charge_date, String charge_type, String charge_check,
 			int charge_before_amount) {
 		super();
 		this.member_id = member_id;
@@ -40,11 +40,11 @@ public class ChargeDTO {
 		this.charge_will_amount = charge_will_amount;
 	}
 
-	public Date getCharge_date() {
+	public String getCharge_date() {
 		return charge_date;
 	}
 
-	public void setCharge_date(Date charge_date) {
+	public void setCharge_date(String charge_date) {
 		this.charge_date = charge_date;
 	}
 
@@ -56,11 +56,11 @@ public class ChargeDTO {
 		this.charge_type = charge_type;
 	}
 
-	public char getCharge_check() {
+	public String getCharge_check() {
 		return charge_check;
 	}
 
-	public void setCharge_check(char charge_check) {
+	public void setCharge_check(String charge_check) {
 		this.charge_check = charge_check;
 	}
 

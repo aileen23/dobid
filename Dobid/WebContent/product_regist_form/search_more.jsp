@@ -11,6 +11,7 @@
 */	
 	
 	String text = request.getParameter("text");
+	System.out.println(text);
 	String categori = request.getParameter("categori");
 	String oldcheck = request.getParameter("oldcheck");
 	System.out.println(categori);

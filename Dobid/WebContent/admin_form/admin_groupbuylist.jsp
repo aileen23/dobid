@@ -5,17 +5,24 @@
 <html>
 <header><%@include file="../admin_form/admin_header.jsp"%></header>
 <head>
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<%
+   if (session.getAttribute("adminlogincheck") == null) {
+      out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+            + "location.replace('/Dobid/admin_login.do');" + "</script>");
+   }
+%>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -116,6 +123,15 @@
 			</c:forEach>
 
 		</table>
+		
+			<form action="groupbuy_regist_view.do">
+		<div class="form-group">
+			<div class="col-sm-7">
+			<button class="button button5 btn-default">글쓰기</button>
+		</div></div>
+		</form>
+		
+		
 		<div class="form-group">
 			<div class="col-sm-7">
 				<br>
@@ -150,8 +166,7 @@
 
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
-		<div
-			style="background-color: white; width: 60%; height: 55%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
+		<div style="background-color: white; width: 40%; height: 70%; margin-left: 20%; margin-top: 10%; border: 1px solid black;">
 			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do"
 				method="POST">
 				<div class="form-group">
@@ -203,22 +218,20 @@
 				</div>
 
 
-				<div class="col-sm-offset-3 col-sm-5">
+				<div class="col-sm-offset-4 col-sm-5">
 					<button class="button button5 btn-default">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_auction_view_num"
 						name="admin_auction_view_num"> <input type="hidden"
 						id="admin_auction_hot_check" name="admin_auction_hot_check">
-
-
+					<input type="button" class="button button5 btn-default" id="close" value="취소">
 
 
 				</div>
 			</form>
 
-			<button class="button button5 btn-default" id="close">취소</button>
-		</div>
+	</div>
 	</div>
 
 

@@ -20,14 +20,20 @@
 	<typeAlias alias="loginDTO" type="com.dobid.beans.LoginDTO" />
 	<typeAlias alias="findidDTO" type="com.dobid.beans.Find_idDTO" />
 	<typeAlias alias="findpassDTO" type="com.dobid.beans.FindPassDTO" />
+	<typeAlias alias="adminloginDTO" type="com.dobid.beans.Admin_loginDTO" />
+
 
 
 	<insert id="registAccount" parameterClass="memberDTO">
 		insert into
-		member (member_id, name, pass, phone, email, address,
-		nickname, introduction, birthday, charging_amount) VALUES
-		(#member_id#, #name#, #pass# , #phone# , #email# , #address# , #nickname#
-		, #introduction# , #birthday# , #charging_amount# )
+		member
+		(member_id, name, pass, phone, email, address,
+		nickname, introduction,
+		birthday, charging_amount) VALUES
+		(#member_id#, #name#, #pass# ,
+		#phone# , #email# , #address# , #nickname#
+		, #introduction# ,
+		#birthday# , #charging_amount# )
 	</insert>
 	<select id="login" parameterClass="loginDTO" resultClass="String">
 		select
@@ -52,6 +58,10 @@
 		#pass# where member_id = #member_id# and name = #name# and email =
 		#email#
 	</update>
+	<select id="admin_login" parameterClass="adminloginDTO"
+		resultClass="String">
+		select admin_id from admin where admin_id = #admin_id# and pass = #pass#
+	</select>
 </sqlMap>
 
 

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+	if (session.getAttribute("logincheck") == null) {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/Dobid/login.do');" + "</script>");
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <header><%@include file="/regist_form/header.jsp"%></header>
@@ -25,7 +31,7 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText" style="margin-left: 20px">
+		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
 		<font size="80" color="black">My Page</font><br>
 		</div>
 

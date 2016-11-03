@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	if (session.getAttribute("logincheck") == null) {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/Dobid/login.do');" + "</script>");
+	}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
@@ -40,7 +46,7 @@ $(function(){
 	<br>
 	<br>
 			
-	<div class="titleText" style="margin-left: 20px">
+	<div class="titleText" style="margin-left: 17%; margin-right: auto;">
 		<font size="80" color="black">1:1 문의내역</font><br>
 	</div>
 
@@ -64,13 +70,13 @@ $(function(){
 						<td>${listqna.categori }</td>
 						<td>${listqna.title }</td>
 						<td>${listqna.upload_date }</td>
-						<td><button onclick="callTable('${listqna.categori }','${listqna.title }','${listqna.upload_date }','${listqna.contents }')">상세보기</button></td>
+						<td><button class="btn btn-default" onclick="callTable('${listqna.categori }','${listqna.title }','${listqna.upload_date }','${listqna.contents }')">상세보기</button></td>
 						<c:choose>
 							<c:when test="${empty listqna.answer_date}">
 								<td>답변대기</td>
 							</c:when>
 							<c:otherwise>
-								<td><button onclick="callAnsTable('${listqna.answer_date}','${ listqna.answer_contents}')">답변완료</button></td>
+								<td><button class="btn btn-default" onclick="callAnsTable('${listqna.answer_date}','${ listqna.answer_contents}')">답변완료</button></td>
 							</c:otherwise>
 						</c:choose>
 						
