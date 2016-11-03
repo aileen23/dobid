@@ -106,7 +106,7 @@
 			<c:forEach items="${admingroupbuylist }" var="admingroupbuylist">
 				<tr class="list">
 
-					<td style="text-align: center;">${admingroupbuylist.auction_board_num }</td>
+					<td style="text-align: center;">${admingroupbuylist.groupbuy_board_num }</td>
 					<td style="text-overflow:ellipsis; overflow:hidden">${admingroupbuylist.title }</td>
 					<td style="text-overflow:ellipsis; overflow:hidden">${admingroupbuylist.contents }</td>
 					<td style="text-align: center;">${admingroupbuylist.seller_id }</td>
