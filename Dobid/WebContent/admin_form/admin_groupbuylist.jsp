@@ -116,25 +116,34 @@
 			</c:forEach>
 
 		</table>
+		
+			<form action="groupbuy_regist.do">
+		<div class="form-group">
+			<div class="col-sm-7">
+			<button class="button button5 btn-default">글쓰기</button>
+		</div></div>
+		</form>
+		
+		
 		<div class="form-group">
 			<div class="col-sm-7">
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="admin_auctionlist.do?page=${ page-1 }">이전</a>
+					<a href="admin_auctionlist.do?page=${ page-1 }&admin_auction_selecttext=${select}">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="admin_auctionlist.do?page=${ page+1 }">다음</a>
+					<a href="admin_auctionlist.do?page=${ page+1 }&admin_auction_selecttext=${select}">다음</a>
 				</c:if>
 				<br> <br>
 
-
-				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="admin_auctionlist.do?page=${ i }">${i }</a>]
+				<c:if test="${totalPage >1}">
+					<c:forEach begin="1" end="${totalPage }" var="i">
+       [<a href="admin_auctionlist.do?page=${ i }&admin_auction_selecttext=${select}">${i }</a>]
     </c:forEach>
-
+				</c:if>
 
 			</div>
 		</div>

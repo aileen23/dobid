@@ -16,11 +16,7 @@ $(document).ready(function() {
 			alert("내용을 입력하세요");
 			sfo.inputTextarea.focus();
 			return false;
-		} else if (!sfo.cma_file.value) {
-			alert("첨부할 파일이 없습니다");
-			$("#cma_file").click();
-			return false;
-		} else if (fileNm != "") {
+		}  else if (fileNm != "") {
 
 			var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();
 
@@ -30,9 +26,8 @@ $(document).ready(function() {
 				return false;
 			}
 
-		} else {
-			alert("ASDASDASD");
-		}
+		} else 	alert("문의가 정삭적으로 작성되었습니다");
+		
 	});
 
 });

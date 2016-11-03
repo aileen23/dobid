@@ -81,26 +81,31 @@ public class Admin_ono_Action extends Action {
 			request.removeAttribute("adminonotlist");
 			request.removeAttribute("page");
 			request.removeAttribute("totalPage");
+			request.removeAttribute("catalogue");
+			request.removeAttribute("select");
 			adminonolist = dao.adminOnoPage(start, end, admin_ono_selecttext,catalogue);
 			request.setAttribute("adminonolist", adminonolist);// 4.
 																// 영역에
 																// 데이터
 																// 저장
+			
+			request.setAttribute("catalogue", catalogue);
+			request.setAttribute("select", admin_ono_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
 			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
 			return forward = mapping.findForward("success");
 
 		} else if (del != null && send == null) {
-			boolean delflag = dao.adminOnoDel(admin_ono_view_upload_date);
-			request.setAttribute("delflag", delflag);
+			boolean delonoflag = dao.adminOnoDel(admin_ono_view_upload_date);
+			request.setAttribute("delonoflag", delonoflag);
 
 		} else if (send != null && del == null) {
 			Service_answerDTO onosendparam = null;
 			onosendparam = new Service_answerDTO(admin_ono_view_upload_date_send, admin_ono_view_answer_contents,
 					answer_date);
-			boolean upflag = dao.adminOnoSend(onosendparam);
-			request.setAttribute("upflag", upflag);
+			boolean uponoflag = dao.adminOnoSend(onosendparam);
+			request.setAttribute("uponoflag", uponoflag);
 		}
 
 		return mapping.findForward("success");

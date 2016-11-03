@@ -55,11 +55,14 @@ public class Board_freelist_Action extends Action {
 		request.removeAttribute("freelist");
 		request.removeAttribute("page");
 		request.removeAttribute("totalPage");
+		request.removeAttribute("select");
 		freeselectlist = dao.FreePage(start, end, freeselect);
 		request.setAttribute("freelist", freeselectlist);// 4.
 													// 영역에
 													// 데이터
 													// 저장
+		
+		request.setAttribute("select", freeselect);
 		request.setAttribute("page", page);// 현재페이지
 		request.setAttribute("totalPage", totalPage);// 전체페이지
 		// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!

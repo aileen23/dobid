@@ -539,7 +539,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 	
 	<!-- 탈퇴요청회원 업데이트-->
 	<update id="adminmemberaskupdate" parameterClass="String">
-		update member set withdrawal='사용중'
+		update member set withdrawal='사용중',delete_date=null
 		where member_id=#member_id#
 	</update>	
 

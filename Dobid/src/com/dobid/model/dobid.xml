@@ -23,13 +23,11 @@
 
 
 	<insert id="registAccount" parameterClass="memberDTO">
-		insert into member
-		values (member_id = #member_id#, name = #name#, pass = #pass#, phone =
-		#phone#, email = #email#,
-		address = #address#,
-		nickname = #nickname#,
-		introduction = #introduction#, birthday = #birthday#, charging_amount =
-		#charging_amount#)
+		insert into
+		member (member_id, name, pass, phone, email, address,
+		nickname, introduction, birthday, charging_amount) VALUES
+		(#member_id#, #name#, #pass# , #phone# , #email# , #address# , #nickname#
+		, #introduction# , #birthday# , #charging_amount# )
 	</insert>
 	<select id="login" parameterClass="loginDTO" resultClass="String">
 		select

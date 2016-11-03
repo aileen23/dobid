@@ -22,9 +22,18 @@
 
 
 <script type="text/javascript">
-	function update(member_id, update) {
-		$("#member_id").text(member_id);
-		$("#update").text(update);
+	function bokgu(id) {
+		var member_id = id;
+	
+		$.ajax({
+			url:'admin_memberaskdel.do',
+			data:{member_id:member_id, update:'update'}, 
+			type:'POST',
+			success: function(){
+				alert("탈퇴를 취소 처리하였습니다.")
+				location.reload(true)
+			}
+		});
 	}
 </script>
 <title>탈퇴요청관리</title>
@@ -70,7 +79,7 @@
 			</tr>
 			<c:forEach items="${adminmemberaskdellist }"
 				var="adminmemberaskdellist">
-				<tr class="list">
+				<tr class="list" >
 
 					<td>${adminmemberaskdellist.member_id}</td>
 					<td>${adminmemberaskdellist.name }</td>
@@ -80,7 +89,7 @@
 					<td>${adminmemberaskdellist.charging_amount}</td>
 					<td>${adminmemberaskdellist.withdrawal}</td>
 					<td>${adminmemberaskdellist.delete_date}</td>
-					<td><button onclick="update('${adminmemberaskdellist.member_id}','update')">복구</button></td>
+					<td><button onclick="bokgu('${adminmemberaskdellist.member_id}')">복구</button></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -89,17 +98,18 @@
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="admin_memberdel.do?page=${ page-1 }">이전</a>
+					<a href="admin_memberdel.do?page=${ page-1 }&admin_memberaskdel_selecttext=${select}">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="admin_memberdel.do?page=${ page+1 }">다음</a>
+					<a href="admin_memberdel.do?page=${ page+1 }&admin_memberaskdel_selecttext=${select}">다음</a>
 				</c:if>
-				<br> <br>
+				<br> <br><c:if test="${totalPage >1}">
 				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="admin_memberdel.do?page=${ i }">${i }</a>]
+       [<a href="admin_memberdel.do?page=${ i }&admin_memberaskdel_selecttext=${select}">${i }</a>]
     </c:forEach>
+    </c:if>
 			</div>
 		</div>
 	</div>

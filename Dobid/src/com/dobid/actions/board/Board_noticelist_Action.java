@@ -54,11 +54,13 @@ public class Board_noticelist_Action extends Action {
 		request.removeAttribute("noticelist");
 		request.removeAttribute("page");
 		request.removeAttribute("totalPage");
+		request.removeAttribute("select");
 		noticelist = dao.NoticePage(start, end,notselect);
 		request.setAttribute("noticelist", noticelist);// 4.
 															// 영역에
 															// 데이터
 															// 저장
+		request.setAttribute("select", notselect);
 		request.setAttribute("page", page);// 현재페이지
 		request.setAttribute("totalPage", totalPage);// 전체페이지
 		// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!

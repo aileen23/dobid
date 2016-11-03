@@ -2,19 +2,19 @@
 $(document).ready(function() {
 	$("#submit").click(function() {
 
-		var fileNm = sfr.cma_file.value;
+		var fileNm = sfo.cma_file.value;
 
-		if (sfr.inputTitle.value == "") {
+		if (sfo.inputTitle.value == "") {
 			alert("타이들을 작성해주세요");
-			sfr.inputTitle.focus();
+			sfo.inputTitle.focus();
 			return false;
-		} else if (sfr.inputTextarea.value == "") {
+		} else if (sfo.categorl.value == "선택해주세요") {
+			alert("분류를 선택헤 주세요");
+			sfo.categorl.focus();
+			return false;
+		} else if (sfo.inputTextarea.value == "") {
 			alert("내용을 입력하세요");
-			sfr.inputTextarea.focus();
-			return false;
-		} else if (!sfr.cma_file.value) {
-			alert("첨부할 파일이 없습니다");
-			$("#cma_file").click();
+			sfo.inputTextarea.focus();
 			return false;
 		} else if (fileNm != "") {
 
@@ -26,9 +26,8 @@ $(document).ready(function() {
 				return false;
 			}
 
-		} else {
-			alert("신고가 완료 되었습니다 \n 메인페이지로 이동합니다");
-			return true;
-		}
+		} else 	alert("신고가 정삭적으로 완료되었습니다");
+		
 	});
+
 });

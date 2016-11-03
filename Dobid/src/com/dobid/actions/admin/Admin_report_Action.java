@@ -59,19 +59,21 @@ public class Admin_report_Action extends Action {
 			request.removeAttribute("adminreportlist");
 			request.removeAttribute("page");
 			request.removeAttribute("totalPage");
+			request.removeAttribute("select");
 			adminreportlist = dao.adminReportPage(start, end, admin_report_selecttext);
 			request.setAttribute("adminreportlist", adminreportlist);// 4.
 																		// 영역에
 																		// 데이터
 																		// 저장
+			request.setAttribute("select", admin_report_selecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
 			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
 
 		} else if (del != null) {
 
-			boolean delflag = dao.adminReportDel(admin_report_view_upload_date);
-			request.setAttribute("delflag", delflag);
+			boolean delreportflag = dao.adminReportDel(admin_report_view_upload_date);
+			request.setAttribute("delreportflag", delreportflag);
 
 		}
 

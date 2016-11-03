@@ -62,19 +62,22 @@ public class Admin_noticeboard_Action extends Action {
 			request.removeAttribute("adminboardlist");
 			request.removeAttribute("page");
 			request.removeAttribute("totalPage");
+			request.removeAttribute("select");
 			adminnoticeselectlist = dao.adminNoticePage(start, end,admin_boardselecttext);
 			request.setAttribute("adminboardlist", adminnoticeselectlist);// 4.
 																	// 영역에
 																	// 데이터
 																	// 저장
+			
+			request.setAttribute("select", admin_boardselecttext);
 			request.setAttribute("page", page);// 현재페이지
 			request.setAttribute("totalPage", totalPage);// 전체페이지
 			// 영역에 데이터 저장하는 이유? 뷰와 공유하기 위해서!!
 		
 		} else {
 
-			boolean delflag = dao.adminNoticeBoardDel(admin_board_view_num);
-			request.setAttribute("delflag", delflag);
+			boolean delnoticeflag = dao.adminNoticeBoardDel(admin_board_view_num);
+			request.setAttribute("delnoticeflag", delnoticeflag);
 
 		}
 

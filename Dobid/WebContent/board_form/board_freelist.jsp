@@ -7,32 +7,29 @@
 <head>
 <style type="text/css">
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
 }
 
-
-
 .button5 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
 }
 
 .button5:hover {
-    background-color: #555555;
-    color: white;
+	background-color: #555555;
+	color: white;
 }
 </style>
 <script
@@ -72,9 +69,8 @@
 <body>
 
 	<div class="container">
-		
-		<Br>
-		<br> <Br>
+
+		<Br> <br> <Br>
 		<form action="/Dobid/freeboard_list.do" method="POST">
 
 			<h3>자유게시판</h3>
@@ -115,24 +111,26 @@
 		<input type="button" value="목록" id="freeboardSelectAll"
 			class="button button5 btn-default"> <input type="button"
 			value="글쓰기" id="freeWrite" class="button button5 btn-default">
-			
-			<div class="form-group">
+
+		<div class="form-group">
 			<div class="col-sm-7">
 				<br>
+
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="freeboard_list.do?page=${ page-1 }">이전</a>
+					<a href="freeboard_list.do?page=${ page-1 }&freeselecttext=${select}">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="freeboard_list.do?page=${ page+1 }">다음</a>
+					<a href="freeboard_list.do?page=${ page+1 }&freeselecttext=${select}">다음</a>
 				</c:if>
-				<br>
-				<br>
-				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="freeboard_list.do?page=${ i }">${i }</a>]
+				<br> <br>
+				<c:if test="${totalPage >1}">
+					<c:forEach begin="1" end="${totalPage }" var="i">
+       [<a href="freeboard_list.do?page=${ i }&freeselecttext=${select}">${i }</a>]
     </c:forEach>
+				</c:if>
 			</div>
 		</div>
 	</div>

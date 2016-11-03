@@ -25,6 +25,16 @@
        var params="name="+name+"&content="+content+"&num="+num+"&nickname="+nickname; //"name=길동&content=안녕"
         /* alert(params); */
        new ajax.xhr.Request("/Dobid/freeboard_content_view_reply_add.do", params, addResult, 'POST');	
+        
+       if (name === "") {
+			if (confirm("로그인이 필요합니다 \n로그인 하시겠습니까?") == true) { //확인
+				location.href = "/Dobid/login.do";
+			} else { //취소
+				return;
+			}
+		}else if(content===""){
+			alert("내용을 입력해주세요");
+		}
     }//addReply
     function addResult(xhr){//등록요청후 실행할 콜백함수
        if(xhr.readyState==4){
@@ -49,6 +59,15 @@
        var params="no="+no+"&name=${logincheck}&content="+content+"&num="+num+"&nickname="+nickname;
            //"no=3&name=길동&content=안녕"
        new ajax.xhr.Request("/Dobid/freeboard_content_view_reply_update.do", params, updateResult, 'POST');	
+           
+       var name2 = document.addForm.name.value;
+		if (name2 === "") {
+			if (confirm("로그인이 필요합니다 \n로그인 하시겠습니까?") == true) { //확인
+				location.href = "/Dobid/login.do";
+			} else { //취소
+				return;
+			}
+		}
     }//updateReply
     
     function updateResult(xhr){//수정요청후 실행할 콜백함수
@@ -64,7 +83,17 @@
     }//updateResult  
     
     function deleteReply(no,name){//댓글 삭제요청
+    	var name = document.addForm.name.value;
        new ajax.xhr.Request('/Dobid/freeboard_content_view_reply_delete.do','no='+no+'&name=${logincheck}',deleteResult,'POST');	
+    
+       var name2 = document.addForm.name.value;
+		if (name2 === "") {
+			if (confirm("로그인이 필요합니다 \n로그인 하시겠습니까?") == true) { //확인
+				location.href = "/Dobid/login.do";
+			} else { //취소
+				return;
+			}
+		}
     }
     function deleteResult(xhr){//삭제요청후 콜백
        if(xhr.readyState==4){
@@ -73,7 +102,7 @@
     		 
     		 loadReplyList();//변경된 내용 목록 재요청 	
     	 }else{
-    		 alert('서버에러:'+xhr.status)
+    		// alert('서버에러:'+xhr.status)
     	 }  
        } 
     }
@@ -111,7 +140,7 @@
     	    }
     	    //alert('추가후 자식수: '+ divList.length)
     	 }else{
-    		 alert('서버에러:'+xhr.status)
+    		// alert('서버에러:'+xhr.status)
     	 }  
        }	
     }//loadReplyResult
@@ -133,7 +162,11 @@
        document.updateForm.nickname.value= reply.nickname;       
        
        if(name===""){
-			alert("로그인이 필요한 작업입니다");
+    	   if (confirm("로그인이 필요합니다 \n로그인 하시겠습니까?") == true){    //확인
+    		   location.href="/Dobid/login.do";
+       	}else{   //취소
+       	    return;
+       	}
 		}else{
       
       replyDiv.appendChild(upFormDiv);    
