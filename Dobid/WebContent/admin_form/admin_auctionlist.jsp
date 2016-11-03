@@ -48,8 +48,12 @@
 									$(this).children().eq(7).text());
 
 						});
+				
+				$("#bt_del").click(function() {
+					location.reload();
+				});
 
-			});
+			});//ready
 </script>
 
 <title>관리자 경매리스트</title>
@@ -205,7 +209,7 @@
 
 
 				<div class="col-sm-offset-3 col-sm-5">
-					<button class="button button5 btn-default">삭제</button>
+					<button class="button button5 btn-default" id="bt_del">삭제</button>
 
 					<input type="hidden" name="del" value="del"> <input
 						type="hidden" id="admin_auction_view_num"

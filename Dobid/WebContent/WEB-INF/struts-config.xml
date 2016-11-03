@@ -106,6 +106,7 @@
 			<forward name="success" path="/main.do"></forward>
 			<forward name="fail" path="/login.do"></forward>
 		</action>
+		<action path="/admin_login" forward="/regist_form/admin_login.jsp"></action>
 
 		<action path="/regist_account" forward="/regist_form/regist_account.jsp">
 		</action>
