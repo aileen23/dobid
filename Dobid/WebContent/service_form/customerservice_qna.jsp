@@ -121,8 +121,9 @@
     <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
       <div class="panel-body">
 			아이디와 비밀번호는 아래의 경로를 통해 찾을 수 있습니다.<br>
-			*홈페이지 > 아이디/비밀번호 찾기 <a href="findid.do">바로가기</a><br>
+			*홈페이지 > 아이디 찾기 <a href="findid.do">바로가기</a><br>
 			아이디 찾기 : 회원가입 시 등록하셨던 정보를 통해 아이디를 찾으실 수 있습니다.<br>
+			*홈페이지 > 비밀번호 찾기 <a href="findpassword.do">바로가기</a><br>
 			비밀번호 찾기 : 회원가입 시 등록하셨던 이메일로 발송된 새로운 비밀번호 입력하시여 로그인 후에 비밀번호를 재설정해주시기 바랍니다.
 			
       </div>
@@ -167,7 +168,10 @@
     <div id="collapseeight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingeight">
       <div class="panel-body">
 			포인트 충전 방식은 신용카드/체크카드와 계좌이체, 무통장 입금을 통해 하실 수 있으며
-			포인트 환불은 충전된 금액이 사용되지 않는 상태에서 충전일로부터 최대 7일 안에 충전된 입력된 계좌 번호를 통해 환불 받으실 수 있습니다.
+			포인트 환불은 충전된 금액이 사용되지 않는 상태에서 충전일로부터 최대 7일 안에 충전된 입력된 계좌 번호를 통해 환불 받으실 수 있습니다.<br>
+			충전한 내역은 아래의 경로를 통해 충전과 사용한 포인트를 조회 하실 수 있습니다<br>
+			* 홈페이지> 마이페이지> 충전내역 <a href="myprofile_charge.do">바로가기</a>
+			
       </div>
     </div>
   </div>
@@ -185,7 +189,7 @@
 			사기를 당한 물품 : <br>
 			판매자 아이디 : <br>
 			: 사기를 당한 물품, 판매자 아이디 등의 정보를 입력한 후에 물품의 사진을 찍어 아래의 경로를 통해 신고를 해주시면 처리 해드리겠습니다. <br>
-			*홈페이지> 고객센터 > 신고하기 <a href="service_report.do">바로가기</a>
+			* 홈페이지> 고객센터 > 신고하기 <a href="service_report.do">바로가기</a>
       </div>
     </div>
   </div>

@@ -21,7 +21,7 @@ public class AddAction extends Action{
     	String name = request.getParameter("name");
     	
     	if(name.equals("")){
-			request.setAttribute("msg", "·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù");
+			request.setAttribute("msg", "ë¡œê·¸ì¸ì´ í•„ìš”í•©ë‹ˆë‹¤");
 		}else{
     	Reply_noticeDTO reply_notice = new Reply_noticeDTO(0,
                                request.getParameter("name"),
@@ -38,7 +38,7 @@ public class AddAction extends Action{
     	ReplyDAO dao = new ReplyDAO();
     	
     	 if(dao.insert_noitice(reply_notice)){
-    		 request.setAttribute("msg", "´ñ±Ûµî·Ï¼º°ø!!");  
+    		 request.setAttribute("msg", "ëŒ“ê¸€ ë“±ë¡ ì„±ê³µ");  
     	   }
 		}
     	return mapping.findForward("success");

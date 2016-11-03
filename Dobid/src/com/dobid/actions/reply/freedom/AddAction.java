@@ -20,9 +20,7 @@ public class AddAction extends Action{
     	request.setCharacterEncoding("UTF-8");
     	String name = request.getParameter("name");
     	
-    	if(name.equals("")){
-			request.setAttribute("msg", "·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù");
-		}else{
+    	
     	Reply_freedomDTO reply_freedom = new Reply_freedomDTO(0,
                                request.getParameter("name"),
                                request.getParameter("content"),
@@ -38,9 +36,9 @@ public class AddAction extends Action{
     	ReplyDAO dao = new ReplyDAO();
     	
     	 if(dao.insert_freedom(reply_freedom)){
-    		 request.setAttribute("msg", "´ñ±Û µî·ÏÀ» ¿Ï·áÇÏ¿´½À´Ï´Ù");  
+    		 request.setAttribute("msg", "ëŒ“ê¸€ ë“±ë¡ì„ ì™„ë£Œí•˜ì˜€ìŠµë‹ˆë‹¤");  
     	   }
-		} 
+		
     	return mapping.findForward("success");
     }
 }

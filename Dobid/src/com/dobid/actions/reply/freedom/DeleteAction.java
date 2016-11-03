@@ -24,7 +24,8 @@ public class DeleteAction extends Action{
 		System.out.println(name);
 		
 		if(name.equals("")){
-			 request.setAttribute("msg", "·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù"); 
+			 request.setAttribute("msg", "ë¡œê·¸ì¸ì´ í•„ìš”í•©ë‹ˆë‹¤"); 
+			 
 		}else{
 		Reply_freedomDTO reply_freedom = new Reply_freedomDTO();
 		reply_freedom.setNo(no);
@@ -33,9 +34,9 @@ public class DeleteAction extends Action{
 		ReplyDAO dao = new ReplyDAO();
 		
 		   if(dao.delete_freedom(reply_freedom)){
-			   request.setAttribute("msg", "´ñ±Û»èÁ¦¼º°ø!!");
+			   request.setAttribute("msg", "ëŒ“ê¸€ì‚­ì œì„±ê³µ!!");
 		   }else{
-			   request.setAttribute("msg", "º»ÀÎÀÇ ´ñ±Û¸¸ »èÁ¦ °¡´ÉÇÕ´Ï´Ù"); 
+			   request.setAttribute("msg", "ë³¸ì¸ì˜ ëŒ“ê¸€ë§Œ ì‚­ì œ ê°€ëŠ¥í•©ë‹ˆë‹¤"); 
 		   }
 		}   
 		   

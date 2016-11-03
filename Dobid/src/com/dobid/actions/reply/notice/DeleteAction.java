@@ -23,20 +23,15 @@ public class DeleteAction extends Action{
 		System.out.println(no);
 		System.out.println(name);
 		
-		if(name.equals("")){
-			request.setAttribute("msg", "∑Œ±◊¿Œ¿Ã « ø‰«’¥œ¥Ÿ");
-		}else{
+		
 			Reply_noticeDTO reply_notice = new Reply_noticeDTO();
 			reply_notice.setNo(no);
 			reply_notice.setName(name);
 		
 		ReplyDAO dao = new ReplyDAO();
 		   if(dao.delete_notice(reply_notice)){
-			   request.setAttribute("msg", "¥Ò±€ªË¡¶º∫∞¯!!");
-		   }else{
-			   request.setAttribute("msg", "∫ª¿Œ¿« ¥Ò±€∏∏ ªË¡¶ ∞°¥…«’¥œ¥Ÿ"); 
+			   request.setAttribute("msg", "ÎåìÍ∏Ä ÏÇ≠Ï†ú ÏÑ±Í≥µ!!");
 		   }
-		}   
 		   
 		return mapping.findForward("success");
 	}

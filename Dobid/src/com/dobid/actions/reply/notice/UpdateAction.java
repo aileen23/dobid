@@ -13,7 +13,7 @@ import com.dobid.model.ReplyDAO;
 
 
 
-public class UpdateAction extends Action{//DB¼öÁ¤¿äÃ»
+public class UpdateAction extends Action{//DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»
 	
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -21,9 +21,7 @@ public class UpdateAction extends Action{//DB¼öÁ¤¿äÃ»
 		request.setCharacterEncoding("UTF-8");
 		
 		String name = request.getParameter("name");
-		if(name.equals("")){
-			request.setAttribute("msg", "·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ÀÛ¾÷ÀÔ´Ï´Ù");
-		}else{
+		
 		
 		Reply_noticeDTO reply_notice = new Reply_noticeDTO(
 								Integer.parseInt(request.getParameter("no")),
@@ -35,12 +33,10 @@ public class UpdateAction extends Action{//DB¼öÁ¤¿äÃ»
 		
 		ReplyDAO dao = new ReplyDAO();
 		   if(dao.updaten_notice(reply_notice)){
-			   request.setAttribute("msg", "´ñ±Û¼öÁ¤¼º°ø!!");
-		   }else{
-			   request.setAttribute("msg", "º»ÀÎÀÇ ´ñ±Û¸¸ ¼öÁ¤ °¡´ÉÈü´Ï´Ù");
+			   request.setAttribute("msg", "ëŒ“ê¸€ ìˆ˜ì • ì„±ê³µ!!");
 		   }
 		   
-		}
+	
 		return mapping.findForward("success");
 	}
 
