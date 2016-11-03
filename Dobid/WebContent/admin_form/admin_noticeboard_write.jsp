@@ -116,14 +116,22 @@ $(document).ready(function(){
 			</div>
 			
 			<div class="form-group">
-				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
+			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
-				<div class="filebox col-sm-5">
-					<label for="free_file">첨부파일</label> 
-					<input type="file" id="image_path" class="file_form" name="image_path" onchange="getThumbnailPrivew(this,$('#notice_img'))" /> <br> <br>
-					<div id="notice_img" style="width: 100%; max-width: 100%; display: none;"></div>
+
+			<div class="filebox col-sm-5">
+				<label for="cma_file" class="text-center">첨부파일</label>
+				<input type="file" name="image_path" id="cma_file" accept="image/*"
+					capture="camera" onchange="getThumbnailPrivew(this,$('#cma_image'))" /> <br> <br>
+				<div align="center" style="text-decoration: underline">
+					* 최대 300MB 용량까지 업로드 가능<br>gif, jpg, png 이미지 파일만 업로드 가능합니다
 				</div>
+				<br>
+				<div id="cma_image" style="width: 100%; max-width: 100%; display: none;"></div>
+				<br>
+
 			</div>
+		</div>
 			
 
 
