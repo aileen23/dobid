@@ -1,6 +1,7 @@
 package iba;
 
 import java.io.Reader;
+import java.nio.charset.Charset;
 
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
@@ -18,6 +19,8 @@ public class SqlMapConfig {
 	 static{
 		 try{  
 		  String resource = "./iba/sqlMapConfig.xml";
+		  Charset charset = Charset.forName("UTF-8");
+	      Resources.setCharset(charset);
 		  Reader reader = Resources.getResourceAsReader(resource); 
 		  sqlMap = SqlMapClientBuilder.buildSqlMapClient(reader);
 		 }catch(Exception e){

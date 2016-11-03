@@ -222,13 +222,8 @@
 				</div>
 
 
-				<div class="col-sm-offset-4 col-sm-3">
+				<div class="col-sm-offset-4 col-sm-3" style="width: 50%;">
 					<button class="button button5 btn-default">삭제</button>
-
-					<input type="hidden" name="del" value="del"> <input
-						type="hidden" id="admin_auction_view_num"
-						name="admin_auction_view_num"> <input type="hidden"
-						id="admin_auction_hot_check" name="admin_auction_hot_check">
 					<button class="button button5 btn-default" name="endBtn" value="종료">종료</button>
 					<input type="button" class="button button5 btn-default" id="close" value="취소">
 					

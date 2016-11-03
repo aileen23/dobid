@@ -542,7 +542,11 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 		update member set withdrawal='사용중',delete_date=null
 		where member_id=#member_id#
 	</update>	
+	<!-- 공동구매 종료-->
+	<update id="adminmembergroupbuy_end" parameterClass="int">
+		UPDATE "DOBID"."GROUPBUY" SET BUY_CHECK = '종료' WHERE GROUPBUY_BOARD_NUM = #string#
 
+	</update>	
 
 
 </sqlMap>
