@@ -114,6 +114,7 @@ $(document).ready(function(){
 						placeholder="내용을 입력하세요" style="height: 200px" name="contents"></textarea>
 				</div>
 			</div>
+			
 			<div class="form-group">
 			<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 
