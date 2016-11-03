@@ -138,11 +138,12 @@ function showKeyCode(event) {
   				<div class="fires_box">
   					<div id="slider">
 						<figure>
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
-							<img src="/Dobid/product_regist_form/마계촌.png" alt="">
+						<%
+							String[] path = auctionDTO.getExplain_image_path().split("@");
+							for(int i = 1; i < path.length-1; i++){
+								out.print("<img src='/Dobid"+path[i]+"'>");
+							}
+						%>
 						</figure>
 					</div>
 				</div>
