@@ -51,19 +51,19 @@
 
 
 		</ul>
-		<ul class="nav navbar-nav navbar-right" id="navright">
+		<ul class="nav navbar-nav navbar-right" id="navright" style="margin-right: 2%;">
 			<%
-				String logincheck = (String) request.getSession().getAttribute("logincheck");
+				String logincheck = (String) request.getSession().getAttribute("adminlogincheck");
 				if (logincheck == null || logincheck.equals("")) {
 			%>
-			<li><a href="login.do" id="loginid"><span
+			<li><a href="admin_login.do" id="loginid"><span
 					class="glyphicon glyphicon-log-in"></span> Login </a></li>
 			<%
 				} else {
 			%>
-			<li><a href="myprofile.do" id="loginid2"><span
-					class="glyphicon glyphicon-user"></span><%=logincheck%></a></li>
-			<li><a href="/Dobid/regist_form/logout.jsp"><span
+			<li><a href="admin_noticeboard.do" id="loginid2"><span
+					class="glyphicon glyphicon-user"></span>admin</a></li>
+			<li><a href="/Dobid/regist_form/logout2.jsp"><span
 					class="glyphicon glyphicon-log-out" id="logout"></span></a></li>
 			<%
 				}
