@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	if (session.getAttribute("logincheck") == null) {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/Dobid/login.do');" + "</script>");
+	}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <header><%@include file="../regist_form/header.jsp"%></header>
@@ -15,7 +21,7 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText" style="margin-left: 20px">
+		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
 		<font size="80" color="black">찜목록</font><br>
 		</div>
 

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	if (session.getAttribute("logincheck") == null) {
+		out.print("<script type='text/javascript'>" + "alert('로그인을 하셔야합니다.');"
+				+ "location.replace('/Dobid/login.do');" + "</script>");
+	}
+%>
 <!DOCTYPE html>
 <html>
 <header><%@include file="/regist_form/header.jsp"%></header>
@@ -64,7 +70,7 @@ $(document).ready(function() {
 	<br>
 	<br>
 	<br>
-	<div class="titleText" style="margin-left: 20px">
+	<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
 		<font size="80" color="black">정보수정</font><br>
 	</div>
 
