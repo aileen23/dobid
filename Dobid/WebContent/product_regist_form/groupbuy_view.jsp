@@ -20,14 +20,18 @@ if(session.getAttribute("logincheck") == null){
 	int now_number =  dto.getParticipant_num();
 	int max_nunmber = dto.getStep_participant() * 5;
 	int now_progras = 0;
-	if(now_number != 0){
-		now_progras = now_number/max_nunmber;
-	}
-	int step_discount = dto.getStep_participant();
-	int now_price = dto.getDiscount_price();
-	if(now_progras != 0){
-		now_price = dto.getDiscount_price()*((step_discount*now_progras)/100);			
-	}
+	//if(now_number != 0){
+		now_progras = (now_number/dto.getStep_participant());
+	//}
+	int step_discount = dto.getStep_discount();
+	double now_price = dto.getDiscount_price();
+	double reckoning = (step_discount*(now_progras))/(double)100;
+	now_price = dto.getDiscount_price()*reckoning;	
+	double view_price = dto.getDiscount_price() - now_price;
+	//if(now_progras != 0){
+		now_progras = now_progras *2;
+		
+	//}
     %>
 <!DOCTYPE html>
 <html>
@@ -87,7 +91,7 @@ $(document).ready(function(){
 				</div>
 				<div class="sen_box">
 					<p class="now_bid">현재 구매가</p>
-					<p class="now_bid_text"><%=dto.getDiscount_price()%></p>
+					<p class="now_bid_text"><%=view_price%></p>
 					<hr>
 					<div class="Rem_aining_time">
 						<DIV class="progress-box progress-box-default">  
