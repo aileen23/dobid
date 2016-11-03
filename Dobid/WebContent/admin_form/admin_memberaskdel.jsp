@@ -10,6 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/Dobid/admin_form/css/admin.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -24,12 +25,15 @@
 <script type="text/javascript">
 	function bokgu(id) {
 		var member_id = id;
-	
+
 		$.ajax({
-			url:'admin_memberaskdel.do',
-			data:{member_id:member_id, update:'update'}, 
-			type:'POST',
-			success: function(){
+			url : 'admin_memberaskdel.do',
+			data : {
+				member_id : member_id,
+				update : 'update'
+			},
+			type : 'POST',
+			success : function() {
 				alert("탈퇴를 취소 처리하였습니다.")
 				location.reload(true)
 			}
@@ -79,7 +83,7 @@
 			</tr>
 			<c:forEach items="${adminmemberaskdellist }"
 				var="adminmemberaskdellist">
-				<tr class="list" >
+				<tr class="list">
 
 					<td>${adminmemberaskdellist.member_id}</td>
 					<td>${adminmemberaskdellist.name }</td>
@@ -89,7 +93,8 @@
 					<td>${adminmemberaskdellist.charging_amount}</td>
 					<td>${adminmemberaskdellist.withdrawal}</td>
 					<td>${adminmemberaskdellist.delete_date}</td>
-					<td><button onclick="bokgu('${adminmemberaskdellist.member_id}')">복구</button></td>
+					<td><button
+							onclick="bokgu('${adminmemberaskdellist.member_id}')">복구</button></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -98,18 +103,22 @@
 				<br>
 				<c:if test="${page == 1}">이전</c:if>
 				<c:if test="${page > 1}">
-					<a href="admin_memberdel.do?page=${ page-1 }&admin_memberaskdel_selecttext=${select}">이전</a>
+					<a
+						href="admin_memberdel.do?page=${ page-1 }&admin_memberaskdel_selecttext=${select}">이전</a>
 				</c:if>
 
 				<c:if test="${page == totalPage }">다음</c:if>
 				<c:if test="${page < totalPage }">
-					<a href="admin_memberdel.do?page=${ page+1 }&admin_memberaskdel_selecttext=${select}">다음</a>
+					<a
+						href="admin_memberdel.do?page=${ page+1 }&admin_memberaskdel_selecttext=${select}">다음</a>
 				</c:if>
-				<br> <br><c:if test="${totalPage >1}">
-				<c:forEach begin="1" end="${totalPage }" var="i">
-       [<a href="admin_memberdel.do?page=${ i }&admin_memberaskdel_selecttext=${select}">${i }</a>]
+				<br> <br>
+				<c:if test="${totalPage >1}">
+					<c:forEach begin="1" end="${totalPage }" var="i">
+       [<a
+							href="admin_memberdel.do?page=${ i }&admin_memberaskdel_selecttext=${select}">${i }</a>]
     </c:forEach>
-    </c:if>
+				</c:if>
 			</div>
 		</div>
 	</div>
