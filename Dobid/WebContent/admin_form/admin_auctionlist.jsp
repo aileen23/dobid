@@ -11,6 +11,7 @@
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/Dobid/admin_form/css/button.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
@@ -52,8 +53,12 @@
 									$(this).children().eq(7).text());
 
 						});
+				
+				$("#bt_del").click(function() {
+					location.reload();
+				});
 
-			});
+			});//ready
 </script>
 
 <title>관리자 경매리스트</title>
