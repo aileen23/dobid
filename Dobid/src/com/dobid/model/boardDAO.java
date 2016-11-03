@@ -699,6 +699,7 @@ public class boardDAO {
 			map.put("start", Integer.toString(start));
 			map.put("end", Integer.toString(end));
 			map.put("member_id", member_id);
+			map.put("withdrawal", "사용중");
 			list = smc.queryForList("board.adminmemberdelpage", map);
 		} catch (SQLException e) {
 			e.printStackTrace();

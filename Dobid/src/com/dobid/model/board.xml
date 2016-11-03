@@ -405,16 +405,16 @@
 	<!-- 관리자 회원관리 페이징 -->
 	<!-- 회원관리 카운터 -->
 	<select id="adminmemberdelcount" resultClass="int" parameterClass="String">
-		select count(*) from member where member_id like '%'||#member_id#||'%'
+		select count(*) from member where member_id like '%'||#member_id#||'%' and withdrawal='사용중'
 	</select>
 
 	<!-- 회원관리 페이지 나누기기기기기기기기기기 --> 
 	<select id="adminmemberdelpage" resultClass="adminmemberDTO" parameterClass="java.util.Map">
 		select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
-		from (select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount, rownum rn
-		from (select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount
+		from (select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount,withdrawal, rownum rn
+		from (select member_id,name,pass,phone,email,address,nickname,introduction,birthday,charging_amount,withdrawal
 		from member order by name desc))
-		where rn between #start# and #end# and member_id like '%'||#member_id#||'%'
+		where rn between #start# and #end# and member_id like '%'||#member_id#||'%' and withdrawal=#withdrawal#
 	</select>
 
 	
