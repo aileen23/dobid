@@ -37,7 +37,7 @@
 	    <li role="presentation"><a href="myprofile.do" id="nav1" class="navtab">내정보</a></li>
 	    <li role="presentation"><a href="myprofile_update.do" id="nav2" class="navtab">정보수정</a></li>
 	    <li role="presentation"><a href="myprofile_basket.do" id="nav3" class="navtab">찜목록</a></li>
-        <li role="presentation"><a href="#" id="nav10" class="navtab">공동구매내역</a></li>
+        <li role="presentation"><a href="myprofile_groupbuylist.do" id="nav10" class="navtab">공동구매내역</a></li>
         <li role="presentation"><a href="myprofile_Auction.do" id="nav4" class="navtab">경매참여내역</a></li>
         <li role="presentation"><a href="myprofile_sales.do" id="nav8" class="navtab">판매목록</a></li>
         <li role="presentation"><a href="myprofile_note.do" id="nav5" class="navtab">쪽지함</a></li>

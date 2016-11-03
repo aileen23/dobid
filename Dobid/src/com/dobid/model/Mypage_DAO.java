@@ -16,6 +16,7 @@ import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
 import com.dobid.beans.DelidDTO;
 import com.dobid.beans.Groupbuy_participantDTO;
+import com.dobid.beans.Groupbuy_participantListDTO;
 import com.dobid.beans.MemberDTO;
 import com.dobid.beans.MessageDTO;
 import com.dobid.beans.Service_answerDTO;
@@ -259,13 +260,13 @@ public class Mypage_DAO {
 		return num;
 	}
 	
-	public List<Groupbuy_participantDTO> groupSelect(String id,int start,int end) {
-		List<Groupbuy_participantDTO> list = null;
+	public List<Groupbuy_participantListDTO> groupSelect(String id,int start,int end) {
+		List<Groupbuy_participantListDTO> list = null;
 		try {
 			Map<String, Object> map = new HashMap<>();
 			map.put("start", start);
 			map.put("end", end);
-			map.put("member_id", id);
+			map.put("buyer_id", id);
 			list = smc.queryForList("myprofile.groupSelect", map);
 			return list;
 		} catch (SQLException e) {
