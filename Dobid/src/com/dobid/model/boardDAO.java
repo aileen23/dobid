@@ -853,6 +853,17 @@ public class boardDAO {
 		}
 		return false;
 	}
+	//신유동 공동구매 종료 입니다.
+	public boolean admingroupbuy_end(int id) {// 관리자 핫경매 게시판 상세보기 삭제
+		try {
+			smc.update("board.adminmembergroupbuy_end", id);
+			return true;
+		} catch (NumberFormatException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	
 	

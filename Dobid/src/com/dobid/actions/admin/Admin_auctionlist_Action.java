@@ -24,7 +24,7 @@ public class Admin_auctionlist_Action extends Action {
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
 		boardDAO dao = new boardDAO();
-		//if(request.getParameter("endBtn")==null){
+		if(request.getParameter("endBtn")==null){
 			
 		
 		
@@ -93,10 +93,10 @@ public class Admin_auctionlist_Action extends Action {
 		
 		List<Admin_auctionDTO> adminauctionlist =dao.adminAuctionPage(start, end,admin_auction_selecttext, catalogue);
 		request.setAttribute("adminauctionlist", adminauctionlist);
-		/*}else if(request.getParameter("endBtn") != null){
+		}else if(request.getParameter("endBtn") != null){
 			String admin_auction_view_num = request.getParameter("admin_auction_view_num");
-			System.out.println(admin_auction_view_num);
-		}*/
+			boolean check = dao.admingroupbuy_end(Integer.parseInt(admin_auction_view_num));
+		}
 		return mapping.findForward("success");
 	}
 }
