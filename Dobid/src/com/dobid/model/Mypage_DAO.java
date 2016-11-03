@@ -95,8 +95,8 @@ public class Mypage_DAO {
 
 	}
 
-	@SuppressWarnings("null")
-	public List<ChargelistDTO> chargeSelect(String id) {
+/*	@SuppressWarnings("null")
+	public List<ChargelistDTO> chargeSelecttest(String id) {
 		List<Auction_ChargeDTO> list = null;
 		List<ChargeDTO> list2 = null;
 		List<ChargelistDTO> result = new ArrayList<ChargelistDTO>();
@@ -132,8 +132,16 @@ public class Mypage_DAO {
 			e.printStackTrace();
 		}
 		return result;
+	}*/
+	public List<ChargeDTO> chargeSelect(String id){
+		 List<ChargeDTO> list = null;
+		try {
+			list=smc.queryForList("myprofile.chargelist",id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
-	
 	public List<Service_answerDTO> qnaselect(String id) {
 		List<Service_answerDTO> list = null;
 		try {

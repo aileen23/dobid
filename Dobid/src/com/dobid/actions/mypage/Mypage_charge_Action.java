@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.dobid.beans.Auction_myAuctionDTO;
+import com.dobid.beans.ChargeDTO;
 import com.dobid.beans.ChargelistDTO;
 import com.dobid.model.Mypage_DAO;
 
@@ -23,7 +24,7 @@ public class Mypage_charge_Action extends Action{
 		
 		Mypage_DAO dao = new Mypage_DAO();
 		
-		List<ChargelistDTO> list = dao.chargeSelect(id);
+		List<ChargeDTO> list = dao.chargeSelect(id);
 		int Charging_amount = dao.select(id).getCharging_amount();
 		
 		request.setAttribute("list", list);

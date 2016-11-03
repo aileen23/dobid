@@ -89,7 +89,10 @@
 	<select id="countlist" parameterClass="String" resultClass="java.lang.Integer">
 		select count(*) from basket where member_id=#member_id#
 	</select>
-	
+	<!-- 충전내역 목록출력 -->
+	<select id="chargelist" parameterClass="String" resultClass="chargeDTO">
+		select * from charge where member_id=#member_id#	
+	</select>
 	<!-- 경매종료 -->
 	<update id="auctionend" parameterClass="java.util.Map">
 		update auction set bid_check=#bid_check# where auction_board_num=#auction_board_num#
