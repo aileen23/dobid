@@ -101,35 +101,44 @@ function showKeyCode(event) {
 	
 	String end_time[] = auctionDTO.getEnd_date().split(" ");
 	String regist_time[] = auctionDTO.getRegist_date().split(" ");
-	//끝나는 시간 시분초 나눈 배열.
-	String end_hMs[] = end_time[1].split(":");
-	//등록 시간 시분초 나눈 배열.
-	String regist_hMs[] = regist_time[1].split(":");
 	
 	Calendar calendar = Calendar.getInstance();
-	SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-	//현재시간 시분초 나눈 배열.
-	String new_hms[] = dateFormat.format(calendar.getTime()).split(":");
+	SimpleDateFormat dateFormat = new SimpleDateFormat("dd HH:mm:ss");
+	String now_time[] = dateFormat.format(calendar.getTime()).split(" ");
 	
+	String end_day = end_time[0].split("-")[2];
+	String regist_day =regist_time[0].split("-")[2];
+	String now_day = now_time[0];
+	
+	//끝나는 시간 시분초 나눈 배열.
+		String end_hMs[] = end_time[1].split(":");
+	//등록 시간 시분초 나눈 배열.
+		String regist_hMs[] = regist_time[1].split(":");
+	//현재 시간 시분초 나눈 배열
+		String now_hMs[] = now_time[1].split(":");
+	
+
 	//끝나는 시간 - 현재시간.
-	int hour_char = Integer.parseInt(end_hMs[0]) - Integer.parseInt(new_hms[0]);
-	int mi_char = Integer.parseInt(end_hMs[1]) - Integer.parseInt(new_hms[1]);
-	int ss_char = Integer.parseInt(end_hMs[2]) - Integer.parseInt(new_hms[2]);
-	
-	//끝나는 시간 - 등록 시간
-	int re_hour_char = Integer.parseInt(end_hMs[0]) - Integer.parseInt(regist_hMs[0]);
-	int re_mi_char = Integer.parseInt(end_hMs[1]) - Integer.parseInt(regist_hMs[1]);
-
-	int re_ss_char = Integer.parseInt(end_hMs[2]) - Integer.parseInt(regist_hMs[2]);
-
-	//끝난 - 현재 차이만큼의 초.
-	int nowtal_int = 3600*hour_char+60*mi_char+ss_char;
-	//끝난 - 등록 차이만큼의 초.
-	int regtal_int = 3600*re_hour_char+60*re_mi_char+re_ss_char;
-	
-	int view_hour = nowtal_int/3600;
-	int view_mi = (nowtal_int-(view_hour*3600))/60;
-	int view_ss = ((nowtal_int-(view_hour*3600))-view_mi*60);
+		int day_char = Integer.parseInt(end_day) - Integer.parseInt(now_day);
+		int hour_char = Integer.parseInt(end_hMs[0]) - Integer.parseInt(now_hMs[0]);
+		int mi_char = Integer.parseInt(end_hMs[1]) - Integer.parseInt(now_hMs[1]);
+		int ss_char = Integer.parseInt(end_hMs[2]) - Integer.parseInt(now_hMs[2]);
+		
+		double total_E_N = day_char*86400+Math.abs(hour_char)*3600+Math.abs(mi_char)*60+Math.abs(ss_char);
+		
+	//현재시간 - 등록시간
+		day_char = Integer.parseInt(now_day) - Integer.parseInt(regist_day);
+		hour_char = Integer.parseInt(now_hMs[0]) - Integer.parseInt(regist_hMs[0]);
+		mi_char = Integer.parseInt(now_hMs[1]) - Integer.parseInt(regist_hMs[1]);
+		ss_char = Integer.parseInt(now_hMs[2]) - Integer.parseInt(regist_hMs[2]);
+		
+		double total_N_R = day_char*86400+Math.abs(hour_char)*3600+Math.abs(mi_char)*60+Math.abs(ss_char);
+		
+		double nowtal_int = total_E_N - total_N_R;
+		System.out.println(nowtal_int);
+		int view_hour = (int)(nowtal_int)/3600;
+		int view_mi = (int)(nowtal_int-(view_hour*3600))/60;
+		int view_ss = (int)((nowtal_int-(view_hour*3600))-view_mi*60);
 %>
 	<div class="wap" name="<%=id%>">
   		<div class="content" name="<%= auctionDTO.getHot_check()%>">
@@ -155,10 +164,12 @@ function showKeyCode(event) {
 						<DIV class="progress-box progress-box-default">  
      						<DIV class=progress-heading>남은시간</DIV>
      	 						<DIV class=progress-small>
-            						<DIV role=progressbar aria-valuenow=10 aria-valuemin=0 class="progress-bar-small progress-bar-s-info" style="WIDTH: <%=regtal_int/nowtal_int %>0%" aria-valuemax=100>
+            						<DIV role=progressbar aria-valuenow=10 aria-valuemin=0 class="progress-bar-small progress-bar-s-info" style="WIDTH: <%=(total_N_R/total_E_N*100) %>%" aria-valuemax=100>
                    					<!-- <SPAN class=sr-only>60% Complete</SPAN> -->
-                   					<span class="only"><%= view_hour+"시간"+Math.abs(view_mi)+"분"+Math.abs(view_ss)+"초" %></span>
+                   					
              					</DIV>
+             					<span class="only"><%=view_hour+"시간"+Math.abs(view_mi)+"분"+Math.abs(view_ss)+"초" %></span>
+             					
        						</DIV>
 						</DIV>
 					</div>					
