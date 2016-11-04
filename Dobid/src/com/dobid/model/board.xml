@@ -471,7 +471,7 @@
 	<!-- 관리자 게시판 페이징 -->
 	<!-- 자유 게시판 카운터 -->
 	<select id="adminfreelistcount" resultClass="int" parameterClass="String">
-		select count(*) from freeboard where title like '%'||#title#||'%'
+		select count(*) from freeboard a,member m where a.title like '%'||#title#||'%' and a.member_id=m.member_id
 	</select>
 
 	<!-- 자유게시판 페이지 나누기기기기기기기기기기 --> 
@@ -505,7 +505,7 @@ select basic_board_num, member_id, name, nickname, email, contents, upload_date,
 	<!-- 유저게시판 페이징 -->
 	<!-- 유저자유게시판 카운터 -->
 	<select id="freelistcount" resultClass="int" parameterClass="String">
-		select count(*) from freeboard where title like '%'||#title#||'%'
+	select count(*) from freeboard a,member m where a.title like '%'||#title#||'%' and a.member_id=m.member_id
 	</select>
 
 	<!-- 유저자유게시판 페이지 나누기기기기기기기기기기 --> 
