@@ -118,20 +118,20 @@ $(document).ready(function() {
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
-									<img class="slide-image" src="/Dobid/image/bbeabbearo.png"
-										alt="">
+									<a href="/Dobid/group_list.do?search_text=빼빼로"><img class="slide-image" src="/Dobid/image/bbeabbearo.png"
+										alt="" ></a>
 								</div>
 								<div class="item">
-									<img class="slide-image" src="/Dobid/image/dauni.png"
-										alt="">
+									<a href="/Dobid/group_list.do?search_text=다우니"><img class="slide-image" src="/Dobid/image/dauni.png"
+										alt=""></a>
 								</div>
 								<div class="item">
-									<img class="slide-image" src="/Dobid/image/winter.png"
-										alt="">
+									<a href="/Dobid/group_list.do?search_text=방한"><img class="slide-image" src="/Dobid/image/winter.png"
+										alt=""></a>
 								</div>
 								<div class="item">
-									<img class="slide-image" src="/Dobid/image/warm.png"
-										alt="">
+									<a href="/Dobid/group_list.do?search_text=난방"><img class="slide-image" src="/Dobid/image/warm.png"
+										alt=""></a>
 								</div>
 							</div>
 							<a class="left carousel-control" href="#carousel-example-generic"
@@ -154,7 +154,7 @@ List<Auction_listDTO> list = dao.main_list();
 for(int i = 0; i <list.size(); i++ ){ %>
 				<div class="col-sm-4 col-lg-4 col-md-4" id="div<%=i%>" >
                         <div class="thumbnail"><a href="auction_view.do?id=<%= list.get(i).getAuction_board_num()%>">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="/Dobid<%= list.get(i).getMain_image_path()%>" alt="" style="width: 320px; height: 150px;">
                             </a>
                             <!-- <img src="<%= list.get(i).getMain_image_path()%>" alt=""> -->
                             <div class="caption">
