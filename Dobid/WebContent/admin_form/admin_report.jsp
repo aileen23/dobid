@@ -148,14 +148,7 @@
 							 readOnly>
 					</div>
 				</div>
-				<div class="form-group">
-
-					<div class="col-sm-offset-2 col-sm-8">
-						<input type="text" class="form-control"
-							id="admin_report_view_categori" name="admin_report_view_categori"
-							 readOnly>
-					</div>
-				</div>
+				
 
 
 				<div class="form-group">
