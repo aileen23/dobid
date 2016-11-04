@@ -149,7 +149,7 @@ function showKeyCode(event) {
 						<figure>
 						<%
 							String[] path = auctionDTO.getExplain_image_path().split("@");
-							for(int i = 1; i < path.length-1; i++){
+							for(int i = 1; i < path.length; i++){
 								out.print("<img src='/Dobid"+path[i]+"'>");
 							}
 						%>
