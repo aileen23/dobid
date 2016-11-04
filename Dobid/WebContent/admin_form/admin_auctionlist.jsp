@@ -39,6 +39,7 @@
 							console.log($(this).children().text());
 
 							$("#popup").show();
+	
 
 							$("#admin_auction_view_num").val(
 									$(this).children().eq(0).text());
@@ -52,10 +53,15 @@
 									$(this).children().eq(4).text());
 							$("#admin_auction_hot_check").val(
 									$(this).children().eq(5).text());
-							$("#admin_auction_view_img").val(
-									$(this).children().eq(6).text());
 							$("#admin_auction_bid_check").val(
+									$(this).children().eq(6).text());
+							$("#admin_auction_view_img").val(
 									$(this).children().eq(7).text());
+							$("#admin_auction_bid_check").val(
+									$(this).children().eq(8).text());
+							
+							var image = "/Dobid"+$(this).children().eq(7).text();
+							$("#image_path").attr("src", image);
 
 						});
 				
@@ -168,7 +174,7 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width: 700px; height: 680px; margin-left: 30%; margin-top: 5%; border: 1px solid black;">
+			style="background-color: white; width: 700px; height: 680px; margin-left: 30%; margin-top: 5%; border: 1px solid black;overflow:auto; overflow-x:hidden;">
 			<form class="form-horizontal" action="/Dobid/admin_auctionlist.do"
 				method="POST">
 				<div class="form-group">
@@ -207,7 +213,7 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-						<img alt="이미지설명" src="admin_auction_view_img" name="admin_auction_view_img"  width="100%">
+						<img alt="이미지설명" id="image_path" name="admin_auction_view_img"  width="100%">
 					</div>
 				</div>
 				<div class="form-group">
