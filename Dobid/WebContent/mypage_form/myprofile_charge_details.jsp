@@ -22,18 +22,18 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
+		<div class="titleText"  style="margin-left: 22%; margin-right: auto;">
 		<font size="80" color="black">충전내역</font><br>
 		</div>
 
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="mypageHeader.jsp"%></header>
 	</div>
-<div class="container" style="size: auto;width: 70%;">
+<div class="container" style="size: auto;width: 55%;">
      	<b>현재 사용가능금액 :</b> ${Charging_amount }원
 </div>
 <br>
-<div class="container" style="size: auto;width: 70%;">
+<div class="container" style="size: auto;width: 55%;">
   <table class="table">
     <thead>
       <tr>

@@ -22,14 +22,13 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
+		<div class="titleText"  style="margin-left: 22%; margin-right: auto;">
 		<font size="80" color="black">경매참여내역</font><br>
 		</div>
-
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
-	<div class="container" style="size: auto;width: 70%;">
+	<div class="container" style="size: auto;width: 55%;">
 		<c:forEach items="${list }" var="auctionlist">
 		<div class="panel panel-default row">
 			<div class="panel-body col-xs-4"><img src="${auctionlist.main_image_path}" width="80%"  height="80%"> </div>
