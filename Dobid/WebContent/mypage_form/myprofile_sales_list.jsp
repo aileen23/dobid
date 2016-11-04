@@ -61,7 +61,7 @@ function auctionpost(date,num){
 	<div class="container" id="listdiv" style="size: auto;width: 55%;">
 		<c:forEach items="${list }" var="saleslist">
 		<div class="panel panel-default row">
-			<div class="panel-body col-xs-4"><img src="${saleslist.main_image_path}" width="80%"  height="80%"> </div>
+			<div class="panel-body col-xs-4"><img src="/Dobid${saleslist.main_image_path}" width="80%"  height="80%"> </div>
 			<div class="panel-body col-xs-6"><font color="red">${saleslist.hot_check}</font><br><a href="auction_view.do?id=${saleslist.auction_board_num }"><b>${saleslist.title}</b></a><br>최고가격: ${saleslist.highest_price}<br> 종료일:  ${saleslist.end_date} </div>
 			<div class="panel-body col-xs-2">
 			<c:if test="${saleslist.bid_check=='경매중'}">

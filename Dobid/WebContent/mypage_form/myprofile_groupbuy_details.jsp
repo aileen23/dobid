@@ -31,7 +31,7 @@
 	<div class="container" style="size: auto;width: 55%;">
 		<c:forEach items="${list }" var="groupbuylist">
 		<div class="panel panel-default row">
-			<div class="panel-body col-xs-4"><img src="${groupbuylist.main_image_path}" width="80%"  height="80%"> </div>
+			<div class="panel-body col-xs-4"><img src="/Dobid${groupbuylist.main_image_path}" width="80%"  height="80%"> </div>
 			<div class="panel-body col-xs-8"><a href="groupbuy_view.do?id=${groupbuylist.groupbuy_board_num }"><b>${groupbuylist.title}</b></a><br>현재가격: ${groupbuylist.discount_price}<br> 종료일:  ${groupbuylist.end_date} </div>
 		</div>
 		</c:forEach>
