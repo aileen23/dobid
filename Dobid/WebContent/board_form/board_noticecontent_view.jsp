@@ -70,7 +70,7 @@
 			<div class="form-group">
 				<label for="inputFile" class="col-sm-4 control-label">첨부파일</label>
 				<div class="filebox col-sm-5">
-					<img alt="이미지설명" src="${noticeobject.image_path }" width="100%">
+					<img alt="이미지설명" src="/Dobid${noticeobject.image_path }" width="100%">
 				</div>
 			</div>
 			
