@@ -99,7 +99,7 @@ $(document).ready(function(){
  				<option value="기타">기타</option>
 			</select>
  				<div class='green_window'>
-					<input type='text' class='input_text' />
+					<input type='text' class='input_text' value="<%=request.getParameter("search_text")%>"/>
 				</div>
 				<button type='submit' class='sch_smit'>검색</button>
 			</div>

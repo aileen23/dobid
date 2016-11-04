@@ -76,7 +76,7 @@ $(document).ready(function(){
  <div class="row2">
  			<div class="search_box">
  				<div class='green_window'>
-					<input type='text' class='input_text' />
+					<input type='text' class='input_text'  value="<%=request.getParameter("search_text")%>"/>
 				</div>
 				<button type='submit' class='sch_smit'>검색</button>
 			</div>
