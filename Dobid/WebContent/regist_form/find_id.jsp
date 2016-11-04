@@ -52,7 +52,7 @@
 		</div>
 		
 		<div class="form-group">
-			<label  class="col-sm-2 control-label" style="margin-right: 1.7%">Birthday</label>
+			<label  class="col-sm-2 control-label" style="margin-right: 1.3%">Birthday</label>
 				<div class="input-group date form_date col-sm-4" data-date=""
 					data-date-format="yyyymmdd" data-link-field="dtp_input2"
 					data-link-format="yyyy-mm-dd">
