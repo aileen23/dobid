@@ -148,7 +148,7 @@
 	<div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style= "background-color: white; width: 700px; height: 600px; margin-left: 30%; margin-top: 5%; border: 1px solid black;overflow:auto; overflow-x:hidden;">
+			style= "background-color: white; width: 700px; height: 660px; margin-left: 30%; margin-top: 5%; border: 1px solid black;overflow:auto; overflow-x:hidden;">
 			<form class="form-horizontal" action="/Dobid/admin_noticeboard.do"
 				method="POST">
 				<div class="form-group">

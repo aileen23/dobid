@@ -22,7 +22,7 @@ public class Customerservice_report_Action extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
-		String savePath="image\\upload_report";
+		String savePath="image/upload_report";
 		MultipartRequest mrequest = new MultipartRequest(request, request.getServletContext().getRealPath("")+savePath,
 				                          300*1024*1024 ,"UTF-8", new DefaultFileRenamePolicy());
 		

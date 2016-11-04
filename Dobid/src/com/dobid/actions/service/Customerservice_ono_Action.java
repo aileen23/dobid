@@ -26,7 +26,7 @@ public class Customerservice_ono_Action extends Action{
 		
 		request.setCharacterEncoding("UTF-8");
 			
-		String savePath="image\\upload_ono";
+		String savePath="image/upload_ono";
 		MultipartRequest mrequest = new MultipartRequest(request, request.getServletContext().getRealPath("")+savePath,
 				                          300*1024*1024 ,"UTF-8", new DefaultFileRenamePolicy());
 		

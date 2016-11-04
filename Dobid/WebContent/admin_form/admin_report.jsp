@@ -34,6 +34,7 @@
 			console.log($(this).children().text());
 		
 			$("#popup").show();
+
 			
 			$("#admin_report_view_title").val($(this).children().eq(0).text());
 			$("#admin_report_view_member_id").val($(this).children().eq(1).text());
@@ -41,7 +42,9 @@
 			$("#admin_report_view_image_path").val($(this).children().eq(3).text());
 			$("#admin_report_view_upload_date").val($(this).children().eq(4).text());
 
-
+			var image = "/Dobid/"+$(this).children().eq(3).text();
+			$("#image_path").attr("src", image);
+			
 			
 		});
 		
@@ -130,7 +133,7 @@
 <div id="popup" class="overlay"
 		style="z-index: 25; display: none; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%;">
 		<div
-			style="background-color: white; width:700px; height: 680px; margin-left: 30%; margin-top: 5%; border: 1px solid black;">
+			style="background-color: white; width:700px; height: 660px; margin-left: 30%; margin-top: 5%; border: 1px solid black;overflow:auto; overflow-x:hidden;">
 			<form class="form-horizontal" action="/Dobid/admin_report.do" method="POST">
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
@@ -153,7 +156,7 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-8">
-					<img alt="이미지설명" src="admin_report_view_image_path" name="admin_report_view_image_path"  width="100%">
+					<img alt="이미지설명" id="image_path" name="admin_report_view_image_path"  width="100%">
 						
 					</div>
 				</div>
