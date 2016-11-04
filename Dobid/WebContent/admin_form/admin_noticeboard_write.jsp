@@ -124,7 +124,7 @@
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="notice_whiter_user"
-						placeholder="<%=request.getSession().getAttribute("logincheck")%>"
+						placeholder="<%=request.getSession().getAttribute("adminlogincheck")%>"
 						name="free_whiter_user" disabled>
 				</div>
 			</div>
