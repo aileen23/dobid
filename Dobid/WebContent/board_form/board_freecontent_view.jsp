@@ -59,14 +59,14 @@ $(document).ready(function(){
 				<label for="inputTitle" class="col-sm-4 control-label">제목</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="view_title"
-						placeholder="${freeobject.title }" disabled>
+						placeholder="${freeobject.title }" readonly="readonly">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="inputWriter" class="col-sm-4 control-label">작성자</label>
 				<div class="col-sm-5">
 					<input type="text" class="form-control" id="view_write_user"
-						placeholder="${freeobject.nickname }" disabled>
+						placeholder="${freeobject.nickname }" readonly="readonly">
 				</div>
 			</div>
 
@@ -81,7 +81,7 @@ $(document).ready(function(){
 				<div class="col-sm-5">
 					<textarea class="form-control " id="view_contents"
 						placeholder="${freeobject.contents }" style="height: 200px"
-						disabled></textarea>
+						readonly="readonly"></textarea>
 				</div>
 			</div>
 
