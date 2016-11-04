@@ -6,7 +6,7 @@
 
 
 .row2{
-	width: 1200px;
+	width: 50%;
 	height: 100%;
 	margin: 0 auto;
     padding-top: 70px;
@@ -70,33 +70,35 @@ footer {
 }
 
 .caption_div{
-	width:  360px;
+	width:  260px;
 	height: 20px;
 	text-align: center;
 	
 	margin: 0 auto;
 }
 .caption_div_a{
-	width:  360px;
-	height: 30px;
+	width:  260px;
+	height: 20px;
 	text-align: center;
 	
 	margin: 0 auto;
 }
 .caption_div > div{
-	width:  150px;
-	height: 10px;
-	float: left;
-	text-align: center;
-	margin-left: 20px;
+	width: 130px;
+    height: 10px;
+    float: left;
+    text-align: center;
+    /* margin-left: 20px; */
+    font-size: 13px;
 	
 }
 .caption_div_a > div{
-	width:  150px;
-	height: 10px;
-	float: left;
-	text-align: center;
-	margin-left: 20px;
+	width: 130px;
+    height: 10px;
+    float: left;
+    text-align: center;
+    /* margin-left: 20px; */
+    font-size: 13px;
 	
 }
 .caption_div_bold{
@@ -107,7 +109,7 @@ footer {
 	width: 766px; height: 34px;
 	border: 3px solid #424242;
 	background: white;
-	margin-left: 20%;
+	margin-left: 5%;
 	margin-top: 0.3%;
 }
 .input_text {
@@ -141,19 +143,19 @@ footer {
 	font-weight: bold;
 }
 .center_title{
-	width:  360px;
-	height: 35px;
+	width:  260px;
+	height: 40px;
 	text-align: center;
 	
 	font-weight: bold;
 	margin: 0 auto;
 }
 .center_title > div{
-	width:  300px;
-	height: 20px;
-	float: left;
-	font-size:20px;
-	text-align: center;
-	margin-left: 20px;
+	width: 200px;
+    height: 40px;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 30px;
 	
 }
