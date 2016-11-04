@@ -54,13 +54,13 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
+		<div class="titleText"  style="margin-left: 22%; margin-right: auto;">
 		<font size="80" color="black">쪽지함</font><br>
 		</div>
 	<div class="container-fluid"	style="margin-bottom: 100px">
 		<header><%@include file="/mypage_form/mypageHeader.jsp"%></header>
 	</div>
-		<div style="margin-left: 17%">
+		<div style="margin-left: 24%">
 			<input type="button" name="receive" value="받은쪽지함" id="receiveMSG" class="btn btn-default">
 			<input type="button" name="send" value="보낸쪽지함" id="sendMSG" class="btn btn-default">
 			<input type="button" name="sendMessage" value="글쓰기" id="sendMessage" class="btn btn-default">

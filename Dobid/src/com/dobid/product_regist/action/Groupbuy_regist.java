@@ -29,8 +29,8 @@ public class Groupbuy_regist extends Action{
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date date = new Date();
 		String regist_date = df.format(date);
-		
-		Groupbuy_participantDTO dto = new Groupbuy_participantDTO(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("price")), user_id, regist_date, "N");
+		double req_price = Double.parseDouble(request.getParameter("price"));
+		Groupbuy_participantDTO dto = new Groupbuy_participantDTO(Integer.parseInt(request.getParameter("id")), (int)req_price, user_id, regist_date, "N");
 		Product_registDAO dao = new Product_registDAO();
 		boolean check = dao.groupbuy_regist(dto);
 		boolean count_check = dao.groupbuy_count(dto.getGroupbuy_board_num());
@@ -39,7 +39,7 @@ public class Groupbuy_regist extends Action{
 		if(check == true && count_check== true){
 			actionMapping = mapping.findForward("sueccess");
 		}else {
-			System.out.println("실패");
+			actionMapping = mapping.findForward("fail");
 		}
 		
 		return actionMapping;

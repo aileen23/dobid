@@ -31,7 +31,7 @@
 	<br>
 	<br>
 	<br>
-		<div class="titleText"  style="margin-left: 17%; margin-right: auto;">
+		<div class="titleText"  style="margin-left: 22%; margin-right: auto;">
 		<font size="80" color="black">My Page</font><br>
 		</div>
 

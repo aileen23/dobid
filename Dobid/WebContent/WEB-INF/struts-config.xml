@@ -95,6 +95,7 @@
 		<action path="/fail" forward="/product_regist_form/fail.jsp"></action>
 		<action path="/groupbuy_regist" type="com.dobid.product_regist.action.Groupbuy_regist">
 			<forward name="sueccess" path="/group_list.do"></forward>
+			<forward path="/fail.do" name="fail" redirect="true"></forward>
 		</action>
 		<action path="/auction_buy" type="com.dobid.product_regist.action.Auction_buy">
 			<forward name="sueccess" path="/list.do"></forward>

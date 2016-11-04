@@ -14,7 +14,7 @@
    }
    
 </style>
-   <ul style="margin-left: 15%">
+   <ul style="margin-left: 24%">
    <li><img alt="Do!Bid" src="/Dobid/image/dobid.png" width="150" height="70" align="top"></li>
    </ul>
    <ul style="margin-bottom: 40px;">

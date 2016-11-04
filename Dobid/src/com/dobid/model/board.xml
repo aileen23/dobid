@@ -32,7 +32,7 @@
 	<!-- 게시판 상세보기(공지) -->
 	<select id="NoticeSelect" resultClass="noticeboardDTO"
 		parameterClass="int">
-		select basic_board_num,member_id,title,contents,cilck_count,upload_date,'관리자' nickname
+		select basic_board_num,member_id,title,contents,cilck_count,upload_date,'관리자' nickname,image_path
 		from noticeboard 
 		where basic_board_num=#basic_board_num#
 	</select>
@@ -46,7 +46,7 @@
 	<!-- 게시판 상세보기(자유) -->
 	<select id="FreeSelect" resultClass="freeboardDTO"
 		parameterClass="int">
-		select a.basic_board_num,a.member_id,a.title,a.contents,a.cilck_count,a.upload_date,m.nickname
+		select a.basic_board_num,a.member_id,a.title,a.contents,a.cilck_count,a.upload_date,m.nickname,a.image_path
 		from freeboard a, member m 
 		where a.member_id=m.member_id and a.basic_board_num=#basic_board_num#
 	</select>

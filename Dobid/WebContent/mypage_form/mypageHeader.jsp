@@ -32,7 +32,7 @@
   </head>
   <body>
 	
-	<div class="container-fluid" style="margin-left: 14%; margin-right: auto;">
+	<div class="container-fluid" style="margin-left: 20%; margin-right: auto;">
 	  <ul class="nav nav-tabs" id="mynav">
 	    <li role="presentation"><a href="myprofile.do" id="nav1" class="navtab">내정보</a></li>
 	    <li role="presentation"><a href="myprofile_update.do" id="nav2" class="navtab">정보수정</a></li>

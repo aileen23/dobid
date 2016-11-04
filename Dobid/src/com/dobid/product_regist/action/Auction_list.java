@@ -32,6 +32,7 @@ public class Auction_list extends Action{
 		List_form form2 = (List_form) form;
 		
 		Auction_list_paramiterDTO auction_list_paramiterDTO;
+		System.out.println(form2.getSearch_text());
 		if(request.getAttribute("list_par") == null){
 			auction_list_paramiterDTO = new Auction_list_paramiterDTO(form2.getSearch_text(),"", 0, 6,"경매중",form2.getCategori());
 		}else{
