@@ -33,7 +33,56 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<script type="text/javascript">
+$(document).ready(function() {
+	
+		$("#div0").hover(
+				function () {
+					$("#div0").animate({opacity: "0.5"},50);
+				},
+				function () {
+					$("#div0").animate({opacity: "1"},50);
+				});
+		$("#div1").hover(
+				function () {
+					$("#div1").animate({opacity: "0.5"},50);
+				},
+				function () {
+					$("#div1").animate({opacity: "1"},50);
+				});
+		$("#div2").hover(
+				function () {
+					$("#div2").animate({opacity: "0.5"},50);
+				},
+				function () {
+					$("#div2").animate({opacity: "1"},50);
+				});
+		$("#div3").hover(
+				function () {
+					$("#div3").animate({opacity: "0.5"},50);
+				},
+				function () {
+					$("#div3").animate({opacity: "1"},50);
+				});
+		$("#div4").hover(
+				function () {
+					$("#div4").animate({opacity: "0.5"},50);
+				},
+				function () {
+					$("#div4").animate({opacity: "1"},50);
+				});
+		$("#div5").hover(
+				function () {
+					$("#div5").animate({opacity: "0.5"},50);
+				},
+				function () {
+					$("#div5").animate({opacity: "1"},50);
+				});
+	
+	
+});
 
+</script>
 
 </head>
 <header><%@include file="header.jsp"%></header>
@@ -103,7 +152,7 @@
 Product_registDAO dao = new Product_registDAO();
 List<Auction_listDTO> list = dao.main_list();
 for(int i = 0; i <list.size(); i++ ){ %>
-				<div class="col-sm-4 col-lg-4 col-md-4">
+				<div class="col-sm-4 col-lg-4 col-md-4" id="div<%=i%>" >
                         <div class="thumbnail"><a href="auction_view.do?id=<%= list.get(i).getAuction_board_num()%>">
                             <img src="http://placehold.it/320x150" alt="">
                             </a>
@@ -145,7 +194,8 @@ for(int i = 0; i <list.size(); i++ ){ %>
 
 	</div>
 	<!-- /.container -->
-
+<br>
+<br>
 	<div class="container">
 
 		<hr>
