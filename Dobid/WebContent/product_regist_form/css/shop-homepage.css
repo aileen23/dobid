@@ -6,13 +6,16 @@
 
 
 .row2{
-	width: 50%;
+	width: 70%;
 	height: 100%;
 	margin: 0 auto;
     padding-top: 70px;
     margin-top: 100px;
 }
-
+#box{
+	width: 75%;
+	margin-left: 10%;
+}
 .slide-image {
     width: 100%;
 }
@@ -113,7 +116,7 @@ footer {
 	margin-top: 0.3%;
 }
 .input_text {
-	width: 348px; height: 21px;
+	width: 30%; height: 21px;
 	margin: 6px 0 0 9px;
 	border: 0;
 	line-height: 21px;
@@ -136,6 +139,7 @@ footer {
 }
 .search_box{
 	height: 80px;
+	margin-left: 10%;
 }
 .top_title{
 	width: 400px; height: 80px;

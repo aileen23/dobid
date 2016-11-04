@@ -84,9 +84,13 @@ $(document).ready(function(){
  <div id="box">
 <% 
 Auction_list_paramiterDTO auction_list_paramiterDTO;
-String search = request.getParameter("search_text");
+String search ="";
+if(request.getParameter("search_text") != null){
+	search = request.getParameter("search_text");
+}
 
-	auction_list_paramiterDTO = new Auction_list_paramiterDTO("","asd", 0, 6,"진행중");
+
+	auction_list_paramiterDTO = new Auction_list_paramiterDTO(search,"asd", 0, 6,"진행중");
 
 Product_registDAO dao = new Product_registDAO();
 
